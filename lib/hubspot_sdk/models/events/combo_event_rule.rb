@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComboEventRule < HubspotSDK::Internal::Type::BaseModel
+      class ComboEventRule < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute count
         #
         #   @return [Integer]
@@ -16,9 +16,9 @@ module HubspotSDK
 
         # @!attribute property_filters
         #
-        #   @return [Array<HubspotSDK::Models::Events::PropertyFilter>]
+        #   @return [Array<HubSpotSDK::Models::Events::PropertyFilter>]
         required :property_filters,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::PropertyFilter] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::PropertyFilter] },
                  api_name: :propertyFilters
 
         # @!attribute lookback_window_days
@@ -29,7 +29,7 @@ module HubspotSDK
         # @!method initialize(count:, event_type_id:, property_filters:, lookback_window_days: nil)
         #   @param count [Integer]
         #   @param event_type_id [String]
-        #   @param property_filters [Array<HubspotSDK::Models::Events::PropertyFilter>]
+        #   @param property_filters [Array<HubSpotSDK::Models::Events::PropertyFilter>]
         #   @param lookback_window_days [Integer]
       end
     end

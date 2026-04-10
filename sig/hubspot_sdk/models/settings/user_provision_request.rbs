@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type user_provision_request =
@@ -12,7 +12,7 @@ module HubspotSDK
           secondary_team_ids: ::Array[String]
         }
 
-      class UserProvisionRequest < HubspotSDK::Internal::Type::BaseModel
+      class UserProvisionRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor email: String
 
         attr_accessor send_welcome_email: bool

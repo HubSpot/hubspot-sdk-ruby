@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AssociationSpecWithLabel < HubspotSDK::Internal::Type::BaseModel
+      class AssociationSpecWithLabel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute category
         #   The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
         #   INTEGRATOR_DEFINED.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::AssociationSpecWithLabel::Category]
-        required :category, enum: -> { HubspotSDK::Crm::AssociationSpecWithLabel::Category }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::AssociationSpecWithLabel::Category]
+        required :category, enum: -> { HubSpotSDK::Crm::AssociationSpecWithLabel::Category }
 
         # @!attribute type_id
         #   The unique identifier for the type of association.
@@ -25,12 +25,12 @@ module HubspotSDK
 
         # @!method initialize(category:, type_id:, label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::AssociationSpecWithLabel} for more details.
+        #   {HubSpotSDK::Models::Crm::AssociationSpecWithLabel} for more details.
         #
         #   Defines the type, direction, and details of the relationship between two CRM
         #   objects.
         #
-        #   @param category [Symbol, HubspotSDK::Models::Crm::AssociationSpecWithLabel::Category] The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or INTEG
+        #   @param category [Symbol, HubSpotSDK::Models::Crm::AssociationSpecWithLabel::Category] The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or INTEG
         #
         #   @param type_id [Integer] The unique identifier for the type of association.
         #
@@ -39,9 +39,9 @@ module HubspotSDK
         # The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
         # INTEGRATOR_DEFINED.
         #
-        # @see HubspotSDK::Models::Crm::AssociationSpecWithLabel#category
+        # @see HubSpotSDK::Models::Crm::AssociationSpecWithLabel#category
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED = :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED

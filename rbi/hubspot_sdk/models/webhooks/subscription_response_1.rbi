@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SubscriptionResponse1 < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionResponse1 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::SubscriptionResponse1,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::SubscriptionResponse1,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             ]
           )
         end
@@ -41,7 +41,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+            HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
           )
         end
         attr_accessor :subscription_type
@@ -54,7 +54,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
+              T::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
             )
           )
         end
@@ -65,7 +65,7 @@ module HubspotSDK
             action_overrides:
               T::Hash[
                 Symbol,
-                HubspotSDK::Webhooks::ActionOverrideRequest::OrHash
+                HubSpotSDK::Webhooks::ActionOverrideRequest::OrHash
               ]
           ).void
         end
@@ -118,18 +118,18 @@ module HubspotSDK
             id: Integer,
             actions:
               T::Array[
-                HubspotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
+                HubSpotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
               ],
             app_id: Integer,
             created_at: Time,
             object_type_id: String,
             subscription_type:
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
             updated_at: Time,
             action_overrides:
               T::Hash[
                 Symbol,
-                HubspotSDK::Webhooks::ActionOverrideRequest::OrHash
+                HubSpotSDK::Webhooks::ActionOverrideRequest::OrHash
               ],
             associated_object_type_ids: T::Array[String],
             created_by: Integer,
@@ -173,16 +173,16 @@ module HubspotSDK
               id: Integer,
               actions:
                 T::Array[
-                  HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+                  HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
                 ],
               app_id: Integer,
               created_at: Time,
               object_type_id: String,
               subscription_type:
-                HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol,
+                HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol,
               updated_at: Time,
               action_overrides:
-                T::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
+                T::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
               associated_object_type_ids: T::Array[String],
               created_by: Integer,
               deleted_at: Time,
@@ -197,79 +197,79 @@ module HubspotSDK
         end
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Webhooks::SubscriptionResponse1::Action)
+              T.all(Symbol, HubSpotSDK::Webhooks::SubscriptionResponse1::Action)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CREATE =
             T.let(
               :CREATE,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           UPDATE =
             T.let(
               :UPDATE,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           DELETE =
             T.let(
               :DELETE,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           MERGE =
             T.let(
               :MERGE,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           RESTORE =
             T.let(
               :RESTORE,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           ASSOCIATION_ADDED =
             T.let(
               :ASSOCIATION_ADDED,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           ASSOCIATION_REMOVED =
             T.let(
               :ASSOCIATION_REMOVED,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           SNAPSHOT =
             T.let(
               :SNAPSHOT,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           APP_INSTALL =
             T.let(
               :APP_INSTALL,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           APP_UNINSTALL =
             T.let(
               :APP_UNINSTALL,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           ADDED_TO_LIST =
             T.let(
               :ADDED_TO_LIST,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
           REMOVED_FROM_LIST =
             T.let(
               :REMOVED_FROM_LIST,
-              HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+                HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
               ]
             )
           end
@@ -278,13 +278,13 @@ module HubspotSDK
         end
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType
+                HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -292,33 +292,33 @@ module HubspotSDK
           APP_LIFECYCLE_EVENT =
             T.let(
               :APP_LIFECYCLE_EVENT,
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
           ASSOCIATION =
             T.let(
               :ASSOCIATION,
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
           EVENT =
             T.let(
               :EVENT,
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
           LIST_MEMBERSHIP =
             T.let(
               :LIST_MEMBERSHIP,
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
           OBJECT =
             T.let(
               :OBJECT,
-              HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+                HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
               ]
             )
           end

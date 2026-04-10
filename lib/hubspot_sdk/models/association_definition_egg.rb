@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AssociationDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+    class AssociationDefinitionEgg < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute from_object_type_id
       #
       #   @return [String]

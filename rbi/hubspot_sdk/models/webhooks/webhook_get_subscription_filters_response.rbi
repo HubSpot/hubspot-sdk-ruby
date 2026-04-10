@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       WebhookGetSubscriptionFiltersResponse =
         T.let(
-          HubspotSDK::Internal::Type::ArrayOf[
-            HubspotSDK::Webhooks::FilterResponse
+          HubSpotSDK::Internal::Type::ArrayOf[
+            HubSpotSDK::Webhooks::FilterResponse
           ],
-          HubspotSDK::Internal::Type::Converter
+          HubSpotSDK::Internal::Type::Converter
         )
     end
   end

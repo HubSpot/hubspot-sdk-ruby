@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Automation::Actions::DefinitionsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -23,24 +23,24 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
       )
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionDefinition
+      response => HubSpotSDK::Automation::PublicActionDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         action_url: String,
-        functions: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier]),
-        input_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicInputFieldDefinition]),
-        labels: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels]),
-        object_types: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        published: HubspotSDK::Internal::Type::Boolean,
+        functions: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier]),
+        input_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicInputFieldDefinition]),
+        labels: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Automation::PublicActionLabels]),
+        object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        published: HubSpotSDK::Internal::Type::Boolean,
         revision_id: String,
         archived_at: Integer | nil,
-        execution_rules: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicExecutionTranslationRule]) | nil,
-        input_field_dependencies: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
-        object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions | nil,
-        output_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::OutputFieldDefinition]) | nil
+        execution_rules: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicExecutionTranslationRule]) | nil,
+        input_field_dependencies: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
+        object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions | nil,
+        output_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::OutputFieldDefinition]) | nil
       }
     end
   end
@@ -51,24 +51,24 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
     response = @hubspot.automation.actions.definitions.update("definitionId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionDefinition
+      response => HubSpotSDK::Automation::PublicActionDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         action_url: String,
-        functions: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier]),
-        input_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicInputFieldDefinition]),
-        labels: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels]),
-        object_types: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        published: HubspotSDK::Internal::Type::Boolean,
+        functions: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier]),
+        input_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicInputFieldDefinition]),
+        labels: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Automation::PublicActionLabels]),
+        object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        published: HubSpotSDK::Internal::Type::Boolean,
         revision_id: String,
         archived_at: Integer | nil,
-        execution_rules: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicExecutionTranslationRule]) | nil,
-        input_field_dependencies: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
-        object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions | nil,
-        output_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::OutputFieldDefinition]) | nil
+        execution_rules: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicExecutionTranslationRule]) | nil,
+        input_field_dependencies: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
+        object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions | nil,
+        output_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::OutputFieldDefinition]) | nil
       }
     end
   end
@@ -79,31 +79,31 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
     response = @hubspot.automation.actions.definitions.list(0)
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Automation::PublicActionDefinition
+      row => HubSpotSDK::Automation::PublicActionDefinition
     end
 
     assert_pattern do
       row => {
         id: String,
         action_url: String,
-        functions: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier]),
-        input_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicInputFieldDefinition]),
-        labels: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels]),
-        object_types: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        published: HubspotSDK::Internal::Type::Boolean,
+        functions: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier]),
+        input_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicInputFieldDefinition]),
+        labels: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Automation::PublicActionLabels]),
+        object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        published: HubSpotSDK::Internal::Type::Boolean,
         revision_id: String,
         archived_at: Integer | nil,
-        execution_rules: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicExecutionTranslationRule]) | nil,
-        input_field_dependencies: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
-        object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions | nil,
-        output_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::OutputFieldDefinition]) | nil
+        execution_rules: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicExecutionTranslationRule]) | nil,
+        input_field_dependencies: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
+        object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions | nil,
+        output_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::OutputFieldDefinition]) | nil
       }
     end
   end
@@ -139,24 +139,24 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
     response = @hubspot.automation.actions.definitions.get("definitionId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionDefinition
+      response => HubSpotSDK::Automation::PublicActionDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
         action_url: String,
-        functions: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier]),
-        input_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicInputFieldDefinition]),
-        labels: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Automation::PublicActionLabels]),
-        object_types: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        published: HubspotSDK::Internal::Type::Boolean,
+        functions: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier]),
+        input_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicInputFieldDefinition]),
+        labels: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Automation::PublicActionLabels]),
+        object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        published: HubSpotSDK::Internal::Type::Boolean,
         revision_id: String,
         archived_at: Integer | nil,
-        execution_rules: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicExecutionTranslationRule]) | nil,
-        input_field_dependencies: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
-        object_request_options: HubspotSDK::Automation::PublicObjectRequestOptions | nil,
-        output_fields: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::OutputFieldDefinition]) | nil
+        execution_rules: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicExecutionTranslationRule]) | nil,
+        input_field_dependencies: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Automation::PublicActionDefinition::InputFieldDependency]) | nil,
+        object_request_options: HubSpotSDK::Automation::PublicObjectRequestOptions | nil,
+        output_fields: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::OutputFieldDefinition]) | nil
       }
     end
   end
@@ -167,12 +167,12 @@ class HubspotSDK::Test::Resources::Automation::Actions::DefinitionsTest < Hubspo
     response = @hubspot.automation.actions.definitions.get_requires_object("definitionId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
+      response => HubSpotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
     end
 
     assert_pattern do
       response => {
-        requires_object: HubspotSDK::Internal::Type::Boolean
+        requires_object: HubSpotSDK::Internal::Type::Boolean
       }
     end
   end

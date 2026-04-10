@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IndexedData < HubspotSDK::Internal::Type::BaseModel
+      class IndexedData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::IndexedData, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::IndexedData, HubSpotSDK::Internal::AnyHash)
           end
 
         # The ID of the document in HubSpot.
@@ -14,19 +14,19 @@ module HubspotSDK
         attr_accessor :id
 
         # The indexed fields in HubSpot.
-        sig { returns(T::Hash[Symbol, HubspotSDK::Cms::IndexedField]) }
+        sig { returns(T::Hash[Symbol, HubSpotSDK::Cms::IndexedField]) }
         attr_accessor :fields
 
         # The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         # `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
-        sig { returns(HubspotSDK::Cms::IndexedData::Type::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol) }
         attr_accessor :type
 
         sig do
           params(
             id: String,
-            fields: T::Hash[Symbol, HubspotSDK::Cms::IndexedField::OrHash],
-            type: HubspotSDK::Cms::IndexedData::Type::OrSymbol
+            fields: T::Hash[Symbol, HubSpotSDK::Cms::IndexedField::OrHash],
+            type: HubSpotSDK::Cms::IndexedData::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -44,8 +44,8 @@ module HubspotSDK
           override.returns(
             {
               id: String,
-              fields: T::Hash[Symbol, HubspotSDK::Cms::IndexedField],
-              type: HubspotSDK::Cms::IndexedData::Type::TaggedSymbol
+              fields: T::Hash[Symbol, HubSpotSDK::Cms::IndexedField],
+              type: HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol
             }
           )
         end
@@ -55,40 +55,40 @@ module HubspotSDK
         # The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         # `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::IndexedData::Type) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::IndexedData::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BLOG_POST =
-            T.let(:BLOG_POST, HubspotSDK::Cms::IndexedData::Type::TaggedSymbol)
+            T.let(:BLOG_POST, HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol)
           KNOWLEDGE_ARTICLE =
             T.let(
               :KNOWLEDGE_ARTICLE,
-              HubspotSDK::Cms::IndexedData::Type::TaggedSymbol
+              HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol
             )
           LANDING_PAGE =
             T.let(
               :LANDING_PAGE,
-              HubspotSDK::Cms::IndexedData::Type::TaggedSymbol
+              HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol
             )
           LISTING_PAGE =
             T.let(
               :LISTING_PAGE,
-              HubspotSDK::Cms::IndexedData::Type::TaggedSymbol
+              HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol
             )
           SITE_PAGE =
-            T.let(:SITE_PAGE, HubspotSDK::Cms::IndexedData::Type::TaggedSymbol)
+            T.let(:SITE_PAGE, HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol)
           STRUCTURED_CONTENT =
             T.let(
               :STRUCTURED_CONTENT,
-              HubspotSDK::Cms::IndexedData::Type::TaggedSymbol
+              HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::IndexedData::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::IndexedData::Type::TaggedSymbol]
             )
           end
           def self.values

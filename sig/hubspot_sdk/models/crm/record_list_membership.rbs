@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type record_list_membership =
@@ -10,7 +10,7 @@ module HubspotSDK
           is_public_list: bool
         }
 
-      class RecordListMembership < HubspotSDK::Internal::Type::BaseModel
+      class RecordListMembership < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor first_added_timestamp: Time
 
         attr_accessor last_added_timestamp: Time

@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type collection_response_multi_associated_object_with_label_forward_paging =
         {
-          results: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponseMultiAssociatedObjectWithLabelForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel]
+      class CollectionResponseMultiAssociatedObjectWithLabelForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

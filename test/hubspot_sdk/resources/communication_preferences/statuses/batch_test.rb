@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_get_unsubscribe_all_statuses_required_params
     skip("Mock server tests are disabled")
 
@@ -13,16 +13,16 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
       )
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
+      response => HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -34,16 +34,16 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
     response = @hubspot.communication_preferences.statuses.batch.read(channel: :EMAIL, inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
+      response => HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatusBulkResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatusBulkResponse]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -56,17 +56,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
       @hubspot.communication_preferences.statuses.batch.unsubscribe_all(channel: :EMAIL, inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
+      response => HubSpotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }
@@ -89,17 +89,17 @@ class HubspotSDK::Test::Resources::CommunicationPreferences::Statuses::BatchTest
       )
 
     assert_pattern do
-      response => HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus
+      response => HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatus
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicStatus]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicStatus]),
         started_at: Time,
-        status: HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatus::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }

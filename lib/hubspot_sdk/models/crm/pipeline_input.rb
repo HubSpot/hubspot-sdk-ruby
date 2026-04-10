@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute display_order
         #   The order for displaying this pipeline. If two pipelines have a matching
         #   `displayOrder`, they will be sorted alphabetically by label.
@@ -20,8 +20,8 @@ module HubspotSDK
         # @!attribute stages
         #   Pipeline stage inputs used to create the new or replacement pipeline.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PipelineStageInput>]
-        required :stages, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStageInput] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PipelineStageInput>]
+        required :stages, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStageInput] }
 
         # @!attribute pipeline_id
         #
@@ -30,13 +30,13 @@ module HubspotSDK
 
         # @!method initialize(display_order:, label:, stages:, pipeline_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PipelineInput} for more details.
+        #   {HubSpotSDK::Models::Crm::PipelineInput} for more details.
         #
         #   @param display_order [Integer] The order for displaying this pipeline. If two pipelines have a matching `displa
         #
         #   @param label [String] A unique label used to organize pipelines in HubSpot's UI
         #
-        #   @param stages [Array<HubspotSDK::Models::Crm::PipelineStageInput>] Pipeline stage inputs used to create the new or replacement pipeline.
+        #   @param stages [Array<HubSpotSDK::Models::Crm::PipelineStageInput>] Pipeline stage inputs used to create the new or replacement pipeline.
         #
         #   @param pipeline_id [String]
       end

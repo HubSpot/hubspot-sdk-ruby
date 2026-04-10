@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type flags_for_app_response = { flags_for_app: ::Array[String] }
 
-      class FlagsForAppResponse < HubspotSDK::Internal::Type::BaseModel
+      class FlagsForAppResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor flags_for_app: ::Array[String]
 
         def initialize: (flags_for_app: ::Array[String]) -> void

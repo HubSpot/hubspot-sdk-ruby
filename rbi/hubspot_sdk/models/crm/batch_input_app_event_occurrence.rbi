@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputAppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputAppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchInputAppEventOccurrence,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchInputAppEventOccurrence,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::AppEventOccurrence]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::AppEventOccurrence]) }
         attr_accessor :inputs
 
         sig do
           params(
-            inputs: T::Array[HubspotSDK::Crm::AppEventOccurrence::OrHash]
+            inputs: T::Array[HubSpotSDK::Crm::AppEventOccurrence::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(inputs:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { inputs: T::Array[HubspotSDK::Crm::AppEventOccurrence] }
+            { inputs: T::Array[HubSpotSDK::Crm::AppEventOccurrence] }
           )
         end
         def to_hash

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type option_input =
       {
@@ -9,7 +9,7 @@ module HubspotSDK
         description: String
       }
 
-    class OptionInput < HubspotSDK::Internal::Type::BaseModel
+    class OptionInput < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor display_order: Integer
 
       attr_accessor hidden: bool

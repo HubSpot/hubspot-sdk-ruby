@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::MarketingEvents::SettingsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::MarketingEvents::SettingsTest < HubSpotSDK::Test::ResourceTest
   def test_create_or_update_required_params
     skip("Mock server tests are disabled")
 
@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::SettingsTest < Hu
       @hubspot.marketing.marketing_events.settings.create_or_update(0, event_details_url: "eventDetailsUrl")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::EventDetailSettings
+      response => HubSpotSDK::Marketing::EventDetailSettings
     end
 
     assert_pattern do
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Marketing::MarketingEvents::SettingsTest < Hu
     response = @hubspot.marketing.marketing_events.settings.get(0)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::EventDetailSettings
+      response => HubSpotSDK::Marketing::EventDetailSettings
     end
 
     assert_pattern do

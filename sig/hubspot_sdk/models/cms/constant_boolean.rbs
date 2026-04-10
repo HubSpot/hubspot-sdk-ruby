@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type constant_boolean =
         {
-          operator: HubspotSDK::Models::Cms::ConstantBoolean::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantBoolean::operator,
           property_name: String,
           value: bool
         }
 
-      class ConstantBoolean < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::ConstantBoolean::operator
+      class ConstantBoolean < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::ConstantBoolean::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (bool) -> bool
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::ConstantBoolean::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantBoolean::operator,
           ?property_name: String,
           ?value: bool
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::ConstantBoolean::operator,
+          operator: HubSpotSDK::Models::Cms::ConstantBoolean::operator,
           property_name: String,
           value: bool
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :CONSTANT_BOOLEAN
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSTANT_BOOLEAN: :CONSTANT_BOOLEAN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::ConstantBoolean::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::ConstantBoolean::operator]
         end
       end
     end

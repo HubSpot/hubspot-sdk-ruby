@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchInputJsonNode < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputJsonNode < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #   JSON nodes to input.
         #
         #   @return [Array<Object>]
-        required :inputs, HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown]
+        required :inputs, HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!method initialize(inputs:)
         #   @param inputs [Array<Object>] JSON nodes to input.

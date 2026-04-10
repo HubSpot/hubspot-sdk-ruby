@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicQuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicQuarterReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the quarter reference.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute reference_type
         #   Indicates the type of reference (QUARTER).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicQuarterReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicQuarterReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicQuarterReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicQuarterReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -53,7 +53,7 @@ module HubspotSDK
         #
         #   @param month [Integer] The month component of the quarter reference.
         #
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicQuarterReference::ReferenceType] Indicates the type of reference (QUARTER).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicQuarterReference::ReferenceType] Indicates the type of reference (QUARTER).
         #
         #   @param hour [Integer] The hour component of the quarter reference.
         #
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # Indicates the type of reference (QUARTER).
         #
-        # @see HubspotSDK::Models::Crm::PublicQuarterReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicQuarterReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           QUARTER = :QUARTER
 

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class LongFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class LongFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #   The type of the field, which is LONG by default.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::LongFieldSchema::Type]
-        required :type, enum: -> { HubspotSDK::Automation::LongFieldSchema::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::LongFieldSchema::Type]
+        required :type, enum: -> { HubSpotSDK::Automation::LongFieldSchema::Type }
 
         # @!attribute maximum
         #   The maximum value allowed for the long field.
@@ -23,7 +23,7 @@ module HubspotSDK
         optional :minimum, Integer
 
         # @!method initialize(type:, maximum: nil, minimum: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Automation::LongFieldSchema::Type] The type of the field, which is LONG by default.
+        #   @param type [Symbol, HubSpotSDK::Models::Automation::LongFieldSchema::Type] The type of the field, which is LONG by default.
         #
         #   @param maximum [Integer] The maximum value allowed for the long field.
         #
@@ -31,9 +31,9 @@ module HubspotSDK
 
         # The type of the field, which is LONG by default.
         #
-        # @see HubspotSDK::Models::Automation::LongFieldSchema#type
+        # @see HubSpotSDK::Models::Automation::LongFieldSchema#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LONG = :LONG
 

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PropertyUpdate < HubspotSDK::Internal::Type::BaseModel
+      class PropertyUpdate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PropertyUpdate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PropertyUpdate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -44,14 +44,14 @@ module HubspotSDK
         # Controls how the property appears in HubSpot.
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol)
+            T.nilable(HubSpotSDK::Crm::PropertyUpdate::FieldType::OrSymbol)
           )
         end
         attr_reader :field_type
 
         sig do
           params(
-            field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol
+            field_type: HubSpotSDK::Crm::PropertyUpdate::FieldType::OrSymbol
           ).void
         end
         attr_writer :field_type
@@ -85,10 +85,10 @@ module HubspotSDK
         attr_writer :label
 
         # A list of valid options for the property.
-        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         sig { returns(T.nilable(T::Boolean)) }
@@ -99,12 +99,12 @@ module HubspotSDK
 
         # The data type of the property.
         sig do
-          returns(T.nilable(HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol))
+          returns(T.nilable(HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol))
         end
         attr_reader :type
 
         sig do
-          params(type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol).void
+          params(type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol).void
         end
         attr_writer :type
 
@@ -114,14 +114,14 @@ module HubspotSDK
             currency_property_name: String,
             description: String,
             display_order: Integer,
-            field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
             form_field: T::Boolean,
             group_name: String,
             hidden: T::Boolean,
             label: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
-            type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol
+            type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -159,14 +159,14 @@ module HubspotSDK
               currency_property_name: String,
               description: String,
               display_order: Integer,
-              field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
+              field_type: HubSpotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
               form_field: T::Boolean,
               group_name: String,
               hidden: T::Boolean,
               label: String,
-              options: T::Array[HubspotSDK::OptionInput],
+              options: T::Array[HubSpotSDK::OptionInput],
               show_currency_symbol: T::Boolean,
-              type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol
+              type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
             }
           )
         end
@@ -175,78 +175,78 @@ module HubspotSDK
 
         # Controls how the property appears in HubSpot.
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PropertyUpdate::FieldType)
+              T.all(Symbol, HubSpotSDK::Crm::PropertyUpdate::FieldType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOLEANCHECKBOX =
             T.let(
               :booleancheckbox,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           CALCULATION_EQUATION =
             T.let(
               :calculation_equation,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           CHECKBOX =
             T.let(
               :checkbox,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           DATE =
             T.let(
               :date,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           FILE =
             T.let(
               :file,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           HTML =
             T.let(
               :html,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           PHONENUMBER =
             T.let(
               :phonenumber,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           RADIO =
             T.let(
               :radio,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           SELECT =
             T.let(
               :select,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           TEXT =
             T.let(
               :text,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
           TEXTAREA =
             T.let(
               :textarea,
-              HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol]
             )
           end
           def self.values
@@ -255,41 +255,41 @@ module HubspotSDK
 
         # The data type of the property.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PropertyUpdate::Type)
+              T.all(Symbol, HubSpotSDK::Crm::PropertyUpdate::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOL =
-            T.let(:bool, HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
+            T.let(:bool, HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
           DATE =
-            T.let(:date, HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
+            T.let(:date, HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
           DATETIME =
             T.let(
               :datetime,
-              HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
             )
           ENUMERATION =
             T.let(
               :enumeration,
-              HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
             )
           NUMBER =
-            T.let(:number, HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
+            T.let(:number, HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
           PHONE_NUMBER =
             T.let(
               :phone_number,
-              HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
+              HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol
             )
           STRING =
-            T.let(:string, HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
+            T.let(:string, HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::PropertyUpdate::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::PropertyUpdate::Type::TaggedSymbol]
             )
           end
           def self.values

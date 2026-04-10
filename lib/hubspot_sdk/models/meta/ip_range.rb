@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Meta
-      class IPRange < HubspotSDK::Internal::Type::BaseModel
+      class IPRange < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute cidr
         #   The CIDR notation representing the IP range.
         #
@@ -19,33 +19,33 @@ module HubspotSDK
         # @!attribute direction
         #   The direction of the IP traffic, which can be INGRESS or EGRESS.
         #
-        #   @return [Symbol, HubspotSDK::Models::Meta::IPRange::Direction]
-        required :direction, enum: -> { HubspotSDK::Meta::IPRange::Direction }
+        #   @return [Symbol, HubSpotSDK::Models::Meta::IPRange::Direction]
+        required :direction, enum: -> { HubSpotSDK::Meta::IPRange::Direction }
 
         # @!attribute service
         #   The service associated with the IP range, such as EMAIL, API, DNS, or
         #   WEB_SCRAPING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Meta::IPRange::Service]
-        required :service, enum: -> { HubspotSDK::Meta::IPRange::Service }
+        #   @return [Symbol, HubSpotSDK::Models::Meta::IPRange::Service]
+        required :service, enum: -> { HubSpotSDK::Meta::IPRange::Service }
 
         # @!method initialize(cidr:, description:, direction:, service:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Meta::IPRange} for more details.
+        #   {HubSpotSDK::Models::Meta::IPRange} for more details.
         #
         #   @param cidr [String] The CIDR notation representing the IP range.
         #
         #   @param description [String] A description of the IP range.
         #
-        #   @param direction [Symbol, HubspotSDK::Models::Meta::IPRange::Direction] The direction of the IP traffic, which can be INGRESS or EGRESS.
+        #   @param direction [Symbol, HubSpotSDK::Models::Meta::IPRange::Direction] The direction of the IP traffic, which can be INGRESS or EGRESS.
         #
-        #   @param service [Symbol, HubspotSDK::Models::Meta::IPRange::Service] The service associated with the IP range, such as EMAIL, API, DNS, or WEB_SCRAPI
+        #   @param service [Symbol, HubSpotSDK::Models::Meta::IPRange::Service] The service associated with the IP range, such as EMAIL, API, DNS, or WEB_SCRAPI
 
         # The direction of the IP traffic, which can be INGRESS or EGRESS.
         #
-        # @see HubspotSDK::Models::Meta::IPRange#direction
+        # @see HubSpotSDK::Models::Meta::IPRange#direction
         module Direction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EGRESS = :EGRESS
           INGRESS = :INGRESS
@@ -57,9 +57,9 @@ module HubspotSDK
         # The service associated with the IP range, such as EMAIL, API, DNS, or
         # WEB_SCRAPING.
         #
-        # @see HubspotSDK::Models::Meta::IPRange#service
+        # @see HubSpotSDK::Models::Meta::IPRange#service
         module Service
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           API = :API
           DNS = :DNS

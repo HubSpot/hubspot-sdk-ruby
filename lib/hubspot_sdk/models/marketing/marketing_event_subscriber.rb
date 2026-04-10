@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventSubscriber < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute interaction_date_time
         #   Timestamp in milliseconds at which the contact subscribed to the event.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   The key-value set of the properties of the contact
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute vid
         #   The ID of the contact in HubSpot

@@ -1,32 +1,32 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       module Currencies
         module ExchangeRates
-          class BatchUpdateParams < HubspotSDK::Models::Settings::BatchInputExchangeRateUpdateRequest
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchUpdateParams < HubSpotSDK::Models::Settings::BatchInputExchangeRateUpdateRequest
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Settings::Currencies::ExchangeRates::BatchUpdateParams,
-                  HubspotSDK::Internal::AnyHash
+                  HubSpotSDK::Settings::Currencies::ExchangeRates::BatchUpdateParams,
+                  HubSpotSDK::Internal::AnyHash
                 )
               end
 
             sig do
               params(
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
             def self.new(request_options: {})
             end
 
             sig do
-              override.returns({ request_options: HubspotSDK::RequestOptions })
+              override.returns({ request_options: HubSpotSDK::RequestOptions })
             end
             def to_hash
             end

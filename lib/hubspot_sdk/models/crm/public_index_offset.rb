@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicIndexOffset < HubspotSDK::Internal::Type::BaseModel
+      class PublicIndexOffset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute days
         #   The number of days to offset.
         #

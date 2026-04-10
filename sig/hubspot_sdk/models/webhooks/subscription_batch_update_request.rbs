@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type subscription_batch_update_request = { id: Integer, active: bool }
 
-      class SubscriptionBatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor active: bool

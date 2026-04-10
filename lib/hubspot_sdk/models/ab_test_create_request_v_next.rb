@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AbTestCreateRequestVNext < HubspotSDK::Internal::Type::BaseModel
+    class AbTestCreateRequestVNext < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute content_id
       #   ID of the object to test.
       #

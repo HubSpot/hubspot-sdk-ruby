@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchInputPublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicStatusRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::BatchInputPublicStatusRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::BatchInputPublicStatusRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         # update request. This property is required.
         sig do
           returns(
-            T::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest]
+            T::Array[HubSpotSDK::CommunicationPreferences::PublicStatusRequest]
           )
         end
         attr_accessor :inputs
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -41,7 +41,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::CommunicationPreferences::PublicStatusRequest
+                  HubSpotSDK::CommunicationPreferences::PublicStatusRequest
                 ]
             }
           )

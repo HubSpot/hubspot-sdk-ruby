@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseWithTotalPublicCampaign < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicCampaign < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of PublicCampaign objects, each representing a campaign with its
         #   associated properties.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicCampaign>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaign>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaign] }
 
         # @!attribute total
         #   An integer representing the total number of public campaigns available.
@@ -19,19 +19,19 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::CollectionResponseWithTotalPublicCampaign} for
+        #   {HubSpotSDK::Models::Marketing::CollectionResponseWithTotalPublicCampaign} for
         #   more details.
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaign>] An array of PublicCampaign objects, each representing a campaign with its associ
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaign>] An array of PublicCampaign objects, each representing a campaign with its associ
         #
         #   @param total [Integer] An integer representing the total number of public campaigns available.
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

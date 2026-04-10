@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseAssociationSpecWithLabelNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseAssociationSpecWithLabelNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel] }
+        #   @return [Array<HubSpotSDK::Models::Crm::AssociationSpecWithLabel>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Crm::AssociationSpecWithLabel>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::AssociationSpecWithLabel>]
       end
     end
   end

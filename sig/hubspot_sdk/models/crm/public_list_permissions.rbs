@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_list_permissions =
@@ -7,7 +7,7 @@ module HubspotSDK
           users_with_edit_access: ::Array[Integer]
         }
 
-      class PublicListPermissions < HubspotSDK::Internal::Type::BaseModel
+      class PublicListPermissions < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor teams_with_edit_access: ::Array[Integer]
 
         attr_accessor users_with_edit_access: ::Array[Integer]

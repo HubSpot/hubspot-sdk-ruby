@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicCampaignAsset < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignAsset < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the campaign asset.
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #   key-value pairs.
         #
         #   @return [Hash{Symbol=>Float}, nil]
-        optional :metrics, HubspotSDK::Internal::Type::HashOf[Float]
+        optional :metrics, HubSpotSDK::Internal::Type::HashOf[Float]
 
         # @!attribute name
         #   The name of the campaign asset.
@@ -25,7 +25,7 @@ module HubspotSDK
 
         # @!method initialize(id:, metrics: nil, name: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicCampaignAsset} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicCampaignAsset} for more details.
         #
         #   @param id [String] The unique identifier for the campaign asset.
         #

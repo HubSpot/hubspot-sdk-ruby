@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Associations#update_association_labels
-      class AssociationUpdateAssociationLabelsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::Associations#update_association_labels
+      class AssociationUpdateAssociationLabelsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute object_type
         #
@@ -30,16 +30,16 @@ module HubspotSDK
 
         # @!attribute body
         #
-        #   @return [Array<HubspotSDK::Models::AssociationSpec>]
-        required :body, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
+        #   @return [Array<HubSpotSDK::Models::AssociationSpec>]
+        required :body, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationSpec] }
 
         # @!method initialize(object_type:, object_id_:, to_object_type:, to_object_id:, body:, request_options: {})
         #   @param object_type [String]
         #   @param object_id_ [String]
         #   @param to_object_type [String]
         #   @param to_object_id [String]
-        #   @param body [Array<HubspotSDK::Models::AssociationSpec>]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param body [Array<HubSpotSDK::Models::AssociationSpec>]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type inbound_db_object_type =
@@ -16,16 +16,16 @@ module HubspotSDK
           has_pipelines: bool,
           indexed_for_filters_and_reports: bool,
           last_modified_property_name: String,
-          meta_type: HubspotSDK::Models::Cms::InboundDBObjectType::meta_type,
+          meta_type: HubSpotSDK::Models::Cms::InboundDBObjectType::meta_type,
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
-          permissioning_type: HubspotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
+          permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,
           required_properties: ::Array[String],
           restorable: bool,
-          scope_mappings: ::Array[HubspotSDK::Cms::ScopeMapping],
+          scope_mappings: ::Array[HubSpotSDK::Cms::ScopeMapping],
           secondary_display_label_property_names: ::Array[String],
           access_scope_name: String,
           created_at: Integer,
@@ -39,12 +39,12 @@ module HubspotSDK
           primary_display_label_property_name: String,
           read_scope_name: String,
           singular_form: String,
-          status: HubspotSDK::Models::Cms::InboundDBObjectType::status,
-          visibility: HubspotSDK::Models::Cms::InboundDBObjectType::visibility,
+          status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
+          visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
           write_scope_name: String
         }
 
-      class InboundDBObjectType < HubspotSDK::Internal::Type::BaseModel
+      class InboundDBObjectType < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor allows_sensitive_properties: bool
@@ -71,7 +71,7 @@ module HubspotSDK
 
         attr_accessor last_modified_property_name: String
 
-        attr_accessor meta_type: HubspotSDK::Models::Cms::InboundDBObjectType::meta_type
+        attr_accessor meta_type: HubSpotSDK::Models::Cms::InboundDBObjectType::meta_type
 
         attr_accessor meta_type_id: Integer
 
@@ -79,7 +79,7 @@ module HubspotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor permissioning_type: HubspotSDK::Models::Cms::InboundDBObjectType::permissioning_type
+        attr_accessor permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type
 
         attr_accessor pipeline_property_name: String
 
@@ -89,7 +89,7 @@ module HubspotSDK
 
         attr_accessor restorable: bool
 
-        attr_accessor scope_mappings: ::Array[HubspotSDK::Cms::ScopeMapping]
+        attr_accessor scope_mappings: ::Array[HubSpotSDK::Cms::ScopeMapping]
 
         attr_accessor secondary_display_label_property_names: ::Array[String]
 
@@ -141,17 +141,17 @@ module HubspotSDK
 
         def singular_form=: (String) -> String
 
-        attr_reader status: HubspotSDK::Models::Cms::InboundDBObjectType::status?
+        attr_reader status: HubSpotSDK::Models::Cms::InboundDBObjectType::status?
 
         def status=: (
-          HubspotSDK::Models::Cms::InboundDBObjectType::status
-        ) -> HubspotSDK::Models::Cms::InboundDBObjectType::status
+          HubSpotSDK::Models::Cms::InboundDBObjectType::status
+        ) -> HubSpotSDK::Models::Cms::InboundDBObjectType::status
 
-        attr_reader visibility: HubspotSDK::Models::Cms::InboundDBObjectType::visibility?
+        attr_reader visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility?
 
         def visibility=: (
-          HubspotSDK::Models::Cms::InboundDBObjectType::visibility
-        ) -> HubspotSDK::Models::Cms::InboundDBObjectType::visibility
+          HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
+        ) -> HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
 
         attr_reader write_scope_name: String?
 
@@ -171,16 +171,16 @@ module HubspotSDK
           has_pipelines: bool,
           indexed_for_filters_and_reports: bool,
           last_modified_property_name: String,
-          meta_type: HubspotSDK::Models::Cms::InboundDBObjectType::meta_type,
+          meta_type: HubSpotSDK::Models::Cms::InboundDBObjectType::meta_type,
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
-          permissioning_type: HubspotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
+          permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,
           required_properties: ::Array[String],
           restorable: bool,
-          scope_mappings: ::Array[HubspotSDK::Cms::ScopeMapping],
+          scope_mappings: ::Array[HubSpotSDK::Cms::ScopeMapping],
           secondary_display_label_property_names: ::Array[String],
           ?access_scope_name: String,
           ?created_at: Integer,
@@ -194,8 +194,8 @@ module HubspotSDK
           ?primary_display_label_property_name: String,
           ?read_scope_name: String,
           ?singular_form: String,
-          ?status: HubspotSDK::Models::Cms::InboundDBObjectType::status,
-          ?visibility: HubspotSDK::Models::Cms::InboundDBObjectType::visibility,
+          ?status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
+          ?visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
           ?write_scope_name: String
         ) -> void
 
@@ -213,16 +213,16 @@ module HubspotSDK
           has_pipelines: bool,
           indexed_for_filters_and_reports: bool,
           last_modified_property_name: String,
-          meta_type: HubspotSDK::Models::Cms::InboundDBObjectType::meta_type,
+          meta_type: HubSpotSDK::Models::Cms::InboundDBObjectType::meta_type,
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
-          permissioning_type: HubspotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
+          permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,
           required_properties: ::Array[String],
           restorable: bool,
-          scope_mappings: ::Array[HubspotSDK::Cms::ScopeMapping],
+          scope_mappings: ::Array[HubSpotSDK::Cms::ScopeMapping],
           secondary_display_label_property_names: ::Array[String],
           access_scope_name: String,
           created_at: Integer,
@@ -236,8 +236,8 @@ module HubspotSDK
           primary_display_label_property_name: String,
           read_scope_name: String,
           singular_form: String,
-          status: HubspotSDK::Models::Cms::InboundDBObjectType::status,
-          visibility: HubspotSDK::Models::Cms::InboundDBObjectType::visibility,
+          status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
+          visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
           write_scope_name: String
         }
 
@@ -253,7 +253,7 @@ module HubspotSDK
           | :WORK_SUB
 
         module MetaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CMS_HUBDB: :CMS_HUBDB
           HUBSPOT: :HUBSPOT
@@ -265,7 +265,7 @@ module HubspotSDK
           WORK: :WORK
           WORK_SUB: :WORK_SUB
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::InboundDBObjectType::meta_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::meta_type]
         end
 
         type permissioning_type =
@@ -276,7 +276,7 @@ module HubspotSDK
           | :TEAM_BASED
 
         module PermissioningType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_OR_NONE: :ALL_OR_NONE
           DO_NOT_CHECK_PERMISSIONS: :DO_NOT_CHECK_PERMISSIONS
@@ -284,19 +284,19 @@ module HubspotSDK
           OWNER_BASED: :OWNER_BASED
           TEAM_BASED: :TEAM_BASED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::InboundDBObjectType::permissioning_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type]
         end
 
         type status = :Deprecated | :"In development" | :Live
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEPRECATED: :Deprecated
           IN_DEVELOPMENT: :"In development"
           LIVE: :Live
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::InboundDBObjectType::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::status]
         end
 
         type visibility =
@@ -306,14 +306,14 @@ module HubspotSDK
           | :"Internal only"
 
         module Visibility
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOMER_FACING: :"Customer-facing"
           CUSTOMER_FACING_PUBLIC_API: :"Customer-facing public API"
           CUSTOMER_FACING_UI: :"Customer-facing UI"
           INTERNAL_ONLY: :"Internal only"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::InboundDBObjectType::visibility]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
         end
       end
     end

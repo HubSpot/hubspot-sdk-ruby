@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AttachToLangPrimaryRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AttachToLangPrimaryRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of the object to add to a multi-language group.
         #
@@ -13,8 +13,8 @@ module HubspotSDK
         # @!attribute language
         #   Designated language of the object to add to a multi-language group.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language]
-        required :language, enum: -> { HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::Language }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language]
+        required :language, enum: -> { HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language }
 
         # @!attribute primary_id
         #   ID of primary language object in multi-language group.
@@ -25,25 +25,25 @@ module HubspotSDK
         # @!attribute primary_language
         #   Primary language of the multi-language group.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage, nil]
         optional :primary_language,
-                 enum: -> { HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage },
+                 enum: -> { HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage },
                  api_name: :primaryLanguage
 
         # @!method initialize(id:, language:, primary_id:, primary_language: nil)
         #   @param id [String] ID of the object to add to a multi-language group.
         #
-        #   @param language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
+        #   @param language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
         #
         #   @param primary_id [String] ID of primary language object in multi-language group.
         #
-        #   @param primary_language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
+        #   @param primary_language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
 
         # Designated language of the object to add to a multi-language group.
         #
-        # @see HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext#language
+        # @see HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext#language
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab
@@ -895,9 +895,9 @@ module HubspotSDK
 
         # Primary language of the multi-language group.
         #
-        # @see HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext#primary_language
+        # @see HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext#primary_language
         module PrimaryLanguage
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab

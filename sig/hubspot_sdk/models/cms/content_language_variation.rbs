@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_language_variation =
@@ -20,7 +20,7 @@ module HubspotSDK
           tag_ids: ::Array[Integer]
         }
 
-      class ContentLanguageVariation < HubspotSDK::Internal::Type::BaseModel
+      class ContentLanguageVariation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor archived_in_dashboard: bool

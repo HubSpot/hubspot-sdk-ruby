@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class ExchangeRate < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   A unique identifier for the exchange rate
         #
@@ -32,18 +32,18 @@ module HubspotSDK
         #   This represents the three-letter currency code (such as USD for US Dollar) of
         #   the currency you are converting from.
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::ExchangeRate::FromCurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::ExchangeRate::FromCurrencyCode]
         required :from_currency_code,
-                 enum: -> { HubspotSDK::Settings::ExchangeRate::FromCurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::ExchangeRate::FromCurrencyCode },
                  api_name: :fromCurrencyCode
 
         # @!attribute to_currency_code
         #   This represents the three-letter currency code (such as USD for US Dollar) of
         #   the currency you are converting to.
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::ExchangeRate::ToCurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::ExchangeRate::ToCurrencyCode]
         required :to_currency_code,
-                 enum: -> { HubspotSDK::Settings::ExchangeRate::ToCurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::ExchangeRate::ToCurrencyCode },
                  api_name: :toCurrencyCode
 
         # @!attribute updated_at
@@ -56,11 +56,11 @@ module HubspotSDK
         #   This indicates if the exchange rate is shown in the MultiCurrency settings page.
         #
         #   @return [Boolean]
-        required :visible_in_ui, HubspotSDK::Internal::Type::Boolean, api_name: :visibleInUI
+        required :visible_in_ui, HubSpotSDK::Internal::Type::Boolean, api_name: :visibleInUI
 
         # @!method initialize(id:, conversion_rate:, created_at:, effective_at:, from_currency_code:, to_currency_code:, updated_at:, visible_in_ui:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::ExchangeRate} for more details.
+        #   {HubSpotSDK::Models::Settings::ExchangeRate} for more details.
         #
         #   @param id [String] A unique identifier for the exchange rate
         #
@@ -70,9 +70,9 @@ module HubspotSDK
         #
         #   @param effective_at [Time] The date the exchange rate is in effect.
         #
-        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #   @param from_currency_code [Symbol, HubSpotSDK::Models::Settings::ExchangeRate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
         #
-        #   @param to_currency_code [Symbol, HubspotSDK::Models::Settings::ExchangeRate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #   @param to_currency_code [Symbol, HubSpotSDK::Models::Settings::ExchangeRate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
         #
         #   @param updated_at [Time] The date the exchange rate was last updated.
         #
@@ -81,9 +81,9 @@ module HubspotSDK
         # This represents the three-letter currency code (such as USD for US Dollar) of
         # the currency you are converting from.
         #
-        # @see HubspotSDK::Models::Settings::ExchangeRate#from_currency_code
+        # @see HubSpotSDK::Models::Settings::ExchangeRate#from_currency_code
         module FromCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN
@@ -269,9 +269,9 @@ module HubspotSDK
         # This represents the three-letter currency code (such as USD for US Dollar) of
         # the currency you are converting to.
         #
-        # @see HubspotSDK::Models::Settings::ExchangeRate#to_currency_code
+        # @see HubSpotSDK::Models::Settings::ExchangeRate#to_currency_code
         module ToCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

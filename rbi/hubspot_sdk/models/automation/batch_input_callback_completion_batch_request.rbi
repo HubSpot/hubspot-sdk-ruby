@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class BatchInputCallbackCompletionBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputCallbackCompletionBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::BatchInputCallbackCompletionBatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::BatchInputCallbackCompletionBatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+            T::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
           )
         end
         attr_accessor :inputs
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Automation::CallbackCompletionBatchRequest::OrHash
+                HubSpotSDK::Automation::CallbackCompletionBatchRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::Automation::CallbackCompletionBatchRequest]
+                T::Array[HubSpotSDK::Automation::CallbackCompletionBatchRequest]
             }
           )
         end

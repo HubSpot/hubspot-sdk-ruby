@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicSetOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicSetOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,14 +19,14 @@ module HubspotSDK
 
         # Specifies the type of refinement (SET_OCCURRENCES).
         sig do
-          returns(HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol)
         end
         attr_accessor :type
 
         sig do
           params(
             set_type: String,
-            type: HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol
+            type: HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -43,7 +43,7 @@ module HubspotSDK
             {
               set_type: String,
               type:
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type::OrSymbol
             }
           )
         end
@@ -52,24 +52,24 @@ module HubspotSDK
 
         # Specifies the type of refinement (SET_OCCURRENCES).
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type)
+              T.all(Symbol, HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           SET_OCCURRENCES =
             T.let(
               :SET_OCCURRENCES,
-              HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::Type::TaggedSymbol
               ]
             )
           end

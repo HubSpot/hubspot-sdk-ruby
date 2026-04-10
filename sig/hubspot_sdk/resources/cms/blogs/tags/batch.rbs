@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -6,27 +6,27 @@ module HubspotSDK
           class Batch
             def delete: (
               inputs: ::Array[String],
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> nil
 
             def create_batch: (
-              inputs: ::Array[HubspotSDK::Cms::Blogs::Tag],
-              ?request_options: HubspotSDK::request_opts
+              inputs: ::Array[HubSpotSDK::Cms::Blogs::Tag],
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
             def get_batch: (
               inputs: ::Array[String],
               ?archived: bool,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
             def update_batch: (
               inputs: ::Array[top],
               ?archived: bool,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 
-            def initialize: (client: HubspotSDK::Client) -> void
+            def initialize: (client: HubSpotSDK::Client) -> void
           end
         end
       end

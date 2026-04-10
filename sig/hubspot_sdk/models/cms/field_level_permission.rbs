@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type field_level_permission = { access_level: String }
 
-      class FieldLevelPermission < HubspotSDK::Internal::Type::BaseModel
+      class FieldLevelPermission < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor access_level: String
 
         def initialize: (access_level: String) -> void

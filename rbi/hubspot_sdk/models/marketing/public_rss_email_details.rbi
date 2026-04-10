@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicRssEmailDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicRssEmailDetails < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicRssEmailDetails,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicRssEmailDetails,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol
             )
           )
         end
@@ -36,7 +36,7 @@ module HubspotSDK
         sig do
           params(
             blog_layout:
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol
           ).void
         end
         attr_writer :blog_layout
@@ -82,7 +82,7 @@ module HubspotSDK
             blog_email_type: String,
             blog_image_max_width: Integer,
             blog_layout:
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol,
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol,
             hubspot_blog_id: String,
             max_entries: Integer,
             rss_entry_template: String,
@@ -110,7 +110,7 @@ module HubspotSDK
               blog_email_type: String,
               blog_image_max_width: Integer,
               blog_layout:
-                HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol,
+                HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::OrSymbol,
               hubspot_blog_id: String,
               max_entries: Integer,
               rss_entry_template: String,
@@ -124,13 +124,13 @@ module HubspotSDK
         end
 
         module BlogLayout
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout
+                HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -138,23 +138,23 @@ module HubspotSDK
           FULL_POST =
             T.let(
               :FULL_POST,
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
             )
           SUMMARY_NO_FEATURED_IMAGE =
             T.let(
               :SUMMARY_NO_FEATURED_IMAGE,
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
             )
           SUMMARY_WITH_FEATURED_IMAGE =
             T.let(
               :SUMMARY_WITH_FEATURED_IMAGE,
-              HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
+              HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
+                HubSpotSDK::Marketing::PublicRssEmailDetails::BlogLayout::TaggedSymbol
               ]
             )
           end

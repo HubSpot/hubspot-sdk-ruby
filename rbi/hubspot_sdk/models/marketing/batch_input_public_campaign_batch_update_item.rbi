@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputPublicCampaignBatchUpdateItem < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPublicCampaignBatchUpdateItem < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputPublicCampaignBatchUpdateItem,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputPublicCampaignBatchUpdateItem,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         # properties to update for a specific campaign.
         sig do
           returns(
-            T::Array[HubspotSDK::Marketing::PublicCampaignBatchUpdateItem]
+            T::Array[HubSpotSDK::Marketing::PublicCampaignBatchUpdateItem]
           )
         end
         attr_accessor :inputs
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::PublicCampaignBatchUpdateItem::OrHash
+                HubSpotSDK::Marketing::PublicCampaignBatchUpdateItem::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::Marketing::PublicCampaignBatchUpdateItem]
+                T::Array[HubSpotSDK::Marketing::PublicCampaignBatchUpdateItem]
             }
           )
         end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_asset_search_params =
@@ -40,11 +40,11 @@ module HubspotSDK
           width_gte: Integer,
           width_lte: Integer
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class FileAssetSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader after: String?
 
@@ -227,7 +227,7 @@ module HubspotSDK
           ?width: Integer,
           ?width_gte: Integer,
           ?width_lte: Integer,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -267,7 +267,7 @@ module HubspotSDK
           width: Integer,
           width_gte: Integer,
           width_lte: Integer,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

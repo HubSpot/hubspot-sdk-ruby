@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ChirpAIContextObject < HubspotSDK::Internal::Type::BaseModel
+      class ChirpAIContextObject < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ChirpAIContextObject,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ChirpAIContextObject,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -31,18 +31,18 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
             ]
           )
         end
         attr_accessor :unstructured_sources
 
-        sig { returns(T.nilable(HubspotSDK::Automation::ComplianceIDs)) }
+        sig { returns(T.nilable(HubSpotSDK::Automation::ComplianceIDs)) }
         attr_reader :compliance_ids
 
         sig do
           params(
-            compliance_ids: HubspotSDK::Automation::ComplianceIDs::OrHash
+            compliance_ids: HubSpotSDK::Automation::ComplianceIDs::OrHash
           ).void
         end
         attr_writer :compliance_ids
@@ -76,9 +76,9 @@ module HubspotSDK
             otel_context_holder: T::Hash[Symbol, String],
             unstructured_sources:
               T::Array[
-                HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
+                HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
               ],
-            compliance_ids: HubspotSDK::Automation::ComplianceIDs::OrHash,
+            compliance_ids: HubSpotSDK::Automation::ComplianceIDs::OrHash,
             feature_id: String,
             inference_id: String,
             trajectory_id: String
@@ -113,9 +113,9 @@ module HubspotSDK
               otel_context_holder: T::Hash[Symbol, String],
               unstructured_sources:
                 T::Array[
-                  HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
+                  HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
                 ],
-              compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+              compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
               feature_id: String,
               inference_id: String,
               trajectory_id: String
@@ -126,13 +126,13 @@ module HubspotSDK
         end
 
         module UnstructuredSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource
+                HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -140,113 +140,113 @@ module HubspotSDK
           NONE =
             T.let(
               :NONE,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           USER_INPUT =
             T.let(
               :USER_INPUT,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           LOGGED_EMAIL =
             T.let(
               :LOGGED_EMAIL,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           VIDEO_CALL =
             T.let(
               :VIDEO_CALL,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           AUDIO_CALL =
             T.let(
               :AUDIO_CALL,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           CALL_TRANSCRIPT =
             T.let(
               :CALL_TRANSCRIPT,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           MEETING_TRANSCRIPT =
             T.let(
               :MEETING_TRANSCRIPT,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           FORMS =
             T.let(
               :FORMS,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           FEEDBACK_SURVEY =
             T.let(
               :FEEDBACK_SURVEY,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           PDF =
             T.let(
               :PDF,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           QUOTE =
             T.let(
               :QUOTE,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           INVOICE =
             T.let(
               :INVOICE,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           OTHER_ATTACHMENT_DOC =
             T.let(
               :OTHER_ATTACHMENT_DOC,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           WHATSAPP =
             T.let(
               :WHATSAPP,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           SMS =
             T.let(
               :SMS,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           CHAT =
             T.let(
               :CHAT,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           FACEBOOK_MESSENGER =
             T.let(
               :FACEBOOK_MESSENGER,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           CUSTOM_CHANNEL_OR_API =
             T.let(
               :CUSTOM_CHANNEL_OR_API,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           MANY =
             T.let(
               :MANY,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           NOTE =
             T.let(
               :NOTE,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
           DERIVED =
             T.let(
               :DERIVED,
-              HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+              HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
+                HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkAvailabilityForDuration < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkAvailabilityForDuration < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute availabilities
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalMeetingAvailability>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalMeetingAvailability>]
         required :availabilities,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalMeetingAvailability] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalMeetingAvailability] }
 
         # @!attribute meeting_duration_millis
         #   The duration of the meeting in milliseconds.
@@ -17,7 +17,7 @@ module HubspotSDK
         required :meeting_duration_millis, Integer, api_name: :meetingDurationMillis
 
         # @!method initialize(availabilities:, meeting_duration_millis:)
-        #   @param availabilities [Array<HubspotSDK::Models::Scheduler::ExternalMeetingAvailability>]
+        #   @param availabilities [Array<HubSpotSDK::Models::Scheduler::ExternalMeetingAvailability>]
         #
         #   @param meeting_duration_millis [Integer] The duration of the meeting in milliseconds.
       end

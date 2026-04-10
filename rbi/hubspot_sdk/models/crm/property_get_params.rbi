@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PropertyGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PropertyGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PropertyGetParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PropertyGetParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol
             )
           )
         end
@@ -40,7 +40,7 @@ module HubspotSDK
         sig do
           params(
             data_sensitivity:
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol
           ).void
         end
         attr_writer :data_sensitivity
@@ -63,10 +63,10 @@ module HubspotSDK
             property_name: String,
             archived: T::Boolean,
             data_sensitivity:
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
             locale: String,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -88,10 +88,10 @@ module HubspotSDK
               property_name: String,
               archived: T::Boolean,
               data_sensitivity:
-                HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
+                HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
               locale: String,
               properties: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -99,34 +99,34 @@ module HubspotSDK
         end
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PropertyGetParams::DataSensitivity)
+              T.all(Symbol, HubSpotSDK::Crm::PropertyGetParams::DataSensitivity)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIGHLY_SENSITIVE =
             T.let(
               :highly_sensitive,
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
             )
           NON_SENSITIVE =
             T.let(
               :non_sensitive,
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :sensitive,
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
+                HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::TaggedSymbol
               ]
             )
           end

@@ -1,51 +1,51 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type workflows_request_context =
         {
-          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          source: HubSpotSDK::Models::Automation::WorkflowsRequestContext::source,
           workflow_id: Integer,
-          action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          action_execution_index_identifier: HubSpotSDK::Automation::ActionExecutionIndexIdentifier,
           action_id: Integer
         }
 
-      class WorkflowsRequestContext < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source
+      class WorkflowsRequestContext < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor source: HubSpotSDK::Models::Automation::WorkflowsRequestContext::source
 
         attr_accessor workflow_id: Integer
 
-        attr_reader action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier?
+        attr_reader action_execution_index_identifier: HubSpotSDK::Automation::ActionExecutionIndexIdentifier?
 
         def action_execution_index_identifier=: (
-          HubspotSDK::Automation::ActionExecutionIndexIdentifier
-        ) -> HubspotSDK::Automation::ActionExecutionIndexIdentifier
+          HubSpotSDK::Automation::ActionExecutionIndexIdentifier
+        ) -> HubSpotSDK::Automation::ActionExecutionIndexIdentifier
 
         attr_reader action_id: Integer?
 
         def action_id=: (Integer) -> Integer
 
         def initialize: (
-          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          source: HubSpotSDK::Models::Automation::WorkflowsRequestContext::source,
           workflow_id: Integer,
-          ?action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          ?action_execution_index_identifier: HubSpotSDK::Automation::ActionExecutionIndexIdentifier,
           ?action_id: Integer
         ) -> void
 
         def to_hash: -> {
-          source: HubspotSDK::Models::Automation::WorkflowsRequestContext::source,
+          source: HubSpotSDK::Models::Automation::WorkflowsRequestContext::source,
           workflow_id: Integer,
-          action_execution_index_identifier: HubspotSDK::Automation::ActionExecutionIndexIdentifier,
+          action_execution_index_identifier: HubSpotSDK::Automation::ActionExecutionIndexIdentifier,
           action_id: Integer
         }
 
         type source = :WORKFLOWS
 
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WORKFLOWS: :WORKFLOWS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::WorkflowsRequestContext::source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::WorkflowsRequestContext::source]
         end
       end
     end

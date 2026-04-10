@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceStepDependencyResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceStepDependencyResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSequenceStepDependencyResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSequenceStepDependencyResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         # TASK_COMPLETION or MANUAL_PAUSE.
         sig do
           returns(
-            HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
+            HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
           )
         end
         attr_accessor :dependency_type
@@ -56,7 +56,7 @@ module HubspotSDK
             id: String,
             created_at: Time,
             dependency_type:
-              HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::OrSymbol,
+              HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::OrSymbol,
             relies_on_sequence_step_id: String,
             relies_on_step_order: Integer,
             required_by_sequence_step_id: String,
@@ -93,7 +93,7 @@ module HubspotSDK
               id: String,
               created_at: Time,
               dependency_type:
-                HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol,
+                HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol,
               relies_on_sequence_step_id: String,
               relies_on_step_order: Integer,
               required_by_sequence_step_id: String,
@@ -108,13 +108,13 @@ module HubspotSDK
         # The type of dependency between sequence steps with accepted values being
         # TASK_COMPLETION or MANUAL_PAUSE.
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType
+                HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -122,18 +122,18 @@ module HubspotSDK
           MANUAL_PAUSE =
             T.let(
               :MANUAL_PAUSE,
-              HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
             )
           TASK_COMPLETION =
             T.let(
               :TASK_COMPLETION,
-              HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
+              HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
+                HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::DependencyType::TaggedSymbol
               ]
             )
           end

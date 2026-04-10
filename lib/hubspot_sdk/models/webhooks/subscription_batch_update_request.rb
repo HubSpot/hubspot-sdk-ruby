@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SubscriptionBatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the webhook subscription to update.
         #
@@ -16,11 +16,11 @@ module HubspotSDK
         #   not send notifications.
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(id:, active:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest} for more details.
+        #   {HubSpotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest} for more details.
         #
         #   @param id [Integer] The ID of the webhook subscription to update.
         #

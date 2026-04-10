@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPrivacyAnalyticsFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicPrivacyAnalyticsFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Specifies the type of filter (PRIVACY).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
@@ -27,9 +27,9 @@ module HubspotSDK
 
         # @!method initialize(filter_type:, operator:, privacy_name:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter} for more details.
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter::FilterType] Specifies the type of filter (PRIVACY).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter::FilterType] Specifies the type of filter (PRIVACY).
         #
         #   @param operator [String] Defines the operation to be applied within the filter (PRIVACY_CONSENT_GRANTED,
         #
@@ -37,9 +37,9 @@ module HubspotSDK
 
         # Specifies the type of filter (PRIVACY).
         #
-        # @see HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PRIVACY = :PRIVACY
 

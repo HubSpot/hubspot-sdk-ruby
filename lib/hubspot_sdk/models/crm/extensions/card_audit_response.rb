@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardAuditResponse < HubspotSDK::Internal::Type::BaseModel
+        class CardAuditResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute action_type
           #   The type of action performed, with possible values: CREATE, DELETE, UPDATE.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType]
           required :action_type,
-                   enum: -> { HubspotSDK::Crm::Extensions::CardAuditResponse::ActionType },
+                   enum: -> { HubSpotSDK::Crm::Extensions::CardAuditResponse::ActionType },
                    api_name: :actionType
 
           # @!attribute application_id
@@ -23,9 +23,9 @@ module HubspotSDK
           #   The source of authentication for the action, with possible values: APP,
           #   EXTERNAL, INTERNAL.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource]
           required :auth_source,
-                   enum: -> { HubspotSDK::Crm::Extensions::CardAuditResponse::AuthSource },
+                   enum: -> { HubSpotSDK::Crm::Extensions::CardAuditResponse::AuthSource },
                    api_name: :authSource
 
           # @!attribute changed_at
@@ -48,13 +48,13 @@ module HubspotSDK
 
           # @!method initialize(action_type:, application_id:, auth_source:, changed_at:, initiating_user_id:, object_type_id:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::CardAuditResponse} for more details.
+          #   {HubSpotSDK::Models::Crm::Extensions::CardAuditResponse} for more details.
           #
-          #   @param action_type [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType] The type of action performed, with possible values: CREATE, DELETE, UPDATE.
+          #   @param action_type [Symbol, HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::ActionType] The type of action performed, with possible values: CREATE, DELETE, UPDATE.
           #
           #   @param application_id [Integer] The ID of the application associated with the card.
           #
-          #   @param auth_source [Symbol, HubspotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource] The source of authentication for the action, with possible values: APP, EXTERNAL
+          #   @param auth_source [Symbol, HubSpotSDK::Models::Crm::Extensions::CardAuditResponse::AuthSource] The source of authentication for the action, with possible values: APP, EXTERNAL
           #
           #   @param changed_at [Integer] The timestamp indicating when the change occurred.
           #
@@ -64,9 +64,9 @@ module HubspotSDK
 
           # The type of action performed, with possible values: CREATE, DELETE, UPDATE.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CardAuditResponse#action_type
+          # @see HubSpotSDK::Models::Crm::Extensions::CardAuditResponse#action_type
           module ActionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CREATE = :CREATE
             DELETE = :DELETE
@@ -79,9 +79,9 @@ module HubspotSDK
           # The source of authentication for the action, with possible values: APP,
           # EXTERNAL, INTERNAL.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CardAuditResponse#auth_source
+          # @see HubSpotSDK::Models::Crm::Extensions::CardAuditResponse#auth_source
           module AuthSource
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             APP = :APP
             EXTERNAL = :EXTERNAL

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicObjectSearchRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectSearchRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute after
         #   A paging cursor token for retrieving subsequent pages.
         #
@@ -13,9 +13,9 @@ module HubspotSDK
         # @!attribute filter_groups
         #   Up to 6 groups of filters defining additional query criteria.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::FilterGroup>]
+        #   @return [Array<HubSpotSDK::Models::Crm::FilterGroup>]
         required :filter_groups,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::FilterGroup] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::FilterGroup] },
                  api_name: :filterGroups
 
         # @!attribute limit
@@ -28,13 +28,13 @@ module HubspotSDK
         #   A list of property names to include in the response.
         #
         #   @return [Array<String>]
-        required :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute sorts
         #   Specifies sorting order based on object properties.
         #
         #   @return [Array<String>]
-        required :sorts, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :sorts, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute query
         #   The search query string, up to 3000 characters.
@@ -47,7 +47,7 @@ module HubspotSDK
         #
         #   @param after [String] A paging cursor token for retrieving subsequent pages.
         #
-        #   @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+        #   @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
         #
         #   @param limit [Integer] The maximum results to return, up to 200 objects.
         #

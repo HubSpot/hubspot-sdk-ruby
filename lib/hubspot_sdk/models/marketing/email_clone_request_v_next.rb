@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class EmailCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The email ID.
         #

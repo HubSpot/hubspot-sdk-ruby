@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
@@ -6,35 +6,35 @@ module HubspotSDK
           class Transcripts
             def create: (
               engagement_id: Integer,
-              transcript_create_utterances: ::Array[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance],
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
+              transcript_create_utterances: ::Array[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
 
             def delete: (
               String transcript_id,
-              ?request_options: HubspotSDK::request_opts
+              ?request_options: HubSpotSDK::request_opts
             ) -> nil
 
             def create_inbound_call: (
               create_engagement: bool,
               engagement_properties: ::Hash[Symbol, String],
               external_call_id: String,
-              final_call_status: HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
-              from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+              final_call_status: HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::final_call_status,
+              from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
               potential_recipient_user_ids: ::Array[Integer],
-              to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+              to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
               ?call_started_timestamp: Time,
               ?duration_seconds: Integer,
               ?user_id: Integer,
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
 
             def get: (
               String transcript_id,
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Crm::Extensions::Calling::TranscriptResponse
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse
 
-            def initialize: (client: HubspotSDK::Client) -> void
+            def initialize: (client: HubSpotSDK::Client) -> void
           end
         end
       end

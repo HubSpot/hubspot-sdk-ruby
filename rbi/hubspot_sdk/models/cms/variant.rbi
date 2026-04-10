@@ -1,9 +1,9 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      Variant = T.let(T.anything, HubspotSDK::Internal::Type::Converter)
+      Variant = T.let(T.anything, HubSpotSDK::Internal::Type::Converter)
     end
   end
 end

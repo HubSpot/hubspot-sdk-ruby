@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class LongFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class LongFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::LongFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::LongFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The type of the field, which is LONG by default.
-        sig { returns(HubspotSDK::Automation::LongFieldSchema::Type::OrSymbol) }
+        sig { returns(HubSpotSDK::Automation::LongFieldSchema::Type::OrSymbol) }
         attr_accessor :type
 
         # The maximum value allowed for the long field.
@@ -32,7 +32,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Automation::LongFieldSchema::Type::OrSymbol,
+            type: HubSpotSDK::Automation::LongFieldSchema::Type::OrSymbol,
             maximum: Integer,
             minimum: Integer
           ).returns(T.attached_class)
@@ -50,7 +50,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              type: HubspotSDK::Automation::LongFieldSchema::Type::OrSymbol,
+              type: HubSpotSDK::Automation::LongFieldSchema::Type::OrSymbol,
               maximum: Integer,
               minimum: Integer
             }
@@ -61,24 +61,24 @@ module HubspotSDK
 
         # The type of the field, which is LONG by default.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::LongFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::LongFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           LONG =
             T.let(
               :LONG,
-              HubspotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
               ]
             )
           end

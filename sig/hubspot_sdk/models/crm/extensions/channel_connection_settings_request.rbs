@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type channel_connection_settings_request =
           { is_ready: bool, url: String }
 
-        class ChannelConnectionSettingsRequest < HubspotSDK::Internal::Type::BaseModel
+        class ChannelConnectionSettingsRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor is_ready: bool
 
           attr_accessor url: String

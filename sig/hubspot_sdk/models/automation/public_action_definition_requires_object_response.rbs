@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_action_definition_requires_object_response =
         { requires_object: bool }
 
-      class PublicActionDefinitionRequiresObjectResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionDefinitionRequiresObjectResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor requires_object: bool
 
         def initialize: (requires_object: bool) -> void

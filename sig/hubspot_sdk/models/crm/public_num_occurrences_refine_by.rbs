@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_num_occurrences_refine_by =
         {
-          type: HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
+          type: HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
           max_occurrences: Integer,
           min_occurrences: Integer
         }
 
-      class PublicNumOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_
+      class PublicNumOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_
 
         attr_reader max_occurrences: Integer?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def min_occurrences=: (Integer) -> Integer
 
         def initialize: (
-          type: HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
+          type: HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
           ?max_occurrences: Integer,
           ?min_occurrences: Integer
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
+          type: HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_,
           max_occurrences: Integer,
           min_occurrences: Integer
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type type_ = :NUM_OCCURRENCES
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUM_OCCURRENCES: :NUM_OCCURRENCES
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy::type_]
         end
       end
     end

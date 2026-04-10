@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDefaultAssociationMultiPost < HubspotSDK::Internal::Type::BaseModel
+      class PublicDefaultAssociationMultiPost < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute from
         #   Contains the Id of a Public Object
         #
-        #   @return [HubspotSDK::Models::PublicObjectID]
-        required :from, -> { HubspotSDK::PublicObjectID }
+        #   @return [HubSpotSDK::Models::PublicObjectID]
+        required :from, -> { HubSpotSDK::PublicObjectID }
 
         # @!attribute to
         #   Contains the Id of a Public Object
         #
-        #   @return [HubspotSDK::Models::PublicObjectID]
-        required :to, -> { HubspotSDK::PublicObjectID }
+        #   @return [HubSpotSDK::Models::PublicObjectID]
+        required :to, -> { HubSpotSDK::PublicObjectID }
 
         # @!method initialize(from:, to:)
-        #   @param from [HubspotSDK::Models::PublicObjectID] Contains the Id of a Public Object
+        #   @param from [HubSpotSDK::Models::PublicObjectID] Contains the Id of a Public Object
         #
-        #   @param to [HubspotSDK::Models::PublicObjectID] Contains the Id of a Public Object
+        #   @param to [HubSpotSDK::Models::PublicObjectID] Contains the Id of a Public Object
       end
     end
   end

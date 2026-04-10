@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDealSplitsBatchCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicDealSplitsBatchCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicDealSplitsBatchCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicDealSplitsBatchCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of deal split inputs
         sig do
-          returns(T::Array[HubspotSDK::Crm::PublicDealSplitsCreateRequest])
+          returns(T::Array[HubSpotSDK::Crm::PublicDealSplitsCreateRequest])
         end
         attr_accessor :inputs
 
         sig do
           params(
             inputs:
-              T::Array[HubspotSDK::Crm::PublicDealSplitsCreateRequest::OrHash]
+              T::Array[HubSpotSDK::Crm::PublicDealSplitsCreateRequest::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -32,7 +32,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { inputs: T::Array[HubspotSDK::Crm::PublicDealSplitsCreateRequest] }
+            { inputs: T::Array[HubSpotSDK::Crm::PublicDealSplitsCreateRequest] }
           )
         end
         def to_hash

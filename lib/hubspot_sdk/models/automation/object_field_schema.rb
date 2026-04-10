@@ -1,31 +1,31 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ObjectFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class ObjectFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute properties
         #   Contains the properties of the object.
         #
         #   @return [Object]
-        required :properties, HubspotSDK::Internal::Type::Unknown
+        required :properties, HubSpotSDK::Internal::Type::Unknown
 
         # @!attribute type
         #   Specifies the type of the field, which is 'OBJECT' by default.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::ObjectFieldSchema::Type]
-        required :type, enum: -> { HubspotSDK::Automation::ObjectFieldSchema::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::ObjectFieldSchema::Type]
+        required :type, enum: -> { HubSpotSDK::Automation::ObjectFieldSchema::Type }
 
         # @!method initialize(properties:, type:)
         #   @param properties [Object] Contains the properties of the object.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Automation::ObjectFieldSchema::Type] Specifies the type of the field, which is 'OBJECT' by default.
+        #   @param type [Symbol, HubSpotSDK::Models::Automation::ObjectFieldSchema::Type] Specifies the type of the field, which is 'OBJECT' by default.
 
         # Specifies the type of the field, which is 'OBJECT' by default.
         #
-        # @see HubspotSDK::Models::Automation::ObjectFieldSchema#type
+        # @see HubSpotSDK::Models::Automation::ObjectFieldSchema#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT = :OBJECT
 

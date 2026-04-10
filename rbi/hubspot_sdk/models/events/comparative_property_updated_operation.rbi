@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComparativePropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativePropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -62,10 +62,10 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::OrSymbol,
             default_comparison_value: String,
             default_value: String,
             render_spec: String
@@ -91,10 +91,10 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol,
               default_comparison_value: String,
               default_value: String,
               render_spec: String
@@ -105,13 +105,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -119,18 +119,18 @@ module HubspotSDK
           IS_AFTER =
             T.let(
               :IS_AFTER,
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
             )
           IS_BEFORE =
             T.let(
               :IS_BEFORE,
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -139,13 +139,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -153,13 +153,13 @@ module HubspotSDK
           PROPERTY_UPDATED_COMPARATIVE =
             T.let(
               :"property-updated-comparative",
-              HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::ComparativePropertyUpdatedOperation::PropertyType::TaggedSymbol
               ]
             )
           end

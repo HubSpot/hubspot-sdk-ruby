@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type card_object_type_body =
           {
-            name: HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
+            name: HubSpotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
             properties_to_send: ::Array[String]
           }
 
-        class CardObjectTypeBody < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor name: HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_
+        class CardObjectTypeBody < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor name: HubSpotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_
 
           attr_accessor properties_to_send: ::Array[String]
 
           def initialize: (
-            name: HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
+            name: HubSpotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
             properties_to_send: ::Array[String]
           ) -> void
 
           def to_hash: -> {
-            name: HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
+            name: HubSpotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_,
             properties_to_send: ::Array[String]
           }
 
@@ -27,7 +27,7 @@ module HubspotSDK
             :companies | :contacts | :deals | :marketing_events | :tickets
 
           module Name
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             COMPANIES: :companies
             CONTACTS: :contacts
@@ -35,7 +35,7 @@ module HubspotSDK
             MARKETING_EVENTS: :marketing_events
             TICKETS: :tickets
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CardObjectTypeBody::name_]
           end
         end
       end

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
-        sig { returns(HubspotSDK::Resources::Cms::Hubdb::Rows) }
+        sig { returns(HubSpotSDK::Resources::Cms::Hubdb::Rows) }
         attr_reader :rows
 
-        sig { returns(HubspotSDK::Resources::Cms::Hubdb::Tables) }
+        sig { returns(HubSpotSDK::Resources::Cms::Hubdb::Tables) }
         attr_reader :tables
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

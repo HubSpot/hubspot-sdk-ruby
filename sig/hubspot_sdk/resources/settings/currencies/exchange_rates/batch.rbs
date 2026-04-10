@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
         class ExchangeRates
           class Batch
             def create: (
-              inputs: ::Array[HubspotSDK::Settings::ExchangeRateCreateRequest],
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Settings::BatchResponseExchangeRate
+              inputs: ::Array[HubSpotSDK::Settings::ExchangeRateCreateRequest],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Settings::BatchResponseExchangeRate
 
             def update: (
-              inputs: ::Array[HubspotSDK::Settings::ExchangeRateUpdateRequest],
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Settings::BatchResponseExchangeRate
+              inputs: ::Array[HubSpotSDK::Settings::ExchangeRateUpdateRequest],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Settings::BatchResponseExchangeRate
 
             def get: (
-              inputs: ::Array[HubspotSDK::PublicObjectID],
-              ?request_options: HubspotSDK::request_opts
-            ) -> HubspotSDK::Settings::BatchResponseExchangeRate
+              inputs: ::Array[HubSpotSDK::PublicObjectID],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Settings::BatchResponseExchangeRate
 
-            def initialize: (client: HubspotSDK::Client) -> void
+            def initialize: (client: HubSpotSDK::Client) -> void
           end
         end
       end

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AssociationRequestHighUsageReportParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class AssociationRequestHighUsageReportParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AssociationRequestHighUsageReportParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AssociationRequestHighUsageReportParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             user_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(user_id:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { user_id: Integer, request_options: HubspotSDK::RequestOptions }
+            { user_id: Integer, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

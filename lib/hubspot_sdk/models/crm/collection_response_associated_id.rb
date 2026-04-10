@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponseAssociatedID < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseAssociatedID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AssociatedID>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociatedID] }
+        #   @return [Array<HubSpotSDK::Models::Crm::AssociatedID>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociatedID] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Crm::AssociatedID>]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param results [Array<HubSpotSDK::Models::Crm::AssociatedID>]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

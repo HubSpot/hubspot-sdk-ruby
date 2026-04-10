@@ -1,7 +1,7 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      PublicAccessRule: HubspotSDK::Internal::Type::Converter
+      PublicAccessRule: HubSpotSDK::Internal::Type::Converter
     end
   end
 end

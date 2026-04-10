@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       module Union
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # @api private
         #
@@ -16,8 +16,8 @@ module HubspotSDK
             T::Array[
               [
                 T.nilable(Symbol),
-                T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                HubspotSDK::Internal::AnyHash
+                T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                HubSpotSDK::Internal::AnyHash
               ]
             ]
           )
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              [T.nilable(Symbol), T.anything, HubspotSDK::Internal::AnyHash]
+              [T.nilable(Symbol), T.anything, HubSpotSDK::Internal::AnyHash]
             ]
           )
         end
@@ -52,13 +52,13 @@ module HubspotSDK
             key:
               T.any(
                 Symbol,
-                HubspotSDK::Internal::AnyHash,
+                HubSpotSDK::Internal::AnyHash,
                 T.proc.returns(T.anything),
                 T.anything
               ),
             spec:
               T.any(
-                HubspotSDK::Internal::AnyHash,
+                HubSpotSDK::Internal::AnyHash,
                 T.proc.returns(T.anything),
                 T.anything
               )
@@ -94,7 +94,7 @@ module HubspotSDK
           override
             .params(
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::CoerceState
+              state: HubSpotSDK::Internal::Type::Converter::CoerceState
             )
             .returns(T.anything)
         end
@@ -106,7 +106,7 @@ module HubspotSDK
           override
             .params(
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::DumpState
+              state: HubSpotSDK::Internal::Type::Converter::DumpState
             )
             .returns(T.anything)
         end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class ImportFromURLTaskLocator < HubspotSDK::Internal::Type::BaseModel
+      class ImportFromURLTaskLocator < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of the task
         #
@@ -15,11 +15,11 @@ module HubspotSDK
         #   gives the URL for where to check the status of the task.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!method initialize(id:, links: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::ImportFromURLTaskLocator} for more details.
+        #   {HubSpotSDK::Models::Files::ImportFromURLTaskLocator} for more details.
         #
         #   @param id [String] ID of the task
         #

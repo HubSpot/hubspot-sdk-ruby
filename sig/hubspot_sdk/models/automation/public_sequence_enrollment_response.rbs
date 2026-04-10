@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_sequence_enrollment_response =
@@ -13,7 +13,7 @@ module HubspotSDK
           updated_at: Time
         }
 
-      class PublicSequenceEnrollmentResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceEnrollmentResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor enrolled_at: Time

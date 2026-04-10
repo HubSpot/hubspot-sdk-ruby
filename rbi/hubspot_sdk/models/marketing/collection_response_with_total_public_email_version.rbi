@@ -1,35 +1,35 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseWithTotalPublicEmailVersion < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicEmailVersion < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CollectionResponseWithTotalPublicEmailVersion,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CollectionResponseWithTotalPublicEmailVersion,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Marketing::VersionPublicEmail]) }
+        sig { returns(T::Array[HubSpotSDK::Marketing::VersionPublicEmail]) }
         attr_accessor :results
 
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::Marketing::VersionPublicEmail::OrHash],
+              T::Array[HubSpotSDK::Marketing::VersionPublicEmail::OrHash],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, total:, paging: nil)
@@ -38,9 +38,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Marketing::VersionPublicEmail],
+              results: T::Array[HubSpotSDK::Marketing::VersionPublicEmail],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubSpotSDK::Paging
             }
           )
         end

@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class Folder < HubspotSDK::Internal::Type::BaseModel
+      class Folder < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Files::Folder, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Files::Folder, HubSpotSDK::Internal::AnyHash)
           end
 
         # ID of the folder.

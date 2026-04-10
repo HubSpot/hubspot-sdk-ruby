@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class ExtensionData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ExtensionData, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ExtensionData, HubSpotSDK::Internal::AnyHash)
           end
 
         sig do
           returns(
             T::Hash[
               Symbol,
-              HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+              HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
             ]
           )
         end
@@ -22,46 +22,46 @@ module HubspotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :tags
 
-        sig { returns(T.nilable(HubspotSDK::Cms::CaseChangeTestExtensionData)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::CaseChangeTestExtensionData)) }
         attr_reader :case_change_test_extension_data
 
         sig do
           params(
             case_change_test_extension_data:
-              HubspotSDK::Cms::CaseChangeTestExtensionData::OrHash
+              HubSpotSDK::Cms::CaseChangeTestExtensionData::OrHash
           ).void
         end
         attr_writer :case_change_test_extension_data
 
         sig do
-          returns(T.nilable(HubspotSDK::Cms::OptionDecoratorsExtensionData))
+          returns(T.nilable(HubSpotSDK::Cms::OptionDecoratorsExtensionData))
         end
         attr_reader :option_decorators_extension_data
 
         sig do
           params(
             option_decorators_extension_data:
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OrHash
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OrHash
           ).void
         end
         attr_writer :option_decorators_extension_data
 
         sig do
-          returns(T.nilable(HubspotSDK::Cms::RequiredPropertiesExtensionData))
+          returns(T.nilable(HubSpotSDK::Cms::RequiredPropertiesExtensionData))
         end
         attr_reader :required_properties_extension_data
 
         sig do
           params(
             required_properties_extension_data:
-              HubspotSDK::Cms::RequiredPropertiesExtensionData::OrHash
+              HubSpotSDK::Cms::RequiredPropertiesExtensionData::OrHash
           ).void
         end
         attr_writer :required_properties_extension_data
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Cms::SoftRequiredPropertiesExtensionData)
+            T.nilable(HubSpotSDK::Cms::SoftRequiredPropertiesExtensionData)
           )
         end
         attr_reader :soft_required_properties_extension_data
@@ -69,7 +69,7 @@ module HubspotSDK
         sig do
           params(
             soft_required_properties_extension_data:
-              HubspotSDK::Cms::SoftRequiredPropertiesExtensionData::OrHash
+              HubSpotSDK::Cms::SoftRequiredPropertiesExtensionData::OrHash
           ).void
         end
         attr_writer :soft_required_properties_extension_data
@@ -79,17 +79,17 @@ module HubspotSDK
             extension_status_map:
               T::Hash[
                 Symbol,
-                HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::OrSymbol
+                HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::OrSymbol
               ],
             tags: T::Array[String],
             case_change_test_extension_data:
-              HubspotSDK::Cms::CaseChangeTestExtensionData::OrHash,
+              HubSpotSDK::Cms::CaseChangeTestExtensionData::OrHash,
             option_decorators_extension_data:
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OrHash,
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OrHash,
             required_properties_extension_data:
-              HubspotSDK::Cms::RequiredPropertiesExtensionData::OrHash,
+              HubSpotSDK::Cms::RequiredPropertiesExtensionData::OrHash,
             soft_required_properties_extension_data:
-              HubspotSDK::Cms::SoftRequiredPropertiesExtensionData::OrHash
+              HubSpotSDK::Cms::SoftRequiredPropertiesExtensionData::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -108,17 +108,17 @@ module HubspotSDK
               extension_status_map:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+                  HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
                 ],
               tags: T::Array[String],
               case_change_test_extension_data:
-                HubspotSDK::Cms::CaseChangeTestExtensionData,
+                HubSpotSDK::Cms::CaseChangeTestExtensionData,
               option_decorators_extension_data:
-                HubspotSDK::Cms::OptionDecoratorsExtensionData,
+                HubSpotSDK::Cms::OptionDecoratorsExtensionData,
               required_properties_extension_data:
-                HubspotSDK::Cms::RequiredPropertiesExtensionData,
+                HubSpotSDK::Cms::RequiredPropertiesExtensionData,
               soft_required_properties_extension_data:
-                HubspotSDK::Cms::SoftRequiredPropertiesExtensionData
+                HubSpotSDK::Cms::SoftRequiredPropertiesExtensionData
             }
           )
         end
@@ -126,34 +126,34 @@ module HubspotSDK
         end
 
         module ExtensionStatusMap
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::ExtensionData::ExtensionStatusMap)
+              T.all(Symbol, HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           OK =
             T.let(
               :OK,
-              HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+              HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
             )
           ERROR =
             T.let(
               :ERROR,
-              HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+              HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
             )
           TIMEOUT =
             T.let(
               :TIMEOUT,
-              HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+              HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
+                HubSpotSDK::Cms::ExtensionData::ExtensionStatusMap::TaggedSymbol
               ]
             )
           end

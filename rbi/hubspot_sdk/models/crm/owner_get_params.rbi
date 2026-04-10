@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class OwnerGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::OwnerGetParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::OwnerGetParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,14 +27,14 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol)
+            T.nilable(HubSpotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol)
           )
         end
         attr_reader :id_property
 
         sig do
           params(
-            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol
+            id_property: HubSpotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol
           ).void
         end
         attr_writer :id_property
@@ -43,8 +43,8 @@ module HubspotSDK
           params(
             owner_id: Integer,
             archived: T::Boolean,
-            id_property: HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            id_property: HubSpotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -62,8 +62,8 @@ module HubspotSDK
               owner_id: Integer,
               archived: T::Boolean,
               id_property:
-                HubspotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
-              request_options: HubspotSDK::RequestOptions
+                HubSpotSDK::Crm::OwnerGetParams::IDProperty::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -71,29 +71,29 @@ module HubspotSDK
         end
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::OwnerGetParams::IDProperty)
+              T.all(Symbol, HubSpotSDK::Crm::OwnerGetParams::IDProperty)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ID =
             T.let(
               :id,
-              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+              HubSpotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
             )
           USER_ID =
             T.let(
               :userId,
-              HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+              HubSpotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
+                HubSpotSDK::Crm::OwnerGetParams::IDProperty::TaggedSymbol
               ]
             )
           end

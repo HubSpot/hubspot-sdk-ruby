@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicListConversionDate < HubspotSDK::Internal::Type::BaseModel
+      class PublicListConversionDate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute conversion_type
         #   Specifies the type of conversion (CONVERSION_DATE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionDate::ConversionType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicListConversionDate::ConversionType]
         required :conversion_type,
-                 enum: -> { HubspotSDK::Crm::PublicListConversionDate::ConversionType },
+                 enum: -> { HubSpotSDK::Crm::PublicListConversionDate::ConversionType },
                  api_name: :conversionType
 
         # @!attribute day
@@ -31,7 +31,7 @@ module HubspotSDK
         required :year, Integer
 
         # @!method initialize(conversion_type:, day:, month:, year:)
-        #   @param conversion_type [Symbol, HubspotSDK::Models::Crm::PublicListConversionDate::ConversionType] Specifies the type of conversion (CONVERSION_DATE).
+        #   @param conversion_type [Symbol, HubSpotSDK::Models::Crm::PublicListConversionDate::ConversionType] Specifies the type of conversion (CONVERSION_DATE).
         #
         #   @param day [Integer] The day component of the conversion date.
         #
@@ -41,9 +41,9 @@ module HubspotSDK
 
         # Specifies the type of conversion (CONVERSION_DATE).
         #
-        # @see HubspotSDK::Models::Crm::PublicListConversionDate#conversion_type
+        # @see HubSpotSDK::Models::Crm::PublicListConversionDate#conversion_type
         module ConversionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONVERSION_DATE = :CONVERSION_DATE
 

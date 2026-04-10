@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class OAuthCreateTokenParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class OAuthCreateTokenParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::OAuthCreateTokenParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Auth::OAuthCreateTokenParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -42,7 +42,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol
             )
           )
         end
@@ -51,7 +51,7 @@ module HubspotSDK
         sig do
           params(
             grant_type:
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol
           ).void
         end
         attr_writer :grant_type
@@ -81,11 +81,11 @@ module HubspotSDK
             code: String,
             code_verifier: String,
             grant_type:
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
             redirect_uri: String,
             refresh_token: String,
             scope: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -109,11 +109,11 @@ module HubspotSDK
               code: String,
               code_verifier: String,
               grant_type:
-                HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
+                HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::OrSymbol,
               redirect_uri: String,
               refresh_token: String,
               scope: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -121,29 +121,29 @@ module HubspotSDK
         end
 
         module GrantType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Auth::OAuthCreateTokenParams::GrantType)
+              T.all(Symbol, HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AUTHORIZATION_CODE =
             T.let(
               :authorization_code,
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
             )
           REFRESH_TOKEN =
             T.let(
               :refresh_token,
-              HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
+                HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
               ]
             )
           end

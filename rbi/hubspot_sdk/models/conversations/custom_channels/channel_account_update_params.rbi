@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
-        class ChannelAccountUpdateParams < HubspotSDK::Models::Conversations::PublicChannelAccountUpdateRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ChannelAccountUpdateParams < HubSpotSDK::Models::Conversations::PublicChannelAccountUpdateRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountUpdateParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountUpdateParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               channel_id: Integer,
               channel_account_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(channel_id:, channel_account_id:, request_options: {})
@@ -37,7 +37,7 @@ module HubspotSDK
               {
                 channel_id: Integer,
                 channel_account_id: Integer,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BlogPost < HubspotSDK::Internal::Type::BaseModel
+        class BlogPost < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique ID of the Blog Post.
           #
@@ -17,8 +17,8 @@ module HubspotSDK
           #   Available options: automated_loser_variant, automated_master, automated_variant,
           #   loser_variant, mab_master, mab_variant, master, variant
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus]
-          required :ab_status, enum: -> { HubspotSDK::Cms::Blogs::BlogPost::AbStatus }, api_name: :abStatus
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::AbStatus]
+          required :ab_status, enum: -> { HubSpotSDK::Cms::Blogs::BlogPost::AbStatus }, api_name: :abStatus
 
           # @!attribute ab_test_id
           #   The ID of the AB test associated with this page, if applicable
@@ -37,7 +37,7 @@ module HubspotSDK
           #   still be live.
           #
           #   @return [Boolean]
-          required :archived_in_dashboard, HubspotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
+          required :archived_in_dashboard, HubSpotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
 
           # @!attribute attached_stylesheets
           #   List of stylesheets to attach to this blog post. These stylesheets are attached
@@ -45,7 +45,7 @@ module HubspotSDK
           #
           #   @return [Array<Hash{Symbol=>Object}>]
           required :attached_stylesheets,
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]],
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]],
                    api_name: :attachedStylesheets
 
           # @!attribute author_name
@@ -81,9 +81,9 @@ module HubspotSDK
           # @!attribute content_type_category
           #   An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory]
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory]
           required :content_type_category,
-                   enum: -> { HubspotSDK::Cms::Blogs::BlogPost::ContentTypeCategory },
+                   enum: -> { HubSpotSDK::Cms::Blogs::BlogPost::ContentTypeCategory },
                    api_name: :contentTypeCategory
 
           # @!attribute created
@@ -102,15 +102,15 @@ module HubspotSDK
           #   Whether the post is published (true or false)
           #
           #   @return [Boolean]
-          required :currently_published, HubspotSDK::Internal::Type::Boolean, api_name: :currentlyPublished
+          required :currently_published, HubSpotSDK::Internal::Type::Boolean, api_name: :currentlyPublished
 
           # @!attribute current_state
           #   A generated ENUM descibing the current state of this Blog Post. Should always
           #   match state.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState]
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::CurrentState]
           required :current_state,
-                   enum: -> { HubspotSDK::Cms::Blogs::BlogPost::CurrentState },
+                   enum: -> { HubSpotSDK::Cms::Blogs::BlogPost::CurrentState },
                    api_name: :currentState
 
           # @!attribute domain
@@ -144,7 +144,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :enable_domain_stylesheets,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :enableDomainStylesheets
 
           # @!attribute enable_google_amp_output_override
@@ -152,7 +152,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :enable_google_amp_output_override,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :enableGoogleAmpOutputOverride
 
           # @!attribute enable_layout_stylesheets
@@ -161,7 +161,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :enable_layout_stylesheets,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :enableLayoutStylesheets
 
           # @!attribute featured_image
@@ -207,22 +207,22 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :include_default_custom_css,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :includeDefaultCustomCss
 
           # @!attribute language
           #   The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           #   Post will default to the language of the ParentBlog.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language]
-          required :language, enum: -> { HubspotSDK::Cms::Blogs::BlogPost::Language }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::Language]
+          required :language, enum: -> { HubSpotSDK::Cms::Blogs::BlogPost::Language }
 
           # @!attribute layout_sections
           #   A structure detailing the layout sections of the blog post.
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}]
+          #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}]
           required :layout_sections,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection] },
+                   -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::LayoutSection] },
                    api_name: :layoutSections
 
           # @!attribute link_rel_canonical_url
@@ -261,7 +261,7 @@ module HubspotSDK
           #   Boolean describing if the page expiration feature is enabled for this blog post.
           #
           #   @return [Boolean]
-          required :page_expiry_enabled, HubspotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
+          required :page_expiry_enabled, HubSpotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
 
           # @!attribute page_expiry_redirect_id
           #   The ID of another page this blog post's url should redirect to once this blog
@@ -301,7 +301,7 @@ module HubspotSDK
           #
           #   @return [Array<Object>]
           required :public_access_rules,
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown],
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown],
                    api_name: :publicAccessRules
 
           # @!attribute public_access_rules_enabled
@@ -309,7 +309,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :public_access_rules_enabled,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :publicAccessRulesEnabled
 
           # @!attribute publish_date
@@ -323,7 +323,7 @@ module HubspotSDK
           #   publish endpoint is called, and to ignore the publish_date setting.
           #
           #   @return [Boolean]
-          required :publish_immediately, HubspotSDK::Internal::Type::Boolean, api_name: :publishImmediately
+          required :publish_immediately, HubSpotSDK::Internal::Type::Boolean, api_name: :publishImmediately
 
           # @!attribute rss_body
           #   The contents of the RSS body for this Blog Post.
@@ -354,14 +354,14 @@ module HubspotSDK
           #   List of IDs for the tags associated with this Blog Post.
           #
           #   @return [Array<Integer>]
-          required :tag_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :tagIds
+          required :tag_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :tagIds
 
           # @!attribute theme_settings_values
           #   A collection of settings specific to the theme applied to the blog post.
           #
           #   @return [Hash{Symbol=>Object}]
           required :theme_settings_values,
-                   HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                   HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown],
                    api_name: :themeSettingsValues
 
           # @!attribute translated_from_id
@@ -374,9 +374,9 @@ module HubspotSDK
           #   A map of translations for the blog post, each associated with a specific
           #   language variation.
           #
-          #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+          #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::ContentLanguageVariation}]
           required :translations,
-                   -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation] }
+                   -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::ContentLanguageVariation] }
 
           # @!attribute updated
           #   The timestamp (ISO8601 format) when this Blog Post was updated.
@@ -400,7 +400,7 @@ module HubspotSDK
           #   Boolean to determine if this post should use a featuredImage.
           #
           #   @return [Boolean]
-          required :use_featured_image, HubspotSDK::Internal::Type::Boolean, api_name: :useFeaturedImage
+          required :use_featured_image, HubSpotSDK::Internal::Type::Boolean, api_name: :useFeaturedImage
 
           # @!attribute widget_containers
           #   A data structure containing the data for all the modules inside the containers
@@ -408,22 +408,22 @@ module HubspotSDK
           #
           #   @return [Hash{Symbol=>Object}]
           required :widget_containers,
-                   HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                   HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown],
                    api_name: :widgetContainers
 
           # @!attribute widgets
           #   A data structure containing the data for all the modules for this page.
           #
           #   @return [Hash{Symbol=>Object}]
-          required :widgets, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+          required :widgets, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
           # @!method initialize(id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, blog_author_id:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_google_amp_output_override:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, password:, post_body:, post_summary:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, rss_body:, rss_summary:, slug:, state:, tag_ids:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Blogs::BlogPost} for more details.
+          #   {HubSpotSDK::Models::Cms::Blogs::BlogPost} for more details.
           #
           #   @param id [String] The unique ID of the Blog Post.
           #
-          #   @param ab_status [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::AbStatus] The status of the AB test associated with this blog post, if applicable
+          #   @param ab_status [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::AbStatus] The status of the AB test associated with this blog post, if applicable
           #
           #   @param ab_test_id [String] The ID of the AB test associated with this page, if applicable
           #
@@ -443,7 +443,7 @@ module HubspotSDK
           #
           #   @param content_group_id [String] The ID of the parent Blog this Blog Post is associated with.
           #
-          #   @param content_type_category [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] An ENUM descibing the type of this object. Should always be BLOG_POST.
+          #   @param content_type_category [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::ContentTypeCategory] An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
           #   @param created [Time] The timestamp (ISO8601 format) when this Blog Post was created.
           #
@@ -451,7 +451,7 @@ module HubspotSDK
           #
           #   @param currently_published [Boolean] Whether the post is published (true or false)
           #
-          #   @param current_state [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::CurrentState] A generated ENUM descibing the current state of this Blog Post. Should always ma
+          #   @param current_state [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::CurrentState] A generated ENUM descibing the current state of this Blog Post. Should always ma
           #
           #   @param domain [String] The domain this Blog Post will resolve to. If null, the Blog Post will default t
           #
@@ -481,9 +481,9 @@ module HubspotSDK
           #
           #   @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
+          #   @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogPost::Language] The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           #
-          #   @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the blog post.
+          #   @param layout_sections [Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the blog post.
           #
           #   @param link_rel_canonical_url [String] Optional override to set the URL to be used in the rel=canonical link tag on the
           #
@@ -529,7 +529,7 @@ module HubspotSDK
           #
           #   @param translated_from_id [String] ID of the primary blog post this object was translated from.
           #
-          #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
+          #   @param translations [Hash{Symbol=>HubSpotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the blog post, each associated with a specific languag
           #
           #   @param updated [Time] The timestamp (ISO8601 format) when this Blog Post was updated.
           #
@@ -548,9 +548,9 @@ module HubspotSDK
           # Available options: automated_loser_variant, automated_master, automated_variant,
           # loser_variant, mab_master, mab_variant, master, variant
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BlogPost#ab_status
+          # @see HubSpotSDK::Models::Cms::Blogs::BlogPost#ab_status
           module AbStatus
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AUTOMATED_LOSER_VARIANT = :automated_loser_variant
             AUTOMATED_MASTER = :automated_master
@@ -567,9 +567,9 @@ module HubspotSDK
 
           # An ENUM descibing the type of this object. Should always be BLOG_POST.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BlogPost#content_type_category
+          # @see HubSpotSDK::Models::Cms::Blogs::BlogPost#content_type_category
           module ContentTypeCategory
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CONTENT_TYPE_CATEGORY_0 = :"0"
             CONTENT_TYPE_CATEGORY_1 = :"1"
@@ -602,9 +602,9 @@ module HubspotSDK
           # A generated ENUM descibing the current state of this Blog Post. Should always
           # match state.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BlogPost#current_state
+          # @see HubSpotSDK::Models::Cms::Blogs::BlogPost#current_state
           module CurrentState
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AGENT_GENERATED = :AGENT_GENERATED
             AUTOMATED = :AUTOMATED
@@ -646,9 +646,9 @@ module HubspotSDK
           # The explicitly defined ISO 639 language code of the Blog Post. If null, the Blog
           # Post will default to the language of the ParentBlog.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BlogPost#language
+          # @see HubSpotSDK::Models::Cms::Blogs::BlogPost#language
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA = :aa
             AB = :ab

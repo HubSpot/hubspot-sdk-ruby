@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicCalendarDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicCalendarDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Indicates whether objects with no value set for the property should be included.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
         #   The type of operation, which is (CALENDAR_DATE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicCalendarDatePropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicCalendarDatePropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -37,9 +37,9 @@ module HubspotSDK
         # @!attribute fiscal_year_start
         #   The month in which the fiscal year starts.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart, nil]
         optional :fiscal_year_start,
-                 enum: -> { HubspotSDK::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart },
+                 enum: -> { HubSpotSDK::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart },
                  api_name: :fiscalYearStart
 
         # @!attribute time_unit_count
@@ -52,21 +52,21 @@ module HubspotSDK
         #   Specifies whether the fiscal year should be used in the operation.
         #
         #   @return [Boolean, nil]
-        optional :use_fiscal_year, HubspotSDK::Internal::Type::Boolean, api_name: :useFiscalYear
+        optional :use_fiscal_year, HubSpotSDK::Internal::Type::Boolean, api_name: :useFiscalYear
 
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, time_unit:, fiscal_year_start: nil, time_unit_count: nil, use_fiscal_year: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included.
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::OperationType] The type of operation, which is (CALENDAR_DATE).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::OperationType] The type of operation, which is (CALENDAR_DATE).
         #
         #   @param operator [String] Defines the operation to be applied to the calendar date property (IN*THIS_TIME*
         #
         #   @param time_unit [String] The unit of time to be used in the operation (DAY, WEEK, MONTH, QUARTER, YEAR).
         #
-        #   @param fiscal_year_start [Symbol, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart] The month in which the fiscal year starts.
+        #   @param fiscal_year_start [Symbol, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation::FiscalYearStart] The month in which the fiscal year starts.
         #
         #   @param time_unit_count [Integer] The count of time units to be applied in the operation (1).
         #
@@ -74,9 +74,9 @@ module HubspotSDK
 
         # The type of operation, which is (CALENDAR_DATE).
         #
-        # @see HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CALENDAR_DATE = :CALENDAR_DATE
 
@@ -86,9 +86,9 @@ module HubspotSDK
 
         # The month in which the fiscal year starts.
         #
-        # @see HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation#fiscal_year_start
+        # @see HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation#fiscal_year_start
         module FiscalYearStart
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APRIL = :APRIL
           AUGUST = :AUGUST

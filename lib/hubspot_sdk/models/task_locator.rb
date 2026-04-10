@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class TaskLocator < HubspotSDK::Internal::Type::BaseModel
+    class TaskLocator < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #   The unique identifier for the task.
       #
@@ -14,11 +14,11 @@ module HubspotSDK
       #   or recommended remediation steps
       #
       #   @return [Hash{Symbol=>String}, nil]
-      optional :links, HubspotSDK::Internal::Type::HashOf[String]
+      optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
       # @!method initialize(id:, links: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::TaskLocator} for more details.
+      #   {HubSpotSDK::Models::TaskLocator} for more details.
       #
       #   @param id [String] The unique identifier for the task.
       #

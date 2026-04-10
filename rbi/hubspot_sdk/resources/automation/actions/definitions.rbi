@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -11,36 +11,36 @@ module HubspotSDK
               app_id: Integer,
               action_url: String,
               functions:
-                T::Array[HubspotSDK::Automation::PublicActionFunction::OrHash],
+                T::Array[HubSpotSDK::Automation::PublicActionFunction::OrHash],
               input_fields:
                 T::Array[
-                  HubspotSDK::Automation::PublicInputFieldDefinition::OrHash
+                  HubSpotSDK::Automation::PublicInputFieldDefinition::OrHash
                 ],
               labels:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Automation::PublicActionLabels::OrHash
+                  HubSpotSDK::Automation::PublicActionLabels::OrHash
                 ],
               object_types: T::Array[String],
               published: T::Boolean,
               archived_at: Integer,
               execution_rules:
                 T::Array[
-                  HubspotSDK::Automation::PublicExecutionTranslationRule::OrHash
+                  HubSpotSDK::Automation::PublicExecutionTranslationRule::OrHash
                 ],
               input_field_dependencies:
                 T::Array[
                   T.any(
-                    HubspotSDK::Automation::PublicSingleFieldDependency::OrHash,
-                    HubspotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
+                    HubSpotSDK::Automation::PublicSingleFieldDependency::OrHash,
+                    HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
                   )
                 ],
               object_request_options:
-                HubspotSDK::Automation::PublicObjectRequestOptions::OrHash,
+                HubSpotSDK::Automation::PublicObjectRequestOptions::OrHash,
               output_fields:
-                T::Array[HubspotSDK::Automation::OutputFieldDefinition::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionDefinition)
+                T::Array[HubSpotSDK::Automation::OutputFieldDefinition::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionDefinition)
           end
           def create(
             app_id,
@@ -72,32 +72,32 @@ module HubspotSDK
               action_url: String,
               execution_rules:
                 T::Array[
-                  HubspotSDK::Automation::PublicExecutionTranslationRule::OrHash
+                  HubSpotSDK::Automation::PublicExecutionTranslationRule::OrHash
                 ],
               input_field_dependencies:
                 T::Array[
                   T.any(
-                    HubspotSDK::Automation::PublicSingleFieldDependency::OrHash,
-                    HubspotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
+                    HubSpotSDK::Automation::PublicSingleFieldDependency::OrHash,
+                    HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::OrHash
                   )
                 ],
               input_fields:
                 T::Array[
-                  HubspotSDK::Automation::PublicInputFieldDefinition::OrHash
+                  HubSpotSDK::Automation::PublicInputFieldDefinition::OrHash
                 ],
               labels:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Automation::PublicActionLabels::OrHash
+                  HubSpotSDK::Automation::PublicActionLabels::OrHash
                 ],
               object_request_options:
-                HubspotSDK::Automation::PublicObjectRequestOptions::OrHash,
+                HubSpotSDK::Automation::PublicObjectRequestOptions::OrHash,
               object_types: T::Array[String],
               output_fields:
-                T::Array[HubspotSDK::Automation::OutputFieldDefinition::OrHash],
+                T::Array[HubSpotSDK::Automation::OutputFieldDefinition::OrHash],
               published: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionDefinition)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionDefinition)
           end
           def update(
             # Path param
@@ -133,10 +133,10 @@ module HubspotSDK
               after: String,
               archived: T::Boolean,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Automation::PublicActionDefinition
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Automation::PublicActionDefinition
               ]
             )
           end
@@ -159,7 +159,7 @@ module HubspotSDK
             params(
               definition_id: String,
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(definition_id, app_id:, request_options: {})
@@ -171,7 +171,7 @@ module HubspotSDK
               definition_id: String,
               app_id: Integer,
               requires_object: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def create_requires_object(
@@ -192,8 +192,8 @@ module HubspotSDK
               definition_id: String,
               app_id: Integer,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionDefinition)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionDefinition)
           end
           def get(
             # Path param
@@ -211,16 +211,16 @@ module HubspotSDK
             params(
               definition_id: String,
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
+              HubSpotSDK::Automation::PublicActionDefinitionRequiresObjectResponse
             )
           end
           def get_requires_object(definition_id, app_id:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

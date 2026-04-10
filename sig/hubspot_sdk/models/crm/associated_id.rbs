@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type associated_id = { id: String, type: String }
 
-      class AssociatedID < HubspotSDK::Internal::Type::BaseModel
+      class AssociatedID < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor type: String

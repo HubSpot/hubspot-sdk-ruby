@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
-        # @see HubspotSDK::Resources::Marketing::MarketingEvents::Participations#list_breakdown_by_external_account_and_event_id
-        class ParticipationListBreakdownByExternalAccountAndEventIDParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::MarketingEvents::Participations#list_breakdown_by_external_account_and_event_id
+        class ParticipationListBreakdownByExternalAccountAndEventIDParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute external_account_id
           #
@@ -46,7 +46,7 @@ module HubspotSDK
 
           # @!method initialize(external_account_id:, external_event_id:, after: nil, contact_identifier: nil, limit: nil, state: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Marketing::MarketingEvents::ParticipationListBreakdownByExternalAccountAndEventIDParams}
+          #   {HubSpotSDK::Models::Marketing::MarketingEvents::ParticipationListBreakdownByExternalAccountAndEventIDParams}
           #   for more details.
           #
           #   @param external_account_id [String]
@@ -61,7 +61,7 @@ module HubspotSDK
           #
           #   @param state [String] The participation state value. It may be REGISTERED, CANCELLED, ATTENDED, NO_SHO
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -11,8 +11,8 @@ module HubspotSDK
             name: String,
             parent_folder_id: Integer,
             updated: Time,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ContentFolder
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ContentFolder
 
           def update: (
             String object_id_,
@@ -24,8 +24,8 @@ module HubspotSDK
             parent_folder_id: Integer,
             updated: Time,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ContentFolder
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ContentFolder
 
           def list: (
             ?after: String,
@@ -39,49 +39,49 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolder]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolder]
 
           def delete: (
             String object_id_,
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def batch_get: (
             inputs: ::Array[String],
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::BatchResponseContentFolder
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::BatchResponseContentFolder
 
           def get: (
             String object_id_,
             ?archived: bool,
             ?property: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ContentFolder
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ContentFolder
 
           def get_revision: (
             String revision_id,
             object_id_: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ContentFolderVersion
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ContentFolderVersion
 
           def list_revisions: (
             String object_id_,
             ?after: String,
             ?before: String,
             ?limit: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolderVersion]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolderVersion]
 
           def restore_revision: (
             String revision_id,
             object_id_: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::ContentFolder
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::ContentFolder
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

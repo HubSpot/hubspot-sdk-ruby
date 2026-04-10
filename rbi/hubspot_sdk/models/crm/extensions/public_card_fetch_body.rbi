@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class PublicCardFetchBody < HubspotSDK::Internal::Type::BaseModel
+        class PublicCardFetchBody < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::PublicCardFetchBody,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::PublicCardFetchBody,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -17,7 +17,7 @@ module HubspotSDK
           # call your target URL whenever a user visits a record page of the types defined
           # here.
           sig do
-            returns(T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody])
+            returns(T::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody])
           end
           attr_accessor :object_types
 
@@ -31,7 +31,7 @@ module HubspotSDK
             params(
               object_types:
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CardObjectTypeBody::OrHash
+                  HubSpotSDK::Crm::Extensions::CardObjectTypeBody::OrHash
                 ],
               target_url: String
             ).returns(T.attached_class)
@@ -52,7 +52,7 @@ module HubspotSDK
             override.returns(
               {
                 object_types:
-                  T::Array[HubspotSDK::Crm::Extensions::CardObjectTypeBody],
+                  T::Array[HubSpotSDK::Crm::Extensions::CardObjectTypeBody],
                 target_url: String
               }
             )

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::EmailGetParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::EmailGetParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -45,7 +45,7 @@ module HubspotSDK
             end_timestamp: String,
             property: String,
             start_timestamp: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -64,7 +64,7 @@ module HubspotSDK
               end_timestamp: String,
               property: String,
               start_timestamp: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

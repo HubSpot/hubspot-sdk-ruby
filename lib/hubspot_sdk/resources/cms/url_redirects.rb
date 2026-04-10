@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLRedirects
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::URLRedirectCreateParams} for more details.
+        # {HubSpotSDK::Models::Cms::URLRedirectCreateParams} for more details.
         #
         # Create a new URL redirect in your HubSpot account. This endpoint allows you to
         # define a new URL mapping that redirects traffic from a specified route to a
@@ -34,24 +34,24 @@ module HubspotSDK
         #
         # @param precedence [Integer] Used to prioritize URL redirection. If a given URL matches more than one redirec
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLMapping]
+        # @return [HubSpotSDK::Models::Cms::URLMapping]
         #
-        # @see HubspotSDK::Models::Cms::URLRedirectCreateParams
+        # @see HubSpotSDK::Models::Cms::URLRedirectCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Cms::URLRedirectCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::URLRedirectCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "cms/url-redirects/2026-03",
             body: parsed,
-            model: HubspotSDK::Cms::URLMapping,
+            model: HubSpotSDK::Cms::URLMapping,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::URLRedirectUpdateParams} for more details.
+        # {HubSpotSDK::Models::Cms::URLRedirectUpdateParams} for more details.
         #
         # Updates the settings for an existing URL redirect.
         #
@@ -85,24 +85,24 @@ module HubspotSDK
         #
         # @param updated [Time] The date and time when the URL mapping was last modified.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLMapping]
+        # @return [HubSpotSDK::Models::Cms::URLMapping]
         #
-        # @see HubspotSDK::Models::Cms::URLRedirectUpdateParams
+        # @see HubSpotSDK::Models::Cms::URLRedirectUpdateParams
         def update(url_redirect_id, params)
-          parsed, options = HubspotSDK::Cms::URLRedirectUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Cms::URLRedirectUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["cms/url-redirects/2026-03/%1$s", url_redirect_id],
             body: parsed,
-            model: HubspotSDK::Cms::URLMapping,
+            model: HubSpotSDK::Cms::URLMapping,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Cms::URLRedirectListParams} for more details.
+        # {HubSpotSDK::Models::Cms::URLRedirectListParams} for more details.
         #
         # Retrieve a list of URL redirects configured in your HubSpot account. This
         # endpoint allows you to filter redirects based on their creation or update
@@ -131,14 +131,14 @@ module HubspotSDK
         #
         # @param updated_before [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::URLMapping>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::URLMapping>]
         #
-        # @see HubspotSDK::Models::Cms::URLRedirectListParams
+        # @see HubSpotSDK::Models::Cms::URLRedirectListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Cms::URLRedirectListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Cms::URLRedirectListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "cms/url-redirects/2026-03",
@@ -150,8 +150,8 @@ module HubspotSDK
               updated_at: "updatedAt",
               updated_before: "updatedBefore"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Cms::URLMapping,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Cms::URLMapping,
             options: options
           )
         end
@@ -161,11 +161,11 @@ module HubspotSDK
         # @overload delete(url_redirect_id, request_options: {})
         #
         # @param url_redirect_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Cms::URLRedirectDeleteParams
+        # @see HubSpotSDK::Models::Cms::URLRedirectDeleteParams
         def delete(url_redirect_id, params = {})
           @client.request(
             method: :delete,
@@ -180,23 +180,23 @@ module HubspotSDK
         # @overload get(url_redirect_id, request_options: {})
         #
         # @param url_redirect_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Cms::URLMapping]
+        # @return [HubSpotSDK::Models::Cms::URLMapping]
         #
-        # @see HubspotSDK::Models::Cms::URLRedirectGetParams
+        # @see HubSpotSDK::Models::Cms::URLRedirectGetParams
         def get(url_redirect_id, params = {})
           @client.request(
             method: :get,
             path: ["cms/url-redirects/2026-03/%1$s", url_redirect_id],
-            model: HubspotSDK::Cms::URLMapping,
+            model: HubSpotSDK::Cms::URLMapping,
             options: params[:request_options]
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

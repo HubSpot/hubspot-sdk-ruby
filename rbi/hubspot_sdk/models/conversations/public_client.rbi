@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicClient < HubspotSDK::Internal::Type::BaseModel
+      class PublicClient < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicClient,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicClient,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+            HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
           )
         end
         attr_accessor :client_type
@@ -28,7 +28,7 @@ module HubspotSDK
         sig do
           params(
             client_type:
-              HubspotSDK::Conversations::PublicClient::ClientType::OrSymbol,
+              HubSpotSDK::Conversations::PublicClient::ClientType::OrSymbol,
             integration_app_id: Integer
           ).returns(T.attached_class)
         end
@@ -39,7 +39,7 @@ module HubspotSDK
           override.returns(
             {
               client_type:
-                HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol,
+                HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol,
               integration_app_id: Integer
             }
           )
@@ -48,39 +48,39 @@ module HubspotSDK
         end
 
         module ClientType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::PublicClient::ClientType)
+              T.all(Symbol, HubSpotSDK::Conversations::PublicClient::ClientType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HUBSPOT =
             T.let(
               :HUBSPOT,
-              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
           INTEGRATION =
             T.let(
               :INTEGRATION,
-              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
           SYSTEM =
             T.let(
               :SYSTEM,
-              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
           UNKNOWN =
             T.let(
               :UNKNOWN,
-              HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
+                HubSpotSDK::Conversations::PublicClient::ClientType::TaggedSymbol
               ]
             )
           end

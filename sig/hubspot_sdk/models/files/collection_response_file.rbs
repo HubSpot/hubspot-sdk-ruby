@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type collection_response_file =
         {
-          results: ::Array[HubspotSDK::Files::File],
-          paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Files::File],
+          paging: HubSpotSDK::Paging
         }
 
-      class CollectionResponseFile < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Files::File]
+      class CollectionResponseFile < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Files::File]
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Files::File],
-          ?paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Files::File],
+          ?paging: HubSpotSDK::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Files::File],
-          paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Files::File],
+          paging: HubSpotSDK::Paging
         }
       end
     end

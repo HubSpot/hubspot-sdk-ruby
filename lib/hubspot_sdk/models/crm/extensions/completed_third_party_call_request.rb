@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CompletedThirdPartyCallRequest < HubspotSDK::Internal::Type::BaseModel
+        class CompletedThirdPartyCallRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute create_engagement
           #   Indicates whether an engagement should be created for the call.
           #
           #   @return [Boolean]
-          required :create_engagement, HubspotSDK::Internal::Type::Boolean, api_name: :createEngagement
+          required :create_engagement, HubSpotSDK::Internal::Type::Boolean, api_name: :createEngagement
 
           # @!attribute engagement_properties
           #   Contains additional properties related to the engagement.
           #
           #   @return [Hash{Symbol=>String}]
           required :engagement_properties,
-                   HubspotSDK::Internal::Type::HashOf[String],
+                   HubSpotSDK::Internal::Type::HashOf[String],
                    api_name: :engagementProperties
 
           # @!attribute external_call_id
@@ -30,17 +30,17 @@ module HubspotSDK
           #   CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
           #   MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus]
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus]
           required :final_call_status,
-                   enum: -> { HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus },
+                   enum: -> { HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus },
                    api_name: :finalCallStatus
 
           # @!attribute from_number
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          #   @return [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
           required :from_number,
                    -> {
-                     HubspotSDK::Crm::Extensions::FormattedPhoneNumber
+                     HubSpotSDK::Crm::Extensions::FormattedPhoneNumber
                    },
                    api_name: :fromNumber
 
@@ -48,13 +48,13 @@ module HubspotSDK
           #
           #   @return [Array<Integer>]
           required :potential_recipient_user_ids,
-                   HubspotSDK::Internal::Type::ArrayOf[Integer],
+                   HubSpotSDK::Internal::Type::ArrayOf[Integer],
                    api_name: :potentialRecipientUserIds
 
           # @!attribute to_number
           #
-          #   @return [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
-          required :to_number, -> { HubspotSDK::Crm::Extensions::FormattedPhoneNumber }, api_name: :toNumber
+          #   @return [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          required :to_number, -> { HubSpotSDK::Crm::Extensions::FormattedPhoneNumber }, api_name: :toNumber
 
           # @!attribute call_started_timestamp
           #   The timestamp indicating when the call started, formatted as a date-time string.
@@ -76,7 +76,7 @@ module HubspotSDK
 
           # @!method initialize(create_engagement:, engagement_properties:, external_call_id:, final_call_status:, from_number:, potential_recipient_user_ids:, to_number:, call_started_timestamp: nil, duration_seconds: nil, user_id: nil)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest} for more
+          #   {HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest} for more
           #   details.
           #
           #   @param create_engagement [Boolean] Indicates whether an engagement should be created for the call.
@@ -85,13 +85,13 @@ module HubspotSDK
           #
           #   @param external_call_id [String] The unique identifier for the call from an external system.
           #
-          #   @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
+          #   @param final_call_status [Symbol, HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
           #
-          #   @param from_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          #   @param from_number [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
           #
           #   @param potential_recipient_user_ids [Array<Integer>]
           #
-          #   @param to_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          #   @param to_number [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
           #
           #   @param call_started_timestamp [Time] The timestamp indicating when the call started, formatted as a date-time string.
           #
@@ -103,9 +103,9 @@ module HubspotSDK
           # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
           # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest#final_call_status
+          # @see HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest#final_call_status
           module FinalCallStatus
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             BUSY = :BUSY
             CALLING_CRM_USER = :CALLING_CRM_USER

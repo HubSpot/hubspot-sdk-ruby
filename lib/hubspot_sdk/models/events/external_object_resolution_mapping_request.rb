@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalObjectResolutionMappingRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalObjectResolutionMappingRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute primary_object_rule
         #
-        #   @return [HubspotSDK::Models::Events::ExternalPrimaryObjectResolutionRule]
+        #   @return [HubSpotSDK::Models::Events::ExternalPrimaryObjectResolutionRule]
         required :primary_object_rule,
-                 -> { HubspotSDK::Events::ExternalPrimaryObjectResolutionRule },
+                 -> { HubSpotSDK::Events::ExternalPrimaryObjectResolutionRule },
                  api_name: :primaryObjectRule
 
         # @!method initialize(primary_object_rule:)
-        #   @param primary_object_rule [HubspotSDK::Models::Events::ExternalPrimaryObjectResolutionRule]
+        #   @param primary_object_rule [HubSpotSDK::Models::Events::ExternalPrimaryObjectResolutionRule]
       end
     end
   end

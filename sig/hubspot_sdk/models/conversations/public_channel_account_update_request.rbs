@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_account_update_request =
         { authorized: bool, name: String }
 
-      class PublicChannelAccountUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_reader authorized: bool?
 
         def authorized=: (bool) -> bool

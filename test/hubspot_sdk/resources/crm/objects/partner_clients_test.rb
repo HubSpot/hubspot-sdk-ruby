@@ -2,26 +2,26 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubSpotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.objects.partner_clients.update("partnerClientId", properties: {foo: "string"})
 
     assert_pattern do
-      response => HubspotSDK::Crm::SimplePublicObject
+      response => HubSpotSDK::Crm::SimplePublicObject
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        properties: ^(HubSpotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
         archived_at: Time | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        properties_with_history: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ValueWithTimestamp]]) | nil,
         url: String | nil
       }
     end
@@ -33,27 +33,27 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK
     response = @hubspot.crm.objects.partner_clients.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Crm::SimplePublicObjectWithAssociations
+      row => HubSpotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
       row => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        properties: ^(HubSpotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        properties_with_history: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ValueWithTimestamp]]) | nil,
         url: String | nil
       }
     end
@@ -65,20 +65,20 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK
     response = @hubspot.crm.objects.partner_clients.get("partnerClientId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::SimplePublicObjectWithAssociations
+      response => HubSpotSDK::Crm::SimplePublicObjectWithAssociations
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
-        properties: ^(HubspotSDK::Internal::Type::HashOf[String, nil?: true]),
+        properties: ^(HubSpotSDK::Internal::Type::HashOf[String, nil?: true]),
         updated_at: Time,
         archived_at: Time | nil,
-        associations: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Crm::CollectionResponseAssociatedID]) | nil,
+        associations: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Crm::CollectionResponseAssociatedID]) | nil,
         object_write_trace_id: String | nil,
-        properties_with_history: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ValueWithTimestamp]]) | nil,
+        properties_with_history: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ValueWithTimestamp]]) | nil,
         url: String | nil
       }
     end
@@ -94,19 +94,19 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Crm::MultiAssociatedObjectWithLabel
+      row => HubSpotSDK::Crm::MultiAssociatedObjectWithLabel
     end
 
     assert_pattern do
       row => {
-        association_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AssociationSpecWithLabel]),
+        association_types: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AssociationSpecWithLabel]),
         to_object_id: String
       }
     end
@@ -125,14 +125,14 @@ class HubspotSDK::Test::Resources::Crm::Objects::PartnerClientsTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+      response => HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject]),
         total: Integer,
-        paging: HubspotSDK::Paging | nil
+        paging: HubSpotSDK::Paging | nil
       }
     end
   end

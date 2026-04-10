@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventExternalUniqueIdentifier =
       Marketing::MarketingEventExternalUniqueIdentifier
 
     module Marketing
-      class MarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type object_subscription_upsert_request =
         {
-          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
         }
 
-      class ObjectSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
+      class ObjectSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
 
         attr_accessor object_ids: ::Array[Integer]
 
@@ -22,24 +22,24 @@ module HubspotSDK
 
         attr_accessor properties: ::Array[String]
 
-        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
 
         def initialize: (
-          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
         ) -> void
 
         def to_hash: -> {
-          actions: ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
           properties: ::Array[String],
-          subscription_type: HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type
         }
 
         type action =
@@ -57,7 +57,7 @@ module HubspotSDK
           | :REMOVED_FROM_LIST
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATE: :CREATE
           UPDATE: :UPDATE
@@ -72,7 +72,7 @@ module HubspotSDK
           ADDED_TO_LIST: :ADDED_TO_LIST
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::action]
         end
 
         type subscription_type =
@@ -83,7 +83,7 @@ module HubspotSDK
           | :LIST_MEMBERSHIP
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT: :OBJECT
           ASSOCIATION: :ASSOCIATION
@@ -91,7 +91,7 @@ module HubspotSDK
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest::subscription_type]
         end
       end
     end

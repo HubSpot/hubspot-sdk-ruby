@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_security_activities
-      class HydratedCriticalAction < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Account::Activity#list_security_activities
+      class HydratedCriticalAction < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The activity's unique ID.
         #
@@ -20,8 +20,8 @@ module HubspotSDK
         # @!attribute type
         #   The type of activity.
         #
-        #   @return [Symbol, HubspotSDK::Models::Account::HydratedCriticalAction::Type]
-        required :type, enum: -> { HubspotSDK::Account::HydratedCriticalAction::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Account::HydratedCriticalAction::Type]
+        required :type, enum: -> { HubSpotSDK::Account::HydratedCriticalAction::Type }
 
         # @!attribute user_id
         #   The user's unique ID.
@@ -76,7 +76,7 @@ module HubspotSDK
         #
         #   @param created_at [Time] The time the activity took place.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Account::HydratedCriticalAction::Type] The type of activity.
+        #   @param type [Symbol, HubSpotSDK::Models::Account::HydratedCriticalAction::Type] The type of activity.
         #
         #   @param user_id [Integer] The user's unique ID.
         #
@@ -96,9 +96,9 @@ module HubspotSDK
 
         # The type of activity.
         #
-        # @see HubspotSDK::Models::Account::HydratedCriticalAction#type
+        # @see HubSpotSDK::Models::Account::HydratedCriticalAction#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST
           ACCOUNT_ADDED_TO_MULTI_ACCOUNT_ORGANIZATION = :ACCOUNT_ADDED_TO_MULTI_ACCOUNT_ORGANIZATION

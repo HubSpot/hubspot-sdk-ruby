@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComparativeDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class ComparativeDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute comparison_property_name
         #
         #   @return [String]
@@ -13,7 +13,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeDatePropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::ComparativeDatePropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeDatePropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::ComparativeDatePropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ComparativeDatePropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::ComparativeDatePropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::ComparativeDatePropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::ComparativeDatePropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute default_comparison_value
@@ -57,16 +57,16 @@ module HubspotSDK
         #   @param comparison_property_name [String]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::ComparativeDatePropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::ComparativeDatePropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::ComparativeDatePropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::ComparativeDatePropertyOperation::PropertyType]
         #   @param default_comparison_value [String]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::ComparativeDatePropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::ComparativeDatePropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_AFTER = :IS_AFTER
           IS_BEFORE = :IS_BEFORE
@@ -75,9 +75,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::ComparativeDatePropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::ComparativeDatePropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME_COMPARATIVE = :"datetime-comparative"
 

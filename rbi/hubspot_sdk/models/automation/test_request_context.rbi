@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class TestRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class TestRequestContext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::TestRequestContext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::TestRequestContext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the source of the test request, with the only accepted value being
         # 'TEST'.
         sig do
-          returns(HubspotSDK::Automation::TestRequestContext::Source::OrSymbol)
+          returns(HubSpotSDK::Automation::TestRequestContext::Source::OrSymbol)
         end
         attr_accessor :source
 
         sig do
           params(
-            source: HubspotSDK::Automation::TestRequestContext::Source::OrSymbol
+            source: HubSpotSDK::Automation::TestRequestContext::Source::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -35,7 +35,7 @@ module HubspotSDK
           override.returns(
             {
               source:
-                HubspotSDK::Automation::TestRequestContext::Source::OrSymbol
+                HubSpotSDK::Automation::TestRequestContext::Source::OrSymbol
             }
           )
         end
@@ -45,24 +45,24 @@ module HubspotSDK
         # Indicates the source of the test request, with the only accepted value being
         # 'TEST'.
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::TestRequestContext::Source)
+              T.all(Symbol, HubSpotSDK::Automation::TestRequestContext::Source)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           TEST =
             T.let(
               :TEST,
-              HubspotSDK::Automation::TestRequestContext::Source::TaggedSymbol
+              HubSpotSDK::Automation::TestRequestContext::Source::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::TestRequestContext::Source::TaggedSymbol
+                HubSpotSDK::Automation::TestRequestContext::Source::TaggedSymbol
               ]
             )
           end

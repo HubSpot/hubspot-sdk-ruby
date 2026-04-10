@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type paging =
-      { next_: HubspotSDK::NextPage, prev: HubspotSDK::PreviousPage }
+      { next_: HubSpotSDK::NextPage, prev: HubSpotSDK::PreviousPage }
 
-    class Paging < HubspotSDK::Internal::Type::BaseModel
-      attr_reader next_: HubspotSDK::NextPage?
+    class Paging < HubSpotSDK::Internal::Type::BaseModel
+      attr_reader next_: HubSpotSDK::NextPage?
 
-      def next_=: (HubspotSDK::NextPage) -> HubspotSDK::NextPage
+      def next_=: (HubSpotSDK::NextPage) -> HubSpotSDK::NextPage
 
-      attr_reader prev: HubspotSDK::PreviousPage?
+      attr_reader prev: HubSpotSDK::PreviousPage?
 
-      def prev=: (HubspotSDK::PreviousPage) -> HubspotSDK::PreviousPage
+      def prev=: (HubSpotSDK::PreviousPage) -> HubSpotSDK::PreviousPage
 
       def initialize: (
-        ?next_: HubspotSDK::NextPage,
-        ?prev: HubspotSDK::PreviousPage
+        ?next_: HubSpotSDK::NextPage,
+        ?prev: HubSpotSDK::PreviousPage
       ) -> void
 
       def to_hash: -> {
-        next_: HubspotSDK::NextPage,
-        prev: HubspotSDK::PreviousPage
+        next_: HubSpotSDK::NextPage,
+        prev: HubSpotSDK::PreviousPage
       }
     end
   end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type near_limit_record_sample =
@@ -9,7 +9,7 @@ module HubspotSDK
           usage: Integer
         }
 
-      class NearLimitRecordSample < HubspotSDK::Internal::Type::BaseModel
+      class NearLimitRecordSample < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor label: String
 
         attr_accessor object_id_: Integer

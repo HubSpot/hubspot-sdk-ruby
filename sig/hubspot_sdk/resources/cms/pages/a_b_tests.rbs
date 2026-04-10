@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -6,40 +6,40 @@ module HubspotSDK
           def create_landing_page_variation: (
             content_id: String,
             variation_name: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::PageData
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::PageData
 
           def create_site_page_variation: (
             content_id: String,
             variation_name: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::PageData
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::PageData
 
           def end_landing_page_test: (
             ab_test_id: String,
             winner_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def end_site_page_test: (
             ab_test_id: String,
             winner_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def rerun_landing_page_test: (
             ab_test_id: String,
             variation_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def rerun_site_page_test: (
             ab_test_id: String,
             variation_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

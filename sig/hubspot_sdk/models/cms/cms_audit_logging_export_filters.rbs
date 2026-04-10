@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class CmsAuditLoggingExportFilters = Cms::CmsAuditLoggingExportFilters
 
     module Cms
       type cms_audit_logging_export_filters = { object_type: ::Array[String] }
 
-      class CmsAuditLoggingExportFilters < HubspotSDK::Internal::Type::BaseModel
+      class CmsAuditLoggingExportFilters < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type: ::Array[String]
 
         def initialize: (object_type: ::Array[String]) -> void

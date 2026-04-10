@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#get
-          class TranscriptGetParams < HubspotSDK::Internal::Type::BaseModel
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          # @see HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts#get
+          class TranscriptGetParams < HubSpotSDK::Internal::Type::BaseModel
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             # @!attribute transcript_id
             #
@@ -17,7 +17,7 @@ module HubspotSDK
 
             # @!method initialize(transcript_id:, request_options: {})
             #   @param transcript_id [String]
-            #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+            #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
           end
         end
       end

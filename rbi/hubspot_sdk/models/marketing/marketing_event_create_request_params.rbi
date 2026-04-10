@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventCreateRequestParams =
       Marketing::MarketingEventCreateRequestParams
 
     module Marketing
-      class MarketingEventCreateRequestParams < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventCreateRequestParams < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventCreateRequestParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventCreateRequestParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # Custom Property you want to track on that HubSpot account. Do not create any new
         # default properties on the MarketingEvent object as that will apply to all
         # HubSpot accounts.
-        sig { returns(T::Array[HubspotSDK::PropertyValue]) }
+        sig { returns(T::Array[HubSpotSDK::PropertyValue]) }
         attr_accessor :custom_properties
 
         # The name of the marketing event.
@@ -96,7 +96,7 @@ module HubspotSDK
 
         sig do
           params(
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             event_name: String,
             event_organizer: String,
             external_account_id: String,
@@ -151,7 +151,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              custom_properties: T::Array[HubspotSDK::PropertyValue],
+              custom_properties: T::Array[HubSpotSDK::PropertyValue],
               event_name: String,
               event_organizer: String,
               external_account_id: String,

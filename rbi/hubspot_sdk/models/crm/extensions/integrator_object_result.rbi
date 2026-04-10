@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class IntegratorObjectResult < HubspotSDK::Internal::Type::BaseModel
+        class IntegratorObjectResult < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::IntegratorObjectResult,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::IntegratorObjectResult,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             returns(
               T::Array[
-                HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
+                HubSpotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
               ]
             )
           end
@@ -33,7 +33,7 @@ module HubspotSDK
           attr_accessor :title
 
           # A collection of tokens representing specific properties related to the card.
-          sig { returns(T::Array[HubspotSDK::Crm::Extensions::ObjectToken]) }
+          sig { returns(T::Array[HubSpotSDK::Crm::Extensions::ObjectToken]) }
           attr_accessor :tokens
 
           # A URL used on the title of the card
@@ -49,13 +49,13 @@ module HubspotSDK
               actions:
                 T::Array[
                   T.any(
-                    HubspotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
-                    HubspotSDK::Crm::Extensions::IFrameActionBody::OrHash
+                    HubSpotSDK::Crm::Extensions::ActionHookActionBody::OrHash,
+                    HubSpotSDK::Crm::Extensions::IFrameActionBody::OrHash
                   )
                 ],
               title: String,
               tokens:
-                T::Array[HubspotSDK::Crm::Extensions::ObjectToken::OrHash],
+                T::Array[HubSpotSDK::Crm::Extensions::ObjectToken::OrHash],
               link_url: String
             ).returns(T.attached_class)
           end
@@ -80,10 +80,10 @@ module HubspotSDK
                 id: String,
                 actions:
                   T::Array[
-                    HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
+                    HubSpotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
                   ],
                 title: String,
-                tokens: T::Array[HubspotSDK::Crm::Extensions::ObjectToken],
+                tokens: T::Array[HubSpotSDK::Crm::Extensions::ObjectToken],
                 link_url: String
               }
             )
@@ -92,20 +92,20 @@ module HubspotSDK
           end
 
           module Action
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody,
-                  HubspotSDK::Crm::Extensions::IFrameActionBody
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody,
+                  HubSpotSDK::Crm::Extensions::IFrameActionBody
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
+                  HubSpotSDK::Crm::Extensions::IntegratorObjectResult::Action::Variants
                 ]
               )
             end

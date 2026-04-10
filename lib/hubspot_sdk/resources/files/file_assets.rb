@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
       class FileAssets
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FileAssetCreateParams} for more details.
+        # {HubSpotSDK::Models::Files::FileAssetCreateParams} for more details.
         #
         # Creates a folder.
         #
@@ -17,24 +17,24 @@ module HubspotSDK
         #
         # @param parent_path [String] Path of the parent of the created folder. If not specified the folder will be cr
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::Folder]
+        # @return [HubSpotSDK::Models::Files::Folder]
         #
-        # @see HubspotSDK::Models::Files::FileAssetCreateParams
+        # @see HubSpotSDK::Models::Files::FileAssetCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Files::FileAssetCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FileAssetCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "files/2026-03/folders",
             body: parsed,
-            model: HubspotSDK::Files::Folder,
+            model: HubSpotSDK::Files::Folder,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FileAssetUpdateParams} for more details.
+        # {HubSpotSDK::Models::Files::FileAssetUpdateParams} for more details.
         #
         # Update properties of file by ID.
         #
@@ -44,7 +44,7 @@ module HubspotSDK
         #
         # @param clear_expires [Boolean]
         #
-        # @param access [Symbol, HubspotSDK::Models::Files::FileUpdateInput::Access] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
+        # @param access [Symbol, HubSpotSDK::Models::Files::FileUpdateInput::Access] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
         #
         # @param expires_at [Time]
         #
@@ -56,18 +56,18 @@ module HubspotSDK
         #
         # @param parent_folder_path [String] Folder path where the file should be moved to. folderId and folderPath parameter
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::File]
+        # @return [HubSpotSDK::Models::Files::File]
         #
-        # @see HubspotSDK::Models::Files::FileAssetUpdateParams
+        # @see HubSpotSDK::Models::Files::FileAssetUpdateParams
         def update(file_id, params)
-          parsed, options = HubspotSDK::Files::FileAssetUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FileAssetUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["files/2026-03/files/%1$s", file_id],
             body: parsed,
-            model: HubspotSDK::Files::File,
+            model: HubSpotSDK::Files::File,
             options: options
           )
         end
@@ -77,11 +77,11 @@ module HubspotSDK
         # @overload delete(file_id, request_options: {})
         #
         # @param file_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Files::FileAssetDeleteParams
+        # @see HubSpotSDK::Models::Files::FileAssetDeleteParams
         def delete(file_id, params = {})
           @client.request(
             method: :delete,
@@ -96,11 +96,11 @@ module HubspotSDK
         # @overload gdpr_delete(file_id, request_options: {})
         #
         # @param file_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Files::FileAssetGdprDeleteParams
+        # @see HubSpotSDK::Models::Files::FileAssetGdprDeleteParams
         def gdpr_delete(file_id, params = {})
           @client.request(
             method: :delete,
@@ -116,19 +116,19 @@ module HubspotSDK
         #
         # @param file_id [String]
         # @param properties [Array<String>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::File]
+        # @return [HubSpotSDK::Models::Files::File]
         #
-        # @see HubspotSDK::Models::Files::FileAssetGetParams
+        # @see HubSpotSDK::Models::Files::FileAssetGetParams
         def get(file_id, params = {})
-          parsed, options = HubspotSDK::Files::FileAssetGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FileAssetGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["files/2026-03/files/%1$s", file_id],
             query: query,
-            model: HubspotSDK::Files::File,
+            model: HubSpotSDK::Files::File,
             options: options
           )
         end
@@ -139,19 +139,19 @@ module HubspotSDK
         #
         # @param path [String]
         # @param properties [Array<String>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::FileStat]
+        # @return [HubSpotSDK::Models::Files::FileStat]
         #
-        # @see HubspotSDK::Models::Files::FileAssetGetByPathParams
+        # @see HubSpotSDK::Models::Files::FileAssetGetByPathParams
         def get_by_path(path, params = {})
-          parsed, options = HubspotSDK::Files::FileAssetGetByPathParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FileAssetGetByPathParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["files/2026-03/files/stat/%1$s", path],
             query: query,
-            model: HubspotSDK::Files::FileStat,
+            model: HubSpotSDK::Files::FileStat,
             options: options
           )
         end
@@ -161,16 +161,16 @@ module HubspotSDK
         # @overload get_import_task_status(task_id, request_options: {})
         #
         # @param task_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::FileActionResponse]
+        # @return [HubSpotSDK::Models::Files::FileActionResponse]
         #
-        # @see HubspotSDK::Models::Files::FileAssetGetImportTaskStatusParams
+        # @see HubSpotSDK::Models::Files::FileAssetGetImportTaskStatusParams
         def get_import_task_status(task_id, params = {})
           @client.request(
             method: :get,
             path: ["files/2026-03/files/import-from-url/async/tasks/%1$s/status", task_id],
-            model: HubspotSDK::Files::FileActionResponse,
+            model: HubSpotSDK::Files::FileActionResponse,
             options: params[:request_options]
           )
         end
@@ -181,37 +181,37 @@ module HubspotSDK
         #
         # @param file_id [String]
         # @param expiration_seconds [Integer]
-        # @param size [Symbol, HubspotSDK::Models::Files::FileAssetGetSignedURLParams::Size]
+        # @param size [Symbol, HubSpotSDK::Models::Files::FileAssetGetSignedURLParams::Size]
         # @param upscale [Boolean]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::SignedURL]
+        # @return [HubSpotSDK::Models::Files::SignedURL]
         #
-        # @see HubspotSDK::Models::Files::FileAssetGetSignedURLParams
+        # @see HubSpotSDK::Models::Files::FileAssetGetSignedURLParams
         def get_signed_url(file_id, params = {})
-          parsed, options = HubspotSDK::Files::FileAssetGetSignedURLParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FileAssetGetSignedURLParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["files/2026-03/files/%1$s/signed-url", file_id],
             query: query.transform_keys(expiration_seconds: "expirationSeconds"),
-            model: HubspotSDK::Files::SignedURL,
+            model: HubSpotSDK::Files::SignedURL,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FileAssetImportFromURLAsyncParams} for more details.
+        # {HubSpotSDK::Models::Files::FileAssetImportFromURLAsyncParams} for more details.
         #
         # Asynchronously imports the file at the given URL into the file manager.
         #
         # @overload import_from_url_async(access:, duplicate_validation_scope:, duplicate_validation_strategy:, overwrite:, expires_at: nil, folder_id: nil, folder_path: nil, name: nil, ttl: nil, url: nil, request_options: {})
         #
-        # @param access [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::Access] PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
+        # @param access [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::Access] PUBLIC_INDEXABLE: File is publicly accessible by anyone who has the URL. Search
         #
-        # @param duplicate_validation_scope [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope] ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER: Lo
+        # @param duplicate_validation_scope [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationScope] ENTIRE_PORTAL: Look for a duplicate file in the entire account. EXACT_FOLDER: Lo
         #
-        # @param duplicate_validation_strategy [Symbol, HubspotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
+        # @param duplicate_validation_strategy [Symbol, HubSpotSDK::Models::Files::ImportFromURLInput::DuplicateValidationStrategy] NONE: Do not run any duplicate validation. REJECT: Reject the upload if a duplic
         #
         # @param overwrite [Boolean] If true, will overwrite existing file if one with the same name and extension ex
         #
@@ -227,18 +227,18 @@ module HubspotSDK
         #
         # @param url [String] URL to download the new file from.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::ImportFromURLTaskLocator]
+        # @return [HubSpotSDK::Models::Files::ImportFromURLTaskLocator]
         #
-        # @see HubspotSDK::Models::Files::FileAssetImportFromURLAsyncParams
+        # @see HubSpotSDK::Models::Files::FileAssetImportFromURLAsyncParams
         def import_from_url_async(params)
-          parsed, options = HubspotSDK::Files::FileAssetImportFromURLAsyncParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FileAssetImportFromURLAsyncParams.dump_request(params)
           @client.request(
             method: :post,
             path: "files/2026-03/files/import-from-url/async",
             body: parsed,
-            model: HubspotSDK::Files::ImportFromURLTaskLocator,
+            model: HubSpotSDK::Files::ImportFromURLTaskLocator,
             options: options
           )
         end
@@ -250,27 +250,27 @@ module HubspotSDK
         #
         # @param file_id [String]
         # @param charset_hunch [String]
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
+        # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart]
         # @param options [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::File]
+        # @return [HubSpotSDK::Models::Files::File]
         #
-        # @see HubspotSDK::Models::Files::FileAssetReplaceParams
+        # @see HubSpotSDK::Models::Files::FileAssetReplaceParams
         def replace(file_id, params = {})
-          parsed, options = HubspotSDK::Files::FileAssetReplaceParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FileAssetReplaceParams.dump_request(params)
           @client.request(
             method: :put,
             path: ["files/2026-03/files/%1$s", file_id],
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Files::File,
+            model: HubSpotSDK::Files::File,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FileAssetSearchParams} for more details.
+        # {HubSpotSDK::Models::Files::FileAssetSearchParams} for more details.
         #
         # Search through files in the file manager. Does not display hidden or archived
         # files.
@@ -349,14 +349,14 @@ module HubspotSDK
         #
         # @param width_lte [Integer]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Files::File>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Files::File>]
         #
-        # @see HubspotSDK::Models::Files::FileAssetSearchParams
+        # @see HubSpotSDK::Models::Files::FileAssetSearchParams
         def search(params = {})
-          parsed, options = HubspotSDK::Files::FileAssetSearchParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FileAssetSearchParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "files/2026-03/files/search",
@@ -383,8 +383,8 @@ module HubspotSDK
               width_gte: "widthGte",
               width_lte: "widthLte"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Files::File,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Files::File,
             options: options
           )
         end
@@ -394,31 +394,31 @@ module HubspotSDK
         # @overload upload(charset_hunch: nil, file: nil, file_name: nil, folder_id: nil, folder_path: nil, options: nil, request_options: {})
         #
         # @param charset_hunch [String]
-        # @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
+        # @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart]
         # @param file_name [String]
         # @param folder_id [String]
         # @param folder_path [String]
         # @param options [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::File]
+        # @return [HubSpotSDK::Models::Files::File]
         #
-        # @see HubspotSDK::Models::Files::FileAssetUploadParams
+        # @see HubSpotSDK::Models::Files::FileAssetUploadParams
         def upload(params = {})
-          parsed, options = HubspotSDK::Files::FileAssetUploadParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FileAssetUploadParams.dump_request(params)
           @client.request(
             method: :post,
             path: "files/2026-03/files",
             headers: {"content-type" => "multipart/form-data"},
             body: parsed,
-            model: HubspotSDK::Files::File,
+            model: HubSpotSDK::Files::File,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

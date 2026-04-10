@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class SubscriptionDefinition < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::SubscriptionDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::SubscriptionDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -70,7 +70,7 @@ module HubspotSDK
           returns(
             T.nilable(
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation
+                HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation
               ]
             )
           )
@@ -81,7 +81,7 @@ module HubspotSDK
           params(
             subscription_translations:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation::OrHash
               ]
           ).void
         end
@@ -102,7 +102,7 @@ module HubspotSDK
             purpose: String,
             subscription_translations:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -150,7 +150,7 @@ module HubspotSDK
               purpose: String,
               subscription_translations:
                 T::Array[
-                  HubspotSDK::CommunicationPreferences::PublicSubscriptionTranslation
+                  HubSpotSDK::CommunicationPreferences::PublicSubscriptionTranslation
                 ]
             }
           )

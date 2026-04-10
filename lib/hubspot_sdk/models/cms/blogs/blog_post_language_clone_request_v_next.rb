@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BlogPostLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogPostLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   ID of blog post to clone.
           #

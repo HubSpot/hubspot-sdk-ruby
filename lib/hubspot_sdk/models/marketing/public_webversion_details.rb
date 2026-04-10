@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicWebversionDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicWebversionDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute domain
         #
         #   @return [String, nil]
@@ -12,7 +12,7 @@ module HubspotSDK
         # @!attribute enabled
         #
         #   @return [Boolean, nil]
-        optional :enabled, HubspotSDK::Internal::Type::Boolean
+        optional :enabled, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute expires_at
         #
@@ -22,7 +22,7 @@ module HubspotSDK
         # @!attribute is_page_redirected
         #
         #   @return [Boolean, nil]
-        optional :is_page_redirected, HubspotSDK::Internal::Type::Boolean, api_name: :isPageRedirected
+        optional :is_page_redirected, HubSpotSDK::Internal::Type::Boolean, api_name: :isPageRedirected
 
         # @!attribute meta_description
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         # @!attribute page_expiry_enabled
         #
         #   @return [Boolean, nil]
-        optional :page_expiry_enabled, HubspotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
+        optional :page_expiry_enabled, HubSpotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
 
         # @!attribute redirect_to_page_id
         #

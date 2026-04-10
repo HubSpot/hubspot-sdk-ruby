@@ -1,34 +1,34 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Padding < HubspotSDK::Internal::Type::BaseModel
+      class Padding < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute bottom
         #
-        #   @return [HubspotSDK::Models::Cms::Size]
-        required :bottom, -> { HubspotSDK::Cms::Size }
+        #   @return [HubSpotSDK::Models::Cms::Size]
+        required :bottom, -> { HubSpotSDK::Cms::Size }
 
         # @!attribute left
         #
-        #   @return [HubspotSDK::Models::Cms::Size]
-        required :left, -> { HubspotSDK::Cms::Size }
+        #   @return [HubSpotSDK::Models::Cms::Size]
+        required :left, -> { HubSpotSDK::Cms::Size }
 
         # @!attribute right
         #
-        #   @return [HubspotSDK::Models::Cms::Size]
-        required :right, -> { HubspotSDK::Cms::Size }
+        #   @return [HubSpotSDK::Models::Cms::Size]
+        required :right, -> { HubSpotSDK::Cms::Size }
 
         # @!attribute top
         #
-        #   @return [HubspotSDK::Models::Cms::Size]
-        required :top, -> { HubspotSDK::Cms::Size }
+        #   @return [HubSpotSDK::Models::Cms::Size]
+        required :top, -> { HubSpotSDK::Cms::Size }
 
         # @!method initialize(bottom:, left:, right:, top:)
-        #   @param bottom [HubspotSDK::Models::Cms::Size]
-        #   @param left [HubspotSDK::Models::Cms::Size]
-        #   @param right [HubspotSDK::Models::Cms::Size]
-        #   @param top [HubspotSDK::Models::Cms::Size]
+        #   @param bottom [HubSpotSDK::Models::Cms::Size]
+        #   @param left [HubSpotSDK::Models::Cms::Size]
+        #   @param right [HubSpotSDK::Models::Cms::Size]
+        #   @param top [HubSpotSDK::Models::Cms::Size]
       end
     end
   end

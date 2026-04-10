@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class CommunicationPreferenceGenerateLinksParams < HubspotSDK::Models::CommunicationPreferences::LinkGenerationRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CommunicationPreferenceGenerateLinksParams < HubSpotSDK::Models::CommunicationPreferences::LinkGenerationRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::CommunicationPreferenceGenerateLinksParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::CommunicationPreferenceGenerateLinksParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol
+            HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol
           )
         end
         attr_accessor :channel
@@ -31,9 +31,9 @@ module HubspotSDK
         sig do
           params(
             channel:
-              HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
             business_unit_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(channel:, business_unit_id: nil, request_options: {})
@@ -43,9 +43,9 @@ module HubspotSDK
           override.returns(
             {
               channel:
-                HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
+                HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
               business_unit_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -53,13 +53,13 @@ module HubspotSDK
         end
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel
+                HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -67,13 +67,13 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::TaggedSymbol
               ]
             )
           end

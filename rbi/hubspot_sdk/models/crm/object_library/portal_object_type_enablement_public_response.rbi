@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module ObjectLibrary
-        class PortalObjectTypeEnablementPublicResponse < HubspotSDK::Internal::Type::BaseModel
+        class PortalObjectTypeEnablementPublicResponse < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::ObjectLibrary::PortalObjectTypeEnablementPublicResponse,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 

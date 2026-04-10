@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class MonthReference < HubspotSDK::Internal::Type::BaseModel
+      class MonthReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::MonthReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::MonthReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,7 +17,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
+            HubSpotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
           )
         end
         attr_accessor :reference_type
@@ -50,7 +50,7 @@ module HubspotSDK
           params(
             day: Integer,
             reference_type:
-              HubspotSDK::Events::MonthReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::MonthReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -72,7 +72,7 @@ module HubspotSDK
             {
               day: Integer,
               reference_type:
-                HubspotSDK::Events::MonthReference::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::MonthReference::ReferenceType::TaggedSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -84,24 +84,24 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::MonthReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Events::MonthReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           MONTH =
             T.let(
               :MONTH,
-              HubspotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::MonthReference::ReferenceType::TaggedSymbol
               ]
             )
           end

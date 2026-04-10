@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CollectionResponseWithTotalPublicSequenceLiteResponse < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicSequenceLiteResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::CollectionResponseWithTotalPublicSequenceLiteResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # An array of PublicSequenceLiteResponse objects, each representing a lightweight
         # version of a sequence.
         sig do
-          returns(T::Array[HubspotSDK::Automation::PublicSequenceLiteResponse])
+          returns(T::Array[HubSpotSDK::Automation::PublicSequenceLiteResponse])
         end
         attr_accessor :results
 
@@ -23,20 +23,20 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
               T::Array[
-                HubspotSDK::Automation::PublicSequenceLiteResponse::OrHash
+                HubSpotSDK::Automation::PublicSequenceLiteResponse::OrHash
               ],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -53,9 +53,9 @@ module HubspotSDK
           override.returns(
             {
               results:
-                T::Array[HubspotSDK::Automation::PublicSequenceLiteResponse],
+                T::Array[HubSpotSDK::Automation::PublicSequenceLiteResponse],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubSpotSDK::Paging
             }
           )
         end

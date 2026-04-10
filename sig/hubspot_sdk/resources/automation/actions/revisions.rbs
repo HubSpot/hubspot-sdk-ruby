@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -8,17 +8,17 @@ module HubspotSDK
             app_id: Integer,
             ?after: String,
             ?limit: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Automation::PublicActionRevision]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Automation::PublicActionRevision]
 
           def get: (
             String revision_id,
             app_id: Integer,
             definition_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Automation::PublicActionRevision
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Automation::PublicActionRevision
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

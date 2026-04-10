@@ -1,73 +1,73 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_status_request =
         {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
-          status_state: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
+          status_state: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
           subscriber_id_string: String,
           subscription_id: Integer,
-          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
+          legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
           legal_basis_explanation: String
         }
 
-      class PublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor channel: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel
+      class PublicStatusRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel
 
-        attr_accessor status_state: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state
+        attr_accessor status_state: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state
 
         attr_accessor subscriber_id_string: String
 
         attr_accessor subscription_id: Integer
 
-        attr_reader legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis?
+        attr_reader legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis?
 
         def legal_basis=: (
-          HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis
-        ) -> HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis
+          HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis
+        ) -> HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis
 
         attr_reader legal_basis_explanation: String?
 
         def legal_basis_explanation=: (String) -> String
 
         def initialize: (
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
-          status_state: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
+          status_state: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
           subscriber_id_string: String,
           subscription_id: Integer,
-          ?legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
+          ?legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
           ?legal_basis_explanation: String
         ) -> void
 
         def to_hash: -> {
-          channel: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
-          status_state: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
+          channel: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel,
+          status_state: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state,
           subscriber_id_string: String,
           subscription_id: Integer,
-          legal_basis: HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
+          legal_basis: HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis,
           legal_basis_explanation: String
         }
 
         type channel = :EMAIL
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::channel]
         end
 
         type status_state = :NOT_SPECIFIED | :SUBSCRIBED | :UNSUBSCRIBED
 
         module StatusState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED: :NOT_SPECIFIED
           SUBSCRIBED: :SUBSCRIBED
           UNSUBSCRIBED: :UNSUBSCRIBED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::status_state]
         end
 
         type legal_basis =
@@ -80,7 +80,7 @@ module HubspotSDK
           | :PROCESS_AND_STORE
 
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE: :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT: :LEGITIMATE_INTEREST_CLIENT
@@ -90,7 +90,7 @@ module HubspotSDK
           PERFORMANCE_OF_CONTRACT: :PERFORMANCE_OF_CONTRACT
           PROCESS_AND_STORE: :PROCESS_AND_STORE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis]
+          def self?.values: -> ::Array[HubSpotSDK::Models::CommunicationPreferences::PublicStatusRequest::legal_basis]
         end
       end
     end

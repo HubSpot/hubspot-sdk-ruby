@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyName < HubspotSDK::Internal::Type::BaseModel
+    class PropertyName < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute name
       #
       #   @return [String]

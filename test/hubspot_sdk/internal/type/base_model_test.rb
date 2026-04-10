@@ -2,27 +2,27 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
-  A = HubspotSDK::Internal::Type::ArrayOf[-> { Integer }]
-  H = HubspotSDK::Internal::Type::HashOf[-> { Integer }, nil?: true]
+class HubSpotSDK::Test::PrimitiveModelTest < Minitest::Test
+  A = HubSpotSDK::Internal::Type::ArrayOf[-> { Integer }]
+  H = HubSpotSDK::Internal::Type::HashOf[-> { Integer }, nil?: true]
 
   module E
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
   end
 
   module U
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
   end
 
-  class B < HubspotSDK::Internal::Type::BaseModel
+  class B < HubSpotSDK::Internal::Type::BaseModel
     optional :a, Integer
     optional :b, B
   end
 
   def test_typing
     converters = [
-      HubspotSDK::Internal::Type::Unknown,
-      HubspotSDK::Internal::Type::Boolean,
+      HubSpotSDK::Internal::Type::Unknown,
+      HubSpotSDK::Internal::Type::Boolean,
       A,
       H,
       E,
@@ -32,18 +32,18 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
 
     converters.each do |conv|
       assert_pattern do
-        conv => HubspotSDK::Internal::Type::Converter
+        conv => HubSpotSDK::Internal::Type::Converter
       end
     end
   end
 
   def test_coerce
     cases = {
-      [HubspotSDK::Internal::Type::Unknown, :a] => [{yes: 1}, :a],
+      [HubSpotSDK::Internal::Type::Unknown, :a] => [{yes: 1}, :a],
       [NilClass, :a] => [{maybe: 1}, nil],
       [NilClass, nil] => [{yes: 1}, nil],
-      [HubspotSDK::Internal::Type::Boolean, true] => [{yes: 1}, true],
-      [HubspotSDK::Internal::Type::Boolean, "true"] => [{no: 1}, "true"],
+      [HubSpotSDK::Internal::Type::Boolean, true] => [{yes: 1}, true],
+      [HubSpotSDK::Internal::Type::Boolean, "true"] => [{no: 1}, "true"],
       [Integer, 1] => [{yes: 1}, 1],
       [Integer, 1.0] => [{maybe: 1}, 1],
       [Integer, "1"] => [{maybe: 1}, 1],
@@ -66,9 +66,9 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
     cases.each do |lhs, rhs|
       target, input = lhs
       exactness, expect = rhs
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
+        HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
         state.fetch(:exactness).filter { _2.nonzero? }.to_h => ^exactness
       end
     end
@@ -76,7 +76,7 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
 
   def test_dump
     cases = {
-      [HubspotSDK::Internal::Type::Unknown, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
+      [HubSpotSDK::Internal::Type::Unknown, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [A, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [H, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [E, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
@@ -85,8 +85,8 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
       [String, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [:b, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
       [nil, B.new(a: "one", b: B.new(a: 1.0))] => {a: "one", b: {a: 1}},
-      [HubspotSDK::Internal::Type::Boolean, true] => true,
-      [HubspotSDK::Internal::Type::Boolean, "true"] => "true",
+      [HubSpotSDK::Internal::Type::Boolean, true] => true,
+      [HubSpotSDK::Internal::Type::Boolean, "true"] => "true",
       [Integer, "1"] => "1",
       [Float, 1] => 1,
       [String, "one"] => "one",
@@ -94,14 +94,14 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
       [:a, :b] => :b,
       [:a, "a"] => "a",
       [String, StringIO.new("one")] => "one",
-      [String, Pathname(__FILE__)] => HubspotSDK::FilePart
+      [String, Pathname(__FILE__)] => HubSpotSDK::FilePart
     }
 
     cases.each do
       target, input = _1
       expect = _2
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.dump(target, input) => ^expect
+        HubSpotSDK::Internal::Type::Converter.dump(target, input) => ^expect
       end
     end
   end
@@ -117,8 +117,8 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
 
     cases.each do |testcase, expect|
       target, input = testcase
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
-      HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state)
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
+      HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state)
       assert_pattern do
         state => {error: ^expect}
       end
@@ -127,8 +127,8 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
 
   def test_dump_retry
     types = [
-      HubspotSDK::Internal::Type::Unknown,
-      HubspotSDK::Internal::Type::Boolean,
+      HubSpotSDK::Internal::Type::Unknown,
+      HubSpotSDK::Internal::Type::Boolean,
       A,
       H,
       E,
@@ -144,7 +144,7 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
       ]
       types.product(cases).each do |target, input|
         state = {can_retry: true}
-        HubspotSDK::Internal::Type::Converter.dump(target, input, state: state)
+        HubSpotSDK::Internal::Type::Converter.dump(target, input, state: state)
 
         assert_pattern do
           state => {can_retry: false}
@@ -154,9 +154,9 @@ class HubspotSDK::Test::PrimitiveModelTest < Minitest::Test
   end
 end
 
-class HubspotSDK::Test::EnumModelTest < Minitest::Test
+class HubSpotSDK::Test::EnumModelTest < Minitest::Test
   class E0
-    include HubspotSDK::Internal::Type::Enum
+    include HubSpotSDK::Internal::Type::Enum
 
     attr_reader :values
 
@@ -164,27 +164,27 @@ class HubspotSDK::Test::EnumModelTest < Minitest::Test
   end
 
   module E1
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     TRUE = true
   end
 
   module E2
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     ONE = 1
     TWO = 2
   end
 
   module E3
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     ONE = 1.0
     TWO = 2.0
   end
 
   module E4
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     ONE = :one
     TWO = :two
@@ -219,9 +219,9 @@ class HubspotSDK::Test::EnumModelTest < Minitest::Test
     cases.each do |lhs, rhs|
       target, input = lhs
       exactness, expect = rhs
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
+        HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
         state.fetch(:exactness).filter { _2.nonzero? }.to_h => ^exactness
       end
     end
@@ -249,21 +249,21 @@ class HubspotSDK::Test::EnumModelTest < Minitest::Test
       target, input = _1
       expect = _2
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.dump(target, input) => ^expect
+        HubSpotSDK::Internal::Type::Converter.dump(target, input) => ^expect
       end
     end
   end
 end
 
-class HubspotSDK::Test::CollectionModelTest < Minitest::Test
-  A1 = HubspotSDK::Internal::Type::ArrayOf[-> { Integer }]
-  H1 = HubspotSDK::Internal::Type::HashOf[Integer]
+class HubSpotSDK::Test::CollectionModelTest < Minitest::Test
+  A1 = HubSpotSDK::Internal::Type::ArrayOf[-> { Integer }]
+  H1 = HubSpotSDK::Internal::Type::HashOf[Integer]
 
-  A2 = HubspotSDK::Internal::Type::ArrayOf[H1]
-  H2 = HubspotSDK::Internal::Type::HashOf[-> { A1 }]
+  A2 = HubSpotSDK::Internal::Type::ArrayOf[H1]
+  H2 = HubSpotSDK::Internal::Type::HashOf[-> { A1 }]
 
-  A3 = HubspotSDK::Internal::Type::ArrayOf[Integer, nil?: true]
-  H3 = HubspotSDK::Internal::Type::HashOf[Integer, nil?: true]
+  A3 = HubSpotSDK::Internal::Type::ArrayOf[Integer, nil?: true]
+  H3 = HubSpotSDK::Internal::Type::HashOf[Integer, nil?: true]
 
   def test_coerce
     cases = {
@@ -293,17 +293,17 @@ class HubspotSDK::Test::CollectionModelTest < Minitest::Test
     cases.each do |lhs, rhs|
       target, input = lhs
       exactness, expect = rhs
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
+        HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state) => ^expect
         state.fetch(:exactness).filter { _2.nonzero? }.to_h => ^exactness
       end
     end
   end
 end
 
-class HubspotSDK::Test::BaseModelTest < Minitest::Test
-  class M1 < HubspotSDK::Internal::Type::BaseModel
+class HubSpotSDK::Test::BaseModelTest < Minitest::Test
+  class M1 < HubSpotSDK::Internal::Type::BaseModel
     required :a, Integer
   end
 
@@ -313,7 +313,7 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
     optional :c, String
   end
 
-  class M3 < HubspotSDK::Internal::Type::BaseModel
+  class M3 < HubSpotSDK::Internal::Type::BaseModel
     optional :c, const: :c
     required :d, const: :d
   end
@@ -330,7 +330,7 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
     end
   end
 
-  class M5 < HubspotSDK::Internal::Type::BaseModel
+  class M5 < HubSpotSDK::Internal::Type::BaseModel
     request_only do
       required :c, const: :c
     end
@@ -341,7 +341,7 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
   end
 
   class M6 < M1
-    required :a, HubspotSDK::Internal::Type::ArrayOf[M6]
+    required :a, HubSpotSDK::Internal::Type::ArrayOf[M6]
     optional :b, M6
   end
 
@@ -375,11 +375,11 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
     cases.each do |lhs, rhs|
       target, input = lhs
       exactness, expect = rhs
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
       assert_pattern do
-        coerced = HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state)
+        coerced = HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state)
         assert_equal(coerced, coerced)
-        if coerced.is_a?(HubspotSDK::Internal::Type::BaseModel)
+        if coerced.is_a?(HubSpotSDK::Internal::Type::BaseModel)
           coerced.to_h => ^expect
         else
           coerced => ^expect
@@ -407,7 +407,7 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
       target, input = _1
       expect = _2
       assert_pattern do
-        HubspotSDK::Internal::Type::Converter.dump(target, input) => ^expect
+        HubSpotSDK::Internal::Type::Converter.dump(target, input) => ^expect
       end
     end
   end
@@ -439,7 +439,7 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
           tap do
             target.public_send(accessor)
             flunk
-          rescue HubspotSDK::Errors::ConversionError => e
+          rescue HubSpotSDK::Errors::ConversionError => e
             assert_kind_of(expect, e.cause)
           end
         else
@@ -468,32 +468,32 @@ class HubspotSDK::Test::BaseModelTest < Minitest::Test
   end
 end
 
-class HubspotSDK::Test::UnionTest < Minitest::Test
+class HubSpotSDK::Test::UnionTest < Minitest::Test
   class U0
-    include HubspotSDK::Internal::Type::Union
+    include HubSpotSDK::Internal::Type::Union
 
     def initialize(*variants) = variants.each { variant(_1) }
   end
 
   module U1
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant const: :a
     variant const: 2
   end
 
-  class M1 < HubspotSDK::Internal::Type::BaseModel
+  class M1 < HubSpotSDK::Internal::Type::BaseModel
     required :t, const: :a, api_name: :type
     optional :c, String
   end
 
-  class M2 < HubspotSDK::Internal::Type::BaseModel
+  class M2 < HubSpotSDK::Internal::Type::BaseModel
     required :type, const: :b
     optional :c, String
   end
 
   module U2
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     discriminator :type
 
@@ -502,7 +502,7 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
   end
 
   module U3
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     discriminator :type
 
@@ -511,7 +511,7 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
   end
 
   module U4
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     discriminator :type
 
@@ -519,30 +519,30 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
     variant :a, M1
   end
 
-  class M3 < HubspotSDK::Internal::Type::BaseModel
+  class M3 < HubSpotSDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
     required :a, Integer
   end
 
-  class M4 < HubspotSDK::Internal::Type::BaseModel
+  class M4 < HubSpotSDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
-    required :a, HubspotSDK::Internal::Type::ArrayOf[-> { U5 }]
+    required :a, HubSpotSDK::Internal::Type::ArrayOf[-> { U5 }]
   end
 
-  class M5 < HubspotSDK::Internal::Type::BaseModel
+  class M5 < HubSpotSDK::Internal::Type::BaseModel
     optional :recur, -> { U5 }
-    required :b, HubspotSDK::Internal::Type::ArrayOf[-> { U5 }]
+    required :b, HubSpotSDK::Internal::Type::ArrayOf[-> { U5 }]
   end
 
   module U5
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant -> { M3 }
     variant -> { M4 }
   end
 
   module U6
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant -> { M3 }
     variant -> { M5 }
@@ -553,7 +553,7 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
     tap do
       model.recur
       flunk
-    rescue HubspotSDK::Errors::ConversionError => e
+    rescue HubSpotSDK::Errors::ConversionError => e
       assert_kind_of(ArgumentError, e.cause)
     end
   end
@@ -587,11 +587,11 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
     cases.each do |lhs, rhs|
       target, input = lhs
       exactness, branched, expect = rhs
-      state = HubspotSDK::Internal::Type::Converter.new_coerce_state
+      state = HubSpotSDK::Internal::Type::Converter.new_coerce_state
       assert_pattern do
-        coerced = HubspotSDK::Internal::Type::Converter.coerce(target, input, state: state)
+        coerced = HubSpotSDK::Internal::Type::Converter.coerce(target, input, state: state)
         assert_equal(coerced, coerced)
-        if coerced.is_a?(HubspotSDK::Internal::Type::BaseModel)
+        if coerced.is_a?(HubSpotSDK::Internal::Type::BaseModel)
           coerced.to_h => ^expect
         else
           coerced => ^expect
@@ -603,9 +603,9 @@ class HubspotSDK::Test::UnionTest < Minitest::Test
   end
 end
 
-class HubspotSDK::Test::BaseModelQoLTest < Minitest::Test
+class HubSpotSDK::Test::BaseModelQoLTest < Minitest::Test
   class E0
-    include HubspotSDK::Internal::Type::Enum
+    include HubSpotSDK::Internal::Type::Enum
 
     attr_reader :values
 
@@ -613,49 +613,49 @@ class HubspotSDK::Test::BaseModelQoLTest < Minitest::Test
   end
 
   module E1
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     A = 1
   end
 
   module E2
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     A = 1
   end
 
   module E3
-    extend HubspotSDK::Internal::Type::Enum
+    extend HubSpotSDK::Internal::Type::Enum
 
     A = 2
     B = 3
   end
 
   class U0
-    include HubspotSDK::Internal::Type::Union
+    include HubSpotSDK::Internal::Type::Union
 
     def initialize(*variants) = variants.each { variant(_1) }
   end
 
   module U1
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant String
     variant Integer
   end
 
   module U2
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant String
     variant Integer
   end
 
-  class M1 < HubspotSDK::Internal::Type::BaseModel
+  class M1 < HubSpotSDK::Internal::Type::BaseModel
     required :a, Integer
   end
 
-  class M2 < HubspotSDK::Internal::Type::BaseModel
+  class M2 < HubSpotSDK::Internal::Type::BaseModel
     required :a, Integer, nil?: true
   end
 
@@ -665,9 +665,9 @@ class HubspotSDK::Test::BaseModelQoLTest < Minitest::Test
 
   def test_equality
     cases = {
-      [HubspotSDK::Internal::Type::Unknown, HubspotSDK::Internal::Type::Unknown] => true,
-      [HubspotSDK::Internal::Type::Boolean, HubspotSDK::Internal::Type::Boolean] => true,
-      [HubspotSDK::Internal::Type::Unknown, HubspotSDK::Internal::Type::Boolean] => false,
+      [HubSpotSDK::Internal::Type::Unknown, HubSpotSDK::Internal::Type::Unknown] => true,
+      [HubSpotSDK::Internal::Type::Boolean, HubSpotSDK::Internal::Type::Boolean] => true,
+      [HubSpotSDK::Internal::Type::Unknown, HubSpotSDK::Internal::Type::Boolean] => false,
       [E0.new(:a, :b), E0.new(:a, :b)] => true,
       [E0.new(:a, :b), E0.new(:b, :a)] => true,
       [E0.new(:a, :b), E0.new(:b, :c)] => false,
@@ -694,17 +694,17 @@ class HubspotSDK::Test::BaseModelQoLTest < Minitest::Test
   end
 end
 
-class HubspotSDK::Test::MetaInfoTest < Minitest::Test
-  A1 = HubspotSDK::Internal::Type::ArrayOf[Integer, nil?: true, doc: "dog"]
-  H1 = HubspotSDK::Internal::Type::HashOf[-> { String }, nil?: true, doc: "dawg"]
+class HubSpotSDK::Test::MetaInfoTest < Minitest::Test
+  A1 = HubSpotSDK::Internal::Type::ArrayOf[Integer, nil?: true, doc: "dog"]
+  H1 = HubSpotSDK::Internal::Type::HashOf[-> { String }, nil?: true, doc: "dawg"]
 
-  class M1 < HubspotSDK::Internal::Type::BaseModel
+  class M1 < HubSpotSDK::Internal::Type::BaseModel
     required :a, Integer, doc: "dog"
     optional :b, -> { String }, nil?: true, doc: "dawg"
   end
 
   module U1
-    extend HubspotSDK::Internal::Type::Union
+    extend HubSpotSDK::Internal::Type::Union
 
     variant -> { Integer }, const: 2, doc: "dog"
     variant -> { String }, doc: "dawg"

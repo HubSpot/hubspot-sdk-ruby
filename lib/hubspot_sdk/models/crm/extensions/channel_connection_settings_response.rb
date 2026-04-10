@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        # @see HubspotSDK::Resources::Crm::Extensions::Calling#create_channel_connection_settings
-        class ChannelConnectionSettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Crm::Extensions::Calling#create_channel_connection_settings
+        class ChannelConnectionSettingsResponse < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute created_at
           #   The date and time when the channel connection settings were created.
           #
@@ -16,7 +16,7 @@ module HubspotSDK
           #   Indicates whether the channel connection settings are ready for use.
           #
           #   @return [Boolean]
-          required :is_ready, HubspotSDK::Internal::Type::Boolean, api_name: :isReady
+          required :is_ready, HubSpotSDK::Internal::Type::Boolean, api_name: :isReady
 
           # @!attribute updated_at
           #   The date and time when the channel connection settings were last updated.

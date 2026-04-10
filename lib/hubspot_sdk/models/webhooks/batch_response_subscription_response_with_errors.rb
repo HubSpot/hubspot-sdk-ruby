@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class BatchResponseSubscriptionResponseWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseSubscriptionResponseWithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
         #   @return [Time]
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Webhooks::SubscriptionResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::SubscriptionResponse] }
+        #   @return [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse] }
 
         # @!attribute started_at
         #
@@ -21,18 +21,18 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status]
-        required :status, enum: -> { HubspotSDK::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status]
+        required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors that occurred during the batch operation.
@@ -48,13 +48,13 @@ module HubspotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
         #
-        #   @param results [Array<HubspotSDK::Models::Webhooks::SubscriptionResponse>]
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>]
         #
         #   @param started_at [Time]
         #
-        #   @param status [Symbol, HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status]
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors::Status]
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}]
         #
@@ -62,9 +62,9 @@ module HubspotSDK
         #
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors#status
+        # @see HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponseWithErrors#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

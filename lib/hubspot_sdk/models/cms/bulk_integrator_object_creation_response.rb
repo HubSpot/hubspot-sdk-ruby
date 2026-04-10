@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_object_type
-      class BulkIntegratorObjectCreationResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_object_type
+      class BulkIntegratorObjectCreationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute created_objects
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::IntegratorObjectCreationResponse}]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::IntegratorObjectCreationResponse}]
         required :created_objects,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IntegratorObjectCreationResponse] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::IntegratorObjectCreationResponse] },
                  api_name: :createdObjects
 
         # @!method initialize(created_objects:)
-        #   @param created_objects [Hash{Symbol=>HubspotSDK::Models::Cms::IntegratorObjectCreationResponse}]
+        #   @param created_objects [Hash{Symbol=>HubSpotSDK::Models::Cms::IntegratorObjectCreationResponse}]
       end
     end
   end

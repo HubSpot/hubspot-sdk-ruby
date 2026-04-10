@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
-        # @see HubspotSDK::Resources::Marketing::MarketingEvents::Participations#list_breakdown_by_contact
-        class ParticipationListBreakdownByContactParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::MarketingEvents::Participations#list_breakdown_by_contact
+        class ParticipationListBreakdownByContactParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute contact_identifier
           #
@@ -35,7 +35,7 @@ module HubspotSDK
 
           # @!method initialize(contact_identifier:, after: nil, limit: nil, state: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Marketing::MarketingEvents::ParticipationListBreakdownByContactParams}
+          #   {HubSpotSDK::Models::Marketing::MarketingEvents::ParticipationListBreakdownByContactParams}
           #   for more details.
           #
           #   @param contact_identifier [String]
@@ -46,7 +46,7 @@ module HubspotSDK
           #
           #   @param state [String] The participation state value. It may be REGISTERED, CANCELLED, ATTENDED, NO_SHO
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

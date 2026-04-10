@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicBulkOptOutFromAllResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicBulkOptOutFromAllResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+              T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
             )
           )
         end
@@ -30,7 +30,7 @@ module HubspotSDK
           params(
             statuses:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatus::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatus::OrHash
               ]
           ).void
         end
@@ -41,7 +41,7 @@ module HubspotSDK
             subscriber_id_string: String,
             statuses:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatus::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatus::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -58,7 +58,7 @@ module HubspotSDK
             {
               subscriber_id_string: String,
               statuses:
-                T::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+                T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
             }
           )
         end

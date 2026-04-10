@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @type [HubspotSDK::Internal::Type::Converter]
+      # @type [HubSpotSDK::Internal::Type::Converter]
       WebhookGetSubscriptionFiltersResponse =
-        HubspotSDK::Internal::Type::ArrayOf[-> { HubspotSDK::Webhooks::FilterResponse }]
+        HubSpotSDK::Internal::Type::ArrayOf[-> { HubSpotSDK::Webhooks::FilterResponse }]
     end
   end
 end

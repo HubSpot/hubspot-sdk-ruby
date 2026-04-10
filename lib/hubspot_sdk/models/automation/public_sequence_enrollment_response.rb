@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Sequences#get_enrollment_by_contact_id
-      class PublicSequenceEnrollmentResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Automation::Sequences#get_enrollment_by_contact_id
+      class PublicSequenceEnrollmentResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the sequence enrollment.
         #

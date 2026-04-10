@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
-      attr_reader definitions: HubspotSDK::Resources::Events::Definitions
+      attr_reader definitions: HubSpotSDK::Resources::Events::Definitions
 
-      attr_reader occurrences: HubspotSDK::Resources::Events::Occurrences
+      attr_reader occurrences: HubSpotSDK::Resources::Events::Occurrences
 
-      attr_reader send_: HubspotSDK::Resources::Events::Send
+      attr_reader send_: HubSpotSDK::Resources::Events::Send
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

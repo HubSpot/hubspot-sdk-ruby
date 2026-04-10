@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaPlayedPercentageEventRequest < HubspotSDK::Internal::Type::BaseModel
+      class MediaPlayedPercentageEventRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol
+            HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol
           )
         end
         attr_accessor :media_type
@@ -55,7 +55,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol
             )
           )
         end
@@ -64,7 +64,7 @@ module HubspotSDK
         sig do
           params(
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol
           ).void
         end
         attr_writer :external_play_context
@@ -108,7 +108,7 @@ module HubspotSDK
         sig do
           params(
             media_type:
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
             occurred_timestamp: Integer,
             played_percent: Integer,
             session_id: String,
@@ -117,7 +117,7 @@ module HubspotSDK
             contact_utk: String,
             external_id: String,
             external_play_context:
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
             media_bridge_id: Integer,
             media_name: String,
             media_url: String,
@@ -149,7 +149,7 @@ module HubspotSDK
           override.returns(
             {
               media_type:
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::OrSymbol,
               occurred_timestamp: Integer,
               played_percent: Integer,
               session_id: String,
@@ -158,7 +158,7 @@ module HubspotSDK
               contact_utk: String,
               external_id: String,
               external_play_context:
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::OrSymbol,
               media_bridge_id: Integer,
               media_name: String,
               media_url: String,
@@ -172,13 +172,13 @@ module HubspotSDK
         end
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -186,33 +186,33 @@ module HubspotSDK
           AUDIO =
             T.let(
               :AUDIO,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
             )
           DOCUMENT =
             T.let(
               :DOCUMENT,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
             )
           IMAGE =
             T.let(
               :IMAGE,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
             )
           OTHER =
             T.let(
               :OTHER,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
             )
           VIDEO =
             T.let(
               :VIDEO,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::MediaType::TaggedSymbol
               ]
             )
           end
@@ -221,13 +221,13 @@ module HubspotSDK
         end
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -235,18 +235,18 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
             )
           EXTERNAL_PAGE =
             T.let(
               :EXTERNAL_PAGE,
-              HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
+              HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
+                HubSpotSDK::Cms::MediaPlayedPercentageEventRequest::ExternalPlayContext::TaggedSymbol
               ]
             )
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalendarMeetingEventCreateProperties < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalendarMeetingEventCreateProperties < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute hs_meeting_end_time
         #   The time that the meeting should end in ISO 8601 format.
         #
@@ -53,12 +53,12 @@ module HubspotSDK
         # @!attribute hs_attachment_ids
         #
         #   @return [Array<String>, nil]
-        optional :hs_attachment_ids, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :hs_attachment_ids, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute hs_attendee_owner_ids
         #
         #   @return [Array<String>, nil]
-        optional :hs_attendee_owner_ids, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :hs_attendee_owner_ids, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute hs_internal_meeting_notes
         #   Internal notes related to the meeting.
@@ -83,13 +83,13 @@ module HubspotSDK
         #   The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM,
         #   PHONE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType, nil]
         optional :hs_meeting_location_type,
-                 enum: -> { HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType }
+                 enum: -> { HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType }
 
         # @!method initialize(hs_meeting_end_time:, hs_meeting_outcome:, hs_meeting_start_time:, hs_meeting_title:, hs_timestamp:, hubspot_owner_id:, hs_activity_type: nil, hs_attachment_ids: nil, hs_attendee_owner_ids: nil, hs_internal_meeting_notes: nil, hs_meeting_body: nil, hs_meeting_location: nil, hs_meeting_location_type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties}
+        #   {HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties}
         #   for more details.
         #
         #   @param hs_meeting_end_time [Time] The time that the meeting should end in ISO 8601 format.
@@ -116,14 +116,14 @@ module HubspotSDK
         #
         #   @param hs_meeting_location [String] The physical address, virtual location, or phone number where the meeting will t
         #
-        #   @param hs_meeting_location_type [Symbol, HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType] The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PH
+        #   @param hs_meeting_location_type [Symbol, HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties::HsMeetingLocationType] The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM, PH
 
         # The type of location for the meeting. Acceptable values are: ADDRESS, CUSTOM,
         # PHONE.
         #
-        # @see HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties#hs_meeting_location_type
+        # @see HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties#hs_meeting_location_type
         module HsMeetingLocationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS = :ADDRESS
           CUSTOM = :CUSTOM

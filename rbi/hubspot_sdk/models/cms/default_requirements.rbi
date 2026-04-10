@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class DefaultRequirements < HubspotSDK::Internal::Type::BaseModel
+      class DefaultRequirements < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::DefaultRequirements,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::DefaultRequirements,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         attr_accessor :gates
 
         sig do
-          returns(HubspotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol)
+          returns(HubSpotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol)
         end
         attr_accessor :operator
 
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           params(
             gates: T::Array[String],
-            operator: HubspotSDK::Cms::DefaultRequirements::Operator::OrSymbol,
+            operator: HubSpotSDK::Cms::DefaultRequirements::Operator::OrSymbol,
             scope_names: T::Array[String],
             settings: T::Array[String]
           ).returns(T.attached_class)
@@ -42,7 +42,7 @@ module HubspotSDK
             {
               gates: T::Array[String],
               operator:
-                HubspotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol,
               scope_names: T::Array[String],
               settings: T::Array[String]
             }
@@ -52,29 +52,29 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::DefaultRequirements::Operator)
+              T.all(Symbol, HubSpotSDK::Cms::DefaultRequirements::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           AND =
             T.let(
               :AND,
-              HubspotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
+              HubSpotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
             )
           OR =
             T.let(
               :OR,
-              HubspotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
+              HubSpotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
+                HubSpotSDK::Cms::DefaultRequirements::Operator::TaggedSymbol
               ]
             )
           end

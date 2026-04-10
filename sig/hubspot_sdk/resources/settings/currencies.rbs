@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
-        attr_reader central_fx_rates: HubspotSDK::Resources::Settings::Currencies::CentralFxRates
+        attr_reader central_fx_rates: HubSpotSDK::Resources::Settings::Currencies::CentralFxRates
 
-        attr_reader exchange_rates: HubspotSDK::Resources::Settings::Currencies::ExchangeRates
+        attr_reader exchange_rates: HubSpotSDK::Resources::Settings::Currencies::ExchangeRates
 
         def get_company_currency: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CompanyCurrency
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::CompanyCurrency
 
         def list_codes: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
 
         def update_company_currency: (
-          currency_code: HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::currency_code,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Settings::CompanyCurrency
+          currency_code: HubSpotSDK::Models::Settings::CompanyCurrencyUpdateRequest::currency_code,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Settings::CompanyCurrency
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

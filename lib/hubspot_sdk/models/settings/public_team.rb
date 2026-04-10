@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class PublicTeam < HubspotSDK::Internal::Type::BaseModel
+      class PublicTeam < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The team's unique ID
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         #   Secondary or additional members of this team
         #
         #   @return [Array<String>]
-        required :secondary_user_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryUserIds
+        required :secondary_user_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryUserIds
 
         # @!attribute user_ids
         #   Primary members of this team
         #
         #   @return [Array<String>]
-        required :user_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :userIds
+        required :user_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :userIds
 
         # @!method initialize(id:, name:, secondary_user_ids:, user_ids:)
         #   @param id [String] The team's unique ID

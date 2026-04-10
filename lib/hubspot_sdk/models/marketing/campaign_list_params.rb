@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Campaigns#list
-      class CampaignListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Campaigns#list
+      class CampaignListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -30,7 +30,7 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute sort
         #
@@ -39,7 +39,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, limit: nil, name: nil, properties: nil, sort: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::CampaignListParams} for more details.
+        #   {HubSpotSDK::Models::Marketing::CampaignListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -51,7 +51,7 @@ module HubspotSDK
         #
         #   @param sort [String]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
@@ -10,16 +10,16 @@ module HubspotSDK
           #
           # @overload list(request_options: {})
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LimitListParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LimitListParams
           def list(params = {})
             @client.request(
               method: :get,
               path: "crm/associations/2026-03/definitions/configurations/all",
-              model: HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
+              model: HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
               options: params[:request_options]
             )
           end
@@ -33,15 +33,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationSpec>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationSpec>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LimitBatchDeleteParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LimitBatchDeleteParams
           def batch_delete(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LimitBatchDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LimitBatchDeleteParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -68,15 +68,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateRequest>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationDefinitionConfigurationUpdateRequest>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult]
+          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LimitBatchUpdateParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LimitBatchUpdateParams
           def batch_update(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LimitBatchUpdateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LimitBatchUpdateParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -89,7 +89,7 @@ module HubspotSDK
                 to_object_type
               ],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult,
+              model: HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult,
               options: options
             )
           end
@@ -102,13 +102,13 @@ module HubspotSDK
           #
           # @param to_object_type [String]
           # @param from_object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging]
           #
-          # @see HubspotSDK::Models::Crm::AssociationsSchema::LimitGetByObjectTypesParams
+          # @see HubSpotSDK::Models::Crm::AssociationsSchema::LimitGetByObjectTypesParams
           def get_by_object_types(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::AssociationsSchema::LimitGetByObjectTypesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::AssociationsSchema::LimitGetByObjectTypesParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -120,14 +120,14 @@ module HubspotSDK
                 from_object_type,
                 to_object_type
               ],
-              model: HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
+              model: HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

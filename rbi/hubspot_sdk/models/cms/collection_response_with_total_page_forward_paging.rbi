@@ -1,36 +1,36 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalPageForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPageForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::CollectionResponseWithTotalPageForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::CollectionResponseWithTotalPageForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Collection of pages.
-        sig { returns(T::Array[HubspotSDK::Cms::PageData]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::PageData]) }
         attr_accessor :results
 
         # Total number of pages.
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Cms::PageData::OrHash],
+            results: T::Array[HubSpotSDK::Cms::PageData::OrHash],
             total: Integer,
-            paging: HubspotSDK::ForwardPaging::OrHash
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -45,9 +45,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Cms::PageData],
+              results: T::Array[HubSpotSDK::Cms::PageData],
               total: Integer,
-              paging: HubspotSDK::ForwardPaging
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

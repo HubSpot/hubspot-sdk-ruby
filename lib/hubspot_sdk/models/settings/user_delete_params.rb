@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Users#delete
-      class UserDeleteParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Settings::Users#delete
+      class UserDeleteParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute user_id
         #
@@ -15,16 +15,16 @@ module HubspotSDK
 
         # @!attribute id_property
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::UserDeleteParams::IDProperty, nil]
-        optional :id_property, enum: -> { HubspotSDK::Settings::UserDeleteParams::IDProperty }
+        #   @return [Symbol, HubSpotSDK::Models::Settings::UserDeleteParams::IDProperty, nil]
+        optional :id_property, enum: -> { HubSpotSDK::Settings::UserDeleteParams::IDProperty }
 
         # @!method initialize(user_id:, id_property: nil, request_options: {})
         #   @param user_id [String]
-        #   @param id_property [Symbol, HubspotSDK::Models::Settings::UserDeleteParams::IDProperty]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param id_property [Symbol, HubSpotSDK::Models::Settings::UserDeleteParams::IDProperty]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           USER_ID = :USER_ID

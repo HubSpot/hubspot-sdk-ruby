@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_played_event_request =
         {
-          media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
           occurred_timestamp: Integer,
           session_id: String,
-          state: HubspotSDK::Models::Cms::MediaPlayedEventRequest::state,
+          state: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::state,
           _hsenc: String,
           contact_id: Integer,
           contact_utk: String,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
           iframe_url: String,
           media_bridge_id: Integer,
           media_name: String,
@@ -21,14 +21,14 @@ module HubspotSDK
           page_url: String
         }
 
-      class MediaPlayedEventRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type
+      class MediaPlayedEventRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor media_type: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::media_type
 
         attr_accessor occurred_timestamp: Integer
 
         attr_accessor session_id: String
 
-        attr_accessor state: HubspotSDK::Models::Cms::MediaPlayedEventRequest::state
+        attr_accessor state: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::state
 
         attr_reader _hsenc: String?
 
@@ -46,11 +46,11 @@ module HubspotSDK
 
         def external_id=: (String) -> String
 
-        attr_reader external_play_context: HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context?
+        attr_reader external_play_context: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context?
 
         def external_play_context=: (
-          HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context
-        ) -> HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context
+          HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context
+        ) -> HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context
 
         attr_reader iframe_url: String?
 
@@ -81,15 +81,15 @@ module HubspotSDK
         def page_url=: (String) -> String
 
         def initialize: (
-          media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
           occurred_timestamp: Integer,
           session_id: String,
-          state: HubspotSDK::Models::Cms::MediaPlayedEventRequest::state,
+          state: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::state,
           ?_hsenc: String,
           ?contact_id: Integer,
           ?contact_utk: String,
           ?external_id: String,
-          ?external_play_context: HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
+          ?external_play_context: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
           ?iframe_url: String,
           ?media_bridge_id: Integer,
           ?media_name: String,
@@ -100,15 +100,15 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          media_type: HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::media_type,
           occurred_timestamp: Integer,
           session_id: String,
-          state: HubspotSDK::Models::Cms::MediaPlayedEventRequest::state,
+          state: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::state,
           _hsenc: String,
           contact_id: Integer,
           contact_utk: String,
           external_id: String,
-          external_play_context: HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context,
           iframe_url: String,
           media_bridge_id: Integer,
           media_name: String,
@@ -121,7 +121,7 @@ module HubspotSDK
         type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
@@ -129,29 +129,29 @@ module HubspotSDK
           OTHER: :OTHER
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedEventRequest::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaPlayedEventRequest::media_type]
         end
 
         type state = :STARTED | :VIEWED
 
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STARTED: :STARTED
           VIEWED: :VIEWED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedEventRequest::state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaPlayedEventRequest::state]
         end
 
         type external_play_context = :EMAIL | :EXTERNAL_PAGE
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
           EXTERNAL_PAGE: :EXTERNAL_PAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaPlayedEventRequest::external_play_context]
         end
       end
     end

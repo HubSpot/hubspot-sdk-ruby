@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AssociationUpdateAssociationLabelsParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class AssociationUpdateAssociationLabelsParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AssociationUpdateAssociationLabelsParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AssociationUpdateAssociationLabelsParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :to_object_id
 
-        sig { returns(T::Array[HubspotSDK::AssociationSpec]) }
+        sig { returns(T::Array[HubSpotSDK::AssociationSpec]) }
         attr_accessor :body
 
         sig do
@@ -36,8 +36,8 @@ module HubspotSDK
             object_id_: String,
             to_object_type: String,
             to_object_id: String,
-            body: T::Array[HubspotSDK::AssociationSpec::OrHash],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            body: T::Array[HubSpotSDK::AssociationSpec::OrHash],
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -57,8 +57,8 @@ module HubspotSDK
               object_id_: String,
               to_object_type: String,
               to_object_id: String,
-              body: T::Array[HubspotSDK::AssociationSpec],
-              request_options: HubspotSDK::RequestOptions
+              body: T::Array[HubSpotSDK::AssociationSpec],
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

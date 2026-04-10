@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventPublicReadResponse = Marketing::MarketingEventPublicReadResponse
 
@@ -9,7 +9,7 @@ module HubspotSDK
           attendees: Integer,
           cancellations: Integer,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_event_id: String,
@@ -26,7 +26,7 @@ module HubspotSDK
           start_date_time: Time
         }
 
-      class MarketingEventPublicReadResponse < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicReadResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor attendees: Integer
@@ -35,7 +35,7 @@ module HubspotSDK
 
         attr_accessor created_at: Time
 
-        attr_accessor custom_properties: ::Array[HubspotSDK::PropertyValue]
+        attr_accessor custom_properties: ::Array[HubSpotSDK::PropertyValue]
 
         attr_accessor event_name: String
 
@@ -86,7 +86,7 @@ module HubspotSDK
           attendees: Integer,
           cancellations: Integer,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_event_id: String,
@@ -108,7 +108,7 @@ module HubspotSDK
           attendees: Integer,
           cancellations: Integer,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           external_event_id: String,

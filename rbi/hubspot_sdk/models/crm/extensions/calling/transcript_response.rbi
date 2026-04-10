@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          class TranscriptResponse < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptResponse < HubSpotSDK::Internal::Type::BaseModel
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::Calling::TranscriptResponse,
-                  HubspotSDK::Internal::AnyHash
+                  HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse,
+                  HubSpotSDK::Internal::AnyHash
                 )
               end
 
@@ -25,7 +25,7 @@ module HubspotSDK
 
             sig do
               returns(
-                HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
               )
             end
             attr_accessor :transcript_source
@@ -33,7 +33,7 @@ module HubspotSDK
             sig do
               returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance
+                  HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance
                 ]
               )
             end
@@ -48,10 +48,10 @@ module HubspotSDK
                 created_at: Time,
                 engagement_id: Integer,
                 transcript_source:
-                  HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::OrSymbol,
+                  HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::OrSymbol,
                 transcript_utterances:
                   T::Array[
-                    HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance::OrHash
+                    HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance::OrHash
                   ],
                 updated_at: Time
               ).returns(T.attached_class)
@@ -73,10 +73,10 @@ module HubspotSDK
                   created_at: Time,
                   engagement_id: Integer,
                   transcript_source:
-                    HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol,
+                    HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol,
                   transcript_utterances:
                     T::Array[
-                      HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance
+                      HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance
                     ],
                   updated_at: Time
                 }
@@ -86,13 +86,13 @@ module HubspotSDK
             end
 
             module TranscriptSource
-              extend HubspotSDK::Internal::Type::Enum
+              extend HubSpotSDK::Internal::Type::Enum
 
               TaggedSymbol =
                 T.type_alias do
                   T.all(
                     Symbol,
-                    HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource
+                    HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource
                   )
                 end
               OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -100,18 +100,18 @@ module HubspotSDK
               HUBSPOT_GENERATED =
                 T.let(
                   :HUBSPOT_GENERATED,
-                  HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
                 )
               INTEGRATOR_GENERATED =
                 T.let(
                   :INTEGRATOR_GENERATED,
-                  HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
                 )
 
               sig do
                 override.returns(
                   T::Array[
-                    HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
+                    HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource::TaggedSymbol
                   ]
                 )
               end

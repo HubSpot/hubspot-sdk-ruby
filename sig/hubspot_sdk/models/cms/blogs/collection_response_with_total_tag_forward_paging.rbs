@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         type collection_response_with_total_tag_forward_paging =
           {
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             total: Integer,
-            paging: HubspotSDK::ForwardPaging
+            paging: HubSpotSDK::ForwardPaging
           }
 
-        class CollectionResponseWithTotalTagForwardPaging < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor results: ::Array[HubspotSDK::Cms::Blogs::Tag]
+        class CollectionResponseWithTotalTagForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor results: ::Array[HubSpotSDK::Cms::Blogs::Tag]
 
           attr_accessor total: Integer
 
-          attr_reader paging: HubspotSDK::ForwardPaging?
+          attr_reader paging: HubSpotSDK::ForwardPaging?
 
-          def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+          def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
           def initialize: (
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             total: Integer,
-            ?paging: HubspotSDK::ForwardPaging
+            ?paging: HubSpotSDK::ForwardPaging
           ) -> void
 
           def to_hash: -> {
-            results: ::Array[HubspotSDK::Cms::Blogs::Tag],
+            results: ::Array[HubSpotSDK::Cms::Blogs::Tag],
             total: Integer,
-            paging: HubspotSDK::ForwardPaging
+            paging: HubSpotSDK::ForwardPaging
           }
         end
       end

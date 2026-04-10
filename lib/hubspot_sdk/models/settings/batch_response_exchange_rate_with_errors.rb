@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class BatchResponseExchangeRateWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseExchangeRateWithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The datetime the response was completed
         #
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Settings::ExchangeRate>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate] }
+        #   @return [Array<HubSpotSDK::Models::Settings::ExchangeRate>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate] }
 
         # @!attribute started_at
         #   The datetime the of the request.
@@ -24,19 +24,19 @@ module HubspotSDK
         # @!attribute status
         #   The current status of the response (e.g. COMPLETED)
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::BatchResponseExchangeRateWithErrors::Status]
-        required :status, enum: -> { HubspotSDK::Settings::BatchResponseExchangeRateWithErrors::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Settings::BatchResponseExchangeRateWithErrors::Status]
+        required :status, enum: -> { HubSpotSDK::Settings::BatchResponseExchangeRateWithErrors::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   The link to the next page with exchange rates.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors associated to the request.
@@ -53,13 +53,13 @@ module HubspotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time] The datetime the response was completed
         #
-        #   @param results [Array<HubspotSDK::Models::Settings::ExchangeRate>]
+        #   @param results [Array<HubSpotSDK::Models::Settings::ExchangeRate>]
         #
         #   @param started_at [Time] The datetime the of the request.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Settings::BatchResponseExchangeRateWithErrors::Status] The current status of the response (e.g. COMPLETED)
+        #   @param status [Symbol, HubSpotSDK::Models::Settings::BatchResponseExchangeRateWithErrors::Status] The current status of the response (e.g. COMPLETED)
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] The link to the next page with exchange rates.
         #
@@ -69,9 +69,9 @@ module HubspotSDK
 
         # The current status of the response (e.g. COMPLETED)
         #
-        # @see HubspotSDK::Models::Settings::BatchResponseExchangeRateWithErrors#status
+        # @see HubSpotSDK::Models::Settings::BatchResponseExchangeRateWithErrors#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

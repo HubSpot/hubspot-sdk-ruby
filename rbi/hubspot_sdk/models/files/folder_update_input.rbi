@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FolderUpdateInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FolderUpdateInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

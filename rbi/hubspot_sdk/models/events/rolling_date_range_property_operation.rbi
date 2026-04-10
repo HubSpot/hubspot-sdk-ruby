@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RollingDateRangePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingDateRangePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RollingDateRangePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RollingDateRangePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -59,10 +59,10 @@ module HubspotSDK
             number_of_days: Integer,
             operation_type: String,
             operator:
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType::OrSymbol,
             requires_time_zone_conversion: T::Boolean,
             default_value: String,
             render_spec: String
@@ -88,10 +88,10 @@ module HubspotSDK
               number_of_days: Integer,
               operation_type: String,
               operator:
-                HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol,
               requires_time_zone_conversion: T::Boolean,
               default_value: String,
               render_spec: String
@@ -102,13 +102,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RollingDateRangePropertyOperation::Operator
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -116,28 +116,28 @@ module HubspotSDK
           IS_LESS_THAN_X_DAYS_AGO =
             T.let(
               :IS_LESS_THAN_X_DAYS_AGO,
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
           IS_LESS_THAN_X_DAYS_FROM_NOW =
             T.let(
               :IS_LESS_THAN_X_DAYS_FROM_NOW,
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
           IS_MORE_THAN_X_DAYS_AGO =
             T.let(
               :IS_MORE_THAN_X_DAYS_AGO,
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
           IS_MORE_THAN_X_DAYS_FROM_NOW =
             T.let(
               :IS_MORE_THAN_X_DAYS_FROM_NOW,
-              HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -146,13 +146,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -160,13 +160,13 @@ module HubspotSDK
           DATETIME_ROLLING =
             T.let(
               :"datetime-rolling",
-              HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

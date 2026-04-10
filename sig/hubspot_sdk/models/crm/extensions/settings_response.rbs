@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -17,7 +17,7 @@ module HubspotSDK
             width: Integer
           }
 
-        class SettingsResponse < HubspotSDK::Internal::Type::BaseModel
+        class SettingsResponse < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor created_at: Time
 
           attr_accessor height: Integer

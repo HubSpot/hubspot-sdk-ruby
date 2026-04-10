@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalAssociationCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalAssociationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute to
         #   Contains the Id of a Public Object
         #
-        #   @return [HubspotSDK::Models::PublicObjectID]
-        required :to, -> { HubspotSDK::PublicObjectID }
+        #   @return [HubSpotSDK::Models::PublicObjectID]
+        required :to, -> { HubSpotSDK::PublicObjectID }
 
         # @!attribute types
         #
-        #   @return [Array<HubspotSDK::Models::AssociationSpec>]
-        required :types, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationSpec] }
+        #   @return [Array<HubSpotSDK::Models::AssociationSpec>]
+        required :types, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationSpec] }
 
         # @!method initialize(to:, types:)
-        #   @param to [HubspotSDK::Models::PublicObjectID] Contains the Id of a Public Object
+        #   @param to [HubSpotSDK::Models::PublicObjectID] Contains the Id of a Public Object
         #
-        #   @param types [Array<HubspotSDK::Models::AssociationSpec>]
+        #   @param types [Array<HubSpotSDK::Models::AssociationSpec>]
       end
     end
   end

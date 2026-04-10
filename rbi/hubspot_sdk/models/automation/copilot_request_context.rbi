@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CopilotRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class CopilotRequestContext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::CopilotRequestContext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::CopilotRequestContext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the source of the request, with the default value being 'COPILOT'.
         sig do
           returns(
-            HubspotSDK::Automation::CopilotRequestContext::Source::OrSymbol
+            HubSpotSDK::Automation::CopilotRequestContext::Source::OrSymbol
           )
         end
         attr_accessor :source
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             source:
-              HubspotSDK::Automation::CopilotRequestContext::Source::OrSymbol,
+              HubSpotSDK::Automation::CopilotRequestContext::Source::OrSymbol,
             trajectory_id: String
           ).returns(T.attached_class)
         end
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               source:
-                HubspotSDK::Automation::CopilotRequestContext::Source::OrSymbol,
+                HubSpotSDK::Automation::CopilotRequestContext::Source::OrSymbol,
               trajectory_id: String
             }
           )
@@ -56,13 +56,13 @@ module HubspotSDK
 
         # Indicates the source of the request, with the default value being 'COPILOT'.
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::CopilotRequestContext::Source
+                HubSpotSDK::Automation::CopilotRequestContext::Source
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           COPILOT =
             T.let(
               :COPILOT,
-              HubspotSDK::Automation::CopilotRequestContext::Source::TaggedSymbol
+              HubSpotSDK::Automation::CopilotRequestContext::Source::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::CopilotRequestContext::Source::TaggedSymbol
+                HubSpotSDK::Automation::CopilotRequestContext::Source::TaggedSymbol
               ]
             )
           end

@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_budget_totals =
         {
-          budget_items: ::Array[HubspotSDK::Marketing::PublicBudgetItem],
-          currency_code: HubspotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
-          spend_items: ::Array[HubspotSDK::Marketing::PublicSpendItem],
+          budget_items: ::Array[HubSpotSDK::Marketing::PublicBudgetItem],
+          currency_code: HubSpotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
+          spend_items: ::Array[HubSpotSDK::Marketing::PublicSpendItem],
           budget_total: Float,
           remaining_budget: Float,
           spend_total: Float
         }
 
-      class PublicBudgetTotals < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor budget_items: ::Array[HubspotSDK::Marketing::PublicBudgetItem]
+      class PublicBudgetTotals < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor budget_items: ::Array[HubSpotSDK::Marketing::PublicBudgetItem]
 
-        attr_accessor currency_code: HubspotSDK::Models::Marketing::PublicBudgetTotals::currency_code
+        attr_accessor currency_code: HubSpotSDK::Models::Marketing::PublicBudgetTotals::currency_code
 
-        attr_accessor spend_items: ::Array[HubspotSDK::Marketing::PublicSpendItem]
+        attr_accessor spend_items: ::Array[HubSpotSDK::Marketing::PublicSpendItem]
 
         attr_reader budget_total: Float?
 
@@ -31,18 +31,18 @@ module HubspotSDK
         def spend_total=: (Float) -> Float
 
         def initialize: (
-          budget_items: ::Array[HubspotSDK::Marketing::PublicBudgetItem],
-          currency_code: HubspotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
-          spend_items: ::Array[HubspotSDK::Marketing::PublicSpendItem],
+          budget_items: ::Array[HubSpotSDK::Marketing::PublicBudgetItem],
+          currency_code: HubSpotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
+          spend_items: ::Array[HubSpotSDK::Marketing::PublicSpendItem],
           ?budget_total: Float,
           ?remaining_budget: Float,
           ?spend_total: Float
         ) -> void
 
         def to_hash: -> {
-          budget_items: ::Array[HubspotSDK::Marketing::PublicBudgetItem],
-          currency_code: HubspotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
-          spend_items: ::Array[HubspotSDK::Marketing::PublicSpendItem],
+          budget_items: ::Array[HubSpotSDK::Marketing::PublicBudgetItem],
+          currency_code: HubSpotSDK::Models::Marketing::PublicBudgetTotals::currency_code,
+          spend_items: ::Array[HubSpotSDK::Marketing::PublicSpendItem],
           budget_total: Float,
           remaining_budget: Float,
           spend_total: Float
@@ -227,7 +227,7 @@ module HubspotSDK
           | :ZWL
 
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -406,7 +406,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicBudgetTotals::currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicBudgetTotals::currency_code]
         end
       end
     end

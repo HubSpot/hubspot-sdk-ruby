@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EventDetailSettingsURL < HubspotSDK::Internal::Type::BaseModel
+      class EventDetailSettingsURL < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::EventDetailSettingsURL,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::EventDetailSettingsURL,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

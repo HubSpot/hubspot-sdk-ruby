@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroup < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute archived
       #
       #   @return [Boolean]
-      required :archived, HubspotSDK::Internal::Type::Boolean
+      required :archived, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute label
       #

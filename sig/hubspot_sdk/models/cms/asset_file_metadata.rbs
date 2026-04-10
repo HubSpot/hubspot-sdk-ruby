@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type asset_file_metadata =
@@ -13,7 +13,7 @@ module HubspotSDK
           hash_: String
         }
 
-      class AssetFileMetadata < HubspotSDK::Internal::Type::BaseModel
+      class AssetFileMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Integer

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
@@ -14,10 +14,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash
+                    HubSpotSDK::Crm::SimplePublicObjectBatchInput::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def update(inputs:, request_options: {})
             end
@@ -27,13 +27,13 @@ module HubspotSDK
             # at once, particularly when integrating with third-party systems.
             sig do
               params(
-                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+                inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID::OrHash],
                 properties: T::Array[String],
                 properties_with_history: T::Array[String],
                 archived: T::Boolean,
                 id_property: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
               # Body param
@@ -53,7 +53,7 @@ module HubspotSDK
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

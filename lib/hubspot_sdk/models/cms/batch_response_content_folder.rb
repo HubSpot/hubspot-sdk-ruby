@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchResponseContentFolder < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseContentFolder < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   Time of batch operation completion.
         #
@@ -13,8 +13,8 @@ module HubspotSDK
         # @!attribute results
         #   Results of batch operation.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ContentFolder>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder] }
+        #   @return [Array<HubSpotSDK::Models::Cms::ContentFolder>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentFolder] }
 
         # @!attribute started_at
         #   Time of batch operation start.
@@ -25,14 +25,14 @@ module HubspotSDK
         # @!attribute status
         #   Status of batch operation.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseContentFolder::Status]
-        required :status, enum: -> { HubspotSDK::Cms::BatchResponseContentFolder::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::BatchResponseContentFolder::Status]
+        required :status, enum: -> { HubSpotSDK::Cms::BatchResponseContentFolder::Status }
 
         # @!attribute links
         #   Links associated with batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   Time of batch operation request.
@@ -43,11 +43,11 @@ module HubspotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time] Time of batch operation completion.
         #
-        #   @param results [Array<HubspotSDK::Models::Cms::ContentFolder>] Results of batch operation.
+        #   @param results [Array<HubSpotSDK::Models::Cms::ContentFolder>] Results of batch operation.
         #
         #   @param started_at [Time] Time of batch operation start.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Cms::BatchResponseContentFolder::Status] Status of batch operation.
+        #   @param status [Symbol, HubSpotSDK::Models::Cms::BatchResponseContentFolder::Status] Status of batch operation.
         #
         #   @param links [Hash{Symbol=>String}] Links associated with batch operation.
         #
@@ -55,9 +55,9 @@ module HubspotSDK
 
         # Status of batch operation.
         #
-        # @see HubspotSDK::Models::Cms::BatchResponseContentFolder#status
+        # @see HubSpotSDK::Models::Cms::BatchResponseContentFolder#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

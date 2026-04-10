@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_list_params =
@@ -18,18 +18,18 @@ module HubspotSDK
           published_at: Time,
           published_before: Time,
           sort: ::Array[String],
-          type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          type: HubSpotSDK::Models::Marketing::EmailListParams::type_,
           updated_after: Time,
           updated_at: Time,
           updated_before: Time,
           variant_stats: bool,
           workflow_names: bool
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class EmailListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_reader after: String?
 
@@ -91,11 +91,11 @@ module HubspotSDK
 
         def sort=: (::Array[String]) -> ::Array[String]
 
-        attr_reader type: HubspotSDK::Models::Marketing::EmailListParams::type_?
+        attr_reader type: HubSpotSDK::Models::Marketing::EmailListParams::type_?
 
         def type=: (
-          HubspotSDK::Models::Marketing::EmailListParams::type_
-        ) -> HubspotSDK::Models::Marketing::EmailListParams::type_
+          HubSpotSDK::Models::Marketing::EmailListParams::type_
+        ) -> HubSpotSDK::Models::Marketing::EmailListParams::type_
 
         attr_reader updated_after: Time?
 
@@ -133,13 +133,13 @@ module HubspotSDK
           ?published_at: Time,
           ?published_before: Time,
           ?sort: ::Array[String],
-          ?type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          ?type: HubSpotSDK::Models::Marketing::EmailListParams::type_,
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
           ?variant_stats: bool,
           ?workflow_names: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
@@ -158,13 +158,13 @@ module HubspotSDK
           published_at: Time,
           published_before: Time,
           sort: ::Array[String],
-          type: HubspotSDK::Models::Marketing::EmailListParams::type_,
+          type: HubSpotSDK::Models::Marketing::EmailListParams::type_,
           updated_after: Time,
           updated_at: Time,
           updated_before: Time,
           variant_stats: bool,
           workflow_names: bool,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type type_ =
@@ -202,7 +202,7 @@ module HubspotSDK
           | :TICKET_EMAIL
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AB_EMAIL: :AB_EMAIL
           AUTOMATED_AB_EMAIL: :AUTOMATED_AB_EMAIL
@@ -237,7 +237,7 @@ module HubspotSDK
           SMTP_TOKEN: :SMTP_TOKEN
           TICKET_EMAIL: :TICKET_EMAIL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailListParams::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailListParams::type_]
         end
       end
     end

@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#get_record_memberships
-      class APICollectionResponseRecordListMembership < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#get_record_memberships
+      class APICollectionResponseRecordListMembership < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::RecordListMembership>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordListMembership] }
+        #   @return [Array<HubSpotSDK::Models::Crm::RecordListMembership>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordListMembership] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!attribute total
         #
@@ -21,8 +21,8 @@ module HubspotSDK
         optional :total, Integer
 
         # @!method initialize(results:, paging: nil, total: nil)
-        #   @param results [Array<HubspotSDK::Models::Crm::RecordListMembership>]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param results [Array<HubSpotSDK::Models::Crm::RecordListMembership>]
+        #   @param paging [HubSpotSDK::Models::Paging]
         #   @param total [Integer]
       end
     end

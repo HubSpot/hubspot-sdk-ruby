@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -20,7 +20,7 @@ module HubspotSDK
               asset_id: String,
               campaign_guid: String,
               asset_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def update(asset_id, campaign_guid:, asset_type:, request_options: {})
@@ -38,9 +38,9 @@ module HubspotSDK
               end_date: String,
               limit: String,
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
+              HubSpotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
             )
           end
           def list(
@@ -77,14 +77,14 @@ module HubspotSDK
               asset_id: String,
               campaign_guid: String,
               asset_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(asset_id, campaign_guid:, asset_type:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

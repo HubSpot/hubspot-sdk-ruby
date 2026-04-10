@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type exchange_rate =
@@ -7,13 +7,13 @@ module HubspotSDK
           conversion_rate: Float,
           created_at: Time,
           effective_at: Time,
-          from_currency_code: HubspotSDK::Models::Settings::ExchangeRate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::ExchangeRate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::to_currency_code,
           updated_at: Time,
           visible_in_ui: bool
         }
 
-      class ExchangeRate < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRate < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor conversion_rate: Float
@@ -22,9 +22,9 @@ module HubspotSDK
 
         attr_accessor effective_at: Time
 
-        attr_accessor from_currency_code: HubspotSDK::Models::Settings::ExchangeRate::from_currency_code
+        attr_accessor from_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::from_currency_code
 
-        attr_accessor to_currency_code: HubspotSDK::Models::Settings::ExchangeRate::to_currency_code
+        attr_accessor to_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::to_currency_code
 
         attr_accessor updated_at: Time
 
@@ -35,8 +35,8 @@ module HubspotSDK
           conversion_rate: Float,
           created_at: Time,
           effective_at: Time,
-          from_currency_code: HubspotSDK::Models::Settings::ExchangeRate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::ExchangeRate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::to_currency_code,
           updated_at: Time,
           visible_in_ui: bool
         ) -> void
@@ -46,8 +46,8 @@ module HubspotSDK
           conversion_rate: Float,
           created_at: Time,
           effective_at: Time,
-          from_currency_code: HubspotSDK::Models::Settings::ExchangeRate::from_currency_code,
-          to_currency_code: HubspotSDK::Models::Settings::ExchangeRate::to_currency_code,
+          from_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::from_currency_code,
+          to_currency_code: HubSpotSDK::Models::Settings::ExchangeRate::to_currency_code,
           updated_at: Time,
           visible_in_ui: bool
         }
@@ -231,7 +231,7 @@ module HubspotSDK
           | :ZWL
 
         module FromCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -410,7 +410,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::ExchangeRate::from_currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::ExchangeRate::from_currency_code]
         end
 
         type to_currency_code =
@@ -592,7 +592,7 @@ module HubspotSDK
           | :ZWL
 
         module ToCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED: :AED
           AFN: :AFN
@@ -771,7 +771,7 @@ module HubspotSDK
           ZMW: :ZMW
           ZWL: :ZWL
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Settings::ExchangeRate::to_currency_code]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Settings::ExchangeRate::to_currency_code]
         end
       end
     end

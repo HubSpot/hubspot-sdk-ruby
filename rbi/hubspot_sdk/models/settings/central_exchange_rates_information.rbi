@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CentralExchangeRatesInformation < HubspotSDK::Internal::Type::BaseModel
+      class CentralExchangeRatesInformation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::CentralExchangeRatesInformation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::CentralExchangeRatesInformation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

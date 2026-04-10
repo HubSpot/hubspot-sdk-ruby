@@ -1,33 +1,33 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RelativeComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class RelativeComparativeTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
+            HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
           )
         end
         attr_accessor :comparison
 
-        sig { returns(HubspotSDK::Events::TimeOffset) }
+        sig { returns(HubSpotSDK::Events::TimeOffset) }
         attr_reader :time_offset
 
-        sig { params(time_offset: HubspotSDK::Events::TimeOffset::OrHash).void }
+        sig { params(time_offset: HubSpotSDK::Events::TimeOffset::OrHash).void }
         attr_writer :time_offset
 
         sig do
           returns(
-            HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+            HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -35,10 +35,10 @@ module HubspotSDK
         sig do
           params(
             comparison:
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::OrSymbol,
-            time_offset: HubspotSDK::Events::TimeOffset::OrHash,
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::OrSymbol,
+            time_offset: HubSpotSDK::Events::TimeOffset::OrHash,
             type:
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type::OrSymbol
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(comparison:, time_offset:, type:)
@@ -48,10 +48,10 @@ module HubspotSDK
           override.returns(
             {
               comparison:
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol,
-              time_offset: HubspotSDK::Events::TimeOffset,
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol,
+              time_offset: HubSpotSDK::Events::TimeOffset,
               type:
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
             }
           )
         end
@@ -59,13 +59,13 @@ module HubspotSDK
         end
 
         module Comparison
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -73,18 +73,18 @@ module HubspotSDK
           AFTER =
             T.let(
               :AFTER,
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
             )
           BEFORE =
             T.let(
               :BEFORE,
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Comparison::TaggedSymbol
               ]
             )
           end
@@ -93,13 +93,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -107,13 +107,13 @@ module HubspotSDK
           RELATIVE_COMPARATIVE_TIMESTAMP_REFINE_BY =
             T.let(
               :RelativeComparativeTimestampRefineBy,
-              HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Events::RelativeComparativeTimestampRefineBy::Type::TaggedSymbol
               ]
             )
           end

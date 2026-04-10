@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class AuthorDetachFromLangGroupParams < HubspotSDK::Models::Cms::DetachFromLangGroupRequestVNext
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class AuthorDetachFromLangGroupParams < HubSpotSDK::Models::Cms::DetachFromLangGroupRequestVNext
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::AuthorDetachFromLangGroupParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::AuthorDetachFromLangGroupParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
               T.attached_class
             )
           end
@@ -25,7 +25,7 @@ module HubspotSDK
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns({ request_options: HubSpotSDK::RequestOptions })
           end
           def to_hash
           end

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class OEmbedDomainsCollectionResponse < HubspotSDK::Internal::Type::BaseModel
+      class OEmbedDomainsCollectionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::OEmbedDomainsCollectionResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::OEmbedDomainsCollectionResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Cms::IntegratorOEmbedDomainModel]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::IntegratorOEmbedDomainModel]) }
         attr_accessor :results
 
         sig { returns(T.nilable(Integer)) }
@@ -24,7 +24,7 @@ module HubspotSDK
         sig do
           params(
             results:
-              T::Array[HubspotSDK::Cms::IntegratorOEmbedDomainModel::OrHash],
+              T::Array[HubSpotSDK::Cms::IntegratorOEmbedDomainModel::OrHash],
             total_count: Integer
           ).returns(T.attached_class)
         end
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Cms::IntegratorOEmbedDomainModel],
+              results: T::Array[HubSpotSDK::Cms::IntegratorOEmbedDomainModel],
               total_count: Integer
             }
           )

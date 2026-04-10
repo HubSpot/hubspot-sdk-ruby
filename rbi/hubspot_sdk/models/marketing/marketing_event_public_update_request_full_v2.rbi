@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventPublicUpdateRequestFullV2 =
       Marketing::MarketingEventPublicUpdateRequestFullV2
 
     module Marketing
-      class MarketingEventPublicUpdateRequestFullV2 < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicUpdateRequestFullV2 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestFullV2,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::PropertyValue]) }
+        sig { returns(T::Array[HubSpotSDK::PropertyValue]) }
         attr_accessor :custom_properties
 
         # The internal ID of the marketing event in HubSpot
@@ -80,7 +80,7 @@ module HubspotSDK
 
         sig do
           params(
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             object_id_: String,
             end_date_time: Time,
             event_cancelled: T::Boolean,
@@ -118,7 +118,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              custom_properties: T::Array[HubspotSDK::PropertyValue],
+              custom_properties: T::Array[HubSpotSDK::PropertyValue],
               object_id_: String,
               end_date_time: Time,
               event_cancelled: T::Boolean,

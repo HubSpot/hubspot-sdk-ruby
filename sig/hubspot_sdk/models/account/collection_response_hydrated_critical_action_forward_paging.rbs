@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type collection_response_hydrated_critical_action_forward_paging =
         {
-          results: ::Array[HubspotSDK::Account::HydratedCriticalAction],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::HydratedCriticalAction],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponseHydratedCriticalActionForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Account::HydratedCriticalAction]
+      class CollectionResponseHydratedCriticalActionForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Account::HydratedCriticalAction]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Account::HydratedCriticalAction],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::HydratedCriticalAction],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Account::HydratedCriticalAction],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::HydratedCriticalAction],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

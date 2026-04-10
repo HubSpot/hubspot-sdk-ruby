@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class TimelineEventIFrame < HubspotSDK::Internal::Type::BaseModel
+      class TimelineEventIFrame < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute header_label
         #   The label of the modal window that displays the iframe contents.
         #

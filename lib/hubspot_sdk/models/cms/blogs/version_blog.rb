@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Settings#list_revisions
-        class VersionBlog < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Cms::Blogs::Settings#list_revisions
+        class VersionBlog < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The id of the version.
           #
@@ -14,8 +14,8 @@ module HubspotSDK
 
           # @!attribute object
           #
-          #   @return [HubspotSDK::Models::Cms::Blogs::Blog]
-          required :object, -> { HubspotSDK::Cms::Blogs::Blog }
+          #   @return [HubSpotSDK::Models::Cms::Blogs::Blog]
+          required :object, -> { HubSpotSDK::Cms::Blogs::Blog }
 
           # @!attribute updated_at
           #   The timestamp (ISO8601 format) when this blog version was updated.
@@ -25,17 +25,17 @@ module HubspotSDK
 
           # @!attribute user
           #
-          #   @return [HubspotSDK::Models::VersionUser]
-          required :user, -> { HubspotSDK::VersionUser }
+          #   @return [HubSpotSDK::Models::VersionUser]
+          required :user, -> { HubSpotSDK::VersionUser }
 
           # @!method initialize(id:, object:, updated_at:, user:)
           #   @param id [String] The id of the version.
           #
-          #   @param object [HubspotSDK::Models::Cms::Blogs::Blog]
+          #   @param object [HubSpotSDK::Models::Cms::Blogs::Blog]
           #
           #   @param updated_at [Time] The timestamp (ISO8601 format) when this blog version was updated.
           #
-          #   @param user [HubspotSDK::Models::VersionUser]
+          #   @param user [HubSpotSDK::Models::VersionUser]
         end
       end
 

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       class Statuses
@@ -8,12 +8,12 @@ module HubspotSDK
           # Checks whether a set of contacts have opted out of all communications.
           sig do
             params(
-              channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
+              channel: HubSpotSDK::BatchInputString::Channel::OrSymbol,
               inputs: T::Array[String],
               business_unit_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
             )
           end
           def get_unsubscribe_all_statuses(
@@ -30,12 +30,12 @@ module HubspotSDK
           # Batch retrieve subscription statuses for a set of contacts.
           sig do
             params(
-              channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
+              channel: HubSpotSDK::BatchInputString::Channel::OrSymbol,
               inputs: T::Array[String],
               business_unit_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
             )
           end
           def read(
@@ -52,13 +52,13 @@ module HubspotSDK
           # Unsubscribe a set of contacts from all email subscriptions.
           sig do
             params(
-              channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
+              channel: HubSpotSDK::BatchInputString::Channel::OrSymbol,
               inputs: T::Array[String],
               business_unit_id: Integer,
               verbose: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
             )
           end
           def unsubscribe_all(
@@ -79,11 +79,11 @@ module HubspotSDK
             params(
               inputs:
                 T::Array[
-                  HubspotSDK::CommunicationPreferences::PublicStatusRequest::OrHash
+                  HubSpotSDK::CommunicationPreferences::PublicStatusRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatus
             )
           end
           def update_statuses(
@@ -95,7 +95,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

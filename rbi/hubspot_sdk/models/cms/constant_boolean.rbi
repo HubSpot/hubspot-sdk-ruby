@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ConstantBoolean < HubspotSDK::Internal::Type::BaseModel
+      class ConstantBoolean < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::ConstantBoolean,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::ConstantBoolean,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(HubspotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol)
+          returns(HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol)
         end
         attr_accessor :operator
 
@@ -31,7 +31,7 @@ module HubspotSDK
 
         sig do
           params(
-            operator: HubspotSDK::Cms::ConstantBoolean::Operator::OrSymbol,
+            operator: HubSpotSDK::Cms::ConstantBoolean::Operator::OrSymbol,
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -43,7 +43,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol,
               property_name: String,
               value: T::Boolean
             }
@@ -53,23 +53,23 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::ConstantBoolean::Operator)
+              T.all(Symbol, HubSpotSDK::Cms::ConstantBoolean::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CONSTANT_BOOLEAN =
             T.let(
               :CONSTANT_BOOLEAN,
-              HubspotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol
+              HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol]
             )
           end
           def self.values

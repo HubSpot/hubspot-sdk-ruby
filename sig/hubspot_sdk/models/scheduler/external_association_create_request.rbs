@@ -1,25 +1,25 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_association_create_request =
         {
-          to: HubspotSDK::PublicObjectID,
-          types: ::Array[HubspotSDK::AssociationSpec]
+          to: HubSpotSDK::PublicObjectID,
+          types: ::Array[HubSpotSDK::AssociationSpec]
         }
 
-      class ExternalAssociationCreateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor to: HubspotSDK::PublicObjectID
+      class ExternalAssociationCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor to: HubSpotSDK::PublicObjectID
 
-        attr_accessor types: ::Array[HubspotSDK::AssociationSpec]
+        attr_accessor types: ::Array[HubSpotSDK::AssociationSpec]
 
         def initialize: (
-          to: HubspotSDK::PublicObjectID,
-          types: ::Array[HubspotSDK::AssociationSpec]
+          to: HubSpotSDK::PublicObjectID,
+          types: ::Array[HubSpotSDK::AssociationSpec]
         ) -> void
 
         def to_hash: -> {
-          to: HubspotSDK::PublicObjectID,
-          types: ::Array[HubspotSDK::AssociationSpec]
+          to: HubSpotSDK::PublicObjectID,
+          types: ::Array[HubSpotSDK::AssociationSpec]
         }
       end
     end

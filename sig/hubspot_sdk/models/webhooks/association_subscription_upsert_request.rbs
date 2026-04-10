@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type association_subscription_upsert_request =
         {
-          actions: ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
           associated_object_type_ids: ::Array[String],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
         }
 
-      class AssociationSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor actions: ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action]
+      class AssociationSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action]
 
         attr_accessor associated_object_type_ids: ::Array[String]
 
@@ -22,24 +22,24 @@ module HubspotSDK
 
         attr_accessor portal_id: Integer
 
-        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
 
         def initialize: (
-          actions: ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
           associated_object_type_ids: ::Array[String],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
         ) -> void
 
         def to_hash: -> {
-          actions: ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action],
           associated_object_type_ids: ::Array[String],
           object_ids: ::Array[Integer],
           object_type_id: String,
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type
         }
 
         type action =
@@ -57,7 +57,7 @@ module HubspotSDK
           | :REMOVED_FROM_LIST
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATE: :CREATE
           UPDATE: :UPDATE
@@ -72,7 +72,7 @@ module HubspotSDK
           ADDED_TO_LIST: :ADDED_TO_LIST
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::action]
         end
 
         type subscription_type =
@@ -83,7 +83,7 @@ module HubspotSDK
           | :LIST_MEMBERSHIP
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT: :OBJECT
           ASSOCIATION: :ASSOCIATION
@@ -91,7 +91,7 @@ module HubspotSDK
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest::subscription_type]
         end
       end
     end

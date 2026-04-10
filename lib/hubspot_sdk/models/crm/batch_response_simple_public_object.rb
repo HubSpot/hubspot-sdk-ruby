@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseSimplePublicObject < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseSimplePublicObject < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp when the batch processing was completed, in ISO 8601 format.
         #
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
+        #   @return [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject] }
 
         # @!attribute started_at
         #   The timestamp when the batch processing began, in ISO 8601 format.
@@ -25,14 +25,14 @@ module HubspotSDK
         #   The status of the batch processing request: "PENDING", "PROCESSING",
         #   "CANCELLED", or "COMPLETE"
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status]
-        required :status, enum: -> { HubspotSDK::Crm::BatchResponseSimplePublicObject::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponseSimplePublicObject::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::BatchResponseSimplePublicObject::Status }
 
         # @!attribute links
         #   An object containing relevant links related to the batch request.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   The timestamp when the batch request was initially made, in ISO 8601 format.
@@ -42,17 +42,17 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchResponseSimplePublicObject} for more details.
+        #   {HubSpotSDK::Models::Crm::BatchResponseSimplePublicObject} for more details.
         #
         #   A public object batch response object
         #
         #   @param completed_at [Time] The timestamp when the batch processing was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
         #
         #   @param started_at [Time] The timestamp when the batch processing began, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseSimplePublicObject::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponseSimplePublicObject::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
         #
         #   @param links [Hash{Symbol=>String}] An object containing relevant links related to the batch request.
         #
@@ -61,9 +61,9 @@ module HubspotSDK
         # The status of the batch processing request: "PENDING", "PROCESSING",
         # "CANCELLED", or "COMPLETE"
         #
-        # @see HubspotSDK::Models::Crm::BatchResponseSimplePublicObject#status
+        # @see HubSpotSDK::Models::Crm::BatchResponseSimplePublicObject#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

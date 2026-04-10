@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectTypePropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypePropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute field_type
         #   Controls how the property appears in HubSpot.
         #
@@ -26,8 +26,8 @@ module HubspotSDK
         # @!attribute type
         #   The data type of the property.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::Type]
-        required :type, enum: -> { HubspotSDK::Crm::ObjectTypePropertyCreate::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::ObjectTypePropertyCreate::Type }
 
         # @!attribute description
         #   A description of the property that will be shown as help text in HubSpot.
@@ -54,7 +54,7 @@ module HubspotSDK
         #   Whether the property can be used in a HubSpot form.
         #
         #   @return [Boolean, nil]
-        optional :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        optional :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute group_name
         #   The name of the group this property belongs to.
@@ -67,35 +67,35 @@ module HubspotSDK
         #   changed.
         #
         #   @return [Boolean, nil]
-        optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        optional :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #   Hidden options won't be shown in HubSpot.
         #
         #   @return [Boolean, nil]
-        optional :hidden, HubspotSDK::Internal::Type::Boolean
+        optional :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute number_display_hint
         #   Controls how numeric properties are formatted in the HubSpot UI
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::NumberDisplayHint, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::NumberDisplayHint, nil]
         optional :number_display_hint,
-                 enum: -> { HubspotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint },
+                 enum: -> { HubSpotSDK::Crm::ObjectTypePropertyCreate::NumberDisplayHint },
                  api_name: :numberDisplayHint
 
         # @!attribute options
         #   A list of available options for the property. This field is only required for
         #   enumerated properties.
         #
-        #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
+        #   @return [Array<HubSpotSDK::Models::OptionInput>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::OptionInput] }
 
         # @!attribute option_sort_strategy
         #   Controls how the property options will be sorted in the HubSpot UI.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::OptionSortStrategy, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::OptionSortStrategy, nil]
         optional :option_sort_strategy,
-                 enum: -> { HubspotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy },
+                 enum: -> { HubSpotSDK::Crm::ObjectTypePropertyCreate::OptionSortStrategy },
                  api_name: :optionSortStrategy
 
         # @!attribute referenced_object_type
@@ -111,26 +111,26 @@ module HubspotSDK
         #
         #   @return [Boolean, nil]
         optional :searchable_in_global_search,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :searchableInGlobalSearch
 
         # @!attribute show_currency_symbol
         #   Whether the property will display the currency symbol in the HubSpot UI.
         #
         #   @return [Boolean, nil]
-        optional :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
+        optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
         # @!attribute text_display_hint
         #   Controls how text properties are formatted in the HubSpot UI
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::TextDisplayHint, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::TextDisplayHint, nil]
         optional :text_display_hint,
-                 enum: -> { HubspotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint },
+                 enum: -> { HubSpotSDK::Crm::ObjectTypePropertyCreate::TextDisplayHint },
                  api_name: :textDisplayHint
 
         # @!method initialize(field_type:, label:, name:, type:, description: nil, display_order: nil, external_options_reference_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, option_sort_strategy: nil, referenced_object_type: nil, searchable_in_global_search: nil, show_currency_symbol: nil, text_display_hint: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ObjectTypePropertyCreate} for more details.
+        #   {HubSpotSDK::Models::Crm::ObjectTypePropertyCreate} for more details.
         #
         #   @param field_type [String] Controls how the property appears in HubSpot.
         #
@@ -138,7 +138,7 @@ module HubspotSDK
         #
         #   @param name [String] The internal property name, which must be used when referencing the property fro
         #
-        #   @param type [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::Type] The data type of the property.
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::Type] The data type of the property.
         #
         #   @param description [String] A description of the property that will be shown as help text in HubSpot.
         #
@@ -154,11 +154,11 @@ module HubspotSDK
         #
         #   @param hidden [Boolean] Hidden options won't be shown in HubSpot.
         #
-        #   @param number_display_hint [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::NumberDisplayHint] Controls how numeric properties are formatted in the HubSpot UI
+        #   @param number_display_hint [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::NumberDisplayHint] Controls how numeric properties are formatted in the HubSpot UI
         #
-        #   @param options [Array<HubspotSDK::Models::OptionInput>] A list of available options for the property. This field is only required for en
+        #   @param options [Array<HubSpotSDK::Models::OptionInput>] A list of available options for the property. This field is only required for en
         #
-        #   @param option_sort_strategy [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::OptionSortStrategy] Controls how the property options will be sorted in the HubSpot UI.
+        #   @param option_sort_strategy [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::OptionSortStrategy] Controls how the property options will be sorted in the HubSpot UI.
         #
         #   @param referenced_object_type [String] Defines the options this property will return, e.g. OWNER would return name of u
         #
@@ -166,13 +166,13 @@ module HubspotSDK
         #
         #   @param show_currency_symbol [Boolean] Whether the property will display the currency symbol in the HubSpot UI.
         #
-        #   @param text_display_hint [Symbol, HubspotSDK::Models::Crm::ObjectTypePropertyCreate::TextDisplayHint] Controls how text properties are formatted in the HubSpot UI
+        #   @param text_display_hint [Symbol, HubSpotSDK::Models::Crm::ObjectTypePropertyCreate::TextDisplayHint] Controls how text properties are formatted in the HubSpot UI
 
         # The data type of the property.
         #
-        # @see HubspotSDK::Models::Crm::ObjectTypePropertyCreate#type
+        # @see HubSpotSDK::Models::Crm::ObjectTypePropertyCreate#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           DATE = :date
@@ -188,9 +188,9 @@ module HubspotSDK
 
         # Controls how numeric properties are formatted in the HubSpot UI
         #
-        # @see HubspotSDK::Models::Crm::ObjectTypePropertyCreate#number_display_hint
+        # @see HubSpotSDK::Models::Crm::ObjectTypePropertyCreate#number_display_hint
         module NumberDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CURRENCY = :currency
           DURATION = :duration
@@ -205,9 +205,9 @@ module HubspotSDK
 
         # Controls how the property options will be sorted in the HubSpot UI.
         #
-        # @see HubspotSDK::Models::Crm::ObjectTypePropertyCreate#option_sort_strategy
+        # @see HubSpotSDK::Models::Crm::ObjectTypePropertyCreate#option_sort_strategy
         module OptionSortStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALPHABETICAL = :ALPHABETICAL
           DISPLAY_ORDER = :DISPLAY_ORDER
@@ -218,9 +218,9 @@ module HubspotSDK
 
         # Controls how text properties are formatted in the HubSpot UI
         #
-        # @see HubspotSDK::Models::Crm::ObjectTypePropertyCreate#text_display_hint
+        # @see HubSpotSDK::Models::Crm::ObjectTypePropertyCreate#text_display_hint
         module TextDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOMAIN_NAME = :domain_name
           EMAIL = :email

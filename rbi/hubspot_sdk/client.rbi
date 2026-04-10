@@ -1,7 +1,7 @@
 # typed: strong
 
-module HubspotSDK
-  class Client < HubspotSDK::Internal::Transport::BaseClient
+module HubSpotSDK
+  class Client < HubSpotSDK::Internal::Transport::BaseClient
     DEFAULT_MAX_RETRIES = 2
 
     DEFAULT_TIMEOUT_IN_SECONDS = T.let(60.0, Float)
@@ -16,49 +16,49 @@ module HubspotSDK
     sig { returns(T.nilable(String)) }
     attr_reader :developer_api_key
 
-    sig { returns(HubspotSDK::Resources::Account) }
+    sig { returns(HubSpotSDK::Resources::Account) }
     attr_reader :account
 
-    sig { returns(HubspotSDK::Resources::Auth) }
+    sig { returns(HubSpotSDK::Resources::Auth) }
     attr_reader :auth
 
-    sig { returns(HubspotSDK::Resources::Automation) }
+    sig { returns(HubSpotSDK::Resources::Automation) }
     attr_reader :automation
 
-    sig { returns(HubspotSDK::Resources::BusinessUnits) }
+    sig { returns(HubSpotSDK::Resources::BusinessUnits) }
     attr_reader :business_units
 
-    sig { returns(HubspotSDK::Resources::Cms) }
+    sig { returns(HubSpotSDK::Resources::Cms) }
     attr_reader :cms
 
-    sig { returns(HubspotSDK::Resources::CommunicationPreferences) }
+    sig { returns(HubSpotSDK::Resources::CommunicationPreferences) }
     attr_reader :communication_preferences
 
-    sig { returns(HubspotSDK::Resources::Conversations) }
+    sig { returns(HubSpotSDK::Resources::Conversations) }
     attr_reader :conversations
 
-    sig { returns(HubspotSDK::Resources::Crm) }
+    sig { returns(HubSpotSDK::Resources::Crm) }
     attr_reader :crm
 
-    sig { returns(HubspotSDK::Resources::Events) }
+    sig { returns(HubSpotSDK::Resources::Events) }
     attr_reader :events
 
-    sig { returns(HubspotSDK::Resources::Files) }
+    sig { returns(HubSpotSDK::Resources::Files) }
     attr_reader :files
 
-    sig { returns(HubspotSDK::Resources::Marketing) }
+    sig { returns(HubSpotSDK::Resources::Marketing) }
     attr_reader :marketing
 
-    sig { returns(HubspotSDK::Resources::Meta) }
+    sig { returns(HubSpotSDK::Resources::Meta) }
     attr_reader :meta
 
-    sig { returns(HubspotSDK::Resources::Scheduler) }
+    sig { returns(HubSpotSDK::Resources::Scheduler) }
     attr_reader :scheduler
 
-    sig { returns(HubspotSDK::Resources::Settings) }
+    sig { returns(HubSpotSDK::Resources::Settings) }
     attr_reader :settings
 
-    sig { returns(HubspotSDK::Resources::Webhooks) }
+    sig { returns(HubSpotSDK::Resources::Webhooks) }
     attr_reader :webhooks
 
     # @api private
@@ -90,10 +90,10 @@ module HubspotSDK
       # `"https://api.example.com/v2/"`. Defaults to `ENV["HUBSPOT_BASE_URL"]`
       base_url: ENV["HUBSPOT_BASE_URL"],
       # Max number of retries to attempt after a failed retryable request.
-      max_retries: HubspotSDK::Client::DEFAULT_MAX_RETRIES,
-      timeout: HubspotSDK::Client::DEFAULT_TIMEOUT_IN_SECONDS,
-      initial_retry_delay: HubspotSDK::Client::DEFAULT_INITIAL_RETRY_DELAY,
-      max_retry_delay: HubspotSDK::Client::DEFAULT_MAX_RETRY_DELAY
+      max_retries: HubSpotSDK::Client::DEFAULT_MAX_RETRIES,
+      timeout: HubSpotSDK::Client::DEFAULT_TIMEOUT_IN_SECONDS,
+      initial_retry_delay: HubSpotSDK::Client::DEFAULT_INITIAL_RETRY_DELAY,
+      max_retry_delay: HubSpotSDK::Client::DEFAULT_MAX_RETRY_DELAY
     )
     end
   end

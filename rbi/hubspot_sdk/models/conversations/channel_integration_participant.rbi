@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ChannelIntegrationParticipant < HubspotSDK::Internal::Type::BaseModel
+      class ChannelIntegrationParticipant < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::ChannelIntegrationParticipant,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::ChannelIntegrationParticipant,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Conversations::PublicDeliveryIdentifier) }
+        sig { returns(HubSpotSDK::Conversations::PublicDeliveryIdentifier) }
         attr_reader :delivery_identifier
 
         sig do
           params(
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).void
         end
         attr_writer :delivery_identifier
@@ -38,7 +38,7 @@ module HubspotSDK
         sig do
           params(
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
             name: String,
             sender_actor_id: String
           ).returns(T.attached_class)
@@ -50,7 +50,7 @@ module HubspotSDK
           override.returns(
             {
               delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier,
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier,
               name: String,
               sender_actor_id: String
             }

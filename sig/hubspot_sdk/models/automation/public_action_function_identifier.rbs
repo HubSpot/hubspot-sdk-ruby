@@ -1,26 +1,26 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_action_function_identifier =
         {
-          function_type: HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
           id: String
         }
 
-      class PublicActionFunctionIdentifier < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor function_type: HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type
+      class PublicActionFunctionIdentifier < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor function_type: HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type
 
         attr_reader id: String?
 
         def id=: (String) -> String
 
         def initialize: (
-          function_type: HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
           ?id: String
         ) -> void
 
         def to_hash: -> {
-          function_type: HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
+          function_type: HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type,
           id: String
         }
 
@@ -31,14 +31,14 @@ module HubspotSDK
           | :PRE_FETCH_OPTIONS
 
         module FunctionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           POST_ACTION_EXECUTION: :POST_ACTION_EXECUTION
           POST_FETCH_OPTIONS: :POST_FETCH_OPTIONS
           PRE_ACTION_EXECUTION: :PRE_ACTION_EXECUTION
           PRE_FETCH_OPTIONS: :PRE_FETCH_OPTIONS
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicActionFunctionIdentifier::function_type]
         end
       end
     end

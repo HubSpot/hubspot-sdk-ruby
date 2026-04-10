@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Transactional
-        # @see HubspotSDK::Resources::Marketing::Transactional::SmtpTokens#list
-        class SmtpTokenListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::Transactional::SmtpTokens#list
+        class SmtpTokenListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute after
           #   The paging cursor token of the last successfully read resource will be returned
@@ -35,7 +35,7 @@ module HubspotSDK
 
           # @!method initialize(after: nil, campaign_name: nil, email_campaign_id: nil, limit: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Marketing::Transactional::SmtpTokenListParams} for more
+          #   {HubSpotSDK::Models::Marketing::Transactional::SmtpTokenListParams} for more
           #   details.
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
@@ -46,7 +46,7 @@ module HubspotSDK
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

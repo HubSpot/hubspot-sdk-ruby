@@ -1,19 +1,19 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type condition =
         {
-          filter_type: HubspotSDK::Models::Webhooks::Condition::filter_type,
-          operator: HubspotSDK::Models::Webhooks::Condition::operator,
+          filter_type: HubSpotSDK::Models::Webhooks::Condition::filter_type,
+          operator: HubSpotSDK::Models::Webhooks::Condition::operator,
           property: String,
           value: String,
           values: ::Array[String]
         }
 
-      class Condition < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_type: HubspotSDK::Models::Webhooks::Condition::filter_type
+      class Condition < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubSpotSDK::Models::Webhooks::Condition::filter_type
 
-        attr_accessor operator: HubspotSDK::Models::Webhooks::Condition::operator
+        attr_accessor operator: HubSpotSDK::Models::Webhooks::Condition::operator
 
         attr_accessor property: String
 
@@ -26,16 +26,16 @@ module HubspotSDK
         def values=: (::Array[String]) -> ::Array[String]
 
         def initialize: (
-          filter_type: HubspotSDK::Models::Webhooks::Condition::filter_type,
-          operator: HubspotSDK::Models::Webhooks::Condition::operator,
+          filter_type: HubSpotSDK::Models::Webhooks::Condition::filter_type,
+          operator: HubSpotSDK::Models::Webhooks::Condition::operator,
           property: String,
           ?value: String,
           ?values: ::Array[String]
         ) -> void
 
         def to_hash: -> {
-          filter_type: HubspotSDK::Models::Webhooks::Condition::filter_type,
-          operator: HubspotSDK::Models::Webhooks::Condition::operator,
+          filter_type: HubSpotSDK::Models::Webhooks::Condition::filter_type,
+          operator: HubSpotSDK::Models::Webhooks::Condition::operator,
           property: String,
           value: String,
           values: ::Array[String]
@@ -44,11 +44,11 @@ module HubspotSDK
         type filter_type = :CRM_OBJECT_PROPERTY
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CRM_OBJECT_PROPERTY: :CRM_OBJECT_PROPERTY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::Condition::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::Condition::filter_type]
         end
 
         type operator =
@@ -67,7 +67,7 @@ module HubspotSDK
           | :STARTS_WITH
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS: :CONTAINS
           ENDS_WITH: :ENDS_WITH
@@ -83,7 +83,7 @@ module HubspotSDK
           NOT_IN: :NOT_IN
           STARTS_WITH: :STARTS_WITH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::Condition::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::Condition::operator]
         end
       end
     end

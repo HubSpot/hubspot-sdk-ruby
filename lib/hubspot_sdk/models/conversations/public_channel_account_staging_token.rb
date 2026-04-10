@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelAccountStagingToken < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountStagingToken < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute account_token
         #
         #   @return [String]
@@ -36,9 +36,9 @@ module HubspotSDK
 
         # @!attribute delivery_identifier
         #
-        #   @return [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier, nil]
+        #   @return [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier, nil]
         optional :delivery_identifier,
-                 -> { HubspotSDK::Conversations::PublicDeliveryIdentifier },
+                 -> { HubSpotSDK::Conversations::PublicDeliveryIdentifier },
                  api_name: :deliveryIdentifier
 
         # @!method initialize(account_token:, created_at:, generic_channel_id:, inbox_id:, user_id:, account_name: nil, delivery_identifier: nil)
@@ -48,7 +48,7 @@ module HubspotSDK
         #   @param inbox_id [Integer]
         #   @param user_id [Integer]
         #   @param account_name [String]
-        #   @param delivery_identifier [HubspotSDK::Models::Conversations::PublicDeliveryIdentifier]
+        #   @param delivery_identifier [HubSpotSDK::Models::Conversations::PublicDeliveryIdentifier]
       end
     end
   end

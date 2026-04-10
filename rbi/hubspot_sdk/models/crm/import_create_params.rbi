@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ImportCreateParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class ImportCreateParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ImportCreateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ImportCreateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T.nilable(HubspotSDK::Internal::FileInput)) }
+        sig { returns(T.nilable(HubSpotSDK::Internal::FileInput)) }
         attr_reader :files
 
-        sig { params(files: HubspotSDK::Internal::FileInput).void }
+        sig { params(files: HubSpotSDK::Internal::FileInput).void }
         attr_writer :files
 
         sig { returns(T.nilable(String)) }
@@ -29,9 +29,9 @@ module HubspotSDK
 
         sig do
           params(
-            files: HubspotSDK::Internal::FileInput,
+            files: HubSpotSDK::Internal::FileInput,
             import_request: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(files: nil, import_request: nil, request_options: {})
@@ -40,9 +40,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              files: HubspotSDK::Internal::FileInput,
+              files: HubSpotSDK::Internal::FileInput,
               import_request: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

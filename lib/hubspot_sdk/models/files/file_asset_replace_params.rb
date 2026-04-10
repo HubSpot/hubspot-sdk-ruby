@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::FileAssets#replace
-      class FileAssetReplaceParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::FileAssets#replace
+      class FileAssetReplaceParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute file_id
         #
@@ -20,8 +20,8 @@ module HubspotSDK
 
         # @!attribute file
         #
-        #   @return [Pathname, StringIO, IO, String, HubspotSDK::FilePart, nil]
-        optional :file, HubspotSDK::Internal::Type::FileInput
+        #   @return [Pathname, StringIO, IO, String, HubSpotSDK::FilePart, nil]
+        optional :file, HubSpotSDK::Internal::Type::FileInput
 
         # @!attribute options
         #
@@ -31,9 +31,9 @@ module HubspotSDK
         # @!method initialize(file_id:, charset_hunch: nil, file: nil, options: nil, request_options: {})
         #   @param file_id [String]
         #   @param charset_hunch [String]
-        #   @param file [Pathname, StringIO, IO, String, HubspotSDK::FilePart]
+        #   @param file [Pathname, StringIO, IO, String, HubSpotSDK::FilePart]
         #   @param options [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

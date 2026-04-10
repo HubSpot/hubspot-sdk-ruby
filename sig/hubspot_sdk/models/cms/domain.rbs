@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type domain =
@@ -25,7 +25,7 @@ module HubspotSDK
           updated: Time
         }
 
-      class Domain < HubspotSDK::Internal::Type::BaseModel
+      class Domain < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor correct_cname: String

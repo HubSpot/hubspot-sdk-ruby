@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type callback_completion_request =
@@ -6,10 +6,10 @@ module HubspotSDK
           output_fields: ::Hash[Symbol, String],
           typed_outputs: top,
           failure_reason_type: String,
-          request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+          request_context: HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context
         }
 
-      class CallbackCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+      class CallbackCompletionRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor output_fields: ::Hash[Symbol, String]
 
         attr_accessor typed_outputs: top
@@ -18,37 +18,37 @@ module HubspotSDK
 
         def failure_reason_type=: (String) -> String
 
-        attr_reader request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context?
+        attr_reader request_context: HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context?
 
         def request_context=: (
-          HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
-        ) -> HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+          HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context
+        ) -> HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context
 
         def initialize: (
           output_fields: ::Hash[Symbol, String],
           typed_outputs: top,
           ?failure_reason_type: String,
-          ?request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+          ?request_context: HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context
         ) -> void
 
         def to_hash: -> {
           output_fields: ::Hash[Symbol, String],
           typed_outputs: top,
           failure_reason_type: String,
-          request_context: HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context
+          request_context: HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context
         }
 
         type request_context =
-          HubspotSDK::Automation::WorkflowsRequestContext
-          | HubspotSDK::Automation::AgentRequestContext
-          | HubspotSDK::Automation::CopilotRequestContext
-          | HubspotSDK::Automation::StandaloneRequestContext
-          | HubspotSDK::Automation::TestRequestContext
+          HubSpotSDK::Automation::WorkflowsRequestContext
+          | HubSpotSDK::Automation::AgentRequestContext
+          | HubSpotSDK::Automation::CopilotRequestContext
+          | HubSpotSDK::Automation::StandaloneRequestContext
+          | HubSpotSDK::Automation::TestRequestContext
 
         module RequestContext
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::CallbackCompletionRequest::request_context]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Automation::CallbackCompletionRequest::request_context]
         end
       end
     end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      # @see HubspotSDK::Resources::CommunicationPreferences#update_status
-      class CommunicationPreferenceUpdateStatusParams < HubspotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::CommunicationPreferences#update_status
+      class CommunicationPreferenceUpdateStatusParams < HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute subscriber_id_string
         #
@@ -15,7 +15,7 @@ module HubspotSDK
 
         # @!method initialize(subscriber_id_string:, request_options: {})
         #   @param subscriber_id_string [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

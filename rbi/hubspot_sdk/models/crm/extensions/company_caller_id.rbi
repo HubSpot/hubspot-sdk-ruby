@@ -1,33 +1,33 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CompanyCallerID < HubspotSDK::Internal::Type::BaseModel
+        class CompanyCallerID < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CompanyCallerID,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CompanyCallerID,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # Specifies the type of caller ID, which is set to 'COMPANY' by default.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
             )
           end
           attr_accessor :caller_id_type
 
-          sig { returns(HubspotSDK::Crm::Extensions::ObjectCoordinates) }
+          sig { returns(HubSpotSDK::Crm::Extensions::ObjectCoordinates) }
           attr_reader :object_coordinates
 
           sig do
             params(
               object_coordinates:
-                HubspotSDK::Crm::Extensions::ObjectCoordinates::OrHash
+                HubSpotSDK::Crm::Extensions::ObjectCoordinates::OrHash
             ).void
           end
           attr_writer :object_coordinates
@@ -42,9 +42,9 @@ module HubspotSDK
           sig do
             params(
               caller_id_type:
-                HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::OrSymbol,
+                HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::OrSymbol,
               object_coordinates:
-                HubspotSDK::Crm::Extensions::ObjectCoordinates::OrHash,
+                HubSpotSDK::Crm::Extensions::ObjectCoordinates::OrHash,
               name: String
             ).returns(T.attached_class)
           end
@@ -61,9 +61,9 @@ module HubspotSDK
             override.returns(
               {
                 caller_id_type:
-                  HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol,
                 object_coordinates:
-                  HubspotSDK::Crm::Extensions::ObjectCoordinates,
+                  HubSpotSDK::Crm::Extensions::ObjectCoordinates,
                 name: String
               }
             )
@@ -73,13 +73,13 @@ module HubspotSDK
 
           # Specifies the type of caller ID, which is set to 'COMPANY' by default.
           module CallerIDType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType
+                  HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -87,13 +87,13 @@ module HubspotSDK
             COMPANY =
               T.let(
                 :COMPANY,
-                HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::CompanyCallerID::CallerIDType::TaggedSymbol
                 ]
               )
             end

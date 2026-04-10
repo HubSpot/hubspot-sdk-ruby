@@ -1,48 +1,48 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       module Statuses
         type batch_read_params =
           {
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             business_unit_id: Integer
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class BatchReadParams < HubspotSDK::Models::BatchInputString
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchReadParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
-          def channel: -> HubspotSDK::Models::BatchInputString::channel
+          def channel: -> HubSpotSDK::Models::BatchInputString::channel
 
           def channel=: (
-            HubspotSDK::Models::BatchInputString::channel _
-          ) -> HubspotSDK::Models::BatchInputString::channel
+            HubSpotSDK::Models::BatchInputString::channel _
+          ) -> HubSpotSDK::Models::BatchInputString::channel
 
           def business_unit_id: -> Integer?
 
           def business_unit_id=: (Integer _) -> Integer
 
           def initialize: (
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             ?business_unit_id: Integer,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             business_unit_id: Integer,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
 
           type channel = :EMAIL
 
           module Channel
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             EMAIL: :EMAIL
 
-            def self?.values: -> ::Array[HubspotSDK::Models::BatchInputString::channel]
+            def self?.values: -> ::Array[HubSpotSDK::Models::BatchInputString::channel]
           end
         end
       end

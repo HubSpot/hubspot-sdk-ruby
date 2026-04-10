@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -7,16 +7,16 @@ module HubspotSDK
             String campaign_guid,
             ?end_date: String,
             ?start_date: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::MetricsCounters
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::MetricsCounters
 
           def get_revenue_attribution: (
             String campaign_guid,
             ?attribution_model: String,
             ?end_date: String,
             ?start_date: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::RevenueAttributionAggregate
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::RevenueAttributionAggregate
 
           def list_contact_ids_by_type: (
             String contact_type,
@@ -25,10 +25,10 @@ module HubspotSDK
             ?end_date: String,
             ?limit: Integer,
             ?start_date: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ContactReference]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::ContactReference]
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

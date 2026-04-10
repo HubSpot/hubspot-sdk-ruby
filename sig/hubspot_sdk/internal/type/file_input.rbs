@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       class FileInput
-        extend HubspotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Type::Converter
 
         def self.===: (top other) -> bool
 
@@ -10,12 +10,12 @@ module HubspotSDK
 
         def self.coerce: (
           StringIO | String | top value,
-          state: HubspotSDK::Internal::Type::Converter::coerce_state
+          state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> (StringIO | top)
 
         def self.dump: (
           Pathname | StringIO | IO | String | top value,
-          state: HubspotSDK::Internal::Type::Converter::dump_state
+          state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> (Pathname | StringIO | IO | String | top)
 
         def self.to_sorbet_type: -> top

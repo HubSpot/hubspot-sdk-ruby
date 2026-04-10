@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class JournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
+      class JournalFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute current_offset
         #
         #   @return [String]

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineReplaceInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineReplaceInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PipelineReplaceInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PipelineReplaceInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,14 +24,14 @@ module HubspotSDK
 
         # The stages associated with the pipeline. They can be retrieved and updated via
         # the pipeline stages endpoints.
-        sig { returns(T::Array[HubspotSDK::Crm::PipelineStageInput]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PipelineStageInput]) }
         attr_accessor :stages
 
         sig do
           params(
             display_order: Integer,
             label: String,
-            stages: T::Array[HubspotSDK::Crm::PipelineStageInput::OrHash]
+            stages: T::Array[HubSpotSDK::Crm::PipelineStageInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -52,7 +52,7 @@ module HubspotSDK
             {
               display_order: Integer,
               label: String,
-              stages: T::Array[HubspotSDK::Crm::PipelineStageInput]
+              stages: T::Array[HubSpotSDK::Crm::PipelineStageInput]
             }
           )
         end

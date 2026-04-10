@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventAssociation < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventAssociation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute marketing_event_id
         #   The internal ID of the marketing event in HubSpot
         #
@@ -32,7 +32,7 @@ module HubspotSDK
 
         # @!method initialize(marketing_event_id:, name:, external_account_id: nil, external_event_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::MarketingEventAssociation} for more details.
+        #   {HubSpotSDK::Models::Marketing::MarketingEventAssociation} for more details.
         #
         #   @param marketing_event_id [String] The internal ID of the marketing event in HubSpot
         #

@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_update_input =
         {
           clear_expires: bool,
-          access: HubspotSDK::Models::Files::FileUpdateInput::access,
+          access: HubSpotSDK::Models::Files::FileUpdateInput::access,
           expires_at: Time,
           is_usable_in_content: bool,
           name: String,
@@ -12,14 +12,14 @@ module HubspotSDK
           parent_folder_path: String
         }
 
-      class FileUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FileUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor clear_expires: bool
 
-        attr_reader access: HubspotSDK::Models::Files::FileUpdateInput::access?
+        attr_reader access: HubSpotSDK::Models::Files::FileUpdateInput::access?
 
         def access=: (
-          HubspotSDK::Models::Files::FileUpdateInput::access
-        ) -> HubspotSDK::Models::Files::FileUpdateInput::access
+          HubSpotSDK::Models::Files::FileUpdateInput::access
+        ) -> HubSpotSDK::Models::Files::FileUpdateInput::access
 
         attr_reader expires_at: Time?
 
@@ -43,7 +43,7 @@ module HubspotSDK
 
         def initialize: (
           clear_expires: bool,
-          ?access: HubspotSDK::Models::Files::FileUpdateInput::access,
+          ?access: HubSpotSDK::Models::Files::FileUpdateInput::access,
           ?expires_at: Time,
           ?is_usable_in_content: bool,
           ?name: String,
@@ -53,7 +53,7 @@ module HubspotSDK
 
         def to_hash: -> {
           clear_expires: bool,
-          access: HubspotSDK::Models::Files::FileUpdateInput::access,
+          access: HubSpotSDK::Models::Files::FileUpdateInput::access,
           expires_at: Time,
           is_usable_in_content: bool,
           name: String,
@@ -72,7 +72,7 @@ module HubspotSDK
           | :SENSITIVE
 
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIDDEN_INDEXABLE: :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE: :HIDDEN_NOT_INDEXABLE
@@ -83,7 +83,7 @@ module HubspotSDK
           PUBLIC_NOT_INDEXABLE: :PUBLIC_NOT_INDEXABLE
           SENSITIVE: :SENSITIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Files::FileUpdateInput::access]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Files::FileUpdateInput::access]
         end
       end
     end

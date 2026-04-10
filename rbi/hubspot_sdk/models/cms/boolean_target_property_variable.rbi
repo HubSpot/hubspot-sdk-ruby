@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BooleanTargetPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class BooleanTargetPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BooleanTargetPropertyVariable,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BooleanTargetPropertyVariable,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             operator:
-              HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator::OrSymbol,
+              HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::OrSymbol,
             property_name: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol,
               property_name: String,
               value: T::Boolean
             }
@@ -56,13 +56,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator
+                HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           BOOLEAN_TARGET_PROPERTY_VARIABLE =
             T.let(
               :BOOLEAN_TARGET_PROPERTY_VARIABLE,
-              HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
+              HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
+                HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
               ]
             )
           end

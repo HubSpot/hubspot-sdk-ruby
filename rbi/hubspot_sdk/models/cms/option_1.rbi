@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Option1 < HubspotSDK::Internal::Type::BaseModel
+      class Option1 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Option1, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Option1, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(T::Boolean) }

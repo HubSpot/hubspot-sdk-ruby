@@ -1,85 +1,85 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
-      # @return [HubspotSDK::Resources::Crm::AppUninstalls]
+      # @return [HubSpotSDK::Resources::Crm::AppUninstalls]
       attr_reader :app_uninstalls
 
-      # @return [HubspotSDK::Resources::Crm::Associations]
+      # @return [HubSpotSDK::Resources::Crm::Associations]
       attr_reader :associations
 
-      # @return [HubspotSDK::Resources::Crm::AssociationsSchema]
+      # @return [HubSpotSDK::Resources::Crm::AssociationsSchema]
       attr_reader :associations_schema
 
-      # @return [HubspotSDK::Resources::Crm::DealSplits]
+      # @return [HubSpotSDK::Resources::Crm::DealSplits]
       attr_reader :deal_splits
 
-      # @return [HubspotSDK::Resources::Crm::Exports]
+      # @return [HubSpotSDK::Resources::Crm::Exports]
       attr_reader :exports
 
-      # @return [HubspotSDK::Resources::Crm::Extensions]
+      # @return [HubSpotSDK::Resources::Crm::Extensions]
       attr_reader :extensions
 
-      # @return [HubspotSDK::Resources::Crm::FeatureFlags]
+      # @return [HubSpotSDK::Resources::Crm::FeatureFlags]
       attr_reader :feature_flags
 
-      # @return [HubspotSDK::Resources::Crm::Imports]
+      # @return [HubSpotSDK::Resources::Crm::Imports]
       attr_reader :imports
 
-      # @return [HubspotSDK::Resources::Crm::Limits]
+      # @return [HubSpotSDK::Resources::Crm::Limits]
       attr_reader :limits
 
-      # @return [HubspotSDK::Resources::Crm::Lists]
+      # @return [HubSpotSDK::Resources::Crm::Lists]
       attr_reader :lists
 
-      # @return [HubspotSDK::Resources::Crm::ObjectLibrary]
+      # @return [HubSpotSDK::Resources::Crm::ObjectLibrary]
       attr_reader :object_library
 
-      # @return [HubspotSDK::Resources::Crm::ObjectSchemas]
+      # @return [HubSpotSDK::Resources::Crm::ObjectSchemas]
       attr_reader :object_schemas
 
-      # @return [HubspotSDK::Resources::Crm::Objects]
+      # @return [HubSpotSDK::Resources::Crm::Objects]
       attr_reader :objects
 
-      # @return [HubspotSDK::Resources::Crm::Owners]
+      # @return [HubSpotSDK::Resources::Crm::Owners]
       attr_reader :owners
 
-      # @return [HubspotSDK::Resources::Crm::Pipelines]
+      # @return [HubSpotSDK::Resources::Crm::Pipelines]
       attr_reader :pipelines
 
-      # @return [HubspotSDK::Resources::Crm::Properties]
+      # @return [HubSpotSDK::Resources::Crm::Properties]
       attr_reader :properties
 
-      # @return [HubspotSDK::Resources::Crm::PropertiesValidations]
+      # @return [HubSpotSDK::Resources::Crm::PropertiesValidations]
       attr_reader :properties_validations
 
-      # @return [HubspotSDK::Resources::Crm::Timeline]
+      # @return [HubSpotSDK::Resources::Crm::Timeline]
       attr_reader :timeline
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @app_uninstalls = HubspotSDK::Resources::Crm::AppUninstalls.new(client: client)
-        @associations = HubspotSDK::Resources::Crm::Associations.new(client: client)
-        @associations_schema = HubspotSDK::Resources::Crm::AssociationsSchema.new(client: client)
-        @deal_splits = HubspotSDK::Resources::Crm::DealSplits.new(client: client)
-        @exports = HubspotSDK::Resources::Crm::Exports.new(client: client)
-        @extensions = HubspotSDK::Resources::Crm::Extensions.new(client: client)
-        @feature_flags = HubspotSDK::Resources::Crm::FeatureFlags.new(client: client)
-        @imports = HubspotSDK::Resources::Crm::Imports.new(client: client)
-        @limits = HubspotSDK::Resources::Crm::Limits.new(client: client)
-        @lists = HubspotSDK::Resources::Crm::Lists.new(client: client)
-        @object_library = HubspotSDK::Resources::Crm::ObjectLibrary.new(client: client)
-        @object_schemas = HubspotSDK::Resources::Crm::ObjectSchemas.new(client: client)
-        @objects = HubspotSDK::Resources::Crm::Objects.new(client: client)
-        @owners = HubspotSDK::Resources::Crm::Owners.new(client: client)
-        @pipelines = HubspotSDK::Resources::Crm::Pipelines.new(client: client)
-        @properties = HubspotSDK::Resources::Crm::Properties.new(client: client)
-        @properties_validations = HubspotSDK::Resources::Crm::PropertiesValidations.new(client: client)
-        @timeline = HubspotSDK::Resources::Crm::Timeline.new(client: client)
+        @app_uninstalls = HubSpotSDK::Resources::Crm::AppUninstalls.new(client: client)
+        @associations = HubSpotSDK::Resources::Crm::Associations.new(client: client)
+        @associations_schema = HubSpotSDK::Resources::Crm::AssociationsSchema.new(client: client)
+        @deal_splits = HubSpotSDK::Resources::Crm::DealSplits.new(client: client)
+        @exports = HubSpotSDK::Resources::Crm::Exports.new(client: client)
+        @extensions = HubSpotSDK::Resources::Crm::Extensions.new(client: client)
+        @feature_flags = HubSpotSDK::Resources::Crm::FeatureFlags.new(client: client)
+        @imports = HubSpotSDK::Resources::Crm::Imports.new(client: client)
+        @limits = HubSpotSDK::Resources::Crm::Limits.new(client: client)
+        @lists = HubSpotSDK::Resources::Crm::Lists.new(client: client)
+        @object_library = HubSpotSDK::Resources::Crm::ObjectLibrary.new(client: client)
+        @object_schemas = HubSpotSDK::Resources::Crm::ObjectSchemas.new(client: client)
+        @objects = HubSpotSDK::Resources::Crm::Objects.new(client: client)
+        @owners = HubSpotSDK::Resources::Crm::Owners.new(client: client)
+        @pipelines = HubSpotSDK::Resources::Crm::Pipelines.new(client: client)
+        @properties = HubSpotSDK::Resources::Crm::Properties.new(client: client)
+        @properties_validations = HubSpotSDK::Resources::Crm::PropertiesValidations.new(client: client)
+        @timeline = HubSpotSDK::Resources::Crm::Timeline.new(client: client)
       end
     end
   end

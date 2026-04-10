@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      class PublicBusinessUnitLogoMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicBusinessUnitLogoMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute logo_alt_text
         #   The logo's alt text
         #

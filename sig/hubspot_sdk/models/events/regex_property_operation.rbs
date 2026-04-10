@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type regex_property_operation =
@@ -6,28 +6,28 @@ module HubspotSDK
           case_sensitive: bool,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RegexPropertyOperation::operator,
           operator_name: String,
           pattern: String,
-          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RegexPropertyOperation::property_type,
           default_value: String,
           render_spec: String
         }
 
-      class RegexPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RegexPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor case_sensitive: bool
 
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RegexPropertyOperation::operator
 
         attr_accessor operator_name: String
 
         attr_accessor pattern: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RegexPropertyOperation::property_type
 
         attr_reader default_value: String?
 
@@ -41,10 +41,10 @@ module HubspotSDK
           case_sensitive: bool,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RegexPropertyOperation::operator,
           operator_name: String,
           pattern: String,
-          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RegexPropertyOperation::property_type,
           ?default_value: String,
           ?render_spec: String
         ) -> void
@@ -53,10 +53,10 @@ module HubspotSDK
           case_sensitive: bool,
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RegexPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RegexPropertyOperation::operator,
           operator_name: String,
           pattern: String,
-          property_type: HubspotSDK::Models::Events::RegexPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RegexPropertyOperation::property_type,
           default_value: String,
           render_spec: String
         }
@@ -64,22 +64,22 @@ module HubspotSDK
         type operator = :DOES_NOT_MATCH_REGEX | :MATCHES_REGEX
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOES_NOT_MATCH_REGEX: :DOES_NOT_MATCH_REGEX
           MATCHES_REGEX: :MATCHES_REGEX
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RegexPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RegexPropertyOperation::operator]
         end
 
         type property_type = :regex
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REGEX: :regex
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RegexPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RegexPropertyOperation::property_type]
         end
       end
     end

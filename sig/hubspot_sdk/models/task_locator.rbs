@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type task_locator = { id: String, links: ::Hash[Symbol, String] }
 
-    class TaskLocator < HubspotSDK::Internal::Type::BaseModel
+    class TaskLocator < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       attr_reader links: ::Hash[Symbol, String]?

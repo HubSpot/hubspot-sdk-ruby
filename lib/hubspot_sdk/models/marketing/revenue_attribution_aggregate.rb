@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class RevenueAttributionAggregate < HubspotSDK::Internal::Type::BaseModel
+      class RevenueAttributionAggregate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contacts_number
         #   The number of contacts attributed to the campaign.
         #
@@ -14,9 +14,9 @@ module HubspotSDK
         #   The currency code used for the revenue attribution, with accepted values
         #   including AED, AFN, ALL, and others.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::RevenueAttributionAggregate::CurrencyCode, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::CurrencyCode, nil]
         optional :currency_code,
-                 enum: -> { HubspotSDK::Marketing::RevenueAttributionAggregate::CurrencyCode },
+                 enum: -> { HubSpotSDK::Marketing::RevenueAttributionAggregate::CurrencyCode },
                  api_name: :currencyCode
 
         # @!attribute deal_amount
@@ -39,11 +39,11 @@ module HubspotSDK
 
         # @!method initialize(contacts_number: nil, currency_code: nil, deal_amount: nil, deals_number: nil, revenue_amount: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::RevenueAttributionAggregate} for more details.
+        #   {HubSpotSDK::Models::Marketing::RevenueAttributionAggregate} for more details.
         #
         #   @param contacts_number [Integer] The number of contacts attributed to the campaign.
         #
-        #   @param currency_code [Symbol, HubspotSDK::Models::Marketing::RevenueAttributionAggregate::CurrencyCode] The currency code used for the revenue attribution, with accepted values includi
+        #   @param currency_code [Symbol, HubSpotSDK::Models::Marketing::RevenueAttributionAggregate::CurrencyCode] The currency code used for the revenue attribution, with accepted values includi
         #
         #   @param deal_amount [Float] The total amount of deals attributed to the campaign.
         #
@@ -54,9 +54,9 @@ module HubspotSDK
         # The currency code used for the revenue attribution, with accepted values
         # including AED, AFN, ALL, and others.
         #
-        # @see HubspotSDK::Models::Marketing::RevenueAttributionAggregate#currency_code
+        # @see HubSpotSDK::Models::Marketing::RevenueAttributionAggregate#currency_code
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

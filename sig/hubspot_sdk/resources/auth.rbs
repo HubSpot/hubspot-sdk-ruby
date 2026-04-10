@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
-      attr_reader oauth: HubspotSDK::Resources::Auth::OAuth
+      attr_reader oauth: HubSpotSDK::Resources::Auth::OAuth
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

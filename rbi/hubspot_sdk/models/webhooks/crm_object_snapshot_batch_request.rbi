@@ -1,26 +1,26 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class CrmObjectSnapshotBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class CrmObjectSnapshotBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::CrmObjectSnapshotBatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::CrmObjectSnapshotBatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Webhooks::CrmObjectSnapshotRequest])
+          returns(T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotRequest])
         end
         attr_accessor :snapshot_requests
 
         sig do
           params(
             snapshot_requests:
-              T::Array[HubspotSDK::Webhooks::CrmObjectSnapshotRequest::OrHash]
+              T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotRequest::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(snapshot_requests:)
@@ -30,7 +30,7 @@ module HubspotSDK
           override.returns(
             {
               snapshot_requests:
-                T::Array[HubspotSDK::Webhooks::CrmObjectSnapshotRequest]
+                T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotRequest]
             }
           )
         end

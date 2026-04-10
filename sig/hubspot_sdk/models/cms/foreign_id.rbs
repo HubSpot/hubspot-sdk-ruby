@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type foreign_id = { id: String, name: String, type: String }
 
-      class ForeignID < HubspotSDK::Internal::Type::BaseModel
+      class ForeignID < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String

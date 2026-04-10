@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_send_status_view =
         {
-          status: HubspotSDK::Models::Marketing::EmailSendStatusView::status,
+          status: HubSpotSDK::Models::Marketing::EmailSendStatusView::status,
           status_id: String,
           completed_at: Time,
-          event_id: HubspotSDK::Marketing::EventIDView,
+          event_id: HubSpotSDK::Marketing::EventIDView,
           message: String,
           requested_at: Time,
-          send_result: HubspotSDK::Models::Marketing::EmailSendStatusView::send_result,
+          send_result: HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result,
           started_at: Time
         }
 
-      class EmailSendStatusView < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor status: HubspotSDK::Models::Marketing::EmailSendStatusView::status
+      class EmailSendStatusView < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor status: HubSpotSDK::Models::Marketing::EmailSendStatusView::status
 
         attr_accessor status_id: String
 
@@ -22,11 +22,11 @@ module HubspotSDK
 
         def completed_at=: (Time) -> Time
 
-        attr_reader event_id: HubspotSDK::Marketing::EventIDView?
+        attr_reader event_id: HubSpotSDK::Marketing::EventIDView?
 
         def event_id=: (
-          HubspotSDK::Marketing::EventIDView
-        ) -> HubspotSDK::Marketing::EventIDView
+          HubSpotSDK::Marketing::EventIDView
+        ) -> HubSpotSDK::Marketing::EventIDView
 
         attr_reader message: String?
 
@@ -36,49 +36,49 @@ module HubspotSDK
 
         def requested_at=: (Time) -> Time
 
-        attr_reader send_result: HubspotSDK::Models::Marketing::EmailSendStatusView::send_result?
+        attr_reader send_result: HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result?
 
         def send_result=: (
-          HubspotSDK::Models::Marketing::EmailSendStatusView::send_result
-        ) -> HubspotSDK::Models::Marketing::EmailSendStatusView::send_result
+          HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result
+        ) -> HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result
 
         attr_reader started_at: Time?
 
         def started_at=: (Time) -> Time
 
         def initialize: (
-          status: HubspotSDK::Models::Marketing::EmailSendStatusView::status,
+          status: HubSpotSDK::Models::Marketing::EmailSendStatusView::status,
           status_id: String,
           ?completed_at: Time,
-          ?event_id: HubspotSDK::Marketing::EventIDView,
+          ?event_id: HubSpotSDK::Marketing::EventIDView,
           ?message: String,
           ?requested_at: Time,
-          ?send_result: HubspotSDK::Models::Marketing::EmailSendStatusView::send_result,
+          ?send_result: HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result,
           ?started_at: Time
         ) -> void
 
         def to_hash: -> {
-          status: HubspotSDK::Models::Marketing::EmailSendStatusView::status,
+          status: HubSpotSDK::Models::Marketing::EmailSendStatusView::status,
           status_id: String,
           completed_at: Time,
-          event_id: HubspotSDK::Marketing::EventIDView,
+          event_id: HubSpotSDK::Marketing::EventIDView,
           message: String,
           requested_at: Time,
-          send_result: HubspotSDK::Models::Marketing::EmailSendStatusView::send_result,
+          send_result: HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result,
           started_at: Time
         }
 
         type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
           PENDING: :PENDING
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailSendStatusView::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailSendStatusView::status]
         end
 
         type send_result =
@@ -133,7 +133,7 @@ module HubspotSDK
           | :VALIDATION_FAILED
 
         module SendResult
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS_LIST_BOMBED: :ADDRESS_LIST_BOMBED
           ADDRESS_ONLY_ACCEPTED_ON_PROD: :ADDRESS_ONLY_ACCEPTED_ON_PROD
@@ -185,7 +185,7 @@ module HubspotSDK
           UNDELIVERABLE: :UNDELIVERABLE
           VALIDATION_FAILED: :VALIDATION_FAILED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::EmailSendStatusView::send_result]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::EmailSendStatusView::send_result]
         end
       end
     end

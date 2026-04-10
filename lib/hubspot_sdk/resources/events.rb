@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
-      # @return [HubspotSDK::Resources::Events::Definitions]
+      # @return [HubSpotSDK::Resources::Events::Definitions]
       attr_reader :definitions
 
-      # @return [HubspotSDK::Resources::Events::Occurrences]
+      # @return [HubSpotSDK::Resources::Events::Occurrences]
       attr_reader :occurrences
 
-      # @return [HubspotSDK::Resources::Events::Send]
+      # @return [HubSpotSDK::Resources::Events::Send]
       attr_reader :send_
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @definitions = HubspotSDK::Resources::Events::Definitions.new(client: client)
-        @occurrences = HubspotSDK::Resources::Events::Occurrences.new(client: client)
-        @send_ = HubspotSDK::Resources::Events::Send.new(client: client)
+        @definitions = HubSpotSDK::Resources::Events::Definitions.new(client: client)
+        @occurrences = HubSpotSDK::Resources::Events::Occurrences.new(client: client)
+        @send_ = HubSpotSDK::Resources::Events::Send.new(client: client)
       end
     end
   end

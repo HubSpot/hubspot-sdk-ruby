@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchResponsePublicWideStatusBulkResponseWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicWideStatusBulkResponseWithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse
+              HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse
             ]
           )
         end
@@ -34,16 +34,16 @@ module HubspotSDK
         # or COMPLETE.
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol
+            HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
         # An array of error objects detailing any issues encountered during the operation.
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # An object containing related links, where each key is a link name and each value
@@ -73,12 +73,12 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -112,12 +112,12 @@ module HubspotSDK
               completed_at: Time,
               results:
                 T::Array[
-                  HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse
+                  HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse
                 ],
               started_at: Time,
               status:
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -130,13 +130,13 @@ module HubspotSDK
         # The current status of the operation, which can be PENDING, PROCESSING, CANCELED,
         # or COMPLETE.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -144,28 +144,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponseWithErrors::Status::TaggedSymbol
               ]
             )
           end

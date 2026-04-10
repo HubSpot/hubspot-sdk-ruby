@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_user_profile =
@@ -9,7 +9,7 @@ module HubspotSDK
           last_name: String
         }
 
-      class ExternalUserProfile < HubspotSDK::Internal::Type::BaseModel
+      class ExternalUserProfile < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor email: String
 
         attr_reader first_name: String?

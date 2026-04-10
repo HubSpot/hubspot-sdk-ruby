@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_deal_split_input = { owner_id: Integer, percentage: Float }
 
-      class PublicDealSplitInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicDealSplitInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor owner_id: Integer
 
         attr_accessor percentage: Float

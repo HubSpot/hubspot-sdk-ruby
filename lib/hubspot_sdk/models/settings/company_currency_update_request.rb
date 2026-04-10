@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CompanyCurrencyUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class CompanyCurrencyUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute currency_code
         #   The three-letter code representing a specific currency (ex. USD).
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode]
         required :currency_code,
-                 enum: -> { HubspotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode },
                  api_name: :currencyCode
 
         # @!method initialize(currency_code:)
-        #   @param currency_code [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).
+        #   @param currency_code [Symbol, HubSpotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).
 
         # The three-letter code representing a specific currency (ex. USD).
         #
-        # @see HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest#currency_code
+        # @see HubSpotSDK::Models::Settings::CompanyCurrencyUpdateRequest#currency_code
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

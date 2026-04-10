@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventIdentifiersResponse =
       Marketing::MarketingEventIdentifiersResponse
 
     module Marketing
-      class MarketingEventIdentifiersResponse < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventIdentifiersResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventIdentifiersResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventIdentifiersResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -28,10 +28,10 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :object_id_
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::AppInfo)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::AppInfo)) }
         attr_reader :app_info
 
-        sig { params(app_info: HubspotSDK::Marketing::AppInfo::OrHash).void }
+        sig { params(app_info: HubSpotSDK::Marketing::AppInfo::OrHash).void }
         attr_writer :app_info
 
         # The accountId that is associated with this marketing event in the external event
@@ -47,7 +47,7 @@ module HubspotSDK
             external_event_id: String,
             marketing_event_name: String,
             object_id_: String,
-            app_info: HubspotSDK::Marketing::AppInfo::OrHash,
+            app_info: HubSpotSDK::Marketing::AppInfo::OrHash,
             external_account_id: String
           ).returns(T.attached_class)
         end
@@ -72,7 +72,7 @@ module HubspotSDK
               external_event_id: String,
               marketing_event_name: String,
               object_id_: String,
-              app_info: HubspotSDK::Marketing::AppInfo,
+              app_info: HubSpotSDK::Marketing::AppInfo,
               external_account_id: String
             }
           )

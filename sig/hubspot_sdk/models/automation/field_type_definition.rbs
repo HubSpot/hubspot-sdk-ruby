@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type field_type_definition =
         {
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
-          schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
-          type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          schema: HubSpotSDK::Models::Automation::FieldTypeDefinition::schema,
+          type: HubSpotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,
           description: String,
           external_options_reference_type: String,
-          field_type: HubspotSDK::Models::Automation::FieldTypeDefinition::field_type,
+          field_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type,
           help_text: String,
           label: String,
           options_url: String,
-          referenced_object_type: HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
+          referenced_object_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
         }
 
-      class FieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class FieldTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor external_options: bool
 
         attr_accessor name: String
 
-        attr_accessor options: ::Array[HubspotSDK::AutomationActionsOption]
+        attr_accessor options: ::Array[HubSpotSDK::AutomationActionsOption]
 
-        attr_accessor schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema
+        attr_accessor schema: HubSpotSDK::Models::Automation::FieldTypeDefinition::schema
 
-        attr_accessor type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_
+        attr_accessor type: HubSpotSDK::Models::Automation::FieldTypeDefinition::type_
 
         attr_accessor use_chirp: bool
 
@@ -39,11 +39,11 @@ module HubspotSDK
 
         def external_options_reference_type=: (String) -> String
 
-        attr_reader field_type: HubspotSDK::Models::Automation::FieldTypeDefinition::field_type?
+        attr_reader field_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type?
 
         def field_type=: (
-          HubspotSDK::Models::Automation::FieldTypeDefinition::field_type
-        ) -> HubspotSDK::Models::Automation::FieldTypeDefinition::field_type
+          HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type
+        ) -> HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type
 
         attr_reader help_text: String?
 
@@ -57,57 +57,57 @@ module HubspotSDK
 
         def options_url=: (String) -> String
 
-        attr_reader referenced_object_type: HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type?
+        attr_reader referenced_object_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type?
 
         def referenced_object_type=: (
-          HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
-        ) -> HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
+          HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
+        ) -> HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
 
         def initialize: (
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
-          schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
-          type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          schema: HubSpotSDK::Models::Automation::FieldTypeDefinition::schema,
+          type: HubSpotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,
           ?description: String,
           ?external_options_reference_type: String,
-          ?field_type: HubspotSDK::Models::Automation::FieldTypeDefinition::field_type,
+          ?field_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type,
           ?help_text: String,
           ?label: String,
           ?options_url: String,
-          ?referenced_object_type: HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
+          ?referenced_object_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
         ) -> void
 
         def to_hash: -> {
           external_options: bool,
           name: String,
-          options: ::Array[HubspotSDK::AutomationActionsOption],
-          schema: HubspotSDK::Models::Automation::FieldTypeDefinition::schema,
-          type: HubspotSDK::Models::Automation::FieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          schema: HubSpotSDK::Models::Automation::FieldTypeDefinition::schema,
+          type: HubSpotSDK::Models::Automation::FieldTypeDefinition::type_,
           use_chirp: bool,
           description: String,
           external_options_reference_type: String,
-          field_type: HubspotSDK::Models::Automation::FieldTypeDefinition::field_type,
+          field_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type,
           help_text: String,
           label: String,
           options_url: String,
-          referenced_object_type: HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
+          referenced_object_type: HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type
         }
 
         type schema =
-          HubspotSDK::Automation::IntegerFieldSchema
-          | HubspotSDK::Automation::LongFieldSchema
-          | HubspotSDK::Automation::DoubleFieldSchema
-          | HubspotSDK::Automation::StringFieldSchema
-          | HubspotSDK::Automation::BooleanFieldSchema
-          | HubspotSDK::Automation::ArrayFieldSchema
-          | HubspotSDK::Automation::ObjectFieldSchema
+          HubSpotSDK::Automation::IntegerFieldSchema
+          | HubSpotSDK::Automation::LongFieldSchema
+          | HubSpotSDK::Automation::DoubleFieldSchema
+          | HubSpotSDK::Automation::StringFieldSchema
+          | HubSpotSDK::Automation::BooleanFieldSchema
+          | HubSpotSDK::Automation::ArrayFieldSchema
+          | HubSpotSDK::Automation::ObjectFieldSchema
 
         module Schema
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Automation::FieldTypeDefinition::schema]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Automation::FieldTypeDefinition::schema]
         end
 
         type type_ =
@@ -123,7 +123,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           CURRENCY_NUMBER: :currency_number
@@ -136,7 +136,7 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::FieldTypeDefinition::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::FieldTypeDefinition::type_]
         end
 
         type field_type =
@@ -158,7 +158,7 @@ module HubspotSDK
           | :unknown
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX: :booleancheckbox
           CALCULATION_EQUATION: :calculation_equation
@@ -177,7 +177,7 @@ module HubspotSDK
           TEXTAREA: :textarea
           UNKNOWN: :unknown
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::FieldTypeDefinition::field_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::FieldTypeDefinition::field_type]
         end
 
         type referenced_object_type =
@@ -344,7 +344,7 @@ module HubspotSDK
           | :WEB_INTERACTIVE
 
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART: :ABANDONED_CART
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -508,7 +508,7 @@ module HubspotSDK
           VIEW_BLOCK: :VIEW_BLOCK
           WEB_INTERACTIVE: :WEB_INTERACTIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::FieldTypeDefinition::referenced_object_type]
         end
       end
     end

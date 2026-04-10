@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @type [HubspotSDK::Internal::Type::Converter]
-      CursorPagedResultBlogAuthorLong = HubspotSDK::Internal::Type::Unknown
+      # @type [HubSpotSDK::Internal::Type::Converter]
+      CursorPagedResultBlogAuthorLong = HubSpotSDK::Internal::Type::Unknown
     end
   end
 end

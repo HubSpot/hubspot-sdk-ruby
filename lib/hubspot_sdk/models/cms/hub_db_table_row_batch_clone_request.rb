@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableRowBatchCloneRequest < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowBatchCloneRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the row to be cloned.
         #

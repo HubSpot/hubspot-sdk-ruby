@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class CrmObjectSnapshotRequest < HubspotSDK::Internal::Type::BaseModel
+      class CrmObjectSnapshotRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
         #
         #   @return [Integer]
@@ -22,7 +22,7 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>]
-        required :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(object_id_:, object_type_id:, portal_id:, properties:)
         #   @param object_id_ [Integer]

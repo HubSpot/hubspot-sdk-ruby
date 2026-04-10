@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventEmailSubscriber = Marketing::MarketingEventEmailSubscriber
 
@@ -11,7 +11,7 @@ module HubspotSDK
           properties: ::Hash[Symbol, String]
         }
 
-      class MarketingEventEmailSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventEmailSubscriber < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor contact_properties: ::Hash[Symbol, String]
 
         attr_accessor email: String

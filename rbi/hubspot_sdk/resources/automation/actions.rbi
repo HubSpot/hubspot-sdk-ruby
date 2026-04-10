@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
-        sig { returns(HubspotSDK::Resources::Automation::Actions::Callbacks) }
+        sig { returns(HubSpotSDK::Resources::Automation::Actions::Callbacks) }
         attr_reader :callbacks
 
-        sig { returns(HubspotSDK::Resources::Automation::Actions::Definitions) }
+        sig { returns(HubSpotSDK::Resources::Automation::Actions::Definitions) }
         attr_reader :definitions
 
-        sig { returns(HubspotSDK::Resources::Automation::Actions::Functions) }
+        sig { returns(HubSpotSDK::Resources::Automation::Actions::Functions) }
         attr_reader :functions
 
-        sig { returns(HubspotSDK::Resources::Automation::Actions::Revisions) }
+        sig { returns(HubSpotSDK::Resources::Automation::Actions::Revisions) }
         attr_reader :revisions
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

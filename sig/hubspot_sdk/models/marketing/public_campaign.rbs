@@ -1,19 +1,19 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign =
         {
           id: String,
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time
         }
 
-      class PublicCampaign < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaign < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit]
+        attr_accessor business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit]
 
         attr_accessor created_at: Time
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         def initialize: (
           id: String,
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time
@@ -31,7 +31,7 @@ module HubspotSDK
 
         def to_hash: -> {
           id: String,
-          business_units: ::Array[HubspotSDK::Marketing::PublicBusinessUnit],
+          business_units: ::Array[HubSpotSDK::Marketing::PublicBusinessUnit],
           created_at: Time,
           properties: ::Hash[Symbol, String],
           updated_at: Time

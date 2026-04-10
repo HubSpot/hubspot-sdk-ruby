@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalValidatedFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalValidatedFormField < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalValidatedFormField,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalValidatedFormField,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

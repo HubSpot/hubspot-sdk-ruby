@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class AbTestEndRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class AbTestEndRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::AbTestEndRequestVNext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::AbTestEndRequestVNext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

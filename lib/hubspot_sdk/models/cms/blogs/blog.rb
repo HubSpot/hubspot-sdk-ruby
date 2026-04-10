@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Settings#list
-        class Blog < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Cms::Blogs::Settings#list
+        class Blog < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique ID of the Blog.
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           #   Boolean determining whether or not this blog allows public comments.
           #
           #   @return [Boolean]
-          required :allow_comments, HubspotSDK::Internal::Type::Boolean, api_name: :allowComments
+          required :allow_comments, HubSpotSDK::Internal::Type::Boolean, api_name: :allowComments
 
           # @!attribute created
           #   The timestamp (ISO8601 format) when this blog was created.
@@ -52,8 +52,8 @@ module HubspotSDK
           #   The explicitly defined language of the Blog. If null, the Blog will default to
           #   the language of the Domain.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::Blog::Language]
-          required :language, enum: -> { HubspotSDK::Cms::Blogs::Blog::Language }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::Blog::Language]
+          required :language, enum: -> { HubSpotSDK::Cms::Blogs::Blog::Language }
 
           # @!attribute listing_page_id
           #
@@ -71,7 +71,7 @@ module HubspotSDK
           #
           #   @return [Array<Object>]
           required :public_access_rules,
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown],
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown],
                    api_name: :publicAccessRules
 
           # @!attribute public_access_rules_enabled
@@ -79,7 +79,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :public_access_rules_enabled,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :publicAccessRulesEnabled
 
           # @!attribute public_title
@@ -109,7 +109,7 @@ module HubspotSDK
 
           # @!method initialize(id:, absolute_url:, allow_comments:, created:, deleted_at:, description:, html_title:, language:, listing_page_id:, name:, public_access_rules:, public_access_rules_enabled:, public_title:, slug:, translated_from_id:, updated:)
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Blogs::Blog} for more details.
+          #   {HubSpotSDK::Models::Cms::Blogs::Blog} for more details.
           #
           #   @param id [String] The unique ID of the Blog.
           #
@@ -125,7 +125,7 @@ module HubspotSDK
           #
           #   @param html_title [String] The html title of this Blog.
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::Blog::Language] The explicitly defined language of the Blog. If null, the Blog will default to t
+          #   @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::Blog::Language] The explicitly defined language of the Blog. If null, the Blog will default to t
           #
           #   @param listing_page_id [String]
           #
@@ -146,9 +146,9 @@ module HubspotSDK
           # The explicitly defined language of the Blog. If null, the Blog will default to
           # the language of the Domain.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::Blog#language
+          # @see HubSpotSDK::Models::Cms::Blogs::Blog#language
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA = :aa
             AB = :ab

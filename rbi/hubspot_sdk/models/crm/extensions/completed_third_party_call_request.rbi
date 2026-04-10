@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CompletedThirdPartyCallRequest < HubspotSDK::Internal::Type::BaseModel
+        class CompletedThirdPartyCallRequest < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -30,18 +30,18 @@ module HubspotSDK
           # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol
+              HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol
             )
           end
           attr_accessor :final_call_status
 
-          sig { returns(HubspotSDK::Crm::Extensions::FormattedPhoneNumber) }
+          sig { returns(HubSpotSDK::Crm::Extensions::FormattedPhoneNumber) }
           attr_reader :from_number
 
           sig do
             params(
               from_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash
             ).void
           end
           attr_writer :from_number
@@ -49,13 +49,13 @@ module HubspotSDK
           sig { returns(T::Array[Integer]) }
           attr_accessor :potential_recipient_user_ids
 
-          sig { returns(HubspotSDK::Crm::Extensions::FormattedPhoneNumber) }
+          sig { returns(HubSpotSDK::Crm::Extensions::FormattedPhoneNumber) }
           attr_reader :to_number
 
           sig do
             params(
               to_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash
             ).void
           end
           attr_writer :to_number
@@ -87,12 +87,12 @@ module HubspotSDK
               engagement_properties: T::Hash[Symbol, String],
               external_call_id: String,
               final_call_status:
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
               from_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
               potential_recipient_user_ids: T::Array[Integer],
               to_number:
-                HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
               call_started_timestamp: Time,
               duration_seconds: Integer,
               user_id: Integer
@@ -128,10 +128,10 @@ module HubspotSDK
                 engagement_properties: T::Hash[Symbol, String],
                 external_call_id: String,
                 final_call_status:
-                  HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
-                from_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+                  HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
+                from_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
                 potential_recipient_user_ids: T::Array[Integer],
-                to_number: HubspotSDK::Crm::Extensions::FormattedPhoneNumber,
+                to_number: HubSpotSDK::Crm::Extensions::FormattedPhoneNumber,
                 call_started_timestamp: Time,
                 duration_seconds: Integer,
                 user_id: Integer
@@ -145,13 +145,13 @@ module HubspotSDK
           # CALLING_CRM_USER, CANCELED, COMPLETED, CONNECTING, FAILED, HOLD, IN_PROGRESS,
           # MISSED, NO_ANSWER, QUEUED, RINGING, UNKNOWN.
           module FinalCallStatus
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus
+                  HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -159,73 +159,73 @@ module HubspotSDK
             BUSY =
               T.let(
                 :BUSY,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             CALLING_CRM_USER =
               T.let(
                 :CALLING_CRM_USER,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             CANCELED =
               T.let(
                 :CANCELED,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             COMPLETED =
               T.let(
                 :COMPLETED,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             CONNECTING =
               T.let(
                 :CONNECTING,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             FAILED =
               T.let(
                 :FAILED,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             HOLD =
               T.let(
                 :HOLD,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             IN_PROGRESS =
               T.let(
                 :IN_PROGRESS,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             MISSED =
               T.let(
                 :MISSED,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             NO_ANSWER =
               T.let(
                 :NO_ANSWER,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             QUEUED =
               T.let(
                 :QUEUED,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             RINGING =
               T.let(
                 :RINGING,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
             UNKNOWN =
               T.let(
                 :UNKNOWN,
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::TaggedSymbol
                 ]
               )
             end

@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFormSubmissionFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicFormSubmissionFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Indicates the type of filter (FORM_SUBMISSION).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicFormSubmissionFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicFormSubmissionFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicFormSubmissionFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
         #   Specifies the operation to be performed (FILLED_OUT, NOT_FILLED_OUT).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicFormSubmissionFilter::Operator]
-        required :operator, enum: -> { HubspotSDK::Crm::PublicFormSubmissionFilter::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter::Operator]
+        required :operator, enum: -> { HubSpotSDK::Crm::PublicFormSubmissionFilter::Operator }
 
         # @!attribute coalescing_refine_by
         #   Specifies the criteria for refining the filter by coalescing.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation, nil]
+        #   @return [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, nil]
         optional :coalescing_refine_by,
-                 union: -> { HubspotSDK::Crm::PublicFormSubmissionFilter::CoalescingRefineBy },
+                 union: -> { HubSpotSDK::Crm::PublicFormSubmissionFilter::CoalescingRefineBy },
                  api_name: :coalescingRefineBy
 
         # @!attribute form_id
@@ -35,27 +35,27 @@ module HubspotSDK
         # @!attribute pruning_refine_by
         #   Specifies the criteria for refining the filter by pruning.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation, nil]
+        #   @return [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, nil]
         optional :pruning_refine_by,
-                 union: -> { HubspotSDK::Crm::PublicFormSubmissionFilter::PruningRefineBy },
+                 union: -> { HubSpotSDK::Crm::PublicFormSubmissionFilter::PruningRefineBy },
                  api_name: :pruningRefineBy
 
         # @!method initialize(filter_type:, operator:, coalescing_refine_by: nil, form_id: nil, pruning_refine_by: nil)
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicFormSubmissionFilter::FilterType] Indicates the type of filter (FORM_SUBMISSION).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter::FilterType] Indicates the type of filter (FORM_SUBMISSION).
         #
-        #   @param operator [Symbol, HubspotSDK::Models::Crm::PublicFormSubmissionFilter::Operator] Specifies the operation to be performed (FILLED_OUT, NOT_FILLED_OUT).
+        #   @param operator [Symbol, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter::Operator] Specifies the operation to be performed (FILLED_OUT, NOT_FILLED_OUT).
         #
-        #   @param coalescing_refine_by [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by coalescing.
+        #   @param coalescing_refine_by [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by coalescing.
         #
         #   @param form_id [String] The ID of the form used in the filter.
         #
-        #   @param pruning_refine_by [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by pruning.
+        #   @param pruning_refine_by [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by pruning.
 
         # Indicates the type of filter (FORM_SUBMISSION).
         #
-        # @see HubspotSDK::Models::Crm::PublicFormSubmissionFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicFormSubmissionFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FORM_SUBMISSION = :FORM_SUBMISSION
 
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # Specifies the operation to be performed (FILLED_OUT, NOT_FILLED_OUT).
         #
-        # @see HubspotSDK::Models::Crm::PublicFormSubmissionFilter#operator
+        # @see HubSpotSDK::Models::Crm::PublicFormSubmissionFilter#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FILLED_OUT = :FILLED_OUT
           NOT_FILLED_OUT = :NOT_FILLED_OUT
@@ -78,58 +78,58 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by coalescing.
         #
-        # @see HubspotSDK::Models::Crm::PublicFormSubmissionFilter#coalescing_refine_by
+        # @see HubSpotSDK::Models::Crm::PublicFormSubmissionFilter#coalescing_refine_by
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicNumOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicSetOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicSetOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAllHistoryRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicTimePointOperation }
+          variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedTimeOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]
         end
 
         # Specifies the criteria for refining the filter by pruning.
         #
-        # @see HubspotSDK::Models::Crm::PublicFormSubmissionFilter#pruning_refine_by
+        # @see HubSpotSDK::Models::Crm::PublicFormSubmissionFilter#pruning_refine_by
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicNumOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicSetOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicSetOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAllHistoryRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicTimePointOperation }
+          variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedTimeOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]
         end
       end
     end

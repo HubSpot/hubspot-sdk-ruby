@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type collection_response_property_group_no_paging =
-      { results: ::Array[HubspotSDK::PropertyGroup] }
+      { results: ::Array[HubSpotSDK::PropertyGroup] }
 
-    class CollectionResponsePropertyGroupNoPaging < HubspotSDK::Internal::Type::BaseModel
-      attr_accessor results: ::Array[HubspotSDK::PropertyGroup]
+    class CollectionResponsePropertyGroupNoPaging < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor results: ::Array[HubSpotSDK::PropertyGroup]
 
-      def initialize: (results: ::Array[HubspotSDK::PropertyGroup]) -> void
+      def initialize: (results: ::Array[HubSpotSDK::PropertyGroup]) -> void
 
-      def to_hash: -> { results: ::Array[HubspotSDK::PropertyGroup] }
+      def to_hash: -> { results: ::Array[HubSpotSDK::PropertyGroup] }
     end
   end
 end

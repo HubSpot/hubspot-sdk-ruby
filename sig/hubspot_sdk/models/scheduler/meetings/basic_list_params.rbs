@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
@@ -8,13 +8,13 @@ module HubspotSDK
             limit: Integer,
             name: String,
             organizer_user_id: String,
-            type: HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_
+            type: HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class BasicListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BasicListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_reader after: String?
 
@@ -32,19 +32,19 @@ module HubspotSDK
 
           def organizer_user_id=: (String) -> String
 
-          attr_reader type: HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_?
+          attr_reader type: HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_?
 
           def type=: (
-            HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_
-          ) -> HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_
+            HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_
+          ) -> HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_
 
           def initialize: (
             ?after: String,
             ?limit: Integer,
             ?name: String,
             ?organizer_user_id: String,
-            ?type: HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
-            ?request_options: HubspotSDK::request_opts
+            ?type: HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
@@ -52,20 +52,20 @@ module HubspotSDK
             limit: Integer,
             name: String,
             organizer_user_id: String,
-            type: HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
-            request_options: HubspotSDK::RequestOptions
+            type: HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_,
+            request_options: HubSpotSDK::RequestOptions
           }
 
           type type_ = :GROUP_CALENDAR | :PERSONAL_LINK | :ROUND_ROBIN_CALENDAR
 
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             GROUP_CALENDAR: :GROUP_CALENDAR
             PERSONAL_LINK: :PERSONAL_LINK
             ROUND_ROBIN_CALENDAR: :ROUND_ROBIN_CALENDAR
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::Meetings::BasicListParams::type_]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::Meetings::BasicListParams::type_]
           end
         end
       end

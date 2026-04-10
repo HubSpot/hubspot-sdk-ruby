@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type option =
       {
@@ -9,7 +9,7 @@ module HubspotSDK
         display_order: Integer
       }
 
-    class Option < HubspotSDK::Internal::Type::BaseModel
+    class Option < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor hidden: bool
 
       attr_accessor label: String

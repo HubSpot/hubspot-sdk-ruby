@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Margin < HubspotSDK::Internal::Type::BaseModel
+      class Margin < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Margin, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Margin, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::Size) }
+        sig { returns(HubSpotSDK::Cms::Size) }
         attr_reader :bottom
 
-        sig { params(bottom: HubspotSDK::Cms::Size::OrHash).void }
+        sig { params(bottom: HubSpotSDK::Cms::Size::OrHash).void }
         attr_writer :bottom
 
-        sig { returns(HubspotSDK::Cms::Size) }
+        sig { returns(HubSpotSDK::Cms::Size) }
         attr_reader :top
 
-        sig { params(top: HubspotSDK::Cms::Size::OrHash).void }
+        sig { params(top: HubSpotSDK::Cms::Size::OrHash).void }
         attr_writer :top
 
         sig do
           params(
-            bottom: HubspotSDK::Cms::Size::OrHash,
-            top: HubspotSDK::Cms::Size::OrHash
+            bottom: HubSpotSDK::Cms::Size::OrHash,
+            top: HubSpotSDK::Cms::Size::OrHash
           ).returns(T.attached_class)
         end
         def self.new(bottom:, top:)
@@ -32,7 +32,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { bottom: HubspotSDK::Cms::Size, top: HubspotSDK::Cms::Size }
+            { bottom: HubSpotSDK::Cms::Size, top: HubSpotSDK::Cms::Size }
           )
         end
         def to_hash

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        class RowUpdateDraftParams < HubspotSDK::Models::Cms::HubDBTableRowV3Request
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class RowUpdateDraftParams < HubSpotSDK::Models::Cms::HubDBTableRowV3Request
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Hubdb::RowUpdateDraftParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Hubdb::RowUpdateDraftParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               row_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(table_id_or_name:, row_id:, request_options: {})
@@ -37,7 +37,7 @@ module HubspotSDK
               {
                 table_id_or_name: String,
                 row_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

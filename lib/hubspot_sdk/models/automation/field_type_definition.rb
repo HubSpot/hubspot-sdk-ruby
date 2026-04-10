@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class FieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class FieldTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute external_options
         #   Indicates whether the field's options are sourced externally.
         #
         #   @return [Boolean]
-        required :external_options, HubspotSDK::Internal::Type::Boolean, api_name: :externalOptions
+        required :external_options, HubSpotSDK::Internal::Type::Boolean, api_name: :externalOptions
 
         # @!attribute name
         #   The unique identifier for the field.
@@ -18,27 +18,27 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::AutomationActionsOption>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption] }
+        #   @return [Array<HubSpotSDK::Models::AutomationActionsOption>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption] }
 
         # @!attribute schema
         #   Defines the structure and constraints of the field.
         #
-        #   @return [HubspotSDK::Models::Automation::IntegerFieldSchema, HubspotSDK::Models::Automation::LongFieldSchema, HubspotSDK::Models::Automation::DoubleFieldSchema, HubspotSDK::Models::Automation::StringFieldSchema, HubspotSDK::Models::Automation::BooleanFieldSchema, HubspotSDK::Models::Automation::ArrayFieldSchema, HubspotSDK::Models::Automation::ObjectFieldSchema]
-        required :schema, union: -> { HubspotSDK::Automation::FieldTypeDefinition::Schema }
+        #   @return [HubSpotSDK::Models::Automation::IntegerFieldSchema, HubSpotSDK::Models::Automation::LongFieldSchema, HubSpotSDK::Models::Automation::DoubleFieldSchema, HubSpotSDK::Models::Automation::StringFieldSchema, HubSpotSDK::Models::Automation::BooleanFieldSchema, HubSpotSDK::Models::Automation::ArrayFieldSchema, HubSpotSDK::Models::Automation::ObjectFieldSchema]
+        required :schema, union: -> { HubSpotSDK::Automation::FieldTypeDefinition::Schema }
 
         # @!attribute type
         #   Specifies the data type of the field, with accepted values like bool, date,
         #   datetime, enumeration, json, number, object_coordinates, phone_number, string.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::Type]
-        required :type, enum: -> { HubspotSDK::Automation::FieldTypeDefinition::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::Type]
+        required :type, enum: -> { HubSpotSDK::Automation::FieldTypeDefinition::Type }
 
         # @!attribute use_chirp
         #   Specifies whether the field uses the Chirp feature.
         #
         #   @return [Boolean]
-        required :use_chirp, HubspotSDK::Internal::Type::Boolean, api_name: :useChirp
+        required :use_chirp, HubSpotSDK::Internal::Type::Boolean, api_name: :useChirp
 
         # @!attribute description
         #   A detailed explanation of the field's purpose and usage.
@@ -57,9 +57,9 @@ module HubspotSDK
         #   calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
         #   select, text, textarea, unknown.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::FieldType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::FieldType, nil]
         optional :field_type,
-                 enum: -> { HubspotSDK::Automation::FieldTypeDefinition::FieldType },
+                 enum: -> { HubSpotSDK::Automation::FieldTypeDefinition::FieldType },
                  api_name: :fieldType
 
         # @!attribute help_text
@@ -84,24 +84,24 @@ module HubspotSDK
         #   Indicates the type of object that the field references, with accepted values
         #   like OWNER.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::ReferencedObjectType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::ReferencedObjectType, nil]
         optional :referenced_object_type,
-                 enum: -> { HubspotSDK::Automation::FieldTypeDefinition::ReferencedObjectType },
+                 enum: -> { HubSpotSDK::Automation::FieldTypeDefinition::ReferencedObjectType },
                  api_name: :referencedObjectType
 
         # @!method initialize(external_options:, name:, options:, schema:, type:, use_chirp:, description: nil, external_options_reference_type: nil, field_type: nil, help_text: nil, label: nil, options_url: nil, referenced_object_type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::FieldTypeDefinition} for more details.
+        #   {HubSpotSDK::Models::Automation::FieldTypeDefinition} for more details.
         #
         #   @param external_options [Boolean] Indicates whether the field's options are sourced externally.
         #
         #   @param name [String] The unique identifier for the field.
         #
-        #   @param options [Array<HubspotSDK::Models::AutomationActionsOption>]
+        #   @param options [Array<HubSpotSDK::Models::AutomationActionsOption>]
         #
-        #   @param schema [HubspotSDK::Models::Automation::IntegerFieldSchema, HubspotSDK::Models::Automation::LongFieldSchema, HubspotSDK::Models::Automation::DoubleFieldSchema, HubspotSDK::Models::Automation::StringFieldSchema, HubspotSDK::Models::Automation::BooleanFieldSchema, HubspotSDK::Models::Automation::ArrayFieldSchema, HubspotSDK::Models::Automation::ObjectFieldSchema] Defines the structure and constraints of the field.
+        #   @param schema [HubSpotSDK::Models::Automation::IntegerFieldSchema, HubSpotSDK::Models::Automation::LongFieldSchema, HubSpotSDK::Models::Automation::DoubleFieldSchema, HubSpotSDK::Models::Automation::StringFieldSchema, HubSpotSDK::Models::Automation::BooleanFieldSchema, HubSpotSDK::Models::Automation::ArrayFieldSchema, HubSpotSDK::Models::Automation::ObjectFieldSchema] Defines the structure and constraints of the field.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::Type] Specifies the data type of the field, with accepted values like bool, date, date
+        #   @param type [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::Type] Specifies the data type of the field, with accepted values like bool, date, date
         #
         #   @param use_chirp [Boolean] Specifies whether the field uses the Chirp feature.
         #
@@ -109,7 +109,7 @@ module HubspotSDK
         #
         #   @param external_options_reference_type [String] Specifies the type of external reference for options.
         #
-        #   @param field_type [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::FieldType] Describes the field's type in the UI, with accepted values like booleancheckbox,
+        #   @param field_type [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::FieldType] Describes the field's type in the UI, with accepted values like booleancheckbox,
         #
         #   @param help_text [String] Additional information or guidance about the field.
         #
@@ -117,38 +117,38 @@ module HubspotSDK
         #
         #   @param options_url [String] A URL that provides options for the field.
         #
-        #   @param referenced_object_type [Symbol, HubspotSDK::Models::Automation::FieldTypeDefinition::ReferencedObjectType] Indicates the type of object that the field references, with accepted values lik
+        #   @param referenced_object_type [Symbol, HubSpotSDK::Models::Automation::FieldTypeDefinition::ReferencedObjectType] Indicates the type of object that the field references, with accepted values lik
 
         # Defines the structure and constraints of the field.
         #
-        # @see HubspotSDK::Models::Automation::FieldTypeDefinition#schema
+        # @see HubSpotSDK::Models::Automation::FieldTypeDefinition#schema
         module Schema
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Automation::IntegerFieldSchema }
+          variant -> { HubSpotSDK::Automation::IntegerFieldSchema }
 
-          variant -> { HubspotSDK::Automation::LongFieldSchema }
+          variant -> { HubSpotSDK::Automation::LongFieldSchema }
 
-          variant -> { HubspotSDK::Automation::DoubleFieldSchema }
+          variant -> { HubSpotSDK::Automation::DoubleFieldSchema }
 
-          variant -> { HubspotSDK::Automation::StringFieldSchema }
+          variant -> { HubSpotSDK::Automation::StringFieldSchema }
 
-          variant -> { HubspotSDK::Automation::BooleanFieldSchema }
+          variant -> { HubSpotSDK::Automation::BooleanFieldSchema }
 
-          variant -> { HubspotSDK::Automation::ArrayFieldSchema }
+          variant -> { HubSpotSDK::Automation::ArrayFieldSchema }
 
-          variant -> { HubspotSDK::Automation::ObjectFieldSchema }
+          variant -> { HubSpotSDK::Automation::ObjectFieldSchema }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Automation::IntegerFieldSchema, HubspotSDK::Models::Automation::LongFieldSchema, HubspotSDK::Models::Automation::DoubleFieldSchema, HubspotSDK::Models::Automation::StringFieldSchema, HubspotSDK::Models::Automation::BooleanFieldSchema, HubspotSDK::Models::Automation::ArrayFieldSchema, HubspotSDK::Models::Automation::ObjectFieldSchema)]
+          #   @return [Array(HubSpotSDK::Models::Automation::IntegerFieldSchema, HubSpotSDK::Models::Automation::LongFieldSchema, HubSpotSDK::Models::Automation::DoubleFieldSchema, HubSpotSDK::Models::Automation::StringFieldSchema, HubSpotSDK::Models::Automation::BooleanFieldSchema, HubSpotSDK::Models::Automation::ArrayFieldSchema, HubSpotSDK::Models::Automation::ObjectFieldSchema)]
         end
 
         # Specifies the data type of the field, with accepted values like bool, date,
         # datetime, enumeration, json, number, object_coordinates, phone_number, string.
         #
-        # @see HubspotSDK::Models::Automation::FieldTypeDefinition#type
+        # @see HubSpotSDK::Models::Automation::FieldTypeDefinition#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           CURRENCY_NUMBER = :currency_number
@@ -169,9 +169,9 @@ module HubspotSDK
         # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
         # select, text, textarea, unknown.
         #
-        # @see HubspotSDK::Models::Automation::FieldTypeDefinition#field_type
+        # @see HubSpotSDK::Models::Automation::FieldTypeDefinition#field_type
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX = :booleancheckbox
           CALCULATION_EQUATION = :calculation_equation
@@ -197,9 +197,9 @@ module HubspotSDK
         # Indicates the type of object that the field references, with accepted values
         # like OWNER.
         #
-        # @see HubspotSDK::Models::Automation::FieldTypeDefinition#referenced_object_type
+        # @see HubSpotSDK::Models::Automation::FieldTypeDefinition#referenced_object_type
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART = :ABANDONED_CART
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST

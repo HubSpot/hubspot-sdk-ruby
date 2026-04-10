@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type collection_response_currency_code_info_no_paging =
-        { results: ::Array[HubspotSDK::Settings::CurrencyCodeInfo] }
+        { results: ::Array[HubSpotSDK::Settings::CurrencyCodeInfo] }
 
-      class CollectionResponseCurrencyCodeInfoNoPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Settings::CurrencyCodeInfo]
+      class CollectionResponseCurrencyCodeInfoNoPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Settings::CurrencyCodeInfo]
 
         def initialize: (
-          results: ::Array[HubspotSDK::Settings::CurrencyCodeInfo]
+          results: ::Array[HubSpotSDK::Settings::CurrencyCodeInfo]
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Settings::CurrencyCodeInfo]
+          results: ::Array[HubSpotSDK::Settings::CurrencyCodeInfo]
         }
       end
     end

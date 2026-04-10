@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Pages::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_folders_required_params
     skip("Mock server tests are disabled")
 
@@ -22,16 +22,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseContentFolder
+      response => HubSpotSDK::Cms::BatchResponseContentFolder
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentFolder]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseContentFolder::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseContentFolder::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -176,16 +176,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -330,16 +330,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -381,16 +381,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     response = @hubspot.cms.pages.batch.get_landing_pages(inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -402,16 +402,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     response = @hubspot.cms.pages.batch.get_site_pages(inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -423,16 +423,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     response = @hubspot.cms.pages.batch.update_folders(inputs: [{}])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseContentFolder
+      response => HubSpotSDK::Cms::BatchResponseContentFolder
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentFolder]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentFolder]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseContentFolder::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseContentFolder::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -444,16 +444,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     response = @hubspot.cms.pages.batch.update_landing_pages(inputs: [{}])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -465,16 +465,16 @@ class HubspotSDK::Test::Resources::Cms::Pages::BatchTest < HubspotSDK::Test::Res
     response = @hubspot.cms.pages.batch.update_site_pages(inputs: [{}])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponsePage
+      response => HubSpotSDK::Cms::BatchResponsePage
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PageData]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponsePage::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponsePage::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type subscriber_email_response = { email: String, vid: Integer }
 
-      class SubscriberEmailResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriberEmailResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor email: String
 
         attr_accessor vid: Integer

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#get_memberships_join_order
-      class ListGetMembershipsJoinOrderParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::Lists#get_memberships_join_order
+      class ListGetMembershipsJoinOrderParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute list_id
         #
@@ -34,7 +34,7 @@ module HubspotSDK
 
         # @!method initialize(list_id:, after: nil, before: nil, limit: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ListGetMembershipsJoinOrderParams} for more details.
+        #   {HubSpotSDK::Models::Crm::ListGetMembershipsJoinOrderParams} for more details.
         #
         #   @param list_id [String]
         #
@@ -44,7 +44,7 @@ module HubspotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

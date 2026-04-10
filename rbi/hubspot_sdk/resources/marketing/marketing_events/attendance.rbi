@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -22,10 +22,10 @@ module HubspotSDK
               object_id_: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventSubscriber::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::BatchResponseSubscriberVidResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse)
           end
           def create_by_event_id_and_contact_id(
             # Path param: The attendance state value. It may be 'register', 'attend' or
@@ -60,11 +60,11 @@ module HubspotSDK
               object_id_: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+              HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
             )
           end
           def create_by_event_id_and_email(
@@ -96,11 +96,11 @@ module HubspotSDK
               external_event_id: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventSubscriber::OrHash
                 ],
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::BatchResponseSubscriberVidResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse)
           end
           def create_by_external_event_id_and_contact_id(
             # Path param
@@ -136,12 +136,12 @@ module HubspotSDK
               external_event_id: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
                 ],
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+              HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
             )
           end
           def create_by_external_event_id_and_email(
@@ -158,7 +158,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

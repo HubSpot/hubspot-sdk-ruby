@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      # @see HubspotSDK::Resources::CommunicationPreferences#unsubscribe_all
-      class CommunicationPreferenceUnsubscribeAllParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::CommunicationPreferences#unsubscribe_all
+      class CommunicationPreferenceUnsubscribeAllParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute subscriber_id_string
         #
@@ -15,9 +15,9 @@ module HubspotSDK
 
         # @!attribute channel
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
         required :channel,
-                 enum: -> { HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel }
+                 enum: -> { HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel }
 
         # @!attribute business_unit_id
         #
@@ -27,17 +27,17 @@ module HubspotSDK
         # @!attribute verbose
         #
         #   @return [Boolean, nil]
-        optional :verbose, HubspotSDK::Internal::Type::Boolean
+        optional :verbose, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(subscriber_id_string:, channel:, business_unit_id: nil, verbose: nil, request_options: {})
         #   @param subscriber_id_string [String]
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
+        #   @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
         #   @param business_unit_id [Integer]
         #   @param verbose [Boolean]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
 

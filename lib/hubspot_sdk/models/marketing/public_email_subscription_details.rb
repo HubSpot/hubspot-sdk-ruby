@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailSubscriptionDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailSubscriptionDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute office_location_id
         #   ID of the selected office location.
         #

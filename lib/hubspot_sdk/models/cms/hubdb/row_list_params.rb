@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        # @see HubspotSDK::Resources::Cms::Hubdb::Rows#list
-        class RowListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Hubdb::Rows#list
+        class RowListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute table_id_or_name
           #
@@ -26,7 +26,7 @@ module HubspotSDK
           #   Whether to return only results that have been archived.
           #
           #   @return [Boolean, nil]
-          optional :archived, HubspotSDK::Internal::Type::Boolean
+          optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute limit
           #   The maximum number of results to display per page.
@@ -42,16 +42,16 @@ module HubspotSDK
           # @!attribute properties
           #
           #   @return [Array<String>, nil]
-          optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute sort
           #
           #   @return [Array<String>, nil]
-          optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!method initialize(table_id_or_name:, after: nil, archived: nil, limit: nil, offset: nil, properties: nil, sort: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Hubdb::RowListParams} for more details.
+          #   {HubSpotSDK::Models::Cms::Hubdb::RowListParams} for more details.
           #
           #   @param table_id_or_name [String]
           #
@@ -67,7 +67,7 @@ module HubspotSDK
           #
           #   @param sort [Array<String>]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class Interval < HubspotSDK::Internal::Type::BaseModel
+      class Interval < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::Interval,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::Interval,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

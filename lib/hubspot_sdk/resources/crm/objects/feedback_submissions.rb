@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class FeedbackSubmissions
-          # @return [HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch]
           attr_reader :batch
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::FeedbackSubmissionListParams} for more
+          # {HubSpotSDK::Models::Crm::Objects::FeedbackSubmissionListParams} for more
           # details.
           #
           # Read a page of feedback submissions. Control what is returned via the
@@ -29,26 +29,26 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::FeedbackSubmissionListParams
+          # @see HubSpotSDK::Models::Crm::Objects::FeedbackSubmissionListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Crm::Objects::FeedbackSubmissionListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::FeedbackSubmissionListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "crm/objects/2026-03/feedback_submissions",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::FeedbackSubmissionGetParams} for more
+          # {HubSpotSDK::Models::Crm::Objects::FeedbackSubmissionGetParams} for more
           # details.
           #
           # Read an Object identified by `{feedbackSubmissionId}`. `{feedbackSubmissionId}`
@@ -70,14 +70,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::FeedbackSubmissionGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::FeedbackSubmissionGetParams
           def get(feedback_submission_id, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::FeedbackSubmissionGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::FeedbackSubmissionGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/feedback_submissions/%1$s", feedback_submission_id],
@@ -85,7 +85,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -97,7 +97,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -107,28 +107,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::FeedbackSubmissionSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::FeedbackSubmissionSearchParams
           def search(params)
-            parsed, options = HubspotSDK::Crm::Objects::FeedbackSubmissionSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::FeedbackSubmissionSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/feedback_submissions/search",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::FeedbackSubmissions::Batch.new(client: client)
           end
         end
       end

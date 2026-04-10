@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class NumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class NumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::NumberPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::NumberPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -30,7 +30,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -55,10 +55,10 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::NumberPropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::NumberPropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::NumberPropertyOperation::PropertyType::OrSymbol,
             value: Float,
             default_value: String,
             render_spec: String
@@ -82,10 +82,10 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol,
               value: Float,
               default_value: String,
               render_spec: String
@@ -96,13 +96,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::NumberPropertyOperation::Operator
+                HubSpotSDK::Events::NumberPropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -110,48 +110,48 @@ module HubspotSDK
           HAS_EVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_EVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           HAS_NEVER_BEEN_EQUAL_TO =
             T.let(
               :HAS_NEVER_BEEN_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_EQUAL_TO =
             T.let(
               :IS_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_GREATER_THAN =
             T.let(
               :IS_GREATER_THAN,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_GREATER_THAN_OR_EQUAL_TO =
             T.let(
               :IS_GREATER_THAN_OR_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_LESS_THAN =
             T.let(
               :IS_LESS_THAN,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_LESS_THAN_OR_EQUAL_TO =
             T.let(
               :IS_LESS_THAN_OR_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_NOT_EQUAL_TO =
             T.let(
               :IS_NOT_EQUAL_TO,
-              HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::NumberPropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -160,13 +160,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::NumberPropertyOperation::PropertyType
+                HubSpotSDK::Events::NumberPropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -174,13 +174,13 @@ module HubspotSDK
           NUMBER =
             T.let(
               :number,
-              HubspotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::NumberPropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

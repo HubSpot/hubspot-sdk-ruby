@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -15,8 +15,8 @@ module HubspotSDK
               name: String,
               parent_folder_id: Integer,
               updated: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ContentFolder)
           end
           def create(
             # The unique ID of the content folder.
@@ -50,8 +50,8 @@ module HubspotSDK
               parent_folder_id: Integer,
               updated: Time,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ContentFolder)
           end
           def update(
             # Path param
@@ -93,9 +93,9 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolder]
+              HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolder]
             )
           end
           def list(
@@ -124,7 +124,7 @@ module HubspotSDK
             params(
               object_id_: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -140,8 +140,8 @@ module HubspotSDK
             params(
               inputs: T::Array[String],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseContentFolder)
           end
           def batch_get(
             # Body param: Strings to input.
@@ -158,8 +158,8 @@ module HubspotSDK
               object_id_: String,
               archived: T::Boolean,
               property: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ContentFolder)
           end
           def get(
             object_id_,
@@ -176,8 +176,8 @@ module HubspotSDK
             params(
               revision_id: String,
               object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ContentFolderVersion)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ContentFolderVersion)
           end
           def get_revision(revision_id, object_id_:, request_options: {})
           end
@@ -189,9 +189,9 @@ module HubspotSDK
               after: String,
               before: String,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::Cms::ContentFolderVersion]
+              HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolderVersion]
             )
           end
           def list_revisions(
@@ -212,14 +212,14 @@ module HubspotSDK
             params(
               revision_id: String,
               object_id_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::ContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::ContentFolder)
           end
           def restore_revision(revision_id, object_id_:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

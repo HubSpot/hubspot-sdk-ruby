@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicFieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicFieldTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   The internal name used to identify the field.
         #
@@ -12,15 +12,15 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::Automation::PublicOption>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicOption] }
+        #   @return [Array<HubSpotSDK::Models::Automation::PublicOption>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicOption] }
 
         # @!attribute type
         #   The data type of the field, with accepted values including bool, date, datetime,
         #   enumeration, json, number, object_coordinates, phone_number, and string.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::Type]
-        required :type, enum: -> { HubspotSDK::Automation::PublicFieldTypeDefinition::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::Type]
+        required :type, enum: -> { HubSpotSDK::Automation::PublicFieldTypeDefinition::Type }
 
         # @!attribute description
         #   A detailed explanation of the field's purpose.
@@ -33,9 +33,9 @@ module HubspotSDK
         #   calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
         #   select, text, and textarea.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType, nil]
         optional :field_type,
-                 enum: -> { HubspotSDK::Automation::PublicFieldTypeDefinition::FieldType },
+                 enum: -> { HubSpotSDK::Automation::PublicFieldTypeDefinition::FieldType },
                  api_name: :fieldType
 
         # @!attribute help_text
@@ -60,24 +60,24 @@ module HubspotSDK
         #   The type of object that the field references, with accepted values including
         #   OWNER.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType, nil]
         optional :referenced_object_type,
-                 enum: -> { HubspotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType },
+                 enum: -> { HubSpotSDK::Automation::PublicFieldTypeDefinition::ReferencedObjectType },
                  api_name: :referencedObjectType
 
         # @!method initialize(name:, options:, type:, description: nil, field_type: nil, help_text: nil, label: nil, options_url: nil, referenced_object_type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Automation::PublicFieldTypeDefinition} for more details.
+        #   {HubSpotSDK::Models::Automation::PublicFieldTypeDefinition} for more details.
         #
         #   @param name [String] The internal name used to identify the field.
         #
-        #   @param options [Array<HubspotSDK::Models::Automation::PublicOption>]
+        #   @param options [Array<HubSpotSDK::Models::Automation::PublicOption>]
         #
-        #   @param type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::Type] The data type of the field, with accepted values including bool, date, datetime,
+        #   @param type [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::Type] The data type of the field, with accepted values including bool, date, datetime,
         #
         #   @param description [String] A detailed explanation of the field's purpose.
         #
-        #   @param field_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType] The type of field, with accepted values including booleancheckbox, calculation_e
+        #   @param field_type [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::FieldType] The type of field, with accepted values including booleancheckbox, calculation_e
         #
         #   @param help_text [String] Additional information or guidance about the field.
         #
@@ -85,14 +85,14 @@ module HubspotSDK
         #
         #   @param options_url [String] A URL that provides options for the field.
         #
-        #   @param referenced_object_type [Symbol, HubspotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType] The type of object that the field references, with accepted values including OWN
+        #   @param referenced_object_type [Symbol, HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::ReferencedObjectType] The type of object that the field references, with accepted values including OWN
 
         # The data type of the field, with accepted values including bool, date, datetime,
         # enumeration, json, number, object_coordinates, phone_number, and string.
         #
-        # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#type
+        # @see HubSpotSDK::Models::Automation::PublicFieldTypeDefinition#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           DATE = :date
@@ -112,9 +112,9 @@ module HubspotSDK
         # calculation_equation, checkbox, date, file, html, number, phonenumber, radio,
         # select, text, and textarea.
         #
-        # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#field_type
+        # @see HubSpotSDK::Models::Automation::PublicFieldTypeDefinition#field_type
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX = :booleancheckbox
           CALCULATION_EQUATION = :calculation_equation
@@ -136,9 +136,9 @@ module HubspotSDK
         # The type of object that the field references, with accepted values including
         # OWNER.
         #
-        # @see HubspotSDK::Models::Automation::PublicFieldTypeDefinition#referenced_object_type
+        # @see HubSpotSDK::Models::Automation::PublicFieldTypeDefinition#referenced_object_type
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OWNER = :OWNER
 

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class Condition < HubspotSDK::Internal::Type::BaseModel
+      class Condition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::Condition::FilterType]
-        required :filter_type, enum: -> { HubspotSDK::Webhooks::Condition::FilterType }, api_name: :filterType
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::Condition::FilterType]
+        required :filter_type, enum: -> { HubSpotSDK::Webhooks::Condition::FilterType }, api_name: :filterType
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::Condition::Operator]
-        required :operator, enum: -> { HubspotSDK::Webhooks::Condition::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::Condition::Operator]
+        required :operator, enum: -> { HubSpotSDK::Webhooks::Condition::Operator }
 
         # @!attribute property
         #
@@ -27,18 +27,18 @@ module HubspotSDK
         # @!attribute values
         #
         #   @return [Array<String>, nil]
-        optional :values, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :values, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(filter_type:, operator:, property:, value: nil, values: nil)
-        #   @param filter_type [Symbol, HubspotSDK::Models::Webhooks::Condition::FilterType]
-        #   @param operator [Symbol, HubspotSDK::Models::Webhooks::Condition::Operator]
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Webhooks::Condition::FilterType]
+        #   @param operator [Symbol, HubSpotSDK::Models::Webhooks::Condition::Operator]
         #   @param property [String]
         #   @param value [String]
         #   @param values [Array<String>]
 
-        # @see HubspotSDK::Models::Webhooks::Condition#filter_type
+        # @see HubSpotSDK::Models::Webhooks::Condition#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CRM_OBJECT_PROPERTY = :CRM_OBJECT_PROPERTY
 
@@ -46,9 +46,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Webhooks::Condition#operator
+        # @see HubSpotSDK::Models::Webhooks::Condition#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS = :CONTAINS
           ENDS_WITH = :ENDS_WITH

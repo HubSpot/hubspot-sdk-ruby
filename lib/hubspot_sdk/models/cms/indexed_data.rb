@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::SiteSearch#get_indexed_data
-      class IndexedData < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::SiteSearch#get_indexed_data
+      class IndexedData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the document in HubSpot.
         #
@@ -14,33 +14,33 @@ module HubspotSDK
         # @!attribute fields
         #   The indexed fields in HubSpot.
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::IndexedField}]
-        required :fields, -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IndexedField] }
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::IndexedField}]
+        required :fields, -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::IndexedField] }
 
         # @!attribute type
         #   The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         #   `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::IndexedData::Type]
-        required :type, enum: -> { HubspotSDK::Cms::IndexedData::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::IndexedData::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::IndexedData::Type }
 
         # @!method initialize(id:, fields:, type:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::IndexedData} for more details.
+        #   {HubSpotSDK::Models::Cms::IndexedData} for more details.
         #
         #   @param id [String] The ID of the document in HubSpot.
         #
-        #   @param fields [Hash{Symbol=>HubspotSDK::Models::Cms::IndexedField}] The indexed fields in HubSpot.
+        #   @param fields [Hash{Symbol=>HubSpotSDK::Models::Cms::IndexedField}] The indexed fields in HubSpot.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Cms::IndexedData::Type] The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::IndexedData::Type] The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         #   `LISTING\_
 
         # The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         # `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
         #
-        # @see HubspotSDK::Models::Cms::IndexedData#type
+        # @see HubSpotSDK::Models::Cms::IndexedData#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLOG_POST = :BLOG_POST
           KNOWLEDGE_ARTICLE = :KNOWLEDGE_ARTICLE

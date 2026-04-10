@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -40,7 +40,7 @@ module HubspotSDK
         # GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
+            HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -70,7 +70,7 @@ module HubspotSDK
             link: String,
             organizer_user_id: String,
             slug: String,
-            type: HubspotSDK::Scheduler::ExternalLinkMetadata::Type::OrSymbol,
+            type: HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::OrSymbol,
             user_ids_of_link_members: T::Array[String],
             name: String,
             updated_at: Time
@@ -110,7 +110,7 @@ module HubspotSDK
               organizer_user_id: String,
               slug: String,
               type:
-                HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol,
+                HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol,
               user_ids_of_link_members: T::Array[String],
               name: String,
               updated_at: Time
@@ -123,34 +123,34 @@ module HubspotSDK
         # The type of the external meeting link. Accepted values are: PERSONAL_LINK,
         # GROUP_CALENDAR, ROUND_ROBIN_CALENDAR.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Scheduler::ExternalLinkMetadata::Type)
+              T.all(Symbol, HubSpotSDK::Scheduler::ExternalLinkMetadata::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           GROUP_CALENDAR =
             T.let(
               :GROUP_CALENDAR,
-              HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
             )
           PERSONAL_LINK =
             T.let(
               :PERSONAL_LINK,
-              HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
             )
           ROUND_ROBIN_CALENDAR =
             T.let(
               :ROUND_ROBIN_CALENDAR,
-              HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLinkMetadata::Type::TaggedSymbol
               ]
             )
           end

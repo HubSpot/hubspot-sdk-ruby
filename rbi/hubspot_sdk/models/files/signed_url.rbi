@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class SignedURL < HubspotSDK::Internal::Type::BaseModel
+      class SignedURL < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Files::SignedURL, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Files::SignedURL, HubSpotSDK::Internal::AnyHash)
           end
 
         # Timestamp of when the URL will no longer grant access to the file.

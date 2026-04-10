@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalGuestSettings < HubspotSDK::Internal::Type::BaseModel
+      class ExternalGuestSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute can_add_guests
         #   Indicates whether guests can be added to the meeting.
         #
         #   @return [Boolean]
-        required :can_add_guests, HubspotSDK::Internal::Type::Boolean, api_name: :canAddGuests
+        required :can_add_guests, HubSpotSDK::Internal::Type::Boolean, api_name: :canAddGuests
 
         # @!attribute max_guest_count
         #   The maximum number of guests that can be added to the meeting.

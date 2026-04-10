@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailFromDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailFromDetails < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute custom_reply_to
         #   The reply to recipients will see.
         #
@@ -25,7 +25,7 @@ module HubspotSDK
 
         # @!method initialize(custom_reply_to: nil, from_name: nil, reply_to: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicEmailFromDetails} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicEmailFromDetails} for more details.
         #
         #   @param custom_reply_to [String] The reply to recipients will see.
         #

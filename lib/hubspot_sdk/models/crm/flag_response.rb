@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::FeatureFlags#update
-      class FlagResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::FeatureFlags#update
+      class FlagResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The ID of the app
         #
@@ -14,10 +14,10 @@ module HubspotSDK
         # @!attribute default_state
         #   The flag state for any portal that doesn't have an override value
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::FlagResponse::DefaultState]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::FlagResponse::DefaultState]
         required :default_state,
                  enum: -> {
-                   HubspotSDK::Crm::FlagResponse::DefaultState
+                   HubSpotSDK::Crm::FlagResponse::DefaultState
                  },
                  api_name: :defaultState
 
@@ -31,28 +31,28 @@ module HubspotSDK
         #   An optional flag value that overrides all others for this flag name and app,
         #   including portal-level values
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::FlagResponse::OverrideState, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::FlagResponse::OverrideState, nil]
         optional :override_state,
-                 enum: -> { HubspotSDK::Crm::FlagResponse::OverrideState },
+                 enum: -> { HubSpotSDK::Crm::FlagResponse::OverrideState },
                  api_name: :overrideState
 
         # @!method initialize(app_id:, default_state:, flag_name:, override_state: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::FlagResponse} for more details.
+        #   {HubSpotSDK::Models::Crm::FlagResponse} for more details.
         #
         #   @param app_id [Integer] The ID of the app
         #
-        #   @param default_state [Symbol, HubspotSDK::Models::Crm::FlagResponse::DefaultState] The flag state for any portal that doesn't have an override value
+        #   @param default_state [Symbol, HubSpotSDK::Models::Crm::FlagResponse::DefaultState] The flag state for any portal that doesn't have an override value
         #
         #   @param flag_name [String] The name of the flag
         #
-        #   @param override_state [Symbol, HubspotSDK::Models::Crm::FlagResponse::OverrideState] An optional flag value that overrides all others for this flag name and app, inc
+        #   @param override_state [Symbol, HubSpotSDK::Models::Crm::FlagResponse::OverrideState] An optional flag value that overrides all others for this flag name and app, inc
 
         # The flag state for any portal that doesn't have an override value
         #
-        # @see HubspotSDK::Models::Crm::FlagResponse#default_state
+        # @see HubSpotSDK::Models::Crm::FlagResponse#default_state
         module DefaultState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSENT = :ABSENT
           OFF = :OFF
@@ -65,9 +65,9 @@ module HubspotSDK
         # An optional flag value that overrides all others for this flag name and app,
         # including portal-level values
         #
-        # @see HubspotSDK::Models::Crm::FlagResponse#override_state
+        # @see HubSpotSDK::Models::Crm::FlagResponse#override_state
         module OverrideState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSENT = :ABSENT
           OFF = :OFF

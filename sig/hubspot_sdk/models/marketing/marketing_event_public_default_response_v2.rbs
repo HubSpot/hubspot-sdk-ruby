@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventPublicDefaultResponseV2 = Marketing::MarketingEventPublicDefaultResponseV2
 
@@ -6,11 +6,11 @@ module HubspotSDK
       type marketing_event_public_default_response_v2 =
         {
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
+          custom_properties: ::Array[HubSpotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,
-          app_info: HubspotSDK::Marketing::AppInfo,
+          app_info: HubSpotSDK::Marketing::AppInfo,
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,
@@ -21,10 +21,10 @@ module HubspotSDK
           start_date_time: Time
         }
 
-      class MarketingEventPublicDefaultResponseV2 < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicDefaultResponseV2 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor created_at: Time
 
-        attr_accessor custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper]
+        attr_accessor custom_properties: ::Array[HubSpotSDK::Marketing::CrmPropertyWrapper]
 
         attr_accessor event_name: String
 
@@ -32,11 +32,11 @@ module HubspotSDK
 
         attr_accessor updated_at: Time
 
-        attr_reader app_info: HubspotSDK::Marketing::AppInfo?
+        attr_reader app_info: HubSpotSDK::Marketing::AppInfo?
 
         def app_info=: (
-          HubspotSDK::Marketing::AppInfo
-        ) -> HubspotSDK::Marketing::AppInfo
+          HubSpotSDK::Marketing::AppInfo
+        ) -> HubSpotSDK::Marketing::AppInfo
 
         attr_reader end_date_time: Time?
 
@@ -72,11 +72,11 @@ module HubspotSDK
 
         def initialize: (
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
+          custom_properties: ::Array[HubSpotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,
-          ?app_info: HubspotSDK::Marketing::AppInfo,
+          ?app_info: HubSpotSDK::Marketing::AppInfo,
           ?end_date_time: Time,
           ?event_cancelled: bool,
           ?event_completed: bool,
@@ -89,11 +89,11 @@ module HubspotSDK
 
         def to_hash: -> {
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
+          custom_properties: ::Array[HubSpotSDK::Marketing::CrmPropertyWrapper],
           event_name: String,
           object_id_: String,
           updated_at: Time,
-          app_info: HubspotSDK::Marketing::AppInfo,
+          app_info: HubSpotSDK::Marketing::AppInfo,
           end_date_time: Time,
           event_cancelled: bool,
           event_completed: bool,

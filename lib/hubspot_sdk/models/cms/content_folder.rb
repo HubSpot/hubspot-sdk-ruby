@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentFolder < HubspotSDK::Internal::Type::BaseModel
+      class ContentFolder < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the content folder.
         #

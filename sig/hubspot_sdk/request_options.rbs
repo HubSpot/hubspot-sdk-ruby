@@ -1,7 +1,7 @@
-module HubspotSDK
+module HubSpotSDK
   type request_opts =
-    HubspotSDK::RequestOptions
-    | HubspotSDK::request_options
+    HubSpotSDK::RequestOptions
+    | HubSpotSDK::request_options
     | ::Hash[Symbol, top]
 
   type request_options =
@@ -14,8 +14,8 @@ module HubspotSDK
       timeout: Float?
     }
 
-  class RequestOptions < HubspotSDK::Internal::Type::BaseModel
-    def self.validate!: (HubspotSDK::request_opts opts) -> void
+  class RequestOptions < HubSpotSDK::Internal::Type::BaseModel
+    def self.validate!: (HubSpotSDK::request_opts opts) -> void
 
     attr_accessor idempotency_key: String?
 
@@ -30,7 +30,7 @@ module HubspotSDK
     attr_accessor timeout: Float?
 
     def initialize: (
-      ?HubspotSDK::request_options | ::Hash[Symbol, top] values
+      ?HubSpotSDK::request_options | ::Hash[Symbol, top] values
     ) -> void
   end
 end

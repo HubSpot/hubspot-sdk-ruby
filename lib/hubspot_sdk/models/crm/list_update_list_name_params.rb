@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#update_list_name
-      class ListUpdateListNameParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::Lists#update_list_name
+      class ListUpdateListNameParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute list_id
         #
@@ -16,7 +16,7 @@ module HubspotSDK
         # @!attribute include_filters
         #
         #   @return [Boolean, nil]
-        optional :include_filters, HubspotSDK::Internal::Type::Boolean
+        optional :include_filters, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute list_name
         #
@@ -27,7 +27,7 @@ module HubspotSDK
         #   @param list_id [String]
         #   @param include_filters [Boolean]
         #   @param list_name [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

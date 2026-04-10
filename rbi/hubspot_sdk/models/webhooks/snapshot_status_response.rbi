@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SnapshotStatusResponse < HubspotSDK::Internal::Type::BaseModel
+      class SnapshotStatusResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::SnapshotStatusResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::SnapshotStatusResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+            HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
             )
           )
         end
@@ -43,7 +43,7 @@ module HubspotSDK
         sig do
           params(
             error_code:
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::OrSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::OrSymbol
           ).void
         end
         attr_writer :error_code
@@ -59,10 +59,10 @@ module HubspotSDK
             id: String,
             initiated_at: Integer,
             status:
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::OrSymbol,
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::OrSymbol,
             completed_at: Integer,
             error_code:
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::OrSymbol,
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::OrSymbol,
             message: String
           ).returns(T.attached_class)
         end
@@ -82,10 +82,10 @@ module HubspotSDK
               id: String,
               initiated_at: Integer,
               status:
-                HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol,
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol,
               completed_at: Integer,
               error_code:
-                HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol,
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol,
               message: String
             }
           )
@@ -94,13 +94,13 @@ module HubspotSDK
         end
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::SnapshotStatusResponse::Status
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -108,33 +108,33 @@ module HubspotSDK
           COMPLETED =
             T.let(
               :COMPLETED,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
             )
           EXPIRED =
             T.let(
               :EXPIRED,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
             )
           FAILED =
             T.let(
               :FAILED,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
             )
           IN_PROGRESS =
             T.let(
               :IN_PROGRESS,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::Status::TaggedSymbol
               ]
             )
           end
@@ -143,13 +143,13 @@ module HubspotSDK
         end
 
         module ErrorCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -157,28 +157,28 @@ module HubspotSDK
           INTERNAL_ERROR =
             T.let(
               :INTERNAL_ERROR,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
             )
           PERMISSION_DENIED =
             T.let(
               :PERMISSION_DENIED,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
             )
           TIMEOUT =
             T.let(
               :TIMEOUT,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
             )
           VALIDATION_ERROR =
             T.let(
               :VALIDATION_ERROR,
-              HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+              HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
+                HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode::TaggedSymbol
               ]
             )
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponsePublicDefaultAssociation < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicDefaultAssociation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp when the batch process was completed, in ISO 8601 format.
         #
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicDefaultAssociation>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicDefaultAssociation] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicDefaultAssociation>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicDefaultAssociation] }
 
         # @!attribute started_at
         #   The timestamp when the batch process began execution, in ISO 8601 format.
@@ -25,19 +25,19 @@ module HubspotSDK
         #   The status of the batch processing request: "PENDING", "PROCESSING",
         #   "CANCELLED", or "COMPLETE".
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status]
-        required :status, enum: -> { HubspotSDK::Crm::BatchResponsePublicDefaultAssociation::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   An object containing relevant links related to the batch request.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors encountered during the batch processing.
@@ -53,20 +53,20 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation} for more
+        #   {HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation} for more
         #   details.
         #
         #   The response returned after performing a batch operation on associations.
         #
         #   @param completed_at [Time] The timestamp when the batch process was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicDefaultAssociation>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicDefaultAssociation>]
         #
         #   @param started_at [Time] The timestamp when the batch process began execution, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] An object containing relevant links related to the batch request.
         #
@@ -77,9 +77,9 @@ module HubspotSDK
         # The status of the batch processing request: "PENDING", "PROCESSING",
         # "CANCELLED", or "COMPLETE".
         #
-        # @see HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation#status
+        # @see HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

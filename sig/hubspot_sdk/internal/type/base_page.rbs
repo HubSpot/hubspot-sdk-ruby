@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       module BasePage[Elem]
@@ -13,8 +13,8 @@ module HubspotSDK
         alias enum_for to_enum
 
         def initialize: (
-          client: HubspotSDK::Internal::Transport::BaseClient,
-          req: HubspotSDK::Internal::Transport::BaseClient::request_components,
+          client: HubSpotSDK::Internal::Transport::BaseClient,
+          req: HubSpotSDK::Internal::Transport::BaseClient::request_components,
           headers: ::Hash[String, String],
           page_data: top
         ) -> void

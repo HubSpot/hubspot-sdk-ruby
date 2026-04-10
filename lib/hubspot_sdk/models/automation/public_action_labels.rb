@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicActionLabels < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionLabels < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute action_name
         #   The name of the action.
         #
@@ -32,28 +32,28 @@ module HubspotSDK
         #   Rules that govern the execution of the action.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :execution_rules, HubspotSDK::Internal::Type::HashOf[String], api_name: :executionRules
+        optional :execution_rules, HubSpotSDK::Internal::Type::HashOf[String], api_name: :executionRules
 
         # @!attribute input_field_descriptions
         #   Descriptions for each input field.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :input_field_descriptions,
-                 HubspotSDK::Internal::Type::HashOf[String],
+                 HubSpotSDK::Internal::Type::HashOf[String],
                  api_name: :inputFieldDescriptions
 
         # @!attribute input_field_labels
         #   Labels for the input fields.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :input_field_labels, HubspotSDK::Internal::Type::HashOf[String], api_name: :inputFieldLabels
+        optional :input_field_labels, HubSpotSDK::Internal::Type::HashOf[String], api_name: :inputFieldLabels
 
         # @!attribute input_field_option_labels
         #   Labels for the options available in input fields.
         #
         #   @return [Hash{Symbol=>Hash{Symbol=>String}}, nil]
         optional :input_field_option_labels,
-                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::HashOf[String]],
+                 HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::HashOf[String]],
                  api_name: :inputFieldOptionLabels
 
         # @!attribute output_field_labels
@@ -61,7 +61,7 @@ module HubspotSDK
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :output_field_labels,
-                 HubspotSDK::Internal::Type::HashOf[String],
+                 HubSpotSDK::Internal::Type::HashOf[String],
                  api_name: :outputFieldLabels
 
         # @!method initialize(action_name:, action_card_content: nil, action_description: nil, app_display_name: nil, execution_rules: nil, input_field_descriptions: nil, input_field_labels: nil, input_field_option_labels: nil, output_field_labels: nil)

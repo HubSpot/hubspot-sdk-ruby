@@ -1,39 +1,39 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
-        sig { returns(HubspotSDK::Resources::Crm::Properties::Batch) }
+        sig { returns(HubSpotSDK::Resources::Crm::Properties::Batch) }
         attr_reader :batch
 
-        sig { returns(HubspotSDK::Resources::Crm::Properties::Groups) }
+        sig { returns(HubSpotSDK::Resources::Crm::Properties::Groups) }
         attr_reader :groups
 
         # Create and return a copy of a new property for the specified object type.
         sig do
           params(
             object_type: String,
-            field_type: HubspotSDK::Crm::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::Crm::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubspotSDK::Crm::PropertyCreate::Type::OrSymbol,
+            type: HubSpotSDK::Crm::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
             currency_property_name: String,
             data_sensitivity:
-              HubspotSDK::Crm::PropertyCreate::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String,
             show_currency_symbol: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::Property)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::Property)
         end
         def create(
           object_type,
@@ -91,16 +91,16 @@ module HubspotSDK
             currency_property_name: String,
             description: String,
             display_order: Integer,
-            field_type: HubspotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::Crm::PropertyUpdate::FieldType::OrSymbol,
             form_field: T::Boolean,
             group_name: String,
             hidden: T::Boolean,
             label: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash],
+            options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
-            type: HubspotSDK::Crm::PropertyUpdate::Type::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::Property)
+            type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::Property)
         end
         def update(
           # Path param
@@ -144,11 +144,11 @@ module HubspotSDK
             object_type: String,
             archived: T::Boolean,
             data_sensitivity:
-              HubspotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::PropertyListParams::DataSensitivity::OrSymbol,
             locale: String,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::CollectionResponsePropertyNoPaging)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::CollectionResponsePropertyNoPaging)
         end
         def list(
           object_type,
@@ -166,7 +166,7 @@ module HubspotSDK
           params(
             property_name: String,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(property_name, object_type:, request_options: {})
@@ -179,11 +179,11 @@ module HubspotSDK
             object_type: String,
             archived: T::Boolean,
             data_sensitivity:
-              HubspotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
+              HubSpotSDK::Crm::PropertyGetParams::DataSensitivity::OrSymbol,
             locale: String,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::Property)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::Property)
         end
         def get(
           # Path param
@@ -203,7 +203,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

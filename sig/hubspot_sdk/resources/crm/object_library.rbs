@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectLibrary
-        attr_reader enablement: HubspotSDK::Resources::Crm::ObjectLibrary::Enablement
+        attr_reader enablement: HubSpotSDK::Resources::Crm::ObjectLibrary::Enablement
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

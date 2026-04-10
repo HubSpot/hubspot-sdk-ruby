@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Settings
-          # @return [HubspotSDK::Resources::Cms::Blogs::Settings::MultiLanguage]
+          # @return [HubSpotSDK::Resources::Cms::Blogs::Settings::MultiLanguage]
           attr_reader :multi_language
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::SettingListParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::SettingListParams} for more details.
           #
           # Get the list of blogs. Results can be limited and filtered by creation or
           # updated date.
@@ -36,14 +36,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::Blogs::Blog>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::Blogs::Blog>]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::SettingListParams
+          # @see HubSpotSDK::Models::Cms::Blogs::SettingListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::SettingListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::SettingListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blog-settings/2026-03/settings",
@@ -55,8 +55,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::Blogs::Blog,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::Blogs::Blog,
               options: options
             )
           end
@@ -66,16 +66,16 @@ module HubspotSDK
           # @overload get(blog_id, request_options: {})
           #
           # @param blog_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::Blogs::Blog]
+          # @return [HubSpotSDK::Models::Cms::Blogs::Blog]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::SettingGetParams
+          # @see HubSpotSDK::Models::Cms::Blogs::SettingGetParams
           def get(blog_id, params = {})
             @client.request(
               method: :get,
               path: ["cms/blog-settings/2026-03/settings/%1$s", blog_id],
-              model: HubspotSDK::Cms::Blogs::Blog,
+              model: HubSpotSDK::Cms::Blogs::Blog,
               options: params[:request_options]
             )
           end
@@ -86,13 +86,13 @@ module HubspotSDK
           #
           # @param revision_id [String]
           # @param blog_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::Blogs::BlogVersion]
+          # @return [HubSpotSDK::Models::Cms::Blogs::BlogVersion]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::SettingGetRevisionParams
+          # @see HubSpotSDK::Models::Cms::Blogs::SettingGetRevisionParams
           def get_revision(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Blogs::SettingGetRevisionParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::SettingGetRevisionParams.dump_request(params)
             blog_id =
               parsed.delete(:blog_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -100,13 +100,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["cms/blog-settings/2026-03/settings/%1$s/revisions/%2$s", blog_id, revision_id],
-              model: HubspotSDK::Cms::Blogs::BlogVersion,
+              model: HubSpotSDK::Cms::Blogs::BlogVersion,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::SettingListRevisionsParams} for more details.
           #
           # Get the list of blog revisions. Results can be limited and filtered by creation
           # or updated date.
@@ -121,30 +121,30 @@ module HubspotSDK
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::Blogs::VersionBlog>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::Blogs::VersionBlog>]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::SettingListRevisionsParams
+          # @see HubSpotSDK::Models::Cms::Blogs::SettingListRevisionsParams
           def list_revisions(blog_id, params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::SettingListRevisionsParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::SettingListRevisionsParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/blog-settings/2026-03/settings/%1$s/revisions", blog_id],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::Blogs::VersionBlog,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::Blogs::VersionBlog,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @multi_language = HubspotSDK::Resources::Cms::Blogs::Settings::MultiLanguage.new(client: client)
+            @multi_language = HubSpotSDK::Resources::Cms::Blogs::Settings::MultiLanguage.new(client: client)
           end
         end
       end

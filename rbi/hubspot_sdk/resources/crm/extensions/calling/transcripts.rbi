@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
@@ -11,11 +11,11 @@ module HubspotSDK
                 engagement_id: Integer,
                 transcript_create_utterances:
                   T::Array[
-                    HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance::OrHash
+                    HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
+                HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
               )
             end
             def create(
@@ -28,7 +28,7 @@ module HubspotSDK
             sig do
               params(
                 transcript_id: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).void
             end
             def delete(transcript_id, request_options: {})
@@ -40,18 +40,18 @@ module HubspotSDK
                 engagement_properties: T::Hash[Symbol, String],
                 external_call_id: String,
                 final_call_status:
-                  HubspotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
+                  HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus::OrSymbol,
                 from_number:
-                  HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                  HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
                 potential_recipient_user_ids: T::Array[Integer],
                 to_number:
-                  HubspotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
+                  HubSpotSDK::Crm::Extensions::FormattedPhoneNumber::OrHash,
                 call_started_timestamp: Time,
                 duration_seconds: Integer,
                 user_id: Integer,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
               )
             end
             def create_inbound_call(
@@ -81,16 +81,16 @@ module HubspotSDK
             sig do
               params(
                 transcript_id: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(
-                HubspotSDK::Crm::Extensions::Calling::TranscriptResponse
+                HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse
               )
             end
             def get(transcript_id, request_options: {})
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

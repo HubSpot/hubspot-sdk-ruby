@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::Pages#restore_landing_page_revision
-      class PageData < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::Pages#restore_landing_page_revision
+      class PageData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the page.
         #
@@ -14,8 +14,8 @@ module HubspotSDK
         # @!attribute ab_status
         #   The status of the AB test associated with this page, if applicable
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PageData::AbStatus]
-        required :ab_status, enum: -> { HubspotSDK::Cms::PageData::AbStatus }, api_name: :abStatus
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PageData::AbStatus]
+        required :ab_status, enum: -> { HubSpotSDK::Cms::PageData::AbStatus }, api_name: :abStatus
 
         # @!attribute ab_test_id
         #   The ID of the AB test associated with this page, if applicable
@@ -34,7 +34,7 @@ module HubspotSDK
         #   still be live.
         #
         #   @return [Boolean]
-        required :archived_in_dashboard, HubspotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
+        required :archived_in_dashboard, HubSpotSDK::Internal::Type::Boolean, api_name: :archivedInDashboard
 
         # @!attribute attached_stylesheets
         #   List of stylesheets to attach to this page. These stylesheets are attached to
@@ -42,7 +42,7 @@ module HubspotSDK
         #
         #   @return [Array<Hash{Symbol=>Object}>]
         required :attached_stylesheets,
-                 HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]],
+                 HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]],
                  api_name: :attachedStylesheets
 
         # @!attribute author_name
@@ -73,9 +73,9 @@ module HubspotSDK
         #   An ENUM descibing the type of this object. Should be either LANDING_PAGE or
         #   SITE_PAGE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PageData::ContentTypeCategory]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PageData::ContentTypeCategory]
         required :content_type_category,
-                 enum: -> { HubspotSDK::Cms::PageData::ContentTypeCategory },
+                 enum: -> { HubSpotSDK::Cms::PageData::ContentTypeCategory },
                  api_name: :contentTypeCategory
 
         # @!attribute created
@@ -94,13 +94,13 @@ module HubspotSDK
         #   Indicates whether the page is currently published.
         #
         #   @return [Boolean]
-        required :currently_published, HubspotSDK::Internal::Type::Boolean, api_name: :currentlyPublished
+        required :currently_published, HubSpotSDK::Internal::Type::Boolean, api_name: :currentlyPublished
 
         # @!attribute current_state
         #   A generated ENUM descibing the current state of this page.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PageData::CurrentState]
-        required :current_state, enum: -> { HubspotSDK::Cms::PageData::CurrentState }, api_name: :currentState
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PageData::CurrentState]
+        required :current_state, enum: -> { HubSpotSDK::Cms::PageData::CurrentState }, api_name: :currentState
 
         # @!attribute domain
         #   The domain this page will resolve to. If null, the page will default to the
@@ -133,7 +133,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :enable_domain_stylesheets,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :enableDomainStylesheets
 
         # @!attribute enable_layout_stylesheets
@@ -142,7 +142,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :enable_layout_stylesheets,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :enableLayoutStylesheets
 
         # @!attribute featured_image
@@ -189,22 +189,22 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :include_default_custom_css,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeDefaultCustomCss
 
         # @!attribute language
         #   The explicitly defined ISO 639 language code of the page. If null, the page will
         #   default to the language of the Domain.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PageData::Language]
-        required :language, enum: -> { HubspotSDK::Cms::PageData::Language }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PageData::Language]
+        required :language, enum: -> { HubSpotSDK::Cms::PageData::Language }
 
         # @!attribute layout_sections
         #   A structure detailing the layout sections of the page.
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}]
         required :layout_sections,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::LayoutSection] },
                  api_name: :layoutSections
 
         # @!attribute link_rel_canonical_url
@@ -244,7 +244,7 @@ module HubspotSDK
         #   Boolean describing if the page expiration feature is enabled for this page
         #
         #   @return [Boolean]
-        required :page_expiry_enabled, HubspotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
+        required :page_expiry_enabled, HubSpotSDK::Internal::Type::Boolean, api_name: :pageExpiryEnabled
 
         # @!attribute page_expiry_redirect_id
         #   The ID of another page this page's url should redirect to once this page
@@ -265,7 +265,7 @@ module HubspotSDK
         #   being redirected.
         #
         #   @return [Boolean]
-        required :page_redirected, HubspotSDK::Internal::Type::Boolean, api_name: :pageRedirected
+        required :page_redirected, HubSpotSDK::Internal::Type::Boolean, api_name: :pageRedirected
 
         # @!attribute password
         #   Set this to create a password protected page. Entering the password will be
@@ -279,7 +279,7 @@ module HubspotSDK
         #
         #   @return [Array<Object>]
         required :public_access_rules,
-                 HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::Unknown],
+                 HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown],
                  api_name: :publicAccessRules
 
         # @!attribute public_access_rules_enabled
@@ -287,7 +287,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :public_access_rules_enabled,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :publicAccessRulesEnabled
 
         # @!attribute publish_date
@@ -301,7 +301,7 @@ module HubspotSDK
         #   publish endpoint is called, and to ignore the publish_date setting.
         #
         #   @return [Boolean]
-        required :publish_immediately, HubspotSDK::Internal::Type::Boolean, api_name: :publishImmediately
+        required :publish_immediately, HubSpotSDK::Internal::Type::Boolean, api_name: :publishImmediately
 
         # @!attribute slug
         #   The path of the this page. This field is appended to the domain to construct the
@@ -333,7 +333,7 @@ module HubspotSDK
         #
         #   @return [Hash{Symbol=>Object}]
         required :theme_settings_values,
-                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                 HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown],
                  api_name: :themeSettingsValues
 
         # @!attribute translated_from_id
@@ -346,9 +346,9 @@ module HubspotSDK
         #   A map of translations for the page, each associated with a specific language
         #   variation.
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::ContentLanguageVariation}]
         required :translations,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ContentLanguageVariation] }
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::ContentLanguageVariation] }
 
         # @!attribute updated
         #   The timestamp indicating when the page was last updated.
@@ -372,7 +372,7 @@ module HubspotSDK
         #   Boolean to determine if this page should use a featuredImage.
         #
         #   @return [Boolean]
-        required :use_featured_image, HubspotSDK::Internal::Type::Boolean, api_name: :useFeaturedImage
+        required :use_featured_image, HubSpotSDK::Internal::Type::Boolean, api_name: :useFeaturedImage
 
         # @!attribute widget_containers
         #   A data structure containing the data for all the modules inside the containers
@@ -380,22 +380,22 @@ module HubspotSDK
         #
         #   @return [Hash{Symbol=>Object}]
         required :widget_containers,
-                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                 HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown],
                  api_name: :widgetContainers
 
         # @!attribute widgets
         #   A data structure containing the data for all the modules for this page.
         #
         #   @return [Hash{Symbol=>Object}]
-        required :widgets, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :widgets, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!method initialize(id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, page_redirected:, password:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, slug:, state:, subcategory:, template_path:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::PageData} for more details.
+        #   {HubSpotSDK::Models::Cms::PageData} for more details.
         #
         #   @param id [String] The unique ID of the page.
         #
-        #   @param ab_status [Symbol, HubspotSDK::Models::Cms::PageData::AbStatus] The status of the AB test associated with this page, if applicable
+        #   @param ab_status [Symbol, HubSpotSDK::Models::Cms::PageData::AbStatus] The status of the AB test associated with this page, if applicable
         #
         #   @param ab_test_id [String] The ID of the AB test associated with this page, if applicable
         #
@@ -413,7 +413,7 @@ module HubspotSDK
         #
         #   @param content_group_id [String] The unique identifier for the content group associated with the page.
         #
-        #   @param content_type_category [Symbol, HubspotSDK::Models::Cms::PageData::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
+        #   @param content_type_category [Symbol, HubSpotSDK::Models::Cms::PageData::ContentTypeCategory] An ENUM descibing the type of this object. Should be either LANDING_PAGE or SITE
         #
         #   @param created [Time] The timestamp indicating when the page was created.
         #
@@ -421,7 +421,7 @@ module HubspotSDK
         #
         #   @param currently_published [Boolean] Indicates whether the page is currently published.
         #
-        #   @param current_state [Symbol, HubspotSDK::Models::Cms::PageData::CurrentState] A generated ENUM descibing the current state of this page.
+        #   @param current_state [Symbol, HubSpotSDK::Models::Cms::PageData::CurrentState] A generated ENUM descibing the current state of this page.
         #
         #   @param domain [String] The domain this page will resolve to. If null, the page will default to the prim
         #
@@ -449,9 +449,9 @@ module HubspotSDK
         #
         #   @param include_default_custom_css [Boolean] Boolean to determine whether or not the Primary CSS Files should be applied.
         #
-        #   @param language [Symbol, HubspotSDK::Models::Cms::PageData::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
+        #   @param language [Symbol, HubSpotSDK::Models::Cms::PageData::Language] The explicitly defined ISO 639 language code of the page. If null, the page will
         #
-        #   @param layout_sections [Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the page.
+        #   @param layout_sections [Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}] A structure detailing the layout sections of the page.
         #
         #   @param link_rel_canonical_url [String] Optional override to set the URL to be used in the rel=canonical link tag on the
         #
@@ -493,7 +493,7 @@ module HubspotSDK
         #
         #   @param translated_from_id [String] ID of the primary page this object was translated from.
         #
-        #   @param translations [Hash{Symbol=>HubspotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the page, each associated with a specific language var
+        #   @param translations [Hash{Symbol=>HubSpotSDK::Models::Cms::ContentLanguageVariation}] A map of translations for the page, each associated with a specific language var
         #
         #   @param updated [Time] The timestamp indicating when the page was last updated.
         #
@@ -509,9 +509,9 @@ module HubspotSDK
 
         # The status of the AB test associated with this page, if applicable
         #
-        # @see HubspotSDK::Models::Cms::PageData#ab_status
+        # @see HubSpotSDK::Models::Cms::PageData#ab_status
         module AbStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT = :automated_loser_variant
           AUTOMATED_MASTER = :automated_master
@@ -529,9 +529,9 @@ module HubspotSDK
         # An ENUM descibing the type of this object. Should be either LANDING_PAGE or
         # SITE_PAGE.
         #
-        # @see HubspotSDK::Models::Cms::PageData#content_type_category
+        # @see HubSpotSDK::Models::Cms::PageData#content_type_category
         module ContentTypeCategory
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTENT_TYPE_CATEGORY_0 = :"0"
           CONTENT_TYPE_CATEGORY_1 = :"1"
@@ -563,9 +563,9 @@ module HubspotSDK
 
         # A generated ENUM descibing the current state of this page.
         #
-        # @see HubspotSDK::Models::Cms::PageData#current_state
+        # @see HubSpotSDK::Models::Cms::PageData#current_state
         module CurrentState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AGENT_GENERATED = :AGENT_GENERATED
           AUTOMATED = :AUTOMATED
@@ -607,9 +607,9 @@ module HubspotSDK
         # The explicitly defined ISO 639 language code of the page. If null, the page will
         # default to the language of the Domain.
         #
-        # @see HubspotSDK::Models::Cms::PageData#language
+        # @see HubSpotSDK::Models::Cms::PageData#language
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab

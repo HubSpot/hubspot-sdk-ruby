@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Domain < HubspotSDK::Internal::Type::BaseModel
+      class Domain < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Domain, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Domain, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unique ID of this domain.

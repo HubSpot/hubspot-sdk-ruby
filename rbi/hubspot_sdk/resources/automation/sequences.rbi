@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Sequences
@@ -14,10 +14,10 @@ module HubspotSDK
             after: String,
             limit: Integer,
             name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Automation::PublicSequenceLiteResponse
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Automation::PublicSequenceLiteResponse
             ]
           )
         end
@@ -43,9 +43,9 @@ module HubspotSDK
             sender_email: String,
             sequence_id: String,
             sender_alias_address: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Automation::PublicSequenceEnrollmentLiteResponse
+            HubSpotSDK::Automation::PublicSequenceEnrollmentLiteResponse
           )
         end
         def create_enrollment(
@@ -71,8 +71,8 @@ module HubspotSDK
           params(
             sequence_id: String,
             user_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Automation::PublicSequenceResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Automation::PublicSequenceResponse)
         end
         def get(sequence_id, user_id:, request_options: {})
         end
@@ -81,14 +81,14 @@ module HubspotSDK
         sig do
           params(
             contact_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Automation::PublicSequenceEnrollmentResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Automation::PublicSequenceEnrollmentResponse)
         end
         def get_enrollment_by_contact_id(contact_id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

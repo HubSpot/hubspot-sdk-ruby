@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_webinar_filter =
         {
-          filter_type: HubspotSDK::Models::Crm::PublicWebinarFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicWebinarFilter::filter_type,
           operator: String,
           webinar_id: String
         }
 
-      class PublicWebinarFilter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_type: HubspotSDK::Models::Crm::PublicWebinarFilter::filter_type
+      class PublicWebinarFilter < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_type: HubSpotSDK::Models::Crm::PublicWebinarFilter::filter_type
 
         attr_accessor operator: String
 
@@ -18,13 +18,13 @@ module HubspotSDK
         def webinar_id=: (String) -> String
 
         def initialize: (
-          filter_type: HubspotSDK::Models::Crm::PublicWebinarFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicWebinarFilter::filter_type,
           operator: String,
           ?webinar_id: String
         ) -> void
 
         def to_hash: -> {
-          filter_type: HubspotSDK::Models::Crm::PublicWebinarFilter::filter_type,
+          filter_type: HubSpotSDK::Models::Crm::PublicWebinarFilter::filter_type,
           operator: String,
           webinar_id: String
         }
@@ -32,11 +32,11 @@ module HubspotSDK
         type filter_type = :WEBINAR
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WEBINAR: :WEBINAR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicWebinarFilter::filter_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicWebinarFilter::filter_type]
         end
       end
     end

@@ -2,14 +2,14 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.marketing.campaigns.budget.create("campaignGuid", amount: 0, name: "name", order: 0)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicBudgetItem
+      response => HubSpotSDK::Marketing::PublicBudgetItem
     end
 
     assert_pattern do
@@ -38,7 +38,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
       )
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicBudgetItem
+      response => HubSpotSDK::Marketing::PublicBudgetItem
     end
 
     assert_pattern do
@@ -70,7 +70,7 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
     response = @hubspot.marketing.campaigns.budget.get(0, campaign_guid: "campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicBudgetItem
+      response => HubSpotSDK::Marketing::PublicBudgetItem
     end
 
     assert_pattern do
@@ -92,14 +92,14 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BudgetTest < HubspotSDK
     response = @hubspot.marketing.campaigns.budget.get_totals("campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::PublicBudgetTotals
+      response => HubSpotSDK::Marketing::PublicBudgetTotals
     end
 
     assert_pattern do
       response => {
-        budget_items: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicBudgetItem]),
-        currency_code: HubspotSDK::Marketing::PublicBudgetTotals::CurrencyCode,
-        spend_items: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicSpendItem]),
+        budget_items: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicBudgetItem]),
+        currency_code: HubSpotSDK::Marketing::PublicBudgetTotals::CurrencyCode,
+        spend_items: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicSpendItem]),
         budget_total: Float | nil,
         remaining_budget: Float | nil,
         spend_total: Float | nil

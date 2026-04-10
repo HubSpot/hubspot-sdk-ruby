@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class URLRedirects
@@ -20,8 +20,8 @@ module HubspotSDK
             is_protocol_agnostic: T::Boolean,
             is_trailing_slash_optional: T::Boolean,
             precedence: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::URLMapping)
         end
         def create(
           # The destination URL, where the target URL should be redirected if it matches the
@@ -72,8 +72,8 @@ module HubspotSDK
             redirect_style: Integer,
             route_prefix: String,
             updated: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::URLMapping)
         end
         def update(
           url_redirect_id,
@@ -130,8 +130,8 @@ module HubspotSDK
             updated_after: Time,
             updated_at: Time,
             updated_before: Time,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::URLMapping])
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::URLMapping])
         end
         def list(
           # The paging cursor token of the last successfully read resource will be returned
@@ -157,7 +157,7 @@ module HubspotSDK
         sig do
           params(
             url_redirect_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(url_redirect_id, request_options: {})
@@ -167,14 +167,14 @@ module HubspotSDK
         sig do
           params(
             url_redirect_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::URLMapping)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::URLMapping)
         end
         def get(url_redirect_id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

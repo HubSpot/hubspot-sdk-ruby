@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
-        class SubscriberStateRecordByEmailParams < HubspotSDK::Models::Marketing::BatchInputMarketingEventEmailSubscriber
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class SubscriberStateRecordByEmailParams < HubSpotSDK::Models::Marketing::BatchInputMarketingEventEmailSubscriber
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Marketing::MarketingEvents::SubscriberStateRecordByEmailParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -30,7 +30,7 @@ module HubspotSDK
               external_event_id: String,
               subscriber_state: String,
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -47,7 +47,7 @@ module HubspotSDK
                 external_event_id: String,
                 subscriber_state: String,
                 external_account_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

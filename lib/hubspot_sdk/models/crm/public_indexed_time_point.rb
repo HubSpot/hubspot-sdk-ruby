@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicIndexedTimePoint < HubspotSDK::Internal::Type::BaseModel
+      class PublicIndexedTimePoint < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute index_reference
         #   Specifies the reference point in time for the indexed time point.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicNowReference, HubspotSDK::Models::Crm::PublicTodayReference, HubspotSDK::Models::Crm::PublicWeekReference, HubspotSDK::Models::Crm::PublicFiscalQuarterReference, HubspotSDK::Models::Crm::PublicFiscalYearReference, HubspotSDK::Models::Crm::PublicYearReference, HubspotSDK::Models::Crm::PublicQuarterReference, HubspotSDK::Models::Crm::PublicMonthReference]
+        #   @return [HubSpotSDK::Models::Crm::PublicNowReference, HubSpotSDK::Models::Crm::PublicTodayReference, HubSpotSDK::Models::Crm::PublicWeekReference, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference, HubSpotSDK::Models::Crm::PublicFiscalYearReference, HubSpotSDK::Models::Crm::PublicYearReference, HubSpotSDK::Models::Crm::PublicQuarterReference, HubSpotSDK::Models::Crm::PublicMonthReference]
         required :index_reference,
-                 union: -> { HubspotSDK::Crm::PublicIndexedTimePoint::IndexReference },
+                 union: -> { HubSpotSDK::Crm::PublicIndexedTimePoint::IndexReference },
                  api_name: :indexReference
 
         # @!attribute time_type
         #   Defines the type of time (INDEXED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicIndexedTimePoint::TimeType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicIndexedTimePoint::TimeType]
         required :time_type,
                  enum: -> {
-                   HubspotSDK::Crm::PublicIndexedTimePoint::TimeType
+                   HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType
                  },
                  api_name: :timeType
 
@@ -31,8 +31,8 @@ module HubspotSDK
 
         # @!attribute offset
         #
-        #   @return [HubspotSDK::Models::Crm::PublicIndexOffset, nil]
-        optional :offset, -> { HubspotSDK::Crm::PublicIndexOffset }
+        #   @return [HubSpotSDK::Models::Crm::PublicIndexOffset, nil]
+        optional :offset, -> { HubSpotSDK::Crm::PublicIndexOffset }
 
         # @!attribute timezone_source
         #   Specifies the source of the time zone information for the indexed time point
@@ -43,49 +43,49 @@ module HubspotSDK
 
         # @!method initialize(index_reference:, time_type:, zone_id:, offset: nil, timezone_source: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicIndexedTimePoint} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicIndexedTimePoint} for more details.
         #
-        #   @param index_reference [HubspotSDK::Models::Crm::PublicNowReference, HubspotSDK::Models::Crm::PublicTodayReference, HubspotSDK::Models::Crm::PublicWeekReference, HubspotSDK::Models::Crm::PublicFiscalQuarterReference, HubspotSDK::Models::Crm::PublicFiscalYearReference, HubspotSDK::Models::Crm::PublicYearReference, HubspotSDK::Models::Crm::PublicQuarterReference, HubspotSDK::Models::Crm::PublicMonthReference] Specifies the reference point in time for the indexed time point.
+        #   @param index_reference [HubSpotSDK::Models::Crm::PublicNowReference, HubSpotSDK::Models::Crm::PublicTodayReference, HubSpotSDK::Models::Crm::PublicWeekReference, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference, HubSpotSDK::Models::Crm::PublicFiscalYearReference, HubSpotSDK::Models::Crm::PublicYearReference, HubSpotSDK::Models::Crm::PublicQuarterReference, HubSpotSDK::Models::Crm::PublicMonthReference] Specifies the reference point in time for the indexed time point.
         #
-        #   @param time_type [Symbol, HubspotSDK::Models::Crm::PublicIndexedTimePoint::TimeType] Defines the type of time (INDEXED).
+        #   @param time_type [Symbol, HubSpotSDK::Models::Crm::PublicIndexedTimePoint::TimeType] Defines the type of time (INDEXED).
         #
         #   @param zone_id [String] Indicates the identifier for the time zone associated with the indexed time poin
         #
-        #   @param offset [HubspotSDK::Models::Crm::PublicIndexOffset]
+        #   @param offset [HubSpotSDK::Models::Crm::PublicIndexOffset]
         #
         #   @param timezone_source [String] Specifies the source of the time zone information for the indexed time point (CU
 
         # Specifies the reference point in time for the indexed time point.
         #
-        # @see HubspotSDK::Models::Crm::PublicIndexedTimePoint#index_reference
+        # @see HubSpotSDK::Models::Crm::PublicIndexedTimePoint#index_reference
         module IndexReference
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicNowReference }
+          variant -> { HubSpotSDK::Crm::PublicNowReference }
 
-          variant -> { HubspotSDK::Crm::PublicTodayReference }
+          variant -> { HubSpotSDK::Crm::PublicTodayReference }
 
-          variant -> { HubspotSDK::Crm::PublicWeekReference }
+          variant -> { HubSpotSDK::Crm::PublicWeekReference }
 
-          variant -> { HubspotSDK::Crm::PublicFiscalQuarterReference }
+          variant -> { HubSpotSDK::Crm::PublicFiscalQuarterReference }
 
-          variant -> { HubspotSDK::Crm::PublicFiscalYearReference }
+          variant -> { HubSpotSDK::Crm::PublicFiscalYearReference }
 
-          variant -> { HubspotSDK::Crm::PublicYearReference }
+          variant -> { HubSpotSDK::Crm::PublicYearReference }
 
-          variant -> { HubspotSDK::Crm::PublicQuarterReference }
+          variant -> { HubSpotSDK::Crm::PublicQuarterReference }
 
-          variant -> { HubspotSDK::Crm::PublicMonthReference }
+          variant -> { HubSpotSDK::Crm::PublicMonthReference }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicNowReference, HubspotSDK::Models::Crm::PublicTodayReference, HubspotSDK::Models::Crm::PublicWeekReference, HubspotSDK::Models::Crm::PublicFiscalQuarterReference, HubspotSDK::Models::Crm::PublicFiscalYearReference, HubspotSDK::Models::Crm::PublicYearReference, HubspotSDK::Models::Crm::PublicQuarterReference, HubspotSDK::Models::Crm::PublicMonthReference)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicNowReference, HubSpotSDK::Models::Crm::PublicTodayReference, HubSpotSDK::Models::Crm::PublicWeekReference, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference, HubSpotSDK::Models::Crm::PublicFiscalYearReference, HubSpotSDK::Models::Crm::PublicYearReference, HubSpotSDK::Models::Crm::PublicQuarterReference, HubSpotSDK::Models::Crm::PublicMonthReference)]
         end
 
         # Defines the type of time (INDEXED).
         #
-        # @see HubspotSDK::Models::Crm::PublicIndexedTimePoint#time_type
+        # @see HubSpotSDK::Models::Crm::PublicIndexedTimePoint#time_type
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INDEXED = :INDEXED
 

@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class CollectionResponseExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of ExternalUnifiedEvent objects, each representing an individual event
         #   with its associated details.
         #
-        #   @return [Array<HubspotSDK::Models::Events::ExternalUnifiedEvent>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::ExternalUnifiedEvent] }
+        #   @return [Array<HubSpotSDK::Models::Events::ExternalUnifiedEvent>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::ExternalUnifiedEvent] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::CollectionResponseExternalUnifiedEvent} for more
+        #   {HubSpotSDK::Models::Events::CollectionResponseExternalUnifiedEvent} for more
         #   details.
         #
-        #   @param results [Array<HubspotSDK::Models::Events::ExternalUnifiedEvent>] An array of ExternalUnifiedEvent objects, each representing an individual event
+        #   @param results [Array<HubSpotSDK::Models::Events::ExternalUnifiedEvent>] An array of ExternalUnifiedEvent objects, each representing an individual event
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
 

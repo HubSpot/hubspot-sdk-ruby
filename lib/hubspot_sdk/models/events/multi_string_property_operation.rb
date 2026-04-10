@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class MultiStringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class MultiStringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute coalescing_refine_by
         #
-        #   @return [HubspotSDK::Models::Events::NumOccurrencesRefineBy, HubspotSDK::Models::Events::SetOccurrencesRefineBy]
+        #   @return [HubSpotSDK::Models::Events::NumOccurrencesRefineBy, HubSpotSDK::Models::Events::SetOccurrencesRefineBy]
         required :coalescing_refine_by,
-                 union: -> { HubspotSDK::Events::MultiStringPropertyOperation::CoalescingRefineBy },
+                 union: -> { HubSpotSDK::Events::MultiStringPropertyOperation::CoalescingRefineBy },
                  api_name: :coalescingRefineBy
 
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -25,8 +25,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::MultiStringPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::MultiStringPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::MultiStringPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::MultiStringPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -35,15 +35,15 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::MultiStringPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::MultiStringPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::MultiStringPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::MultiStringPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute values
         #
         #   @return [Array<String>]
-        required :values, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :values, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute default_value
         #
@@ -52,9 +52,9 @@ module HubspotSDK
 
         # @!attribute pruning_refine_by
         #
-        #   @return [HubspotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubspotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Events::AllHistoryRefineBy, HubspotSDK::Models::Events::TimePointOperation, HubspotSDK::Models::Events::RangedTimeOperation, nil]
+        #   @return [HubSpotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Events::AllHistoryRefineBy, HubSpotSDK::Models::Events::TimePointOperation, HubSpotSDK::Models::Events::RangedTimeOperation, nil]
         optional :pruning_refine_by,
-                 union: -> { HubspotSDK::Events::MultiStringPropertyOperation::PruningRefineBy },
+                 union: -> { HubSpotSDK::Events::MultiStringPropertyOperation::PruningRefineBy },
                  api_name: :pruningRefineBy
 
         # @!attribute render_spec
@@ -63,32 +63,32 @@ module HubspotSDK
         optional :render_spec, String, api_name: :renderSpec
 
         # @!method initialize(coalescing_refine_by:, include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, values:, default_value: nil, pruning_refine_by: nil, render_spec: nil)
-        #   @param coalescing_refine_by [HubspotSDK::Models::Events::NumOccurrencesRefineBy, HubspotSDK::Models::Events::SetOccurrencesRefineBy]
+        #   @param coalescing_refine_by [HubSpotSDK::Models::Events::NumOccurrencesRefineBy, HubSpotSDK::Models::Events::SetOccurrencesRefineBy]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::MultiStringPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::MultiStringPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::MultiStringPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::MultiStringPropertyOperation::PropertyType]
         #   @param values [Array<String>]
         #   @param default_value [String]
-        #   @param pruning_refine_by [HubspotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubspotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Events::AllHistoryRefineBy, HubspotSDK::Models::Events::TimePointOperation, HubspotSDK::Models::Events::RangedTimeOperation]
+        #   @param pruning_refine_by [HubSpotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Events::AllHistoryRefineBy, HubSpotSDK::Models::Events::TimePointOperation, HubSpotSDK::Models::Events::RangedTimeOperation]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::MultiStringPropertyOperation#coalescing_refine_by
+        # @see HubSpotSDK::Models::Events::MultiStringPropertyOperation#coalescing_refine_by
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Events::NumOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Events::NumOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Events::SetOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Events::SetOccurrencesRefineBy }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Events::NumOccurrencesRefineBy, HubspotSDK::Models::Events::SetOccurrencesRefineBy)]
+          #   @return [Array(HubSpotSDK::Models::Events::NumOccurrencesRefineBy, HubSpotSDK::Models::Events::SetOccurrencesRefineBy)]
         end
 
-        # @see HubspotSDK::Models::Events::MultiStringPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::MultiStringPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS = :CONTAINS
           CONTAINS_EXACTLY = :CONTAINS_EXACTLY
@@ -103,9 +103,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::MultiStringPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::MultiStringPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MULTISTRING = :multistring
 
@@ -113,26 +113,26 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::MultiStringPropertyOperation#pruning_refine_by
+        # @see HubSpotSDK::Models::Events::MultiStringPropertyOperation#pruning_refine_by
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Events::RelativeComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Events::RelativeComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Events::RelativeRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Events::RelativeRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Events::AbsoluteComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Events::AbsoluteRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Events::AllHistoryRefineBy }
+          variant -> { HubSpotSDK::Events::AllHistoryRefineBy }
 
-          variant -> { HubspotSDK::Events::TimePointOperation }
+          variant -> { HubSpotSDK::Events::TimePointOperation }
 
-          variant -> { HubspotSDK::Events::RangedTimeOperation }
+          variant -> { HubSpotSDK::Events::RangedTimeOperation }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubspotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Events::AllHistoryRefineBy, HubspotSDK::Models::Events::TimePointOperation, HubspotSDK::Models::Events::RangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Events::RelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Events::RelativeRangedTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Events::AbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Events::AllHistoryRefineBy, HubSpotSDK::Models::Events::TimePointOperation, HubSpotSDK::Models::Events::RangedTimeOperation)]
         end
       end
     end

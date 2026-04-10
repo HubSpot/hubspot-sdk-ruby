@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RangedTimeOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedTimeOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RangedTimeOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RangedTimeOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
+            HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
           )
         end
         attr_accessor :lower_bound_endpoint_behavior
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants
+            HubSpotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants
           )
         end
         attr_accessor :lower_bound_time_point
@@ -34,7 +34,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -44,14 +44,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+            HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
           )
         end
         attr_accessor :property_parser
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -61,14 +61,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
+            HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
           )
         end
         attr_accessor :upper_bound_endpoint_behavior
 
         sig do
           returns(
-            HubspotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants
+            HubSpotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants
           )
         end
         attr_accessor :upper_bound_time_point
@@ -89,29 +89,29 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             lower_bound_endpoint_behavior:
-              HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::OrSymbol,
+              HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::OrSymbol,
             lower_bound_time_point:
               T.any(
-                HubspotSDK::Events::DatePoint::OrHash,
-                HubspotSDK::Events::IndexedTimePoint::OrHash,
-                HubspotSDK::Events::PropertyReferencedTime::OrHash
+                HubSpotSDK::Events::DatePoint::OrHash,
+                HubSpotSDK::Events::IndexedTimePoint::OrHash,
+                HubSpotSDK::Events::PropertyReferencedTime::OrHash
               ),
             operation_type: String,
             operator:
-              HubspotSDK::Events::RangedTimeOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::RangedTimeOperation::Operator::OrSymbol,
             operator_name: String,
             property_parser:
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::OrSymbol,
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::OrSymbol,
             property_type:
-              HubspotSDK::Events::RangedTimeOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::RangedTimeOperation::PropertyType::OrSymbol,
             type: String,
             upper_bound_endpoint_behavior:
-              HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::OrSymbol,
+              HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::OrSymbol,
             upper_bound_time_point:
               T.any(
-                HubspotSDK::Events::DatePoint::OrHash,
-                HubspotSDK::Events::IndexedTimePoint::OrHash,
-                HubspotSDK::Events::PropertyReferencedTime::OrHash
+                HubSpotSDK::Events::DatePoint::OrHash,
+                HubSpotSDK::Events::IndexedTimePoint::OrHash,
+                HubSpotSDK::Events::PropertyReferencedTime::OrHash
               ),
             default_value: String,
             render_spec: String
@@ -139,22 +139,22 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               lower_bound_endpoint_behavior:
-                HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol,
+                HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol,
               lower_bound_time_point:
-                HubspotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants,
+                HubSpotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants,
               operation_type: String,
               operator:
-                HubspotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_parser:
-                HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol,
+                HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol,
               property_type:
-                HubspotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol,
               type: String,
               upper_bound_endpoint_behavior:
-                HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol,
+                HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol,
               upper_bound_time_point:
-                HubspotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants,
+                HubSpotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants,
               default_value: String,
               render_spec: String
             }
@@ -164,13 +164,13 @@ module HubspotSDK
         end
 
         module LowerBoundEndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior
+                HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -178,18 +178,18 @@ module HubspotSDK
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
             )
           INCLUSIVE =
             T.let(
               :INCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
+                HubSpotSDK::Events::RangedTimeOperation::LowerBoundEndpointBehavior::TaggedSymbol
               ]
             )
           end
@@ -198,21 +198,21 @@ module HubspotSDK
         end
 
         module LowerBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::DatePoint,
-                HubspotSDK::Events::IndexedTimePoint,
-                HubspotSDK::Events::PropertyReferencedTime
+                HubSpotSDK::Events::DatePoint,
+                HubSpotSDK::Events::IndexedTimePoint,
+                HubSpotSDK::Events::PropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants
+                HubSpotSDK::Events::RangedTimeOperation::LowerBoundTimePoint::Variants
               ]
             )
           end
@@ -221,29 +221,29 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::RangedTimeOperation::Operator)
+              T.all(Symbol, HubSpotSDK::Events::RangedTimeOperation::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           IS_BETWEEN =
             T.let(
               :IS_BETWEEN,
-              HubspotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
             )
           IS_NOT_BETWEEN =
             T.let(
               :IS_NOT_BETWEEN,
-              HubspotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::RangedTimeOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -252,13 +252,13 @@ module HubspotSDK
         end
 
         module PropertyParser
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedTimeOperation::PropertyParser
+                HubSpotSDK::Events::RangedTimeOperation::PropertyParser
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -266,33 +266,33 @@ module HubspotSDK
           ANNIVERSARY =
             T.let(
               :ANNIVERSARY,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           UPDATED_AT =
             T.let(
               :UPDATED_AT,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           VALUE =
             T.let(
               :VALUE,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
+                HubSpotSDK::Events::RangedTimeOperation::PropertyParser::TaggedSymbol
               ]
             )
           end
@@ -301,13 +301,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedTimeOperation::PropertyType
+                HubSpotSDK::Events::RangedTimeOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -315,13 +315,13 @@ module HubspotSDK
           RANGEDTIME =
             T.let(
               :rangedtime,
-              HubspotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::RangedTimeOperation::PropertyType::TaggedSymbol
               ]
             )
           end
@@ -330,13 +330,13 @@ module HubspotSDK
         end
 
         module UpperBoundEndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior
+                HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -344,18 +344,18 @@ module HubspotSDK
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
             )
           INCLUSIVE =
             T.let(
               :INCLUSIVE,
-              HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
+                HubSpotSDK::Events::RangedTimeOperation::UpperBoundEndpointBehavior::TaggedSymbol
               ]
             )
           end
@@ -364,21 +364,21 @@ module HubspotSDK
         end
 
         module UpperBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::DatePoint,
-                HubspotSDK::Events::IndexedTimePoint,
-                HubspotSDK::Events::PropertyReferencedTime
+                HubSpotSDK::Events::DatePoint,
+                HubSpotSDK::Events::IndexedTimePoint,
+                HubSpotSDK::Events::PropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants
+                HubSpotSDK::Events::RangedTimeOperation::UpperBoundTimePoint::Variants
               ]
             )
           end

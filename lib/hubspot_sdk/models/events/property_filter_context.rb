@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class PropertyFilterContext < HubspotSDK::Internal::Type::BaseModel
+      class PropertyFilterContext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #
         #   @return [String]

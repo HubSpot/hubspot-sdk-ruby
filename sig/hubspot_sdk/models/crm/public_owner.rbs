@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_owner =
@@ -6,24 +6,24 @@ module HubspotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::Crm::PublicOwner::type_,
+          type: HubSpotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           email: String,
           first_name: String,
           last_name: String,
-          teams: ::Array[HubspotSDK::Crm::PublicTeam],
+          teams: ::Array[HubSpotSDK::Crm::PublicTeam],
           user_id: Integer,
           user_id_including_inactive: Integer
         }
 
-      class PublicOwner < HubspotSDK::Internal::Type::BaseModel
+      class PublicOwner < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
 
         attr_accessor created_at: Time
 
-        attr_accessor type: HubspotSDK::Models::Crm::PublicOwner::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicOwner::type_
 
         attr_accessor updated_at: Time
 
@@ -39,11 +39,11 @@ module HubspotSDK
 
         def last_name=: (String) -> String
 
-        attr_reader teams: ::Array[HubspotSDK::Crm::PublicTeam]?
+        attr_reader teams: ::Array[HubSpotSDK::Crm::PublicTeam]?
 
         def teams=: (
-          ::Array[HubspotSDK::Crm::PublicTeam]
-        ) -> ::Array[HubspotSDK::Crm::PublicTeam]
+          ::Array[HubSpotSDK::Crm::PublicTeam]
+        ) -> ::Array[HubSpotSDK::Crm::PublicTeam]
 
         attr_reader user_id: Integer?
 
@@ -57,12 +57,12 @@ module HubspotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::Crm::PublicOwner::type_,
+          type: HubSpotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           ?email: String,
           ?first_name: String,
           ?last_name: String,
-          ?teams: ::Array[HubspotSDK::Crm::PublicTeam],
+          ?teams: ::Array[HubSpotSDK::Crm::PublicTeam],
           ?user_id: Integer,
           ?user_id_including_inactive: Integer
         ) -> void
@@ -71,12 +71,12 @@ module HubspotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          type: HubspotSDK::Models::Crm::PublicOwner::type_,
+          type: HubSpotSDK::Models::Crm::PublicOwner::type_,
           updated_at: Time,
           email: String,
           first_name: String,
           last_name: String,
-          teams: ::Array[HubspotSDK::Crm::PublicTeam],
+          teams: ::Array[HubSpotSDK::Crm::PublicTeam],
           user_id: Integer,
           user_id_including_inactive: Integer
         }
@@ -84,12 +84,12 @@ module HubspotSDK
         type type_ = :PERSON | :QUEUE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PERSON: :PERSON
           QUEUE: :QUEUE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicOwner::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicOwner::type_]
         end
       end
     end

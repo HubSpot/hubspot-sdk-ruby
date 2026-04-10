@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BoundedNextPage < HubspotSDK::Internal::Type::BaseModel
+      class BoundedNextPage < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute offset
         #   The offset value indicating the starting point for the next set of results.
         #

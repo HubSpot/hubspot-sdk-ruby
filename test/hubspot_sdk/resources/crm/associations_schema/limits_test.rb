@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LimitsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::AssociationsSchema::LimitsTest < HubSpotSDK::Test::ResourceTest
   def test_list
     skip("Mock server tests are disabled")
 
     response = @hubspot.crm.associations_schema.limits.list
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration])
       }
     end
   end
@@ -45,16 +45,16 @@ class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LimitsTest < Hubspot
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
+      response => HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateResult]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -70,12 +70,12 @@ class HubspotSDK::Test::Resources::Crm::AssociationsSchema::LimitsTest < Hubspot
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAssociationDefinitionUserConfiguration])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAssociationDefinitionUserConfiguration])
       }
     end
   end

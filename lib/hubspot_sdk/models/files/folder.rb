@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class Folder < HubspotSDK::Internal::Type::BaseModel
+      class Folder < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   ID of the folder.
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Marks whether the folder is deleted or not.
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   Timestamp of folder creation.

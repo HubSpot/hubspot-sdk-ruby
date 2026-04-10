@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
-      sig { returns(HubspotSDK::Resources::Events::Definitions) }
+      sig { returns(HubSpotSDK::Resources::Events::Definitions) }
       attr_reader :definitions
 
-      sig { returns(HubspotSDK::Resources::Events::Occurrences) }
+      sig { returns(HubSpotSDK::Resources::Events::Occurrences) }
       attr_reader :occurrences
 
-      sig { returns(HubspotSDK::Resources::Events::Send) }
+      sig { returns(HubSpotSDK::Resources::Events::Send) }
       attr_reader :send_
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

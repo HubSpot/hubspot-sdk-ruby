@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccountsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccountsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -15,21 +15,21 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubSpotSDK::Conversations::PublicChannelAccount
     end
 
     assert_pattern do
       response => {
         id: String,
-        active: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        authorized: HubspotSDK::Internal::Type::Boolean,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
+        authorized: HubSpotSDK::Internal::Type::Boolean,
         channel_id: String,
         created_at: Time,
         inbox_id: String,
         name: String,
         archived_at: Time | nil,
-        delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier | nil
+        delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier | nil
       }
     end
   end
@@ -40,21 +40,21 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     response = @hubspot.conversations.custom_channels.channel_accounts.update(0, channel_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubSpotSDK::Conversations::PublicChannelAccount
     end
 
     assert_pattern do
       response => {
         id: String,
-        active: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        authorized: HubspotSDK::Internal::Type::Boolean,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
+        authorized: HubSpotSDK::Internal::Type::Boolean,
         channel_id: String,
         created_at: Time,
         inbox_id: String,
         name: String,
         archived_at: Time | nil,
-        delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier | nil
+        delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier | nil
       }
     end
   end
@@ -65,28 +65,28 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
     response = @hubspot.conversations.custom_channels.channel_accounts.list(0)
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Conversations::PublicChannelAccount
+      row => HubSpotSDK::Conversations::PublicChannelAccount
     end
 
     assert_pattern do
       row => {
         id: String,
-        active: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        authorized: HubspotSDK::Internal::Type::Boolean,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
+        authorized: HubSpotSDK::Internal::Type::Boolean,
         channel_id: String,
         created_at: Time,
         inbox_id: String,
         name: String,
         archived_at: Time | nil,
-        delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier | nil
+        delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier | nil
       }
     end
   end
@@ -101,7 +101,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccountStagingToken
+      response => HubSpotSDK::Conversations::PublicChannelAccountStagingToken
     end
 
     assert_pattern do
@@ -112,7 +112,7 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannels::ChannelAccount
         inbox_id: Integer,
         user_id: Integer,
         account_name: String | nil,
-        delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier | nil
+        delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier | nil
       }
     end
   end

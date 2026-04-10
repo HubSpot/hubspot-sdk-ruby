@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
-      sig { returns(HubspotSDK::Resources::Conversations::CustomChannels) }
+      sig { returns(HubSpotSDK::Resources::Conversations::CustomChannels) }
       attr_reader :custom_channels
 
       sig do
-        returns(HubspotSDK::Resources::Conversations::VisitorIdentification)
+        returns(HubSpotSDK::Resources::Conversations::VisitorIdentification)
       end
       attr_reader :visitor_identification
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

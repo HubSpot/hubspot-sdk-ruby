@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventPublicObjectIDDeleteRequest < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicObjectIDDeleteRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
         #   The internal ID of the marketing event in HubSpot
         #

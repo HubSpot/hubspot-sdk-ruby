@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class LabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
+      class LabelsBetweenObjectPair < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute from_object_id
         #   The ID of the source object in the association.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         #   An array of labels associated with the relationship between the objects.
         #
         #   @return [Array<String>]
-        required :labels, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :labels, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute to_object_id
         #   The ID of the target object in the association.

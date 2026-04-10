@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::ObjectSchemas#list
-      class CollectionResponseObjectSchemaNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::ObjectSchemas#list
+      class CollectionResponseObjectSchemaNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::ObjectSchema>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectSchema] }
+        #   @return [Array<HubSpotSDK::Models::Crm::ObjectSchema>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ObjectSchema] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Crm::ObjectSchema>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::ObjectSchema>]
       end
     end
   end

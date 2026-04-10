@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_now_reference =
         {
-          reference_type: HubspotSDK::Models::Crm::PublicNowReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicNowReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
           second: Integer
         }
 
-      class PublicNowReference < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor reference_type: HubspotSDK::Models::Crm::PublicNowReference::reference_type
+      class PublicNowReference < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor reference_type: HubSpotSDK::Models::Crm::PublicNowReference::reference_type
 
         attr_reader hour: Integer?
 
@@ -30,7 +30,7 @@ module HubspotSDK
         def second=: (Integer) -> Integer
 
         def initialize: (
-          reference_type: HubspotSDK::Models::Crm::PublicNowReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicNowReference::reference_type,
           ?hour: Integer,
           ?millisecond: Integer,
           ?minute: Integer,
@@ -38,7 +38,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          reference_type: HubspotSDK::Models::Crm::PublicNowReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicNowReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
@@ -48,11 +48,11 @@ module HubspotSDK
         type reference_type = :NOW
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOW: :NOW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicNowReference::reference_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicNowReference::reference_type]
         end
       end
     end

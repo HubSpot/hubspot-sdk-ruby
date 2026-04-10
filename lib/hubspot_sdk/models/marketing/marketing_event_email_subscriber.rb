@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventEmailSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventEmailSubscriber < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_properties
         #   The key-value set that contains properties of the contact.
         #
         #   @return [Hash{Symbol=>String}]
-        required :contact_properties, HubspotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
+        required :contact_properties, HubSpotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
 
         # @!attribute email
         #   The email address of the contact in HubSpot to associate with the event.
@@ -26,7 +26,7 @@ module HubspotSDK
         #   The key-value set that contains properties of the marketing event.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!method initialize(contact_properties:, email:, interaction_date_time:, properties:)
         #   @param contact_properties [Hash{Symbol=>String}] The key-value set that contains properties of the contact.

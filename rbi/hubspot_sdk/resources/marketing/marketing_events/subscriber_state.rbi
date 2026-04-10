@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -17,9 +17,9 @@ module HubspotSDK
               external_account_id: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventEmailSubscriber::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def record_by_email(
@@ -45,9 +45,9 @@ module HubspotSDK
               external_account_id: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventSubscriber::OrHash
+                  HubSpotSDK::Marketing::MarketingEventSubscriber::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def record_by_id(
@@ -64,7 +64,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

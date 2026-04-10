@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type attention_span_event =
@@ -8,14 +8,14 @@ module HubspotSDK
           media_bridge_object_coordinates: String,
           media_bridge_object_type_id: String,
           media_name: String,
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEvent::media_type,
           occurred_timestamp: Integer,
           percent_range: String,
           portal_id: Integer,
           provider_id: Integer,
           session_id: String,
           total_percent_played: Float,
-          external_play_context: HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
           media_url: String,
           page_id: Integer,
           page_name: String,
@@ -25,7 +25,7 @@ module HubspotSDK
           total_seconds_played: Integer
         }
 
-      class AttentionSpanEvent < HubspotSDK::Internal::Type::BaseModel
+      class AttentionSpanEvent < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor contact_id: Integer
 
         attr_accessor media_bridge_id: Integer
@@ -36,7 +36,7 @@ module HubspotSDK
 
         attr_accessor media_name: String
 
-        attr_accessor media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type
+        attr_accessor media_type: HubSpotSDK::Models::Cms::AttentionSpanEvent::media_type
 
         attr_accessor occurred_timestamp: Integer
 
@@ -50,11 +50,11 @@ module HubspotSDK
 
         attr_accessor total_percent_played: Float
 
-        attr_reader external_play_context: HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context?
+        attr_reader external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context?
 
         def external_play_context=: (
-          HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context
-        ) -> HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context
+          HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context
+        ) -> HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context
 
         attr_reader media_url: String?
 
@@ -90,14 +90,14 @@ module HubspotSDK
           media_bridge_object_coordinates: String,
           media_bridge_object_type_id: String,
           media_name: String,
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEvent::media_type,
           occurred_timestamp: Integer,
           percent_range: String,
           portal_id: Integer,
           provider_id: Integer,
           session_id: String,
           total_percent_played: Float,
-          ?external_play_context: HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
+          ?external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
           ?media_url: String,
           ?page_id: Integer,
           ?page_name: String,
@@ -113,14 +113,14 @@ module HubspotSDK
           media_bridge_object_coordinates: String,
           media_bridge_object_type_id: String,
           media_name: String,
-          media_type: HubspotSDK::Models::Cms::AttentionSpanEvent::media_type,
+          media_type: HubSpotSDK::Models::Cms::AttentionSpanEvent::media_type,
           occurred_timestamp: Integer,
           percent_range: String,
           portal_id: Integer,
           provider_id: Integer,
           session_id: String,
           total_percent_played: Float,
-          external_play_context: HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
+          external_play_context: HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context,
           media_url: String,
           page_id: Integer,
           page_name: String,
@@ -133,7 +133,7 @@ module HubspotSDK
         type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
@@ -141,18 +141,18 @@ module HubspotSDK
           OTHER: :OTHER
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEvent::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttentionSpanEvent::media_type]
         end
 
         type external_play_context = :EMAIL | :EXTERNAL_PAGE
 
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL: :EMAIL
           EXTERNAL_PAGE: :EXTERNAL_PAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::AttentionSpanEvent::external_play_context]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::AttentionSpanEvent::external_play_context]
         end
       end
     end

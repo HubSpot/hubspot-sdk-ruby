@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type option =
@@ -10,13 +10,13 @@ module HubspotSDK
           order: Integer,
           type: String,
           updated_at: Time,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer
         }
 
-      class Option < HubspotSDK::Internal::Type::BaseModel
+      class Option < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
@@ -31,21 +31,21 @@ module HubspotSDK
 
         attr_accessor updated_at: Time
 
-        attr_reader created_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader created_by: HubSpotSDK::Cms::SimpleUser?
 
         def created_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         attr_reader created_by_user_id: Integer?
 
         def created_by_user_id=: (Integer) -> Integer
 
-        attr_reader updated_by: HubspotSDK::Cms::SimpleUser?
+        attr_reader updated_by: HubSpotSDK::Cms::SimpleUser?
 
         def updated_by=: (
-          HubspotSDK::Cms::SimpleUser
-        ) -> HubspotSDK::Cms::SimpleUser
+          HubSpotSDK::Cms::SimpleUser
+        ) -> HubSpotSDK::Cms::SimpleUser
 
         attr_reader updated_by_user_id: Integer?
 
@@ -59,9 +59,9 @@ module HubspotSDK
           order: Integer,
           type: String,
           updated_at: Time,
-          ?created_by: HubspotSDK::Cms::SimpleUser,
+          ?created_by: HubSpotSDK::Cms::SimpleUser,
           ?created_by_user_id: Integer,
-          ?updated_by: HubspotSDK::Cms::SimpleUser,
+          ?updated_by: HubSpotSDK::Cms::SimpleUser,
           ?updated_by_user_id: Integer
         ) -> void
 
@@ -73,9 +73,9 @@ module HubspotSDK
           order: Integer,
           type: String,
           updated_at: Time,
-          created_by: HubspotSDK::Cms::SimpleUser,
+          created_by: HubSpotSDK::Cms::SimpleUser,
           created_by_user_id: Integer,
-          updated_by: HubspotSDK::Cms::SimpleUser,
+          updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer
         }
       end

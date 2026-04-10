@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ListCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ListCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -38,14 +38,14 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch,
-                HubspotSDK::Crm::PublicAndFilterBranch,
-                HubspotSDK::Crm::PublicNotAllFilterBranch,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                HubspotSDK::Crm::PublicAssociationFilterBranch
+                HubSpotSDK::Crm::PublicOrFilterBranch,
+                HubSpotSDK::Crm::PublicAndFilterBranch,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             )
           )
@@ -56,14 +56,14 @@ module HubspotSDK
           params(
             filter_branch:
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAndFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAllFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAssociationFilterBranch::OrHash
+                HubSpotSDK::Crm::PublicOrFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAndFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               )
           ).void
         end
@@ -77,23 +77,23 @@ module HubspotSDK
         sig { params(list_folder_id: Integer).void }
         attr_writer :list_folder_id
 
-        sig { returns(T.nilable(HubspotSDK::Crm::PublicListPermissions)) }
+        sig { returns(T.nilable(HubSpotSDK::Crm::PublicListPermissions)) }
         attr_reader :list_permissions
 
         sig do
           params(
-            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash
+            list_permissions: HubSpotSDK::Crm::PublicListPermissions::OrHash
           ).void
         end
         attr_writer :list_permissions
 
-        sig { returns(T.nilable(HubspotSDK::Crm::PublicMembershipSettings)) }
+        sig { returns(T.nilable(HubSpotSDK::Crm::PublicMembershipSettings)) }
         attr_reader :membership_settings
 
         sig do
           params(
             membership_settings:
-              HubspotSDK::Crm::PublicMembershipSettings::OrHash
+              HubSpotSDK::Crm::PublicMembershipSettings::OrHash
           ).void
         end
         attr_writer :membership_settings
@@ -106,19 +106,19 @@ module HubspotSDK
             custom_properties: T::Hash[Symbol, String],
             filter_branch:
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAndFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAllFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAssociationFilterBranch::OrHash
+                HubSpotSDK::Crm::PublicOrFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAndFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
-            list_permissions: HubspotSDK::Crm::PublicListPermissions::OrHash,
+            list_permissions: HubSpotSDK::Crm::PublicListPermissions::OrHash,
             membership_settings:
-              HubspotSDK::Crm::PublicMembershipSettings::OrHash
+              HubSpotSDK::Crm::PublicMembershipSettings::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -151,18 +151,18 @@ module HubspotSDK
               custom_properties: T::Hash[Symbol, String],
               filter_branch:
                 T.any(
-                  HubspotSDK::Crm::PublicOrFilterBranch,
-                  HubspotSDK::Crm::PublicAndFilterBranch,
-                  HubspotSDK::Crm::PublicNotAllFilterBranch,
-                  HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                  HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                  HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                  HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                  HubspotSDK::Crm::PublicAssociationFilterBranch
+                  HubSpotSDK::Crm::PublicOrFilterBranch,
+                  HubSpotSDK::Crm::PublicAndFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                  HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                  HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                  HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                  HubSpotSDK::Crm::PublicAssociationFilterBranch
                 ),
               list_folder_id: Integer,
-              list_permissions: HubspotSDK::Crm::PublicListPermissions,
-              membership_settings: HubspotSDK::Crm::PublicMembershipSettings
+              list_permissions: HubSpotSDK::Crm::PublicListPermissions,
+              membership_settings: HubSpotSDK::Crm::PublicMembershipSettings
             }
           )
         end
@@ -171,26 +171,26 @@ module HubspotSDK
 
         # Filter branch object containing filtering criteria for the list
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch,
-                HubspotSDK::Crm::PublicAndFilterBranch,
-                HubspotSDK::Crm::PublicNotAllFilterBranch,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                HubspotSDK::Crm::PublicAssociationFilterBranch
+                HubSpotSDK::Crm::PublicOrFilterBranch,
+                HubSpotSDK::Crm::PublicAndFilterBranch,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ListCreateRequest::FilterBranch::Variants
+                HubSpotSDK::Crm::ListCreateRequest::FilterBranch::Variants
               ]
             )
           end

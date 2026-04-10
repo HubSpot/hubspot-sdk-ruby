@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentFolder < HubspotSDK::Internal::Type::BaseModel
+      class ContentFolder < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ContentFolder, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ContentFolder, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unique ID of the content folder.

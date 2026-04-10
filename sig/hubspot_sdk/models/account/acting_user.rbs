@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type acting_user = { user_id: Integer, user_email: String }
 
-      class ActingUser < HubspotSDK::Internal::Type::BaseModel
+      class ActingUser < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor user_id: Integer
 
         attr_reader user_email: String?

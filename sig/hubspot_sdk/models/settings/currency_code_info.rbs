@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type currency_code_info = { currency_code: String, currency_name: String }
 
-      class CurrencyCodeInfo < HubspotSDK::Internal::Type::BaseModel
+      class CurrencyCodeInfo < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor currency_code: String
 
         attr_accessor currency_name: String

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class ActionResponseWithResultsPublicStatus < HubspotSDK::Internal::Type::BaseModel
+      class ActionResponseWithResultsPublicStatus < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,7 +18,7 @@ module HubspotSDK
 
         # An array of results from the operation.
         sig do
-          returns(T::Array[HubspotSDK::CommunicationPreferences::PublicStatus])
+          returns(T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus])
         end
         attr_accessor :results
 
@@ -30,16 +30,16 @@ module HubspotSDK
         # PROCESSING, CANCELED, COMPLETE.
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+            HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
           )
         end
         attr_accessor :status
 
         # A list of errors that occurred during the operation.
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # Contains URLs related to the response, such as documentation or resources.
@@ -68,12 +68,12 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatus::OrHash
+                HubSpotSDK::CommunicationPreferences::PublicStatus::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -105,11 +105,11 @@ module HubspotSDK
             {
               completed_at: Time,
               results:
-                T::Array[HubspotSDK::CommunicationPreferences::PublicStatus],
+                T::Array[HubSpotSDK::CommunicationPreferences::PublicStatus],
               started_at: Time,
               status:
-                HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -122,13 +122,13 @@ module HubspotSDK
         # Indicates the current status of the operation, with possible values: PENDING,
         # PROCESSING, CANCELED, COMPLETE.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status
+                HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -136,28 +136,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus::Status::TaggedSymbol
               ]
             )
           end

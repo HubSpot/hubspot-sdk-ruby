@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CrmPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
+      class CrmPropertyWrapper < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::CrmPropertyWrapper,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::CrmPropertyWrapper,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

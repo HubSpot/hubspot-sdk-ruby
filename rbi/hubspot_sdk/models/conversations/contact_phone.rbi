@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactPhone < HubspotSDK::Internal::Type::BaseModel
+      class ContactPhone < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::ContactPhone,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::ContactPhone,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Conversations::ContactPhone::Type::OrSymbol)
+            T.nilable(HubSpotSDK::Conversations::ContactPhone::Type::OrSymbol)
           )
         end
         attr_reader :type
 
         sig do
           params(
-            type: HubspotSDK::Conversations::ContactPhone::Type::OrSymbol
+            type: HubSpotSDK::Conversations::ContactPhone::Type::OrSymbol
           ).void
         end
         attr_writer :type
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             phone: String,
-            type: HubspotSDK::Conversations::ContactPhone::Type::OrSymbol
+            type: HubSpotSDK::Conversations::ContactPhone::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(phone:, type: nil)
@@ -42,7 +42,7 @@ module HubspotSDK
           override.returns(
             {
               phone: String,
-              type: HubspotSDK::Conversations::ContactPhone::Type::OrSymbol
+              type: HubSpotSDK::Conversations::ContactPhone::Type::OrSymbol
             }
           )
         end
@@ -50,39 +50,39 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Conversations::ContactPhone::Type)
+              T.all(Symbol, HubSpotSDK::Conversations::ContactPhone::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CELL =
             T.let(
               :CELL,
-              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
           HOME =
             T.let(
               :HOME,
-              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
           MAIN =
             T.let(
               :MAIN,
-              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
           WORK =
             T.let(
               :WORK,
-              HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+              HubSpotSDK::Conversations::ContactPhone::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::ContactPhone::Type::TaggedSymbol
+                HubSpotSDK::Conversations::ContactPhone::Type::TaggedSymbol
               ]
             )
           end

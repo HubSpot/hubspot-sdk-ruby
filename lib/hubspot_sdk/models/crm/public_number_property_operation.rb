@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #   Indicates whether objects with no value set for the property should be included
         #   in the operation.
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
         #   Specifies the type of operation (NUMBER).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicNumberPropertyOperation::OperationType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::OperationType]
         required :operation_type,
-                 enum: -> { HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType },
+                 enum: -> { HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType },
                  api_name: :operationType
 
         # @!attribute operator
@@ -38,11 +38,11 @@ module HubspotSDK
 
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, value:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicNumberPropertyOperation} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicNumberPropertyOperation} for more details.
         #
         #   @param include_objects_with_no_value_set [Boolean] Indicates whether objects with no value set for the property should be included
         #
-        #   @param operation_type [Symbol, HubspotSDK::Models::Crm::PublicNumberPropertyOperation::OperationType] Specifies the type of operation (NUMBER).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation::OperationType] Specifies the type of operation (NUMBER).
         #
         #   @param operator [String] Defines the operation to be applied in the number property operation (IS_EQUAL_T
         #
@@ -50,9 +50,9 @@ module HubspotSDK
 
         # Specifies the type of operation (NUMBER).
         #
-        # @see HubspotSDK::Models::Crm::PublicNumberPropertyOperation#operation_type
+        # @see HubSpotSDK::Models::Crm::PublicNumberPropertyOperation#operation_type
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER = :NUMBER
 

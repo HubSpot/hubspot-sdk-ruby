@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicRollingPropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRollingPropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         # Specifies the type of operation (ROLLING_PROPERTY_UPDATED).
         sig do
           returns(
-            HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -39,7 +39,7 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             number_of_days: Integer,
             operation_type:
-              HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol,
             operator: String
           ).returns(T.attached_class)
         end
@@ -63,7 +63,7 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               number_of_days: Integer,
               operation_type:
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::OrSymbol,
               operator: String
             }
           )
@@ -73,13 +73,13 @@ module HubspotSDK
 
         # Specifies the type of operation (ROLLING_PROPERTY_UPDATED).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -87,13 +87,13 @@ module HubspotSDK
           ROLLING_PROPERTY_UPDATED =
             T.let(
               :ROLLING_PROPERTY_UPDATED,
-              HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OperationType::TaggedSymbol
               ]
             )
           end

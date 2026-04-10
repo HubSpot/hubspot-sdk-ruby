@@ -1,36 +1,36 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalDomain < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalDomain < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::CollectionResponseWithTotalDomain,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::CollectionResponseWithTotalDomain,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The results of the query.
-        sig { returns(T::Array[HubspotSDK::Cms::Domain]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::Domain]) }
         attr_accessor :results
 
         # The number of available results.
         sig { returns(Integer) }
         attr_accessor :total
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Cms::Domain::OrHash],
+            results: T::Array[HubSpotSDK::Cms::Domain::OrHash],
             total: Integer,
-            paging: HubspotSDK::Paging::OrHash
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -45,9 +45,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Cms::Domain],
+              results: T::Array[HubSpotSDK::Cms::Domain],
               total: Integer,
-              paging: HubspotSDK::Paging
+              paging: HubSpotSDK::Paging
             }
           )
         end

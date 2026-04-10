@@ -1,49 +1,49 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type side_or_corner =
         {
-          horizontal_side: HubspotSDK::Models::Cms::SideOrCorner::horizontal_side,
-          vertical_side: HubspotSDK::Models::Cms::SideOrCorner::vertical_side
+          horizontal_side: HubSpotSDK::Models::Cms::SideOrCorner::horizontal_side,
+          vertical_side: HubSpotSDK::Models::Cms::SideOrCorner::vertical_side
         }
 
-      class SideOrCorner < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor horizontal_side: HubspotSDK::Models::Cms::SideOrCorner::horizontal_side
+      class SideOrCorner < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor horizontal_side: HubSpotSDK::Models::Cms::SideOrCorner::horizontal_side
 
-        attr_accessor vertical_side: HubspotSDK::Models::Cms::SideOrCorner::vertical_side
+        attr_accessor vertical_side: HubSpotSDK::Models::Cms::SideOrCorner::vertical_side
 
         def initialize: (
-          horizontal_side: HubspotSDK::Models::Cms::SideOrCorner::horizontal_side,
-          vertical_side: HubspotSDK::Models::Cms::SideOrCorner::vertical_side
+          horizontal_side: HubSpotSDK::Models::Cms::SideOrCorner::horizontal_side,
+          vertical_side: HubSpotSDK::Models::Cms::SideOrCorner::vertical_side
         ) -> void
 
         def to_hash: -> {
-          horizontal_side: HubspotSDK::Models::Cms::SideOrCorner::horizontal_side,
-          vertical_side: HubspotSDK::Models::Cms::SideOrCorner::vertical_side
+          horizontal_side: HubSpotSDK::Models::Cms::SideOrCorner::horizontal_side,
+          vertical_side: HubSpotSDK::Models::Cms::SideOrCorner::vertical_side
         }
 
         type horizontal_side = :CENTER | :LEFT | :RIGHT
 
         module HorizontalSide
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CENTER: :CENTER
           LEFT: :LEFT
           RIGHT: :RIGHT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::SideOrCorner::horizontal_side]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::SideOrCorner::horizontal_side]
         end
 
         type vertical_side = :BOTTOM | :MIDDLE | :TOP
 
         module VerticalSide
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOTTOM: :BOTTOM
           MIDDLE: :MIDDLE
           TOP: :TOP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::SideOrCorner::vertical_side]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::SideOrCorner::vertical_side]
         end
       end
     end

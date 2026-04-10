@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
       class Folders
         def delete_by_id: (
           String folder_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def delete_by_path: (
           String folder_path,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get_by_id: (
           String folder_id,
           ?properties: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Files::Folder
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Files::Folder
 
         def get_by_path: (
           String folder_path,
           ?properties: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Files::Folder
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Files::Folder
 
         def get_update_async_status: (
           String task_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Files::FolderActionResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Files::FolderActionResponse
 
         def search: (
           ?after: String,
@@ -47,24 +47,24 @@ module HubspotSDK
           ?updated_at: Time,
           ?updated_at_gte: Time,
           ?updated_at_lte: Time,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Files::Folder]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Files::Folder]
 
         def update_async_by_id: (
           id: String,
           ?name: String,
           ?parent_folder_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Files::FolderUpdateTaskLocator
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Files::FolderUpdateTaskLocator
 
         def update_by_id: (
           String folder_id,
           ?name: String,
           ?parent_folder_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Files::Folder
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Files::Folder
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

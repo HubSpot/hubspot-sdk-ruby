@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
         class Definitions
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Automation::Actions::DefinitionCreateParams} for more
+          # {HubSpotSDK::Models::Automation::Actions::DefinitionCreateParams} for more
           # details.
           #
           # Create a new custom workflow action.
@@ -17,11 +17,11 @@ module HubspotSDK
           #
           # @param action_url [String] The URL endpoint where the action is executed.
           #
-          # @param functions [Array<HubspotSDK::Models::Automation::PublicActionFunction>]
+          # @param functions [Array<HubSpotSDK::Models::Automation::PublicActionFunction>]
           #
-          # @param input_fields [Array<HubspotSDK::Models::Automation::PublicInputFieldDefinition>]
+          # @param input_fields [Array<HubSpotSDK::Models::Automation::PublicInputFieldDefinition>]
           #
-          # @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}] Holds various labels associated with the action, including names and description
+          # @param labels [Hash{Symbol=>HubSpotSDK::Models::Automation::PublicActionLabels}] Holds various labels associated with the action, including names and description
           #
           # @param object_types [Array<String>]
           #
@@ -29,26 +29,26 @@ module HubspotSDK
           #
           # @param archived_at [Integer] The timestamp indicating when the action was archived.
           #
-          # @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>]
+          # @param execution_rules [Array<HubSpotSDK::Models::Automation::PublicExecutionTranslationRule>]
           #
-          # @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>]
+          # @param input_field_dependencies [Array<HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency>]
           #
-          # @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions]
+          # @param object_request_options [HubSpotSDK::Models::Automation::PublicObjectRequestOptions]
           #
-          # @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>]
+          # @param output_fields [Array<HubSpotSDK::Models::Automation::OutputFieldDefinition>]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionDefinition]
+          # @return [HubSpotSDK::Models::Automation::PublicActionDefinition]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionCreateParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionCreateParams
           def create(app_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["automation/actions/2026-03/%1$s", app_id],
               body: parsed,
-              model: HubspotSDK::Automation::PublicActionDefinition,
+              model: HubSpotSDK::Automation::PublicActionDefinition,
               options: options
             )
           end
@@ -63,29 +63,29 @@ module HubspotSDK
           #
           # @param action_url [String] Body param: The URL endpoint where the action is executed.
           #
-          # @param execution_rules [Array<HubspotSDK::Models::Automation::PublicExecutionTranslationRule>] Body param
+          # @param execution_rules [Array<HubSpotSDK::Models::Automation::PublicExecutionTranslationRule>] Body param
           #
-          # @param input_field_dependencies [Array<HubspotSDK::Models::Automation::PublicSingleFieldDependency, HubspotSDK::Models::Automation::PublicConditionalSingleFieldDependency>] Body param
+          # @param input_field_dependencies [Array<HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency>] Body param
           #
-          # @param input_fields [Array<HubspotSDK::Models::Automation::PublicInputFieldDefinition>] Body param
+          # @param input_fields [Array<HubSpotSDK::Models::Automation::PublicInputFieldDefinition>] Body param
           #
-          # @param labels [Hash{Symbol=>HubspotSDK::Models::Automation::PublicActionLabels}] Body param: Contains labels for the action, including names and descriptions.
+          # @param labels [Hash{Symbol=>HubSpotSDK::Models::Automation::PublicActionLabels}] Body param: Contains labels for the action, including names and descriptions.
           #
-          # @param object_request_options [HubspotSDK::Models::Automation::PublicObjectRequestOptions] Body param
+          # @param object_request_options [HubSpotSDK::Models::Automation::PublicObjectRequestOptions] Body param
           #
           # @param object_types [Array<String>] Body param
           #
-          # @param output_fields [Array<HubspotSDK::Models::Automation::OutputFieldDefinition>] Body param
+          # @param output_fields [Array<HubSpotSDK::Models::Automation::OutputFieldDefinition>] Body param
           #
           # @param published [Boolean] Body param: Indicates whether the action is published and available for use.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionDefinition]
+          # @return [HubSpotSDK::Models::Automation::PublicActionDefinition]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionUpdateParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionUpdateParams
           def update(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionUpdateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionUpdateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -94,13 +94,13 @@ module HubspotSDK
               method: :patch,
               path: ["automation/actions/2026-03/%1$s/%2$s", app_id, definition_id],
               body: parsed,
-              model: HubspotSDK::Automation::PublicActionDefinition,
+              model: HubSpotSDK::Automation::PublicActionDefinition,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Automation::Actions::DefinitionListParams} for more
+          # {HubSpotSDK::Models::Automation::Actions::DefinitionListParams} for more
           # details.
           #
           # Retrieve custom workflow action definitions by app ID.
@@ -115,20 +115,20 @@ module HubspotSDK
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Automation::PublicActionDefinition>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Automation::PublicActionDefinition>]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionListParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionListParams
           def list(app_id, params = {})
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["automation/actions/2026-03/%1$s", app_id],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Automation::PublicActionDefinition,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Automation::PublicActionDefinition,
               options: options
             )
           end
@@ -139,13 +139,13 @@ module HubspotSDK
           #
           # @param definition_id [String]
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionDeleteParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionDeleteParams
           def delete(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -159,7 +159,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Automation::Actions::DefinitionCreateRequiresObjectParams}
+          # {HubSpotSDK::Models::Automation::Actions::DefinitionCreateRequiresObjectParams}
           # for more details.
           #
           # Set whether a custom action definition requires an object.
@@ -172,14 +172,14 @@ module HubspotSDK
           #
           # @param requires_object [Boolean] Body param: Indicates whether a custom action definition requires an associated
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionCreateRequiresObjectParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionCreateRequiresObjectParams
           def create_requires_object(definition_id, params)
             parsed, options =
-              HubspotSDK::Automation::Actions::DefinitionCreateRequiresObjectParams.dump_request(params)
+              HubSpotSDK::Automation::Actions::DefinitionCreateRequiresObjectParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -203,14 +203,14 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionDefinition]
+          # @return [HubSpotSDK::Models::Automation::PublicActionDefinition]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionGetParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionGetParams
           def get(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -219,7 +219,7 @@ module HubspotSDK
               method: :get,
               path: ["automation/actions/2026-03/%1$s/%2$s", app_id, definition_id],
               query: query,
-              model: HubspotSDK::Automation::PublicActionDefinition,
+              model: HubSpotSDK::Automation::PublicActionDefinition,
               options: options
             )
           end
@@ -230,13 +230,13 @@ module HubspotSDK
           #
           # @param definition_id [String]
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Automation::PublicActionDefinitionRequiresObjectResponse]
+          # @return [HubSpotSDK::Models::Automation::PublicActionDefinitionRequiresObjectResponse]
           #
-          # @see HubspotSDK::Models::Automation::Actions::DefinitionGetRequiresObjectParams
+          # @see HubSpotSDK::Models::Automation::Actions::DefinitionGetRequiresObjectParams
           def get_requires_object(definition_id, params)
-            parsed, options = HubspotSDK::Automation::Actions::DefinitionGetRequiresObjectParams.dump_request(params)
+            parsed, options = HubSpotSDK::Automation::Actions::DefinitionGetRequiresObjectParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -244,14 +244,14 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["automation/actions/2026-03/%1$s/%2$s/requires-object", app_id, definition_id],
-              model: HubspotSDK::Automation::PublicActionDefinitionRequiresObjectResponse,
+              model: HubSpotSDK::Automation::PublicActionDefinitionRequiresObjectResponse,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

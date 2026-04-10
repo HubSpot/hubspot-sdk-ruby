@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class TimestampOfTargetPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class TimestampOfTargetPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::TimestampOfTargetPropertyVariable::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::Operator }
 
         # @!attribute property_name
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :value, String
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable::Operator]
         #   @param property_name [String]
         #   @param value [String]
 
-        # @see HubspotSDK::Models::Cms::TimestampOfTargetPropertyVariable#operator
+        # @see HubSpotSDK::Models::Cms::TimestampOfTargetPropertyVariable#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIMESTAMP_OF_TARGET_PROPERTY_VARIABLE = :TIMESTAMP_OF_TARGET_PROPERTY_VARIABLE
 

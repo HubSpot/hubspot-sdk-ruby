@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class Discounts
-          # @return [HubspotSDK::Resources::Crm::Objects::Discounts::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::Discounts::Batch]
           attr_reader :batch
 
           # Create a discount with the given properties and return a copy of the object,
@@ -14,28 +14,28 @@ module HubspotSDK
           #
           # @overload create(associations:, properties:, request_options: {})
           #
-          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          # @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountCreateParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Crm::Objects::DiscountCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::DiscountCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/discounts",
               body: parsed,
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::DiscountUpdateParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::DiscountUpdateParams} for more details.
           #
           # Perform a partial update of an Object identified by `{discountId}`or optionally
           # a unique property value as specified by the `idProperty` query param.
@@ -53,27 +53,27 @@ module HubspotSDK
           #
           # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountUpdateParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountUpdateParams
           def update(discount_id, params)
             query_params = [:id_property]
-            parsed, options = HubspotSDK::Crm::Objects::DiscountUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Crm::Objects::DiscountUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["crm/objects/2026-03/discounts/%1$s", discount_id],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::DiscountListParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::DiscountListParams} for more details.
           #
           # List
           #
@@ -91,20 +91,20 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountListParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Crm::Objects::DiscountListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::DiscountListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "crm/objects/2026-03/discounts",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -114,11 +114,11 @@ module HubspotSDK
           # @overload delete(discount_id, request_options: {})
           #
           # @param discount_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountDeleteParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountDeleteParams
           def delete(discount_id, params = {})
             @client.request(
               method: :delete,
@@ -129,7 +129,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::DiscountGetParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::DiscountGetParams} for more details.
           #
           # Read an Object identified by `{discountId}`. `{discountId}` refers to the
           # internal object ID by default, or optionally any unique property value as
@@ -150,14 +150,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountGetParams
           def get(discount_id, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::DiscountGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::DiscountGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/discounts/%1$s", discount_id],
@@ -165,7 +165,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -174,7 +174,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -184,28 +184,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::DiscountSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::DiscountSearchParams
           def search(params)
-            parsed, options = HubspotSDK::Crm::Objects::DiscountSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::DiscountSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/discounts/search",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::Discounts::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::Discounts::Batch.new(client: client)
           end
         end
       end

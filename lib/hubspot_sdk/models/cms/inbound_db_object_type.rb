@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class InboundDBObjectType < HubspotSDK::Internal::Type::BaseModel
+      class InboundDBObjectType < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [Integer]
@@ -13,7 +13,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :allows_sensitive_properties,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowsSensitiveProperties
 
         # @!attribute create_date_property_name
@@ -25,13 +25,13 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :default_search_property_names,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :defaultSearchPropertyNames
 
         # @!attribute deleted
         #
         #   @return [Boolean]
-        required :deleted, HubspotSDK::Internal::Type::Boolean
+        required :deleted, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute fully_qualified_name
         #
@@ -41,35 +41,35 @@ module HubspotSDK
         # @!attribute has_custom_properties
         #
         #   @return [Boolean]
-        required :has_custom_properties, HubspotSDK::Internal::Type::Boolean, api_name: :hasCustomProperties
+        required :has_custom_properties, HubSpotSDK::Internal::Type::Boolean, api_name: :hasCustomProperties
 
         # @!attribute has_default_properties
         #
         #   @return [Boolean]
-        required :has_default_properties, HubspotSDK::Internal::Type::Boolean, api_name: :hasDefaultProperties
+        required :has_default_properties, HubSpotSDK::Internal::Type::Boolean, api_name: :hasDefaultProperties
 
         # @!attribute has_external_object_ids
         #
         #   @return [Boolean]
         required :has_external_object_ids,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :hasExternalObjectIds
 
         # @!attribute has_owners
         #
         #   @return [Boolean]
-        required :has_owners, HubspotSDK::Internal::Type::Boolean, api_name: :hasOwners
+        required :has_owners, HubSpotSDK::Internal::Type::Boolean, api_name: :hasOwners
 
         # @!attribute has_pipelines
         #
         #   @return [Boolean]
-        required :has_pipelines, HubspotSDK::Internal::Type::Boolean, api_name: :hasPipelines
+        required :has_pipelines, HubSpotSDK::Internal::Type::Boolean, api_name: :hasPipelines
 
         # @!attribute indexed_for_filters_and_reports
         #
         #   @return [Boolean]
         required :indexed_for_filters_and_reports,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :indexedForFiltersAndReports
 
         # @!attribute last_modified_property_name
@@ -79,8 +79,8 @@ module HubspotSDK
 
         # @!attribute meta_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::MetaType]
-        required :meta_type, enum: -> { HubspotSDK::Cms::InboundDBObjectType::MetaType }, api_name: :metaType
+        #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::MetaType]
+        required :meta_type, enum: -> { HubSpotSDK::Cms::InboundDBObjectType::MetaType }, api_name: :metaType
 
         # @!attribute meta_type_id
         #
@@ -99,9 +99,9 @@ module HubspotSDK
 
         # @!attribute permissioning_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
         required :permissioning_type,
-                 enum: -> { HubspotSDK::Cms::InboundDBObjectType::PermissioningType },
+                 enum: -> { HubSpotSDK::Cms::InboundDBObjectType::PermissioningType },
                  api_name: :permissioningType
 
         # @!attribute pipeline_property_name
@@ -118,26 +118,26 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :required_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :requiredProperties
 
         # @!attribute restorable
         #
         #   @return [Boolean]
-        required :restorable, HubspotSDK::Internal::Type::Boolean
+        required :restorable, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute scope_mappings
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ScopeMapping>]
+        #   @return [Array<HubSpotSDK::Models::Cms::ScopeMapping>]
         required :scope_mappings,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ScopeMapping] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ScopeMapping] },
                  api_name: :scopeMappings
 
         # @!attribute secondary_display_label_property_names
         #
         #   @return [Array<String>]
         required :secondary_display_label_property_names,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :secondaryDisplayLabelPropertyNames
 
         # @!attribute access_scope_name
@@ -202,13 +202,13 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::Status, nil]
-        optional :status, enum: -> { HubspotSDK::Cms::InboundDBObjectType::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Status, nil]
+        optional :status, enum: -> { HubSpotSDK::Cms::InboundDBObjectType::Status }
 
         # @!attribute visibility
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::Visibility, nil]
-        optional :visibility, enum: -> { HubspotSDK::Cms::InboundDBObjectType::Visibility }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Visibility, nil]
+        optional :visibility, enum: -> { HubSpotSDK::Cms::InboundDBObjectType::Visibility }
 
         # @!attribute write_scope_name
         #
@@ -229,16 +229,16 @@ module HubspotSDK
         #   @param has_pipelines [Boolean]
         #   @param indexed_for_filters_and_reports [Boolean]
         #   @param last_modified_property_name [String]
-        #   @param meta_type [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::MetaType]
+        #   @param meta_type [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::MetaType]
         #   @param meta_type_id [Integer]
         #   @param name [String]
         #   @param object_type_id [String]
-        #   @param permissioning_type [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
+        #   @param permissioning_type [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
         #   @param pipeline_property_name [String]
         #   @param pipeline_stage_property_name [String]
         #   @param required_properties [Array<String>]
         #   @param restorable [Boolean]
-        #   @param scope_mappings [Array<HubspotSDK::Models::Cms::ScopeMapping>]
+        #   @param scope_mappings [Array<HubSpotSDK::Models::Cms::ScopeMapping>]
         #   @param secondary_display_label_property_names [Array<String>]
         #   @param access_scope_name [String]
         #   @param created_at [Integer]
@@ -252,13 +252,13 @@ module HubspotSDK
         #   @param primary_display_label_property_name [String]
         #   @param read_scope_name [String]
         #   @param singular_form [String]
-        #   @param status [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::Status]
-        #   @param visibility [Symbol, HubspotSDK::Models::Cms::InboundDBObjectType::Visibility]
+        #   @param status [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Status]
+        #   @param visibility [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Visibility]
         #   @param write_scope_name [String]
 
-        # @see HubspotSDK::Models::Cms::InboundDBObjectType#meta_type
+        # @see HubSpotSDK::Models::Cms::InboundDBObjectType#meta_type
         module MetaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CMS_HUBDB = :CMS_HUBDB
           HUBSPOT = :HUBSPOT
@@ -274,9 +274,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::InboundDBObjectType#permissioning_type
+        # @see HubSpotSDK::Models::Cms::InboundDBObjectType#permissioning_type
         module PermissioningType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_OR_NONE = :ALL_OR_NONE
           DO_NOT_CHECK_PERMISSIONS = :DO_NOT_CHECK_PERMISSIONS
@@ -288,9 +288,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::InboundDBObjectType#status
+        # @see HubSpotSDK::Models::Cms::InboundDBObjectType#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEPRECATED = :Deprecated
           IN_DEVELOPMENT = :"In development"
@@ -300,9 +300,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::InboundDBObjectType#visibility
+        # @see HubSpotSDK::Models::Cms::InboundDBObjectType#visibility
         module Visibility
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOMER_FACING = :"Customer-facing"
           CUSTOMER_FACING_PUBLIC_API = :"Customer-facing public API"

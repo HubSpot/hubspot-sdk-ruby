@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type date_time =
         { date_only: bool, time_zone_shift: Integer, value: Integer }
 
-      class DateTime < HubspotSDK::Internal::Type::BaseModel
+      class DateTime < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor date_only: bool
 
         attr_accessor time_zone_shift: Integer

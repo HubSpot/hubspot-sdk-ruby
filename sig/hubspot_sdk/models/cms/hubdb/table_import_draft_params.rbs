@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
@@ -6,13 +6,13 @@ module HubspotSDK
           {
             table_id_or_name: String,
             config: String,
-            file: HubspotSDK::Internal::file_input
+            file: HubSpotSDK::Internal::file_input
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class TableImportDraftParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TableImportDraftParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor table_id_or_name: String
 
@@ -20,24 +20,24 @@ module HubspotSDK
 
           def config=: (String) -> String
 
-          attr_reader file: HubspotSDK::Internal::file_input?
+          attr_reader file: HubSpotSDK::Internal::file_input?
 
           def file=: (
-            HubspotSDK::Internal::file_input
-          ) -> HubspotSDK::Internal::file_input
+            HubSpotSDK::Internal::file_input
+          ) -> HubSpotSDK::Internal::file_input
 
           def initialize: (
             table_id_or_name: String,
             ?config: String,
-            ?file: HubspotSDK::Internal::file_input,
-            ?request_options: HubspotSDK::request_opts
+            ?file: HubSpotSDK::Internal::file_input,
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             table_id_or_name: String,
             config: String,
-            file: HubspotSDK::Internal::file_input,
-            request_options: HubspotSDK::RequestOptions
+            file: HubSpotSDK::Internal::file_input,
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

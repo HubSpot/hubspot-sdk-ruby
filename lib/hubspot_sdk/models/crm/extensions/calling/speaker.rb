@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          class Speaker < HubspotSDK::Internal::Type::BaseModel
+          class Speaker < HubSpotSDK::Internal::Type::BaseModel
             # @!attribute id
             #
             #   @return [String]

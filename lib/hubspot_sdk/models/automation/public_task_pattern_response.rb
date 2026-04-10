@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicTaskPatternResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicTaskPatternResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the task pattern.
         #
@@ -19,17 +19,17 @@ module HubspotSDK
         # @!attribute task_priority
         #   The priority level assigned to the task.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicTaskPatternResponse::TaskPriority]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicTaskPatternResponse::TaskPriority]
         required :task_priority,
-                 enum: -> { HubspotSDK::Automation::PublicTaskPatternResponse::TaskPriority },
+                 enum: -> { HubSpotSDK::Automation::PublicTaskPatternResponse::TaskPriority },
                  api_name: :taskPriority
 
         # @!attribute task_type
         #   The type of task, such as an email or call.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicTaskPatternResponse::TaskType]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicTaskPatternResponse::TaskType]
         required :task_type,
-                 enum: -> { HubspotSDK::Automation::PublicTaskPatternResponse::TaskType },
+                 enum: -> { HubSpotSDK::Automation::PublicTaskPatternResponse::TaskType },
                  api_name: :taskType
 
         # @!attribute updated_at
@@ -73,9 +73,9 @@ module HubspotSDK
         #
         #   @param created_at [Time] The date and time when the task pattern was created.
         #
-        #   @param task_priority [Symbol, HubspotSDK::Models::Automation::PublicTaskPatternResponse::TaskPriority] The priority level assigned to the task.
+        #   @param task_priority [Symbol, HubSpotSDK::Models::Automation::PublicTaskPatternResponse::TaskPriority] The priority level assigned to the task.
         #
-        #   @param task_type [Symbol, HubspotSDK::Models::Automation::PublicTaskPatternResponse::TaskType] The type of task, such as an email or call.
+        #   @param task_type [Symbol, HubSpotSDK::Models::Automation::PublicTaskPatternResponse::TaskType] The type of task, such as an email or call.
         #
         #   @param updated_at [Time] The date and time when the task pattern was last updated.
         #
@@ -91,9 +91,9 @@ module HubspotSDK
 
         # The priority level assigned to the task.
         #
-        # @see HubspotSDK::Models::Automation::PublicTaskPatternResponse#task_priority
+        # @see HubSpotSDK::Models::Automation::PublicTaskPatternResponse#task_priority
         module TaskPriority
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGH = :HIGH
           LOW = :LOW
@@ -106,9 +106,9 @@ module HubspotSDK
 
         # The type of task, such as an email or call.
         #
-        # @see HubspotSDK::Models::Automation::PublicTaskPatternResponse#task_type
+        # @see HubSpotSDK::Models::Automation::PublicTaskPatternResponse#task_type
         module TaskType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CALL = :CALL
           EMAIL = :EMAIL

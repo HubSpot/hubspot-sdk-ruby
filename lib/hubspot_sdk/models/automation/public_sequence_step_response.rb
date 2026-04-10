@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceStepResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceStepResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the sequence step.
         #
@@ -13,9 +13,9 @@ module HubspotSDK
         # @!attribute action_type
         #   The type of action to be performed in the sequence step.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::PublicSequenceStepResponse::ActionType]
+        #   @return [Symbol, HubSpotSDK::Models::Automation::PublicSequenceStepResponse::ActionType]
         required :action_type,
-                 enum: -> { HubspotSDK::Automation::PublicSequenceStepResponse::ActionType },
+                 enum: -> { HubSpotSDK::Automation::PublicSequenceStepResponse::ActionType },
                  api_name: :actionType
 
         # @!attribute created_at
@@ -44,24 +44,24 @@ module HubspotSDK
 
         # @!attribute email_pattern
         #
-        #   @return [HubspotSDK::Models::Automation::PublicEmailPatternResponse, nil]
+        #   @return [HubSpotSDK::Models::Automation::PublicEmailPatternResponse, nil]
         optional :email_pattern,
-                 -> { HubspotSDK::Automation::PublicEmailPatternResponse },
+                 -> { HubSpotSDK::Automation::PublicEmailPatternResponse },
                  api_name: :emailPattern
 
         # @!attribute task_pattern
         #
-        #   @return [HubspotSDK::Models::Automation::PublicTaskPatternResponse, nil]
+        #   @return [HubSpotSDK::Models::Automation::PublicTaskPatternResponse, nil]
         optional :task_pattern,
                  -> {
-                   HubspotSDK::Automation::PublicTaskPatternResponse
+                   HubSpotSDK::Automation::PublicTaskPatternResponse
                  },
                  api_name: :taskPattern
 
         # @!method initialize(id:, action_type:, created_at:, delay_millis:, step_order:, updated_at:, email_pattern: nil, task_pattern: nil)
         #   @param id [String] The unique identifier of the sequence step.
         #
-        #   @param action_type [Symbol, HubspotSDK::Models::Automation::PublicSequenceStepResponse::ActionType] The type of action to be performed in the sequence step.
+        #   @param action_type [Symbol, HubSpotSDK::Models::Automation::PublicSequenceStepResponse::ActionType] The type of action to be performed in the sequence step.
         #
         #   @param created_at [Time] The date and time when the sequence step was created.
         #
@@ -71,15 +71,15 @@ module HubspotSDK
         #
         #   @param updated_at [Time] The date and time when the sequence step was last updated.
         #
-        #   @param email_pattern [HubspotSDK::Models::Automation::PublicEmailPatternResponse]
+        #   @param email_pattern [HubSpotSDK::Models::Automation::PublicEmailPatternResponse]
         #
-        #   @param task_pattern [HubspotSDK::Models::Automation::PublicTaskPatternResponse]
+        #   @param task_pattern [HubSpotSDK::Models::Automation::PublicTaskPatternResponse]
 
         # The type of action to be performed in the sequence step.
         #
-        # @see HubspotSDK::Models::Automation::PublicSequenceStepResponse#action_type
+        # @see HubSpotSDK::Models::Automation::PublicSequenceStepResponse#action_type
         module ActionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           FINISH_ENROLLMENT = :FINISH_ENROLLMENT

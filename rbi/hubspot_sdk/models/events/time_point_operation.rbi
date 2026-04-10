@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class TimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      class TimePointOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::TimePointOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::TimePointOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
+            HubSpotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
           )
         end
         attr_accessor :endpoint_behavior
@@ -27,7 +27,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::TimePointOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -37,20 +37,20 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+            HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
           )
         end
         attr_accessor :property_parser
 
         sig do
           returns(
-            HubspotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
 
         sig do
-          returns(HubspotSDK::Events::TimePointOperation::TimePoint::Variants)
+          returns(HubSpotSDK::Events::TimePointOperation::TimePoint::Variants)
         end
         attr_accessor :time_point
 
@@ -72,21 +72,21 @@ module HubspotSDK
         sig do
           params(
             endpoint_behavior:
-              HubspotSDK::Events::TimePointOperation::EndpointBehavior::OrSymbol,
+              HubSpotSDK::Events::TimePointOperation::EndpointBehavior::OrSymbol,
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::TimePointOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::TimePointOperation::Operator::OrSymbol,
             operator_name: String,
             property_parser:
-              HubspotSDK::Events::TimePointOperation::PropertyParser::OrSymbol,
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::OrSymbol,
             property_type:
-              HubspotSDK::Events::TimePointOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::TimePointOperation::PropertyType::OrSymbol,
             time_point:
               T.any(
-                HubspotSDK::Events::DatePoint::OrHash,
-                HubspotSDK::Events::IndexedTimePoint::OrHash,
-                HubspotSDK::Events::PropertyReferencedTime::OrHash
+                HubSpotSDK::Events::DatePoint::OrHash,
+                HubSpotSDK::Events::IndexedTimePoint::OrHash,
+                HubSpotSDK::Events::PropertyReferencedTime::OrHash
               ),
             type: String,
             default_value: String,
@@ -112,18 +112,18 @@ module HubspotSDK
           override.returns(
             {
               endpoint_behavior:
-                HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol,
+                HubSpotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol,
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::TimePointOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_parser:
-                HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol,
+                HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol,
               property_type:
-                HubspotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol,
               time_point:
-                HubspotSDK::Events::TimePointOperation::TimePoint::Variants,
+                HubSpotSDK::Events::TimePointOperation::TimePoint::Variants,
               type: String,
               default_value: String,
               render_spec: String
@@ -134,13 +134,13 @@ module HubspotSDK
         end
 
         module EndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::TimePointOperation::EndpointBehavior
+                HubSpotSDK::Events::TimePointOperation::EndpointBehavior
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -148,18 +148,18 @@ module HubspotSDK
           EXCLUSIVE =
             T.let(
               :EXCLUSIVE,
-              HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
             )
           INCLUSIVE =
             T.let(
               :INCLUSIVE,
-              HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
+                HubSpotSDK::Events::TimePointOperation::EndpointBehavior::TaggedSymbol
               ]
             )
           end
@@ -168,29 +168,29 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::TimePointOperation::Operator)
+              T.all(Symbol, HubSpotSDK::Events::TimePointOperation::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           IS_AFTER =
             T.let(
               :IS_AFTER,
-              HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::Operator::TaggedSymbol
             )
           IS_BEFORE =
             T.let(
               :IS_BEFORE,
-              HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimePointOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::TimePointOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -199,13 +199,13 @@ module HubspotSDK
         end
 
         module PropertyParser
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::TimePointOperation::PropertyParser
+                HubSpotSDK::Events::TimePointOperation::PropertyParser
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -213,33 +213,33 @@ module HubspotSDK
           ANNIVERSARY =
             T.let(
               :ANNIVERSARY,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           UPDATED_AT =
             T.let(
               :UPDATED_AT,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           VALUE =
             T.let(
               :VALUE,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
+                HubSpotSDK::Events::TimePointOperation::PropertyParser::TaggedSymbol
               ]
             )
           end
@@ -248,13 +248,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::TimePointOperation::PropertyType
+                HubSpotSDK::Events::TimePointOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -262,13 +262,13 @@ module HubspotSDK
           TIMEPOINT =
             T.let(
               :timepoint,
-              HubspotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::TimePointOperation::PropertyType::TaggedSymbol
               ]
             )
           end
@@ -277,21 +277,21 @@ module HubspotSDK
         end
 
         module TimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Events::DatePoint,
-                HubspotSDK::Events::IndexedTimePoint,
-                HubspotSDK::Events::PropertyReferencedTime
+                HubSpotSDK::Events::DatePoint,
+                HubSpotSDK::Events::IndexedTimePoint,
+                HubSpotSDK::Events::PropertyReferencedTime
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimePointOperation::TimePoint::Variants
+                HubSpotSDK::Events::TimePointOperation::TimePoint::Variants
               ]
             )
           end

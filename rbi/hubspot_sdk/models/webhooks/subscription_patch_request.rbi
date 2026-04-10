@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SubscriptionPatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionPatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::SubscriptionPatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::SubscriptionPatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

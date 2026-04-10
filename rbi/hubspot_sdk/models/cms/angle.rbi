@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Angle < HubspotSDK::Internal::Type::BaseModel
+      class Angle < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Angle, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Angle, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unit of measurement for the angle.
-        sig { returns(HubspotSDK::Cms::Angle::Units::OrSymbol) }
+        sig { returns(HubSpotSDK::Cms::Angle::Units::OrSymbol) }
         attr_accessor :units
 
         # The numerical representation of the angle.
@@ -19,7 +19,7 @@ module HubspotSDK
 
         sig do
           params(
-            units: HubspotSDK::Cms::Angle::Units::OrSymbol,
+            units: HubSpotSDK::Cms::Angle::Units::OrSymbol,
             value: Float
           ).returns(T.attached_class)
         end
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { units: HubspotSDK::Cms::Angle::Units::OrSymbol, value: Float }
+            { units: HubSpotSDK::Cms::Angle::Units::OrSymbol, value: Float }
           )
         end
         def to_hash
@@ -41,20 +41,20 @@ module HubspotSDK
 
         # The unit of measurement for the angle.
         module Units
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::Angle::Units) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Angle::Units) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          DEG = T.let(:deg, HubspotSDK::Cms::Angle::Units::TaggedSymbol)
-          GRAD = T.let(:grad, HubspotSDK::Cms::Angle::Units::TaggedSymbol)
-          RAD = T.let(:rad, HubspotSDK::Cms::Angle::Units::TaggedSymbol)
-          TURN = T.let(:turn, HubspotSDK::Cms::Angle::Units::TaggedSymbol)
+          DEG = T.let(:deg, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          GRAD = T.let(:grad, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          RAD = T.let(:rad, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          TURN = T.let(:turn, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::Angle::Units::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::Angle::Units::TaggedSymbol]
             )
           end
           def self.values

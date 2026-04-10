@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Occurrences
@@ -9,21 +9,21 @@ module HubspotSDK
           ?event_type: String,
           ?limit: Integer,
           ?object_id_: Integer,
-          ?object_property: HubspotSDK::Events::OccurrenceListParams::ObjectProperty,
+          ?object_property: HubSpotSDK::Events::OccurrenceListParams::ObjectProperty,
           ?object_type: String,
           ?occurred_after: Time,
           ?occurred_before: Time,
           ?properties: ::Array[String],
-          ?property: HubspotSDK::Events::OccurrenceListParams::Property,
+          ?property: HubSpotSDK::Events::OccurrenceListParams::Property,
           ?sort: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalUnifiedEvent]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Events::ExternalUnifiedEvent]
 
         def list_event_types: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::VisibleExternalEventTypeNames
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::VisibleExternalEventTypeNames
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

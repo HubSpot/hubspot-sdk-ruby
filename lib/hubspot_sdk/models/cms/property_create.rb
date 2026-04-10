@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class PropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class PropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute field_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PropertyCreate::FieldType]
-        required :field_type, enum: -> { HubspotSDK::Cms::PropertyCreate::FieldType }, api_name: :fieldType
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::FieldType]
+        required :field_type, enum: -> { HubSpotSDK::Cms::PropertyCreate::FieldType }, api_name: :fieldType
 
         # @!attribute group_name
         #
@@ -26,8 +26,8 @@ module HubspotSDK
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PropertyCreate::Type]
-        required :type, enum: -> { HubspotSDK::Cms::PropertyCreate::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::PropertyCreate::Type }
 
         # @!attribute calculation_formula
         #
@@ -36,9 +36,9 @@ module HubspotSDK
 
         # @!attribute data_sensitivity
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::PropertyCreate::DataSensitivity, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::DataSensitivity, nil]
         optional :data_sensitivity,
-                 enum: -> { HubspotSDK::Cms::PropertyCreate::DataSensitivity },
+                 enum: -> { HubSpotSDK::Cms::PropertyCreate::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!attribute description
@@ -54,27 +54,27 @@ module HubspotSDK
         # @!attribute external_options
         #
         #   @return [Boolean, nil]
-        optional :external_options, HubspotSDK::Internal::Type::Boolean, api_name: :externalOptions
+        optional :external_options, HubSpotSDK::Internal::Type::Boolean, api_name: :externalOptions
 
         # @!attribute form_field
         #
         #   @return [Boolean, nil]
-        optional :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        optional :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute has_unique_value
         #
         #   @return [Boolean, nil]
-        optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        optional :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #
         #   @return [Boolean, nil]
-        optional :hidden, HubspotSDK::Internal::Type::Boolean
+        optional :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
+        #   @return [Array<HubSpotSDK::Models::OptionInput>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::OptionInput] }
 
         # @!attribute referenced_object_type
         #
@@ -82,25 +82,25 @@ module HubspotSDK
         optional :referenced_object_type, String, api_name: :referencedObjectType
 
         # @!method initialize(field_type:, group_name:, label:, name:, type:, calculation_formula: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, options: nil, referenced_object_type: nil)
-        #   @param field_type [Symbol, HubspotSDK::Models::Cms::PropertyCreate::FieldType]
+        #   @param field_type [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::FieldType]
         #   @param group_name [String]
         #   @param label [String]
         #   @param name [String]
-        #   @param type [Symbol, HubspotSDK::Models::Cms::PropertyCreate::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::Type]
         #   @param calculation_formula [String]
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Cms::PropertyCreate::DataSensitivity]
+        #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::DataSensitivity]
         #   @param description [String]
         #   @param display_order [Integer]
         #   @param external_options [Boolean]
         #   @param form_field [Boolean]
         #   @param has_unique_value [Boolean]
         #   @param hidden [Boolean]
-        #   @param options [Array<HubspotSDK::Models::OptionInput>]
+        #   @param options [Array<HubSpotSDK::Models::OptionInput>]
         #   @param referenced_object_type [String]
 
-        # @see HubspotSDK::Models::Cms::PropertyCreate#field_type
+        # @see HubSpotSDK::Models::Cms::PropertyCreate#field_type
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX = :booleancheckbox
           CALCULATION_EQUATION = :calculation_equation
@@ -119,9 +119,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::PropertyCreate#type
+        # @see HubSpotSDK::Models::Cms::PropertyCreate#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           DATE = :date
@@ -135,9 +135,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::PropertyCreate#data_sensitivity
+        # @see HubSpotSDK::Models::Cms::PropertyCreate#data_sensitivity
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGHLY_SENSITIVE = :highly_sensitive
           NON_SENSITIVE = :non_sensitive

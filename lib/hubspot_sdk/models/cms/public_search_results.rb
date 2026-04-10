@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::SiteSearch#search
-      class PublicSearchResults < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::SiteSearch#search
+      class PublicSearchResults < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute limit
         #   The number of results returned in a single response.
         #
@@ -25,8 +25,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ContentSearchResult>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentSearchResult] }
+        #   @return [Array<HubSpotSDK::Models::Cms::ContentSearchResult>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentSearchResult] }
 
         # @!attribute total
         #   The total number of results found for the search term.
@@ -47,7 +47,7 @@ module HubspotSDK
         #
         #   @param page [Integer] The current page number in the paginated results.
         #
-        #   @param results [Array<HubspotSDK::Models::Cms::ContentSearchResult>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::ContentSearchResult>]
         #
         #   @param total [Integer] The total number of results found for the search term.
         #

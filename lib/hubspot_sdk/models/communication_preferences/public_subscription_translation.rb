@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicSubscriptionTranslation < HubspotSDK::Internal::Type::BaseModel
+      class PublicSubscriptionTranslation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute created_at
         #   The timestamp indicating when the subscription translation was created.
         #

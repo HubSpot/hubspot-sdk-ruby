@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -6,16 +6,16 @@ module HubspotSDK
           type transcript_create_utterance =
             {
               end_time_millis: Integer,
-              speaker: HubspotSDK::Crm::Extensions::Calling::Speaker,
+              speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker,
               start_time_millis: Integer,
               text: String,
               language_code: String
             }
 
-          class TranscriptCreateUtterance < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptCreateUtterance < HubSpotSDK::Internal::Type::BaseModel
             attr_accessor end_time_millis: Integer
 
-            attr_accessor speaker: HubspotSDK::Crm::Extensions::Calling::Speaker
+            attr_accessor speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker
 
             attr_accessor start_time_millis: Integer
 
@@ -27,7 +27,7 @@ module HubspotSDK
 
             def initialize: (
               end_time_millis: Integer,
-              speaker: HubspotSDK::Crm::Extensions::Calling::Speaker,
+              speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker,
               start_time_millis: Integer,
               text: String,
               ?language_code: String
@@ -35,7 +35,7 @@ module HubspotSDK
 
             def to_hash: -> {
               end_time_millis: Integer,
-              speaker: HubspotSDK::Crm::Extensions::Calling::Speaker,
+              speaker: HubSpotSDK::Crm::Extensions::Calling::Speaker,
               start_time_millis: Integer,
               text: String,
               language_code: String

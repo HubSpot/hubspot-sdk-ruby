@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign_delete_input = { id: String }
 
-      class PublicCampaignDeleteInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignDeleteInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         def initialize: (id: String) -> void

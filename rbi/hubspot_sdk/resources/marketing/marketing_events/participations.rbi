@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -11,8 +11,8 @@ module HubspotSDK
             params(
               external_event_id: String,
               external_account_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::AttendanceCounters)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::AttendanceCounters)
           end
           def get_by_external_account_and_event_id(
             # The id of the marketing event in the external event application.
@@ -29,8 +29,8 @@ module HubspotSDK
           sig do
             params(
               marketing_event_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::AttendanceCounters)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::AttendanceCounters)
           end
           def get_by_id(
             # The internal id of the marketing event in HubSpot.
@@ -46,10 +46,10 @@ module HubspotSDK
               after: String,
               limit: Integer,
               state: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Marketing::ParticipationBreakdown
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Marketing::ParticipationBreakdown
               ]
             )
           end
@@ -77,10 +77,10 @@ module HubspotSDK
               contact_identifier: String,
               limit: Integer,
               state: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Marketing::ParticipationBreakdown
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Marketing::ParticipationBreakdown
               ]
             )
           end
@@ -113,10 +113,10 @@ module HubspotSDK
               contact_identifier: String,
               limit: Integer,
               state: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Marketing::ParticipationBreakdown
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Marketing::ParticipationBreakdown
               ]
             )
           end
@@ -137,7 +137,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

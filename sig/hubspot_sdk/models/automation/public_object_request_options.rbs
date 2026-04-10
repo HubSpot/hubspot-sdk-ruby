@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_object_request_options = { properties: ::Array[String] }
 
-      class PublicObjectRequestOptions < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectRequestOptions < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor properties: ::Array[String]
 
         def initialize: (properties: ::Array[String]) -> void

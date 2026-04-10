@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicDateTimePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicDateTimePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # The type of operation (DATETIME).
         sig do
           returns(
-            HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -42,7 +42,7 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol,
             operator: String,
             requires_time_zone_conversion: T::Boolean,
             timestamp: Integer
@@ -69,7 +69,7 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType::OrSymbol,
               operator: String,
               requires_time_zone_conversion: T::Boolean,
               timestamp: Integer
@@ -81,13 +81,13 @@ module HubspotSDK
 
         # The type of operation (DATETIME).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -95,13 +95,13 @@ module HubspotSDK
           DATETIME =
             T.let(
               :DATETIME,
-              HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicDateTimePropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

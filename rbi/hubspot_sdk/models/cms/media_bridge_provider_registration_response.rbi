@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaBridgeProviderRegistrationResponse < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgeProviderRegistrationResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::MediaBridgeProviderRegistrationResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

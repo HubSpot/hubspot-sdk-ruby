@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#batch_read_memberships
-      class BatchResponseRecordIDWithMemberships < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#batch_read_memberships
+      class BatchResponseRecordIDWithMemberships < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
         #   @return [Time]
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::RecordIDWithMemberships>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordIDWithMemberships] }
+        #   @return [Array<HubSpotSDK::Models::Crm::RecordIDWithMemberships>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordIDWithMemberships] }
 
         # @!attribute started_at
         #
@@ -22,13 +22,13 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseRecordIDWithMemberships::Status]
-        required :status, enum: -> { HubspotSDK::Crm::BatchResponseRecordIDWithMemberships::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponseRecordIDWithMemberships::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::BatchResponseRecordIDWithMemberships::Status }
 
         # @!attribute links
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #
@@ -37,15 +37,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::Crm::RecordIDWithMemberships>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::RecordIDWithMemberships>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseRecordIDWithMemberships::Status]
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponseRecordIDWithMemberships::Status]
         #   @param links [Hash{Symbol=>String}]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::Crm::BatchResponseRecordIDWithMemberships#status
+        # @see HubSpotSDK::Models::Crm::BatchResponseRecordIDWithMemberships#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

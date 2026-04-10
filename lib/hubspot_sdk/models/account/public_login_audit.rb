@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_login_activities
-      class PublicLoginAudit < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Account::Activity#list_login_activities
+      class PublicLoginAudit < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The login activity's unique ID.
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         #   Whether the login was successful or not.
         #
         #   @return [Boolean]
-        required :login_succeeded, HubspotSDK::Internal::Type::Boolean, api_name: :loginSucceeded
+        required :login_succeeded, HubSpotSDK::Internal::Type::Boolean, api_name: :loginSucceeded
 
         # @!attribute country_code
         #   The approximate country code of the login

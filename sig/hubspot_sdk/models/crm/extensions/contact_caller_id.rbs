@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type contact_caller_id =
           {
-            caller_id_type: HubspotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
-            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            caller_id_type: HubSpotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
+            object_coordinates: HubSpotSDK::Crm::Extensions::ObjectCoordinates,
             email: String,
             first_name: String,
             last_name: String
           }
 
-        class ContactCallerID < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor caller_id_type: HubspotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type
+        class ContactCallerID < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor caller_id_type: HubSpotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type
 
-          attr_accessor object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates
+          attr_accessor object_coordinates: HubSpotSDK::Crm::Extensions::ObjectCoordinates
 
           attr_reader email: String?
 
@@ -29,16 +29,16 @@ module HubspotSDK
           def last_name=: (String) -> String
 
           def initialize: (
-            caller_id_type: HubspotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
-            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            caller_id_type: HubSpotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
+            object_coordinates: HubSpotSDK::Crm::Extensions::ObjectCoordinates,
             ?email: String,
             ?first_name: String,
             ?last_name: String
           ) -> void
 
           def to_hash: -> {
-            caller_id_type: HubspotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
-            object_coordinates: HubspotSDK::Crm::Extensions::ObjectCoordinates,
+            caller_id_type: HubSpotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type,
+            object_coordinates: HubSpotSDK::Crm::Extensions::ObjectCoordinates,
             email: String,
             first_name: String,
             last_name: String
@@ -47,11 +47,11 @@ module HubspotSDK
           type caller_id_type = :CONTACT
 
           module CallerIDType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CONTACT: :CONTACT
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::ContactCallerID::caller_id_type]
           end
         end
       end

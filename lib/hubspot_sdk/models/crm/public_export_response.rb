@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Exports#get
-      class PublicExportResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Exports#get
+      class PublicExportResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the export.
         #
@@ -20,24 +20,24 @@ module HubspotSDK
         # @!attribute export_state
         #   The current state of the export process.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportResponse::ExportState]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicExportResponse::ExportState]
         required :export_state,
-                 enum: -> { HubspotSDK::Crm::PublicExportResponse::ExportState },
+                 enum: -> { HubSpotSDK::Crm::PublicExportResponse::ExportState },
                  api_name: :exportState
 
         # @!attribute export_type
         #   The type of export, which can be either VIEW or LIST.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicExportResponse::ExportType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicExportResponse::ExportType]
         required :export_type,
-                 enum: -> { HubspotSDK::Crm::PublicExportResponse::ExportType },
+                 enum: -> { HubSpotSDK::Crm::PublicExportResponse::ExportType },
                  api_name: :exportType
 
         # @!attribute object_properties
         #   The list of properties exported for the associated object.
         #
         #   @return [Array<String>]
-        required :object_properties, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :objectProperties
+        required :object_properties, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :objectProperties
 
         # @!attribute object_type
         #   The associated CRM object being exported.
@@ -68,9 +68,9 @@ module HubspotSDK
         #
         #   @param created_at [Time] The timestamp when the export was created, in ISO 8601 format.
         #
-        #   @param export_state [Symbol, HubspotSDK::Models::Crm::PublicExportResponse::ExportState] The current state of the export process.
+        #   @param export_state [Symbol, HubSpotSDK::Models::Crm::PublicExportResponse::ExportState] The current state of the export process.
         #
-        #   @param export_type [Symbol, HubspotSDK::Models::Crm::PublicExportResponse::ExportType] The type of export, which can be either VIEW or LIST.
+        #   @param export_type [Symbol, HubSpotSDK::Models::Crm::PublicExportResponse::ExportType] The type of export, which can be either VIEW or LIST.
         #
         #   @param object_properties [Array<String>] The list of properties exported for the associated object.
         #
@@ -84,9 +84,9 @@ module HubspotSDK
 
         # The current state of the export process.
         #
-        # @see HubspotSDK::Models::Crm::PublicExportResponse#export_state
+        # @see HubSpotSDK::Models::Crm::PublicExportResponse#export_state
         module ExportState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           CONFLICT = :CONFLICT
@@ -104,9 +104,9 @@ module HubspotSDK
 
         # The type of export, which can be either VIEW or LIST.
         #
-        # @see HubspotSDK::Models::Crm::PublicExportResponse#export_type
+        # @see HubSpotSDK::Models::Crm::PublicExportResponse#export_type
         module ExportType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LIST = :LIST
           VIEW = :VIEW

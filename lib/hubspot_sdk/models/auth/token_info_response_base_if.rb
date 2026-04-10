@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      # @see HubspotSDK::Resources::Auth::OAuth#introspect_token
+      # @see HubSpotSDK::Resources::Auth::OAuth#introspect_token
       module TokenInfoResponseBaseIf
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::Auth::PublicAccessTokenInfoResponse }
+        variant -> { HubSpotSDK::Auth::PublicAccessTokenInfoResponse }
 
-        variant -> { HubspotSDK::Auth::PublicRefreshTokenInfoResponse }
+        variant -> { HubSpotSDK::Auth::PublicRefreshTokenInfoResponse }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubspotSDK::Models::Auth::PublicRefreshTokenInfoResponse)]
+        #   @return [Array(HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse)]
       end
     end
   end

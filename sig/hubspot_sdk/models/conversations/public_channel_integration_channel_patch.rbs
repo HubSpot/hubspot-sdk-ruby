@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_integration_channel_patch =
@@ -11,7 +11,7 @@ module HubspotSDK
           webhook_url: top
         }
 
-      class PublicChannelIntegrationChannelPatch < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationChannelPatch < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor capabilities: ::Hash[Symbol, top]
 
         attr_accessor channel_account_connection_redirect_url: top

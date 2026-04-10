@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
-        # @see HubspotSDK::Resources::Conversations::CustomChannels::Messages#create
-        class MessageCreateParams < HubspotSDK::Models::Conversations::ChannelIntegrationMessageEgg
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Conversations::CustomChannels::Messages#create
+        class MessageCreateParams < HubSpotSDK::Models::Conversations::ChannelIntegrationMessageEgg
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute channel_id
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(channel_id:, request_options: {})
           #   @param channel_id [Integer]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

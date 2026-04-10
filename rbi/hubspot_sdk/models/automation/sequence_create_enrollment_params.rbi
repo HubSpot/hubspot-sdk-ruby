@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class SequenceCreateEnrollmentParams < HubspotSDK::Models::Automation::PublicSequenceEnrollmentRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class SequenceCreateEnrollmentParams < HubSpotSDK::Models::Automation::PublicSequenceEnrollmentRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::SequenceCreateEnrollmentParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::SequenceCreateEnrollmentParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             user_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(user_id:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { user_id: String, request_options: HubspotSDK::RequestOptions }
+            { user_id: String, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

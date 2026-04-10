@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
       class OAuth
@@ -7,11 +7,11 @@ module HubspotSDK
           ?client_secret: String,
           ?code: String,
           ?code_verifier: String,
-          ?grant_type: HubspotSDK::Models::Auth::OAuthCreateTokenParams::grant_type,
+          ?grant_type: HubSpotSDK::Models::Auth::OAuthCreateTokenParams::grant_type,
           ?redirect_uri: String,
           ?refresh_token: String,
           ?scope: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
         def introspect_token: (
@@ -19,18 +19,18 @@ module HubspotSDK
           ?client_id: String,
           ?client_secret: String,
           ?token_type_hint: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Models::Auth::token_info_response_base_if
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Models::Auth::token_info_response_base_if
 
         def revoke_token: (
           ?token: String,
           ?client_id: String,
           ?client_secret: String,
           ?token_type_hint: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> StringIO
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

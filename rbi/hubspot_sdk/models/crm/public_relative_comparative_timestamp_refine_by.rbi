@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicRelativeComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicRelativeComparativeTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,18 +16,18 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :comparison
 
-        sig { returns(HubspotSDK::Crm::PublicTimeOffset) }
+        sig { returns(HubSpotSDK::Crm::PublicTimeOffset) }
         attr_reader :time_offset
 
         sig do
-          params(time_offset: HubspotSDK::Crm::PublicTimeOffset::OrHash).void
+          params(time_offset: HubSpotSDK::Crm::PublicTimeOffset::OrHash).void
         end
         attr_writer :time_offset
 
         # Specifies the type of refinement, (RELATIVE_COMPARATIVE).
         sig do
           returns(
-            HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
+            HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -35,9 +35,9 @@ module HubspotSDK
         sig do
           params(
             comparison: String,
-            time_offset: HubspotSDK::Crm::PublicTimeOffset::OrHash,
+            time_offset: HubSpotSDK::Crm::PublicTimeOffset::OrHash,
             type:
-              HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
+              HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -53,9 +53,9 @@ module HubspotSDK
           override.returns(
             {
               comparison: String,
-              time_offset: HubspotSDK::Crm::PublicTimeOffset,
+              time_offset: HubSpotSDK::Crm::PublicTimeOffset,
               type:
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::OrSymbol
             }
           )
         end
@@ -64,13 +64,13 @@ module HubspotSDK
 
         # Specifies the type of refinement, (RELATIVE_COMPARATIVE).
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -78,13 +78,13 @@ module HubspotSDK
           RELATIVE_COMPARATIVE =
             T.let(
               :RELATIVE_COMPARATIVE,
-              HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::Type::TaggedSymbol
               ]
             )
           end

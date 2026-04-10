@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::MarketingEvents#get_by_external_event_id
-      class MarketingEventPublicReadResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::MarketingEvents#get_by_external_event_id
+      class MarketingEventPublicReadResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the marketing event CRM object.
         #
@@ -40,9 +40,9 @@ module HubspotSDK
         #   default properties on the MarketingEvent object as that will apply to all
         #   HubSpot accounts.
         #
-        #   @return [Array<HubspotSDK::Models::PropertyValue>]
+        #   @return [Array<HubSpotSDK::Models::PropertyValue>]
         required :custom_properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue] },
                  api_name: :customProperties
 
         # @!attribute event_name
@@ -92,13 +92,13 @@ module HubspotSDK
         #   Indicates if the marketing event has been cancelled.
         #
         #   @return [Boolean, nil]
-        optional :event_cancelled, HubspotSDK::Internal::Type::Boolean, api_name: :eventCancelled
+        optional :event_cancelled, HubSpotSDK::Internal::Type::Boolean, api_name: :eventCancelled
 
         # @!attribute event_completed
         #   Indicates if the marketing event has been completed.
         #
         #   @return [Boolean, nil]
-        optional :event_completed, HubspotSDK::Internal::Type::Boolean, api_name: :eventCompleted
+        optional :event_completed, HubSpotSDK::Internal::Type::Boolean, api_name: :eventCompleted
 
         # @!attribute event_description
         #   The description of the marketing event.
@@ -133,7 +133,7 @@ module HubspotSDK
 
         # @!method initialize(id:, attendees:, cancellations:, created_at:, custom_properties:, event_name:, event_organizer:, external_event_id:, no_shows:, registrants:, updated_at:, end_date_time: nil, event_cancelled: nil, event_completed: nil, event_description: nil, event_type: nil, event_url: nil, object_id_: nil, start_date_time: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::MarketingEventPublicReadResponse} for more
+        #   {HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponse} for more
         #   details.
         #
         #   @param id [String] The ID of the marketing event CRM object.
@@ -144,7 +144,7 @@ module HubspotSDK
         #
         #   @param created_at [Time] The creation date and time of the marketing event.
         #
-        #   @param custom_properties [Array<HubspotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
+        #   @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>] A list of PropertyValues. These can be whatever kind of property names and value
         #
         #   @param event_name [String] The name of the marketing event.
         #

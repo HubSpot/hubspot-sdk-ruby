@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type batch_response_page =
         {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           started_at: Time,
-          status: HubspotSDK::Models::Cms::BatchResponsePage::status,
+          status: HubSpotSDK::Models::Cms::BatchResponsePage::status,
           links: ::Hash[Symbol, String],
           requested_at: Time
         }
 
-      class BatchResponsePage < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubspotSDK::Cms::PageData]
+        attr_accessor results: ::Array[HubSpotSDK::Cms::PageData]
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::Cms::BatchResponsePage::status
+        attr_accessor status: HubSpotSDK::Models::Cms::BatchResponsePage::status
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -30,18 +30,18 @@ module HubspotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           started_at: Time,
-          status: HubspotSDK::Models::Cms::BatchResponsePage::status,
+          status: HubSpotSDK::Models::Cms::BatchResponsePage::status,
           ?links: ::Hash[Symbol, String],
           ?requested_at: Time
         ) -> void
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubspotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           started_at: Time,
-          status: HubspotSDK::Models::Cms::BatchResponsePage::status,
+          status: HubSpotSDK::Models::Cms::BatchResponsePage::status,
           links: ::Hash[Symbol, String],
           requested_at: Time
         }
@@ -49,14 +49,14 @@ module HubspotSDK
         type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
           PENDING: :PENDING
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::BatchResponsePage::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::BatchResponsePage::status]
         end
       end
     end

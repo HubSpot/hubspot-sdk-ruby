@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id_property_name_and_rule_type
-      class PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id_property_name_and_rule_type
+      class PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute object_type_id
         #
@@ -20,18 +20,18 @@ module HubspotSDK
 
         # @!attribute rule_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
         required :rule_type,
-                 enum: -> { HubspotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType }
+                 enum: -> { HubSpotSDK::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType }
 
         # @!method initialize(object_type_id:, property_name:, rule_type:, request_options: {})
         #   @param object_type_id [String]
         #   @param property_name [String]
-        #   @param rule_type [Symbol, HubspotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param rule_type [Symbol, HubSpotSDK::Models::Crm::PropertiesValidationGetByObjectTypeIDPropertyNameAndRuleTypeParams::RuleType]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module RuleType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER_DATETIME_DURATION = :AFTER_DATETIME_DURATION
           AFTER_DURATION = :AFTER_DURATION

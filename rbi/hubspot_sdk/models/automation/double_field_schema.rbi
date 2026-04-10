@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class DoubleFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class DoubleFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::DoubleFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::DoubleFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Indicates the field type as DOUBLE.
         sig do
-          returns(HubspotSDK::Automation::DoubleFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::DoubleFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -34,7 +34,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Automation::DoubleFieldSchema::Type::OrSymbol,
+            type: HubSpotSDK::Automation::DoubleFieldSchema::Type::OrSymbol,
             maximum: Float,
             minimum: Float
           ).returns(T.attached_class)
@@ -52,7 +52,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              type: HubspotSDK::Automation::DoubleFieldSchema::Type::OrSymbol,
+              type: HubSpotSDK::Automation::DoubleFieldSchema::Type::OrSymbol,
               maximum: Float,
               minimum: Float
             }
@@ -63,24 +63,24 @@ module HubspotSDK
 
         # Indicates the field type as DOUBLE.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::DoubleFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::DoubleFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DOUBLE =
             T.let(
               :DOUBLE,
-              HubspotSDK::Automation::DoubleFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::DoubleFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::DoubleFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::DoubleFieldSchema::Type::TaggedSymbol
               ]
             )
           end

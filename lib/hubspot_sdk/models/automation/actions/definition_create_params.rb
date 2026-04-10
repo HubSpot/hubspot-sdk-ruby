@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        # @see HubspotSDK::Resources::Automation::Actions::Definitions#create
-        class DefinitionCreateParams < HubspotSDK::Models::Automation::PublicActionDefinitionEgg
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Automation::Actions::Definitions#create
+        class DefinitionCreateParams < HubSpotSDK::Models::Automation::PublicActionDefinitionEgg
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute app_id
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(app_id:, request_options: {})
           #   @param app_id [Integer]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

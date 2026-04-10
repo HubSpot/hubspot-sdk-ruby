@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class DetachFromLangGroupRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class DetachFromLangGroupRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::DetachFromLangGroupRequestVNext,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::DetachFromLangGroupRequestVNext,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

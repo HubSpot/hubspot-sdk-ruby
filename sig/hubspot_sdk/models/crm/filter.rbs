@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type filter =
         {
-          operator: HubspotSDK::Models::Crm::Filter::operator,
+          operator: HubSpotSDK::Models::Crm::Filter::operator,
           property_name: String,
           high_value: String,
           value: String,
           values: ::Array[String]
         }
 
-      class Filter < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Crm::Filter::operator
+      class Filter < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Crm::Filter::operator
 
         attr_accessor property_name: String
 
@@ -28,7 +28,7 @@ module HubspotSDK
         def values=: (::Array[String]) -> ::Array[String]
 
         def initialize: (
-          operator: HubspotSDK::Models::Crm::Filter::operator,
+          operator: HubSpotSDK::Models::Crm::Filter::operator,
           property_name: String,
           ?high_value: String,
           ?value: String,
@@ -36,7 +36,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Crm::Filter::operator,
+          operator: HubSpotSDK::Models::Crm::Filter::operator,
           property_name: String,
           high_value: String,
           value: String,
@@ -59,7 +59,7 @@ module HubspotSDK
           | :NOT_IN
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BETWEEN: :BETWEEN
           CONTAINS_TOKEN: :CONTAINS_TOKEN
@@ -75,7 +75,7 @@ module HubspotSDK
           NOT_HAS_PROPERTY: :NOT_HAS_PROPERTY
           NOT_IN: :NOT_IN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::Filter::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Filter::operator]
         end
       end
     end

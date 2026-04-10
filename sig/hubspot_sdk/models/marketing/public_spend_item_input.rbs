@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_spend_item_input =
         { amount: Float, name: String, order: Integer, description: String }
 
-      class PublicSpendItemInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicSpendItemInput < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor amount: Float
 
         attr_accessor name: String

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ConstantString < HubspotSDK::Internal::Type::BaseModel
+      class ConstantString < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ConstantString::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::ConstantString::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ConstantString::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::ConstantString::Operator }
 
         # @!attribute property_name
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :value, String
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::ConstantString::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::ConstantString::Operator]
         #   @param property_name [String]
         #   @param value [String]
 
-        # @see HubspotSDK::Models::Cms::ConstantString#operator
+        # @see HubSpotSDK::Models::Cms::ConstantString#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSTANT_STRING = :CONSTANT_STRING
 

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ContentScheduleRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class ContentScheduleRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The ID of the object to be scheduled.
         #

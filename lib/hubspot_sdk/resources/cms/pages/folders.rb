@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -23,25 +23,25 @@ module HubspotSDK
           #
           # @param updated [Time] The timestamp indicating when the content folder was last updated.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ContentFolder]
+          # @return [HubSpotSDK::Models::Cms::ContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderCreateParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Cms::Pages::FolderCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/folders",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::ContentFolder,
+              model: HubSpotSDK::Cms::ContentFolder,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Pages::FolderUpdateParams} for more details.
+          # {HubSpotSDK::Models::Cms::Pages::FolderUpdateParams} for more details.
           #
           # Partially update a landing page folder, specified by the folder ID. You only
           # need to specify the details values that you are modifying.
@@ -67,28 +67,28 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ContentFolder]
+          # @return [HubSpotSDK::Models::Cms::ContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderUpdateParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderUpdateParams
           def update(object_id_, params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::FolderUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::FolderUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["cms/pages/2026-03/landing-pages/folders/%1$s", object_id_],
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::ContentFolder,
+              model: HubSpotSDK::Cms::ContentFolder,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Pages::FolderListParams} for more details.
+          # {HubSpotSDK::Models::Cms::Pages::FolderListParams} for more details.
           #
           # Get the list of Landing Page Folders. Supports paging and filtering. This method
           # would be useful for an integration that examined these models and used an
@@ -118,14 +118,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::ContentFolder>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::ContentFolder>]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderListParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Cms::Pages::FolderListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/pages/2026-03/landing-pages/folders",
@@ -137,8 +137,8 @@ module HubspotSDK
                 updated_at: "updatedAt",
                 updated_before: "updatedBefore"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::ContentFolder,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::ContentFolder,
               options: options
             )
           end
@@ -151,14 +151,14 @@ module HubspotSDK
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderDeleteParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderDeleteParams
           def delete(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Pages::FolderDeleteParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderDeleteParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :delete,
               path: ["cms/pages/2026-03/landing-pages/folders/%1$s", object_id_],
@@ -176,22 +176,22 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseContentFolder]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderBatchGetParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderBatchGetParams
           def batch_get(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::FolderBatchGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::FolderBatchGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/folders/batch/read",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponseContentFolder,
+              model: HubSpotSDK::Cms::BatchResponseContentFolder,
               options: options
             )
           end
@@ -206,19 +206,19 @@ module HubspotSDK
           #
           # @param property [String]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ContentFolder]
+          # @return [HubSpotSDK::Models::Cms::ContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderGetParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderGetParams
           def get(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Pages::FolderGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/pages/2026-03/landing-pages/folders/%1$s", object_id_],
               query: query,
-              model: HubspotSDK::Cms::ContentFolder,
+              model: HubSpotSDK::Cms::ContentFolder,
               options: options
             )
           end
@@ -230,13 +230,13 @@ module HubspotSDK
           #
           # @param revision_id [String]
           # @param object_id_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ContentFolderVersion]
+          # @return [HubSpotSDK::Models::Cms::ContentFolderVersion]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderGetRevisionParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderGetRevisionParams
           def get_revision(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Pages::FolderGetRevisionParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderGetRevisionParams.dump_request(params)
             object_id_ =
               parsed.delete(:object_id_) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -244,13 +244,13 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["cms/pages/2026-03/landing-pages/folders/%1$s/revisions/%2$s", object_id_, revision_id],
-              model: HubspotSDK::Cms::ContentFolderVersion,
+              model: HubSpotSDK::Cms::ContentFolderVersion,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Pages::FolderListRevisionsParams} for more details.
+          # {HubSpotSDK::Models::Cms::Pages::FolderListRevisionsParams} for more details.
           #
           # Retrieves all the previous versions of a landing page folder.
           #
@@ -264,20 +264,20 @@ module HubspotSDK
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Cms::ContentFolderVersion>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Cms::ContentFolderVersion>]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderListRevisionsParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderListRevisionsParams
           def list_revisions(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Pages::FolderListRevisionsParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderListRevisionsParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/pages/2026-03/landing-pages/folders/%1$s/revisions", object_id_],
               query: query,
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Cms::ContentFolderVersion,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Cms::ContentFolderVersion,
               options: options
             )
           end
@@ -288,13 +288,13 @@ module HubspotSDK
           #
           # @param revision_id [String]
           # @param object_id_ [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::ContentFolder]
+          # @return [HubSpotSDK::Models::Cms::ContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::FolderRestoreRevisionParams
+          # @see HubSpotSDK::Models::Cms::Pages::FolderRestoreRevisionParams
           def restore_revision(revision_id, params)
-            parsed, options = HubspotSDK::Cms::Pages::FolderRestoreRevisionParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::FolderRestoreRevisionParams.dump_request(params)
             object_id_ =
               parsed.delete(:object_id_) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -306,14 +306,14 @@ module HubspotSDK
                 object_id_,
                 revision_id
               ],
-              model: HubspotSDK::Cms::ContentFolder,
+              model: HubSpotSDK::Cms::ContentFolder,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

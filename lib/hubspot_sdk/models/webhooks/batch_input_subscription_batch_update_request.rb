@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class BatchInputSubscriptionBatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputSubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest>]
+        #   @return [Array<HubSpotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest>]
+        #   @param inputs [Array<HubSpotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest>]
       end
     end
   end

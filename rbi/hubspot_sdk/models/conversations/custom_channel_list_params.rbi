@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class CustomChannelListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CustomChannelListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::CustomChannelListParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::CustomChannelListParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -49,7 +49,7 @@ module HubspotSDK
             default_page_length: Integer,
             limit: Integer,
             sort: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -72,7 +72,7 @@ module HubspotSDK
               default_page_length: Integer,
               limit: Integer,
               sort: T::Array[String],
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

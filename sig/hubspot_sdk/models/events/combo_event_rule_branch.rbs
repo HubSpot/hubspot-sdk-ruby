@@ -1,41 +1,41 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type combo_event_rule_branch =
         {
-          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
-          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
-          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+          composing_rules: ::Array[HubSpotSDK::Events::ComboEventRule],
+          operation_type: HubSpotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubSpotSDK::Events::ComboEventRuleBranch]
         }
 
-      class ComboEventRuleBranch < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor composing_rules: ::Array[HubspotSDK::Events::ComboEventRule]
+      class ComboEventRuleBranch < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor composing_rules: ::Array[HubSpotSDK::Events::ComboEventRule]
 
-        attr_accessor operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type
+        attr_accessor operation_type: HubSpotSDK::Models::Events::ComboEventRuleBranch::operation_type
 
-        attr_accessor rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+        attr_accessor rule_branches: ::Array[HubSpotSDK::Events::ComboEventRuleBranch]
 
         def initialize: (
-          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
-          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
-          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+          composing_rules: ::Array[HubSpotSDK::Events::ComboEventRule],
+          operation_type: HubSpotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubSpotSDK::Events::ComboEventRuleBranch]
         ) -> void
 
         def to_hash: -> {
-          composing_rules: ::Array[HubspotSDK::Events::ComboEventRule],
-          operation_type: HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type,
-          rule_branches: ::Array[HubspotSDK::Events::ComboEventRuleBranch]
+          composing_rules: ::Array[HubSpotSDK::Events::ComboEventRule],
+          operation_type: HubSpotSDK::Models::Events::ComboEventRuleBranch::operation_type,
+          rule_branches: ::Array[HubSpotSDK::Events::ComboEventRuleBranch]
         }
 
         type operation_type = :AND | :OR
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AND: :AND
           OR: :OR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::ComboEventRuleBranch::operation_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::ComboEventRuleBranch::operation_type]
         end
       end
     end

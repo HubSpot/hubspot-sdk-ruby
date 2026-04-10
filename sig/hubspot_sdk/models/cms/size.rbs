@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      type size = { units: HubspotSDK::Models::Cms::Size::units, value: Float }
+      type size = { units: HubSpotSDK::Models::Cms::Size::units, value: Float }
 
-      class Size < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor units: HubspotSDK::Models::Cms::Size::units
+      class Size < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor units: HubSpotSDK::Models::Cms::Size::units
 
         attr_accessor value: Float
 
         def initialize: (
-          units: HubspotSDK::Models::Cms::Size::units,
+          units: HubSpotSDK::Models::Cms::Size::units,
           value: Float
         ) -> void
 
         def to_hash: -> {
-          units: HubspotSDK::Models::Cms::Size::units,
+          units: HubSpotSDK::Models::Cms::Size::units,
           value: Float
         }
 
@@ -38,7 +38,7 @@ module HubspotSDK
           | :vw
 
         module Units
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PERCENT: :%
           CH: :ch
@@ -58,7 +58,7 @@ module HubspotSDK
           VMIN: :vmin
           VW: :vw
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Size::units]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Size::units]
         end
       end
     end

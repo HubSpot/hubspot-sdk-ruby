@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::TimelineTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::TimelineTest < HubSpotSDK::Test::ResourceTest
   def test_create_event_required_params
     skip("Mock server tests are disabled")
 
@@ -28,12 +28,12 @@ class HubspotSDK::Test::Resources::Crm::TimelineTest < HubspotSDK::Test::Resourc
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::AppEventResolutionResponse
+      response => HubSpotSDK::Crm::AppEventResolutionResponse
     end
 
     assert_pattern do
       response => {
-        developer_qualified_symbol: HubspotSDK::Crm::DeveloperQualifiedSymbol,
+        developer_qualified_symbol: HubSpotSDK::Crm::DeveloperQualifiedSymbol,
         fully_qualified_name: String
       }
     end

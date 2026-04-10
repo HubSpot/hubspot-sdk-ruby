@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
-        class ABTestRerunSitePageTestParams < HubspotSDK::Models::Cms::AbTestRerunRequestVNext
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ABTestRerunSitePageTestParams < HubSpotSDK::Models::Cms::AbTestRerunRequestVNext
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Pages::ABTestRerunSitePageTestParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Pages::ABTestRerunSitePageTestParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
               T.attached_class
             )
           end
@@ -25,7 +25,7 @@ module HubspotSDK
           end
 
           sig do
-            override.returns({ request_options: HubspotSDK::RequestOptions })
+            override.returns({ request_options: HubSpotSDK::RequestOptions })
           end
           def to_hash
           end

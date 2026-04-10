@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_asset_replace_params =
         {
           file_id: String,
           charset_hunch: String,
-          file: HubspotSDK::Internal::file_input,
+          file: HubSpotSDK::Internal::file_input,
           options: String
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class FileAssetReplaceParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetReplaceParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor file_id: String
 
@@ -20,11 +20,11 @@ module HubspotSDK
 
         def charset_hunch=: (String) -> String
 
-        attr_reader file: HubspotSDK::Internal::file_input?
+        attr_reader file: HubSpotSDK::Internal::file_input?
 
         def file=: (
-          HubspotSDK::Internal::file_input
-        ) -> HubspotSDK::Internal::file_input
+          HubSpotSDK::Internal::file_input
+        ) -> HubSpotSDK::Internal::file_input
 
         attr_reader options: String?
 
@@ -33,17 +33,17 @@ module HubspotSDK
         def initialize: (
           file_id: String,
           ?charset_hunch: String,
-          ?file: HubspotSDK::Internal::file_input,
+          ?file: HubSpotSDK::Internal::file_input,
           ?options: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           file_id: String,
           charset_hunch: String,
-          file: HubspotSDK::Internal::file_input,
+          file: HubSpotSDK::Internal::file_input,
           options: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

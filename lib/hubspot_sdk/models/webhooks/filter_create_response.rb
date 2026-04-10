@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#create_subscription_filter
-      class FilterCreateResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#create_subscription_filter
+      class FilterCreateResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_id
         #
         #   @return [Integer]

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class ActingUser < HubspotSDK::Internal::Type::BaseModel
+      class ActingUser < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute user_id
         #   The user's unique ID.
         #

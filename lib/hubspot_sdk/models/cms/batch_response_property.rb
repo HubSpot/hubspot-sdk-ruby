@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchResponseProperty < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseProperty < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
         #   @return [Time]
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Property>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Property>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property] }
 
         # @!attribute started_at
         #
@@ -21,13 +21,13 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::BatchResponseProperty::Status]
-        required :status, enum: -> { HubspotSDK::Cms::BatchResponseProperty::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::BatchResponseProperty::Status]
+        required :status, enum: -> { HubSpotSDK::Cms::BatchResponseProperty::Status }
 
         # @!attribute links
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #
@@ -36,15 +36,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::Cms::Property>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::Property>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::Cms::BatchResponseProperty::Status]
+        #   @param status [Symbol, HubSpotSDK::Models::Cms::BatchResponseProperty::Status]
         #   @param links [Hash{Symbol=>String}]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::Cms::BatchResponseProperty#status
+        # @see HubSpotSDK::Models::Cms::BatchResponseProperty#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

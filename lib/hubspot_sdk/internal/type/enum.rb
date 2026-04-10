@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -16,8 +16,8 @@ module HubspotSDK
       # We can therefore convert string values to Symbols, but can't convert other
       # values safely.
       module Enum
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # All of the valid Symbol values for this enum.
         #
@@ -38,7 +38,7 @@ module HubspotSDK
         # @return [Boolean]
         def ==(other)
           # rubocop:disable Style/CaseEquality
-          HubspotSDK::Internal::Type::Enum === other && other.values.to_set == values.to_set
+          HubSpotSDK::Internal::Type::Enum === other && other.values.to_set == values.to_set
           # rubocop:enable Style/CaseEquality
         end
 
@@ -99,7 +99,7 @@ module HubspotSDK
         #
         # @return [Object]
         def to_sorbet_type
-          types = values.map { HubspotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(_1) }.uniq
+          types = values.map { HubSpotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(_1) }.uniq
           case types
           in []
             T.noreturn
@@ -120,7 +120,7 @@ module HubspotSDK
             return is_a?(Module) ? super() : self.class.name
           end
 
-          members = values.map { HubspotSDK::Internal::Type::Converter.inspect(_1, depth: depth.succ) }
+          members = values.map { HubSpotSDK::Internal::Type::Converter.inspect(_1, depth: depth.succ) }
           prefix = is_a?(Module) ? name : self.class.name
 
           "#{prefix}[#{members.join(' | ')}]"

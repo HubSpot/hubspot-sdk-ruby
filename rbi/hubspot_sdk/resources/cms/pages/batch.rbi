@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -8,9 +8,9 @@ module HubspotSDK
           # Create a batch of folders as detailed in the request body.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::ContentFolder::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseContentFolder)
+              inputs: T::Array[HubSpotSDK::Cms::ContentFolder::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseContentFolder)
           end
           def create_folders(
             # Content folders to input.
@@ -22,9 +22,9 @@ module HubspotSDK
           # Create a batch of landing pages as detailed in the request body.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::PageData::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              inputs: T::Array[HubSpotSDK::Cms::PageData::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def create_landing_pages(
             # Pages to input.
@@ -36,9 +36,9 @@ module HubspotSDK
           # Create a batch of website pages as specified in the request body.
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::PageData::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              inputs: T::Array[HubSpotSDK::Cms::PageData::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def create_site_pages(
             # Pages to input.
@@ -51,7 +51,7 @@ module HubspotSDK
           sig do
             params(
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_folders(
@@ -67,7 +67,7 @@ module HubspotSDK
           sig do
             params(
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_landing_pages(
@@ -84,7 +84,7 @@ module HubspotSDK
           sig do
             params(
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_site_pages(
@@ -99,8 +99,8 @@ module HubspotSDK
             params(
               inputs: T::Array[String],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def get_landing_pages(
             # Body param: Strings to input.
@@ -116,8 +116,8 @@ module HubspotSDK
             params(
               inputs: T::Array[String],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def get_site_pages(
             # Body param: Strings to input.
@@ -133,8 +133,8 @@ module HubspotSDK
             params(
               inputs: T::Array[T.anything],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseContentFolder)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseContentFolder)
           end
           def update_folders(
             # Body param: JSON nodes to input.
@@ -150,8 +150,8 @@ module HubspotSDK
             params(
               inputs: T::Array[T.anything],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def update_landing_pages(
             # Body param: JSON nodes to input.
@@ -167,8 +167,8 @@ module HubspotSDK
             params(
               inputs: T::Array[T.anything],
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponsePage)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponsePage)
           end
           def update_site_pages(
             # Body param: JSON nodes to input.
@@ -180,7 +180,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

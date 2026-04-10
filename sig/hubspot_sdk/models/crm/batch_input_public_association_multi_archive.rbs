@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type batch_input_public_association_multi_archive =
-        { inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive] }
+        { inputs: ::Array[HubSpotSDK::Crm::PublicAssociationMultiArchive] }
 
-      class BatchInputPublicAssociationMultiArchive < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive]
+      class BatchInputPublicAssociationMultiArchive < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Crm::PublicAssociationMultiArchive]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive]
+          inputs: ::Array[HubSpotSDK::Crm::PublicAssociationMultiArchive]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Crm::PublicAssociationMultiArchive]
+          inputs: ::Array[HubSpotSDK::Crm::PublicAssociationMultiArchive]
         }
       end
     end

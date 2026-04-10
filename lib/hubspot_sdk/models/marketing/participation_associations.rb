@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ParticipationAssociations < HubspotSDK::Internal::Type::BaseModel
+      class ParticipationAssociations < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact
         #
-        #   @return [HubspotSDK::Models::Marketing::ContactAssociation]
-        required :contact, -> { HubspotSDK::Marketing::ContactAssociation }
+        #   @return [HubSpotSDK::Models::Marketing::ContactAssociation]
+        required :contact, -> { HubSpotSDK::Marketing::ContactAssociation }
 
         # @!attribute marketing_event
         #
-        #   @return [HubspotSDK::Models::Marketing::MarketingEventAssociation]
+        #   @return [HubSpotSDK::Models::Marketing::MarketingEventAssociation]
         required :marketing_event,
-                 -> { HubspotSDK::Marketing::MarketingEventAssociation },
+                 -> { HubSpotSDK::Marketing::MarketingEventAssociation },
                  api_name: :marketingEvent
 
         # @!method initialize(contact:, marketing_event:)
-        #   @param contact [HubspotSDK::Models::Marketing::ContactAssociation]
-        #   @param marketing_event [HubspotSDK::Models::Marketing::MarketingEventAssociation]
+        #   @param contact [HubSpotSDK::Models::Marketing::ContactAssociation]
+        #   @param marketing_event [HubSpotSDK::Models::Marketing::MarketingEventAssociation]
       end
     end
   end

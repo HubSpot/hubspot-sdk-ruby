@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseContactReferenceForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseContactReferenceForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of contact references, each containing an identifier for a contact.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::ContactReference>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::ContactReference] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::ContactReference>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::ContactReference] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Marketing::ContactReference>] An array of contact references, each containing an identifier for a contact.
+        #   @param results [Array<HubSpotSDK::Models::Marketing::ContactReference>] An array of contact references, each containing an identifier for a contact.
         #
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

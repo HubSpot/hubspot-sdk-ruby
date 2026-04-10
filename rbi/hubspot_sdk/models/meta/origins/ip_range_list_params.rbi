@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Meta
       module Origins
-        class IPRangeListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class IPRangeListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Meta::Origins::IPRangeListParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Meta::Origins::IPRangeListParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -20,7 +20,7 @@ module HubspotSDK
             returns(
               T.nilable(
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
                 ]
               )
             )
@@ -31,7 +31,7 @@ module HubspotSDK
             params(
               direction:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
                 ]
             ).void
           end
@@ -41,7 +41,7 @@ module HubspotSDK
             returns(
               T.nilable(
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
                 ]
               )
             )
@@ -52,7 +52,7 @@ module HubspotSDK
             params(
               service:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
                 ]
             ).void
           end
@@ -62,13 +62,13 @@ module HubspotSDK
             params(
               direction:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
                 ],
               service:
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(direction: nil, service: nil, request_options: {})
@@ -79,13 +79,13 @@ module HubspotSDK
               {
                 direction:
                   T::Array[
-                    HubspotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
+                    HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::OrSymbol
                   ],
                 service:
                   T::Array[
-                    HubspotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
+                    HubSpotSDK::Meta::Origins::IPRangeListParams::Service::OrSymbol
                   ],
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end
@@ -93,13 +93,13 @@ module HubspotSDK
           end
 
           module Direction
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -107,18 +107,18 @@ module HubspotSDK
             INGRESS =
               T.let(
                 :INGRESS,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
               )
             EGRESS =
               T.let(
                 :EGRESS,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Direction::TaggedSymbol
                 ]
               )
             end
@@ -127,13 +127,13 @@ module HubspotSDK
           end
 
           module Service
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -141,33 +141,33 @@ module HubspotSDK
             EMAIL =
               T.let(
                 :EMAIL,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
               )
             API =
               T.let(
                 :API,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
               )
             DNS =
               T.let(
                 :DNS,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
               )
             WEB_SCRAPING =
               T.let(
                 :WEB_SCRAPING,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
               )
             TEST_SERVICE =
               T.let(
                 :TEST_SERVICE,
-                HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
+                  HubSpotSDK::Meta::Origins::IPRangeListParams::Service::TaggedSymbol
                 ]
               )
             end

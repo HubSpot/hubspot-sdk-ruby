@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchInputHubDBTableRowV3BatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputHubDBTableRowV3BatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
+        #   @return [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
+        #   @param inputs [Array<HubSpotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest>]
       end
     end
   end

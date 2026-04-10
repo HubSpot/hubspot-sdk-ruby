@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_channel_account =
@@ -12,10 +12,10 @@ module HubspotSDK
           inbox_id: String,
           name: String,
           archived_at: Time,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
 
-      class PublicChannelAccount < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccount < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor active: bool
@@ -36,11 +36,11 @@ module HubspotSDK
 
         def archived_at=: (Time) -> Time
 
-        attr_reader delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier?
+        attr_reader delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier?
 
         def delivery_identifier=: (
-          HubspotSDK::Conversations::PublicDeliveryIdentifier
-        ) -> HubspotSDK::Conversations::PublicDeliveryIdentifier
+          HubSpotSDK::Conversations::PublicDeliveryIdentifier
+        ) -> HubSpotSDK::Conversations::PublicDeliveryIdentifier
 
         def initialize: (
           id: String,
@@ -52,7 +52,7 @@ module HubspotSDK
           inbox_id: String,
           name: String,
           ?archived_at: Time,
-          ?delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          ?delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         ) -> void
 
         def to_hash: -> {
@@ -65,7 +65,7 @@ module HubspotSDK
           inbox_id: String,
           name: String,
           archived_at: Time,
-          delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier
+          delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier
         }
       end
     end

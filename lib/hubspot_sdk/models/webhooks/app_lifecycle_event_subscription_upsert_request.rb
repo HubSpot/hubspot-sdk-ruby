@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class AppLifecycleEventSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
+      class AppLifecycleEventSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event_type_id
         #
         #   @return [String]
@@ -12,25 +12,25 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>]
-        required :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute subscription_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType]
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType]
         required :subscription_type,
                  enum: -> {
-                   HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType
+                   HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType
                  },
                  api_name: :subscriptionType
 
         # @!method initialize(event_type_id:, properties:, subscription_type:)
         #   @param event_type_id [String]
         #   @param properties [Array<String>]
-        #   @param subscription_type [Symbol, HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType]
+        #   @param subscription_type [Symbol, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType]
 
-        # @see HubspotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest#subscription_type
+        # @see HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest#subscription_type
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT = :OBJECT
           ASSOCIATION = :ASSOCIATION

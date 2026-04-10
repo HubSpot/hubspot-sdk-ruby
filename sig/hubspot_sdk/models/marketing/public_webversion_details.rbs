@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_webversion_details =
@@ -16,7 +16,7 @@ module HubspotSDK
           url: String
         }
 
-      class PublicWebversionDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicWebversionDetails < HubSpotSDK::Internal::Type::BaseModel
         attr_reader domain: String?
 
         def domain=: (String) -> String

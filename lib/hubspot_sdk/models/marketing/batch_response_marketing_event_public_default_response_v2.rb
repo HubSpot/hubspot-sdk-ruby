@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::MarketingEvents#update_batch
-      class BatchResponseMarketingEventPublicDefaultResponseV2 < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::MarketingEvents#update_batch
+      class BatchResponseMarketingEventPublicDefaultResponseV2 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   Timestamp of when the request was processed.
         #
@@ -13,9 +13,9 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicDefaultResponseV2] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventPublicDefaultResponseV2] }
 
         # @!attribute started_at
         #   Timestamp of when the request started processing.
@@ -26,15 +26,15 @@ module HubspotSDK
         # @!attribute status
         #   The status of the response.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status]
         required :status,
-                 enum: -> { HubspotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status }
+                 enum: -> { HubSpotSDK::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status }
 
         # @!attribute links
         #   Result object of the request.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   Timestamp of when the request was sent.
@@ -45,11 +45,11 @@ module HubspotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time] Timestamp of when the request was processed.
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicDefaultResponseV2>]
         #
         #   @param started_at [Time] Timestamp of when the request started processing.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status] The status of the response.
+        #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2::Status] The status of the response.
         #
         #   @param links [Hash{Symbol=>String}] Result object of the request.
         #
@@ -57,9 +57,9 @@ module HubspotSDK
 
         # The status of the response.
         #
-        # @see HubspotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2#status
+        # @see HubSpotSDK::Models::Marketing::BatchResponseMarketingEventPublicDefaultResponseV2#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

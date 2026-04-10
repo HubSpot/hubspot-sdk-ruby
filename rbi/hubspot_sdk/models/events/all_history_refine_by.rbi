@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class AllHistoryRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class AllHistoryRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::AllHistoryRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::AllHistoryRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(HubspotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol)
+          returns(HubSpotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol)
         end
         attr_accessor :type
 
         sig do
           params(
-            type: HubspotSDK::Events::AllHistoryRefineBy::Type::OrSymbol
+            type: HubSpotSDK::Events::AllHistoryRefineBy::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(type:)
@@ -27,31 +27,31 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { type: HubspotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol }
+            { type: HubSpotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol }
           )
         end
         def to_hash
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::AllHistoryRefineBy::Type)
+              T.all(Symbol, HubSpotSDK::Events::AllHistoryRefineBy::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ALL_HISTORY_REFINE_BY =
             T.let(
               :AllHistoryRefineBy,
-              HubspotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Events::AllHistoryRefineBy::Type::TaggedSymbol
               ]
             )
           end

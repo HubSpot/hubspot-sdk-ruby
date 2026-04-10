@@ -1,40 +1,40 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_absolute_comparative_timestamp_refine_by =
         {
           comparison: String,
           timestamp: Integer,
-          type: HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
+          type: HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
         }
 
-      class PublicAbsoluteComparativeTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicAbsoluteComparativeTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor comparison: String
 
         attr_accessor timestamp: Integer
 
-        attr_accessor type: HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
 
         def initialize: (
           comparison: String,
           timestamp: Integer,
-          type: HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
+          type: HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
         ) -> void
 
         def to_hash: -> {
           comparison: String,
           timestamp: Integer,
-          type: HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
+          type: HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_
         }
 
         type type_ = :ABSOLUTE_COMPARATIVE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE_COMPARATIVE: :ABSOLUTE_COMPARATIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy::type_]
         end
       end
     end

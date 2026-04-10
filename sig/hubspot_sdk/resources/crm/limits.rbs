@@ -1,49 +1,49 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Limits
         def get_association_label_limits: (
           ?from_object_type_id: String,
           ?to_object_type_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponseAssociationLabelLimitResponseNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponseAssociationLabelLimitResponseNoPaging
 
         def get_association_records_limits_by_object_type: (
           String to_object_type_id,
           from_object_type_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::AssociationRecordLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::AssociationRecordLimitResponse
 
         def get_association_records_limits_from_objects: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
 
         def get_association_records_limits_to_objects: (
           String from_object_type_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponseObjectTypeNearOrAtAssociationLimitNoPaging
 
         def get_calculated_property_limits: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CalculatedPropertyLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CalculatedPropertyLimitResponse
 
         def get_custom_object_type_limits: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CustomObjectLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CustomObjectLimitResponse
 
         def get_custom_property_limits: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CustomPropertyLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CustomPropertyLimitResponse
 
         def get_pipeline_limits: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PipelineLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PipelineLimitResponse
 
         def get_record_limits: (
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::RecordLimitResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::RecordLimitResponse
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

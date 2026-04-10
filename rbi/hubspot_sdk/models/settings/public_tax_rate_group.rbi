@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class PublicTaxRateGroup < HubspotSDK::Internal::Type::BaseModel
+      class PublicTaxRateGroup < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Settings::PublicTaxRateGroup,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Settings::PublicTaxRateGroup,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

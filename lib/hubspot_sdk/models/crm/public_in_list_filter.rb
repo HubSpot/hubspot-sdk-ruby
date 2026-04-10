@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicInListFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicInListFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Indicates the type of filter being applied (IN_LIST).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicInListFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicInListFilter::FilterType]
         required :filter_type,
                  enum: -> {
-                   HubspotSDK::Crm::PublicInListFilter::FilterType
+                   HubSpotSDK::Crm::PublicInListFilter::FilterType
                  },
                  api_name: :filterType
 
@@ -28,23 +28,23 @@ module HubspotSDK
 
         # @!attribute metadata
         #
-        #   @return [HubspotSDK::Models::Crm::PublicInListFilterMetadata, nil]
-        optional :metadata, -> { HubspotSDK::Crm::PublicInListFilterMetadata }
+        #   @return [HubSpotSDK::Models::Crm::PublicInListFilterMetadata, nil]
+        optional :metadata, -> { HubSpotSDK::Crm::PublicInListFilterMetadata }
 
         # @!method initialize(filter_type:, list_id:, operator:, metadata: nil)
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicInListFilter::FilterType] Indicates the type of filter being applied (IN_LIST).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicInListFilter::FilterType] Indicates the type of filter being applied (IN_LIST).
         #
         #   @param list_id [String] The ID of the list used in the association filter.
         #
         #   @param operator [String] Specifies the operation to be performed by the filter (IN_LIST, NOT_IN_LIST).
         #
-        #   @param metadata [HubspotSDK::Models::Crm::PublicInListFilterMetadata]
+        #   @param metadata [HubSpotSDK::Models::Crm::PublicInListFilterMetadata]
 
         # Indicates the type of filter being applied (IN_LIST).
         #
-        # @see HubspotSDK::Models::Crm::PublicInListFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicInListFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IN_LIST = :IN_LIST
 

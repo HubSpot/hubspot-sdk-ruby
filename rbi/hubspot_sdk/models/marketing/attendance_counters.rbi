@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class AttendanceCounters < HubspotSDK::Internal::Type::BaseModel
+      class AttendanceCounters < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::AttendanceCounters,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::AttendanceCounters,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

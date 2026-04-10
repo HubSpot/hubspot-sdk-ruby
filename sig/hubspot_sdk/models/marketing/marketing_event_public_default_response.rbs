@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventPublicDefaultResponse = Marketing::MarketingEventPublicDefaultResponse
 
@@ -7,7 +7,7 @@ module HubspotSDK
         {
           id: String,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,
@@ -21,12 +21,12 @@ module HubspotSDK
           start_date_time: Time
         }
 
-      class MarketingEventPublicDefaultResponse < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicDefaultResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
-        attr_accessor custom_properties: ::Array[HubspotSDK::PropertyValue]
+        attr_accessor custom_properties: ::Array[HubSpotSDK::PropertyValue]
 
         attr_accessor event_name: String
 
@@ -69,7 +69,7 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,
@@ -86,7 +86,7 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
-          custom_properties: ::Array[HubspotSDK::PropertyValue],
+          custom_properties: ::Array[HubSpotSDK::PropertyValue],
           event_name: String,
           event_organizer: String,
           updated_at: Time,

@@ -1,33 +1,33 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_property
-      class Property < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_property
+      class Property < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute allowed_object_types
         #   Object types permitted to use this property.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ObjectTypeIDProto>]
+        #   @return [Array<HubSpotSDK::Models::Cms::ObjectTypeIDProto>]
         required :allowed_object_types,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectTypeIDProto] },
                  api_name: :allowedObjectTypes
 
         # @!attribute calculated
         #   Whether the property is a calculated field.
         #
         #   @return [Boolean]
-        required :calculated, HubspotSDK::Internal::Type::Boolean
+        required :calculated, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute can_archive
         #
         #   @return [Boolean]
-        required :can_archive, HubspotSDK::Internal::Type::Boolean, api_name: :canArchive
+        required :can_archive, HubSpotSDK::Internal::Type::Boolean, api_name: :canArchive
 
         # @!attribute can_restore
         #
         #   @return [Boolean]
-        required :can_restore, HubspotSDK::Internal::Type::Boolean, api_name: :canRestore
+        required :can_restore, HubSpotSDK::Internal::Type::Boolean, api_name: :canRestore
 
         # @!attribute created_at
         #   The timestamp when the property was created, in ISO 8601 format.
@@ -51,23 +51,23 @@ module HubspotSDK
         #   Indicates the sensitivity level of the property, such as "non_sensitive",
         #   "sensitive", or "highly_sensitive".
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::DataSensitivity]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::DataSensitivity]
         required :data_sensitivity,
-                 enum: -> { HubspotSDK::Cms::Property::DataSensitivity },
+                 enum: -> { HubSpotSDK::Cms::Property::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!attribute date_display_hint
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::DateDisplayHint]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::DateDisplayHint]
         required :date_display_hint,
-                 enum: -> { HubspotSDK::Cms::Property::DateDisplayHint },
+                 enum: -> { HubSpotSDK::Cms::Property::DateDisplayHint },
                  api_name: :dateDisplayHint
 
         # @!attribute deleted
         #   Whether the property has been deleted.
         #
         #   @return [Boolean]
-        required :deleted, HubspotSDK::Internal::Type::Boolean
+        required :deleted, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute description
         #   A summary of the property's purpose.
@@ -79,8 +79,8 @@ module HubspotSDK
         #   The mode in which the property is displayed. Can be: "current_value" or
         #   "all_unique_versions".
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::DisplayMode]
-        required :display_mode, enum: -> { HubspotSDK::Cms::Property::DisplayMode }, api_name: :displayMode
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::DisplayMode]
+        required :display_mode, enum: -> { HubSpotSDK::Cms::Property::DisplayMode }, api_name: :displayMode
 
         # @!attribute display_order
         #   The position of the item relative to others in the list.
@@ -92,7 +92,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :enforce_multivalue_uniqueness,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :enforceMultivalueUniqueness
 
         # @!attribute external_options
@@ -100,7 +100,7 @@ module HubspotSDK
         #   'referencedObjectType' of 'OWNER'. Otherwise false.
         #
         #   @return [Boolean]
-        required :external_options, HubspotSDK::Internal::Type::Boolean, api_name: :externalOptions
+        required :external_options, HubSpotSDK::Internal::Type::Boolean, api_name: :externalOptions
 
         # @!attribute external_options_reference_type
         #   When externalOptions is true, indicates the property's option values will be
@@ -113,7 +113,7 @@ module HubspotSDK
         #   Deprecated. Whether the property is marked as a favorite.
         #
         #   @return [Boolean]
-        required :favorited, HubspotSDK::Internal::Type::Boolean
+        required :favorited, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute favorited_order
         #   Deprecated. The order position when marked as favorited.
@@ -132,7 +132,7 @@ module HubspotSDK
         #   Whether the property can appear on forms.
         #
         #   @return [Boolean]
-        required :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        required :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute from_user_id
         #   The ID of the user who last updated the property.
@@ -150,40 +150,40 @@ module HubspotSDK
         #   Whether the property is a unique identifier property.
         #
         #   @return [Boolean]
-        required :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        required :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #   Whether or not the property will be hidden from the HubSpot UI. It's recommended
         #   that this be set to false for custom properties.
         #
         #   @return [Boolean]
-        required :hidden, HubspotSDK::Internal::Type::Boolean
+        required :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute hubspot_defined
         #   A boolean value set to true for HubSpot default properties.
         #
         #   @return [Boolean]
-        required :hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
+        required :hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
 
         # @!attribute is_customized_default
         #   For default properties, whether the property has been customized. Equivalent to
         #   the 'isCustomizedDefault' field.
         #
         #   @return [Boolean]
-        required :is_customized_default, HubspotSDK::Internal::Type::Boolean, api_name: :isCustomizedDefault
+        required :is_customized_default, HubSpotSDK::Internal::Type::Boolean, api_name: :isCustomizedDefault
 
         # @!attribute is_multi_valued
         #   Whether the property can contain multiple values.
         #
         #   @return [Boolean]
-        required :is_multi_valued, HubspotSDK::Internal::Type::Boolean, api_name: :isMultiValued
+        required :is_multi_valued, HubSpotSDK::Internal::Type::Boolean, api_name: :isMultiValued
 
         # @!attribute is_partial
         #   For default properties, whether the property has been customized. Equivalent to
         #   the 'isCustomizedDefault' field.
         #
         #   @return [Boolean]
-        required :is_partial, HubspotSDK::Internal::Type::Boolean, api_name: :isPartial
+        required :is_partial, HubSpotSDK::Internal::Type::Boolean, api_name: :isPartial
 
         # @!attribute label
         #   The display label for the property.
@@ -196,7 +196,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :mutable_definition_not_deletable,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :mutableDefinitionNotDeletable
 
         # @!attribute name
@@ -210,31 +210,31 @@ module HubspotSDK
         #   be: "unformatted", "formatted", "currency", "percentage", "duration", or
         #   "probability".
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::NumberDisplayHint]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::NumberDisplayHint]
         required :number_display_hint,
-                 enum: -> { HubspotSDK::Cms::Property::NumberDisplayHint },
+                 enum: -> { HubSpotSDK::Cms::Property::NumberDisplayHint },
                  api_name: :numberDisplayHint
 
         # @!attribute options
         #   A list of valid options for the property. This field is required for enumerated
         #   properties.
         #
-        #   @return [Array<HubspotSDK::Models::AutomationActionsOption>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption] }
+        #   @return [Array<HubSpotSDK::Models::AutomationActionsOption>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption] }
 
         # @!attribute options_are_mutable
         #   Whether options can be modified after creation.
         #
         #   @return [Boolean]
-        required :options_are_mutable, HubspotSDK::Internal::Type::Boolean, api_name: :optionsAreMutable
+        required :options_are_mutable, HubSpotSDK::Internal::Type::Boolean, api_name: :optionsAreMutable
 
         # @!attribute option_sort_strategy
         #   Specifies how to sort property options. Can be either "DISPLAY_ORDER" to defer
         #   to the displayOrder field, or "ALPHABETICAL".
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::OptionSortStrategy]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::OptionSortStrategy]
         required :option_sort_strategy,
-                 enum: -> { HubspotSDK::Cms::Property::OptionSortStrategy },
+                 enum: -> { HubSpotSDK::Cms::Property::OptionSortStrategy },
                  api_name: :optionSortStrategy
 
         # @!attribute owning_app_id
@@ -252,20 +252,20 @@ module HubspotSDK
         #   Whether the property's description is read-only.
         #
         #   @return [Boolean]
-        required :read_only_definition, HubspotSDK::Internal::Type::Boolean, api_name: :readOnlyDefinition
+        required :read_only_definition, HubSpotSDK::Internal::Type::Boolean, api_name: :readOnlyDefinition
 
         # @!attribute read_only_value
         #   Indicates if the property's value is read-only.
         #
         #   @return [Boolean]
-        required :read_only_value, HubspotSDK::Internal::Type::Boolean, api_name: :readOnlyValue
+        required :read_only_value, HubSpotSDK::Internal::Type::Boolean, api_name: :readOnlyValue
 
         # @!attribute referenced_object_type
         #   Deprecated. Use externalOptionsReferenceType instead.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::ReferencedObjectType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::ReferencedObjectType]
         required :referenced_object_type,
-                 enum: -> { HubspotSDK::Cms::Property::ReferencedObjectType },
+                 enum: -> { HubSpotSDK::Cms::Property::ReferencedObjectType },
                  api_name: :referencedObjectType
 
         # @!attribute searchable_in_global_search
@@ -273,14 +273,14 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :searchable_in_global_search,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :searchableInGlobalSearch
 
         # @!attribute search_text_analysis_mode
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::SearchTextAnalysisMode]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::SearchTextAnalysisMode]
         required :search_text_analysis_mode,
-                 enum: -> { HubspotSDK::Cms::Property::SearchTextAnalysisMode },
+                 enum: -> { HubSpotSDK::Cms::Property::SearchTextAnalysisMode },
                  api_name: :searchTextAnalysisMode
 
         # @!attribute sensitive_data_categories
@@ -289,30 +289,30 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :sensitive_data_categories,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :sensitiveDataCategories
 
         # @!attribute show_currency_symbol
         #   Whether to show the currency symbol in HubSpot's UI.
         #
         #   @return [Boolean]
-        required :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
+        required :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
         # @!attribute text_display_hint
         #   Hint for how the text is displayed and validated in HubSpot's UI. Can be:
         #   "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
         #   "ip_address", "physical_address", or "postal_code".
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::TextDisplayHint]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::TextDisplayHint]
         required :text_display_hint,
-                 enum: -> { HubspotSDK::Cms::Property::TextDisplayHint },
+                 enum: -> { HubSpotSDK::Cms::Property::TextDisplayHint },
                  api_name: :textDisplayHint
 
         # @!attribute type
         #   The data type of the property, such as string or number.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property::Type]
-        required :type, enum: -> { HubspotSDK::Cms::Property::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::Property::Type }
 
         # @!attribute updated_at
         #   The timestamp when the property was last updated, in ISO 8601 format.
@@ -322,11 +322,11 @@ module HubspotSDK
 
         # @!method initialize(allowed_object_types:, calculated:, can_archive:, can_restore:, created_at:, created_user_id:, currency_property_name:, data_sensitivity:, date_display_hint:, deleted:, description:, display_mode:, display_order:, enforce_multivalue_uniqueness:, external_options:, external_options_reference_type:, favorited:, favorited_order:, field_type:, form_field:, from_user_id:, group_name:, has_unique_value:, hidden:, hubspot_defined:, is_customized_default:, is_multi_valued:, is_partial:, label:, mutable_definition_not_deletable:, name:, number_display_hint:, options:, options_are_mutable:, option_sort_strategy:, owning_app_id:, portal_id:, read_only_definition:, read_only_value:, referenced_object_type:, searchable_in_global_search:, search_text_analysis_mode:, sensitive_data_categories:, show_currency_symbol:, text_display_hint:, type:, updated_at:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::Property} for more details.
+        #   {HubSpotSDK::Models::Cms::Property} for more details.
         #
         #   A HubSpot property
         #
-        #   @param allowed_object_types [Array<HubspotSDK::Models::Cms::ObjectTypeIDProto>] Object types permitted to use this property.
+        #   @param allowed_object_types [Array<HubSpotSDK::Models::Cms::ObjectTypeIDProto>] Object types permitted to use this property.
         #
         #   @param calculated [Boolean] Whether the property is a calculated field.
         #
@@ -340,15 +340,15 @@ module HubspotSDK
         #
         #   @param currency_property_name [String] The name of the related currency property.
         #
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Cms::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
+        #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Cms::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
         #
-        #   @param date_display_hint [Symbol, HubspotSDK::Models::Cms::Property::DateDisplayHint]
+        #   @param date_display_hint [Symbol, HubSpotSDK::Models::Cms::Property::DateDisplayHint]
         #
         #   @param deleted [Boolean] Whether the property has been deleted.
         #
         #   @param description [String] A summary of the property's purpose.
         #
-        #   @param display_mode [Symbol, HubspotSDK::Models::Cms::Property::DisplayMode] The mode in which the property is displayed. Can be: "current_value" or "all_uni
+        #   @param display_mode [Symbol, HubSpotSDK::Models::Cms::Property::DisplayMode] The mode in which the property is displayed. Can be: "current_value" or "all_uni
         #
         #   @param display_order [Integer] The position of the item relative to others in the list.
         #
@@ -388,13 +388,13 @@ module HubspotSDK
         #
         #   @param name [String] The internal name for the property.
         #
-        #   @param number_display_hint [Symbol, HubspotSDK::Models::Cms::Property::NumberDisplayHint] Hint for how a number property is displayed and validated in HubSpot's UI. Can b
+        #   @param number_display_hint [Symbol, HubSpotSDK::Models::Cms::Property::NumberDisplayHint] Hint for how a number property is displayed and validated in HubSpot's UI. Can b
         #
-        #   @param options [Array<HubspotSDK::Models::AutomationActionsOption>] A list of valid options for the property. This field is required for enumerated
+        #   @param options [Array<HubSpotSDK::Models::AutomationActionsOption>] A list of valid options for the property. This field is required for enumerated
         #
         #   @param options_are_mutable [Boolean] Whether options can be modified after creation.
         #
-        #   @param option_sort_strategy [Symbol, HubspotSDK::Models::Cms::Property::OptionSortStrategy] Specifies how to sort property options. Can be either "DISPLAY_ORDER" to defer t
+        #   @param option_sort_strategy [Symbol, HubSpotSDK::Models::Cms::Property::OptionSortStrategy] Specifies how to sort property options. Can be either "DISPLAY_ORDER" to defer t
         #
         #   @param owning_app_id [Integer]
         #
@@ -404,28 +404,28 @@ module HubspotSDK
         #
         #   @param read_only_value [Boolean] Indicates if the property's value is read-only.
         #
-        #   @param referenced_object_type [Symbol, HubspotSDK::Models::Cms::Property::ReferencedObjectType] Deprecated. Use externalOptionsReferenceType instead.
+        #   @param referenced_object_type [Symbol, HubSpotSDK::Models::Cms::Property::ReferencedObjectType] Deprecated. Use externalOptionsReferenceType instead.
         #
         #   @param searchable_in_global_search [Boolean] Whether the property is searchable globaly.
         #
-        #   @param search_text_analysis_mode [Symbol, HubspotSDK::Models::Cms::Property::SearchTextAnalysisMode]
+        #   @param search_text_analysis_mode [Symbol, HubSpotSDK::Models::Cms::Property::SearchTextAnalysisMode]
         #
         #   @param sensitive_data_categories [Array<String>] When sensitiveData is true, lists the type of sensitive data contained in the pr
         #
         #   @param show_currency_symbol [Boolean] Whether to show the currency symbol in HubSpot's UI.
         #
-        #   @param text_display_hint [Symbol, HubspotSDK::Models::Cms::Property::TextDisplayHint] Hint for how the text is displayed and validated in HubSpot's UI. Can be: "unfor
+        #   @param text_display_hint [Symbol, HubSpotSDK::Models::Cms::Property::TextDisplayHint] Hint for how the text is displayed and validated in HubSpot's UI. Can be: "unfor
         #
-        #   @param type [Symbol, HubspotSDK::Models::Cms::Property::Type] The data type of the property, such as string or number.
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::Property::Type] The data type of the property, such as string or number.
         #
         #   @param updated_at [Integer] The timestamp when the property was last updated, in ISO 8601 format.
 
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
         #
-        # @see HubspotSDK::Models::Cms::Property#data_sensitivity
+        # @see HubSpotSDK::Models::Cms::Property#data_sensitivity
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGH = :high
           NONE = :none
@@ -435,9 +435,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::Property#date_display_hint
+        # @see HubSpotSDK::Models::Cms::Property#date_display_hint
         module DateDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE = :absolute
           ABSOLUTE_WITH_RELATIVE = :absolute_with_relative
@@ -451,9 +451,9 @@ module HubspotSDK
         # The mode in which the property is displayed. Can be: "current_value" or
         # "all_unique_versions".
         #
-        # @see HubspotSDK::Models::Cms::Property#display_mode
+        # @see HubSpotSDK::Models::Cms::Property#display_mode
         module DisplayMode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_UNIQUE_VERSIONS = :all_unique_versions
           CURRENT_VALUE = :current_value
@@ -466,9 +466,9 @@ module HubspotSDK
         # be: "unformatted", "formatted", "currency", "percentage", "duration", or
         # "probability".
         #
-        # @see HubspotSDK::Models::Cms::Property#number_display_hint
+        # @see HubSpotSDK::Models::Cms::Property#number_display_hint
         module NumberDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CURRENCY = :currency
           DURATION = :duration
@@ -484,9 +484,9 @@ module HubspotSDK
         # Specifies how to sort property options. Can be either "DISPLAY_ORDER" to defer
         # to the displayOrder field, or "ALPHABETICAL".
         #
-        # @see HubspotSDK::Models::Cms::Property#option_sort_strategy
+        # @see HubSpotSDK::Models::Cms::Property#option_sort_strategy
         module OptionSortStrategy
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALPHABETICAL = :ALPHABETICAL
           DISPLAY_ORDER = :DISPLAY_ORDER
@@ -497,9 +497,9 @@ module HubspotSDK
 
         # Deprecated. Use externalOptionsReferenceType instead.
         #
-        # @see HubspotSDK::Models::Cms::Property#referenced_object_type
+        # @see HubSpotSDK::Models::Cms::Property#referenced_object_type
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART = :ABANDONED_CART
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST
@@ -667,9 +667,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::Property#search_text_analysis_mode
+        # @see HubSpotSDK::Models::Cms::Property#search_text_analysis_mode
         module SearchTextAnalysisMode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NONE = :NONE
           NOT_ANALYZED_TEXT = :NOT_ANALYZED_TEXT
@@ -682,9 +682,9 @@ module HubspotSDK
         # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
         # "ip_address", "physical_address", or "postal_code".
         #
-        # @see HubspotSDK::Models::Cms::Property#text_display_hint
+        # @see HubSpotSDK::Models::Cms::Property#text_display_hint
         module TextDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DOMAIN_NAME = :domain_name
           EMAIL = :email
@@ -701,9 +701,9 @@ module HubspotSDK
 
         # The data type of the property, such as string or number.
         #
-        # @see HubspotSDK::Models::Cms::Property#type
+        # @see HubSpotSDK::Models::Cms::Property#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           CURRENCY_NUMBER = :currency_number

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventPublicReadResponseV2 =
       Marketing::MarketingEventPublicReadResponseV2
 
     module Marketing
-      class MarketingEventPublicReadResponseV2 < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicReadResponseV2 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventPublicReadResponseV2,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
-        sig { returns(T::Array[HubspotSDK::Marketing::CrmPropertyWrapper]) }
+        sig { returns(T::Array[HubSpotSDK::Marketing::CrmPropertyWrapper]) }
         attr_accessor :custom_properties
 
         # The name of the marketing event
@@ -34,10 +34,10 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :updated_at
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::AppInfo)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::AppInfo)) }
         attr_reader :app_info
 
-        sig { params(app_info: HubspotSDK::Marketing::AppInfo::OrHash).void }
+        sig { params(app_info: HubSpotSDK::Marketing::AppInfo::OrHash).void }
         attr_writer :app_info
 
         # Number of attended contact records of a marketing event
@@ -149,11 +149,11 @@ module HubspotSDK
           params(
             created_at: Time,
             custom_properties:
-              T::Array[HubspotSDK::Marketing::CrmPropertyWrapper::OrHash],
+              T::Array[HubSpotSDK::Marketing::CrmPropertyWrapper::OrHash],
             event_name: String,
             object_id_: String,
             updated_at: Time,
-            app_info: HubspotSDK::Marketing::AppInfo::OrHash,
+            app_info: HubSpotSDK::Marketing::AppInfo::OrHash,
             attendees: Integer,
             cancellations: Integer,
             end_date_time: Time,
@@ -220,11 +220,11 @@ module HubspotSDK
             {
               created_at: Time,
               custom_properties:
-                T::Array[HubspotSDK::Marketing::CrmPropertyWrapper],
+                T::Array[HubSpotSDK::Marketing::CrmPropertyWrapper],
               event_name: String,
               object_id_: String,
               updated_at: Time,
-              app_info: HubspotSDK::Marketing::AppInfo,
+              app_info: HubSpotSDK::Marketing::AppInfo,
               attendees: Integer,
               cancellations: Integer,
               end_date_time: Time,

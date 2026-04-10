@@ -1,71 +1,71 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_booking_info =
         {
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          custom_params: HubspotSDK::Scheduler::ExternalMeetingsLinkSettings,
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          custom_params: HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings,
           is_offline: bool,
           link_id: String,
-          link_type: HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
-          branding_metadata: HubspotSDK::Scheduler::ExternalBrandingMetadata,
-          link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          link_type: HubSpotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
+          branding_metadata: HubSpotSDK::Scheduler::ExternalBrandingMetadata,
+          link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         }
 
-      class ExternalBookingInfo < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes]
+      class ExternalBookingInfo < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes]
 
-        attr_accessor custom_params: HubspotSDK::Scheduler::ExternalMeetingsLinkSettings
+        attr_accessor custom_params: HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings
 
         attr_accessor is_offline: bool
 
         attr_accessor link_id: String
 
-        attr_accessor link_type: HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type
+        attr_accessor link_type: HubSpotSDK::Models::Scheduler::ExternalBookingInfo::link_type
 
-        attr_reader branding_metadata: HubspotSDK::Scheduler::ExternalBrandingMetadata?
+        attr_reader branding_metadata: HubSpotSDK::Scheduler::ExternalBrandingMetadata?
 
         def branding_metadata=: (
-          HubspotSDK::Scheduler::ExternalBrandingMetadata
-        ) -> HubspotSDK::Scheduler::ExternalBrandingMetadata
+          HubSpotSDK::Scheduler::ExternalBrandingMetadata
+        ) -> HubSpotSDK::Scheduler::ExternalBrandingMetadata
 
-        attr_reader link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability?
+        attr_reader link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability?
 
         def link_availability=: (
-          HubspotSDK::Scheduler::ExternalLinkAvailability
-        ) -> HubspotSDK::Scheduler::ExternalLinkAvailability
+          HubSpotSDK::Scheduler::ExternalLinkAvailability
+        ) -> HubSpotSDK::Scheduler::ExternalLinkAvailability
 
         def initialize: (
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          custom_params: HubspotSDK::Scheduler::ExternalMeetingsLinkSettings,
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          custom_params: HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings,
           is_offline: bool,
           link_id: String,
-          link_type: HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
-          ?branding_metadata: HubspotSDK::Scheduler::ExternalBrandingMetadata,
-          ?link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          link_type: HubSpotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
+          ?branding_metadata: HubSpotSDK::Scheduler::ExternalBrandingMetadata,
+          ?link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         ) -> void
 
         def to_hash: -> {
-          all_users_busy_times: ::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
-          custom_params: HubspotSDK::Scheduler::ExternalMeetingsLinkSettings,
+          all_users_busy_times: ::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
+          custom_params: HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings,
           is_offline: bool,
           link_id: String,
-          link_type: HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
-          branding_metadata: HubspotSDK::Scheduler::ExternalBrandingMetadata,
-          link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+          link_type: HubSpotSDK::Models::Scheduler::ExternalBookingInfo::link_type,
+          branding_metadata: HubSpotSDK::Scheduler::ExternalBrandingMetadata,
+          link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
         }
 
         type link_type =
           :GROUP_CALENDAR | :PERSONAL_LINK | :ROUND_ROBIN_CALENDAR
 
         module LinkType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           GROUP_CALENDAR: :GROUP_CALENDAR
           PERSONAL_LINK: :PERSONAL_LINK
           ROUND_ROBIN_CALENDAR: :ROUND_ROBIN_CALENDAR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalBookingInfo::link_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalBookingInfo::link_type]
         end
       end
     end

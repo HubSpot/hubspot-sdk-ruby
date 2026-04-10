@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Owners
@@ -7,17 +7,17 @@ module HubspotSDK
           ?archived: bool,
           ?email: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicOwner]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicOwner]
 
         def get: (
           Integer owner_id,
           ?archived: bool,
-          ?id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicOwner
+          ?id_property: HubSpotSDK::Models::Crm::OwnerGetParams::id_property,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicOwner
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

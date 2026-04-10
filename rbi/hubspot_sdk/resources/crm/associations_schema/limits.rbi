@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
@@ -8,8 +8,8 @@ module HubspotSDK
           # Retrieve all configured association limits between objects, which include
           # details about how different CRM object types are associated with each other.
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+              HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
             )
           end
           def list(request_options: {})
@@ -21,8 +21,8 @@ module HubspotSDK
             params(
               to_object_type: String,
               from_object_type: String,
-              inputs: T::Array[HubspotSDK::Crm::PublicAssociationSpec::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              inputs: T::Array[HubSpotSDK::Crm::PublicAssociationSpec::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def batch_delete(
@@ -44,11 +44,11 @@ module HubspotSDK
               from_object_type: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateRequest::OrHash
+                  HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
+              HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
             )
           end
           def batch_update(
@@ -69,9 +69,9 @@ module HubspotSDK
             params(
               to_object_type: String,
               from_object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+              HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
             )
           end
           def get_by_object_types(
@@ -82,7 +82,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

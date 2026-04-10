@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class LabelsBetweenObjectPair < HubspotSDK::Internal::Type::BaseModel
+      class LabelsBetweenObjectPair < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::LabelsBetweenObjectPair,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::LabelsBetweenObjectPair,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

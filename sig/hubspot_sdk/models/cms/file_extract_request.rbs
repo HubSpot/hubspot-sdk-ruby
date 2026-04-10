@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type file_extract_request = { path: String }
 
-      class FileExtractRequest < HubspotSDK::Internal::Type::BaseModel
+      class FileExtractRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor path: String
 
         def initialize: (path: String) -> void

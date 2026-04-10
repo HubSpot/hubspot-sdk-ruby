@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       #
       # Hash of items of a given type.
       class HashOf
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
@@ -18,11 +18,11 @@ module HubspotSDK
           params(
             type_info:
               T.any(
-                HubspotSDK::Internal::AnyHash,
-                T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                HubspotSDK::Internal::Type::Converter::Input
+                HubSpotSDK::Internal::AnyHash,
+                T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                HubSpotSDK::Internal::Type::Converter::Input
               ),
-            spec: HubspotSDK::Internal::AnyHash
+            spec: HubSpotSDK::Internal::AnyHash
           ).returns(T.attached_class)
         end
         def self.[](type_info, spec = {})
@@ -45,9 +45,9 @@ module HubspotSDK
           override
             .params(
               value: T.any(T::Hash[T.anything, T.anything], T.anything),
-              state: HubspotSDK::Internal::Type::Converter::CoerceState
+              state: HubSpotSDK::Internal::Type::Converter::CoerceState
             )
-            .returns(T.any(HubspotSDK::Internal::AnyHash, T.anything))
+            .returns(T.any(HubSpotSDK::Internal::AnyHash, T.anything))
         end
         def coerce(value, state:)
         end
@@ -57,9 +57,9 @@ module HubspotSDK
           override
             .params(
               value: T.any(T::Hash[T.anything, T.anything], T.anything),
-              state: HubspotSDK::Internal::Type::Converter::DumpState
+              state: HubSpotSDK::Internal::Type::Converter::DumpState
             )
-            .returns(T.any(HubspotSDK::Internal::AnyHash, T.anything))
+            .returns(T.any(HubSpotSDK::Internal::AnyHash, T.anything))
         end
         def dump(value, state:)
         end
@@ -84,11 +84,11 @@ module HubspotSDK
           params(
             type_info:
               T.any(
-                HubspotSDK::Internal::AnyHash,
-                T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                HubspotSDK::Internal::Type::Converter::Input
+                HubSpotSDK::Internal::AnyHash,
+                T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                HubSpotSDK::Internal::Type::Converter::Input
               ),
-            spec: HubspotSDK::Internal::AnyHash
+            spec: HubSpotSDK::Internal::AnyHash
           ).void
         end
         def initialize(type_info, spec = {})

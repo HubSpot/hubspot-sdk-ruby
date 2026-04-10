@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicSurveyMonkeyValueFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicSurveyMonkeyValueFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Defines the type of filter (SURVEY_MONKEY_VALUE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
@@ -34,9 +34,9 @@ module HubspotSDK
         # @!attribute value_comparison
         #   Specifies the operation used to compare the survey answer value.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicBoolPropertyOperation, HubspotSDK::Models::Crm::PublicNumberPropertyOperation, HubspotSDK::Models::Crm::PublicStringPropertyOperation, HubspotSDK::Models::Crm::PublicDateTimePropertyOperation, HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubspotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubspotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubspotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubspotSDK::Models::Crm::PublicDatePropertyOperation, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation]
+        #   @return [HubSpotSDK::Models::Crm::PublicBoolPropertyOperation, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation, HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubSpotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubSpotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDatePropertyOperation, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation]
         required :value_comparison,
-                 union: -> { HubspotSDK::Crm::PublicSurveyMonkeyValueFilter::ValueComparison },
+                 union: -> { HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter::ValueComparison },
                  api_name: :valueComparison
 
         # @!attribute survey_answer_col_id
@@ -53,9 +53,9 @@ module HubspotSDK
 
         # @!method initialize(filter_type:, operator:, survey_id:, survey_question:, value_comparison:, survey_answer_col_id: nil, survey_answer_row_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter} for more details.
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::FilterType] Defines the type of filter (SURVEY_MONKEY_VALUE).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter::FilterType] Defines the type of filter (SURVEY_MONKEY_VALUE).
         #
         #   @param operator [String] Defines the operation to be applied within the filter (HAS_ANSWERED_SURVEY_QUEST
         #
@@ -63,7 +63,7 @@ module HubspotSDK
         #
         #   @param survey_question [String] The question from the survey used in the filter.
         #
-        #   @param value_comparison [HubspotSDK::Models::Crm::PublicBoolPropertyOperation, HubspotSDK::Models::Crm::PublicNumberPropertyOperation, HubspotSDK::Models::Crm::PublicStringPropertyOperation, HubspotSDK::Models::Crm::PublicDateTimePropertyOperation, HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubspotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubspotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubspotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubspotSDK::Models::Crm::PublicDatePropertyOperation, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the operation used to compare the survey answer value.
+        #   @param value_comparison [HubSpotSDK::Models::Crm::PublicBoolPropertyOperation, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation, HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubSpotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubSpotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDatePropertyOperation, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the operation used to compare the survey answer value.
         #
         #   @param survey_answer_col_id [String] The column ID of the survey answer used in the filter.
         #
@@ -71,9 +71,9 @@ module HubspotSDK
 
         # Defines the type of filter (SURVEY_MONKEY_VALUE).
         #
-        # @see HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SURVEY_MONKEY_VALUE = :SURVEY_MONKEY_VALUE
 
@@ -83,46 +83,46 @@ module HubspotSDK
 
         # Specifies the operation used to compare the survey answer value.
         #
-        # @see HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter#value_comparison
+        # @see HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter#value_comparison
         module ValueComparison
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicBoolPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicBoolPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicNumberPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicNumberPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicStringPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicStringPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicDateTimePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicDateTimePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedDatePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation }
+          variant -> { HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation }
 
-          variant -> { HubspotSDK::Crm::PublicComparativeDatePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicComparativeDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRollingDateRangePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation }
+          variant -> { HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation }
 
-          variant -> { HubspotSDK::Crm::PublicEnumerationPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicEnumerationPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicAllPropertyTypesOperation }
+          variant -> { HubSpotSDK::Crm::PublicAllPropertyTypesOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedNumberPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedNumberPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicMultiStringPropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicMultiStringPropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicDatePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicCalendarDatePropertyOperation }
+          variant -> { HubSpotSDK::Crm::PublicCalendarDatePropertyOperation }
 
-          variant -> { HubspotSDK::Crm::PublicTimePointOperation }
+          variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedTimeOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicBoolPropertyOperation, HubspotSDK::Models::Crm::PublicNumberPropertyOperation, HubspotSDK::Models::Crm::PublicStringPropertyOperation, HubspotSDK::Models::Crm::PublicDateTimePropertyOperation, HubspotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubspotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubspotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubspotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubspotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubspotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubspotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubspotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubspotSDK::Models::Crm::PublicDatePropertyOperation, HubspotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicBoolPropertyOperation, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation, HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubSpotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubSpotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDatePropertyOperation, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]
         end
       end
     end

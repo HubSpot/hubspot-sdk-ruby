@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_org = { company: String, department: String, title: String }
 
-      class ContactOrg < HubspotSDK::Internal::Type::BaseModel
+      class ContactOrg < HubSpotSDK::Internal::Type::BaseModel
         attr_reader company: String?
 
         def company=: (String) -> String

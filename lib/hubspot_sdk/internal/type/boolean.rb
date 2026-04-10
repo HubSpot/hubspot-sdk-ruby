@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -9,8 +9,8 @@ module HubspotSDK
       #
       # Ruby has no Boolean class; this is something for models to refer to.
       class Boolean
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         private_class_method :new
 
@@ -26,7 +26,7 @@ module HubspotSDK
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= HubspotSDK::Internal::Type::Boolean
+        def self.==(other) = other.is_a?(Class) && other <= HubSpotSDK::Internal::Type::Boolean
 
         class << self
           # @api private

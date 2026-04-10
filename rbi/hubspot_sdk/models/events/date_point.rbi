@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DatePoint < HubspotSDK::Internal::Type::BaseModel
+      class DatePoint < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Events::DatePoint, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Events::DatePoint, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(Integer) }
@@ -15,11 +15,11 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :month
 
-        sig { returns(HubspotSDK::Events::DatePoint::TimeType::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Events::DatePoint::TimeType::TaggedSymbol) }
         attr_accessor :time_type
 
         sig do
-          returns(HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol)
+          returns(HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol)
         end
         attr_accessor :timezone_source
 
@@ -57,9 +57,9 @@ module HubspotSDK
           params(
             day: Integer,
             month: Integer,
-            time_type: HubspotSDK::Events::DatePoint::TimeType::OrSymbol,
+            time_type: HubSpotSDK::Events::DatePoint::TimeType::OrSymbol,
             timezone_source:
-              HubspotSDK::Events::DatePoint::TimezoneSource::OrSymbol,
+              HubSpotSDK::Events::DatePoint::TimezoneSource::OrSymbol,
             year: Integer,
             zone_id: String,
             hour: Integer,
@@ -87,9 +87,9 @@ module HubspotSDK
             {
               day: Integer,
               month: Integer,
-              time_type: HubspotSDK::Events::DatePoint::TimeType::TaggedSymbol,
+              time_type: HubSpotSDK::Events::DatePoint::TimeType::TaggedSymbol,
               timezone_source:
-                HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol,
+                HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol,
               year: Integer,
               zone_id: String,
               hour: Integer,
@@ -103,20 +103,20 @@ module HubspotSDK
         end
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::DatePoint::TimeType)
+              T.all(Symbol, HubSpotSDK::Events::DatePoint::TimeType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DATE =
-            T.let(:DATE, HubspotSDK::Events::DatePoint::TimeType::TaggedSymbol)
+            T.let(:DATE, HubSpotSDK::Events::DatePoint::TimeType::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Events::DatePoint::TimeType::TaggedSymbol]
+              T::Array[HubSpotSDK::Events::DatePoint::TimeType::TaggedSymbol]
             )
           end
           def self.values
@@ -124,34 +124,34 @@ module HubspotSDK
         end
 
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::DatePoint::TimezoneSource)
+              T.all(Symbol, HubSpotSDK::Events::DatePoint::TimezoneSource)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CUSTOM =
             T.let(
               :CUSTOM,
-              HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
             )
           PORTAL =
             T.let(
               :PORTAL,
-              HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
             )
           USER =
             T.let(
               :USER,
-              HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
+                HubSpotSDK::Events::DatePoint::TimezoneSource::TaggedSymbol
               ]
             )
           end

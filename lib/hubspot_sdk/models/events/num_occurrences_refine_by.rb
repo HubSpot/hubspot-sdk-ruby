@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class NumOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class NumOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::NumOccurrencesRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Events::NumOccurrencesRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Events::NumOccurrencesRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Events::NumOccurrencesRefineBy::Type }
 
         # @!attribute max_occurrences
         #
@@ -20,13 +20,13 @@ module HubspotSDK
         optional :min_occurrences, Integer, api_name: :minOccurrences
 
         # @!method initialize(type:, max_occurrences: nil, min_occurrences: nil)
-        #   @param type [Symbol, HubspotSDK::Models::Events::NumOccurrencesRefineBy::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Events::NumOccurrencesRefineBy::Type]
         #   @param max_occurrences [Integer]
         #   @param min_occurrences [Integer]
 
-        # @see HubspotSDK::Models::Events::NumOccurrencesRefineBy#type
+        # @see HubSpotSDK::Models::Events::NumOccurrencesRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUM_OCCURRENCES_REFINE_BY = :NumOccurrencesRefineBy
 

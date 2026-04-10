@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class PublicUserUpdate < HubspotSDK::Internal::Type::BaseModel
+      class PublicUserUpdate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute first_name
         #   The first name of the user.
         #
@@ -32,7 +32,7 @@ module HubspotSDK
         #   The user's additional teams.
         #
         #   @return [Array<String>, nil]
-        optional :secondary_team_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryTeamIds
+        optional :secondary_team_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :secondaryTeamIds
 
         # @!method initialize(first_name: nil, last_name: nil, primary_team_id: nil, role_id: nil, secondary_team_ids: nil)
         #   @param first_name [String] The first name of the user.

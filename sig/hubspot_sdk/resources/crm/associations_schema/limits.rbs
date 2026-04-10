@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
         class Limits
           def list: (
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
 
           def batch_delete: (
             String to_object_type,
             from_object_type: String,
-            inputs: ::Array[HubspotSDK::Crm::PublicAssociationSpec],
-            ?request_options: HubspotSDK::request_opts
+            inputs: ::Array[HubSpotSDK::Crm::PublicAssociationSpec],
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def batch_update: (
             String to_object_type,
             from_object_type: String,
-            inputs: ::Array[HubspotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
+            inputs: ::Array[HubSpotSDK::Crm::PublicAssociationDefinitionConfigurationUpdateRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::BatchResponsePublicAssociationDefinitionConfigurationUpdateResult
 
           def get_by_object_types: (
             String to_object_type,
             from_object_type: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::CollectionResponsePublicAssociationDefinitionUserConfigurationNoPaging
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

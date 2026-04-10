@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::SiteSearch#search
-      class SiteSearchSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::SiteSearch#search
+      class SiteSearchSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute analytics
         #
         #   @return [Boolean, nil]
-        optional :analytics, HubspotSDK::Internal::Type::Boolean
+        optional :analytics, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute autocomplete
         #
         #   @return [Boolean, nil]
-        optional :autocomplete, HubspotSDK::Internal::Type::Boolean
+        optional :autocomplete, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute boost_limit
         #
@@ -31,12 +31,12 @@ module HubspotSDK
         # @!attribute domain
         #
         #   @return [Array<String>, nil]
-        optional :domain, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :domain, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute group_id
         #
         #   @return [Array<Integer>, nil]
-        optional :group_id, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :group_id, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute hubdb_query
         #
@@ -45,13 +45,13 @@ module HubspotSDK
 
         # @!attribute language
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Language, nil]
-        optional :language, enum: -> { HubspotSDK::Cms::SiteSearchSearchParams::Language }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Language, nil]
+        optional :language, enum: -> { HubSpotSDK::Cms::SiteSearchSearchParams::Language }
 
         # @!attribute length
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Length, nil]
-        optional :length, enum: -> { HubspotSDK::Cms::SiteSearchSearchParams::Length }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Length, nil]
+        optional :length, enum: -> { HubSpotSDK::Cms::SiteSearchSearchParams::Length }
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -62,7 +62,7 @@ module HubspotSDK
         # @!attribute match_prefix
         #
         #   @return [Boolean, nil]
-        optional :match_prefix, HubspotSDK::Internal::Type::Boolean
+        optional :match_prefix, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute offset
         #
@@ -72,7 +72,7 @@ module HubspotSDK
         # @!attribute path_prefix
         #
         #   @return [Array<String>, nil]
-        optional :path_prefix, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :path_prefix, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute popularity_boost
         #
@@ -82,7 +82,7 @@ module HubspotSDK
         # @!attribute property
         #
         #   @return [Array<String>, nil]
-        optional :property, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :property, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute q
         #
@@ -97,13 +97,13 @@ module HubspotSDK
         # @!attribute type
         #
         #   @return [Array<String>, nil]
-        optional :type, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :type, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute types
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Type>, nil]
+        #   @return [Array<Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Type>, nil]
         optional :types,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Cms::SiteSearchSearchParams::Type] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Cms::SiteSearchSearchParams::Type] }
 
         # @!method initialize(analytics: nil, autocomplete: nil, boost_limit: nil, boost_recent: nil, domain: nil, group_id: nil, hubdb_query: nil, language: nil, length: nil, limit: nil, match_prefix: nil, offset: nil, path_prefix: nil, popularity_boost: nil, property: nil, q: nil, table_id: nil, type: nil, types: nil, request_options: {})
         #   @param analytics [Boolean]
@@ -120,9 +120,9 @@ module HubspotSDK
         #
         #   @param hubdb_query [String]
         #
-        #   @param language [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Language]
+        #   @param language [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Language]
         #
-        #   @param length [Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Length]
+        #   @param length [Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Length]
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
@@ -142,12 +142,12 @@ module HubspotSDK
         #
         #   @param type [Array<String>]
         #
-        #   @param types [Array<Symbol, HubspotSDK::Models::Cms::SiteSearchSearchParams::Type>]
+        #   @param types [Array<Symbol, HubSpotSDK::Models::Cms::SiteSearchSearchParams::Type>]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Language
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AA = :aa
           AB = :ab
@@ -998,7 +998,7 @@ module HubspotSDK
         end
 
         module Length
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LONG = :LONG
           SHORT = :SHORT
@@ -1008,7 +1008,7 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LANDING_PAGE = :LANDING_PAGE
           BLOG_POST = :BLOG_POST

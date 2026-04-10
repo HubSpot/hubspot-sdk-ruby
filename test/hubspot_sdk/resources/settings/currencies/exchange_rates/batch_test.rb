@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -12,16 +12,16 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
       )
 
     assert_pattern do
-      response => HubspotSDK::Settings::BatchResponseExchangeRate
+      response => HubSpotSDK::Settings::BatchResponseExchangeRate
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate]),
         started_at: Time,
-        status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Settings::BatchResponseExchangeRate::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -34,16 +34,16 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
       @hubspot.settings.currencies.exchange_rates.batch.update(inputs: [{id: "id", conversionRate: 0}])
 
     assert_pattern do
-      response => HubspotSDK::Settings::BatchResponseExchangeRate
+      response => HubSpotSDK::Settings::BatchResponseExchangeRate
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate]),
         started_at: Time,
-        status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Settings::BatchResponseExchangeRate::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -55,16 +55,16 @@ class HubspotSDK::Test::Resources::Settings::Currencies::ExchangeRates::BatchTes
     response = @hubspot.settings.currencies.exchange_rates.batch.get(inputs: [{id: "id"}])
 
     assert_pattern do
-      response => HubspotSDK::Settings::BatchResponseExchangeRate
+      response => HubSpotSDK::Settings::BatchResponseExchangeRate
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::ExchangeRate]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::ExchangeRate]),
         started_at: Time,
-        status: HubspotSDK::Settings::BatchResponseExchangeRate::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Settings::BatchResponseExchangeRate::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

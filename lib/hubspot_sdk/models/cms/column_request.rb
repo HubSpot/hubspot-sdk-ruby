@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ColumnRequest < HubspotSDK::Internal::Type::BaseModel
+      class ColumnRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Column Id
         #
@@ -25,14 +25,14 @@ module HubspotSDK
         # @!attribute options
         #   Options to choose for select and multi-select columns
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Option>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Option] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Option>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Option] }
 
         # @!attribute type
         #   Type of the column
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::ColumnRequest::Type]
-        required :type, enum: -> { HubspotSDK::Cms::ColumnRequest::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::ColumnRequest::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::ColumnRequest::Type }
 
         # @!attribute foreign_column_id
         #   The id of the column from another table to which the column refers/points to.
@@ -61,7 +61,7 @@ module HubspotSDK
 
         # @!method initialize(id:, label:, name:, options:, type:, foreign_column_id: nil, foreign_table_id: nil, max_number_of_characters: nil, max_number_of_options: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::ColumnRequest} for more details.
+        #   {HubSpotSDK::Models::Cms::ColumnRequest} for more details.
         #
         #   @param id [Integer] Column Id
         #
@@ -69,9 +69,9 @@ module HubspotSDK
         #
         #   @param name [String] Name of the column
         #
-        #   @param options [Array<HubspotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
+        #   @param options [Array<HubSpotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
         #
-        #   @param type [Symbol, HubspotSDK::Models::Cms::ColumnRequest::Type] Type of the column
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::ColumnRequest::Type] Type of the column
         #
         #   @param foreign_column_id [Integer] The id of the column from another table to which the column refers/points to.
         #
@@ -83,9 +83,9 @@ module HubspotSDK
 
         # Type of the column
         #
-        # @see HubspotSDK::Models::Cms::ColumnRequest#type
+        # @see HubSpotSDK::Models::Cms::ColumnRequest#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN = :BOOLEAN
           CODE = :CODE

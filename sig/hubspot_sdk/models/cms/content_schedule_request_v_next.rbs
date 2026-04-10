@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_schedule_request_v_next = { id: String, publish_date: Time }
 
-      class ContentScheduleRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class ContentScheduleRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor publish_date: Time

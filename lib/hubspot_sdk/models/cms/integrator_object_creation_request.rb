@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IntegratorObjectCreationRequest < HubspotSDK::Internal::Type::BaseModel
+      class IntegratorObjectCreationRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute media_types
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
+        #   @return [Array<Symbol, HubSpotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
         required :media_types,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Cms::IntegratorObjectCreationRequest::MediaType]
+                   HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Cms::IntegratorObjectCreationRequest::MediaType]
                  },
                  api_name: :mediaTypes
 
         # @!method initialize(media_types:)
-        #   @param media_types [Array<Symbol, HubspotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
+        #   @param media_types [Array<Symbol, HubSpotSDK::Models::Cms::IntegratorObjectCreationRequest::MediaType>]
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           VIDEO = :VIDEO
           AUDIO = :AUDIO

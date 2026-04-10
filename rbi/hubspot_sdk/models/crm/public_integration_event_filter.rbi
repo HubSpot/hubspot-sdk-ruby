@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicIntegrationEventFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicIntegrationEventFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicIntegrationEventFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicIntegrationEventFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,13 +16,13 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :event_type_id
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicEventFilterMetadata]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicEventFilterMetadata]) }
         attr_accessor :filter_lines
 
         # Indicates the type of filter (INTEGRATION_EVENT).
         sig do
           returns(
-            HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -31,9 +31,9 @@ module HubspotSDK
           params(
             event_type_id: Integer,
             filter_lines:
-              T::Array[HubspotSDK::Crm::PublicEventFilterMetadata::OrHash],
+              T::Array[HubSpotSDK::Crm::PublicEventFilterMetadata::OrHash],
             filter_type:
-              HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
+              HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -50,9 +50,9 @@ module HubspotSDK
             {
               event_type_id: Integer,
               filter_lines:
-                T::Array[HubspotSDK::Crm::PublicEventFilterMetadata],
+                T::Array[HubSpotSDK::Crm::PublicEventFilterMetadata],
               filter_type:
-                HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
+                HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType::OrSymbol
             }
           )
         end
@@ -61,13 +61,13 @@ module HubspotSDK
 
         # Indicates the type of filter (INTEGRATION_EVENT).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType
+                HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -75,13 +75,13 @@ module HubspotSDK
           INTEGRATION_EVENT =
             T.let(
               :INTEGRATION_EVENT,
-              HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicIntegrationEventFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicIntegrationEventFilter::FilterType::TaggedSymbol
               ]
             )
           end

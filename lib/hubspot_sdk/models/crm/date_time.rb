@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class DateTime < HubspotSDK::Internal::Type::BaseModel
+      class DateTime < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute date_only
         #   Indicates whether the DateTime value represents only a date without a time
         #   component.
         #
         #   @return [Boolean]
-        required :date_only, HubspotSDK::Internal::Type::Boolean, api_name: :dateOnly
+        required :date_only, HubSpotSDK::Internal::Type::Boolean, api_name: :dateOnly
 
         # @!attribute time_zone_shift
         #   The integer value representing the shift in minutes from UTC for the DateTime
@@ -26,7 +26,7 @@ module HubspotSDK
 
         # @!method initialize(date_only:, time_zone_shift:, value:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::DateTime} for more details.
+        #   {HubSpotSDK::Models::Crm::DateTime} for more details.
         #
         #   @param date_only [Boolean] Indicates whether the DateTime value represents only a date without a time compo
         #

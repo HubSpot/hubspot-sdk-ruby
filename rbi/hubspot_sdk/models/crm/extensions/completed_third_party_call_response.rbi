@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CompletedThirdPartyCallResponse < HubspotSDK::Internal::Type::BaseModel
+        class CompletedThirdPartyCallResponse < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           sig do
             returns(
               T::Array[
-                HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
+                HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
               ]
             )
           end
@@ -27,8 +27,8 @@ module HubspotSDK
               caller_id_matches:
                 T::Array[
                   T.any(
-                    HubspotSDK::Crm::Extensions::ContactCallerID::OrHash,
-                    HubspotSDK::Crm::Extensions::CompanyCallerID::OrHash
+                    HubSpotSDK::Crm::Extensions::ContactCallerID::OrHash,
+                    HubSpotSDK::Crm::Extensions::CompanyCallerID::OrHash
                   )
                 ]
             ).returns(T.attached_class)
@@ -41,7 +41,7 @@ module HubspotSDK
               {
                 caller_id_matches:
                   T::Array[
-                    HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
+                    HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
                   ]
               }
             )
@@ -50,20 +50,20 @@ module HubspotSDK
           end
 
           module CallerIDMatch
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
             Variants =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Extensions::ContactCallerID,
-                  HubspotSDK::Crm::Extensions::CompanyCallerID
+                  HubSpotSDK::Crm::Extensions::ContactCallerID,
+                  HubSpotSDK::Crm::Extensions::CompanyCallerID
                 )
               end
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
+                  HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch::Variants
                 ]
               )
             end

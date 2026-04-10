@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ExternalOptionsMetaData < HubspotSDK::Internal::Type::BaseModel
+      class ExternalOptionsMetaData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter
         #
-        #   @return [HubspotSDK::Models::Cms::FilteringMetaData, nil]
-        optional :filter, -> { HubspotSDK::Cms::FilteringMetaData }
+        #   @return [HubSpotSDK::Models::Cms::FilteringMetaData, nil]
+        optional :filter, -> { HubSpotSDK::Cms::FilteringMetaData }
 
         # @!attribute related_object_type_id
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         optional :related_object_type_id, String, api_name: :relatedObjectTypeId
 
         # @!method initialize(filter: nil, related_object_type_id: nil)
-        #   @param filter [HubspotSDK::Models::Cms::FilteringMetaData]
+        #   @param filter [HubSpotSDK::Models::Cms::FilteringMetaData]
         #   @param related_object_type_id [String]
       end
     end

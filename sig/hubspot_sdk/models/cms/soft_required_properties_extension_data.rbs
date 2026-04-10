@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type soft_required_properties_extension_data =
         { is_soft_required_property: bool }
 
-      class SoftRequiredPropertiesExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class SoftRequiredPropertiesExtensionData < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor is_soft_required_property: bool
 
         def initialize: (is_soft_required_property: bool) -> void

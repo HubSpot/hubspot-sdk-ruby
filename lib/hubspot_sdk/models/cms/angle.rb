@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Angle < HubspotSDK::Internal::Type::BaseModel
+      class Angle < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute units
         #   The unit of measurement for the angle.
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Angle::Units]
-        required :units, enum: -> { HubspotSDK::Cms::Angle::Units }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Angle::Units]
+        required :units, enum: -> { HubSpotSDK::Cms::Angle::Units }
 
         # @!attribute value
         #   The numerical representation of the angle.
@@ -17,15 +17,15 @@ module HubspotSDK
         required :value, Float
 
         # @!method initialize(units:, value:)
-        #   @param units [Symbol, HubspotSDK::Models::Cms::Angle::Units] The unit of measurement for the angle.
+        #   @param units [Symbol, HubSpotSDK::Models::Cms::Angle::Units] The unit of measurement for the angle.
         #
         #   @param value [Float] The numerical representation of the angle.
 
         # The unit of measurement for the angle.
         #
-        # @see HubspotSDK::Models::Cms::Angle#units
+        # @see HubSpotSDK::Models::Cms::Angle#units
         module Units
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEG = :deg
           GRAD = :grad

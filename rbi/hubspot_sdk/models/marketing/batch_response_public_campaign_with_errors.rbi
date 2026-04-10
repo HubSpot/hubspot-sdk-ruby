@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponsePublicCampaignWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicCampaignWithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,7 +16,7 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Marketing::PublicCampaign]) }
+        sig { returns(T::Array[HubSpotSDK::Marketing::PublicCampaign]) }
         attr_accessor :results
 
         # The date and time when the batch operation began.
@@ -27,15 +27,15 @@ module HubspotSDK
         # COMPLETE, PENDING, PROCESSING.
         sig do
           returns(
-            HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol
+            HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # URLs linking to resources or documentation related to the batch operation.
@@ -62,11 +62,11 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Marketing::PublicCampaign::OrHash],
+            results: T::Array[HubSpotSDK::Marketing::PublicCampaign::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -95,11 +95,11 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Marketing::PublicCampaign],
+              results: T::Array[HubSpotSDK::Marketing::PublicCampaign],
               started_at: Time,
               status:
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -112,13 +112,13 @@ module HubspotSDK
         # The current status of the batch operation. Accepted values are: CANCELED,
         # COMPLETE, PENDING, PROCESSING.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -126,28 +126,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status::TaggedSymbol
               ]
             )
           end

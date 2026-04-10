@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelAccountUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute authorized
         #
         #   @return [Boolean, nil]
-        optional :authorized, HubspotSDK::Internal::Type::Boolean
+        optional :authorized, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute name
         #

@@ -1,34 +1,34 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicBudgetTotals < HubspotSDK::Internal::Type::BaseModel
+      class PublicBudgetTotals < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute budget_items
         #   An array of budget items associated with the campaign. Each item is represented
         #   by a PublicBudgetItem object.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicBudgetItem>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicBudgetItem>]
         required :budget_items,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicBudgetItem] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicBudgetItem] },
                  api_name: :budgetItems
 
         # @!attribute currency_code
         #   The currency code used for the budget and spend amounts, following ISO 4217
         #   standards.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode]
         required :currency_code,
-                 enum: -> { HubspotSDK::Marketing::PublicBudgetTotals::CurrencyCode },
+                 enum: -> { HubSpotSDK::Marketing::PublicBudgetTotals::CurrencyCode },
                  api_name: :currencyCode
 
         # @!attribute spend_items
         #   An array of spend items associated with the campaign. Each item is represented
         #   by a PublicSpendItem object.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicSpendItem>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicSpendItem>]
         required :spend_items,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicSpendItem] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicSpendItem] },
                  api_name: :spendItems
 
         # @!attribute budget_total
@@ -52,13 +52,13 @@ module HubspotSDK
 
         # @!method initialize(budget_items:, currency_code:, spend_items:, budget_total: nil, remaining_budget: nil, spend_total: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicBudgetTotals} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicBudgetTotals} for more details.
         #
-        #   @param budget_items [Array<HubspotSDK::Models::Marketing::PublicBudgetItem>] An array of budget items associated with the campaign. Each item is represented
+        #   @param budget_items [Array<HubSpotSDK::Models::Marketing::PublicBudgetItem>] An array of budget items associated with the campaign. Each item is represented
         #
-        #   @param currency_code [Symbol, HubspotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode] The currency code used for the budget and spend amounts, following ISO 4217 stan
+        #   @param currency_code [Symbol, HubSpotSDK::Models::Marketing::PublicBudgetTotals::CurrencyCode] The currency code used for the budget and spend amounts, following ISO 4217 stan
         #
-        #   @param spend_items [Array<HubspotSDK::Models::Marketing::PublicSpendItem>] An array of spend items associated with the campaign. Each item is represented b
+        #   @param spend_items [Array<HubSpotSDK::Models::Marketing::PublicSpendItem>] An array of spend items associated with the campaign. Each item is represented b
         #
         #   @param budget_total [Float] The total budget allocated for the campaign.
         #
@@ -69,9 +69,9 @@ module HubspotSDK
         # The currency code used for the budget and spend amounts, following ISO 4217
         # standards.
         #
-        # @see HubspotSDK::Models::Marketing::PublicBudgetTotals#currency_code
+        # @see HubSpotSDK::Models::Marketing::PublicBudgetTotals#currency_code
         module CurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

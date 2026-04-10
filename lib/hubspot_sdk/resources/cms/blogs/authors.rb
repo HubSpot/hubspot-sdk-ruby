@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Authors
-          # @return [HubspotSDK::Resources::Cms::Blogs::Authors::Batch]
+          # @return [HubSpotSDK::Resources::Cms::Blogs::Authors::Batch]
           attr_reader :batch
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorCreateParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorCreateParams} for more details.
           #
           # Create a new Blog Author.
           #
@@ -33,7 +33,7 @@ module HubspotSDK
           #
           # @param full_name [String] The full, unabbreviated name of the blog author, typically their first and last
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogAuthor::Language] The explicitly defined ISO 639 language code of the blog author.
+          # @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogAuthor::Language] The explicitly defined ISO 639 language code of the blog author.
           #
           # @param linkedin [String] URL to the blog author's LinkedIn page.
           #
@@ -49,13 +49,13 @@ module HubspotSDK
           #
           # @param website [String] URL to the website of the Blog Author.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorCreateParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/blogs/2026-03/authors",
@@ -67,7 +67,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorUpdateParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorUpdateParams} for more details.
           #
           # Sparse updates a single Blog Author object identified by the id in the path. All
           # the column values need not be specified. Only the that need to be modified can
@@ -95,7 +95,7 @@ module HubspotSDK
           #
           # @param full_name [String] Body param: The full, unabbreviated name of the blog author, typically their fir
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::Blogs::BlogAuthor::Language] Body param: The explicitly defined ISO 639 language code of the blog author.
+          # @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::BlogAuthor::Language] Body param: The explicitly defined ISO 639 language code of the blog author.
           #
           # @param linkedin [String] Body param: URL to the blog author's LinkedIn page.
           #
@@ -113,15 +113,15 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorUpdateParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorUpdateParams
           def update(object_id_, params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["cms/blogs/2026-03/authors/%1$s", object_id_],
@@ -134,7 +134,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorListParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorListParams} for more details.
           #
           # Get the list of blog authors. Supports paging and filtering. This method would
           # be useful for an integration that examined these models and used an external
@@ -164,14 +164,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorListParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/authors",
@@ -197,14 +197,14 @@ module HubspotSDK
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorDeleteParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorDeleteParams
           def delete(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorDeleteParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorDeleteParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :delete,
               path: ["cms/blogs/2026-03/authors/%1$s", object_id_],
@@ -220,19 +220,19 @@ module HubspotSDK
           #
           # @param id [String] ID of the object to add to a multi-language group.
           #
-          # @param language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
+          # @param language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::Language] Designated language of the object to add to a multi-language group.
           #
           # @param primary_id [String] ID of primary language object in multi-language group.
           #
-          # @param primary_language [Symbol, HubspotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
+          # @param primary_language [Symbol, HubSpotSDK::Models::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage] Primary language of the multi-language group.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorAttachToLangGroupParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorAttachToLangGroupParams
           def attach_to_lang_group(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorAttachToLangGroupParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorAttachToLangGroupParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/blogs/2026-03/authors/multi-language/attach-to-lang-group",
@@ -249,19 +249,19 @@ module HubspotSDK
           #
           # @param id [String] ID of the object to be cloned.
           #
-          # @param blog_author [HubspotSDK::Models::Cms::Blogs::BlogAuthor]
+          # @param blog_author [HubSpotSDK::Models::Cms::Blogs::BlogAuthor]
           #
           # @param language [String] Language of newly cloned object.
           #
           # @param primary_language [String] Primary language in multi-language group.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorCreateLanguageVariationParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorCreateLanguageVariationParams
           def create_language_variation(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorCreateLanguageVariationParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorCreateLanguageVariationParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/blogs/2026-03/authors/multi-language/create-language-variation",
@@ -278,13 +278,13 @@ module HubspotSDK
           #
           # @param id [String] ID of the object to remove from a multi-language group.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorDetachFromLangGroupParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorDetachFromLangGroupParams
           def detach_from_lang_group(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorDetachFromLangGroupParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorDetachFromLangGroupParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/blogs/2026-03/authors/multi-language/detach-from-lang-group",
@@ -305,14 +305,14 @@ module HubspotSDK
           #
           # @param property [String]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetParams
           def get(object_id_, params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["cms/blogs/2026-03/authors/%1$s", object_id_],
@@ -324,7 +324,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetCursorParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetCursorParams} for more details.
           #
           # @overload get_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
@@ -350,14 +350,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetCursorParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetCursorParams
           def get_cursor(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetCursorParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetCursorParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/authors/cursor",
@@ -376,7 +376,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams} for more details.
           #
           # @overload get_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
@@ -402,14 +402,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetCursorByQueryParams
           def get_cursor_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetCursorByQueryParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetCursorByQueryParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/authors/cursor/query",
@@ -428,7 +428,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams} for more details.
           #
           # @overload get_posts_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
@@ -454,14 +454,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetPostsCursorParams
           def get_posts_cursor(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetPostsCursorParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetPostsCursorParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/posts/cursor",
@@ -480,7 +480,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams} for more
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams} for more
           # details.
           #
           # @overload get_posts_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
@@ -507,14 +507,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetPostsCursorByQueryParams
           def get_posts_cursor_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetPostsCursorByQueryParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetPostsCursorByQueryParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/posts/cursor/query",
@@ -533,7 +533,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams} for more details.
           #
           # @overload get_tags_cursor(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
@@ -559,14 +559,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetTagsCursorParams
           def get_tags_cursor(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetTagsCursorParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetTagsCursorParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/tags/cursor",
@@ -585,7 +585,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams} for more
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams} for more
           # details.
           #
           # @overload get_tags_cursor_by_query(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
@@ -612,14 +612,14 @@ module HubspotSDK
           #
           # @param updated_before [Time]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorGetTagsCursorByQueryParams
           def get_tags_cursor_by_query(params = {})
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorGetTagsCursorByQueryParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorGetTagsCursorByQueryParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "cms/blogs/2026-03/tags/cursor/query",
@@ -643,13 +643,13 @@ module HubspotSDK
           #
           # @param id [String] ID of object to set as primary in multi-language group.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorSetNewLangPrimaryParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorSetNewLangPrimaryParams
           def set_new_lang_primary(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorSetNewLangPrimaryParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorSetNewLangPrimaryParams.dump_request(params)
             @client.request(
               method: :put,
               path: "cms/blogs/2026-03/authors/multi-language/set-new-lang-primary",
@@ -661,23 +661,23 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Cms::Blogs::AuthorUpdateLanguagesParams} for more details.
+          # {HubSpotSDK::Models::Cms::Blogs::AuthorUpdateLanguagesParams} for more details.
           #
           # Explicitly set new languages for each Blog Author in a multi-language group.
           #
           # @overload update_languages(languages:, primary_id:, request_options: {})
           #
-          # @param languages [Hash{Symbol=>Symbol, HubspotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
+          # @param languages [Hash{Symbol=>Symbol, HubSpotSDK::Models::Cms::UpdateLanguagesRequestVNext::Language}] Map of object IDs to associated languages of object in the multi-language group.
           #
           # @param primary_id [String] ID of the primary object in the multi-language group.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [StringIO]
           #
-          # @see HubspotSDK::Models::Cms::Blogs::AuthorUpdateLanguagesParams
+          # @see HubSpotSDK::Models::Cms::Blogs::AuthorUpdateLanguagesParams
           def update_languages(params)
-            parsed, options = HubspotSDK::Cms::Blogs::AuthorUpdateLanguagesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Blogs::AuthorUpdateLanguagesParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/blogs/2026-03/authors/multi-language/update-languages",
@@ -690,10 +690,10 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Cms::Blogs::Authors::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Cms::Blogs::Authors::Batch.new(client: client)
           end
         end
       end

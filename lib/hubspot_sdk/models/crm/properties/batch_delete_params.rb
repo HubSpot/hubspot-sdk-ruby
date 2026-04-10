@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Properties
-        # @see HubspotSDK::Resources::Crm::Properties::Batch#delete
-        class BatchDeleteParams < HubspotSDK::Models::BatchInputPropertyName
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::Properties::Batch#delete
+        class BatchDeleteParams < HubSpotSDK::Models::BatchInputPropertyName
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute object_type
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(object_type:, request_options: {})
           #   @param object_type [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

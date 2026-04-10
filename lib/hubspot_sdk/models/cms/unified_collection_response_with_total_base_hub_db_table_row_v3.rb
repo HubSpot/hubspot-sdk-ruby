@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3 }
+        variant -> { HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3 }
 
-        variant -> { HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3 }
+        variant -> { HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3 }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3)]
+        #   @return [Array(HubSpotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3)]
       end
     end
   end

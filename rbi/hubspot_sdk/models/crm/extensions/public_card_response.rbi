@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class PublicCardResponse < HubspotSDK::Internal::Type::BaseModel
+        class PublicCardResponse < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::PublicCardResponse,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::PublicCardResponse,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -17,12 +17,12 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :id
 
-          sig { returns(HubspotSDK::Crm::Extensions::CardActions) }
+          sig { returns(HubSpotSDK::Crm::Extensions::CardActions) }
           attr_reader :actions
 
           sig do
             params(
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash
             ).void
           end
           attr_writer :actions
@@ -30,26 +30,26 @@ module HubspotSDK
           # A list of actions performed on the card, including creation, deletion, and
           # updates.
           sig do
-            returns(T::Array[HubspotSDK::Crm::Extensions::CardAuditResponse])
+            returns(T::Array[HubSpotSDK::Crm::Extensions::CardAuditResponse])
           end
           attr_accessor :audit_history
 
-          sig { returns(HubspotSDK::Crm::Extensions::CardDisplayBody) }
+          sig { returns(HubSpotSDK::Crm::Extensions::CardDisplayBody) }
           attr_reader :display_
 
           sig do
             params(
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash
             ).void
           end
           attr_writer :display_
 
-          sig { returns(HubspotSDK::Crm::Extensions::PublicCardFetchBody) }
+          sig { returns(HubSpotSDK::Crm::Extensions::PublicCardFetchBody) }
           attr_reader :fetch
 
           sig do
             params(
-              fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody::OrHash
+              fetch: HubSpotSDK::Crm::Extensions::PublicCardFetchBody::OrHash
             ).void
           end
           attr_writer :fetch
@@ -75,13 +75,13 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash,
               audit_history:
                 T::Array[
-                  HubspotSDK::Crm::Extensions::CardAuditResponse::OrHash
+                  HubSpotSDK::Crm::Extensions::CardAuditResponse::OrHash
                 ],
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody::OrHash,
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubSpotSDK::Crm::Extensions::PublicCardFetchBody::OrHash,
               title: String,
               created_at: Time,
               updated_at: Time
@@ -109,11 +109,11 @@ module HubspotSDK
             override.returns(
               {
                 id: String,
-                actions: HubspotSDK::Crm::Extensions::CardActions,
+                actions: HubSpotSDK::Crm::Extensions::CardActions,
                 audit_history:
-                  T::Array[HubspotSDK::Crm::Extensions::CardAuditResponse],
-                display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-                fetch: HubspotSDK::Crm::Extensions::PublicCardFetchBody,
+                  T::Array[HubSpotSDK::Crm::Extensions::CardAuditResponse],
+                display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+                fetch: HubSpotSDK::Crm::Extensions::PublicCardFetchBody,
                 title: String,
                 created_at: Time,
                 updated_at: Time

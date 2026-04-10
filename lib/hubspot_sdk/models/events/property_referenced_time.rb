@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class PropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+      class PropertyReferencedTime < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute property
         #
         #   @return [String]
@@ -11,23 +11,23 @@ module HubspotSDK
 
         # @!attribute reference_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Events::PropertyReferencedTime::ReferenceType },
+                 enum: -> { HubSpotSDK::Events::PropertyReferencedTime::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute time_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::TimeType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::TimeType]
         required :time_type,
-                 enum: -> { HubspotSDK::Events::PropertyReferencedTime::TimeType },
+                 enum: -> { HubSpotSDK::Events::PropertyReferencedTime::TimeType },
                  api_name: :timeType
 
         # @!attribute timezone_source
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::TimezoneSource]
+        #   @return [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::TimezoneSource]
         required :timezone_source,
-                 enum: -> { HubspotSDK::Events::PropertyReferencedTime::TimezoneSource },
+                 enum: -> { HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource },
                  api_name: :timezoneSource
 
         # @!attribute zone_id
@@ -37,14 +37,14 @@ module HubspotSDK
 
         # @!method initialize(property:, reference_type:, time_type:, timezone_source:, zone_id:)
         #   @param property [String]
-        #   @param reference_type [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::ReferenceType]
-        #   @param time_type [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::TimeType]
-        #   @param timezone_source [Symbol, HubspotSDK::Models::Events::PropertyReferencedTime::TimezoneSource]
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::ReferenceType]
+        #   @param time_type [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::TimeType]
+        #   @param timezone_source [Symbol, HubSpotSDK::Models::Events::PropertyReferencedTime::TimezoneSource]
         #   @param zone_id [String]
 
-        # @see HubspotSDK::Models::Events::PropertyReferencedTime#reference_type
+        # @see HubSpotSDK::Models::Events::PropertyReferencedTime#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ANNIVERSARY = :ANNIVERSARY
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION = :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
@@ -56,9 +56,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::PropertyReferencedTime#time_type
+        # @see HubSpotSDK::Models::Events::PropertyReferencedTime#time_type
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PROPERTY_REFERENCED = :PROPERTY_REFERENCED
 
@@ -66,9 +66,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::PropertyReferencedTime#timezone_source
+        # @see HubSpotSDK::Models::Events::PropertyReferencedTime#timezone_source
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOM = :CUSTOM
           PORTAL = :PORTAL

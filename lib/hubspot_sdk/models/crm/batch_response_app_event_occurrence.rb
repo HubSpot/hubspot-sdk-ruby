@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseAppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseAppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #
         #   @return [Time]
@@ -11,8 +11,8 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AppEventOccurrence>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AppEventOccurrence] }
+        #   @return [Array<HubSpotSDK::Models::Crm::AppEventOccurrence>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AppEventOccurrence] }
 
         # @!attribute started_at
         #
@@ -21,18 +21,18 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseAppEventOccurrence::Status]
-        required :status, enum: -> { HubspotSDK::Crm::BatchResponseAppEventOccurrence::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponseAppEventOccurrence::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::BatchResponseAppEventOccurrence::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #
@@ -46,17 +46,17 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubspotSDK::Models::Crm::AppEventOccurrence>]
+        #   @param results [Array<HubSpotSDK::Models::Crm::AppEventOccurrence>]
         #   @param started_at [Time]
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseAppEventOccurrence::Status]
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponseAppEventOccurrence::Status]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #   @param links [Hash{Symbol=>String}]
         #   @param num_errors [Integer]
         #   @param requested_at [Time]
 
-        # @see HubspotSDK::Models::Crm::BatchResponseAppEventOccurrence#status
+        # @see HubSpotSDK::Models::Crm::BatchResponseAppEventOccurrence#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

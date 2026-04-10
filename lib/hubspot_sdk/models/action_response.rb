@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ActionResponse < HubspotSDK::Internal::Type::BaseModel
+    class ActionResponse < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute completed_at
       #   The timestamp indicating when the action was completed.
       #
@@ -19,15 +19,15 @@ module HubspotSDK
       #   The current status of the action, with possible values: CANCELED, COMPLETE,
       #   PENDING, PROCESSING.
       #
-      #   @return [Symbol, HubspotSDK::Models::ActionResponse::Status]
-      required :status, enum: -> { HubspotSDK::ActionResponse::Status }
+      #   @return [Symbol, HubSpotSDK::Models::ActionResponse::Status]
+      required :status, enum: -> { HubSpotSDK::ActionResponse::Status }
 
       # @!attribute links
       #   A map of link names to associated URIs containing documentation about the error
       #   or recommended remediation steps
       #
       #   @return [Hash{Symbol=>String}, nil]
-      optional :links, HubspotSDK::Internal::Type::HashOf[String]
+      optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
       # @!attribute requested_at
       #   The timestamp indicating when the action was requested.
@@ -37,13 +37,13 @@ module HubspotSDK
 
       # @!method initialize(completed_at:, started_at:, status:, links: nil, requested_at: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::ActionResponse} for more details.
+      #   {HubSpotSDK::Models::ActionResponse} for more details.
       #
       #   @param completed_at [Time] The timestamp indicating when the action was completed.
       #
       #   @param started_at [Time] The timestamp indicating when the action was started.
       #
-      #   @param status [Symbol, HubspotSDK::Models::ActionResponse::Status] The current status of the action, with possible values: CANCELED, COMPLETE, PEND
+      #   @param status [Symbol, HubSpotSDK::Models::ActionResponse::Status] The current status of the action, with possible values: CANCELED, COMPLETE, PEND
       #
       #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs containing documentation about the error
       #
@@ -52,9 +52,9 @@ module HubspotSDK
       # The current status of the action, with possible values: CANCELED, COMPLETE,
       # PENDING, PROCESSING.
       #
-      # @see HubspotSDK::Models::ActionResponse#status
+      # @see HubSpotSDK::Models::ActionResponse#status
       module Status
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         CANCELED = :CANCELED
         COMPLETE = :COMPLETE

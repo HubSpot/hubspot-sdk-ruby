@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponsePublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicAssociationMultiWithLabel < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,7 +17,7 @@ module HubspotSDK
         attr_accessor :completed_at
 
         sig do
-          returns(T::Array[HubspotSDK::Crm::PublicAssociationMultiWithLabel])
+          returns(T::Array[HubSpotSDK::Crm::PublicAssociationMultiWithLabel])
         end
         attr_accessor :results
 
@@ -29,7 +29,7 @@ module HubspotSDK
         # or "COMPLETE".
         sig do
           returns(
-            HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+            HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -53,11 +53,11 @@ module HubspotSDK
             completed_at: Time,
             results:
               T::Array[
-                HubspotSDK::Crm::PublicAssociationMultiWithLabel::OrHash
+                HubSpotSDK::Crm::PublicAssociationMultiWithLabel::OrHash
               ],
             started_at: Time,
             status:
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::OrSymbol,
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -83,10 +83,10 @@ module HubspotSDK
             {
               completed_at: Time,
               results:
-                T::Array[HubspotSDK::Crm::PublicAssociationMultiWithLabel],
+                T::Array[HubSpotSDK::Crm::PublicAssociationMultiWithLabel],
               started_at: Time,
               status:
-                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol,
+                HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -98,13 +98,13 @@ module HubspotSDK
         # The status of the batch processing request: "PENDING", "PROCESSING", "CANCELED",
         # or "COMPLETE".
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status
+                HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -112,28 +112,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
+                HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel::Status::TaggedSymbol
               ]
             )
           end

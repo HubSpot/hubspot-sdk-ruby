@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
         type folder_batch_get_params =
-          { archived: bool } & HubspotSDK::Internal::Type::request_parameters
+          { archived: bool } & HubSpotSDK::Internal::Type::request_parameters
 
-        class FolderBatchGetParams < HubspotSDK::Models::BatchInputString
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class FolderBatchGetParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def archived: -> bool?
 
@@ -15,12 +15,12 @@ module HubspotSDK
 
           def initialize: (
             ?archived: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             archived: bool,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

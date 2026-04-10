@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class LayoutSection < HubspotSDK::Internal::Type::BaseModel
+      class LayoutSection < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute cells
         #
-        #   @return [Array<HubspotSDK::Models::Cms::LayoutSection>]
-        required :cells, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::LayoutSection] }
+        #   @return [Array<HubSpotSDK::Models::Cms::LayoutSection>]
+        required :cells, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::LayoutSection] }
 
         # @!attribute css_class
         #   The CSS class applied to the layout section.
@@ -43,25 +43,25 @@ module HubspotSDK
         #   null
         #
         #   @return [Hash{Symbol=>Object}]
-        required :params, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :params, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute row_meta_data
         #
-        #   @return [Array<HubspotSDK::Models::Cms::RowMetaData>]
+        #   @return [Array<HubSpotSDK::Models::Cms::RowMetaData>]
         required :row_meta_data,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::RowMetaData] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::RowMetaData] },
                  api_name: :rowMetaData
 
         # @!attribute rows
         #
-        #   @return [Array<Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}>]
+        #   @return [Array<Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}>]
         required :rows,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::LayoutSection]] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::LayoutSection]] }
 
         # @!attribute styles
         #
-        #   @return [HubspotSDK::Models::Cms::Styles]
-        required :styles, -> { HubspotSDK::Cms::Styles }
+        #   @return [HubSpotSDK::Models::Cms::Styles]
+        required :styles, -> { HubSpotSDK::Cms::Styles }
 
         # @!attribute type
         #   The type of the layout section.
@@ -82,7 +82,7 @@ module HubspotSDK
         required :x, Integer
 
         # @!method initialize(cells:, css_class:, css_id:, css_style:, label:, name:, params:, row_meta_data:, rows:, styles:, type:, w:, x:)
-        #   @param cells [Array<HubspotSDK::Models::Cms::LayoutSection>]
+        #   @param cells [Array<HubSpotSDK::Models::Cms::LayoutSection>]
         #
         #   @param css_class [String] The CSS class applied to the layout section.
         #
@@ -96,11 +96,11 @@ module HubspotSDK
         #
         #   @param params [Hash{Symbol=>Object}] null
         #
-        #   @param row_meta_data [Array<HubspotSDK::Models::Cms::RowMetaData>]
+        #   @param row_meta_data [Array<HubSpotSDK::Models::Cms::RowMetaData>]
         #
-        #   @param rows [Array<Hash{Symbol=>HubspotSDK::Models::Cms::LayoutSection}>]
+        #   @param rows [Array<Hash{Symbol=>HubSpotSDK::Models::Cms::LayoutSection}>]
         #
-        #   @param styles [HubspotSDK::Models::Cms::Styles]
+        #   @param styles [HubSpotSDK::Models::Cms::Styles]
         #
         #   @param type [String] The type of the layout section.
         #

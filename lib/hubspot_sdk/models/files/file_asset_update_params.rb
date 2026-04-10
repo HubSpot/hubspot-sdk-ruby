@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::FileAssets#update
-      class FileAssetUpdateParams < HubspotSDK::Models::Files::FileUpdateInput
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::FileAssets#update
+      class FileAssetUpdateParams < HubSpotSDK::Models::Files::FileUpdateInput
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute file_id
         #
@@ -15,7 +15,7 @@ module HubspotSDK
 
         # @!method initialize(file_id:, request_options: {})
         #   @param file_id [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#update_event_visibility_settings
-      class EventVisibilityChange < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#update_event_visibility_settings
+      class EventVisibilityChange < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::EventVisibilityChange::EventType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::EventVisibilityChange::EventType]
         required :event_type,
                  enum: -> {
-                   HubspotSDK::Cms::EventVisibilityChange::EventType
+                   HubSpotSDK::Cms::EventVisibilityChange::EventType
                  },
                  api_name: :eventType
 
@@ -22,28 +22,28 @@ module HubspotSDK
         # @!attribute show_in_reporting
         #
         #   @return [Boolean, nil]
-        optional :show_in_reporting, HubspotSDK::Internal::Type::Boolean, api_name: :showInReporting
+        optional :show_in_reporting, HubSpotSDK::Internal::Type::Boolean, api_name: :showInReporting
 
         # @!attribute show_in_timeline
         #
         #   @return [Boolean, nil]
-        optional :show_in_timeline, HubspotSDK::Internal::Type::Boolean, api_name: :showInTimeline
+        optional :show_in_timeline, HubSpotSDK::Internal::Type::Boolean, api_name: :showInTimeline
 
         # @!attribute show_in_workflows
         #
         #   @return [Boolean, nil]
-        optional :show_in_workflows, HubspotSDK::Internal::Type::Boolean, api_name: :showInWorkflows
+        optional :show_in_workflows, HubSpotSDK::Internal::Type::Boolean, api_name: :showInWorkflows
 
         # @!method initialize(event_type:, updated_at:, show_in_reporting: nil, show_in_timeline: nil, show_in_workflows: nil)
-        #   @param event_type [Symbol, HubspotSDK::Models::Cms::EventVisibilityChange::EventType]
+        #   @param event_type [Symbol, HubSpotSDK::Models::Cms::EventVisibilityChange::EventType]
         #   @param updated_at [Integer]
         #   @param show_in_reporting [Boolean]
         #   @param show_in_timeline [Boolean]
         #   @param show_in_workflows [Boolean]
 
-        # @see HubspotSDK::Models::Cms::EventVisibilityChange#event_type
+        # @see HubSpotSDK::Models::Cms::EventVisibilityChange#event_type
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL = :ALL
           ATTENTION_SPAN = :ATTENTION_SPAN

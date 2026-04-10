@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      # @see HubspotSDK::Resources::Settings::Currencies#get_company_currency
-      class CompanyCurrency < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Settings::Currencies#get_company_currency
+      class CompanyCurrency < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The currency code for the company currency
         #

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineUpdateStageParams < HubspotSDK::Models::Crm::PipelineStagePatchInput
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PipelineUpdateStageParams < HubSpotSDK::Models::Crm::PipelineStagePatchInput
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PipelineUpdateStageParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PipelineUpdateStageParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -29,7 +29,7 @@ module HubspotSDK
             object_type: String,
             pipeline_id: String,
             stage_id: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(object_type:, pipeline_id:, stage_id:, request_options: {})
@@ -41,7 +41,7 @@ module HubspotSDK
               object_type: String,
               pipeline_id: String,
               stage_id: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

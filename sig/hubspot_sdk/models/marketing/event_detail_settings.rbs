@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type event_detail_settings =
         { app_id: Integer, event_details_url: String }
 
-      class EventDetailSettings < HubspotSDK::Internal::Type::BaseModel
+      class EventDetailSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor app_id: Integer
 
         attr_accessor event_details_url: String

@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type unified_collection_response_with_total_base_hub_db_table_row_v3 =
-        HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
-        | HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
+        HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
+        | HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
 
       module UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        def self?.variants: -> ::Array[HubspotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3]
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Cms::unified_collection_response_with_total_base_hub_db_table_row_v3]
       end
     end
   end

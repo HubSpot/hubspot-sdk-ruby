@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type euler =
         {
-          operator: HubspotSDK::Models::Cms::Euler::operator,
+          operator: HubSpotSDK::Models::Cms::Euler::operator,
           property_name: String,
           value: Float
         }
 
-      class Euler < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::Euler::operator
+      class Euler < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::Euler::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (Float) -> Float
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::Euler::operator,
+          operator: HubSpotSDK::Models::Cms::Euler::operator,
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::Euler::operator,
+          operator: HubSpotSDK::Models::Cms::Euler::operator,
           property_name: String,
           value: Float
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :EULER
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EULER: :EULER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Euler::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Euler::operator]
         end
       end
     end

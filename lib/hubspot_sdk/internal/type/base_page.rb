@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -18,7 +18,7 @@ module HubspotSDK
 
         # @api public
         #
-        # @raise [HubspotSDK::Errors::APIError]
+        # @raise [HubSpotSDK::Errors::APIError]
         # @return [self]
         def next_page = (raise NotImplementedError)
 
@@ -37,7 +37,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Internal::Transport::BaseClient]
+        # @param client [HubSpotSDK::Internal::Transport::BaseClient]
         # @param req [Hash{Symbol=>Object}]
         # @param headers [Hash{String=>String}]
         # @param page_data [Object]

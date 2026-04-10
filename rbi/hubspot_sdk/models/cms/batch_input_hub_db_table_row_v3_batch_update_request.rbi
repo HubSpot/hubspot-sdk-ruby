@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BatchInputHubDBTableRowV3BatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputHubDBTableRowV3BatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BatchInputHubDBTableRowV3BatchUpdateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BatchInputHubDBTableRowV3BatchUpdateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
-          returns(T::Array[HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest])
+          returns(T::Array[HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest])
         end
         attr_accessor :inputs
 
@@ -21,7 +21,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
+                HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -32,7 +32,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest]
+                T::Array[HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest]
             }
           )
         end

@@ -1,31 +1,31 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationsForObject < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationsForObject < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAssociationsForObject,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAssociationsForObject,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Contains the Id of a Public Object
-        sig { returns(HubspotSDK::PublicObjectID) }
+        sig { returns(HubSpotSDK::PublicObjectID) }
         attr_reader :to
 
-        sig { params(to: HubspotSDK::PublicObjectID::OrHash).void }
+        sig { params(to: HubSpotSDK::PublicObjectID::OrHash).void }
         attr_writer :to
 
-        sig { returns(T::Array[HubspotSDK::AssociationSpec]) }
+        sig { returns(T::Array[HubSpotSDK::AssociationSpec]) }
         attr_accessor :types
 
         sig do
           params(
-            to: HubspotSDK::PublicObjectID::OrHash,
-            types: T::Array[HubspotSDK::AssociationSpec::OrHash]
+            to: HubSpotSDK::PublicObjectID::OrHash,
+            types: T::Array[HubSpotSDK::AssociationSpec::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -38,8 +38,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              to: HubspotSDK::PublicObjectID,
-              types: T::Array[HubspotSDK::AssociationSpec]
+              to: HubSpotSDK::PublicObjectID,
+              types: T::Array[HubSpotSDK::AssociationSpec]
             }
           )
         end

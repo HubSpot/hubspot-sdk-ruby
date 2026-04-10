@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type exchange_rate_update_request =
         { id: String, conversion_rate: Float, effective_at: Time }
 
-      class ExchangeRateUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRateUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor conversion_rate: Float

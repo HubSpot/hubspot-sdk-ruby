@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign_asset =
         { id: String, metrics: ::Hash[Symbol, Float], name: String }
 
-      class PublicCampaignAsset < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignAsset < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_reader metrics: ::Hash[Symbol, Float]?

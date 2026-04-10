@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_budget_item =
@@ -12,7 +12,7 @@ module HubspotSDK
           description: String
         }
 
-      class PublicBudgetItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicBudgetItem < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor amount: Float

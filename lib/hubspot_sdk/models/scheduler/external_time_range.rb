@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalTimeRange < HubspotSDK::Internal::Type::BaseModel
+      class ExternalTimeRange < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute end_
         #   The end time of the time range, represented as Unix time in milliseconds.
         #

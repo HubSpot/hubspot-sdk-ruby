@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -16,8 +16,8 @@ module HubspotSDK
       # We can therefore convert string values to Symbols, but can't convert other
       # values safely.
       module Enum
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # All of the valid Symbol values for this enum.
         sig do
@@ -48,7 +48,7 @@ module HubspotSDK
           override
             .params(
               value: T.any(String, Symbol, T.anything),
-              state: HubspotSDK::Internal::Type::Converter::CoerceState
+              state: HubSpotSDK::Internal::Type::Converter::CoerceState
             )
             .returns(T.any(Symbol, T.anything))
         end
@@ -60,7 +60,7 @@ module HubspotSDK
           override
             .params(
               value: T.any(Symbol, T.anything),
-              state: HubspotSDK::Internal::Type::Converter::DumpState
+              state: HubSpotSDK::Internal::Type::Converter::DumpState
             )
             .returns(T.any(Symbol, T.anything))
         end

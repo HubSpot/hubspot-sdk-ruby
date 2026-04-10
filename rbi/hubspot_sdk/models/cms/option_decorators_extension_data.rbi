@@ -1,23 +1,23 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class OptionDecoratorsExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class OptionDecoratorsExtensionData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::OptionDecoratorsExtensionData,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Hash[Symbol, HubspotSDK::Cms::OptionDecorations]) }
+        sig { returns(T::Hash[Symbol, HubSpotSDK::Cms::OptionDecorations]) }
         attr_accessor :option_decorators
 
         sig do
           returns(
-            HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+            HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
           )
         end
         attr_accessor :option_decorator_style
@@ -25,9 +25,9 @@ module HubspotSDK
         sig do
           params(
             option_decorators:
-              T::Hash[Symbol, HubspotSDK::Cms::OptionDecorations::OrHash],
+              T::Hash[Symbol, HubSpotSDK::Cms::OptionDecorations::OrHash],
             option_decorator_style:
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::OrSymbol
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(option_decorators:, option_decorator_style:)
@@ -37,9 +37,9 @@ module HubspotSDK
           override.returns(
             {
               option_decorators:
-                T::Hash[Symbol, HubspotSDK::Cms::OptionDecorations],
+                T::Hash[Symbol, HubSpotSDK::Cms::OptionDecorations],
               option_decorator_style:
-                HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+                HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
             }
           )
         end
@@ -47,13 +47,13 @@ module HubspotSDK
         end
 
         module OptionDecoratorStyle
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle
+                HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -61,23 +61,23 @@ module HubspotSDK
           LABEL_ONLY =
             T.let(
               :LABEL_ONLY,
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
             )
           LABEL_WITH_BADGE =
             T.let(
               :LABEL_WITH_BADGE,
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
             )
           LABEL_WITH_COLOR =
             T.let(
               :LABEL_WITH_COLOR,
-              HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+              HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
+                HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle::TaggedSymbol
               ]
             )
           end

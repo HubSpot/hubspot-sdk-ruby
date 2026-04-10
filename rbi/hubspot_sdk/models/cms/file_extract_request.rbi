@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FileExtractRequest < HubspotSDK::Internal::Type::BaseModel
+      class FileExtractRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::FileExtractRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::FileExtractRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

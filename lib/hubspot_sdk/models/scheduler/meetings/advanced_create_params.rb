@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
-        # @see HubspotSDK::Resources::Scheduler::Meetings::Advanced#create
-        class AdvancedCreateParams < HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Scheduler::Meetings::Advanced#create
+        class AdvancedCreateParams < HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute organizer_user_id
           #
@@ -16,7 +16,7 @@ module HubspotSDK
 
           # @!method initialize(organizer_user_id:, request_options: {})
           #   @param organizer_user_id [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

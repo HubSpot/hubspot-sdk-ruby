@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Automation::Actions::CallbacksTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Automation::Actions::CallbacksTest < HubSpotSDK::Test::ResourceTest
   def test_complete_required_params
     skip("Mock server tests are disabled")
 

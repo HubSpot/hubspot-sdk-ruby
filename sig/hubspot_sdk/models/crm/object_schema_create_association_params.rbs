@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type object_schema_create_association_params =
-        { object_type: String } & HubspotSDK::Internal::Type::request_parameters
+        { object_type: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class ObjectSchemaCreateAssociationParams < HubspotSDK::Models::AssociationDefinitionEgg
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class ObjectSchemaCreateAssociationParams < HubSpotSDK::Models::AssociationDefinitionEgg
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def object_type: -> String
 
@@ -14,12 +14,12 @@ module HubspotSDK
 
         def initialize: (
           object_type: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_type: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

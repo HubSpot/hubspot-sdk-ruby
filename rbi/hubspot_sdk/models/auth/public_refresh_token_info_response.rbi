@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Auth
-      class PublicRefreshTokenInfoResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicRefreshTokenInfoResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Auth::PublicRefreshTokenInfoResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Auth::PublicRefreshTokenInfoResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -35,7 +35,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
+            HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
           )
         end
         attr_accessor :token_use
@@ -65,7 +65,7 @@ module HubspotSDK
             scopes: T::Array[String],
             token_type: String,
             token_use:
-              HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::OrSymbol,
+              HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::OrSymbol,
             user_id: Integer,
             hub_domain: String,
             user: String
@@ -97,7 +97,7 @@ module HubspotSDK
               scopes: T::Array[String],
               token_type: String,
               token_use:
-                HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol,
+                HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol,
               user_id: Integer,
               hub_domain: String,
               user: String
@@ -108,13 +108,13 @@ module HubspotSDK
         end
 
         module TokenUse
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse
+                HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -122,13 +122,13 @@ module HubspotSDK
           REFRESH_TOKEN =
             T.let(
               :refresh_token,
-              HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
+              HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
+                HubSpotSDK::Auth::PublicRefreshTokenInfoResponse::TokenUse::TaggedSymbol
               ]
             )
           end

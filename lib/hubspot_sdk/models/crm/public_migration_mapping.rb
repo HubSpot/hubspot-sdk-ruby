@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#get_id_mapping
-      class PublicMigrationMapping < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#get_id_mapping
+      class PublicMigrationMapping < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute legacy_list_id
         #   The legacy list id for the list
         #

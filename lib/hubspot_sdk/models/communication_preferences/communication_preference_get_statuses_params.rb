@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      # @see HubspotSDK::Resources::CommunicationPreferences#get_statuses
-      class CommunicationPreferenceGetStatusesParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::CommunicationPreferences#get_statuses
+      class CommunicationPreferenceGetStatusesParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute subscriber_id_string
         #
@@ -15,9 +15,9 @@ module HubspotSDK
 
         # @!attribute channel
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
         required :channel,
-                 enum: -> { HubspotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel }
+                 enum: -> { HubSpotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel }
 
         # @!attribute business_unit_id
         #
@@ -26,12 +26,12 @@ module HubspotSDK
 
         # @!method initialize(subscriber_id_string:, channel:, business_unit_id: nil, request_options: {})
         #   @param subscriber_id_string [String]
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
+        #   @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
         #   @param business_unit_id [Integer]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
 

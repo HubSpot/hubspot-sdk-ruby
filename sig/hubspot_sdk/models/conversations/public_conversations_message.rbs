@@ -1,42 +1,42 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_conversations_message =
         {
           id: String,
           archived: bool,
-          attachments: ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::attachment],
           channel_account_id: String,
           channel_id: String,
-          client: HubspotSDK::Conversations::PublicClient,
+          client: HubSpotSDK::Conversations::PublicClient,
           conversations_thread_id: String,
           created_at: Time,
           created_by: String,
-          direction: HubspotSDK::Models::Conversations::PublicConversationsMessage::direction,
-          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
-          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          direction: HubSpotSDK::Models::Conversations::PublicConversationsMessage::direction,
+          recipients: ::Array[HubSpotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubSpotSDK::Conversations::PublicSender],
           text: String,
-          truncation_status: HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
-          type: HubspotSDK::Models::Conversations::PublicConversationsMessage::type_,
+          truncation_status: HubSpotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
+          type: HubSpotSDK::Models::Conversations::PublicConversationsMessage::type_,
           in_reply_to_id: String,
           rich_text: String,
-          status: HubspotSDK::Conversations::PublicMessageStatus,
+          status: HubSpotSDK::Conversations::PublicMessageStatus,
           subject: String,
           updated_at: Time
         }
 
-      class PublicConversationsMessage < HubspotSDK::Internal::Type::BaseModel
+      class PublicConversationsMessage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
 
-        attr_accessor attachments: ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::attachment]
+        attr_accessor attachments: ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::attachment]
 
         attr_accessor channel_account_id: String
 
         attr_accessor channel_id: String
 
-        attr_accessor client: HubspotSDK::Conversations::PublicClient
+        attr_accessor client: HubSpotSDK::Conversations::PublicClient
 
         attr_accessor conversations_thread_id: String
 
@@ -44,17 +44,17 @@ module HubspotSDK
 
         attr_accessor created_by: String
 
-        attr_accessor direction: HubspotSDK::Models::Conversations::PublicConversationsMessage::direction
+        attr_accessor direction: HubSpotSDK::Models::Conversations::PublicConversationsMessage::direction
 
-        attr_accessor recipients: ::Array[HubspotSDK::Conversations::PublicRecipient]
+        attr_accessor recipients: ::Array[HubSpotSDK::Conversations::PublicRecipient]
 
-        attr_accessor senders: ::Array[HubspotSDK::Conversations::PublicSender]
+        attr_accessor senders: ::Array[HubSpotSDK::Conversations::PublicSender]
 
         attr_accessor text: String
 
-        attr_accessor truncation_status: HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status
+        attr_accessor truncation_status: HubSpotSDK::Models::Conversations::PublicConversationsMessage::truncation_status
 
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicConversationsMessage::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicConversationsMessage::type_
 
         attr_reader in_reply_to_id: String?
 
@@ -64,11 +64,11 @@ module HubspotSDK
 
         def rich_text=: (String) -> String
 
-        attr_reader status: HubspotSDK::Conversations::PublicMessageStatus?
+        attr_reader status: HubSpotSDK::Conversations::PublicMessageStatus?
 
         def status=: (
-          HubspotSDK::Conversations::PublicMessageStatus
-        ) -> HubspotSDK::Conversations::PublicMessageStatus
+          HubSpotSDK::Conversations::PublicMessageStatus
+        ) -> HubSpotSDK::Conversations::PublicMessageStatus
 
         attr_reader subject: String?
 
@@ -81,22 +81,22 @@ module HubspotSDK
         def initialize: (
           id: String,
           archived: bool,
-          attachments: ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::attachment],
           channel_account_id: String,
           channel_id: String,
-          client: HubspotSDK::Conversations::PublicClient,
+          client: HubSpotSDK::Conversations::PublicClient,
           conversations_thread_id: String,
           created_at: Time,
           created_by: String,
-          direction: HubspotSDK::Models::Conversations::PublicConversationsMessage::direction,
-          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
-          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          direction: HubSpotSDK::Models::Conversations::PublicConversationsMessage::direction,
+          recipients: ::Array[HubSpotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubSpotSDK::Conversations::PublicSender],
           text: String,
-          truncation_status: HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
-          type: HubspotSDK::Models::Conversations::PublicConversationsMessage::type_,
+          truncation_status: HubSpotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
+          type: HubSpotSDK::Models::Conversations::PublicConversationsMessage::type_,
           ?in_reply_to_id: String,
           ?rich_text: String,
-          ?status: HubspotSDK::Conversations::PublicMessageStatus,
+          ?status: HubSpotSDK::Conversations::PublicMessageStatus,
           ?subject: String,
           ?updated_at: Time
         ) -> void
@@ -104,74 +104,74 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           archived: bool,
-          attachments: ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::attachment],
+          attachments: ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::attachment],
           channel_account_id: String,
           channel_id: String,
-          client: HubspotSDK::Conversations::PublicClient,
+          client: HubSpotSDK::Conversations::PublicClient,
           conversations_thread_id: String,
           created_at: Time,
           created_by: String,
-          direction: HubspotSDK::Models::Conversations::PublicConversationsMessage::direction,
-          recipients: ::Array[HubspotSDK::Conversations::PublicRecipient],
-          senders: ::Array[HubspotSDK::Conversations::PublicSender],
+          direction: HubSpotSDK::Models::Conversations::PublicConversationsMessage::direction,
+          recipients: ::Array[HubSpotSDK::Conversations::PublicRecipient],
+          senders: ::Array[HubSpotSDK::Conversations::PublicSender],
           text: String,
-          truncation_status: HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
-          type: HubspotSDK::Models::Conversations::PublicConversationsMessage::type_,
+          truncation_status: HubSpotSDK::Models::Conversations::PublicConversationsMessage::truncation_status,
+          type: HubSpotSDK::Models::Conversations::PublicConversationsMessage::type_,
           in_reply_to_id: String,
           rich_text: String,
-          status: HubspotSDK::Conversations::PublicMessageStatus,
+          status: HubSpotSDK::Conversations::PublicMessageStatus,
           subject: String,
           updated_at: Time
         }
 
         type attachment =
-          HubspotSDK::Conversations::PublicFile
-          | HubspotSDK::Conversations::PublicLocation
-          | HubspotSDK::Conversations::PublicContact
-          | HubspotSDK::Conversations::PublicUnsupportedContent
-          | HubspotSDK::Conversations::PublicMessageHeader
-          | HubspotSDK::Conversations::PublicQuickReplies
-          | HubspotSDK::Conversations::PublicWhatsAppTemplateMetadata
-          | HubspotSDK::Conversations::PublicSocialMetadataAttachment
+          HubSpotSDK::Conversations::PublicFile
+          | HubSpotSDK::Conversations::PublicLocation
+          | HubSpotSDK::Conversations::PublicContact
+          | HubSpotSDK::Conversations::PublicUnsupportedContent
+          | HubSpotSDK::Conversations::PublicMessageHeader
+          | HubSpotSDK::Conversations::PublicQuickReplies
+          | HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata
+          | HubSpotSDK::Conversations::PublicSocialMetadataAttachment
 
         module Attachment
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::attachment]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::attachment]
         end
 
         type direction = :INCOMING | :OUTGOING
 
         module Direction
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INCOMING: :INCOMING
           OUTGOING: :OUTGOING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::direction]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::direction]
         end
 
         type truncation_status =
           :NOT_TRUNCATED | :TRUNCATED | :TRUNCATED_TO_MOST_RECENT_REPLY
 
         module TruncationStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_TRUNCATED: :NOT_TRUNCATED
           TRUNCATED: :TRUNCATED
           TRUNCATED_TO_MOST_RECENT_REPLY: :TRUNCATED_TO_MOST_RECENT_REPLY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::truncation_status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::truncation_status]
         end
 
         type type_ = :MESSAGE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MESSAGE: :MESSAGE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicConversationsMessage::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicConversationsMessage::type_]
         end
       end
     end

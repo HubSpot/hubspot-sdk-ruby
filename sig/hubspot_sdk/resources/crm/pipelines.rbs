@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Pipelines
@@ -6,10 +6,10 @@ module HubspotSDK
           String object_type,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::Crm::PipelineStageInput],
+          stages: ::Array[HubSpotSDK::Crm::PipelineStageInput],
           ?pipeline_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::Pipeline
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::Pipeline
 
         def update: (
           String pipeline_id,
@@ -19,20 +19,20 @@ module HubspotSDK
           ?archived: bool,
           ?display_order: Integer,
           ?label: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::Pipeline
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::Pipeline
 
         def list: (
           String object_type,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePipelineNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePipelineNoPaging
 
         def delete: (
           String pipeline_id,
           object_type: String,
           ?validate_deal_stage_usages_before_delete: bool,
           ?validate_references_before_delete: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def create_stage: (
@@ -42,58 +42,58 @@ module HubspotSDK
           label: String,
           metadata: ::Hash[Symbol, String],
           ?stage_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PipelineStage
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PipelineStage
 
         def delete_stage: (
           String stage_id,
           object_type: String,
           pipeline_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           String pipeline_id,
           object_type: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::Pipeline
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::Pipeline
 
         def get_stage: (
           String stage_id,
           object_type: String,
           pipeline_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PipelineStage
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PipelineStage
 
         def list_audit: (
           String pipeline_id,
           object_type: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
 
         def list_stage_audit: (
           String stage_id,
           object_type: String,
           pipeline_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
 
         def list_stages: (
           String pipeline_id,
           object_type: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::CollectionResponsePipelineStageNoPaging
 
         def update_all_properties: (
           String pipeline_id,
           object_type: String,
           display_order: Integer,
           label: String,
-          stages: ::Array[HubspotSDK::Crm::PipelineStageInput],
+          stages: ::Array[HubSpotSDK::Crm::PipelineStageInput],
           ?validate_deal_stage_usages_before_delete: bool,
           ?validate_references_before_delete: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::Pipeline
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::Pipeline
 
         def update_stage: (
           String stage_id,
@@ -103,8 +103,8 @@ module HubspotSDK
           ?archived: bool,
           ?display_order: Integer,
           ?label: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PipelineStage
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PipelineStage
 
         def update_stage_all_properties: (
           String stage_id,
@@ -113,10 +113,10 @@ module HubspotSDK
           display_order: Integer,
           label: String,
           metadata: ::Hash[Symbol, String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PipelineStage
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PipelineStage
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type message_header_attachment =
         {
-          type: HubspotSDK::Models::Conversations::MessageHeaderAttachment::type_,
+          type: HubSpotSDK::Models::Conversations::MessageHeaderAttachment::type_,
           file_id: Integer,
           text: String
         }
 
-      class MessageHeaderAttachment < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Conversations::MessageHeaderAttachment::type_
+      class MessageHeaderAttachment < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Conversations::MessageHeaderAttachment::type_
 
         attr_reader file_id: Integer?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def text=: (String) -> String
 
         def initialize: (
-          type: HubspotSDK::Models::Conversations::MessageHeaderAttachment::type_,
+          type: HubSpotSDK::Models::Conversations::MessageHeaderAttachment::type_,
           ?file_id: Integer,
           ?text: String
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Conversations::MessageHeaderAttachment::type_,
+          type: HubSpotSDK::Models::Conversations::MessageHeaderAttachment::type_,
           file_id: Integer,
           text: String
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type type_ = :MESSAGE_HEADER
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MESSAGE_HEADER: :MESSAGE_HEADER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::MessageHeaderAttachment::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::MessageHeaderAttachment::type_]
         end
       end
     end

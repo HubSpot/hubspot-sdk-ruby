@@ -1,24 +1,24 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Definitions
         def create: (
           include_default_properties: bool,
           label: String,
-          property_definitions: ::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate],
-          ?custom_matching_id: HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+          property_definitions: ::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate],
+          ?custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
           ?description: String,
           ?name: String,
           ?primary_object: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition
 
         def update: (
           String event_name,
           ?description: String,
           ?label: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition
 
         def list: (
           ?after: String,
@@ -26,12 +26,12 @@ module HubspotSDK
           ?limit: Integer,
           ?search_string: String,
           ?sort_order: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Events::ExternalBehavioralEventTypeDefinition]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition]
 
         def delete: (
           String event_name,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def create_property: (
@@ -40,24 +40,24 @@ module HubspotSDK
           type: String,
           ?description: String,
           ?name: String,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::Property
+          ?options: ::Array[HubSpotSDK::OptionInput],
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::Property
 
         def delete_property: (
           String property_name,
           event_name: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           String event_name,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::ExternalBehavioralEventTypeDefinition
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition
 
         def send_batch: (
-          inputs: ::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest],
-          ?request_options: HubspotSDK::request_opts
+          inputs: ::Array[HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest],
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def update_property: (
@@ -65,11 +65,11 @@ module HubspotSDK
           event_name: String,
           ?description: String,
           ?label: String,
-          ?options: ::Array[HubspotSDK::OptionInput],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Events::Property
+          ?options: ::Array[HubSpotSDK::OptionInput],
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Events::Property
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

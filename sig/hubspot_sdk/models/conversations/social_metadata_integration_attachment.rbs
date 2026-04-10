@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type social_metadata_integration_attachment =
         {
-          social_metadata: HubspotSDK::Conversations::SocialMetadata,
-          type: HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
+          social_metadata: HubSpotSDK::Conversations::SocialMetadata,
+          type: HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
         }
 
-      class SocialMetadataIntegrationAttachment < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor social_metadata: HubspotSDK::Conversations::SocialMetadata
+      class SocialMetadataIntegrationAttachment < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor social_metadata: HubSpotSDK::Conversations::SocialMetadata
 
-        attr_accessor type: HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
 
         def initialize: (
-          social_metadata: HubspotSDK::Conversations::SocialMetadata,
-          type: HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
+          social_metadata: HubSpotSDK::Conversations::SocialMetadata,
+          type: HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
         ) -> void
 
         def to_hash: -> {
-          social_metadata: HubspotSDK::Conversations::SocialMetadata,
-          type: HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
+          social_metadata: HubSpotSDK::Conversations::SocialMetadata,
+          type: HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_
         }
 
         type type_ = :SOCIAL_MEDIA_METADATA
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           SOCIAL_MEDIA_METADATA: :SOCIAL_MEDIA_METADATA
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment::type_]
         end
       end
     end

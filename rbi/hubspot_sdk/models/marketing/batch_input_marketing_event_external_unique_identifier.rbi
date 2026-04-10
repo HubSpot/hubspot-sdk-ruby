@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchInputMarketingEventExternalUniqueIdentifier,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchInputMarketingEventExternalUniqueIdentifier,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
             T::Array[
-              HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier
+              HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier
             ]
           )
         end
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier::OrHash
+                HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -37,7 +37,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier
+                  HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier
                 ]
             }
           )

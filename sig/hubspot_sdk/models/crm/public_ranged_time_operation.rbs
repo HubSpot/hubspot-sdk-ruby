@@ -1,31 +1,31 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_ranged_time_operation =
         {
           include_objects_with_no_value_set: bool,
-          lower_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
+          lower_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
           operation_type: String,
           operator: String,
-          type: HubspotSDK::Models::Crm::PublicRangedTimeOperation::type_,
-          upper_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
+          type: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::type_,
+          upper_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
           lower_bound_endpoint_behavior: String,
           property_parser: String,
           upper_bound_endpoint_behavior: String
         }
 
-      class PublicRangedTimeOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicRangedTimeOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor lower_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point
+        attr_accessor lower_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point
 
         attr_accessor operation_type: String
 
         attr_accessor operator: String
 
-        attr_accessor type: HubspotSDK::Models::Crm::PublicRangedTimeOperation::type_
+        attr_accessor type: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::type_
 
-        attr_accessor upper_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point
+        attr_accessor upper_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point
 
         attr_reader lower_bound_endpoint_behavior: String?
 
@@ -41,11 +41,11 @@ module HubspotSDK
 
         def initialize: (
           include_objects_with_no_value_set: bool,
-          lower_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
+          lower_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
           operation_type: String,
           operator: String,
-          type: HubspotSDK::Models::Crm::PublicRangedTimeOperation::type_,
-          upper_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
+          type: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::type_,
+          upper_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
           ?lower_bound_endpoint_behavior: String,
           ?property_parser: String,
           ?upper_bound_endpoint_behavior: String
@@ -53,46 +53,46 @@ module HubspotSDK
 
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
-          lower_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
+          lower_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point,
           operation_type: String,
           operator: String,
-          type: HubspotSDK::Models::Crm::PublicRangedTimeOperation::type_,
-          upper_bound_time_point: HubspotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
+          type: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::type_,
+          upper_bound_time_point: HubSpotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point,
           lower_bound_endpoint_behavior: String,
           property_parser: String,
           upper_bound_endpoint_behavior: String
         }
 
         type lower_bound_time_point =
-          HubspotSDK::Crm::PublicDatePoint
-          | HubspotSDK::Crm::PublicIndexedTimePoint
-          | HubspotSDK::Crm::PublicPropertyReferencedTime
+          HubSpotSDK::Crm::PublicDatePoint
+          | HubSpotSDK::Crm::PublicIndexedTimePoint
+          | HubSpotSDK::Crm::PublicPropertyReferencedTime
 
         module LowerBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicRangedTimeOperation::lower_bound_time_point]
         end
 
         type type_ = :TIME_RANGED
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIME_RANGED: :TIME_RANGED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicRangedTimeOperation::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicRangedTimeOperation::type_]
         end
 
         type upper_bound_time_point =
-          HubspotSDK::Crm::PublicDatePoint
-          | HubspotSDK::Crm::PublicIndexedTimePoint
-          | HubspotSDK::Crm::PublicPropertyReferencedTime
+          HubSpotSDK::Crm::PublicDatePoint
+          | HubSpotSDK::Crm::PublicIndexedTimePoint
+          | HubSpotSDK::Crm::PublicPropertyReferencedTime
 
         module UpperBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::PublicRangedTimeOperation::upper_bound_time_point]
         end
       end
     end

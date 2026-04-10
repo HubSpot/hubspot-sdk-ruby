@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class CollectionResponseWithTotalBlogPostVersion < HubspotSDK::Internal::Type::BaseModel
+        class CollectionResponseWithTotalBlogPostVersion < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute results
           #
-          #   @return [Array<HubspotSDK::Models::Cms::Blogs::VersionBlogPost>]
-          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::VersionBlogPost] }
+          #   @return [Array<HubSpotSDK::Models::Cms::Blogs::VersionBlogPost>]
+          required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Blogs::VersionBlogPost] }
 
           # @!attribute total
           #
@@ -17,13 +17,13 @@ module HubspotSDK
 
           # @!attribute paging
           #
-          #   @return [HubspotSDK::Models::Paging, nil]
-          optional :paging, -> { HubspotSDK::Paging }
+          #   @return [HubSpotSDK::Models::Paging, nil]
+          optional :paging, -> { HubSpotSDK::Paging }
 
           # @!method initialize(results:, total:, paging: nil)
-          #   @param results [Array<HubspotSDK::Models::Cms::Blogs::VersionBlogPost>]
+          #   @param results [Array<HubSpotSDK::Models::Cms::Blogs::VersionBlogPost>]
           #   @param total [Integer]
-          #   @param paging [HubspotSDK::Models::Paging]
+          #   @param paging [HubSpotSDK::Models::Paging]
         end
       end
     end

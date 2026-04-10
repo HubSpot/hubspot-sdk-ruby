@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_crm_search_request =
         {
-          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-          filters: ::Array[HubspotSDK::Crm::Filter],
+          filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
+          filters: ::Array[HubSpotSDK::Crm::Filter],
           sorts: ::Array[String],
           query: String
         }
 
-      class PublicCrmSearchRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor filter_groups: ::Array[HubspotSDK::Crm::FilterGroup]
+      class PublicCrmSearchRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup]
 
-        attr_accessor filters: ::Array[HubspotSDK::Crm::Filter]
+        attr_accessor filters: ::Array[HubSpotSDK::Crm::Filter]
 
         attr_accessor sorts: ::Array[String]
 
@@ -21,15 +21,15 @@ module HubspotSDK
         def query=: (String) -> String
 
         def initialize: (
-          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-          filters: ::Array[HubspotSDK::Crm::Filter],
+          filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
+          filters: ::Array[HubSpotSDK::Crm::Filter],
           sorts: ::Array[String],
           ?query: String
         ) -> void
 
         def to_hash: -> {
-          filter_groups: ::Array[HubspotSDK::Crm::FilterGroup],
-          filters: ::Array[HubspotSDK::Crm::Filter],
+          filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
+          filters: ::Array[HubSpotSDK::Crm::Filter],
           sorts: ::Array[String],
           query: String
         }

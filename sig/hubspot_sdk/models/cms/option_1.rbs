@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type option1 =
@@ -10,7 +10,7 @@ module HubspotSDK
           display_order: Integer
         }
 
-      class Option1 < HubspotSDK::Internal::Type::BaseModel
+      class Option1 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor hidden: bool
 
         attr_accessor label: String

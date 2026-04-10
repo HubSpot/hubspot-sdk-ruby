@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_attachment =
         {
-          contact_profile: HubspotSDK::Conversations::ContactProfile,
-          type: HubspotSDK::Models::Conversations::ContactAttachment::type_
+          contact_profile: HubSpotSDK::Conversations::ContactProfile,
+          type: HubSpotSDK::Models::Conversations::ContactAttachment::type_
         }
 
-      class ContactAttachment < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor contact_profile: HubspotSDK::Conversations::ContactProfile
+      class ContactAttachment < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor contact_profile: HubSpotSDK::Conversations::ContactProfile
 
-        attr_accessor type: HubspotSDK::Models::Conversations::ContactAttachment::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::ContactAttachment::type_
 
         def initialize: (
-          contact_profile: HubspotSDK::Conversations::ContactProfile,
-          type: HubspotSDK::Models::Conversations::ContactAttachment::type_
+          contact_profile: HubSpotSDK::Conversations::ContactProfile,
+          type: HubSpotSDK::Models::Conversations::ContactAttachment::type_
         ) -> void
 
         def to_hash: -> {
-          contact_profile: HubspotSDK::Conversations::ContactProfile,
-          type: HubspotSDK::Models::Conversations::ContactAttachment::type_
+          contact_profile: HubSpotSDK::Conversations::ContactProfile,
+          type: HubSpotSDK::Models::Conversations::ContactAttachment::type_
         }
 
         type type_ = :CONTACT
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTACT: :CONTACT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::ContactAttachment::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::ContactAttachment::type_]
         end
       end
     end

@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Meta
-      class CollectionResponseIPRangeNoPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseIPRangeNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of IpRange objects, each representing a specific IP range with
         #   associated details such as CIDR, direction, service, and description.
         #
-        #   @return [Array<HubspotSDK::Models::Meta::IPRange>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Meta::IPRange] }
+        #   @return [Array<HubSpotSDK::Models::Meta::IPRange>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Meta::IPRange] }
 
         # @!method initialize(results:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Meta::CollectionResponseIPRangeNoPaging} for more details.
+        #   {HubSpotSDK::Models::Meta::CollectionResponseIPRangeNoPaging} for more details.
         #
-        #   @param results [Array<HubspotSDK::Models::Meta::IPRange>] An array of IpRange objects, each representing a specific IP range with associat
+        #   @param results [Array<HubSpotSDK::Models::Meta::IPRange>] An array of IpRange objects, each representing a specific IP range with associat
       end
     end
   end

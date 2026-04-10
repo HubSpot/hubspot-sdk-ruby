@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Webhooks
       sig do
         params(
           snapshot_requests:
-            T::Array[HubspotSDK::Webhooks::CrmObjectSnapshotRequest::OrHash],
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::CrmObjectSnapshotBatchResponse)
+            T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotRequest::OrHash],
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::CrmObjectSnapshotBatchResponse)
       end
       def create_crm_snapshot(snapshot_requests:, request_options: {})
       end
@@ -17,13 +17,13 @@ module HubspotSDK
         params(
           subscription_upsert_request:
             T.any(
-              HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest::OrHash,
-              HubspotSDK::Webhooks::AssociationSubscriptionUpsertRequest::OrHash,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::OrHash,
-              HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::OrHash
+              HubSpotSDK::Webhooks::ObjectSubscriptionUpsertRequest::OrHash,
+              HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest::OrHash,
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::OrHash,
+              HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::OrHash
             ),
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SubscriptionResponse1)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SubscriptionResponse1)
       end
       def create_journal_subscription(
         subscription_upsert_request:,
@@ -37,12 +37,12 @@ module HubspotSDK
           app_id: Integer,
           active: T::Boolean,
           event_type:
-            HubspotSDK::Webhooks::SubscriptionCreateRequest::EventType::OrSymbol,
+            HubSpotSDK::Webhooks::SubscriptionCreateRequest::EventType::OrSymbol,
           event_type_name: String,
           object_type_id: String,
           property_name: String,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SubscriptionResponse)
       end
       def create_subscription(
         app_id,
@@ -67,10 +67,10 @@ module HubspotSDK
 
       sig do
         params(
-          filter: HubspotSDK::Webhooks::Filter::OrHash,
+          filter: HubSpotSDK::Webhooks::Filter::OrHash,
           subscription_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::FilterCreateResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::FilterCreateResponse)
       end
       def create_subscription_filter(
         # Defines a single condition for searching CRM objects, specifying the property to
@@ -88,10 +88,10 @@ module HubspotSDK
           app_id: Integer,
           inputs:
             T::Array[
-              HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest::OrHash
+              HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest::OrHash
             ],
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseSubscriptionResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse)
       end
       def create_subscriptions_batch(app_id, inputs:, request_options: {})
       end
@@ -99,7 +99,7 @@ module HubspotSDK
       sig do
         params(
           subscription_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).void
       end
       def delete_journal_subscription(subscription_id, request_options: {})
@@ -108,7 +108,7 @@ module HubspotSDK
       sig do
         params(
           portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).void
       end
       def delete_portal_subscriptions(portal_id, request_options: {})
@@ -119,7 +119,7 @@ module HubspotSDK
       sig do
         params(
           app_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).void
       end
       def delete_settings(app_id, request_options: {})
@@ -130,7 +130,7 @@ module HubspotSDK
         params(
           subscription_id: Integer,
           app_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).void
       end
       def delete_subscription(subscription_id, app_id:, request_options: {})
@@ -139,7 +139,7 @@ module HubspotSDK
       sig do
         params(
           filter_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).void
       end
       def delete_subscription_filter(filter_id, request_options: {})
@@ -148,7 +148,7 @@ module HubspotSDK
       sig do
         params(
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_earliest_journal(install_portal_id: nil, request_options: {})
@@ -158,8 +158,8 @@ module HubspotSDK
         params(
           count: Integer,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_earliest_journal_batch(
         count,
@@ -171,7 +171,7 @@ module HubspotSDK
       sig do
         params(
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_earliest_local_journal(
@@ -184,8 +184,8 @@ module HubspotSDK
         params(
           count: Integer,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_earliest_local_journal_batch(
         count,
@@ -198,8 +198,8 @@ module HubspotSDK
         params(
           inputs: T::Array[String],
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_journal_batch(
         # Body param: Strings to input.
@@ -215,8 +215,8 @@ module HubspotSDK
           count: Integer,
           offset: String,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_journal_batch_after_offset(
         # Path param
@@ -232,8 +232,8 @@ module HubspotSDK
       sig do
         params(
           status_id: String,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SnapshotStatusResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SnapshotStatusResponse)
       end
       def get_journal_status(status_id, request_options: {})
       end
@@ -241,7 +241,7 @@ module HubspotSDK
       sig do
         params(
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_latest_journal(install_portal_id: nil, request_options: {})
@@ -251,8 +251,8 @@ module HubspotSDK
         params(
           count: Integer,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_latest_journal_batch(
         count,
@@ -264,7 +264,7 @@ module HubspotSDK
       sig do
         params(
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_latest_local_journal(install_portal_id: nil, request_options: {})
@@ -274,8 +274,8 @@ module HubspotSDK
         params(
           count: Integer,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_latest_local_journal_batch(
         count,
@@ -288,8 +288,8 @@ module HubspotSDK
         params(
           inputs: T::Array[String],
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_local_journal_batch(
         # Body param: Strings to input.
@@ -305,8 +305,8 @@ module HubspotSDK
           count: Integer,
           offset: String,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::BatchResponseJournalFetchResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse)
       end
       def get_local_journal_batch_after_offset(
         # Path param
@@ -322,8 +322,8 @@ module HubspotSDK
       sig do
         params(
           status_id: String,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SnapshotStatusResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SnapshotStatusResponse)
       end
       def get_local_journal_status(status_id, request_options: {})
       end
@@ -332,7 +332,7 @@ module HubspotSDK
         params(
           offset: String,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_next_journal_after_offset(
@@ -346,7 +346,7 @@ module HubspotSDK
         params(
           offset: String,
           install_portal_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(StringIO)
       end
       def get_next_local_journal_after_offset(
@@ -361,8 +361,8 @@ module HubspotSDK
       sig do
         params(
           app_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SettingsResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SettingsResponse)
       end
       def get_settings(app_id, request_options: {})
       end
@@ -372,8 +372,8 @@ module HubspotSDK
         params(
           subscription_id: Integer,
           app_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SubscriptionResponse)
       end
       def get_subscription(subscription_id, app_id:, request_options: {})
       end
@@ -381,8 +381,8 @@ module HubspotSDK
       sig do
         params(
           filter_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::FilterResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::FilterResponse)
       end
       def get_subscription_filter(filter_id, request_options: {})
       end
@@ -390,15 +390,15 @@ module HubspotSDK
       sig do
         params(
           subscription_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(T::Array[HubspotSDK::Webhooks::FilterResponse])
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(T::Array[HubSpotSDK::Webhooks::FilterResponse])
       end
       def get_subscription_filters(subscription_id, request_options: {})
       end
 
       sig do
-        params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-          HubspotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
+        params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+          HubSpotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
         )
       end
       def list_journal_subscriptions(request_options: {})
@@ -408,8 +408,8 @@ module HubspotSDK
       sig do
         params(
           app_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SubscriptionListResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SubscriptionListResponse)
       end
       def list_subscriptions(app_id, request_options: {})
       end
@@ -419,9 +419,9 @@ module HubspotSDK
         params(
           app_id: Integer,
           target_url: String,
-          throttling: HubspotSDK::Webhooks::ThrottlingSettings::OrHash,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SettingsResponse)
+          throttling: HubSpotSDK::Webhooks::ThrottlingSettings::OrHash,
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SettingsResponse)
       end
       def update_settings(
         app_id,
@@ -440,8 +440,8 @@ module HubspotSDK
           subscription_id: Integer,
           app_id: Integer,
           active: T::Boolean,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::Webhooks::SubscriptionResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::Webhooks::SubscriptionResponse)
       end
       def update_subscription(
         # Path param
@@ -457,7 +457,7 @@ module HubspotSDK
       end
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

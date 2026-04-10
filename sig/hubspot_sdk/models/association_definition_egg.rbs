@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type association_definition_egg =
       { from_object_type_id: String, to_object_type_id: String, name: String }
 
-    class AssociationDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+    class AssociationDefinitionEgg < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor from_object_type_id: String
 
       attr_accessor to_object_type_id: String

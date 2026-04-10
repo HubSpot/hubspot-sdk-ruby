@@ -2,20 +2,20 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Conversations::CustomChannelsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.conversations.custom_channels.create(capabilities: {foo: {}}, name: "name")
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      response => HubSpotSDK::Conversations::PublicChannelIntegrationChannel
     end
 
     assert_pattern do
       response => {
         id: String,
-        capabilities: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
+        capabilities: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]),
         created_at: Time,
         name: String,
         channel_account_connection_redirect_url: String | nil,
@@ -41,13 +41,13 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
       )
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      response => HubSpotSDK::Conversations::PublicChannelIntegrationChannel
     end
 
     assert_pattern do
       response => {
         id: String,
-        capabilities: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
+        capabilities: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]),
         created_at: Time,
         name: String,
         channel_account_connection_redirect_url: String | nil,
@@ -64,20 +64,20 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
     response = @hubspot.conversations.custom_channels.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Conversations::PublicChannelIntegrationChannel
+      row => HubSpotSDK::Conversations::PublicChannelIntegrationChannel
     end
 
     assert_pattern do
       row => {
         id: String,
-        capabilities: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]),
+        capabilities: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]),
         created_at: Time,
         name: String,
         channel_account_connection_redirect_url: String | nil,
@@ -104,21 +104,21 @@ class HubspotSDK::Test::Resources::Conversations::CustomChannelsTest < HubspotSD
     response = @hubspot.conversations.custom_channels.get(0, channel_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Conversations::PublicChannelAccount
+      response => HubSpotSDK::Conversations::PublicChannelAccount
     end
 
     assert_pattern do
       response => {
         id: String,
-        active: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        authorized: HubspotSDK::Internal::Type::Boolean,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
+        authorized: HubSpotSDK::Internal::Type::Boolean,
         channel_id: String,
         created_at: Time,
         inbox_id: String,
         name: String,
         archived_at: Time | nil,
-        delivery_identifier: HubspotSDK::Conversations::PublicDeliveryIdentifier | nil
+        delivery_identifier: HubSpotSDK::Conversations::PublicDeliveryIdentifier | nil
       }
     end
   end

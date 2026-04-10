@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFetchAssociationsBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicFetchAssociationsBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicFetchAssociationsBatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicFetchAssociationsBatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

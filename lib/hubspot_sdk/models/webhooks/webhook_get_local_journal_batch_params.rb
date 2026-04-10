@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#get_local_journal_batch
-      class WebhookGetLocalJournalBatchParams < HubspotSDK::Models::BatchInputString
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Webhooks#get_local_journal_batch
+      class WebhookGetLocalJournalBatchParams < HubSpotSDK::Models::BatchInputString
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute install_portal_id
         #
@@ -15,7 +15,7 @@ module HubspotSDK
 
         # @!method initialize(install_portal_id: nil, request_options: {})
         #   @param install_portal_id [Integer]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

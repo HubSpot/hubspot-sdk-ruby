@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventPropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventPropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalBehavioralEventPropertyCreate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -38,10 +38,10 @@ module HubspotSDK
 
         # A list of available options for the property if it is an enumeration. NOTE: This
         # field is only applicable for enumerated properties.
-        sig { returns(T.nilable(T::Array[HubspotSDK::OptionInput])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubspotSDK::OptionInput::OrHash]).void }
+        sig { params(options: T::Array[HubSpotSDK::OptionInput::OrHash]).void }
         attr_writer :options
 
         sig do
@@ -50,7 +50,7 @@ module HubspotSDK
             type: String,
             description: String,
             name: String,
-            options: T::Array[HubspotSDK::OptionInput::OrHash]
+            options: T::Array[HubSpotSDK::OptionInput::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -77,7 +77,7 @@ module HubspotSDK
               type: String,
               description: String,
               name: String,
-              options: T::Array[HubspotSDK::OptionInput]
+              options: T::Array[HubSpotSDK::OptionInput]
             }
           )
         end

@@ -1,44 +1,44 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_testing_details =
         {
           is_ab_variation: bool,
-          ab_sample_size_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
-          ab_sampling_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
-          ab_status: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
-          ab_success_metric: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
+          ab_sample_size_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
+          ab_sampling_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
+          ab_status: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
+          ab_success_metric: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
           ab_test_percentage: Integer,
           hours_to_wait: Integer,
           test_id: String
         }
 
-      class PublicEmailTestingDetails < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailTestingDetails < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor is_ab_variation: bool
 
-        attr_reader ab_sample_size_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default?
+        attr_reader ab_sample_size_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default?
 
         def ab_sample_size_default=: (
-          HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default
-        ) -> HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default
+          HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default
+        ) -> HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default
 
-        attr_reader ab_sampling_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default?
+        attr_reader ab_sampling_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default?
 
         def ab_sampling_default=: (
-          HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default
-        ) -> HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default
+          HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default
+        ) -> HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default
 
-        attr_reader ab_status: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status?
+        attr_reader ab_status: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status?
 
         def ab_status=: (
-          HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status
-        ) -> HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status
+          HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status
+        ) -> HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status
 
-        attr_reader ab_success_metric: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric?
+        attr_reader ab_success_metric: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric?
 
         def ab_success_metric=: (
-          HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric
-        ) -> HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric
+          HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric
+        ) -> HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric
 
         attr_reader ab_test_percentage: Integer?
 
@@ -54,10 +54,10 @@ module HubspotSDK
 
         def initialize: (
           is_ab_variation: bool,
-          ?ab_sample_size_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
-          ?ab_sampling_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
-          ?ab_status: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
-          ?ab_success_metric: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
+          ?ab_sample_size_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
+          ?ab_sampling_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
+          ?ab_status: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
+          ?ab_success_metric: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
           ?ab_test_percentage: Integer,
           ?hours_to_wait: Integer,
           ?test_id: String
@@ -65,10 +65,10 @@ module HubspotSDK
 
         def to_hash: -> {
           is_ab_variation: bool,
-          ab_sample_size_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
-          ab_sampling_default: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
-          ab_status: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
-          ab_success_metric: HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
+          ab_sample_size_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default,
+          ab_sampling_default: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default,
+          ab_status: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status,
+          ab_success_metric: HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric,
           ab_test_percentage: Integer,
           hours_to_wait: Integer,
           test_id: String
@@ -85,7 +85,7 @@ module HubspotSDK
           | :variant
 
         module AbSampleSizeDefault
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT: :automated_loser_variant
           AUTOMATED_MASTER: :automated_master
@@ -96,7 +96,7 @@ module HubspotSDK
           MASTER: :master
           VARIANT: :variant
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sample_size_default]
         end
 
         type ab_sampling_default =
@@ -110,7 +110,7 @@ module HubspotSDK
           | :variant
 
         module AbSamplingDefault
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT: :automated_loser_variant
           AUTOMATED_MASTER: :automated_master
@@ -121,7 +121,7 @@ module HubspotSDK
           MASTER: :master
           VARIANT: :variant
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_sampling_default]
         end
 
         type ab_status =
@@ -135,7 +135,7 @@ module HubspotSDK
           | :variant
 
         module AbStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUTOMATED_LOSER_VARIANT: :automated_loser_variant
           AUTOMATED_MASTER: :automated_master
@@ -146,20 +146,20 @@ module HubspotSDK
           MASTER: :master
           VARIANT: :variant
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_status]
         end
 
         type ab_success_metric =
           :CLICKS_BY_DELIVERED | :CLICKS_BY_OPENS | :OPENS_BY_DELIVERED
 
         module AbSuccessMetric
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CLICKS_BY_DELIVERED: :CLICKS_BY_DELIVERED
           CLICKS_BY_OPENS: :CLICKS_BY_OPENS
           OPENS_BY_DELIVERED: :OPENS_BY_DELIVERED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicEmailTestingDetails::ab_success_metric]
         end
       end
     end

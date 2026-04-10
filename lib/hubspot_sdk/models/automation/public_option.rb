@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicOption < HubspotSDK::Internal::Type::BaseModel
+      class PublicOption < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute label
         #   A user-friendly label that identifies the option.
         #

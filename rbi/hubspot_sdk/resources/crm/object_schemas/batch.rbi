@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectSchemas
@@ -15,8 +15,8 @@ module HubspotSDK
               include_audit_metadata: T::Boolean,
               include_property_definitions: T::Boolean,
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging)
           end
           def get(
             # Indicates whether to include association definitions in the response.
@@ -31,7 +31,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

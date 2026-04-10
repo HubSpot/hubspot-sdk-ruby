@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_style_settings =
         {
           background_color: String,
           background_image: String,
-          background_image_type: HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
+          background_image_type: HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
           body_border_color: String,
           body_border_color_choice: String,
           body_border_width: Float,
           body_color: String,
-          button_style_settings: HubspotSDK::Marketing::PublicButtonStyleSettings,
+          button_style_settings: HubSpotSDK::Marketing::PublicButtonStyleSettings,
           :color_picker_favorite1 => String,
           :color_picker_favorite2 => String,
           :color_picker_favorite3 => String,
           :color_picker_favorite4 => String,
           :color_picker_favorite5 => String,
           :color_picker_favorite6 => String,
-          divider_style_settings: HubspotSDK::Marketing::PublicDividerStyleSettings,
+          divider_style_settings: HubSpotSDK::Marketing::PublicDividerStyleSettings,
           email_body_padding: String,
           email_body_width: String,
-          heading_one_font: HubspotSDK::Marketing::PublicFontStyle,
-          heading_two_font: HubspotSDK::Marketing::PublicFontStyle,
-          links_font: HubspotSDK::Marketing::PublicFontStyle,
+          heading_one_font: HubSpotSDK::Marketing::PublicFontStyle,
+          heading_two_font: HubSpotSDK::Marketing::PublicFontStyle,
+          links_font: HubSpotSDK::Marketing::PublicFontStyle,
           primary_accent_color: String,
           primary_font: String,
           primary_font_color: String,
@@ -35,7 +35,7 @@ module HubspotSDK
           secondary_font_size: Float
         }
 
-      class PublicEmailStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_reader background_color: String?
 
         def background_color=: (String) -> String
@@ -44,11 +44,11 @@ module HubspotSDK
 
         def background_image=: (String) -> String
 
-        attr_reader background_image_type: HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type?
+        attr_reader background_image_type: HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type?
 
         def background_image_type=: (
-          HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type
-        ) -> HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type
+          HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type
+        ) -> HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type
 
         attr_reader body_border_color: String?
 
@@ -66,11 +66,11 @@ module HubspotSDK
 
         def body_color=: (String) -> String
 
-        attr_reader button_style_settings: HubspotSDK::Marketing::PublicButtonStyleSettings?
+        attr_reader button_style_settings: HubSpotSDK::Marketing::PublicButtonStyleSettings?
 
         def button_style_settings=: (
-          HubspotSDK::Marketing::PublicButtonStyleSettings
-        ) -> HubspotSDK::Marketing::PublicButtonStyleSettings
+          HubSpotSDK::Marketing::PublicButtonStyleSettings
+        ) -> HubSpotSDK::Marketing::PublicButtonStyleSettings
 
         attr_reader color_picker_favorite1: String?
 
@@ -96,11 +96,11 @@ module HubspotSDK
 
         def color_picker_favorite6=: (String) -> String
 
-        attr_reader divider_style_settings: HubspotSDK::Marketing::PublicDividerStyleSettings?
+        attr_reader divider_style_settings: HubSpotSDK::Marketing::PublicDividerStyleSettings?
 
         def divider_style_settings=: (
-          HubspotSDK::Marketing::PublicDividerStyleSettings
-        ) -> HubspotSDK::Marketing::PublicDividerStyleSettings
+          HubSpotSDK::Marketing::PublicDividerStyleSettings
+        ) -> HubSpotSDK::Marketing::PublicDividerStyleSettings
 
         attr_reader email_body_padding: String?
 
@@ -110,23 +110,23 @@ module HubspotSDK
 
         def email_body_width=: (String) -> String
 
-        attr_reader heading_one_font: HubspotSDK::Marketing::PublicFontStyle?
+        attr_reader heading_one_font: HubSpotSDK::Marketing::PublicFontStyle?
 
         def heading_one_font=: (
-          HubspotSDK::Marketing::PublicFontStyle
-        ) -> HubspotSDK::Marketing::PublicFontStyle
+          HubSpotSDK::Marketing::PublicFontStyle
+        ) -> HubSpotSDK::Marketing::PublicFontStyle
 
-        attr_reader heading_two_font: HubspotSDK::Marketing::PublicFontStyle?
+        attr_reader heading_two_font: HubSpotSDK::Marketing::PublicFontStyle?
 
         def heading_two_font=: (
-          HubspotSDK::Marketing::PublicFontStyle
-        ) -> HubspotSDK::Marketing::PublicFontStyle
+          HubSpotSDK::Marketing::PublicFontStyle
+        ) -> HubSpotSDK::Marketing::PublicFontStyle
 
-        attr_reader links_font: HubspotSDK::Marketing::PublicFontStyle?
+        attr_reader links_font: HubSpotSDK::Marketing::PublicFontStyle?
 
         def links_font=: (
-          HubspotSDK::Marketing::PublicFontStyle
-        ) -> HubspotSDK::Marketing::PublicFontStyle
+          HubSpotSDK::Marketing::PublicFontStyle
+        ) -> HubSpotSDK::Marketing::PublicFontStyle
 
         attr_reader primary_accent_color: String?
 
@@ -171,24 +171,24 @@ module HubspotSDK
         def initialize: (
           ?background_color: String,
           ?background_image: String,
-          ?background_image_type: HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
+          ?background_image_type: HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
           ?body_border_color: String,
           ?body_border_color_choice: String,
           ?body_border_width: Float,
           ?body_color: String,
-          ?button_style_settings: HubspotSDK::Marketing::PublicButtonStyleSettings,
+          ?button_style_settings: HubSpotSDK::Marketing::PublicButtonStyleSettings,
           ?color_picker_favorite1: String,
           ?color_picker_favorite2: String,
           ?color_picker_favorite3: String,
           ?color_picker_favorite4: String,
           ?color_picker_favorite5: String,
           ?color_picker_favorite6: String,
-          ?divider_style_settings: HubspotSDK::Marketing::PublicDividerStyleSettings,
+          ?divider_style_settings: HubSpotSDK::Marketing::PublicDividerStyleSettings,
           ?email_body_padding: String,
           ?email_body_width: String,
-          ?heading_one_font: HubspotSDK::Marketing::PublicFontStyle,
-          ?heading_two_font: HubspotSDK::Marketing::PublicFontStyle,
-          ?links_font: HubspotSDK::Marketing::PublicFontStyle,
+          ?heading_one_font: HubSpotSDK::Marketing::PublicFontStyle,
+          ?heading_two_font: HubSpotSDK::Marketing::PublicFontStyle,
+          ?links_font: HubSpotSDK::Marketing::PublicFontStyle,
           ?primary_accent_color: String,
           ?primary_font: String,
           ?primary_font_color: String,
@@ -204,24 +204,24 @@ module HubspotSDK
         def to_hash: -> {
           background_color: String,
           background_image: String,
-          background_image_type: HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
+          background_image_type: HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type,
           body_border_color: String,
           body_border_color_choice: String,
           body_border_width: Float,
           body_color: String,
-          button_style_settings: HubspotSDK::Marketing::PublicButtonStyleSettings,
+          button_style_settings: HubSpotSDK::Marketing::PublicButtonStyleSettings,
           :color_picker_favorite1 => String,
           :color_picker_favorite2 => String,
           :color_picker_favorite3 => String,
           :color_picker_favorite4 => String,
           :color_picker_favorite5 => String,
           :color_picker_favorite6 => String,
-          divider_style_settings: HubspotSDK::Marketing::PublicDividerStyleSettings,
+          divider_style_settings: HubSpotSDK::Marketing::PublicDividerStyleSettings,
           email_body_padding: String,
           email_body_width: String,
-          heading_one_font: HubspotSDK::Marketing::PublicFontStyle,
-          heading_two_font: HubspotSDK::Marketing::PublicFontStyle,
-          links_font: HubspotSDK::Marketing::PublicFontStyle,
+          heading_one_font: HubSpotSDK::Marketing::PublicFontStyle,
+          heading_two_font: HubSpotSDK::Marketing::PublicFontStyle,
+          links_font: HubSpotSDK::Marketing::PublicFontStyle,
           primary_accent_color: String,
           primary_font: String,
           primary_font_color: String,
@@ -237,13 +237,13 @@ module HubspotSDK
         type background_image_type = :REPEAT | :SINGLE | :STRETCH
 
         module BackgroundImageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REPEAT: :REPEAT
           SINGLE: :SINGLE
           STRETCH: :STRETCH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::background_image_type]
         end
       end
     end

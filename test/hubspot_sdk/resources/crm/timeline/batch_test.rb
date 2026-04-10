@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Timeline::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Timeline::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -12,17 +12,17 @@ class HubspotSDK::Test::Resources::Crm::Timeline::BatchTest < HubspotSDK::Test::
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseAppEventOccurrence
+      response => HubSpotSDK::Crm::BatchResponseAppEventOccurrence
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AppEventOccurrence]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AppEventOccurrence]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseAppEventOccurrence::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseAppEventOccurrence::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil
       }

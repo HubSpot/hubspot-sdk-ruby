@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class VisitorIdentification
@@ -14,8 +14,8 @@ module HubspotSDK
             email: String,
             first_name: String,
             last_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::IdentificationTokenResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Conversations::IdentificationTokenResponse)
         end
         def generate_token(
           # The email of the visitor that you wish to identify
@@ -33,7 +33,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

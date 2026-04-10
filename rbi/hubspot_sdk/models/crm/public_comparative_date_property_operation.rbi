@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicComparativeDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicComparativeDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         # The type of operation (COMPARATIVE_DATE).
         sig do
           returns(
-            HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -47,7 +47,7 @@ module HubspotSDK
             comparison_property_name: String,
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol,
             operator: String,
             default_comparison_value: String
           ).returns(T.attached_class)
@@ -75,7 +75,7 @@ module HubspotSDK
               comparison_property_name: String,
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::OrSymbol,
               operator: String,
               default_comparison_value: String
             }
@@ -86,13 +86,13 @@ module HubspotSDK
 
         # The type of operation (COMPARATIVE_DATE).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -100,13 +100,13 @@ module HubspotSDK
           COMPARATIVE_DATE =
             T.let(
               :COMPARATIVE_DATE,
-              HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

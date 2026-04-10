@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        # @see HubspotSDK::Resources::Marketing::Campaigns::Metrics#get_attribution_metrics
-        class MetricGetAttributionMetricsParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Marketing::Campaigns::Metrics#get_attribution_metrics
+        class MetricGetAttributionMetricsParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute campaign_guid
           #
@@ -28,7 +28,7 @@ module HubspotSDK
           #   @param campaign_guid [String]
           #   @param end_date [String]
           #   @param start_date [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

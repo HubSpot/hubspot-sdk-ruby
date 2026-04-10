@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicCampaignBatchUpdateItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignBatchUpdateItem < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the campaign to be updated.
         #
@@ -15,11 +15,11 @@ module HubspotSDK
         #   campaign.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!method initialize(id:, properties:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicCampaignBatchUpdateItem} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicCampaignBatchUpdateItem} for more details.
         #
         #   @param id [String] The unique identifier for the campaign to be updated.
         #

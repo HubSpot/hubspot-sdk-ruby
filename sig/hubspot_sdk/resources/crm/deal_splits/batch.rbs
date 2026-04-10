@@ -1,19 +1,19 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class DealSplits
         class Batch
           def read: (
-            inputs: ::Array[HubspotSDK::PublicObjectID],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseDealToDealSplits
+            inputs: ::Array[HubSpotSDK::PublicObjectID],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::BatchResponseDealToDealSplits
 
           def upsert: (
-            inputs: ::Array[HubspotSDK::Crm::PublicDealSplitsCreateRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::BatchResponseDealToDealSplits
+            inputs: ::Array[HubSpotSDK::Crm::PublicDealSplitsCreateRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::BatchResponseDealToDealSplits
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

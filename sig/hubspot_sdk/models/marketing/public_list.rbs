@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_list =
@@ -18,7 +18,7 @@ module HubspotSDK
           updated_by_id: String
         }
 
-      class PublicList < HubspotSDK::Internal::Type::BaseModel
+      class PublicList < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_id: String
 
         attr_accessor list_version: Integer

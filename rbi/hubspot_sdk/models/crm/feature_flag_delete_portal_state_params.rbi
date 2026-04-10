@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class FeatureFlagDeletePortalStateParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FeatureFlagDeletePortalStateParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::FeatureFlagDeletePortalStateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::FeatureFlagDeletePortalStateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -29,7 +29,7 @@ module HubspotSDK
             app_id: Integer,
             flag_name: String,
             portal_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(app_id:, flag_name:, portal_id:, request_options: {})
@@ -41,7 +41,7 @@ module HubspotSDK
               app_id: Integer,
               flag_name: String,
               portal_id: Integer,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

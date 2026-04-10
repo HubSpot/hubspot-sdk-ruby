@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type collection_response_exchange_rate_no_paging =
-        { results: ::Array[HubspotSDK::Settings::ExchangeRate] }
+        { results: ::Array[HubSpotSDK::Settings::ExchangeRate] }
 
-      class CollectionResponseExchangeRateNoPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Settings::ExchangeRate]
+      class CollectionResponseExchangeRateNoPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Settings::ExchangeRate]
 
         def initialize: (
-          results: ::Array[HubspotSDK::Settings::ExchangeRate]
+          results: ::Array[HubSpotSDK::Settings::ExchangeRate]
         ) -> void
 
-        def to_hash: -> { results: ::Array[HubspotSDK::Settings::ExchangeRate] }
+        def to_hash: -> { results: ::Array[HubSpotSDK::Settings::ExchangeRate] }
       end
     end
   end

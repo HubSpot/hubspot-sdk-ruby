@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type crm_object_snapshot_response =
@@ -9,7 +9,7 @@ module HubspotSDK
           snapshot_status_id: String
         }
 
-      class CrmObjectSnapshotResponse < HubspotSDK::Internal::Type::BaseModel
+      class CrmObjectSnapshotResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_id_: Integer
 
         attr_accessor object_type_id: String

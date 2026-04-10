@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Send
@@ -8,14 +8,14 @@ module HubspotSDK
         #
         # @overload batch_send(inputs:, request_options: {})
         #
-        # @param inputs [Array<HubspotSDK::Models::Events::BehavioralEventHTTPCompletionRequest>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param inputs [Array<HubSpotSDK::Models::Events::BehavioralEventHTTPCompletionRequest>]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Events::SendBatchSendParams
+        # @see HubSpotSDK::Models::Events::SendBatchSendParams
         def batch_send(params)
-          parsed, options = HubspotSDK::Events::SendBatchSendParams.dump_request(params)
+          parsed, options = HubSpotSDK::Events::SendBatchSendParams.dump_request(params)
           @client.request(
             method: :post,
             path: "events/2026-03/send/batch",
@@ -26,7 +26,7 @@ module HubspotSDK
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Events::SendSendParams} for more details.
+        # {HubSpotSDK::Models::Events::SendSendParams} for more details.
         #
         # Send data for a single custom event occurrence.
         #
@@ -46,13 +46,13 @@ module HubspotSDK
         #
         # @param uuid [String]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Events::SendSendParams
+        # @see HubSpotSDK::Models::Events::SendSendParams
         def send_(params)
-          parsed, options = HubspotSDK::Events::SendSendParams.dump_request(params)
+          parsed, options = HubSpotSDK::Events::SendSendParams.dump_request(params)
           @client.request(
             method: :post,
             path: "events/2026-03/send",
@@ -64,7 +64,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

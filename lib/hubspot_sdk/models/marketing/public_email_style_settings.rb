@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute background_color
         #
         #   @return [String, nil]
@@ -16,9 +16,9 @@ module HubspotSDK
 
         # @!attribute background_image_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::PublicEmailStyleSettings::BackgroundImageType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::BackgroundImageType, nil]
         optional :background_image_type,
-                 enum: -> { HubspotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType },
+                 enum: -> { HubSpotSDK::Marketing::PublicEmailStyleSettings::BackgroundImageType },
                  api_name: :backgroundImageType
 
         # @!attribute body_border_color
@@ -43,9 +43,9 @@ module HubspotSDK
 
         # @!attribute button_style_settings
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicButtonStyleSettings, nil]
+        #   @return [HubSpotSDK::Models::Marketing::PublicButtonStyleSettings, nil]
         optional :button_style_settings,
-                 -> { HubspotSDK::Marketing::PublicButtonStyleSettings },
+                 -> { HubSpotSDK::Marketing::PublicButtonStyleSettings },
                  api_name: :buttonStyleSettings
 
         # @!attribute color_picker_favorite1
@@ -80,9 +80,9 @@ module HubspotSDK
 
         # @!attribute divider_style_settings
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicDividerStyleSettings, nil]
+        #   @return [HubSpotSDK::Models::Marketing::PublicDividerStyleSettings, nil]
         optional :divider_style_settings,
-                 -> { HubspotSDK::Marketing::PublicDividerStyleSettings },
+                 -> { HubSpotSDK::Marketing::PublicDividerStyleSettings },
                  api_name: :dividerStyleSettings
 
         # @!attribute email_body_padding
@@ -97,18 +97,18 @@ module HubspotSDK
 
         # @!attribute heading_one_font
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicFontStyle, nil]
-        optional :heading_one_font, -> { HubspotSDK::Marketing::PublicFontStyle }, api_name: :headingOneFont
+        #   @return [HubSpotSDK::Models::Marketing::PublicFontStyle, nil]
+        optional :heading_one_font, -> { HubSpotSDK::Marketing::PublicFontStyle }, api_name: :headingOneFont
 
         # @!attribute heading_two_font
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicFontStyle, nil]
-        optional :heading_two_font, -> { HubspotSDK::Marketing::PublicFontStyle }, api_name: :headingTwoFont
+        #   @return [HubSpotSDK::Models::Marketing::PublicFontStyle, nil]
+        optional :heading_two_font, -> { HubSpotSDK::Marketing::PublicFontStyle }, api_name: :headingTwoFont
 
         # @!attribute links_font
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicFontStyle, nil]
-        optional :links_font, -> { HubspotSDK::Marketing::PublicFontStyle }, api_name: :linksFont
+        #   @return [HubSpotSDK::Models::Marketing::PublicFontStyle, nil]
+        optional :links_font, -> { HubSpotSDK::Marketing::PublicFontStyle }, api_name: :linksFont
 
         # @!attribute primary_accent_color
         #
@@ -163,24 +163,24 @@ module HubspotSDK
         # @!method initialize(background_color: nil, background_image: nil, background_image_type: nil, body_border_color: nil, body_border_color_choice: nil, body_border_width: nil, body_color: nil, button_style_settings: nil, color_picker_favorite1: nil, color_picker_favorite2: nil, color_picker_favorite3: nil, color_picker_favorite4: nil, color_picker_favorite5: nil, color_picker_favorite6: nil, divider_style_settings: nil, email_body_padding: nil, email_body_width: nil, heading_one_font: nil, heading_two_font: nil, links_font: nil, primary_accent_color: nil, primary_font: nil, primary_font_color: nil, primary_font_line_height: nil, primary_font_size: nil, secondary_accent_color: nil, secondary_font: nil, secondary_font_color: nil, secondary_font_line_height: nil, secondary_font_size: nil)
         #   @param background_color [String]
         #   @param background_image [String]
-        #   @param background_image_type [Symbol, HubspotSDK::Models::Marketing::PublicEmailStyleSettings::BackgroundImageType]
+        #   @param background_image_type [Symbol, HubSpotSDK::Models::Marketing::PublicEmailStyleSettings::BackgroundImageType]
         #   @param body_border_color [String]
         #   @param body_border_color_choice [String]
         #   @param body_border_width [Float]
         #   @param body_color [String]
-        #   @param button_style_settings [HubspotSDK::Models::Marketing::PublicButtonStyleSettings]
+        #   @param button_style_settings [HubSpotSDK::Models::Marketing::PublicButtonStyleSettings]
         #   @param color_picker_favorite1 [String]
         #   @param color_picker_favorite2 [String]
         #   @param color_picker_favorite3 [String]
         #   @param color_picker_favorite4 [String]
         #   @param color_picker_favorite5 [String]
         #   @param color_picker_favorite6 [String]
-        #   @param divider_style_settings [HubspotSDK::Models::Marketing::PublicDividerStyleSettings]
+        #   @param divider_style_settings [HubSpotSDK::Models::Marketing::PublicDividerStyleSettings]
         #   @param email_body_padding [String]
         #   @param email_body_width [String]
-        #   @param heading_one_font [HubspotSDK::Models::Marketing::PublicFontStyle]
-        #   @param heading_two_font [HubspotSDK::Models::Marketing::PublicFontStyle]
-        #   @param links_font [HubspotSDK::Models::Marketing::PublicFontStyle]
+        #   @param heading_one_font [HubSpotSDK::Models::Marketing::PublicFontStyle]
+        #   @param heading_two_font [HubSpotSDK::Models::Marketing::PublicFontStyle]
+        #   @param links_font [HubSpotSDK::Models::Marketing::PublicFontStyle]
         #   @param primary_accent_color [String]
         #   @param primary_font [String]
         #   @param primary_font_color [String]
@@ -192,9 +192,9 @@ module HubspotSDK
         #   @param secondary_font_line_height [String]
         #   @param secondary_font_size [Float]
 
-        # @see HubspotSDK::Models::Marketing::PublicEmailStyleSettings#background_image_type
+        # @see HubSpotSDK::Models::Marketing::PublicEmailStyleSettings#background_image_type
         module BackgroundImageType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           REPEAT = :REPEAT
           SINGLE = :SINGLE

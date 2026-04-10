@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         module Tags
           type batch_create_batch_params =
-            {  } & HubspotSDK::Internal::Type::request_parameters
+            {  } & HubSpotSDK::Internal::Type::request_parameters
 
-          class BatchCreateBatchParams < HubspotSDK::Models::Cms::Blogs::BatchInputTag
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchCreateBatchParams < HubSpotSDK::Models::Cms::Blogs::BatchInputTag
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
-            def initialize: (?request_options: HubspotSDK::request_opts) -> void
+            def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-            def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+            def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
           end
         end
       end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ColorStop < HubspotSDK::Internal::Type::BaseModel
+      class ColorStop < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute color
         #
-        #   @return [HubspotSDK::Models::Cms::RgbaColor]
-        required :color, -> { HubspotSDK::Cms::RgbaColor }
+        #   @return [HubSpotSDK::Models::Cms::RgbaColor]
+        required :color, -> { HubSpotSDK::Cms::RgbaColor }
 
         # @!method initialize(color:)
-        #   @param color [HubspotSDK::Models::Cms::RgbaColor]
+        #   @param color [HubSpotSDK::Models::Cms::RgbaColor]
       end
     end
   end

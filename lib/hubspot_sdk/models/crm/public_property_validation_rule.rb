@@ -1,49 +1,49 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id_property_name_and_rule_type
-      class PublicPropertyValidationRule < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id_property_name_and_rule_type
+      class PublicPropertyValidationRule < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute rule_arguments
         #   A list of arguments that define the specific conditions or parameters for the
         #   validation rule.
         #
         #   @return [Array<String>]
-        required :rule_arguments, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :ruleArguments
+        required :rule_arguments, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :ruleArguments
 
         # @!attribute rule_type
         #   The category of validation applied to the property, such as FORMAT,
         #   ALPHANUMERIC, or MAX_LENGTH.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicPropertyValidationRule::RuleType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicPropertyValidationRule::RuleType]
         required :rule_type,
-                 enum: -> { HubspotSDK::Crm::PublicPropertyValidationRule::RuleType },
+                 enum: -> { HubSpotSDK::Crm::PublicPropertyValidationRule::RuleType },
                  api_name: :ruleType
 
         # @!attribute should_apply_normalization
         #
         #   @return [Boolean, nil]
         optional :should_apply_normalization,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :shouldApplyNormalization
 
         # @!method initialize(rule_arguments:, rule_type:, should_apply_normalization: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicPropertyValidationRule} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicPropertyValidationRule} for more details.
         #
         #   @param rule_arguments [Array<String>] A list of arguments that define the specific conditions or parameters for the va
         #
-        #   @param rule_type [Symbol, HubspotSDK::Models::Crm::PublicPropertyValidationRule::RuleType] The category of validation applied to the property, such as FORMAT, ALPHANUMERIC
+        #   @param rule_type [Symbol, HubSpotSDK::Models::Crm::PublicPropertyValidationRule::RuleType] The category of validation applied to the property, such as FORMAT, ALPHANUMERIC
         #
         #   @param should_apply_normalization [Boolean]
 
         # The category of validation applied to the property, such as FORMAT,
         # ALPHANUMERIC, or MAX_LENGTH.
         #
-        # @see HubspotSDK::Models::Crm::PublicPropertyValidationRule#rule_type
+        # @see HubSpotSDK::Models::Crm::PublicPropertyValidationRule#rule_type
         module RuleType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER_DATETIME_DURATION = :AFTER_DATETIME_DURATION
           AFTER_DURATION = :AFTER_DURATION

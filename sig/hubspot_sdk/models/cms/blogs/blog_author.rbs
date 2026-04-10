@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       class BlogAuthor = Blogs::BlogAuthor
@@ -15,7 +15,7 @@ module HubspotSDK
             email: String,
             facebook: String,
             full_name: String,
-            language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language,
+            language: HubSpotSDK::Models::Cms::Blogs::BlogAuthor::language,
             linkedin: String,
             name: String,
             slug: String,
@@ -25,7 +25,7 @@ module HubspotSDK
             website: String
           }
 
-        class BlogAuthor < HubspotSDK::Internal::Type::BaseModel
+        class BlogAuthor < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor avatar: String
@@ -44,7 +44,7 @@ module HubspotSDK
 
           attr_accessor full_name: String
 
-          attr_accessor language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language
+          attr_accessor language: HubSpotSDK::Models::Cms::Blogs::BlogAuthor::language
 
           attr_accessor linkedin: String
 
@@ -70,7 +70,7 @@ module HubspotSDK
             email: String,
             facebook: String,
             full_name: String,
-            language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language,
+            language: HubSpotSDK::Models::Cms::Blogs::BlogAuthor::language,
             linkedin: String,
             name: String,
             slug: String,
@@ -90,7 +90,7 @@ module HubspotSDK
             email: String,
             facebook: String,
             full_name: String,
-            language: HubspotSDK::Models::Cms::Blogs::BlogAuthor::language,
+            language: HubSpotSDK::Models::Cms::Blogs::BlogAuthor::language,
             linkedin: String,
             name: String,
             slug: String,
@@ -946,7 +946,7 @@ module HubspotSDK
             | :"zu-za"
 
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA: :aa
             AB: :ab
@@ -1792,7 +1792,7 @@ module HubspotSDK
             ZU: :zu
             ZU_ZA: :"zu-za"
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::Blogs::BlogAuthor::language]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Blogs::BlogAuthor::language]
           end
         end
       end

@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLegalConsentOptions < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLegalConsentOptions < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
             T::Array[
-              HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox
+              HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox
             ]
           )
         end
@@ -53,7 +53,7 @@ module HubspotSDK
         # REQUIRED_CHECKBOX.
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
+            HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
           )
         end
         attr_accessor :processing_consent_type
@@ -64,7 +64,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           )
         end
@@ -73,7 +73,7 @@ module HubspotSDK
         sig do
           params(
             legitimate_interest_legal_basis:
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::OrSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::OrSymbol
           ).void
         end
         attr_writer :legitimate_interest_legal_basis
@@ -82,7 +82,7 @@ module HubspotSDK
           params(
             communication_consent_checkboxes:
               T::Array[
-                HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox::OrHash
+                HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox::OrHash
               ],
             communication_consent_text: String,
             is_legitimate_interest: T::Boolean,
@@ -92,9 +92,9 @@ module HubspotSDK
             processing_consent_footer_text: String,
             processing_consent_text: String,
             processing_consent_type:
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::OrSymbol,
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::OrSymbol,
             legitimate_interest_legal_basis:
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::OrSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -128,7 +128,7 @@ module HubspotSDK
             {
               communication_consent_checkboxes:
                 T::Array[
-                  HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox
+                  HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox
                 ],
               communication_consent_text: String,
               is_legitimate_interest: T::Boolean,
@@ -138,9 +138,9 @@ module HubspotSDK
               processing_consent_footer_text: String,
               processing_consent_text: String,
               processing_consent_type:
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol,
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol,
               legitimate_interest_legal_basis:
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             }
           )
         end
@@ -150,13 +150,13 @@ module HubspotSDK
         # The type of consent required for processing. Accepted values are: IMPLICIT,
         # REQUIRED_CHECKBOX.
         module ProcessingConsentType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -164,18 +164,18 @@ module HubspotSDK
           IMPLICIT =
             T.let(
               :IMPLICIT,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
             )
           REQUIRED_CHECKBOX =
             T.let(
               :REQUIRED_CHECKBOX,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::ProcessingConsentType::TaggedSymbol
               ]
             )
           end
@@ -187,13 +187,13 @@ module HubspotSDK
         # LEGITIMATE_INTEREST_PQL, LEGITIMATE_INTEREST_CLIENT, PERFORMANCE_OF_CONTRACT,
         # CONSENT_WITH_NOTICE, NON_GDPR, PROCESS_AND_STORE, LEGITIMATE_INTEREST_OTHER.
         module LegitimateInterestLegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -201,43 +201,43 @@ module HubspotSDK
           CONSENT_WITH_NOTICE =
             T.let(
               :CONSENT_WITH_NOTICE,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_CLIENT =
             T.let(
               :LEGITIMATE_INTEREST_CLIENT,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_OTHER =
             T.let(
               :LEGITIMATE_INTEREST_OTHER,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_PQL =
             T.let(
               :LEGITIMATE_INTEREST_PQL,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           NON_GDPR =
             T.let(
               :NON_GDPR,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           PERFORMANCE_OF_CONTRACT =
             T.let(
               :PERFORMANCE_OF_CONTRACT,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
           PROCESS_AND_STORE =
             T.let(
               :PROCESS_AND_STORE,
-              HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalLegalConsentOptions::LegitimateInterestLegalBasis::TaggedSymbol
               ]
             )
           end

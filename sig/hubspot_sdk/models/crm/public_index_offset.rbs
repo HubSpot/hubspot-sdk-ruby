@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_index_offset =
@@ -14,7 +14,7 @@ module HubspotSDK
           years: Integer
         }
 
-      class PublicIndexOffset < HubspotSDK::Internal::Type::BaseModel
+      class PublicIndexOffset < HubSpotSDK::Internal::Type::BaseModel
         attr_reader days: Integer?
 
         def days=: (Integer) -> Integer

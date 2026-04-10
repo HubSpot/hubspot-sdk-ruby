@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingsWelcomeScreenInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingsWelcomeScreenInfo < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #   A brief description displayed the welcome screen below the title.
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         #   Deprecated property. Value can be ignored but will always be false.
         #
         #   @return [Boolean, nil]
-        optional :show_welcome_screen, HubspotSDK::Internal::Type::Boolean, api_name: :showWelcomeScreen
+        optional :show_welcome_screen, HubSpotSDK::Internal::Type::Boolean, api_name: :showWelcomeScreen
 
         # @!attribute title
         #   The main heading displayed on the welcome screen.
@@ -33,11 +33,11 @@ module HubspotSDK
         #   Whether the company's logo should be displayed on the welcome screen.
         #
         #   @return [Boolean, nil]
-        optional :use_company_logo, HubspotSDK::Internal::Type::Boolean, api_name: :useCompanyLogo
+        optional :use_company_logo, HubSpotSDK::Internal::Type::Boolean, api_name: :useCompanyLogo
 
         # @!method initialize(description: nil, logo_url: nil, show_welcome_screen: nil, title: nil, use_company_logo: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo} for more
+        #   {HubSpotSDK::Models::Scheduler::ExternalMeetingsWelcomeScreenInfo} for more
         #   details.
         #
         #   @param description [String] A brief description displayed the welcome screen below the title.

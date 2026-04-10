@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BooleanTargetPropertyVariable < HubspotSDK::Internal::Type::BaseModel
+      class BooleanTargetPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::BooleanTargetPropertyVariable::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::BooleanTargetPropertyVariable::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator }
 
         # @!attribute property_name
         #
@@ -17,16 +17,16 @@ module HubspotSDK
         # @!attribute value
         #
         #   @return [Boolean, nil]
-        optional :value, HubspotSDK::Internal::Type::Boolean
+        optional :value, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::BooleanTargetPropertyVariable::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable::Operator]
         #   @param property_name [String]
         #   @param value [Boolean]
 
-        # @see HubspotSDK::Models::Cms::BooleanTargetPropertyVariable#operator
+        # @see HubSpotSDK::Models::Cms::BooleanTargetPropertyVariable#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN_TARGET_PROPERTY_VARIABLE = :BOOLEAN_TARGET_PROPERTY_VARIABLE
 

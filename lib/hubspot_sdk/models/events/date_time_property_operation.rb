@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DateTimePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class DateTimePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::DateTimePropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::DateTimePropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::DateTimePropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::DateTimePropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,16 +28,16 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::DateTimePropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::DateTimePropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::DateTimePropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::DateTimePropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute requires_time_zone_conversion
         #
         #   @return [Boolean]
         required :requires_time_zone_conversion,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :requiresTimeZoneConversion
 
         # @!attribute timestamp
@@ -58,17 +58,17 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, requires_time_zone_conversion:, timestamp:, default_value: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::DateTimePropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::DateTimePropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::DateTimePropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::DateTimePropertyOperation::PropertyType]
         #   @param requires_time_zone_conversion [Boolean]
         #   @param timestamp [Integer]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::DateTimePropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::DateTimePropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_AFTER = :IS_AFTER
           IS_AFTER_DATE = :IS_AFTER_DATE
@@ -80,9 +80,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::DateTimePropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::DateTimePropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME = :datetime
 

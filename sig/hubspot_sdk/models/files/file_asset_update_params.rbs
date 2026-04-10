@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_asset_update_params =
-        { file_id: String } & HubspotSDK::Internal::Type::request_parameters
+        { file_id: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class FileAssetUpdateParams < HubspotSDK::Models::Files::FileUpdateInput
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetUpdateParams < HubSpotSDK::Models::Files::FileUpdateInput
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def file_id: -> String
 
@@ -14,12 +14,12 @@ module HubspotSDK
 
         def initialize: (
           file_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           file_id: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

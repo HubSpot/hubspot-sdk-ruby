@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type endpoints =
         { discovery: bool, schemes: ::Array[String], url: String }
 
-      class Endpoints < HubspotSDK::Internal::Type::BaseModel
+      class Endpoints < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor discovery: bool
 
         attr_accessor schemes: ::Array[String]

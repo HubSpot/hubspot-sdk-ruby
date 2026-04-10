@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelAccountStagingToken < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelAccountStagingToken < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicChannelAccountStagingToken,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicChannelAccountStagingToken,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -35,7 +35,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Conversations::PublicDeliveryIdentifier)
+            T.nilable(HubSpotSDK::Conversations::PublicDeliveryIdentifier)
           )
         end
         attr_reader :delivery_identifier
@@ -43,7 +43,7 @@ module HubspotSDK
         sig do
           params(
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).void
         end
         attr_writer :delivery_identifier
@@ -57,7 +57,7 @@ module HubspotSDK
             user_id: Integer,
             account_name: String,
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -81,7 +81,7 @@ module HubspotSDK
               user_id: Integer,
               account_name: String,
               delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier
             }
           )
         end

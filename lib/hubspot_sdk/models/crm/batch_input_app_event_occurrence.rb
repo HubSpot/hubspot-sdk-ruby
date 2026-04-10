@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputAppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputAppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::AppEventOccurrence>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::AppEventOccurrence] }
+        #   @return [Array<HubSpotSDK::Models::Crm::AppEventOccurrence>]
+        required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::AppEventOccurrence] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::AppEventOccurrence>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::AppEventOccurrence>]
       end
     end
   end

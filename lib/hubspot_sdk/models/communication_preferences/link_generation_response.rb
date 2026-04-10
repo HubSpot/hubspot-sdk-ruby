@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      # @see HubspotSDK::Resources::CommunicationPreferences#generate_links
-      class LinkGenerationResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::CommunicationPreferences#generate_links
+      class LinkGenerationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute manage_preferences_url
         #   The URL where the subscriber can manage their communication preferences.
         #
@@ -33,7 +33,7 @@ module HubspotSDK
 
         # @!method initialize(manage_preferences_url:, subscriber_id_string:, unsubscribe_all_url:, unsubscribe_single_url: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::LinkGenerationResponse} for more
+        #   {HubSpotSDK::Models::CommunicationPreferences::LinkGenerationResponse} for more
         #   details.
         #
         #   @param manage_preferences_url [String] The URL where the subscriber can manage their communication preferences.

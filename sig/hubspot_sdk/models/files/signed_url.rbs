@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type signed_url =
@@ -13,7 +13,7 @@ module HubspotSDK
           width: Integer
         }
 
-      class SignedURL < HubspotSDK::Internal::Type::BaseModel
+      class SignedURL < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor expires_at: Time
 
         attr_accessor url: String

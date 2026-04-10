@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_export_response =
         {
           id: String,
           created_at: Time,
-          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
-          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          export_state: HubSpotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubSpotSDK::Models::Crm::PublicExportResponse::export_type,
           object_properties: ::Array[String],
           object_type: String,
           updated_at: Time,
@@ -14,14 +14,14 @@ module HubspotSDK
           record_count: Integer
         }
 
-      class PublicExportResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicExportResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
-        attr_accessor export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state
+        attr_accessor export_state: HubSpotSDK::Models::Crm::PublicExportResponse::export_state
 
-        attr_accessor export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type
+        attr_accessor export_type: HubSpotSDK::Models::Crm::PublicExportResponse::export_type
 
         attr_accessor object_properties: ::Array[String]
 
@@ -40,8 +40,8 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
-          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
-          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          export_state: HubSpotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubSpotSDK::Models::Crm::PublicExportResponse::export_type,
           object_properties: ::Array[String],
           object_type: String,
           updated_at: Time,
@@ -52,8 +52,8 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
-          export_state: HubspotSDK::Models::Crm::PublicExportResponse::export_state,
-          export_type: HubspotSDK::Models::Crm::PublicExportResponse::export_type,
+          export_state: HubSpotSDK::Models::Crm::PublicExportResponse::export_state,
+          export_type: HubSpotSDK::Models::Crm::PublicExportResponse::export_type,
           object_properties: ::Array[String],
           object_type: String,
           updated_at: Time,
@@ -73,7 +73,7 @@ module HubspotSDK
           | :PROCESSING
 
         module ExportState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           CONFLICT: :CONFLICT
@@ -85,18 +85,18 @@ module HubspotSDK
           PENDING_APPROVAL: :PENDING_APPROVAL
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicExportResponse::export_state]
         end
 
         type export_type = :LIST | :VIEW
 
         module ExportType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LIST: :LIST
           VIEW: :VIEW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicExportResponse::export_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicExportResponse::export_type]
         end
       end
     end

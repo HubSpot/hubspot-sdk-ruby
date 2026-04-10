@@ -1,8 +1,8 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Timeline
-        attr_reader batch: HubspotSDK::Resources::Crm::Timeline::Batch
+        attr_reader batch: HubSpotSDK::Resources::Crm::Timeline::Batch
 
         def create_event: (
           id: String,
@@ -13,19 +13,19 @@ module HubspotSDK
           ?extra_data: top,
           ?object_id_: String,
           ?object_type_fully_qualified_name: String,
-          ?timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
+          ?timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame,
           ?timestamp: Time,
           ?utk: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def create_project_type: (
           developer_symbol: String,
           project_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::AppEventResolutionResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::AppEventResolutionResponse
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

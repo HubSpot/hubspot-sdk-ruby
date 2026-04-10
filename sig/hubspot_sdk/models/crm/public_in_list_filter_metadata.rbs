@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_in_list_filter_metadata = { id: String, in_list_type: String }
 
-      class PublicInListFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicInListFilterMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor in_list_type: String

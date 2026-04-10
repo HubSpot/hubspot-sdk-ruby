@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
@@ -15,7 +15,7 @@ module HubspotSDK
             width: Integer
           }
 
-        class SettingsRequest < HubspotSDK::Internal::Type::BaseModel
+        class SettingsRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor height: Integer
 
           attr_accessor is_ready: bool

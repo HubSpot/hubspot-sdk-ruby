@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_statistics_data =
@@ -9,7 +9,7 @@ module HubspotSDK
           ratios: ::Hash[Symbol, Float]
         }
 
-      class EmailStatisticsData < HubspotSDK::Internal::Type::BaseModel
+      class EmailStatisticsData < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor counters: ::Hash[Symbol, Integer]
 
         attr_accessor device_breakdown: ::Hash[Symbol, ::Hash[Symbol, Integer]]

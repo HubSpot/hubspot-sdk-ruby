@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchResponsePublicWideStatusBulkResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicWideStatusBulkResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch process was completed.
         #
@@ -14,9 +14,9 @@ module HubspotSDK
         #   The array of results from the batch process, each containing subscription status
         #   information.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicWideStatusBulkResponse>]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicWideStatusBulkResponse>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicWideStatusBulkResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicWideStatusBulkResponse] }
 
         # @!attribute started_at
         #   The date and time when the batch process began.
@@ -28,15 +28,15 @@ module HubspotSDK
         #   The current status of the batch process, with possible values: PENDING,
         #   PROCESSING, CANCELED, COMPLETE.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status]
         required :status,
-                 enum: -> { HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status }
+                 enum: -> { HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status }
 
         # @!attribute links
         #   A collection of related links associated with the batch response.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   The date and time when the batch request was made.
@@ -46,16 +46,16 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse}
+        #   {HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse}
         #   for more details.
         #
         #   @param completed_at [Time] The date and time when the batch process was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::CommunicationPreferences::PublicWideStatusBulkResponse>] The array of results from the batch process, each containing subscription status
+        #   @param results [Array<HubSpotSDK::Models::CommunicationPreferences::PublicWideStatusBulkResponse>] The array of results from the batch process, each containing subscription status
         #
         #   @param started_at [Time] The date and time when the batch process began.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status] The current status of the batch process, with possible values: PENDING, PROCESSI
+        #   @param status [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse::Status] The current status of the batch process, with possible values: PENDING, PROCESSI
         #
         #   @param links [Hash{Symbol=>String}] A collection of related links associated with the batch response.
         #
@@ -64,9 +64,9 @@ module HubspotSDK
         # The current status of the batch process, with possible values: PENDING,
         # PROCESSING, CANCELED, COMPLETE.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse#status
+        # @see HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

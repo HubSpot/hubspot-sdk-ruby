@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       module SubscriptionUpsertRequest
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
         Variants =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::ObjectSubscriptionUpsertRequest,
-              HubspotSDK::Webhooks::AssociationSubscriptionUpsertRequest,
-              HubspotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest,
-              HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
+              HubSpotSDK::Webhooks::ObjectSubscriptionUpsertRequest,
+              HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest,
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest,
+              HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
             )
           end
 
         sig do
           override.returns(
-            T::Array[HubspotSDK::Webhooks::SubscriptionUpsertRequest::Variants]
+            T::Array[HubSpotSDK::Webhooks::SubscriptionUpsertRequest::Variants]
           )
         end
         def self.variants

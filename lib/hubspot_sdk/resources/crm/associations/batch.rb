@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Associations
@@ -11,13 +11,13 @@ module HubspotSDK
           # @param from_object_type [String]
           # @param from_object_id [String]
           # @param to_object_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
+          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
           #
-          # @see HubspotSDK::Models::Crm::Associations::BatchCreateParams
+          # @see HubSpotSDK::Models::Crm::Associations::BatchCreateParams
           def create(to_object_id, params)
-            parsed, options = HubspotSDK::Crm::Associations::BatchCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Associations::BatchCreateParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -39,7 +39,7 @@ module HubspotSDK
                 to_object_type,
                 to_object_id
               ],
-              model: HubspotSDK::Crm::BatchResponsePublicDefaultAssociation,
+              model: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation,
               options: options
             )
           end
@@ -52,15 +52,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiArchive>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiArchive>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Associations::BatchDeleteParams
+          # @see HubSpotSDK::Models::Crm::Associations::BatchDeleteParams
           def delete(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::Associations::BatchDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Associations::BatchDeleteParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -82,15 +82,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicDefaultAssociationMultiPost>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicDefaultAssociationMultiPost>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
+          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
           #
-          # @see HubspotSDK::Models::Crm::Associations::BatchCreateDefaultParams
+          # @see HubSpotSDK::Models::Crm::Associations::BatchCreateDefaultParams
           def create_default(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::Associations::BatchCreateDefaultParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Associations::BatchCreateDefaultParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -103,7 +103,7 @@ module HubspotSDK
                 to_object_type
               ],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponsePublicDefaultAssociation,
+              model: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation,
               options: options
             )
           end
@@ -117,15 +117,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicAssociationMultiPost>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiPost>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Associations::BatchDeleteLabelsParams
+          # @see HubSpotSDK::Models::Crm::Associations::BatchDeleteLabelsParams
           def delete_labels(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::Associations::BatchDeleteLabelsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Associations::BatchDeleteLabelsParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -155,15 +155,15 @@ module HubspotSDK
           #
           # @param from_object_type [String] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Crm::PublicFetchAssociationsBatchRequest>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicFetchAssociationsBatchRequest>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::BatchResponsePublicAssociationMultiWithLabel]
+          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicAssociationMultiWithLabel]
           #
-          # @see HubspotSDK::Models::Crm::Associations::BatchGetParams
+          # @see HubSpotSDK::Models::Crm::Associations::BatchGetParams
           def get(to_object_type, params)
-            parsed, options = HubspotSDK::Crm::Associations::BatchGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Associations::BatchGetParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -172,14 +172,14 @@ module HubspotSDK
               method: :post,
               path: ["crm/associations/2026-03/%1$s/%2$s/batch/read", from_object_type, to_object_type],
               body: parsed,
-              model: HubspotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel,
+              model: HubSpotSDK::Crm::BatchResponsePublicAssociationMultiWithLabel,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

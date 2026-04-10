@@ -1,51 +1,51 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type action_hook_action_body =
           {
-            http_method: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
+            http_method: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
             url: String,
-            confirmation: HubspotSDK::Crm::Extensions::ActionConfirmationBody,
+            confirmation: HubSpotSDK::Crm::Extensions::ActionConfirmationBody,
             label: String
           }
 
-        class ActionHookActionBody < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor http_method: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method
+        class ActionHookActionBody < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor http_method: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method
 
           attr_accessor property_names_included: ::Array[String]
 
-          attr_accessor type: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::type_
+          attr_accessor type: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::type_
 
           attr_accessor url: String
 
-          attr_reader confirmation: HubspotSDK::Crm::Extensions::ActionConfirmationBody?
+          attr_reader confirmation: HubSpotSDK::Crm::Extensions::ActionConfirmationBody?
 
           def confirmation=: (
-            HubspotSDK::Crm::Extensions::ActionConfirmationBody
-          ) -> HubspotSDK::Crm::Extensions::ActionConfirmationBody
+            HubSpotSDK::Crm::Extensions::ActionConfirmationBody
+          ) -> HubSpotSDK::Crm::Extensions::ActionConfirmationBody
 
           attr_reader label: String?
 
           def label=: (String) -> String
 
           def initialize: (
-            http_method: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
+            http_method: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
             url: String,
-            ?confirmation: HubspotSDK::Crm::Extensions::ActionConfirmationBody,
+            ?confirmation: HubSpotSDK::Crm::Extensions::ActionConfirmationBody,
             ?label: String
           ) -> void
 
           def to_hash: -> {
-            http_method: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
+            http_method: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method,
             property_names_included: ::Array[String],
-            type: HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
+            type: HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::type_,
             url: String,
-            confirmation: HubspotSDK::Crm::Extensions::ActionConfirmationBody,
+            confirmation: HubSpotSDK::Crm::Extensions::ActionConfirmationBody,
             label: String
           }
 
@@ -61,7 +61,7 @@ module HubspotSDK
             | :TRACE
 
           module HTTPMethod
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CONNECT: :CONNECT
             DELETE: :DELETE
@@ -73,17 +73,17 @@ module HubspotSDK
             PUT: :PUT
             TRACE: :TRACE
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::http_method]
           end
 
           type type_ = :ACTION_HOOK
 
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             ACTION_HOOK: :ACTION_HOOK
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::ActionHookActionBody::type_]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody::type_]
           end
         end
       end

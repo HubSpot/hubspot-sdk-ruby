@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       module Currencies
         type central_fx_rate_get_unsupported_currencies_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubSpotSDK::Internal::Type::request_parameters
 
-        class CentralFxRateGetUnsupportedCurrenciesParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CentralFxRateGetUnsupportedCurrenciesParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
         end
       end
     end

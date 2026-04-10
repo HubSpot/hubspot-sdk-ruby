@@ -1,48 +1,48 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardPatchRequest < HubspotSDK::Internal::Type::BaseModel
+        class CardPatchRequest < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CardPatchRequest,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CardPatchRequest,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
-          sig { returns(T.nilable(HubspotSDK::Crm::Extensions::CardActions)) }
+          sig { returns(T.nilable(HubSpotSDK::Crm::Extensions::CardActions)) }
           attr_reader :actions
 
           sig do
             params(
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash
             ).void
           end
           attr_writer :actions
 
           sig do
-            returns(T.nilable(HubspotSDK::Crm::Extensions::CardDisplayBody))
+            returns(T.nilable(HubSpotSDK::Crm::Extensions::CardDisplayBody))
           end
           attr_reader :display_
 
           sig do
             params(
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash
             ).void
           end
           attr_writer :display_
 
           sig do
-            returns(T.nilable(HubspotSDK::Crm::Extensions::CardFetchBodyPatch))
+            returns(T.nilable(HubSpotSDK::Crm::Extensions::CardFetchBodyPatch))
           end
           attr_reader :fetch
 
           sig do
             params(
-              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash
+              fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash
             ).void
           end
           attr_writer :fetch
@@ -56,9 +56,9 @@ module HubspotSDK
 
           sig do
             params(
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
               title: String
             ).returns(T.attached_class)
           end
@@ -74,9 +74,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                actions: HubspotSDK::Crm::Extensions::CardActions,
-                display_: HubspotSDK::Crm::Extensions::CardDisplayBody,
-                fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch,
+                actions: HubSpotSDK::Crm::Extensions::CardActions,
+                display_: HubSpotSDK::Crm::Extensions::CardDisplayBody,
+                fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch,
                 title: String
               }
             )

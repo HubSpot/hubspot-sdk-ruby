@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponsePublicCampaign < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicCampaign < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the batch operation was completed, formatted as a
         #   date-time string.
@@ -15,8 +15,8 @@ module HubspotSDK
         #   An array of results from the batch operation, each item representing a public
         #   campaign.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicCampaign>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign] }
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaign>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaign] }
 
         # @!attribute started_at
         #   The date and time when the batch operation started, formatted as a date-time
@@ -29,14 +29,14 @@ module HubspotSDK
         #   The current status of the batch operation, with possible values: CANCELED,
         #   COMPLETE, PENDING, PROCESSING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaign::Status]
-        required :status, enum: -> { HubspotSDK::Marketing::BatchResponsePublicCampaign::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaign::Status]
+        required :status, enum: -> { HubSpotSDK::Marketing::BatchResponsePublicCampaign::Status }
 
         # @!attribute links
         #   A map of related links associated with the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
         #   The date and time when the batch operation was requested, formatted as a
@@ -47,15 +47,15 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::BatchResponsePublicCampaign} for more details.
+        #   {HubSpotSDK::Models::Marketing::BatchResponsePublicCampaign} for more details.
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed, formatted as a date-ti
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::PublicCampaign>] An array of results from the batch operation, each item representing a public ca
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaign>] An array of results from the batch operation, each item representing a public ca
         #
         #   @param started_at [Time] The date and time when the batch operation started, formatted as a date-time str
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponsePublicCampaign::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
+        #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaign::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
         #
         #   @param links [Hash{Symbol=>String}] A map of related links associated with the batch operation.
         #
@@ -64,9 +64,9 @@ module HubspotSDK
         # The current status of the batch operation, with possible values: CANCELED,
         # COMPLETE, PENDING, PROCESSING.
         #
-        # @see HubspotSDK::Models::Marketing::BatchResponsePublicCampaign#status
+        # @see HubSpotSDK::Models::Marketing::BatchResponsePublicCampaign#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -10,11 +10,11 @@ module HubspotSDK
             params(
               id: String,
               language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::OrSymbol,
+                HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::OrSymbol,
               primary_id: String,
               primary_language:
-                HubspotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def attach_to_lang_group(
@@ -36,8 +36,8 @@ module HubspotSDK
               id: String,
               language: String,
               primary_language: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::PageData)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def create_language_variation(
             # ID of content to clone.
@@ -54,7 +54,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def detach_from_lang_group(
@@ -68,7 +68,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def set_new_lang_primary(
@@ -84,10 +84,10 @@ module HubspotSDK
               languages:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::UpdateLanguagesRequestVNext::Language::OrSymbol
+                  HubSpotSDK::Cms::UpdateLanguagesRequestVNext::Language::OrSymbol
                 ],
               primary_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
           def update_languages(
@@ -100,7 +100,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

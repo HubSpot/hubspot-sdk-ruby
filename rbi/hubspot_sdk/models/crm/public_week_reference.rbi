@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicWeekReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicWeekReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicWeekReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicWeekReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The day of the week (SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,
         # SATURDAY).
         sig do
-          returns(HubspotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol)
         end
         attr_accessor :day_of_week
 
         # Indicates the type of reference (WEEK).
         sig do
-          returns(HubspotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol)
         end
         attr_accessor :reference_type
 
@@ -56,9 +56,9 @@ module HubspotSDK
         sig do
           params(
             day_of_week:
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol,
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol,
             reference_type:
-              HubspotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -86,9 +86,9 @@ module HubspotSDK
           override.returns(
             {
               day_of_week:
-                HubspotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol,
+                HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::OrSymbol,
               reference_type:
-                HubspotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicWeekReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -102,54 +102,54 @@ module HubspotSDK
         # The day of the week (SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,
         # SATURDAY).
         module DayOfWeek
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicWeekReference::DayOfWeek)
+              T.all(Symbol, HubSpotSDK::Crm::PublicWeekReference::DayOfWeek)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           FRIDAY =
             T.let(
               :FRIDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           MONDAY =
             T.let(
               :MONDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           SATURDAY =
             T.let(
               :SATURDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           SUNDAY =
             T.let(
               :SUNDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           THURSDAY =
             T.let(
               :THURSDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           TUESDAY =
             T.let(
               :TUESDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
           WEDNESDAY =
             T.let(
               :WEDNESDAY,
-              HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
+                HubSpotSDK::Crm::PublicWeekReference::DayOfWeek::TaggedSymbol
               ]
             )
           end
@@ -159,24 +159,24 @@ module HubspotSDK
 
         # Indicates the type of reference (WEEK).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicWeekReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicWeekReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           WEEK =
             T.let(
               :WEEK,
-              HubspotSDK::Crm::PublicWeekReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicWeekReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicWeekReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicWeekReference::ReferenceType::TaggedSymbol
               ]
             )
           end

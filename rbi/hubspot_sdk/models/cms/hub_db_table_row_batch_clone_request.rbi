@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableRowBatchCloneRequest < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowBatchCloneRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::HubDBTableRowBatchCloneRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::HubDBTableRowBatchCloneRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

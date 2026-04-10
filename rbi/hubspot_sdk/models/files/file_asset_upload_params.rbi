@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileAssetUploadParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetUploadParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FileAssetUploadParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FileAssetUploadParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,10 +21,10 @@ module HubspotSDK
         sig { params(charset_hunch: String).void }
         attr_writer :charset_hunch
 
-        sig { returns(T.nilable(HubspotSDK::Internal::FileInput)) }
+        sig { returns(T.nilable(HubSpotSDK::Internal::FileInput)) }
         attr_reader :file
 
-        sig { params(file: HubspotSDK::Internal::FileInput).void }
+        sig { params(file: HubSpotSDK::Internal::FileInput).void }
         attr_writer :file
 
         sig { returns(T.nilable(String)) }
@@ -54,12 +54,12 @@ module HubspotSDK
         sig do
           params(
             charset_hunch: String,
-            file: HubspotSDK::Internal::FileInput,
+            file: HubSpotSDK::Internal::FileInput,
             file_name: String,
             folder_id: String,
             folder_path: String,
             options: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -77,12 +77,12 @@ module HubspotSDK
           override.returns(
             {
               charset_hunch: String,
-              file: HubspotSDK::Internal::FileInput,
+              file: HubSpotSDK::Internal::FileInput,
               file_name: String,
               folder_id: String,
               folder_path: String,
               options: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

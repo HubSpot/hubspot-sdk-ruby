@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AppUninstalls
@@ -10,11 +10,11 @@ module HubspotSDK
         #
         # @overload uninstall(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::AppUninstallUninstallParams
+        # @see HubSpotSDK::Models::Crm::AppUninstallUninstallParams
         def uninstall(params = {})
           @client.request(
             method: :delete,
@@ -26,7 +26,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type formatted_phone_number =
           {
             :e164_number => String,
-            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            phone_number_type: HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
             extension: String
           }
 
-        class FormattedPhoneNumber < HubspotSDK::Internal::Type::BaseModel
+        class FormattedPhoneNumber < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor e164_number: String
 
-          attr_accessor phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type
+          attr_accessor phone_number_type: HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type
 
           attr_reader extension: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
 
           def initialize: (
             e164_number: String,
-            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            phone_number_type: HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
             ?extension: String
           ) -> void
 
           def to_hash: -> {
             :e164_number => String,
-            phone_number_type: HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
+            phone_number_type: HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type,
             extension: String
           }
 
@@ -45,7 +45,7 @@ module HubspotSDK
             | :VOIP
 
           module PhoneNumberType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             FIXED_LINE: :FIXED_LINE
             FIXED_LINE_OR_MOBILE: :FIXED_LINE_OR_MOBILE
@@ -60,7 +60,7 @@ module HubspotSDK
             VOICEMAIL: :VOICEMAIL
             VOIP: :VOIP
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber::phone_number_type]
           end
         end
       end

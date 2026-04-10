@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @abstract
       class BaseModel
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         class << self
           # @api private
@@ -14,7 +14,7 @@ module HubspotSDK
           # Assumes superclass fields are totally defined before fields are accessed /
           # defined on subclasses.
           #
-          # @param child [Class<HubspotSDK::Internal::Type::BaseModel>]
+          # @param child [Class<HubSpotSDK::Internal::Type::BaseModel>]
           def inherited(child)
             super
             child.known_fields.replace(known_fields.dup)
@@ -40,7 +40,7 @@ module HubspotSDK
           #
           # @param required [Boolean]
           #
-          # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+          # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
           #
           # @param spec [Hash{Symbol=>Object}] .
           #
@@ -52,19 +52,19 @@ module HubspotSDK
           #
           #   @option spec [Boolean] :"nil?"
           private def add_field(name_sym, required:, type_info:, spec:)
-            meta = HubspotSDK::Internal::Type::Converter.meta_info(type_info, spec)
+            meta = HubSpotSDK::Internal::Type::Converter.meta_info(type_info, spec)
             type_fn, info =
               case type_info
-              in Proc | HubspotSDK::Internal::Type::Converter | Class
-                [HubspotSDK::Internal::Type::Converter.type_info({**spec, union: type_info}), spec]
+              in Proc | HubSpotSDK::Internal::Type::Converter | Class
+                [HubSpotSDK::Internal::Type::Converter.type_info({**spec, union: type_info}), spec]
               in Hash
-                [HubspotSDK::Internal::Type::Converter.type_info(type_info), type_info]
+                [HubSpotSDK::Internal::Type::Converter.type_info(type_info), type_info]
               end
 
             setter = :"#{name_sym}="
             api_name = info.fetch(:api_name, name_sym)
             nilable = info.fetch(:nil?, false)
-            const = required && !nilable ? info.fetch(:const, HubspotSDK::Internal::OMIT) : HubspotSDK::Internal::OMIT
+            const = required && !nilable ? info.fetch(:const, HubSpotSDK::Internal::OMIT) : HubSpotSDK::Internal::OMIT
 
             [name_sym, setter].each { undef_method(_1) } if known_fields.key?(name_sym)
 
@@ -81,12 +81,12 @@ module HubspotSDK
 
             define_method(setter) do |value|
               target = type_fn.call
-              state = HubspotSDK::Internal::Type::Converter.new_coerce_state(translate_names: false)
-              coerced = HubspotSDK::Internal::Type::Converter.coerce(target, value, state: state)
+              state = HubSpotSDK::Internal::Type::Converter.new_coerce_state(translate_names: false)
+              coerced = HubSpotSDK::Internal::Type::Converter.coerce(target, value, state: state)
               status = @coerced.store(name_sym, state.fetch(:error) || true)
               stored =
                 case [target, status]
-                in [HubspotSDK::Internal::Type::Converter | Symbol, true]
+                in [HubSpotSDK::Internal::Type::Converter | Symbol, true]
                   coerced
                 else
                   value
@@ -100,10 +100,10 @@ module HubspotSDK
               target = type_fn.call
 
               case @coerced[name_sym]
-              in true | false if HubspotSDK::Internal::Type::Converter === target
+              in true | false if HubSpotSDK::Internal::Type::Converter === target
                 @data.fetch(name_sym)
               in ::StandardError => e
-                raise HubspotSDK::Errors::ConversionError.new(
+                raise HubSpotSDK::Errors::ConversionError.new(
                   on: self.class,
                   method: __method__,
                   target: target,
@@ -112,17 +112,17 @@ module HubspotSDK
                 )
               else
                 Kernel.then do
-                  value = @data.fetch(name_sym) { const == HubspotSDK::Internal::OMIT ? nil : const }
-                  state = HubspotSDK::Internal::Type::Converter.new_coerce_state(translate_names: false)
+                  value = @data.fetch(name_sym) { const == HubSpotSDK::Internal::OMIT ? nil : const }
+                  state = HubSpotSDK::Internal::Type::Converter.new_coerce_state(translate_names: false)
                   if (nilable || !required) && value.nil?
                     nil
                   else
-                    HubspotSDK::Internal::Type::Converter.coerce(
+                    HubSpotSDK::Internal::Type::Converter.coerce(
                       target, value, state: state
                     )
                   end
                 rescue StandardError => e
-                  raise HubspotSDK::Errors::ConversionError.new(
+                  raise HubSpotSDK::Errors::ConversionError.new(
                     on: self.class,
                     method: __method__,
                     target: target,
@@ -140,7 +140,7 @@ module HubspotSDK
           #
           # @param name_sym [Symbol]
           #
-          # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+          # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
           #
           # @param spec [Hash{Symbol=>Object}] .
           #
@@ -159,7 +159,7 @@ module HubspotSDK
           #
           # @param name_sym [Symbol]
           #
-          # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+          # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
           #
           # @param spec [Hash{Symbol=>Object}] .
           #
@@ -205,7 +205,7 @@ module HubspotSDK
           #
           # @return [Boolean]
           def ==(other)
-            other.is_a?(Class) && other <= HubspotSDK::Internal::Type::BaseModel && other.fields == fields
+            other.is_a?(Class) && other <= HubSpotSDK::Internal::Type::BaseModel && other.fields == fields
           end
 
           # @api public
@@ -229,7 +229,7 @@ module HubspotSDK
         class << self
           # @api private
           #
-          # @param value [HubspotSDK::Internal::Type::BaseModel, Hash{Object=>Object}, Object]
+          # @param value [HubSpotSDK::Internal::Type::BaseModel, Hash{Object=>Object}, Object]
           #
           # @param state [Hash{Symbol=>Object}] .
           #
@@ -252,7 +252,7 @@ module HubspotSDK
               return value
             end
 
-            unless (val = HubspotSDK::Internal::Util.coerce_hash(value)).is_a?(Hash)
+            unless (val = HubSpotSDK::Internal::Util.coerce_hash(value)).is_a?(Hash)
               exactness[:no] += 1
               state[:error] = TypeError.new("#{value.class} can't be coerced into #{Hash}")
               return value
@@ -271,7 +271,7 @@ module HubspotSDK
               src_name = state.fetch(:translate_names) ? api_name : name
 
               unless val.key?(src_name)
-                if required && mode != :dump && const == HubspotSDK::Internal::OMIT
+                if required && mode != :dump && const == HubSpotSDK::Internal::OMIT
                   exactness[nilable ? :maybe : :no] += 1
                 else
                   exactness[:yes] += 1
@@ -288,9 +288,9 @@ module HubspotSDK
                   exactness[nilable ? :yes : :maybe] += 1
                   nil
                 else
-                  coerced = HubspotSDK::Internal::Type::Converter.coerce(target, item, state: state)
+                  coerced = HubSpotSDK::Internal::Type::Converter.coerce(target, item, state: state)
                   case target
-                  in HubspotSDK::Internal::Type::Converter | Symbol
+                  in HubSpotSDK::Internal::Type::Converter | Symbol
                     coerced
                   else
                     item
@@ -316,7 +316,7 @@ module HubspotSDK
           #
           # @return [Hash{Object=>Object}, Object]
           def dump(value, state:)
-            unless (coerced = HubspotSDK::Internal::Util.coerce_hash(value)).is_a?(Hash)
+            unless (coerced = HubSpotSDK::Internal::Util.coerce_hash(value)).is_a?(Hash)
               return super
             end
 
@@ -334,14 +334,14 @@ module HubspotSDK
                   next
                 else
                   target = type_fn.call
-                  acc.store(api_name, HubspotSDK::Internal::Type::Converter.dump(target, val, state: state))
+                  acc.store(api_name, HubSpotSDK::Internal::Type::Converter.dump(target, val, state: state))
                 end
               end
             end
 
             known_fields.each_value do |field|
               api_name, mode, const = field.fetch_values(:api_name, :mode, :const)
-              next if mode == :coerce || acc.key?(api_name) || const == HubspotSDK::Internal::OMIT
+              next if mode == :coerce || acc.key?(api_name) || const == HubSpotSDK::Internal::OMIT
               acc.store(api_name, const)
             end
 
@@ -359,19 +359,19 @@ module HubspotSDK
         class << self
           # @api private
           #
-          # @param model [HubspotSDK::Internal::Type::BaseModel]
+          # @param model [HubSpotSDK::Internal::Type::BaseModel]
           # @param convert [Boolean]
           #
           # @return [Hash{Symbol=>Object}]
           def recursively_to_h(model, convert:)
             rec = ->(x) do
               case x
-              in HubspotSDK::Internal::Type::BaseModel
+              in HubSpotSDK::Internal::Type::BaseModel
                 if convert
                   fields = x.class.known_fields
                   x.to_h.to_h do |key, val|
                     [key, rec.call(fields.key?(key) ? x.public_send(key) : val)]
-                  rescue HubspotSDK::Errors::ConversionError
+                  rescue HubSpotSDK::Errors::ConversionError
                     [key, rec.call(val)]
                   end
                 else
@@ -438,7 +438,7 @@ module HubspotSDK
         # @return [Hash{Symbol=>Object}]
         #
         # @example
-        #   # `ab_test_create_request_v_next` is a `HubspotSDK::AbTestCreateRequestVNext`
+        #   # `ab_test_create_request_v_next` is a `HubSpotSDK::AbTestCreateRequestVNext`
         #   ab_test_create_request_v_next => {
         #     content_id: content_id,
         #     variation_name: variation_name
@@ -460,14 +460,14 @@ module HubspotSDK
         # @param a [Object]
         #
         # @return [String]
-        def to_json(*a) = HubspotSDK::Internal::Type::Converter.dump(self.class, self).to_json(*a)
+        def to_json(*a) = HubSpotSDK::Internal::Type::Converter.dump(self.class, self).to_json(*a)
 
         # @api public
         #
         # @param a [Object]
         #
         # @return [String]
-        def to_yaml(*a) = HubspotSDK::Internal::Type::Converter.dump(self.class, self).to_yaml(*a)
+        def to_yaml(*a) = HubSpotSDK::Internal::Type::Converter.dump(self.class, self).to_yaml(*a)
 
         # Create a new instance of a model.
         #
@@ -475,7 +475,7 @@ module HubspotSDK
         def initialize(data = {})
           @data = {}
           @coerced = {}
-          HubspotSDK::Internal::Util.coerce_hash!(data).each do
+          HubSpotSDK::Internal::Util.coerce_hash!(data).each do
             if self.class.known_fields.key?(_1)
               public_send(:"#{_1}=", _2)
             else
@@ -498,7 +498,7 @@ module HubspotSDK
             deferred = fields.transform_values do |field|
               type, required, nilable = field.fetch_values(:type, :required, :nilable)
               inspected = [
-                HubspotSDK::Internal::Type::Converter.inspect(type, depth: depth),
+                HubSpotSDK::Internal::Type::Converter.inspect(type, depth: depth),
                 !required || nilable ? "nil" : nil
               ].compact.join(" | ")
               -> { inspected }.tap { _1.define_singleton_method(:inspect) { call } }

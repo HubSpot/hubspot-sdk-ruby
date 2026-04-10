@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PreResolvedContacts < HubspotSDK::Internal::Type::BaseModel
+      class PreResolvedContacts < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PreResolvedContacts,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PreResolvedContacts,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Conversations::PreResolvedContact]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::PreResolvedContact]) }
         attr_accessor :contacts
 
         sig do
           params(
             contacts:
-              T::Array[HubspotSDK::Conversations::PreResolvedContact::OrHash]
+              T::Array[HubSpotSDK::Conversations::PreResolvedContact::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(contacts:)
@@ -27,7 +27,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              contacts: T::Array[HubspotSDK::Conversations::PreResolvedContact]
+              contacts: T::Array[HubSpotSDK::Conversations::PreResolvedContact]
             }
           )
         end

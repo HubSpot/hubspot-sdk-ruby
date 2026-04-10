@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type content_language_clone_request_v_next =
         { id: String, language: String, primary_language: String }
 
-      class ContentLanguageCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+      class ContentLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_reader language: String?

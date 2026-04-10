@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type event_visibility_change =
         {
-          event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type,
+          event_type: HubSpotSDK::Models::Cms::EventVisibilityChange::event_type,
           updated_at: Integer,
           show_in_reporting: bool,
           show_in_timeline: bool,
           show_in_workflows: bool
         }
 
-      class EventVisibilityChange < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type
+      class EventVisibilityChange < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor event_type: HubSpotSDK::Models::Cms::EventVisibilityChange::event_type
 
         attr_accessor updated_at: Integer
 
@@ -28,7 +28,7 @@ module HubspotSDK
         def show_in_workflows=: (bool) -> bool
 
         def initialize: (
-          event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type,
+          event_type: HubSpotSDK::Models::Cms::EventVisibilityChange::event_type,
           updated_at: Integer,
           ?show_in_reporting: bool,
           ?show_in_timeline: bool,
@@ -36,7 +36,7 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          event_type: HubspotSDK::Models::Cms::EventVisibilityChange::event_type,
+          event_type: HubSpotSDK::Models::Cms::EventVisibilityChange::event_type,
           updated_at: Integer,
           show_in_reporting: bool,
           show_in_timeline: bool,
@@ -47,14 +47,14 @@ module HubspotSDK
           :ALL | :ATTENTION_SPAN | :MEDIA_PLAYS | :MEDIA_PLAYS_PERCENT
 
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL: :ALL
           ATTENTION_SPAN: :ATTENTION_SPAN
           MEDIA_PLAYS: :MEDIA_PLAYS
           MEDIA_PLAYS_PERCENT: :MEDIA_PLAYS_PERCENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::EventVisibilityChange::event_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::EventVisibilityChange::event_type]
         end
       end
     end

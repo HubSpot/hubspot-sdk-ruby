@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class IntegerFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class IntegerFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::IntegerFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::IntegerFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The type of the field, which is set to INTEGER.
         sig do
-          returns(HubspotSDK::Automation::IntegerFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::IntegerFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -34,7 +34,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Automation::IntegerFieldSchema::Type::OrSymbol,
+            type: HubSpotSDK::Automation::IntegerFieldSchema::Type::OrSymbol,
             maximum: Integer,
             minimum: Integer
           ).returns(T.attached_class)
@@ -52,7 +52,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              type: HubspotSDK::Automation::IntegerFieldSchema::Type::OrSymbol,
+              type: HubSpotSDK::Automation::IntegerFieldSchema::Type::OrSymbol,
               maximum: Integer,
               minimum: Integer
             }
@@ -63,24 +63,24 @@ module HubspotSDK
 
         # The type of the field, which is set to INTEGER.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::IntegerFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::IntegerFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           INTEGER =
             T.let(
               :INTEGER,
-              HubspotSDK::Automation::IntegerFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::IntegerFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::IntegerFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::IntegerFieldSchema::Type::TaggedSymbol
               ]
             )
           end

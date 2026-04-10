@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ForeignID < HubspotSDK::Internal::Type::BaseModel
+      class ForeignID < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ForeignID, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ForeignID, HubSpotSDK::Internal::AnyHash)
           end
 
         # Unique identifier for the foreign ID.

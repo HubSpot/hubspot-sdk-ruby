@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class SingleSend
@@ -6,11 +6,11 @@ module HubspotSDK
           contact_properties: ::Hash[Symbol, String],
           custom_properties: ::Hash[Symbol, top],
           email_id: Integer,
-          message: HubspotSDK::Marketing::PublicSingleSendEmail,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Marketing::EmailSendStatusView
+          message: HubSpotSDK::Marketing::PublicSingleSendEmail,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Marketing::EmailSendStatusView
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

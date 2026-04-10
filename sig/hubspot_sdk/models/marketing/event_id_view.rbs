@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type event_id_view = { id: String, created: Time }
 
-      class EventIDView < HubspotSDK::Internal::Type::BaseModel
+      class EventIDView < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created: Time

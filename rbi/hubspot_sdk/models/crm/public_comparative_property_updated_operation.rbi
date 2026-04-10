@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicComparativePropertyUpdatedOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicComparativePropertyUpdatedOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,7 +24,7 @@ module HubspotSDK
         # Specifies the type of operation (COMPARATIVE_PROPERTY_UPDATED).
         sig do
           returns(
-            HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -47,7 +47,7 @@ module HubspotSDK
             comparison_property_name: String,
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol,
             operator: String,
             default_comparison_value: String
           ).returns(T.attached_class)
@@ -75,7 +75,7 @@ module HubspotSDK
               comparison_property_name: String,
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::OrSymbol,
               operator: String,
               default_comparison_value: String
             }
@@ -86,13 +86,13 @@ module HubspotSDK
 
         # Specifies the type of operation (COMPARATIVE_PROPERTY_UPDATED).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -100,13 +100,13 @@ module HubspotSDK
           COMPARATIVE_PROPERTY_UPDATED =
             T.let(
               :COMPARATIVE_PROPERTY_UPDATED,
-              HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OperationType::TaggedSymbol
               ]
             )
           end

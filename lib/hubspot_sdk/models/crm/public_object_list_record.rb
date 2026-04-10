@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicObjectListRecord < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectListRecord < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_id
         #   The ID of the list containing the imported objects.
         #

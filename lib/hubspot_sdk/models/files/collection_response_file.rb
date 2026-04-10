@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class CollectionResponseFile < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseFile < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Files::File>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Files::File] }
+        #   @return [Array<HubSpotSDK::Models::Files::File>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Files::File] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Files::File>]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param results [Array<HubSpotSDK::Models::Files::File>]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

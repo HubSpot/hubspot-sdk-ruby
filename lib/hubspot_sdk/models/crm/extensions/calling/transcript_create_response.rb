@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          # @see HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts#create
-          class TranscriptCreateResponse < HubspotSDK::Internal::Type::BaseModel
+          # @see HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts#create
+          class TranscriptCreateResponse < HubSpotSDK::Internal::Type::BaseModel
             # @!attribute id
             #
             #   @return [String]

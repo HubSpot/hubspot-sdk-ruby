@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PreResolvedContact < HubspotSDK::Internal::Type::BaseModel
+      class PreResolvedContact < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_properties_leading_to_match
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch>]
+        #   @return [Array<Symbol, HubSpotSDK::Models::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch>]
         required :contact_properties_leading_to_match,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch]
+                   HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch]
                  },
                  api_name: :contactPropertiesLeadingToMatch
 
@@ -19,11 +19,11 @@ module HubspotSDK
         required :contact_vid, Integer, api_name: :contactVid
 
         # @!method initialize(contact_properties_leading_to_match:, contact_vid:)
-        #   @param contact_properties_leading_to_match [Array<Symbol, HubspotSDK::Models::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch>]
+        #   @param contact_properties_leading_to_match [Array<Symbol, HubSpotSDK::Models::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch>]
         #   @param contact_vid [Integer]
 
         module ContactPropertiesLeadingToMatch
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADDRESS = :address
           ANNUALREVENUE = :annualrevenue

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module FeatureFlags
-        # @see HubspotSDK::Resources::Crm::FeatureFlags::Batch#delete
-        class BatchDeleteParams < HubspotSDK::Models::Crm::PortalFlagStateBatchDeleteRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::FeatureFlags::Batch#delete
+        class BatchDeleteParams < HubSpotSDK::Models::Crm::PortalFlagStateBatchDeleteRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute app_id
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           # @!method initialize(app_id:, flag_name:, request_options: {})
           #   @param app_id [Integer]
           #   @param flag_name [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

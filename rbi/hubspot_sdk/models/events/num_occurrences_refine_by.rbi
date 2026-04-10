@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class NumOccurrencesRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class NumOccurrencesRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::NumOccurrencesRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::NumOccurrencesRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
+            HubSpotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           params(
-            type: HubspotSDK::Events::NumOccurrencesRefineBy::Type::OrSymbol,
+            type: HubSpotSDK::Events::NumOccurrencesRefineBy::Type::OrSymbol,
             max_occurrences: Integer,
             min_occurrences: Integer
           ).returns(T.attached_class)
@@ -45,7 +45,7 @@ module HubspotSDK
           override.returns(
             {
               type:
-                HubspotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol,
+                HubSpotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol,
               max_occurrences: Integer,
               min_occurrences: Integer
             }
@@ -55,24 +55,24 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::NumOccurrencesRefineBy::Type)
+              T.all(Symbol, HubSpotSDK::Events::NumOccurrencesRefineBy::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           NUM_OCCURRENCES_REFINE_BY =
             T.let(
               :NumOccurrencesRefineBy,
-              HubspotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Events::NumOccurrencesRefineBy::Type::TaggedSymbol
               ]
             )
           end

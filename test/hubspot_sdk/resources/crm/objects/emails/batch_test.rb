@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -22,16 +22,16 @@ class HubspotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubspotSDK:
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
+      response => HubSpotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -43,16 +43,16 @@ class HubspotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubspotSDK:
     response = @hubspot.crm.objects.emails.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
+      response => HubSpotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -79,16 +79,16 @@ class HubspotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubspotSDK:
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicObject
+      response => HubSpotSDK::Crm::BatchResponseSimplePublicObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicObject::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseSimplePublicObject::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -100,16 +100,16 @@ class HubspotSDK::Test::Resources::Crm::Objects::Emails::BatchTest < HubspotSDK:
     response = @hubspot.crm.objects.emails.batch.upsert(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject
+      response => HubSpotSDK::Crm::BatchResponseSimplePublicUpsertObject
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicUpsertObject]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicUpsertObject]),
         started_at: Time,
-        status: HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseSimplePublicUpsertObject::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

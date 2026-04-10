@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -11,20 +11,20 @@ module HubspotSDK
           #
           # @param external_event_id [String]
           # @param external_account_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::MarketingEventDefaultResponse]
+          # @return [HubSpotSDK::Models::Marketing::MarketingEventDefaultResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::EventCancelByExternalEventIDParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::EventCancelByExternalEventIDParams
           def cancel_by_external_event_id(external_event_id, params)
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::EventCancelByExternalEventIDParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+              HubSpotSDK::Marketing::MarketingEvents::EventCancelByExternalEventIDParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :post,
               path: ["marketing/marketing-events/2026-03/events/%1$s/cancel", external_event_id],
               query: query.transform_keys(external_account_id: "externalAccountId"),
-              model: HubspotSDK::Marketing::MarketingEventDefaultResponse,
+              model: HubSpotSDK::Marketing::MarketingEventDefaultResponse,
               options: options
             )
           end
@@ -41,29 +41,29 @@ module HubspotSDK
           #
           # @param start_date_time [Time] Body param: The start date and time of the marketing event in ISO 8601 format
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::MarketingEventDefaultResponse]
+          # @return [HubSpotSDK::Models::Marketing::MarketingEventDefaultResponse]
           #
-          # @see HubspotSDK::Models::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams
+          # @see HubSpotSDK::Models::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams
           def complete_by_external_event_id(external_event_id, params)
             query_params = [:external_account_id]
             parsed, options =
-              HubspotSDK::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              HubSpotSDK::Marketing::MarketingEvents::EventCompleteByExternalEventIDParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: ["marketing/marketing-events/2026-03/events/%1$s/complete", external_event_id],
               query: query.transform_keys(external_account_id: "externalAccountId"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Marketing::MarketingEventDefaultResponse,
+              model: HubSpotSDK::Marketing::MarketingEventDefaultResponse,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

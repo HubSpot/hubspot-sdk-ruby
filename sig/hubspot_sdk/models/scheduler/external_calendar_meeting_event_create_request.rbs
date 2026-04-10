@@ -1,34 +1,34 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_calendar_meeting_event_create_request =
         {
-          associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
-          email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
-          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+          associations: ::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest],
+          email_reminder_schedule: HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
+          properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
           timezone: String
         }
 
-      class ExternalCalendarMeetingEventCreateRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest]
+      class ExternalCalendarMeetingEventCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor associations: ::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest]
 
-        attr_accessor email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule
+        attr_accessor email_reminder_schedule: HubSpotSDK::Scheduler::ExternalEmailReminderSchedule
 
-        attr_accessor properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties
+        attr_accessor properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties
 
         attr_accessor timezone: String
 
         def initialize: (
-          associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
-          email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
-          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+          associations: ::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest],
+          email_reminder_schedule: HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
+          properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
           timezone: String
         ) -> void
 
         def to_hash: -> {
-          associations: ::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest],
-          email_reminder_schedule: HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
-          properties: HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+          associations: ::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest],
+          email_reminder_schedule: HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
+          properties: HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
           timezone: String
         }
       end

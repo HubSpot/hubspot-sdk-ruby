@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::AppUninstallsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::AppUninstallsTest < HubSpotSDK::Test::ResourceTest
   def test_uninstall
     skip("Mock server tests are disabled")
 

@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type collection_response_subscription_response_no_paging =
-        { results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse1] }
+        { results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse1] }
 
-      class CollectionResponseSubscriptionResponseNoPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse1]
+      class CollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse1]
 
         def initialize: (
-          results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse1]
+          results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse1]
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Webhooks::SubscriptionResponse1]
+          results: ::Array[HubSpotSDK::Webhooks::SubscriptionResponse1]
         }
       end
     end

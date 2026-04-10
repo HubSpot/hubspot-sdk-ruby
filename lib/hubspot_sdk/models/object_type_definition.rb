@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #
       #   @return [String]
@@ -12,13 +12,13 @@ module HubspotSDK
       #
       #   @return [Boolean]
       required :allows_sensitive_properties,
-               HubspotSDK::Internal::Type::Boolean,
+               HubSpotSDK::Internal::Type::Boolean,
                api_name: :allowsSensitiveProperties
 
       # @!attribute archived
       #
       #   @return [Boolean]
-      required :archived, HubspotSDK::Internal::Type::Boolean
+      required :archived, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute fully_qualified_name
       #
@@ -27,8 +27,8 @@ module HubspotSDK
 
       # @!attribute labels
       #
-      #   @return [HubspotSDK::Models::ObjectTypeDefinitionLabels]
-      required :labels, -> { HubspotSDK::ObjectTypeDefinitionLabels }
+      #   @return [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
+      required :labels, -> { HubSpotSDK::ObjectTypeDefinitionLabels }
 
       # @!attribute name
       #
@@ -44,21 +44,21 @@ module HubspotSDK
       #
       #   @return [Array<String>]
       required :required_properties,
-               HubspotSDK::Internal::Type::ArrayOf[String],
+               HubSpotSDK::Internal::Type::ArrayOf[String],
                api_name: :requiredProperties
 
       # @!attribute searchable_properties
       #
       #   @return [Array<String>]
       required :searchable_properties,
-               HubspotSDK::Internal::Type::ArrayOf[String],
+               HubSpotSDK::Internal::Type::ArrayOf[String],
                api_name: :searchableProperties
 
       # @!attribute secondary_display_properties
       #
       #   @return [Array<String>]
       required :secondary_display_properties,
-               HubspotSDK::Internal::Type::ArrayOf[String],
+               HubSpotSDK::Internal::Type::ArrayOf[String],
                api_name: :secondaryDisplayProperties
 
       # @!attribute created_at
@@ -91,7 +91,7 @@ module HubspotSDK
       #   @param allows_sensitive_properties [Boolean]
       #   @param archived [Boolean]
       #   @param fully_qualified_name [String]
-      #   @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+      #   @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
       #   @param name [String]
       #   @param object_type_id [String]
       #   @param required_properties [Array<String>]

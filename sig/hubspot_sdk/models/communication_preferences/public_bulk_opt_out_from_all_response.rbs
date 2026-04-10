@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       type public_bulk_opt_out_from_all_response =
         {
           subscriber_id_string: String,
-          statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+          statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
         }
 
-      class PublicBulkOptOutFromAllResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicBulkOptOutFromAllResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor subscriber_id_string: String
 
-        attr_reader statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]?
+        attr_reader statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]?
 
         def statuses=: (
-          ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
-        ) -> ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+          ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
+        ) -> ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
 
         def initialize: (
           subscriber_id_string: String,
-          ?statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+          ?statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
         ) -> void
 
         def to_hash: -> {
           subscriber_id_string: String,
-          statuses: ::Array[HubspotSDK::CommunicationPreferences::PublicStatus]
+          statuses: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatus]
         }
       end
     end

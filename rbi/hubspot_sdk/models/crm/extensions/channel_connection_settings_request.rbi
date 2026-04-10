@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ChannelConnectionSettingsRequest < HubspotSDK::Internal::Type::BaseModel
+        class ChannelConnectionSettingsRequest < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::ChannelConnectionSettingsRequest,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsRequest,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 

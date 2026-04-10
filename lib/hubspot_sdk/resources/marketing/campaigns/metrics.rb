@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -16,20 +16,20 @@ module HubspotSDK
           #
           # @param start_date [String]
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::MetricsCounters]
+          # @return [HubSpotSDK::Models::Marketing::MetricsCounters]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::MetricGetAttributionMetricsParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::MetricGetAttributionMetricsParams
           def get_attribution_metrics(campaign_guid, params = {})
             parsed, options =
-              HubspotSDK::Marketing::Campaigns::MetricGetAttributionMetricsParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+              HubSpotSDK::Marketing::Campaigns::MetricGetAttributionMetricsParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/reports/metrics", campaign_guid],
               query: query.transform_keys(end_date: "endDate", start_date: "startDate"),
-              model: HubspotSDK::Marketing::MetricsCounters,
+              model: HubSpotSDK::Marketing::MetricsCounters,
               options: options
             )
           end
@@ -46,15 +46,15 @@ module HubspotSDK
           #
           # @param start_date [String] Start date to fetch attribution data, YYYY-MM-DD
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::RevenueAttributionAggregate]
+          # @return [HubSpotSDK::Models::Marketing::RevenueAttributionAggregate]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::MetricGetRevenueAttributionParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::MetricGetRevenueAttributionParams
           def get_revenue_attribution(campaign_guid, params = {})
             parsed, options =
-              HubspotSDK::Marketing::Campaigns::MetricGetRevenueAttributionParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+              HubSpotSDK::Marketing::Campaigns::MetricGetRevenueAttributionParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/reports/revenue", campaign_guid],
@@ -63,13 +63,13 @@ module HubspotSDK
                 end_date: "endDate",
                 start_date: "startDate"
               ),
-              model: HubspotSDK::Marketing::RevenueAttributionAggregate,
+              model: HubSpotSDK::Marketing::RevenueAttributionAggregate,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams} for
+          # {HubSpotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams} for
           # more details.
           #
           # Fetch the list of contact IDs for the specified campaign and contact type
@@ -88,14 +88,14 @@ module HubspotSDK
           #
           # @param start_date [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::ContactReference>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::ContactReference>]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::MetricListContactIDsByTypeParams
           def list_contact_ids_by_type(contact_type, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::MetricListContactIDsByTypeParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::MetricListContactIDsByTypeParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -104,15 +104,15 @@ module HubspotSDK
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/reports/contacts/%2$s", campaign_guid, contact_type],
               query: query.transform_keys(end_date: "endDate", start_date: "startDate"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Marketing::ContactReference,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Marketing::ContactReference,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

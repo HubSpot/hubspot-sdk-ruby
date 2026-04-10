@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
-        attr_reader rows: HubspotSDK::Resources::Cms::Hubdb::Rows
+        attr_reader rows: HubSpotSDK::Resources::Cms::Hubdb::Rows
 
-        attr_reader tables: HubspotSDK::Resources::Cms::Hubdb::Tables
+        attr_reader tables: HubSpotSDK::Resources::Cms::Hubdb::Tables
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

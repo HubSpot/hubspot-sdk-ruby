@@ -1,31 +1,31 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CollectionResponsePublicActionRevisionForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicActionRevisionForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::CollectionResponsePublicActionRevisionForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::CollectionResponsePublicActionRevisionForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Automation::PublicActionRevision]) }
+        sig { returns(T::Array[HubSpotSDK::Automation::PublicActionRevision]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
             results:
-              T::Array[HubspotSDK::Automation::PublicActionRevision::OrHash],
-            paging: HubspotSDK::ForwardPaging::OrHash
+              T::Array[HubSpotSDK::Automation::PublicActionRevision::OrHash],
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -34,8 +34,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Automation::PublicActionRevision],
-              paging: HubspotSDK::ForwardPaging
+              results: T::Array[HubSpotSDK::Automation::PublicActionRevision],
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

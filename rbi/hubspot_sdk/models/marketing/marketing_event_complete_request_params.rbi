@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventCompleteRequestParams =
       Marketing::MarketingEventCompleteRequestParams
 
     module Marketing
-      class MarketingEventCompleteRequestParams < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventCompleteRequestParams < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventCompleteRequestParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventCompleteRequestParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

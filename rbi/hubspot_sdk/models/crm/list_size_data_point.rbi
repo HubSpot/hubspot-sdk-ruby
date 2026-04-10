@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListSizeDataPoint < HubspotSDK::Internal::Type::BaseModel
+      class ListSizeDataPoint < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ListSizeDataPoint,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ListSizeDataPoint,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

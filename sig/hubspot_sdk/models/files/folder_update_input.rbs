@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type folder_update_input = { name: String, parent_folder_id: Integer }
 
-      class FolderUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         attr_reader name: String?
 
         def name=: (String) -> String

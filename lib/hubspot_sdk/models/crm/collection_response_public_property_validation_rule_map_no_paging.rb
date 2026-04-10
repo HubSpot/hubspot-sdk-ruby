@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id
-      class CollectionResponsePublicPropertyValidationRuleMapNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::PropertiesValidations#get_by_object_type_id
+      class CollectionResponsePublicPropertyValidationRuleMapNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   Collection of properties with their validation rules. Each item maps a property
         #   name to its configured validation rules for the specified object type.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRuleMap>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicPropertyValidationRuleMap>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicPropertyValidationRuleMap] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicPropertyValidationRuleMap] }
 
         # @!method initialize(results:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging}
+        #   {HubSpotSDK::Models::Crm::CollectionResponsePublicPropertyValidationRuleMapNoPaging}
         #   for more details.
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicPropertyValidationRuleMap>] Collection of properties with their validation rules. Each item maps a property
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicPropertyValidationRuleMap>] Collection of properties with their validation rules. Each item maps a property
       end
     end
   end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CallbackCompletionBatchRequest < HubspotSDK::Internal::Type::BaseModel
+      class CallbackCompletionBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::CallbackCompletionBatchRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::CallbackCompletionBatchRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -37,11 +37,11 @@ module HubspotSDK
           returns(
             T.nilable(
               T.any(
-                HubspotSDK::Automation::WorkflowsRequestContext,
-                HubspotSDK::Automation::AgentRequestContext,
-                HubspotSDK::Automation::CopilotRequestContext,
-                HubspotSDK::Automation::StandaloneRequestContext,
-                HubspotSDK::Automation::TestRequestContext
+                HubSpotSDK::Automation::WorkflowsRequestContext,
+                HubSpotSDK::Automation::AgentRequestContext,
+                HubSpotSDK::Automation::CopilotRequestContext,
+                HubSpotSDK::Automation::StandaloneRequestContext,
+                HubSpotSDK::Automation::TestRequestContext
               )
             )
           )
@@ -52,11 +52,11 @@ module HubspotSDK
           params(
             request_context:
               T.any(
-                HubspotSDK::Automation::WorkflowsRequestContext::OrHash,
-                HubspotSDK::Automation::AgentRequestContext::OrHash,
-                HubspotSDK::Automation::CopilotRequestContext::OrHash,
-                HubspotSDK::Automation::StandaloneRequestContext::OrHash,
-                HubspotSDK::Automation::TestRequestContext::OrHash
+                HubSpotSDK::Automation::WorkflowsRequestContext::OrHash,
+                HubSpotSDK::Automation::AgentRequestContext::OrHash,
+                HubSpotSDK::Automation::CopilotRequestContext::OrHash,
+                HubSpotSDK::Automation::StandaloneRequestContext::OrHash,
+                HubSpotSDK::Automation::TestRequestContext::OrHash
               )
           ).void
         end
@@ -70,11 +70,11 @@ module HubspotSDK
             failure_reason_type: String,
             request_context:
               T.any(
-                HubspotSDK::Automation::WorkflowsRequestContext::OrHash,
-                HubspotSDK::Automation::AgentRequestContext::OrHash,
-                HubspotSDK::Automation::CopilotRequestContext::OrHash,
-                HubspotSDK::Automation::StandaloneRequestContext::OrHash,
-                HubspotSDK::Automation::TestRequestContext::OrHash
+                HubSpotSDK::Automation::WorkflowsRequestContext::OrHash,
+                HubSpotSDK::Automation::AgentRequestContext::OrHash,
+                HubSpotSDK::Automation::CopilotRequestContext::OrHash,
+                HubSpotSDK::Automation::StandaloneRequestContext::OrHash,
+                HubSpotSDK::Automation::TestRequestContext::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -102,11 +102,11 @@ module HubspotSDK
               failure_reason_type: String,
               request_context:
                 T.any(
-                  HubspotSDK::Automation::WorkflowsRequestContext,
-                  HubspotSDK::Automation::AgentRequestContext,
-                  HubspotSDK::Automation::CopilotRequestContext,
-                  HubspotSDK::Automation::StandaloneRequestContext,
-                  HubspotSDK::Automation::TestRequestContext
+                  HubSpotSDK::Automation::WorkflowsRequestContext,
+                  HubSpotSDK::Automation::AgentRequestContext,
+                  HubSpotSDK::Automation::CopilotRequestContext,
+                  HubSpotSDK::Automation::StandaloneRequestContext,
+                  HubSpotSDK::Automation::TestRequestContext
                 )
             }
           )
@@ -117,23 +117,23 @@ module HubspotSDK
         # Defines the context of the request, which can be one of several predefined
         # types.
         module RequestContext
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::WorkflowsRequestContext,
-                HubspotSDK::Automation::AgentRequestContext,
-                HubspotSDK::Automation::CopilotRequestContext,
-                HubspotSDK::Automation::StandaloneRequestContext,
-                HubspotSDK::Automation::TestRequestContext
+                HubSpotSDK::Automation::WorkflowsRequestContext,
+                HubSpotSDK::Automation::AgentRequestContext,
+                HubSpotSDK::Automation::CopilotRequestContext,
+                HubSpotSDK::Automation::StandaloneRequestContext,
+                HubSpotSDK::Automation::TestRequestContext
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::CallbackCompletionBatchRequest::RequestContext::Variants
+                HubSpotSDK::Automation::CallbackCompletionBatchRequest::RequestContext::Variants
               ]
             )
           end

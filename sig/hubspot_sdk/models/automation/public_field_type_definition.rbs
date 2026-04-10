@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_field_type_definition =
         {
           name: String,
-          options: ::Array[HubspotSDK::Automation::PublicOption],
-          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::Automation::PublicOption],
+          type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
           description: String,
-          field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          field_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
           help_text: String,
           label: String,
           options_url: String,
-          referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+          referenced_object_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
         }
 
-      class PublicFieldTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicFieldTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor name: String
 
-        attr_accessor options: ::Array[HubspotSDK::Automation::PublicOption]
+        attr_accessor options: ::Array[HubSpotSDK::Automation::PublicOption]
 
-        attr_accessor type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_
+        attr_accessor type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::type_
 
         attr_reader description: String?
 
         def description=: (String) -> String
 
-        attr_reader field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type?
+        attr_reader field_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type?
 
         def field_type=: (
-          HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
-        ) -> HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
+          HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
+        ) -> HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type
 
         attr_reader help_text: String?
 
@@ -43,34 +43,34 @@ module HubspotSDK
 
         def options_url=: (String) -> String
 
-        attr_reader referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type?
+        attr_reader referenced_object_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type?
 
         def referenced_object_type=: (
-          HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
-        ) -> HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+          HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+        ) -> HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
 
         def initialize: (
           name: String,
-          options: ::Array[HubspotSDK::Automation::PublicOption],
-          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::Automation::PublicOption],
+          type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
           ?description: String,
-          ?field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          ?field_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
           ?help_text: String,
           ?label: String,
           ?options_url: String,
-          ?referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+          ?referenced_object_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
         ) -> void
 
         def to_hash: -> {
           name: String,
-          options: ::Array[HubspotSDK::Automation::PublicOption],
-          type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
+          options: ::Array[HubSpotSDK::Automation::PublicOption],
+          type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::type_,
           description: String,
-          field_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
+          field_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type,
           help_text: String,
           label: String,
           options_url: String,
-          referenced_object_type: HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
+          referenced_object_type: HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type
         }
 
         type type_ =
@@ -85,7 +85,7 @@ module HubspotSDK
           | :string
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL: :bool
           DATE: :date
@@ -97,7 +97,7 @@ module HubspotSDK
           PHONE_NUMBER: :phone_number
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::type_]
         end
 
         type field_type =
@@ -115,7 +115,7 @@ module HubspotSDK
           | :textarea
 
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX: :booleancheckbox
           CALCULATION_EQUATION: :calculation_equation
@@ -130,17 +130,17 @@ module HubspotSDK
           TEXT: :text
           TEXTAREA: :textarea
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::field_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::field_type]
         end
 
         type referenced_object_type = :OWNER
 
         module ReferencedObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OWNER: :OWNER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::PublicFieldTypeDefinition::referenced_object_type]
         end
       end
     end

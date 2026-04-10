@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
@@ -10,9 +10,9 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              inputs: T::Array[HubspotSDK::Crm::PropertyCreate::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseProperty)
+              inputs: T::Array[HubSpotSDK::Crm::PropertyCreate::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::BatchResponseProperty)
           end
           def create(object_type, inputs:, request_options: {})
           end
@@ -23,8 +23,8 @@ module HubspotSDK
           sig do
             params(
               object_type: String,
-              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              inputs: T::Array[HubSpotSDK::PropertyName::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(object_type, inputs:, request_options: {})
@@ -36,11 +36,11 @@ module HubspotSDK
               object_type: String,
               archived: T::Boolean,
               data_sensitivity:
-                HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
-              inputs: T::Array[HubspotSDK::PropertyName::OrHash],
+                HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+              inputs: T::Array[HubSpotSDK::PropertyName::OrHash],
               locale: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::BatchResponseProperty)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::BatchResponseProperty)
           end
           def get(
             # Path param
@@ -58,7 +58,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

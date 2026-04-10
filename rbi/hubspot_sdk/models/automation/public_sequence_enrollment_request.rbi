@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceEnrollmentRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceEnrollmentRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSequenceEnrollmentRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSequenceEnrollmentRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

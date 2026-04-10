@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type marketing_event_delete_batch_by_external_event_id_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        {  } & HubSpotSDK::Internal::Type::request_parameters
 
-      class MarketingEventDeleteBatchByExternalEventIDParams < HubspotSDK::Models::Marketing::BatchInputMarketingEventExternalUniqueIdentifier
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MarketingEventDeleteBatchByExternalEventIDParams < HubSpotSDK::Models::Marketing::BatchInputMarketingEventExternalUniqueIdentifier
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
       end
     end
   end

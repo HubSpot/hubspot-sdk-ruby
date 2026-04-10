@@ -1,37 +1,37 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ComboEventRuleBranch < HubspotSDK::Internal::Type::BaseModel
+      class ComboEventRuleBranch < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ComboEventRuleBranch,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ComboEventRuleBranch,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Events::ComboEventRule]) }
+        sig { returns(T::Array[HubSpotSDK::Events::ComboEventRule]) }
         attr_accessor :composing_rules
 
         sig do
           returns(
-            HubspotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
+            HubSpotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
           )
         end
         attr_accessor :operation_type
 
-        sig { returns(T::Array[HubspotSDK::Events::ComboEventRuleBranch]) }
+        sig { returns(T::Array[HubSpotSDK::Events::ComboEventRuleBranch]) }
         attr_accessor :rule_branches
 
         sig do
           params(
             composing_rules:
-              T::Array[HubspotSDK::Events::ComboEventRule::OrHash],
+              T::Array[HubSpotSDK::Events::ComboEventRule::OrHash],
             operation_type:
-              HubspotSDK::Events::ComboEventRuleBranch::OperationType::OrSymbol,
-            rule_branches: T::Array[HubspotSDK::Events::ComboEventRuleBranch]
+              HubSpotSDK::Events::ComboEventRuleBranch::OperationType::OrSymbol,
+            rule_branches: T::Array[HubSpotSDK::Events::ComboEventRuleBranch]
           ).returns(T.attached_class)
         end
         def self.new(composing_rules:, operation_type:, rule_branches:)
@@ -40,10 +40,10 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              composing_rules: T::Array[HubspotSDK::Events::ComboEventRule],
+              composing_rules: T::Array[HubSpotSDK::Events::ComboEventRule],
               operation_type:
-                HubspotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol,
-              rule_branches: T::Array[HubspotSDK::Events::ComboEventRuleBranch]
+                HubSpotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol,
+              rule_branches: T::Array[HubSpotSDK::Events::ComboEventRuleBranch]
             }
           )
         end
@@ -51,13 +51,13 @@ module HubspotSDK
         end
 
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::ComboEventRuleBranch::OperationType
+                HubSpotSDK::Events::ComboEventRuleBranch::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -65,18 +65,18 @@ module HubspotSDK
           AND =
             T.let(
               :AND,
-              HubspotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
+              HubSpotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
             )
           OR =
             T.let(
               :OR,
-              HubspotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
+              HubSpotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
+                HubSpotSDK::Events::ComboEventRuleBranch::OperationType::TaggedSymbol
               ]
             )
           end

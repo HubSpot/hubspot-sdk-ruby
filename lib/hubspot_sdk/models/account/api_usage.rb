@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class APIUsage < HubspotSDK::Internal::Type::BaseModel
+      class APIUsage < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute collected_at
         #   Indicates when the cache was last updated.
         #
@@ -19,10 +19,10 @@ module HubspotSDK
         # @!attribute fetch_status
         #   Status of fetching the information, including if the data came from the cache.
         #
-        #   @return [Symbol, HubspotSDK::Models::Account::APIUsage::FetchStatus]
+        #   @return [Symbol, HubSpotSDK::Models::Account::APIUsage::FetchStatus]
         required :fetch_status,
                  enum: -> {
-                   HubspotSDK::Account::APIUsage::FetchStatus
+                   HubSpotSDK::Account::APIUsage::FetchStatus
                  },
                  api_name: :fetchStatus
 
@@ -49,7 +49,7 @@ module HubspotSDK
         #
         #   @param current_usage [Integer] How many API calls an account has made for the current day.
         #
-        #   @param fetch_status [Symbol, HubspotSDK::Models::Account::APIUsage::FetchStatus] Status of fetching the information, including if the data came from the cache.
+        #   @param fetch_status [Symbol, HubSpotSDK::Models::Account::APIUsage::FetchStatus] Status of fetching the information, including if the data came from the cache.
         #
         #   @param name [String] Name of the limit type.
         #
@@ -59,9 +59,9 @@ module HubspotSDK
 
         # Status of fetching the information, including if the data came from the cache.
         #
-        # @see HubspotSDK::Models::Account::APIUsage#fetch_status
+        # @see HubSpotSDK::Models::Account::APIUsage#fetch_status
         module FetchStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CACHED = :CACHED
           FAILURE = :FAILURE

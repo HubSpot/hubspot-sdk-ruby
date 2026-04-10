@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         module GenericObjects
-          # @see HubspotSDK::Resources::Crm::Objects::GenericObjects::Batch#create
-          class BatchCreateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          # @see HubSpotSDK::Resources::Crm::Objects::GenericObjects::Batch#create
+          class BatchCreateParams < HubSpotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInputForCreate
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             # @!attribute object_type
             #
@@ -17,7 +17,7 @@ module HubspotSDK
 
             # @!method initialize(object_type:, request_options: {})
             #   @param object_type [String]
-            #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+            #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
           end
         end
       end

@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type fetch_single_currency_portal_currency =
         {
-          operator: HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
+          operator: HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
           property_name: String,
           value: String
         }
 
-      class FetchSingleCurrencyPortalCurrency < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator
+      class FetchSingleCurrencyPortalCurrency < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (String) -> String
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
+          operator: HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
           ?property_name: String,
           ?value: String
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
+          operator: HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator,
           property_name: String,
           value: String
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY: :FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::FetchSingleCurrencyPortalCurrency::operator]
         end
       end
     end

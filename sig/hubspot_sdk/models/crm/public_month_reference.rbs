@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_month_reference =
         {
           day: Integer,
-          reference_type: HubspotSDK::Models::Crm::PublicMonthReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicMonthReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
           second: Integer
         }
 
-      class PublicMonthReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicMonthReference < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
-        attr_accessor reference_type: HubspotSDK::Models::Crm::PublicMonthReference::reference_type
+        attr_accessor reference_type: HubSpotSDK::Models::Crm::PublicMonthReference::reference_type
 
         attr_reader hour: Integer?
 
@@ -34,7 +34,7 @@ module HubspotSDK
 
         def initialize: (
           day: Integer,
-          reference_type: HubspotSDK::Models::Crm::PublicMonthReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicMonthReference::reference_type,
           ?hour: Integer,
           ?millisecond: Integer,
           ?minute: Integer,
@@ -43,7 +43,7 @@ module HubspotSDK
 
         def to_hash: -> {
           day: Integer,
-          reference_type: HubspotSDK::Models::Crm::PublicMonthReference::reference_type,
+          reference_type: HubSpotSDK::Models::Crm::PublicMonthReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
@@ -53,11 +53,11 @@ module HubspotSDK
         type reference_type = :MONTH
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           MONTH: :MONTH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicMonthReference::reference_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicMonthReference::reference_type]
         end
       end
     end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponsePublicCampaignWithAssets < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicCampaignWithAssets < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
         # An array of results from the batch operation, each representing a public
         # campaign with assets.
         sig do
-          returns(T::Array[HubspotSDK::Marketing::PublicCampaignWithAssets])
+          returns(T::Array[HubSpotSDK::Marketing::PublicCampaignWithAssets])
         end
         attr_accessor :results
 
@@ -31,7 +31,7 @@ module HubspotSDK
         # CANCELED, COMPLETE, PENDING, PROCESSING.
         sig do
           returns(
-            HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+            HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -54,10 +54,10 @@ module HubspotSDK
           params(
             completed_at: Time,
             results:
-              T::Array[HubspotSDK::Marketing::PublicCampaignWithAssets::OrHash],
+              T::Array[HubSpotSDK::Marketing::PublicCampaignWithAssets::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::OrSymbol,
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -85,10 +85,10 @@ module HubspotSDK
             {
               completed_at: Time,
               results:
-                T::Array[HubspotSDK::Marketing::PublicCampaignWithAssets],
+                T::Array[HubSpotSDK::Marketing::PublicCampaignWithAssets],
               started_at: Time,
               status:
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol,
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -100,13 +100,13 @@ module HubspotSDK
         # The current processing status of the batch operation, with possible values:
         # CANCELED, COMPLETE, PENDING, PROCESSING.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -114,28 +114,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+              HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
+                HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status::TaggedSymbol
               ]
             )
           end

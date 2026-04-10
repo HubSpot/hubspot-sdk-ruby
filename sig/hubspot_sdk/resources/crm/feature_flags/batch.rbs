@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class FeatureFlags
@@ -7,17 +7,17 @@ module HubspotSDK
             String flag_name,
             app_id: Integer,
             portal_ids: ::Array[Integer],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::PortalFlagStateBatchResponse
 
           def upsert: (
             String flag_name,
             app_id: Integer,
-            portal_states: ::Array[HubspotSDK::Crm::BatchPortalEntry],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+            portal_states: ::Array[HubSpotSDK::Crm::BatchPortalEntry],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::PortalFlagStateBatchResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

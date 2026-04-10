@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
@@ -11,7 +11,7 @@ module HubspotSDK
               params(
                 revision_id: String,
                 object_id_: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def get_previous_version(
@@ -28,7 +28,7 @@ module HubspotSDK
                 after: String,
                 before: String,
                 limit: Integer,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def get_previous_versions(
@@ -49,7 +49,7 @@ module HubspotSDK
               params(
                 revision_id: String,
                 object_id_: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def restore_previous_version(
@@ -65,7 +65,7 @@ module HubspotSDK
               params(
                 revision_id: Integer,
                 object_id_: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
             def restore_previous_version_to_draft(
@@ -76,7 +76,7 @@ module HubspotSDK
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

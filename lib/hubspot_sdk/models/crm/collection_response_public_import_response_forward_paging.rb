@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponsePublicImportResponseForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicImportResponseForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicImportResponse>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicImportResponse] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicImportResponse>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicImportResponse] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Crm::PublicImportResponse>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Crm::PublicImportResponse>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

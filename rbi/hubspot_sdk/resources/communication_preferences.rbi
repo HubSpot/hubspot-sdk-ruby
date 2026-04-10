@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       sig do
-        returns(HubspotSDK::Resources::CommunicationPreferences::Definitions)
+        returns(HubSpotSDK::Resources::CommunicationPreferences::Definitions)
       end
       attr_reader :definitions
 
-      sig { returns(HubspotSDK::Resources::CommunicationPreferences::Statuses) }
+      sig { returns(HubSpotSDK::Resources::CommunicationPreferences::Statuses) }
       attr_reader :statuses
 
       # Generate communication preference links for a subscriber. This endpoint allows
@@ -18,13 +18,13 @@ module HubspotSDK
       sig do
         params(
           channel:
-            HubspotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol,
           subscriber_id_string: String,
           business_unit_id: Integer,
           language: String,
           subscription_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
-        ).returns(HubspotSDK::CommunicationPreferences::LinkGenerationResponse)
+          request_options: HubSpotSDK::RequestOptions::OrHash
+        ).returns(HubSpotSDK::CommunicationPreferences::LinkGenerationResponse)
       end
       def generate_links(
         # Query param
@@ -49,11 +49,11 @@ module HubspotSDK
         params(
           subscriber_id_string: String,
           channel:
-            HubspotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel::OrSymbol,
           business_unit_id: Integer,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(
-          HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+          HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
         )
       end
       def get_statuses(
@@ -71,12 +71,12 @@ module HubspotSDK
         params(
           subscriber_id_string: String,
           channel:
-            HubspotSDK::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::Channel::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::Channel::OrSymbol,
           business_unit_id: Integer,
           verbose: T::Boolean,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(
-          HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
+          HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus
         )
       end
       def get_unsubscribe_all_status(
@@ -93,12 +93,12 @@ module HubspotSDK
         params(
           subscriber_id_string: String,
           channel:
-            HubspotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol,
           business_unit_id: Integer,
           verbose: T::Boolean,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(
-          HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+          HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
         )
       end
       def unsubscribe_all(
@@ -115,16 +115,16 @@ module HubspotSDK
         params(
           subscriber_id_string: String,
           channel:
-            HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::Channel::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::Channel::OrSymbol,
           status_state:
-            HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::StatusState::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::StatusState::OrSymbol,
           subscription_id: Integer,
           legal_basis:
-            HubspotSDK::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis::OrSymbol,
+            HubSpotSDK::CommunicationPreferences::PartialPublicStatusRequest::LegalBasis::OrSymbol,
           legal_basis_explanation: String,
-          request_options: HubspotSDK::RequestOptions::OrHash
+          request_options: HubSpotSDK::RequestOptions::OrHash
         ).returns(
-          HubspotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
+          HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsPublicStatus
         )
       end
       def update_status(
@@ -148,7 +148,7 @@ module HubspotSDK
       end
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

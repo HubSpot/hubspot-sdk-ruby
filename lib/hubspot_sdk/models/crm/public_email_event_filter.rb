@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEmailEventFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailEventFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The ID of the application associated with the email event filter.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute filter_type
         #   Indicates the type of filter (EMAIL_EVENT).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicEmailEventFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicEmailEventFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicEmailEventFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicEmailEventFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute level
@@ -36,8 +36,8 @@ module HubspotSDK
         #   RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED,
         #   SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicEmailEventFilter::Operator]
-        required :operator, enum: -> { HubspotSDK::Crm::PublicEmailEventFilter::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicEmailEventFilter::Operator]
+        required :operator, enum: -> { HubSpotSDK::Crm::PublicEmailEventFilter::Operator }
 
         # @!attribute click_url
         #   The URL that was clicked in the email event.
@@ -48,34 +48,34 @@ module HubspotSDK
         # @!attribute pruning_refine_by
         #   Specifies the criteria for refining the filter by pruning.
         #
-        #   @return [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation, nil]
+        #   @return [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, nil]
         optional :pruning_refine_by,
-                 union: -> { HubspotSDK::Crm::PublicEmailEventFilter::PruningRefineBy },
+                 union: -> { HubSpotSDK::Crm::PublicEmailEventFilter::PruningRefineBy },
                  api_name: :pruningRefineBy
 
         # @!method initialize(app_id:, email_id:, filter_type:, level:, operator:, click_url: nil, pruning_refine_by: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicEmailEventFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicEmailEventFilter} for more details.
         #
         #   @param app_id [String] The ID of the application associated with the email event filter.
         #
         #   @param email_id [String] The ID of the email associated with the event filter.
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicEmailEventFilter::FilterType] Indicates the type of filter (EMAIL_EVENT).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicEmailEventFilter::FilterType] Indicates the type of filter (EMAIL_EVENT).
         #
         #   @param level [String] Specifies the level of the email event, such as EMAIL_API_CAMPAIGN_GROUP.
         #
-        #   @param operator [Symbol, HubspotSDK::Models::Crm::PublicEmailEventFilter::Operator] Defines the operation to be applied within the filter (BOUNCED, LINK_CLICKED, MA
+        #   @param operator [Symbol, HubSpotSDK::Models::Crm::PublicEmailEventFilter::Operator] Defines the operation to be applied within the filter (BOUNCED, LINK_CLICKED, MA
         #
         #   @param click_url [String] The URL that was clicked in the email event.
         #
-        #   @param pruning_refine_by [HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by pruning.
+        #   @param pruning_refine_by [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the filter by pruning.
 
         # Indicates the type of filter (EMAIL_EVENT).
         #
-        # @see HubspotSDK::Models::Crm::PublicEmailEventFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicEmailEventFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL_EVENT = :EMAIL_EVENT
 
@@ -88,9 +88,9 @@ module HubspotSDK
         # RECEIVED, RECEIVED_BUT_NOT_OPENED, REPLIED, SENT, SENT_BUT_LINK_NOT_CLICKED,
         # SENT_BUT_NOT_RECEIVED, UNSUBSCRIBED).
         #
-        # @see HubspotSDK::Models::Crm::PublicEmailEventFilter#operator
+        # @see HubSpotSDK::Models::Crm::PublicEmailEventFilter#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOUNCED = :BOUNCED
           LINK_CLICKED = :LINK_CLICKED
@@ -112,30 +112,30 @@ module HubspotSDK
 
         # Specifies the criteria for refining the filter by pruning.
         #
-        # @see HubspotSDK::Models::Crm::PublicEmailEventFilter#pruning_refine_by
+        # @see HubSpotSDK::Models::Crm::PublicEmailEventFilter#pruning_refine_by
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Crm::PublicNumOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicSetOccurrencesRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicSetOccurrencesRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicAllHistoryRefineBy }
+          variant -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy }
 
-          variant -> { HubspotSDK::Crm::PublicTimePointOperation }
+          variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
 
-          variant -> { HubspotSDK::Crm::PublicRangedTimeOperation }
+          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubspotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubspotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy, HubspotSDK::Models::Crm::PublicTimePointOperation, HubspotSDK::Models::Crm::PublicRangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]
         end
       end
     end

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_media_played_percent_event
-      class MediaPlayedPercentageEvent < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_media_played_percent_event
+      class MediaPlayedPercentageEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_id
         #   The ID of the contact in HubSpot’s system that consumed the media. This can be
         #   fetched using HubSpot's Get contact by usertoken (utk) API. The API also
@@ -36,9 +36,9 @@ module HubspotSDK
 
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaPlayedPercentageEvent::MediaType]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent::MediaType]
         required :media_type,
-                 enum: -> { HubspotSDK::Cms::MediaPlayedPercentageEvent::MediaType },
+                 enum: -> { HubSpotSDK::Cms::MediaPlayedPercentageEvent::MediaType },
                  api_name: :mediaType
 
         # @!attribute occurred_timestamp
@@ -69,9 +69,9 @@ module HubspotSDK
 
         # @!attribute external_play_context
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaPlayedPercentageEvent::ExternalPlayContext, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent::ExternalPlayContext, nil]
         optional :external_play_context,
-                 enum: -> { HubspotSDK::Cms::MediaPlayedPercentageEvent::ExternalPlayContext },
+                 enum: -> { HubSpotSDK::Cms::MediaPlayedPercentageEvent::ExternalPlayContext },
                  api_name: :externalPlayContext
 
         # @!attribute media_url
@@ -106,7 +106,7 @@ module HubspotSDK
 
         # @!method initialize(contact_id:, media_bridge_id:, media_bridge_object_coordinates:, media_bridge_object_type_id:, media_name:, media_type:, occurred_timestamp:, played_percent:, portal_id:, provider_id:, session_id:, external_play_context: nil, media_url: nil, page_id: nil, page_name: nil, page_object_coordinates: nil, page_url: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::MediaPlayedPercentageEvent} for more details.
+        #   {HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent} for more details.
         #
         #   @param contact_id [Integer] The ID of the contact in HubSpot’s system that consumed the media. This can be f
         #
@@ -118,7 +118,7 @@ module HubspotSDK
         #
         #   @param media_name [String]
         #
-        #   @param media_type [Symbol, HubspotSDK::Models::Cms::MediaPlayedPercentageEvent::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent::MediaType]
         #
         #   @param occurred_timestamp [Integer]
         #
@@ -130,7 +130,7 @@ module HubspotSDK
         #
         #   @param session_id [String]
         #
-        #   @param external_play_context [Symbol, HubspotSDK::Models::Cms::MediaPlayedPercentageEvent::ExternalPlayContext]
+        #   @param external_play_context [Symbol, HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent::ExternalPlayContext]
         #
         #   @param media_url [String]
         #
@@ -142,9 +142,9 @@ module HubspotSDK
         #
         #   @param page_url [String] The URL of the page that an event happened on. Required for non-HubSpot pages.
 
-        # @see HubspotSDK::Models::Cms::MediaPlayedPercentageEvent#media_type
+        # @see HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent#media_type
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT
@@ -156,9 +156,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::MediaPlayedPercentageEvent#external_play_context
+        # @see HubSpotSDK::Models::Cms::MediaPlayedPercentageEvent#external_play_context
         module ExternalPlayContext
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
           EXTERNAL_PAGE = :EXTERNAL_PAGE

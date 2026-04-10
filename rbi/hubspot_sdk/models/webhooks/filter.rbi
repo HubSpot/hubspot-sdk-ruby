@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class Filter < HubspotSDK::Internal::Type::BaseModel
+      class Filter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Webhooks::Filter, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Webhooks::Filter, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(T::Array[HubspotSDK::Webhooks::Condition]) }
+        sig { returns(T::Array[HubSpotSDK::Webhooks::Condition]) }
         attr_accessor :conditions
 
         # Defines a single condition for searching CRM objects, specifying the property to
@@ -17,7 +17,7 @@ module HubspotSDK
         # the value(s) to compare against.
         sig do
           params(
-            conditions: T::Array[HubspotSDK::Webhooks::Condition::OrHash]
+            conditions: T::Array[HubSpotSDK::Webhooks::Condition::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(conditions:)
@@ -25,7 +25,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { conditions: T::Array[HubspotSDK::Webhooks::Condition] }
+            { conditions: T::Array[HubSpotSDK::Webhooks::Condition] }
           )
         end
         def to_hash

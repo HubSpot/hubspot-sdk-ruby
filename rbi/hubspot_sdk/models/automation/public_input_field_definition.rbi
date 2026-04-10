@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicInputFieldDefinition < HubspotSDK::Internal::Type::BaseModel
+      class PublicInputFieldDefinition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicInputFieldDefinition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicInputFieldDefinition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,13 +16,13 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :is_required
 
-        sig { returns(HubspotSDK::Automation::PublicFieldTypeDefinition) }
+        sig { returns(HubSpotSDK::Automation::PublicFieldTypeDefinition) }
         attr_reader :type_definition
 
         sig do
           params(
             type_definition:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::OrHash
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::OrHash
           ).void
         end
         attr_writer :type_definition
@@ -31,7 +31,7 @@ module HubspotSDK
           returns(
             T.nilable(
               T::Array[
-                HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
+                HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
               ]
             )
           )
@@ -42,7 +42,7 @@ module HubspotSDK
           params(
             supported_value_types:
               T::Array[
-                HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
+                HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
               ]
           ).void
         end
@@ -52,10 +52,10 @@ module HubspotSDK
           params(
             is_required: T::Boolean,
             type_definition:
-              HubspotSDK::Automation::PublicFieldTypeDefinition::OrHash,
+              HubSpotSDK::Automation::PublicFieldTypeDefinition::OrHash,
             supported_value_types:
               T::Array[
-                HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
+                HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
               ]
           ).returns(T.attached_class)
         end
@@ -72,10 +72,10 @@ module HubspotSDK
             {
               is_required: T::Boolean,
               type_definition:
-                HubspotSDK::Automation::PublicFieldTypeDefinition,
+                HubSpotSDK::Automation::PublicFieldTypeDefinition,
               supported_value_types:
                 T::Array[
-                  HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
+                  HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::OrSymbol
                 ]
             }
           )
@@ -84,13 +84,13 @@ module HubspotSDK
         end
 
         module SupportedValueType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType
+                HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -98,18 +98,18 @@ module HubspotSDK
           STATIC_VALUE =
             T.let(
               :STATIC_VALUE,
-              HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
+              HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
             )
           OBJECT_PROPERTY =
             T.let(
               :OBJECT_PROPERTY,
-              HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
+              HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
+                HubSpotSDK::Automation::PublicInputFieldDefinition::SupportedValueType::TaggedSymbol
               ]
             )
           end

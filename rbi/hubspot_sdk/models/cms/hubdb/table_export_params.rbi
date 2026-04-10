@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        class TableExportParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TableExportParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Hubdb::TableExportParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Hubdb::TableExportParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -29,7 +29,7 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               format_: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(table_id_or_name:, format_: nil, request_options: {})
@@ -40,7 +40,7 @@ module HubspotSDK
               {
                 table_id_or_name: String,
                 format_: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

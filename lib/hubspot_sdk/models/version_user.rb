@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class VersionUser < HubspotSDK::Internal::Type::BaseModel
+    class VersionUser < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #   The unique ID of the User.
       #

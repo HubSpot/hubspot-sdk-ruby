@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type throttling_settings = { max_concurrent_requests: Integer }
 
-      class ThrottlingSettings < HubspotSDK::Internal::Type::BaseModel
+      class ThrottlingSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor max_concurrent_requests: Integer
 
         def initialize: (max_concurrent_requests: Integer) -> void

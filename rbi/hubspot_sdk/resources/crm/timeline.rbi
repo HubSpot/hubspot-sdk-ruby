@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Timeline
-        sig { returns(HubspotSDK::Resources::Crm::Timeline::Batch) }
+        sig { returns(HubSpotSDK::Resources::Crm::Timeline::Batch) }
         attr_reader :batch
 
         # Send a single instance of event data to a specified event type.
@@ -18,10 +18,10 @@ module HubspotSDK
             extra_data: T.anything,
             object_id_: String,
             object_type_fully_qualified_name: String,
-            timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash,
+            timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame::OrHash,
             timestamp: Time,
             utk: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def create_event(
@@ -44,8 +44,8 @@ module HubspotSDK
           params(
             developer_symbol: String,
             project_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::AppEventResolutionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::AppEventResolutionResponse)
         end
         def create_project_type(
           developer_symbol:,
@@ -55,7 +55,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

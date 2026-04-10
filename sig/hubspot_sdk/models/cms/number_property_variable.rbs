@@ -1,15 +1,15 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type number_property_variable =
         {
-          operator: HubspotSDK::Models::Cms::NumberPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::NumberPropertyVariable::operator,
           property_name: String,
           value: Float
         }
 
-      class NumberPropertyVariable < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor operator: HubspotSDK::Models::Cms::NumberPropertyVariable::operator
+      class NumberPropertyVariable < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::NumberPropertyVariable::operator
 
         attr_reader property_name: String?
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def value=: (Float) -> Float
 
         def initialize: (
-          operator: HubspotSDK::Models::Cms::NumberPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::NumberPropertyVariable::operator,
           ?property_name: String,
           ?value: Float
         ) -> void
 
         def to_hash: -> {
-          operator: HubspotSDK::Models::Cms::NumberPropertyVariable::operator,
+          operator: HubSpotSDK::Models::Cms::NumberPropertyVariable::operator,
           property_name: String,
           value: Float
         }
@@ -34,11 +34,11 @@ module HubspotSDK
         type operator = :NUMBER_PROPERTY_VARIABLE
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER_PROPERTY_VARIABLE: :NUMBER_PROPERTY_VARIABLE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::NumberPropertyVariable::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::NumberPropertyVariable::operator]
         end
       end
     end

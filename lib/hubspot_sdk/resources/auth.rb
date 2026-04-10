@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Auth
-      # @return [HubspotSDK::Resources::Auth::OAuth]
+      # @return [HubSpotSDK::Resources::Auth::OAuth]
       attr_reader :oauth
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @oauth = HubspotSDK::Resources::Auth::OAuth.new(client: client)
+        @oauth = HubSpotSDK::Resources::Auth::OAuth.new(client: client)
       end
     end
   end

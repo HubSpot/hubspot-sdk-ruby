@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type collection_response_api_usage_no_paging =
-        { results: ::Array[HubspotSDK::Account::APIUsage] }
+        { results: ::Array[HubSpotSDK::Account::APIUsage] }
 
-      class CollectionResponseAPIUsageNoPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Account::APIUsage]
+      class CollectionResponseAPIUsageNoPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Account::APIUsage]
 
         def initialize: (
-          results: ::Array[HubspotSDK::Account::APIUsage]
+          results: ::Array[HubSpotSDK::Account::APIUsage]
         ) -> void
 
-        def to_hash: -> { results: ::Array[HubspotSDK::Account::APIUsage] }
+        def to_hash: -> { results: ::Array[HubSpotSDK::Account::APIUsage] }
       end
     end
   end

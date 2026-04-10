@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectSchema < HubspotSDK::Internal::Type::BaseModel
+      class ObjectSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::ObjectSchema, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::ObjectSchema, HubSpotSDK::Internal::AnyHash)
           end
 
         # A unique ID for this schema's object type. Will be defined as
@@ -21,18 +21,18 @@ module HubspotSDK
         attr_accessor :archived
 
         # Associations defined for a given object type.
-        sig { returns(T::Array[HubspotSDK::AssociationDefinition]) }
+        sig { returns(T::Array[HubSpotSDK::AssociationDefinition]) }
         attr_accessor :associations
 
         # An assigned unique ID for the object, including portal ID and object name.
         sig { returns(String) }
         attr_accessor :fully_qualified_name
 
-        sig { returns(HubspotSDK::ObjectTypeDefinitionLabels) }
+        sig { returns(HubSpotSDK::ObjectTypeDefinitionLabels) }
         attr_reader :labels
 
         sig do
-          params(labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash).void
+          params(labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash).void
         end
         attr_writer :labels
 
@@ -44,7 +44,7 @@ module HubspotSDK
         attr_accessor :object_type_id
 
         # Properties defined for this object type.
-        sig { returns(T::Array[HubspotSDK::Crm::Property]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::Property]) }
         attr_accessor :properties
 
         # The names of properties that should be **required** when creating an object of
@@ -107,12 +107,12 @@ module HubspotSDK
             id: String,
             allows_sensitive_properties: T::Boolean,
             archived: T::Boolean,
-            associations: T::Array[HubspotSDK::AssociationDefinition::OrHash],
+            associations: T::Array[HubSpotSDK::AssociationDefinition::OrHash],
             fully_qualified_name: String,
-            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubspotSDK::Crm::Property::OrHash],
+            properties: T::Array[HubSpotSDK::Crm::Property::OrHash],
             required_properties: T::Array[String],
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
@@ -168,12 +168,12 @@ module HubspotSDK
               id: String,
               allows_sensitive_properties: T::Boolean,
               archived: T::Boolean,
-              associations: T::Array[HubspotSDK::AssociationDefinition],
+              associations: T::Array[HubSpotSDK::AssociationDefinition],
               fully_qualified_name: String,
-              labels: HubspotSDK::ObjectTypeDefinitionLabels,
+              labels: HubSpotSDK::ObjectTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubspotSDK::Crm::Property],
+              properties: T::Array[HubSpotSDK::Crm::Property],
               required_properties: T::Array[String],
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],

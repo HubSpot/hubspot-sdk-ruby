@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class DealToDealSplits < HubspotSDK::Internal::Type::BaseModel
+      class DealToDealSplits < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::DealToDealSplits,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::DealToDealSplits,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -18,13 +18,13 @@ module HubspotSDK
 
         # An array of deal split objects, each representing a portion of the deal assigned
         # to an owner.
-        sig { returns(T::Array[HubspotSDK::Crm::SimplePublicObject]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::SimplePublicObject]) }
         attr_accessor :splits
 
         sig do
           params(
             id: String,
-            splits: T::Array[HubspotSDK::Crm::SimplePublicObject::OrHash]
+            splits: T::Array[HubSpotSDK::Crm::SimplePublicObject::OrHash]
           ).returns(T.attached_class)
         end
         def self.new(
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               id: String,
-              splits: T::Array[HubspotSDK::Crm::SimplePublicObject]
+              splits: T::Array[HubSpotSDK::Crm::SimplePublicObject]
             }
           )
         end

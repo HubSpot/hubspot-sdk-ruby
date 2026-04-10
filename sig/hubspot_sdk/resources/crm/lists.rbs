@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Lists
@@ -7,112 +7,112 @@ module HubspotSDK
           object_type_id: String,
           processing_type: String,
           ?custom_properties: ::Hash[Symbol, String],
-          ?filter_branch: HubspotSDK::Models::Crm::ListCreateRequest::filter_branch,
+          ?filter_branch: HubSpotSDK::Models::Crm::ListCreateRequest::filter_branch,
           ?list_folder_id: Integer,
-          ?list_permissions: HubspotSDK::Crm::PublicListPermissions,
-          ?membership_settings: HubspotSDK::Crm::PublicMembershipSettings,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListCreateResponse
+          ?list_permissions: HubSpotSDK::Crm::PublicListPermissions,
+          ?membership_settings: HubSpotSDK::Crm::PublicMembershipSettings,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListCreateResponse
 
         def list: (
           ?include_filters: bool,
           ?list_ids: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListsByIDResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListsByIDResponse
 
         def delete: (
           String list_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def add_and_remove_memberships: (
           String list_id,
           record_ids_to_add: ::Array[String],
           record_ids_to_remove: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::MembershipsUpdateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::MembershipsUpdateResponse
 
         def add_memberships: (
           String list_id,
           body: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::MembershipsUpdateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::MembershipsUpdateResponse
 
         def add_memberships_from: (
           String source_list_id,
           list_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def batch_read_memberships: (
-          inputs: ::Array[HubspotSDK::Crm::RecordIDInput],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::BatchResponseRecordIDWithMemberships
+          inputs: ::Array[HubSpotSDK::Crm::RecordIDInput],
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::BatchResponseRecordIDWithMemberships
 
         def create_folder: (
           name: String,
           ?parent_folder_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFolderCreateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFolderCreateResponse
 
         def create_id_mapping: (
           body: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicBatchMigrationMapping
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicBatchMigrationMapping
 
         def delete_folder: (
           String folder_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def delete_memberships: (
           String list_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def get: (
           String list_id,
           ?include_filters: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFetchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFetchResponse
 
         def get_by_object_type_and_name: (
           String list_name,
           object_type_id: String,
           ?include_filters: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFetchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFetchResponse
 
         def get_id_mapping: (
           ?legacy_list_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicMigrationMapping
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicMigrationMapping
 
         def get_memberships_join_order: (
           String list_id,
           ?after: String,
           ?before: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::JoinTimeAndRecordID]
 
         def get_record_memberships: (
           String record_id,
           object_type_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::APICollectionResponseRecordListMembership
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::APICollectionResponseRecordListMembership
 
         def get_schedule_conversion: (
           String list_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicListConversionResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicListConversionResponse
 
         def get_size_and_edits_history_between: (
           String list_id,
           ?end_date: String,
           ?start_date: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListSizeAndEditHistoryResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListSizeAndEditHistoryResponse
 
         def list_by_search: (
           list_ids: ::Array[String],
@@ -123,77 +123,77 @@ module HubspotSDK
           ?object_type_id: String,
           ?query: String,
           ?sort: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListSearchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListSearchResponse
 
         def list_folders: (
           ?folder_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFolderFetchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFolderFetchResponse
 
         def list_memberships: (
           String list_id,
           ?after: String,
           ?before: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::JoinTimeAndRecordID]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::JoinTimeAndRecordID]
 
         def move_folder: (
           String new_parent_folder_id,
           folder_id: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFolderFetchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFolderFetchResponse
 
         def move_list: (
           list_id: String,
           new_folder_id: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def remove_memberships: (
           String list_id,
           body: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::MembershipsUpdateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::MembershipsUpdateResponse
 
         def rename_folder: (
           String folder_id,
           ?new_folder_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListFolderFetchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListFolderFetchResponse
 
         def restore: (
           String list_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def schedule_conversion: (
           String list_id,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> nil
 
         def update_list_filters: (
           String list_id,
-          filter_branch: HubspotSDK::Models::Crm::ListFilterUpdateRequest::filter_branch,
+          filter_branch: HubSpotSDK::Models::Crm::ListFilterUpdateRequest::filter_branch,
           ?enroll_objects_in_workflows: bool,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListUpdateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListUpdateResponse
 
         def update_list_name: (
           String list_id,
           ?include_filters: bool,
           ?list_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::ListUpdateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::ListUpdateResponse
 
         def update_schedule_conversion: (
           String list_id,
-          public_list_conversion_time: HubspotSDK::Models::Crm::public_list_conversion_time,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicListConversionResponse
+          public_list_conversion_time: HubSpotSDK::Models::Crm::public_list_conversion_time,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicListConversionResponse
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

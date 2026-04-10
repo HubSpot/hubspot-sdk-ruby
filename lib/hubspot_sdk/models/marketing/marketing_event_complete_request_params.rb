@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventCompleteRequestParams < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventCompleteRequestParams < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute end_date_time
         #   The end date and time of the marketing event in ISO 8601 format
         #

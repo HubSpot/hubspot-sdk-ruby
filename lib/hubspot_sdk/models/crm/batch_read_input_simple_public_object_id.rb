@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchReadInputSimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
+      class BatchReadInputSimplePublicObjectID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObjectID] }
+        #   @return [Array<HubSpotSDK::Models::Crm::SimplePublicObjectID>]
+        required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObjectID] }
 
         # @!attribute properties
         #   Key-value pairs for setting properties for the new object.
         #
         #   @return [Array<String>]
-        required :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute properties_with_history
         #   Key-value pairs for setting properties for the new object and their histories.
         #
         #   @return [Array<String>]
         required :properties_with_history,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :propertiesWithHistory
 
         # @!attribute id_property
@@ -32,13 +32,13 @@ module HubspotSDK
 
         # @!method initialize(inputs:, properties:, properties_with_history:, id_property: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID} for more details.
+        #   {HubSpotSDK::Models::Crm::BatchReadInputSimplePublicObjectID} for more details.
         #
         #   Specifies the input for reading a batch of CRM objects, including arrays of
         #   object IDs, requested property names (with optional history), and an optional
         #   unique identifying property.
         #
-        #   @param inputs [Array<HubspotSDK::Models::Crm::SimplePublicObjectID>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::SimplePublicObjectID>]
         #
         #   @param properties [Array<String>] Key-value pairs for setting properties for the new object.
         #

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type group =
@@ -13,7 +13,7 @@ module HubspotSDK
           portal_id: Integer
         }
 
-      class Group < HubspotSDK::Internal::Type::BaseModel
+      class Group < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor deleted: bool
 
         attr_accessor display_name: String

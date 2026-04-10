@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Occurrences#list
-      class OccurrenceListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Events::Occurrences#list
+      class OccurrenceListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute id
         #
         #   @return [Array<String>, nil]
-        optional :id, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :id, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -44,8 +44,8 @@ module HubspotSDK
 
         # @!attribute object_property
         #
-        #   @return [HubspotSDK::Models::Events::OccurrenceListParams::ObjectProperty, nil]
-        optional :object_property, -> { HubspotSDK::Events::OccurrenceListParams::ObjectProperty }
+        #   @return [HubSpotSDK::Models::Events::OccurrenceListParams::ObjectProperty, nil]
+        optional :object_property, -> { HubSpotSDK::Events::OccurrenceListParams::ObjectProperty }
 
         # @!attribute object_type
         #
@@ -65,21 +65,21 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute property
         #
-        #   @return [HubspotSDK::Models::Events::OccurrenceListParams::Property, nil]
-        optional :property, -> { HubspotSDK::Events::OccurrenceListParams::Property }
+        #   @return [HubSpotSDK::Models::Events::OccurrenceListParams::Property, nil]
+        optional :property, -> { HubSpotSDK::Events::OccurrenceListParams::Property }
 
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!method initialize(id: nil, after: nil, before: nil, event_type: nil, limit: nil, object_id_: nil, object_property: nil, object_type: nil, occurred_after: nil, occurred_before: nil, properties: nil, property: nil, sort: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::OccurrenceListParams} for more details.
+        #   {HubSpotSDK::Models::Events::OccurrenceListParams} for more details.
         #
         #   @param id [Array<String>]
         #
@@ -93,7 +93,7 @@ module HubspotSDK
         #
         #   @param object_id_ [Integer]
         #
-        #   @param object_property [HubspotSDK::Models::Events::OccurrenceListParams::ObjectProperty]
+        #   @param object_property [HubSpotSDK::Models::Events::OccurrenceListParams::ObjectProperty]
         #
         #   @param object_type [String]
         #
@@ -103,27 +103,27 @@ module HubspotSDK
         #
         #   @param properties [Array<String>]
         #
-        #   @param property [HubspotSDK::Models::Events::OccurrenceListParams::Property]
+        #   @param property [HubSpotSDK::Models::Events::OccurrenceListParams::Property]
         #
         #   @param sort [Array<String>]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
-        class ObjectProperty < HubspotSDK::Internal::Type::BaseModel
+        class ObjectProperty < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute propname
           #
           #   @return [Object, nil]
-          optional :propname, HubspotSDK::Internal::Type::Unknown, api_name: :"{propname}"
+          optional :propname, HubSpotSDK::Internal::Type::Unknown, api_name: :"{propname}"
 
           # @!method initialize(propname: nil)
           #   @param propname [Object]
         end
 
-        class Property < HubspotSDK::Internal::Type::BaseModel
+        class Property < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute propname
           #
           #   @return [Object, nil]
-          optional :propname, HubspotSDK::Internal::Type::Unknown, api_name: :"{propname}"
+          optional :propname, HubSpotSDK::Internal::Type::Unknown, api_name: :"{propname}"
 
           # @!method initialize(propname: nil)
           #   @param propname [Object]

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type url_mappings_url_mapping =
@@ -6,7 +6,7 @@ module HubspotSDK
           id: Integer,
           cdn_purge_embargo_time: Integer,
           content_group_id: Integer,
-          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          cos_object_type: HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
           created: Integer,
           created_by_id: Integer,
           deleted_at: Integer,
@@ -31,14 +31,14 @@ module HubspotSDK
           updated_by_id: Integer
         }
 
-      class URLMappingsURLMapping < HubspotSDK::Internal::Type::BaseModel
+      class URLMappingsURLMapping < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor cdn_purge_embargo_time: Integer
 
         attr_accessor content_group_id: Integer
 
-        attr_accessor cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type
+        attr_accessor cos_object_type: HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type
 
         attr_accessor created: Integer
 
@@ -88,7 +88,7 @@ module HubspotSDK
           id: Integer,
           cdn_purge_embargo_time: Integer,
           content_group_id: Integer,
-          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          cos_object_type: HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
           created: Integer,
           created_by_id: Integer,
           deleted_at: Integer,
@@ -117,7 +117,7 @@ module HubspotSDK
           id: Integer,
           cdn_purge_embargo_time: Integer,
           content_group_id: Integer,
-          cos_object_type: HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
+          cos_object_type: HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type,
           created: Integer,
           created_by_id: Integer,
           deleted_at: Integer,
@@ -206,7 +206,7 @@ module HubspotSDK
           | :WORKFLOW
 
         module CosObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACCESS_GROUP_MEMBERSHIP: :ACCESS_GROUP_MEMBERSHIP
           APP_PAGE: :APP_PAGE
@@ -270,7 +270,7 @@ module HubspotSDK
           WIDGET: :WIDGET
           WORKFLOW: :WORKFLOW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::URLMappingsURLMapping::cos_object_type]
         end
       end
     end

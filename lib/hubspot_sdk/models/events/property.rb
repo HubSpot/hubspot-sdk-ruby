@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Definitions#create_property
-      class Property < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Events::Definitions#create_property
+      class Property < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #   A summary of the property's purpose.
         #
@@ -40,8 +40,8 @@ module HubspotSDK
         #   A list of valid options for the property. This field is required for enumerated
         #   properties.
         #
-        #   @return [Array<HubspotSDK::Models::Option>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Option] }
+        #   @return [Array<HubSpotSDK::Models::Option>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option] }
 
         # @!attribute type
         #   The data type of the property, such as string or number.
@@ -53,7 +53,7 @@ module HubspotSDK
         #   Whether the property is archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute archived_at
         #   The timestamp when the property was archived, in ISO 8601 format.
@@ -65,7 +65,7 @@ module HubspotSDK
         #   Whether the property is a calculated field.
         #
         #   @return [Boolean, nil]
-        optional :calculated, HubspotSDK::Internal::Type::Boolean
+        optional :calculated, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute calculation_formula
         #   The formula used for calculated properties.
@@ -89,16 +89,16 @@ module HubspotSDK
         #   Indicates the sensitivity level of the property, such as "non_sensitive",
         #   "sensitive", or "highly_sensitive".
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::Property::DataSensitivity, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::Property::DataSensitivity, nil]
         optional :data_sensitivity,
-                 enum: -> { HubspotSDK::Events::Property::DataSensitivity },
+                 enum: -> { HubSpotSDK::Events::Property::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!attribute date_display_hint
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::Property::DateDisplayHint, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::Property::DateDisplayHint, nil]
         optional :date_display_hint,
-                 enum: -> { HubspotSDK::Events::Property::DateDisplayHint },
+                 enum: -> { HubSpotSDK::Events::Property::DateDisplayHint },
                  api_name: :dateDisplayHint
 
         # @!attribute display_order
@@ -112,38 +112,38 @@ module HubspotSDK
         #   'referencedObjectType' of 'OWNER'. Otherwise false.
         #
         #   @return [Boolean, nil]
-        optional :external_options, HubspotSDK::Internal::Type::Boolean, api_name: :externalOptions
+        optional :external_options, HubSpotSDK::Internal::Type::Boolean, api_name: :externalOptions
 
         # @!attribute form_field
         #   Whether the property can appear on forms.
         #
         #   @return [Boolean, nil]
-        optional :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        optional :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute has_unique_value
         #   Whether the property is a unique identifier property.
         #
         #   @return [Boolean, nil]
-        optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        optional :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #   Whether or not the property will be hidden from the HubSpot UI. It's recommended
         #   that this be set to false for custom properties.
         #
         #   @return [Boolean, nil]
-        optional :hidden, HubspotSDK::Internal::Type::Boolean
+        optional :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute hubspot_defined
         #   A boolean value set to true for HubSpot default properties.
         #
         #   @return [Boolean, nil]
-        optional :hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
+        optional :hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
 
         # @!attribute modification_metadata
         #
-        #   @return [HubspotSDK::Models::PropertyModificationMetadata, nil]
+        #   @return [HubSpotSDK::Models::PropertyModificationMetadata, nil]
         optional :modification_metadata,
-                 -> { HubspotSDK::PropertyModificationMetadata },
+                 -> { HubSpotSDK::PropertyModificationMetadata },
                  api_name: :modificationMetadata
 
         # @!attribute referenced_object_type
@@ -158,14 +158,14 @@ module HubspotSDK
         #
         #   @return [Array<String>, nil]
         optional :sensitive_data_categories,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :sensitiveDataCategories
 
         # @!attribute show_currency_symbol
         #   Whether to show the currency symbol in HubSpot's UI.
         #
         #   @return [Boolean, nil]
-        optional :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
+        optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
         # @!attribute updated_at
         #   The timestamp when the property was last updated, in ISO 8601 format.
@@ -180,7 +180,7 @@ module HubspotSDK
 
         # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, updated_at: nil, updated_user_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::Property} for more details.
+        #   {HubSpotSDK::Models::Events::Property} for more details.
         #
         #   A HubSpot property
         #
@@ -194,7 +194,7 @@ module HubspotSDK
         #
         #   @param name [String] The internal name for the property.
         #
-        #   @param options [Array<HubspotSDK::Models::Option>] A list of valid options for the property. This field is required for enumerated
+        #   @param options [Array<HubSpotSDK::Models::Option>] A list of valid options for the property. This field is required for enumerated
         #
         #   @param type [String] The data type of the property, such as string or number.
         #
@@ -210,9 +210,9 @@ module HubspotSDK
         #
         #   @param created_user_id [String] The ID of the user who created the property.
         #
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Events::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
+        #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Events::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
         #
-        #   @param date_display_hint [Symbol, HubspotSDK::Models::Events::Property::DateDisplayHint]
+        #   @param date_display_hint [Symbol, HubSpotSDK::Models::Events::Property::DateDisplayHint]
         #
         #   @param display_order [Integer] The position of the item relative to others in the list.
         #
@@ -226,7 +226,7 @@ module HubspotSDK
         #
         #   @param hubspot_defined [Boolean] A boolean value set to true for HubSpot default properties.
         #
-        #   @param modification_metadata [HubspotSDK::Models::PropertyModificationMetadata]
+        #   @param modification_metadata [HubSpotSDK::Models::PropertyModificationMetadata]
         #
         #   @param referenced_object_type [String] Deprecated. Use externalOptionsReferenceType instead.
         #
@@ -241,9 +241,9 @@ module HubspotSDK
         # Indicates the sensitivity level of the property, such as "non_sensitive",
         # "sensitive", or "highly_sensitive".
         #
-        # @see HubspotSDK::Models::Events::Property#data_sensitivity
+        # @see HubSpotSDK::Models::Events::Property#data_sensitivity
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGHLY_SENSITIVE = :highly_sensitive
           NON_SENSITIVE = :non_sensitive
@@ -253,9 +253,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::Property#date_display_hint
+        # @see HubSpotSDK::Models::Events::Property#date_display_hint
         module DateDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE = :absolute
           ABSOLUTE_WITH_RELATIVE = :absolute_with_relative

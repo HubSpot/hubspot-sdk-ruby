@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       module Currencies
-        # @see HubspotSDK::Resources::Settings::Currencies::ExchangeRates#list_exchange_rates
-        class ExchangeRateListExchangeRatesParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Settings::Currencies::ExchangeRates#list_exchange_rates
+        class ExchangeRateListExchangeRatesParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute after
           #   The paging cursor token of the last successfully read resource will be returned
@@ -19,9 +19,9 @@ module HubspotSDK
 
           # @!attribute from_currency_code
           #
-          #   @return [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode, nil]
+          #   @return [Symbol, HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode, nil]
           optional :from_currency_code,
-                   enum: -> { HubspotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode }
+                   enum: -> { HubSpotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode }
 
           # @!attribute limit
           #   The maximum number of results to display per page.
@@ -31,27 +31,27 @@ module HubspotSDK
 
           # @!attribute to_currency_code
           #
-          #   @return [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode, nil]
+          #   @return [Symbol, HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode, nil]
           optional :to_currency_code,
-                   enum: -> { HubspotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode }
+                   enum: -> { HubSpotSDK::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode }
 
           # @!method initialize(after: nil, from_currency_code: nil, limit: nil, to_currency_code: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams}
+          #   {HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams}
           #   for more details.
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode]
+          #   @param from_currency_code [Symbol, HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::FromCurrencyCode]
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param to_currency_code [Symbol, HubspotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode]
+          #   @param to_currency_code [Symbol, HubSpotSDK::Models::Settings::Currencies::ExchangeRateListExchangeRatesParams::ToCurrencyCode]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
           module FromCurrencyCode
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AED = :AED
             AFN = :AFN
@@ -235,7 +235,7 @@ module HubspotSDK
           end
 
           module ToCurrencyCode
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AED = :AED
             AFN = :AFN

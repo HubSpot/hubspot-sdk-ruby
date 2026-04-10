@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        class MetricGetRevenueAttributionParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class MetricGetRevenueAttributionParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Marketing::Campaigns::MetricGetRevenueAttributionParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Marketing::Campaigns::MetricGetRevenueAttributionParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -45,7 +45,7 @@ module HubspotSDK
               attribution_model: String,
               end_date: String,
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -66,7 +66,7 @@ module HubspotSDK
                 attribution_model: String,
                 end_date: String,
                 start_date: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

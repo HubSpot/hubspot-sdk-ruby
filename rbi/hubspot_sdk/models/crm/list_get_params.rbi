@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class ListGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::ListGetParams, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::ListGetParams, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(String) }
@@ -25,7 +25,7 @@ module HubspotSDK
           params(
             list_id: String,
             include_filters: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(list_id:, include_filters: nil, request_options: {})
@@ -36,7 +36,7 @@ module HubspotSDK
             {
               list_id: String,
               include_filters: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

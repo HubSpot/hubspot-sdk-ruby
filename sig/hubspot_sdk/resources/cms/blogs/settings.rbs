@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Settings
-          attr_reader multi_language: HubspotSDK::Resources::Cms::Blogs::Settings::MultiLanguage
+          attr_reader multi_language: HubSpotSDK::Resources::Cms::Blogs::Settings::MultiLanguage
 
           def list: (
             ?after: String,
@@ -16,29 +16,29 @@ module HubspotSDK
             ?updated_after: Time,
             ?updated_at: Time,
             ?updated_before: Time,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::Blog]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Blogs::Blog]
 
           def get: (
             String blog_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::Blogs::Blog
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::Blogs::Blog
 
           def get_revision: (
             String revision_id,
             blog_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Cms::Blogs::BlogVersion
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Cms::Blogs::BlogVersion
 
           def list_revisions: (
             String blog_id,
             ?after: String,
             ?before: String,
             ?limit: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::VersionBlog]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Blogs::VersionBlog]
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

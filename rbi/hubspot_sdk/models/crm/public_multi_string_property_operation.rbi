@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMultiStringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicMultiStringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # Specifies the type of operation (MULTISTRING).
         sig do
           returns(
-            HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol,
             operator: String,
             values: T::Array[String]
           ).returns(T.attached_class)
@@ -62,7 +62,7 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::OrSymbol,
               operator: String,
               values: T::Array[String]
             }
@@ -73,13 +73,13 @@ module HubspotSDK
 
         # Specifies the type of operation (MULTISTRING).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -87,13 +87,13 @@ module HubspotSDK
           MULTISTRING =
             T.let(
               :MULTISTRING,
-              HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

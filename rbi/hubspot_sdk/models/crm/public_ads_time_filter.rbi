@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAdsTimeFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicAdsTimeFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAdsTimeFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAdsTimeFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Filter type (ADS_TIME)
         sig do
-          returns(HubspotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -22,15 +22,15 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-              HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-              HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-              HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-              HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-              HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-              HubspotSDK::Crm::PublicAllHistoryRefineBy,
-              HubspotSDK::Crm::PublicTimePointOperation,
-              HubspotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+              HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+              HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+              HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+              HubSpotSDK::Crm::PublicTimePointOperation,
+              HubSpotSDK::Crm::PublicRangedTimeOperation
             )
           )
         end
@@ -39,18 +39,18 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol,
             pruning_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -66,18 +66,18 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType::OrSymbol,
               pruning_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 )
             }
           )
@@ -87,24 +87,24 @@ module HubspotSDK
 
         # Filter type (ADS_TIME)
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicAdsTimeFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ADS_TIME =
             T.let(
               :ADS_TIME,
-              HubspotSDK::Crm::PublicAdsTimeFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAdsTimeFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicAdsTimeFilter::FilterType::TaggedSymbol
               ]
             )
           end
@@ -114,27 +114,27 @@ module HubspotSDK
 
         # Refinement criteria
         module PruningRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAdsTimeFilter::PruningRefineBy::Variants
+                HubSpotSDK::Crm::PublicAdsTimeFilter::PruningRefineBy::Variants
               ]
             )
           end

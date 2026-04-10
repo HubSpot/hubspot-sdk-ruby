@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class APICollectionResponseJoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
+      class APICollectionResponseJoinTimeAndRecordID < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::APICollectionResponseJoinTimeAndRecordID,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::APICollectionResponseJoinTimeAndRecordID,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::JoinTimeAndRecordID]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::JoinTimeAndRecordID]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         # The total number of records that match the query.
@@ -30,8 +30,8 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID::OrHash],
-            paging: HubspotSDK::Paging::OrHash,
+            results: T::Array[HubSpotSDK::Crm::JoinTimeAndRecordID::OrHash],
+            paging: HubSpotSDK::Paging::OrHash,
             total: Integer
           ).returns(T.attached_class)
         end
@@ -46,8 +46,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Crm::JoinTimeAndRecordID],
-              paging: HubspotSDK::Paging,
+              results: T::Array[HubSpotSDK::Crm::JoinTimeAndRecordID],
+              paging: HubSpotSDK::Paging,
               total: Integer
             }
           )

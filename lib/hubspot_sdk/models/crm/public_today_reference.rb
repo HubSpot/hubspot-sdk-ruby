@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTodayReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicTodayReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute reference_type
         #   Indicates the type of reference (TODAY).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicTodayReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicTodayReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicTodayReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicTodayReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -37,7 +37,7 @@ module HubspotSDK
         optional :second, Integer
 
         # @!method initialize(reference_type:, hour: nil, millisecond: nil, minute: nil, second: nil)
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicTodayReference::ReferenceType] Indicates the type of reference (TODAY).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicTodayReference::ReferenceType] Indicates the type of reference (TODAY).
         #
         #   @param hour [Integer] The hour component of the current day reference.
         #
@@ -49,9 +49,9 @@ module HubspotSDK
 
         # Indicates the type of reference (TODAY).
         #
-        # @see HubspotSDK::Models::Crm::PublicTodayReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicTodayReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TODAY = :TODAY
 

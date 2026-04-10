@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicDatePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicDatePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
         # Specifies the type of operation (DATE).
         sig do
           returns(
-            HubspotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -48,7 +48,7 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             month: String,
             operation_type:
-              HubspotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol,
             operator: String,
             year: Integer
           ).returns(T.attached_class)
@@ -78,7 +78,7 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               month: String,
               operation_type:
-                HubspotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType::OrSymbol,
               operator: String,
               year: Integer
             }
@@ -89,13 +89,13 @@ module HubspotSDK
 
         # Specifies the type of operation (DATE).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicDatePropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -103,13 +103,13 @@ module HubspotSDK
           DATE =
             T.let(
               :DATE,
-              HubspotSDK::Crm::PublicDatePropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicDatePropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicDatePropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Option < HubspotSDK::Internal::Type::BaseModel
+      class Option < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Option, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Option, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unique ID of the option.
@@ -37,10 +37,10 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :updated_at
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :created_by
 
-        sig { params(created_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(created_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :created_by
 
         # The ID of the user who created the option.
@@ -50,10 +50,10 @@ module HubspotSDK
         sig { params(created_by_user_id: Integer).void }
         attr_writer :created_by_user_id
 
-        sig { returns(T.nilable(HubspotSDK::Cms::SimpleUser)) }
+        sig { returns(T.nilable(HubSpotSDK::Cms::SimpleUser)) }
         attr_reader :updated_by
 
-        sig { params(updated_by: HubspotSDK::Cms::SimpleUser::OrHash).void }
+        sig { params(updated_by: HubSpotSDK::Cms::SimpleUser::OrHash).void }
         attr_writer :updated_by
 
         # The ID of the user who last updated the option.
@@ -73,9 +73,9 @@ module HubspotSDK
             order: Integer,
             type: String,
             updated_at: Time,
-            created_by: HubspotSDK::Cms::SimpleUser::OrHash,
+            created_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             created_by_user_id: Integer,
-            updated_by: HubspotSDK::Cms::SimpleUser::OrHash,
+            updated_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             updated_by_user_id: Integer
           ).returns(T.attached_class)
         end
@@ -113,9 +113,9 @@ module HubspotSDK
               order: Integer,
               type: String,
               updated_at: Time,
-              created_by: HubspotSDK::Cms::SimpleUser,
+              created_by: HubSpotSDK::Cms::SimpleUser,
               created_by_user_id: Integer,
-              updated_by: HubspotSDK::Cms::SimpleUser,
+              updated_by: HubSpotSDK::Cms::SimpleUser,
               updated_by_user_id: Integer
             }
           )

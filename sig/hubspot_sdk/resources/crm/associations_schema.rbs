@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class AssociationsSchema
-        attr_reader labels: HubspotSDK::Resources::Crm::AssociationsSchema::Labels
+        attr_reader labels: HubSpotSDK::Resources::Crm::AssociationsSchema::Labels
 
-        attr_reader limits: HubspotSDK::Resources::Crm::AssociationsSchema::Limits
+        attr_reader limits: HubSpotSDK::Resources::Crm::AssociationsSchema::Limits
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

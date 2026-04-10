@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFiscalQuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicFiscalQuarterReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicFiscalQuarterReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicFiscalQuarterReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # Indicates the type of reference (FISCAL_QUARTER).
         sig do
           returns(
-            HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol
+            HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol
           )
         end
         attr_accessor :reference_type
@@ -61,7 +61,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -92,7 +92,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -105,13 +105,13 @@ module HubspotSDK
 
         # Indicates the type of reference (FISCAL_QUARTER).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType
+                HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -119,13 +119,13 @@ module HubspotSDK
           FISCAL_QUARTER =
             T.let(
               :FISCAL_QUARTER,
-              HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType::TaggedSymbol
               ]
             )
           end

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FilteringMetaData < HubspotSDK::Internal::Type::BaseModel
+      class FilteringMetaData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::FilteringMetaData,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::FilteringMetaData,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

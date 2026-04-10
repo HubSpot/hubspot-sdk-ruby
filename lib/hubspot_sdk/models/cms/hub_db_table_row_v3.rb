@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowV3 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The id of the table row
         #
@@ -52,11 +52,11 @@ module HubspotSDK
         #   List of key value pairs with the column name and column value
         #
         #   @return [Hash{Symbol=>Object}]
-        required :values, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :values, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!method initialize(id:, child_table_id:, created_at:, name:, path:, published_at:, updated_at:, values:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::HubDBTableRowV3} for more details.
+        #   {HubSpotSDK::Models::Cms::HubDBTableRowV3} for more details.
         #
         #   @param id [String] The id of the table row
         #

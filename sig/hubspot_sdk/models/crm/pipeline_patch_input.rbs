@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type pipeline_patch_input =
         { archived: bool, display_order: Integer, label: String }
 
-      class PipelinePatchInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelinePatchInput < HubSpotSDK::Internal::Type::BaseModel
         attr_reader archived: bool?
 
         def archived=: (bool) -> bool

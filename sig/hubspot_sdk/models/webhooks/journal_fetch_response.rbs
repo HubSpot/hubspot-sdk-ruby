@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type journal_fetch_response =
         { current_offset: String, expires_at: Time, url: String }
 
-      class JournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
+      class JournalFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor current_offset: String
 
         attr_accessor expires_at: Time

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type contact_name =
@@ -10,7 +10,7 @@ module HubspotSDK
           suffix: String
         }
 
-      class ContactName < HubspotSDK::Internal::Type::BaseModel
+      class ContactName < HubSpotSDK::Internal::Type::BaseModel
         attr_reader first_name: String?
 
         def first_name=: (String) -> String

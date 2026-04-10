@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicButtonStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicButtonStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicButtonStyleSettings,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicButtonStyleSettings,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,12 +24,12 @@ module HubspotSDK
         sig { params(corner_radius: Integer).void }
         attr_writer :corner_radius
 
-        sig { returns(T.nilable(HubspotSDK::Marketing::PublicFontStyle)) }
+        sig { returns(T.nilable(HubSpotSDK::Marketing::PublicFontStyle)) }
         attr_reader :font_style
 
         sig do
           params(
-            font_style: HubspotSDK::Marketing::PublicFontStyle::OrHash
+            font_style: HubSpotSDK::Marketing::PublicFontStyle::OrHash
           ).void
         end
         attr_writer :font_style
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             background_color: T.anything,
             corner_radius: Integer,
-            font_style: HubspotSDK::Marketing::PublicFontStyle::OrHash
+            font_style: HubSpotSDK::Marketing::PublicFontStyle::OrHash
           ).returns(T.attached_class)
         end
         def self.new(background_color: nil, corner_radius: nil, font_style: nil)
@@ -49,7 +49,7 @@ module HubspotSDK
             {
               background_color: T.anything,
               corner_radius: Integer,
-              font_style: HubspotSDK::Marketing::PublicFontStyle
+              font_style: HubSpotSDK::Marketing::PublicFontStyle
             }
           )
         end

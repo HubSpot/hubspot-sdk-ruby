@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
-      # @return [HubspotSDK::Resources::Conversations::CustomChannels]
+      # @return [HubSpotSDK::Resources::Conversations::CustomChannels]
       attr_reader :custom_channels
 
-      # @return [HubspotSDK::Resources::Conversations::VisitorIdentification]
+      # @return [HubSpotSDK::Resources::Conversations::VisitorIdentification]
       attr_reader :visitor_identification
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @custom_channels = HubspotSDK::Resources::Conversations::CustomChannels.new(client: client)
-        @visitor_identification = HubspotSDK::Resources::Conversations::VisitorIdentification.new(client: client)
+        @custom_channels = HubSpotSDK::Resources::Conversations::CustomChannels.new(client: client)
+        @visitor_identification = HubSpotSDK::Resources::Conversations::VisitorIdentification.new(client: client)
       end
     end
   end

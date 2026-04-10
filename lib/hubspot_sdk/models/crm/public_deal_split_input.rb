@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDealSplitInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicDealSplitInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute owner_id
         #   The unique identifier of the owner receiving the deal split.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
 
         # @!method initialize(owner_id:, percentage:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicDealSplitInput} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicDealSplitInput} for more details.
         #
         #   @param owner_id [Integer] The unique identifier of the owner receiving the deal split.
         #

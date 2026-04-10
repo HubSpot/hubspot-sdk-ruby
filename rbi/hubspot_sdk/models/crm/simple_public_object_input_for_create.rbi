@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectInputForCreate < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectInputForCreate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::SimplePublicObjectInputForCreate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::SimplePublicObjectInputForCreate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationsForObject]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicAssociationsForObject]) }
         attr_accessor :associations
 
         # Key-value pairs for setting properties for the new object.
@@ -25,7 +25,7 @@ module HubspotSDK
         sig do
           params(
             associations:
-              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              T::Array[HubSpotSDK::Crm::PublicAssociationsForObject::OrHash],
             properties: T::Hash[Symbol, String]
           ).returns(T.attached_class)
         end
@@ -40,7 +40,7 @@ module HubspotSDK
           override.returns(
             {
               associations:
-                T::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+                T::Array[HubSpotSDK::Crm::PublicAssociationsForObject],
               properties: T::Hash[Symbol, String]
             }
           )

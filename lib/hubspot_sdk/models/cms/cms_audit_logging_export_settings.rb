@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CmsAuditLoggingExportSettings < HubspotSDK::Internal::Type::BaseModel
+      class CmsAuditLoggingExportSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #
         #   @return [String]
@@ -11,10 +11,10 @@ module HubspotSDK
 
         # @!attribute format_
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::Format]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::CmsAuditLoggingExportSettings::Format]
         required :format_,
                  enum: -> {
-                   HubspotSDK::Cms::CmsAuditLoggingExportSettings::Format
+                   HubSpotSDK::Cms::CmsAuditLoggingExportSettings::Format
                  },
                  api_name: :format
 
@@ -27,14 +27,14 @@ module HubspotSDK
         #
         #   @return [Array<Integer>]
         required :recipient_user_ids,
-                 HubspotSDK::Internal::Type::ArrayOf[Integer],
+                 HubSpotSDK::Internal::Type::ArrayOf[Integer],
                  api_name: :recipientUserIds
 
         # @!attribute should_mark_export_file_as_sensitive
         #
         #   @return [Boolean]
         required :should_mark_export_file_as_sensitive,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :shouldMarkExportFileAsSensitive
 
         # @!attribute type
@@ -44,8 +44,8 @@ module HubspotSDK
 
         # @!attribute filters
         #
-        #   @return [HubspotSDK::Models::Cms::CmsAuditLoggingExportFilters, nil]
-        optional :filters, -> { HubspotSDK::Cms::CmsAuditLoggingExportFilters }
+        #   @return [HubSpotSDK::Models::Cms::CmsAuditLoggingExportFilters, nil]
+        optional :filters, -> { HubSpotSDK::Cms::CmsAuditLoggingExportFilters }
 
         # @!attribute partition
         #
@@ -64,19 +64,19 @@ module HubspotSDK
 
         # @!method initialize(email:, format_:, portal_id:, recipient_user_ids:, should_mark_export_file_as_sensitive:, type:, filters: nil, partition: nil, user_id: nil, user_time_zone: nil)
         #   @param email [String]
-        #   @param format_ [Symbol, HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings::Format]
+        #   @param format_ [Symbol, HubSpotSDK::Models::Cms::CmsAuditLoggingExportSettings::Format]
         #   @param portal_id [Integer]
         #   @param recipient_user_ids [Array<Integer>]
         #   @param should_mark_export_file_as_sensitive [Boolean]
         #   @param type [String]
-        #   @param filters [HubspotSDK::Models::Cms::CmsAuditLoggingExportFilters]
+        #   @param filters [HubSpotSDK::Models::Cms::CmsAuditLoggingExportFilters]
         #   @param partition [Integer]
         #   @param user_id [Integer]
         #   @param user_time_zone [String]
 
-        # @see HubspotSDK::Models::Cms::CmsAuditLoggingExportSettings#format_
+        # @see HubSpotSDK::Models::Cms::CmsAuditLoggingExportSettings#format_
         module Format
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CSV = :CSV
           XLS = :XLS

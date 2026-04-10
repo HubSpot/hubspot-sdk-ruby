@@ -1,22 +1,22 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_whats_app_template_metadata =
         {
           crm_object_ids: ::Hash[Symbol, Integer],
           parameters: ::Hash[Symbol, String],
-          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          type: HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
           content_id: Integer,
           mapped_template_id: Integer,
           root_mic_id: Integer
         }
 
-      class PublicWhatsAppTemplateMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicWhatsAppTemplateMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor crm_object_ids: ::Hash[Symbol, Integer]
 
         attr_accessor parameters: ::Hash[Symbol, String]
 
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_
 
         attr_reader content_id: Integer?
 
@@ -33,7 +33,7 @@ module HubspotSDK
         def initialize: (
           crm_object_ids: ::Hash[Symbol, Integer],
           parameters: ::Hash[Symbol, String],
-          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          type: HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
           ?content_id: Integer,
           ?mapped_template_id: Integer,
           ?root_mic_id: Integer
@@ -42,7 +42,7 @@ module HubspotSDK
         def to_hash: -> {
           crm_object_ids: ::Hash[Symbol, Integer],
           parameters: ::Hash[Symbol, String],
-          type: HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
+          type: HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_,
           content_id: Integer,
           mapped_template_id: Integer,
           root_mic_id: Integer
@@ -51,11 +51,11 @@ module HubspotSDK
         type type_ = :WHATSAPP_TEMPLATE_METADATA
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WHATSAPP_TEMPLATE_METADATA: :WHATSAPP_TEMPLATE_METADATA
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata::type_]
         end
       end
     end

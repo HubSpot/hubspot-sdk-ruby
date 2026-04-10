@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       module Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
-        type input = HubspotSDK::Internal::Type::Converter | Class
+        type input = HubSpotSDK::Internal::Type::Converter | Class
 
         type coerce_state =
           {
@@ -19,12 +19,12 @@ module HubspotSDK
 
         def coerce: (
           top value,
-          state: HubspotSDK::Internal::Type::Converter::coerce_state
+          state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> top
 
         def dump: (
           top value,
-          state: HubspotSDK::Internal::Type::Converter::dump_state
+          state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> top
 
         def inspect: (?depth: Integer) -> String
@@ -32,44 +32,44 @@ module HubspotSDK
         def self.type_info: (
           {
             const: (nil | bool | Integer | Float | Symbol)?,
-            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
-            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+            enum: ^-> HubSpotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubSpotSDK::Internal::Type::Converter::input?
           }
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input spec
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input spec
         ) -> (^-> top)
 
         def self.meta_info: (
           {
             const: (nil | bool | Integer | Float | Symbol)?,
-            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
-            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+            enum: ^-> HubSpotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubSpotSDK::Internal::Type::Converter::input?
           }
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input type_info,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input type_info,
           {
             const: (nil | bool | Integer | Float | Symbol)?,
-            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
-            union: ^-> HubspotSDK::Internal::Type::Converter::input?
+            enum: ^-> HubSpotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubSpotSDK::Internal::Type::Converter::input?
           }
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input spec
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input spec
         ) -> ::Hash[Symbol, top]
 
         def self.new_coerce_state: (
           ?translate_names: bool
-        ) -> HubspotSDK::Internal::Type::Converter::coerce_state
+        ) -> HubSpotSDK::Internal::Type::Converter::coerce_state
 
         def self.coerce: (
-          HubspotSDK::Internal::Type::Converter::input target,
+          HubSpotSDK::Internal::Type::Converter::input target,
           top value,
-          ?state: HubspotSDK::Internal::Type::Converter::coerce_state
+          ?state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> top
 
         def self.dump: (
-          HubspotSDK::Internal::Type::Converter::input target,
+          HubSpotSDK::Internal::Type::Converter::input target,
           top value,
-          ?state: HubspotSDK::Internal::Type::Converter::dump_state
+          ?state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> top
 
         def self.inspect: (top target, depth: Integer) -> String

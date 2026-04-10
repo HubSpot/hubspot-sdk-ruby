@@ -2,19 +2,19 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubSpotSDK::Test::ResourceTest
   def test_list_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.automation.actions.functions.list("definitionId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
+      response => HubSpotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Automation::PublicActionFunctionIdentifier])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Automation::PublicActionFunctionIdentifier])
       }
     end
   end
@@ -48,12 +48,12 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
       )
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionFunctionIdentifier
+      response => HubSpotSDK::Automation::PublicActionFunctionIdentifier
     end
 
     assert_pattern do
       response => {
-        function_type: HubspotSDK::Automation::PublicActionFunctionIdentifier::FunctionType,
+        function_type: HubSpotSDK::Automation::PublicActionFunctionIdentifier::FunctionType,
         id: String | nil
       }
     end
@@ -71,12 +71,12 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
       )
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionFunctionIdentifier
+      response => HubSpotSDK::Automation::PublicActionFunctionIdentifier
     end
 
     assert_pattern do
       response => {
-        function_type: HubspotSDK::Automation::PublicActionFunctionIdentifier::FunctionType,
+        function_type: HubSpotSDK::Automation::PublicActionFunctionIdentifier::FunctionType,
         id: String | nil
       }
     end
@@ -109,13 +109,13 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
       )
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionFunction
+      response => HubSpotSDK::Automation::PublicActionFunction
     end
 
     assert_pattern do
       response => {
         function_source: String,
-        function_type: HubspotSDK::Automation::PublicActionFunction::FunctionType,
+        function_type: HubSpotSDK::Automation::PublicActionFunction::FunctionType,
         id: String | nil
       }
     end
@@ -132,13 +132,13 @@ class HubspotSDK::Test::Resources::Automation::Actions::FunctionsTest < HubspotS
       )
 
     assert_pattern do
-      response => HubspotSDK::Automation::PublicActionFunction
+      response => HubSpotSDK::Automation::PublicActionFunction
     end
 
     assert_pattern do
       response => {
         function_source: String,
-        function_type: HubspotSDK::Automation::PublicActionFunction::FunctionType,
+        function_type: HubSpotSDK::Automation::PublicActionFunction::FunctionType,
         id: String | nil
       }
     end

@@ -1,41 +1,41 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationMultiWithLabel < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationMultiWithLabel < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAssociationMultiWithLabel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAssociationMultiWithLabel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Contains the Id of a Public Object
-        sig { returns(HubspotSDK::PublicObjectID) }
+        sig { returns(HubSpotSDK::PublicObjectID) }
         attr_reader :from
 
-        sig { params(from: HubspotSDK::PublicObjectID::OrHash).void }
+        sig { params(from: HubSpotSDK::PublicObjectID::OrHash).void }
         attr_writer :from
 
         sig do
-          returns(T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel])
+          returns(T::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel])
         end
         attr_accessor :to
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            from: HubspotSDK::PublicObjectID::OrHash,
+            from: HubSpotSDK::PublicObjectID::OrHash,
             to:
-              T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel::OrHash],
-            paging: HubspotSDK::Paging::OrHash
+              T::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel::OrHash],
+            paging: HubSpotSDK::Paging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -49,9 +49,9 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              from: HubspotSDK::PublicObjectID,
-              to: T::Array[HubspotSDK::Crm::MultiAssociatedObjectWithLabel],
-              paging: HubspotSDK::Paging
+              from: HubSpotSDK::PublicObjectID,
+              to: T::Array[HubSpotSDK::Crm::MultiAssociatedObjectWithLabel],
+              paging: HubSpotSDK::Paging
             }
           )
         end

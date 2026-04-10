@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_button_style_settings =
         {
           background_color: top,
           corner_radius: Integer,
-          font_style: HubspotSDK::Marketing::PublicFontStyle
+          font_style: HubSpotSDK::Marketing::PublicFontStyle
         }
 
-      class PublicButtonStyleSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicButtonStyleSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_reader background_color: top?
 
         def background_color=: (top) -> top
@@ -17,22 +17,22 @@ module HubspotSDK
 
         def corner_radius=: (Integer) -> Integer
 
-        attr_reader font_style: HubspotSDK::Marketing::PublicFontStyle?
+        attr_reader font_style: HubSpotSDK::Marketing::PublicFontStyle?
 
         def font_style=: (
-          HubspotSDK::Marketing::PublicFontStyle
-        ) -> HubspotSDK::Marketing::PublicFontStyle
+          HubSpotSDK::Marketing::PublicFontStyle
+        ) -> HubSpotSDK::Marketing::PublicFontStyle
 
         def initialize: (
           ?background_color: top,
           ?corner_radius: Integer,
-          ?font_style: HubspotSDK::Marketing::PublicFontStyle
+          ?font_style: HubSpotSDK::Marketing::PublicFontStyle
         ) -> void
 
         def to_hash: -> {
           background_color: top,
           corner_radius: Integer,
-          font_style: HubspotSDK::Marketing::PublicFontStyle
+          font_style: HubSpotSDK::Marketing::PublicFontStyle
         }
       end
     end

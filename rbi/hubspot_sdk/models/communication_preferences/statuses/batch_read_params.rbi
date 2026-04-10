@@ -1,22 +1,22 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       module Statuses
-        class BatchReadParams < HubspotSDK::Models::BatchInputString
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchReadParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::CommunicationPreferences::Statuses::BatchReadParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::CommunicationPreferences::Statuses::BatchReadParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
-          sig { returns(HubspotSDK::BatchInputString::Channel::OrSymbol) }
+          sig { returns(HubSpotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
           sig { returns(T.nilable(Integer)) }
@@ -27,9 +27,9 @@ module HubspotSDK
 
           sig do
             params(
-              channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
+              channel: HubSpotSDK::BatchInputString::Channel::OrSymbol,
               business_unit_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(channel:, business_unit_id: nil, request_options: {})
@@ -38,9 +38,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                channel: HubspotSDK::BatchInputString::Channel::OrSymbol,
+                channel: HubSpotSDK::BatchInputString::Channel::OrSymbol,
                 business_unit_id: Integer,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end
@@ -48,20 +48,20 @@ module HubspotSDK
           end
 
           module Channel
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
-                T.all(Symbol, HubspotSDK::BatchInputString::Channel)
+                T.all(Symbol, HubSpotSDK::BatchInputString::Channel)
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
             EMAIL =
-              T.let(:EMAIL, HubspotSDK::BatchInputString::Channel::TaggedSymbol)
+              T.let(:EMAIL, HubSpotSDK::BatchInputString::Channel::TaggedSymbol)
 
             sig do
               override.returns(
-                T::Array[HubspotSDK::BatchInputString::Channel::TaggedSymbol]
+                T::Array[HubSpotSDK::BatchInputString::Channel::TaggedSymbol]
               )
             end
             def self.values

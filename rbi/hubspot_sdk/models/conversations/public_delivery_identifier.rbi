@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicDeliveryIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class PublicDeliveryIdentifier < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicDeliveryIdentifier,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol
+            HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol
           )
         end
         attr_accessor :type
@@ -25,7 +25,7 @@ module HubspotSDK
         sig do
           params(
             type:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol,
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol,
             value: String
           ).returns(T.attached_class)
         end
@@ -36,7 +36,7 @@ module HubspotSDK
           override.returns(
             {
               type:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol,
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::OrSymbol,
               value: String
             }
           )
@@ -45,13 +45,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicDeliveryIdentifier::Type
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -59,28 +59,28 @@ module HubspotSDK
           CHANNEL_SPECIFIC_OPAQUE_ID =
             T.let(
               :CHANNEL_SPECIFIC_OPAQUE_ID,
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
             )
           HS_EMAIL_ADDRESS =
             T.let(
               :HS_EMAIL_ADDRESS,
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
             )
           HS_PHONE_NUMBER =
             T.let(
               :HS_PHONE_NUMBER,
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
             )
           HS_SHORT_CODE =
             T.let(
               :HS_SHORT_CODE,
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier::Type::TaggedSymbol
               ]
             )
           end

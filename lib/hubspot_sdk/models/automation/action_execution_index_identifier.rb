@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ActionExecutionIndexIdentifier < HubspotSDK::Internal::Type::BaseModel
+      class ActionExecutionIndexIdentifier < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute action_execution_index
         #   The index number representing the execution order of the action.
         #

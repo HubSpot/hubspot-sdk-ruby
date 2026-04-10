@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AssociationSpec < HubspotSDK::Internal::Type::BaseModel
+    class AssociationSpec < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::AssociationSpec, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::AssociationSpec, HubSpotSDK::Internal::AnyHash)
         end
 
       # The category of the association, such as "HUBSPOT_DEFINED".
       sig do
-        returns(HubspotSDK::AssociationSpec::AssociationCategory::OrSymbol)
+        returns(HubSpotSDK::AssociationSpec::AssociationCategory::OrSymbol)
       end
       attr_accessor :association_category
 
@@ -23,7 +23,7 @@ module HubspotSDK
       sig do
         params(
           association_category:
-            HubspotSDK::AssociationSpec::AssociationCategory::OrSymbol,
+            HubSpotSDK::AssociationSpec::AssociationCategory::OrSymbol,
           association_type_id: Integer
         ).returns(T.attached_class)
       end
@@ -39,7 +39,7 @@ module HubspotSDK
         override.returns(
           {
             association_category:
-              HubspotSDK::AssociationSpec::AssociationCategory::OrSymbol,
+              HubSpotSDK::AssociationSpec::AssociationCategory::OrSymbol,
             association_type_id: Integer
           }
         )
@@ -49,39 +49,39 @@ module HubspotSDK
 
       # The category of the association, such as "HUBSPOT_DEFINED".
       module AssociationCategory
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         TaggedSymbol =
           T.type_alias do
-            T.all(Symbol, HubspotSDK::AssociationSpec::AssociationCategory)
+            T.all(Symbol, HubSpotSDK::AssociationSpec::AssociationCategory)
           end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
 
         HUBSPOT_DEFINED =
           T.let(
             :HUBSPOT_DEFINED,
-            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+            HubSpotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
         INTEGRATOR_DEFINED =
           T.let(
             :INTEGRATOR_DEFINED,
-            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+            HubSpotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
         USER_DEFINED =
           T.let(
             :USER_DEFINED,
-            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+            HubSpotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
         WORK =
           T.let(
             :WORK,
-            HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+            HubSpotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
           )
 
         sig do
           override.returns(
             T::Array[
-              HubspotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
+              HubSpotSDK::AssociationSpec::AssociationCategory::TaggedSymbol
             ]
           )
         end

@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type collection_response_public_api_user_action_event_forward_paging =
         {
-          results: ::Array[HubspotSDK::Account::PublicAPIUserActionEvent],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::PublicAPIUserActionEvent],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponsePublicAPIUserActionEventForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Account::PublicAPIUserActionEvent]
+      class CollectionResponsePublicAPIUserActionEventForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Account::PublicAPIUserActionEvent]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Account::PublicAPIUserActionEvent],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::PublicAPIUserActionEvent],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Account::PublicAPIUserActionEvent],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Account::PublicAPIUserActionEvent],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

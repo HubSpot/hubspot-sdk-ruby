@@ -1,40 +1,40 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicQuickReplies < HubspotSDK::Internal::Type::BaseModel
+      class PublicQuickReplies < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute allow_multi_select
         #
         #   @return [Boolean]
-        required :allow_multi_select, HubspotSDK::Internal::Type::Boolean, api_name: :allowMultiSelect
+        required :allow_multi_select, HubSpotSDK::Internal::Type::Boolean, api_name: :allowMultiSelect
 
         # @!attribute allow_user_input
         #
         #   @return [Boolean]
-        required :allow_user_input, HubspotSDK::Internal::Type::Boolean, api_name: :allowUserInput
+        required :allow_user_input, HubSpotSDK::Internal::Type::Boolean, api_name: :allowUserInput
 
         # @!attribute quick_replies
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::QuickReply>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::QuickReply>]
         required :quick_replies,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::QuickReply] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::QuickReply] },
                  api_name: :quickReplies
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::PublicQuickReplies::Type]
-        required :type, enum: -> { HubspotSDK::Conversations::PublicQuickReplies::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::PublicQuickReplies::Type]
+        required :type, enum: -> { HubSpotSDK::Conversations::PublicQuickReplies::Type }
 
         # @!method initialize(allow_multi_select:, allow_user_input:, quick_replies:, type:)
         #   @param allow_multi_select [Boolean]
         #   @param allow_user_input [Boolean]
-        #   @param quick_replies [Array<HubspotSDK::Models::Conversations::QuickReply>]
-        #   @param type [Symbol, HubspotSDK::Models::Conversations::PublicQuickReplies::Type]
+        #   @param quick_replies [Array<HubSpotSDK::Models::Conversations::QuickReply>]
+        #   @param type [Symbol, HubSpotSDK::Models::Conversations::PublicQuickReplies::Type]
 
-        # @see HubspotSDK::Models::Conversations::PublicQuickReplies#type
+        # @see HubSpotSDK::Models::Conversations::PublicQuickReplies#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           QUICK_REPLIES = :QUICK_REPLIES
 

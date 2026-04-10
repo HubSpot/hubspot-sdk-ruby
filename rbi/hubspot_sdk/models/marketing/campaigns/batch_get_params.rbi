@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module Campaigns
-        class BatchGetParams < HubspotSDK::Models::Marketing::BatchInputPublicCampaignReadInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchGetParams < HubSpotSDK::Models::Marketing::BatchInputPublicCampaignReadInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Marketing::Campaigns::BatchGetParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Marketing::Campaigns::BatchGetParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -39,7 +39,7 @@ module HubspotSDK
               end_date: String,
               properties: T::Array[String],
               start_date: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -56,7 +56,7 @@ module HubspotSDK
                 end_date: String,
                 properties: T::Array[String],
                 start_date: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

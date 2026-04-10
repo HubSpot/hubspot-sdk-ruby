@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseMarketingEventPublicReadResponseV2ForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicReadResponseV2] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventPublicReadResponseV2] }
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::ForwardPaging, nil]
-        optional :paging, -> { HubspotSDK::ForwardPaging }
+        #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+        optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
-        #   @param paging [HubspotSDK::Models::ForwardPaging]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicReadResponseV2>]
+        #   @param paging [HubSpotSDK::Models::ForwardPaging]
       end
     end
   end

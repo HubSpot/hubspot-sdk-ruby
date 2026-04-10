@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class ExchangeRateUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRateUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   A unique identifier for the exchange rate being updated
         #
@@ -25,7 +25,7 @@ module HubspotSDK
 
         # @!method initialize(id:, conversion_rate:, effective_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::ExchangeRateUpdateRequest} for more details.
+        #   {HubSpotSDK::Models::Settings::ExchangeRateUpdateRequest} for more details.
         #
         #   @param id [String] A unique identifier for the exchange rate being updated
         #

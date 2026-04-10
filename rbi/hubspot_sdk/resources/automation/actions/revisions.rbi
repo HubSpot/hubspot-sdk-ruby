@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -12,10 +12,10 @@ module HubspotSDK
               app_id: Integer,
               after: String,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Automation::PublicActionRevision
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Automation::PublicActionRevision
               ]
             )
           end
@@ -40,14 +40,14 @@ module HubspotSDK
               revision_id: String,
               app_id: Integer,
               definition_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionRevision)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionRevision)
           end
           def get(revision_id, app_id:, definition_id:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

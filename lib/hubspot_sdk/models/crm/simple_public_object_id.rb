@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectID < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the object.
         #

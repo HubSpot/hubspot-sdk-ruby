@@ -1,26 +1,26 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAllHistoryRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicAllHistoryRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAllHistoryRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Type of refine by (ALL_HISTORY)
         sig do
-          returns(HubspotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol)
         end
         attr_accessor :type
 
         sig do
           params(
-            type: HubspotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol
+            type: HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -31,7 +31,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { type: HubspotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol }
+            { type: HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type::OrSymbol }
           )
         end
         def to_hash
@@ -39,24 +39,24 @@ module HubspotSDK
 
         # Type of refine by (ALL_HISTORY)
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicAllHistoryRefineBy::Type)
+              T.all(Symbol, HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ALL_HISTORY =
             T.let(
               :ALL_HISTORY,
-              HubspotSDK::Crm::PublicAllHistoryRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type::TaggedSymbol
               ]
             )
           end

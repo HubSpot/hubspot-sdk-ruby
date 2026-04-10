@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -8,12 +8,12 @@ module HubspotSDK
       # @abstract
       #
       # Either `Pathname` or `StringIO`, or `IO`, or
-      # `HubspotSDK::Internal::Type::FileInput`.
+      # `HubSpotSDK::Internal::Type::FileInput`.
       #
       # Note: when `IO` is used, all retries are disabled, since many IO` streams are
       # not rewindable.
       class FileInput
-        extend HubspotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Type::Converter
 
         private_class_method :new
 
@@ -24,7 +24,7 @@ module HubspotSDK
         # @return [Boolean]
         def self.===(other)
           case other
-          in Pathname | StringIO | IO | String | HubspotSDK::FilePart
+          in Pathname | StringIO | IO | String | HubSpotSDK::FilePart
             true
           else
             false
@@ -36,7 +36,7 @@ module HubspotSDK
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= HubspotSDK::Internal::Type::FileInput
+        def self.==(other) = other.is_a?(Class) && other <= HubSpotSDK::Internal::Type::FileInput
 
         class << self
           # @api private
@@ -86,11 +86,11 @@ module HubspotSDK
             in StringIO | String
               # https://datatracker.ietf.org/doc/html/rfc7578#section-4.2
               # while not required, a filename is recommended, and in practice many servers do expect this
-              HubspotSDK::FilePart.new(value, filename: "upload")
+              HubSpotSDK::FilePart.new(value, filename: "upload")
             in IO
               state[:can_retry] = false
-              value.to_path.nil? ? HubspotSDK::FilePart.new(value, filename: "upload") : value
-            in HubspotSDK::FilePart if value.content.is_a?(IO)
+              value.to_path.nil? ? HubSpotSDK::FilePart.new(value, filename: "upload") : value
+            in HubSpotSDK::FilePart if value.content.is_a?(IO)
               state[:can_retry] = false
               value
             else
@@ -102,7 +102,7 @@ module HubspotSDK
           #
           # @return [Object]
           def to_sorbet_type
-            T.any(Pathname, StringIO, IO, String, HubspotSDK::FilePart)
+            T.any(Pathname, StringIO, IO, String, HubSpotSDK::FilePart)
           end
         end
       end

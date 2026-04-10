@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class RequiredPropertiesExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class RequiredPropertiesExtensionData < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::RequiredPropertiesExtensionData,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::RequiredPropertiesExtensionData,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

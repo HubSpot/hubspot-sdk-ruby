@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Definitions#list
-      class DefinitionListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Events::Definitions#list
+      class DefinitionListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -19,7 +19,7 @@ module HubspotSDK
         # @!attribute include_properties
         #
         #   @return [Boolean, nil]
-        optional :include_properties, HubspotSDK::Internal::Type::Boolean
+        optional :include_properties, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -39,7 +39,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, include_properties: nil, limit: nil, search_string: nil, sort_order: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::DefinitionListParams} for more details.
+        #   {HubSpotSDK::Models::Events::DefinitionListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -51,7 +51,7 @@ module HubspotSDK
         #
         #   @param sort_order [String]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

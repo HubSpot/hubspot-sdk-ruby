@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileActionResponse < HubspotSDK::Internal::Type::BaseModel
+      class FileActionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   Time of completion of task.
         #
@@ -19,8 +19,8 @@ module HubspotSDK
         # @!attribute status
         #   Current status of the task.
         #
-        #   @return [Symbol, HubspotSDK::Models::Files::FileActionResponse::Status]
-        required :status, enum: -> { HubspotSDK::Files::FileActionResponse::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Files::FileActionResponse::Status]
+        required :status, enum: -> { HubSpotSDK::Files::FileActionResponse::Status }
 
         # @!attribute task_id
         #   ID of the requested task.
@@ -31,14 +31,14 @@ module HubspotSDK
         # @!attribute errors
         #   Descriptive error messages.
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   Link to check the status of the requested task.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   Number of errors resulting from the task.
@@ -54,19 +54,19 @@ module HubspotSDK
 
         # @!attribute result
         #
-        #   @return [HubspotSDK::Models::Files::File, nil]
-        optional :result, -> { HubspotSDK::Files::File }
+        #   @return [HubSpotSDK::Models::Files::File, nil]
+        optional :result, -> { HubSpotSDK::Files::File }
 
         # @!method initialize(completed_at:, started_at:, status:, task_id:, errors: nil, links: nil, num_errors: nil, requested_at: nil, result: nil)
         #   @param completed_at [Time] Time of completion of task.
         #
         #   @param started_at [Time] Timestamp of when the task was started.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Files::FileActionResponse::Status] Current status of the task.
+        #   @param status [Symbol, HubSpotSDK::Models::Files::FileActionResponse::Status] Current status of the task.
         #
         #   @param task_id [String] ID of the requested task.
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] Descriptive error messages.
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] Descriptive error messages.
         #
         #   @param links [Hash{Symbol=>String}] Link to check the status of the requested task.
         #
@@ -74,13 +74,13 @@ module HubspotSDK
         #
         #   @param requested_at [Time] Timestamp of when the task was requested.
         #
-        #   @param result [HubspotSDK::Models::Files::File]
+        #   @param result [HubSpotSDK::Models::Files::File]
 
         # Current status of the task.
         #
-        # @see HubspotSDK::Models::Files::FileActionResponse#status
+        # @see HubSpotSDK::Models::Files::FileActionResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

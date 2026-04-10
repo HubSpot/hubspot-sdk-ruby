@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type marketing_event_update_params =
-        { object_id_: String } & HubspotSDK::Internal::Type::request_parameters
+        { object_id_: String } & HubSpotSDK::Internal::Type::request_parameters
 
-      class MarketingEventUpdateParams < HubspotSDK::Models::Marketing::MarketingEventPublicUpdateRequestV2
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MarketingEventUpdateParams < HubSpotSDK::Models::Marketing::MarketingEventPublicUpdateRequestV2
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def object_id_: -> String
 
@@ -14,12 +14,12 @@ module HubspotSDK
 
         def initialize: (
           object_id_: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_id_: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

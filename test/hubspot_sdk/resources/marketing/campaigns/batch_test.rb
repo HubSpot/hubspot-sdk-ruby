@@ -2,23 +2,23 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.marketing.campaigns.batch.create(inputs: [{properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponsePublicCampaign
+      response => HubSpotSDK::Marketing::BatchResponsePublicCampaign
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaign]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponsePublicCampaign::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponsePublicCampaign::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -30,16 +30,16 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
     response = @hubspot.marketing.campaigns.batch.update(inputs: [{id: "id", properties: {foo: "string"}}])
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponsePublicCampaign
+      response => HubSpotSDK::Marketing::BatchResponsePublicCampaign
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaign]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaign]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponsePublicCampaign::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponsePublicCampaign::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -61,16 +61,16 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::BatchTest < HubspotSDK:
     response = @hubspot.marketing.campaigns.batch.get(inputs: [{id: "id"}])
 
     assert_pattern do
-      response => HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets
+      response => HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignWithAssets]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaignWithAssets]),
         started_at: Time,
-        status: HubspotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssets::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end

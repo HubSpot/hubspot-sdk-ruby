@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type hub_db_table_clone_request =
@@ -9,7 +9,7 @@ module HubspotSDK
           new_name: String
         }
 
-      class HubDBTableCloneRequest < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableCloneRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor copy_rows: bool
 
         attr_accessor is_hubspot_defined: bool

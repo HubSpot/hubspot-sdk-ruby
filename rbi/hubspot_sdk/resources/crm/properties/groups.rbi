@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
@@ -12,8 +12,8 @@ module HubspotSDK
               label: String,
               name: String,
               display_order: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::PropertyGroup)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::PropertyGroup)
           end
           def create(
             object_type,
@@ -32,8 +32,8 @@ module HubspotSDK
               object_type: String,
               display_order: Integer,
               label: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::PropertyGroup)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::PropertyGroup)
           end
           def update(
             # Path param
@@ -54,8 +54,8 @@ module HubspotSDK
             params(
               object_type: String,
               locale: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::CollectionResponsePropertyGroupNoPaging)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::CollectionResponsePropertyGroupNoPaging)
           end
           def list(object_type, locale: nil, request_options: {})
           end
@@ -65,7 +65,7 @@ module HubspotSDK
             params(
               group_name: String,
               object_type: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(group_name, object_type:, request_options: {})
@@ -77,8 +77,8 @@ module HubspotSDK
               group_name: String,
               object_type: String,
               locale: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::PropertyGroup)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::PropertyGroup)
           end
           def get(
             # Path param
@@ -92,7 +92,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

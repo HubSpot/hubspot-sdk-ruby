@@ -1,30 +1,30 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class OptionDecoratorsExtensionData < HubspotSDK::Internal::Type::BaseModel
+      class OptionDecoratorsExtensionData < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute option_decorators
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::OptionDecorations}]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::OptionDecorations}]
         required :option_decorators,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::OptionDecorations] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::OptionDecorations] },
                  api_name: :optionDecorators
 
         # @!attribute option_decorator_style
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle]
         required :option_decorator_style,
-                 enum: -> { HubspotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle },
+                 enum: -> { HubSpotSDK::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle },
                  api_name: :optionDecoratorStyle
 
         # @!method initialize(option_decorators:, option_decorator_style:)
-        #   @param option_decorators [Hash{Symbol=>HubspotSDK::Models::Cms::OptionDecorations}]
-        #   @param option_decorator_style [Symbol, HubspotSDK::Models::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle]
+        #   @param option_decorators [Hash{Symbol=>HubSpotSDK::Models::Cms::OptionDecorations}]
+        #   @param option_decorator_style [Symbol, HubSpotSDK::Models::Cms::OptionDecoratorsExtensionData::OptionDecoratorStyle]
 
-        # @see HubspotSDK::Models::Cms::OptionDecoratorsExtensionData#option_decorator_style
+        # @see HubSpotSDK::Models::Cms::OptionDecoratorsExtensionData#option_decorator_style
         module OptionDecoratorStyle
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           LABEL_ONLY = :LABEL_ONLY
           LABEL_WITH_BADGE = :LABEL_WITH_BADGE

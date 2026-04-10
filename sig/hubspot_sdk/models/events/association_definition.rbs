@@ -1,12 +1,12 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type association_definition =
         {
           id: Integer,
           allows_custom_labels: bool,
-          cardinality: HubspotSDK::Models::Events::AssociationDefinition::cardinality,
-          category: HubspotSDK::Models::Events::AssociationDefinition::category,
+          cardinality: HubSpotSDK::Models::Events::AssociationDefinition::cardinality,
+          category: HubSpotSDK::Models::Events::AssociationDefinition::category,
           from_object_type_id: String,
           has_all_associated_objects: bool,
           has_cascading_deletes: bool,
@@ -14,7 +14,7 @@ module HubspotSDK
           has_user_enforced_max_to_object_ids: bool,
           hidden: bool,
           inverse_allows_custom_labels: bool,
-          inverse_cardinality: HubspotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
+          inverse_cardinality: HubSpotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
           inverse_has_all_associated_objects: bool,
           inverse_id: Integer,
           inverse_name: String,
@@ -27,21 +27,21 @@ module HubspotSDK
           portal_unique_identifier: String,
           read_only: bool,
           to_object_type_id: String,
-          from_object_type: HubspotSDK::Models::Events::AssociationDefinition::from_object_type,
-          hidden_reason: HubspotSDK::Models::Events::AssociationDefinition::hidden_reason,
+          from_object_type: HubSpotSDK::Models::Events::AssociationDefinition::from_object_type,
+          hidden_reason: HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason,
           inverse_label: String,
           label: String,
-          to_object_type: HubspotSDK::Models::Events::AssociationDefinition::to_object_type
+          to_object_type: HubSpotSDK::Models::Events::AssociationDefinition::to_object_type
         }
 
-      class AssociationDefinition < HubspotSDK::Internal::Type::BaseModel
+      class AssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
         attr_accessor allows_custom_labels: bool
 
-        attr_accessor cardinality: HubspotSDK::Models::Events::AssociationDefinition::cardinality
+        attr_accessor cardinality: HubSpotSDK::Models::Events::AssociationDefinition::cardinality
 
-        attr_accessor category: HubspotSDK::Models::Events::AssociationDefinition::category
+        attr_accessor category: HubSpotSDK::Models::Events::AssociationDefinition::category
 
         attr_accessor from_object_type_id: String
 
@@ -57,7 +57,7 @@ module HubspotSDK
 
         attr_accessor inverse_allows_custom_labels: bool
 
-        attr_accessor inverse_cardinality: HubspotSDK::Models::Events::AssociationDefinition::inverse_cardinality
+        attr_accessor inverse_cardinality: HubSpotSDK::Models::Events::AssociationDefinition::inverse_cardinality
 
         attr_accessor inverse_has_all_associated_objects: bool
 
@@ -83,17 +83,17 @@ module HubspotSDK
 
         attr_accessor to_object_type_id: String
 
-        attr_reader from_object_type: HubspotSDK::Models::Events::AssociationDefinition::from_object_type?
+        attr_reader from_object_type: HubSpotSDK::Models::Events::AssociationDefinition::from_object_type?
 
         def from_object_type=: (
-          HubspotSDK::Models::Events::AssociationDefinition::from_object_type
-        ) -> HubspotSDK::Models::Events::AssociationDefinition::from_object_type
+          HubSpotSDK::Models::Events::AssociationDefinition::from_object_type
+        ) -> HubSpotSDK::Models::Events::AssociationDefinition::from_object_type
 
-        attr_reader hidden_reason: HubspotSDK::Models::Events::AssociationDefinition::hidden_reason?
+        attr_reader hidden_reason: HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason?
 
         def hidden_reason=: (
-          HubspotSDK::Models::Events::AssociationDefinition::hidden_reason
-        ) -> HubspotSDK::Models::Events::AssociationDefinition::hidden_reason
+          HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason
+        ) -> HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason
 
         attr_reader inverse_label: String?
 
@@ -103,17 +103,17 @@ module HubspotSDK
 
         def label=: (String) -> String
 
-        attr_reader to_object_type: HubspotSDK::Models::Events::AssociationDefinition::to_object_type?
+        attr_reader to_object_type: HubSpotSDK::Models::Events::AssociationDefinition::to_object_type?
 
         def to_object_type=: (
-          HubspotSDK::Models::Events::AssociationDefinition::to_object_type
-        ) -> HubspotSDK::Models::Events::AssociationDefinition::to_object_type
+          HubSpotSDK::Models::Events::AssociationDefinition::to_object_type
+        ) -> HubSpotSDK::Models::Events::AssociationDefinition::to_object_type
 
         def initialize: (
           id: Integer,
           allows_custom_labels: bool,
-          cardinality: HubspotSDK::Models::Events::AssociationDefinition::cardinality,
-          category: HubspotSDK::Models::Events::AssociationDefinition::category,
+          cardinality: HubSpotSDK::Models::Events::AssociationDefinition::cardinality,
+          category: HubSpotSDK::Models::Events::AssociationDefinition::category,
           from_object_type_id: String,
           has_all_associated_objects: bool,
           has_cascading_deletes: bool,
@@ -121,7 +121,7 @@ module HubspotSDK
           has_user_enforced_max_to_object_ids: bool,
           hidden: bool,
           inverse_allows_custom_labels: bool,
-          inverse_cardinality: HubspotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
+          inverse_cardinality: HubSpotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
           inverse_has_all_associated_objects: bool,
           inverse_id: Integer,
           inverse_name: String,
@@ -134,18 +134,18 @@ module HubspotSDK
           portal_unique_identifier: String,
           read_only: bool,
           to_object_type_id: String,
-          ?from_object_type: HubspotSDK::Models::Events::AssociationDefinition::from_object_type,
-          ?hidden_reason: HubspotSDK::Models::Events::AssociationDefinition::hidden_reason,
+          ?from_object_type: HubSpotSDK::Models::Events::AssociationDefinition::from_object_type,
+          ?hidden_reason: HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason,
           ?inverse_label: String,
           ?label: String,
-          ?to_object_type: HubspotSDK::Models::Events::AssociationDefinition::to_object_type
+          ?to_object_type: HubSpotSDK::Models::Events::AssociationDefinition::to_object_type
         ) -> void
 
         def to_hash: -> {
           id: Integer,
           allows_custom_labels: bool,
-          cardinality: HubspotSDK::Models::Events::AssociationDefinition::cardinality,
-          category: HubspotSDK::Models::Events::AssociationDefinition::category,
+          cardinality: HubSpotSDK::Models::Events::AssociationDefinition::cardinality,
+          category: HubSpotSDK::Models::Events::AssociationDefinition::category,
           from_object_type_id: String,
           has_all_associated_objects: bool,
           has_cascading_deletes: bool,
@@ -153,7 +153,7 @@ module HubspotSDK
           has_user_enforced_max_to_object_ids: bool,
           hidden: bool,
           inverse_allows_custom_labels: bool,
-          inverse_cardinality: HubspotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
+          inverse_cardinality: HubSpotSDK::Models::Events::AssociationDefinition::inverse_cardinality,
           inverse_has_all_associated_objects: bool,
           inverse_id: Integer,
           inverse_name: String,
@@ -166,47 +166,47 @@ module HubspotSDK
           portal_unique_identifier: String,
           read_only: bool,
           to_object_type_id: String,
-          from_object_type: HubspotSDK::Models::Events::AssociationDefinition::from_object_type,
-          hidden_reason: HubspotSDK::Models::Events::AssociationDefinition::hidden_reason,
+          from_object_type: HubSpotSDK::Models::Events::AssociationDefinition::from_object_type,
+          hidden_reason: HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason,
           inverse_label: String,
           label: String,
-          to_object_type: HubspotSDK::Models::Events::AssociationDefinition::to_object_type
+          to_object_type: HubSpotSDK::Models::Events::AssociationDefinition::to_object_type
         }
 
         type cardinality = :ONE_TO_MANY | :ONE_TO_ONE
 
         module Cardinality
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ONE_TO_MANY: :ONE_TO_MANY
           ONE_TO_ONE: :ONE_TO_ONE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::cardinality]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::cardinality]
         end
 
         type category =
           :HUBSPOT_DEFINED | :INTEGRATOR_DEFINED | :USER_DEFINED | :WORK
 
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED: :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED: :INTEGRATOR_DEFINED
           USER_DEFINED: :USER_DEFINED
           WORK: :WORK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::category]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::category]
         end
 
         type inverse_cardinality = :ONE_TO_MANY | :ONE_TO_ONE
 
         module InverseCardinality
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ONE_TO_MANY: :ONE_TO_MANY
           ONE_TO_ONE: :ONE_TO_ONE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::inverse_cardinality]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::inverse_cardinality]
         end
 
         type from_object_type =
@@ -373,7 +373,7 @@ module HubspotSDK
           | :WEB_INTERACTIVE
 
         module FromObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART: :ABANDONED_CART
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -537,19 +537,19 @@ module HubspotSDK
           VIEW_BLOCK: :VIEW_BLOCK
           WEB_INTERACTIVE: :WEB_INTERACTIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::from_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::from_object_type]
         end
 
         type hidden_reason = :DEFAULT | :INTERNAL | :USER_CONFIGURED
 
         module HiddenReason
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEFAULT: :DEFAULT
           INTERNAL: :INTERNAL
           USER_CONFIGURED: :USER_CONFIGURED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::hidden_reason]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::hidden_reason]
         end
 
         type to_object_type =
@@ -716,7 +716,7 @@ module HubspotSDK
           | :WEB_INTERACTIVE
 
         module ToObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART: :ABANDONED_CART
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
@@ -880,7 +880,7 @@ module HubspotSDK
           VIEW_BLOCK: :VIEW_BLOCK
           WEB_INTERACTIVE: :WEB_INTERACTIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AssociationDefinition::to_object_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AssociationDefinition::to_object_type]
         end
       end
     end

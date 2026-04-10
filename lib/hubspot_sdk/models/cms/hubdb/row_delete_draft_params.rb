@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
-        # @see HubspotSDK::Resources::Cms::Hubdb::Rows#delete_draft
-        class RowDeleteDraftParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Hubdb::Rows#delete_draft
+        class RowDeleteDraftParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute table_id_or_name
           #
@@ -22,7 +22,7 @@ module HubspotSDK
           # @!method initialize(table_id_or_name:, row_id:, request_options: {})
           #   @param table_id_or_name [String]
           #   @param row_id [String]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

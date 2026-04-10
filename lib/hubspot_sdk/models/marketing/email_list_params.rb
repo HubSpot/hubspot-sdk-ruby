@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Emails#list
-      class EmailListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Marketing::Emails#list
+      class EmailListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Whether to return only results that have been archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute campaign
         #
@@ -45,17 +45,17 @@ module HubspotSDK
         # @!attribute included_properties
         #
         #   @return [Array<String>, nil]
-        optional :included_properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :included_properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute include_stats
         #
         #   @return [Boolean, nil]
-        optional :include_stats, HubspotSDK::Internal::Type::Boolean
+        optional :include_stats, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute is_published
         #
         #   @return [Boolean, nil]
-        optional :is_published, HubspotSDK::Internal::Type::Boolean
+        optional :is_published, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -66,7 +66,7 @@ module HubspotSDK
         # @!attribute marketing_campaign_names
         #
         #   @return [Boolean, nil]
-        optional :marketing_campaign_names, HubspotSDK::Internal::Type::Boolean
+        optional :marketing_campaign_names, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute published_after
         #
@@ -86,12 +86,12 @@ module HubspotSDK
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::EmailListParams::Type, nil]
-        optional :type, enum: -> { HubspotSDK::Marketing::EmailListParams::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::EmailListParams::Type, nil]
+        optional :type, enum: -> { HubSpotSDK::Marketing::EmailListParams::Type }
 
         # @!attribute updated_after
         #
@@ -111,16 +111,16 @@ module HubspotSDK
         # @!attribute variant_stats
         #
         #   @return [Boolean, nil]
-        optional :variant_stats, HubspotSDK::Internal::Type::Boolean
+        optional :variant_stats, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute workflow_names
         #
         #   @return [Boolean, nil]
-        optional :workflow_names, HubspotSDK::Internal::Type::Boolean
+        optional :workflow_names, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(after: nil, archived: nil, campaign: nil, created_after: nil, created_at: nil, created_before: nil, included_properties: nil, include_stats: nil, is_published: nil, limit: nil, marketing_campaign_names: nil, published_after: nil, published_at: nil, published_before: nil, sort: nil, type: nil, updated_after: nil, updated_at: nil, updated_before: nil, variant_stats: nil, workflow_names: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::EmailListParams} for more details.
+        #   {HubSpotSDK::Models::Marketing::EmailListParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -152,7 +152,7 @@ module HubspotSDK
         #
         #   @param sort [Array<String>]
         #
-        #   @param type [Symbol, HubspotSDK::Models::Marketing::EmailListParams::Type]
+        #   @param type [Symbol, HubSpotSDK::Models::Marketing::EmailListParams::Type]
         #
         #   @param updated_after [Time]
         #
@@ -164,10 +164,10 @@ module HubspotSDK
         #
         #   @param workflow_names [Boolean]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AB_EMAIL = :AB_EMAIL
           AUTOMATED_AB_EMAIL = :AUTOMATED_AB_EMAIL

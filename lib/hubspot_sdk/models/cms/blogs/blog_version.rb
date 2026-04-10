@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Settings#get_revision
-        class BlogVersion < HubspotSDK::Internal::Type::BaseModel
+        # @see HubSpotSDK::Resources::Cms::Blogs::Settings#get_revision
+        class BlogVersion < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #
           #   @return [String]
@@ -13,8 +13,8 @@ module HubspotSDK
 
           # @!attribute object
           #
-          #   @return [HubspotSDK::Models::Cms::Blogs::Blog]
-          required :object, -> { HubspotSDK::Cms::Blogs::Blog }
+          #   @return [HubSpotSDK::Models::Cms::Blogs::Blog]
+          required :object, -> { HubSpotSDK::Cms::Blogs::Blog }
 
           # @!attribute updated_at
           #
@@ -23,14 +23,14 @@ module HubspotSDK
 
           # @!attribute user
           #
-          #   @return [HubspotSDK::Models::VersionUser]
-          required :user, -> { HubspotSDK::VersionUser }
+          #   @return [HubSpotSDK::Models::VersionUser]
+          required :user, -> { HubSpotSDK::VersionUser }
 
           # @!method initialize(id:, object:, updated_at:, user:)
           #   @param id [String]
-          #   @param object [HubspotSDK::Models::Cms::Blogs::Blog]
+          #   @param object [HubSpotSDK::Models::Cms::Blogs::Blog]
           #   @param updated_at [Time]
-          #   @param user [HubspotSDK::Models::VersionUser]
+          #   @param user [HubSpotSDK::Models::VersionUser]
         end
       end
 

@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_execution_translation_rule =
         { conditions: ::Hash[Symbol, top], label_name: String }
 
-      class PublicExecutionTranslationRule < HubspotSDK::Internal::Type::BaseModel
+      class PublicExecutionTranslationRule < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor conditions: ::Hash[Symbol, top]
 
         attr_accessor label_name: String

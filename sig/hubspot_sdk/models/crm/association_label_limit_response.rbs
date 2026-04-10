@@ -1,44 +1,44 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type association_label_limit_response =
         {
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           usage: Integer
         }
 
-      class AssociationLabelLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class AssociationLabelLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor all_labels: ::Array[String]
 
-        attr_accessor from_object_type: HubspotSDK::Crm::ObjectTypeDefinition
+        attr_accessor from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition
 
         attr_accessor limit: Integer
 
         attr_accessor percentage: Float
 
-        attr_accessor to_object_type: HubspotSDK::Crm::ObjectTypeDefinition
+        attr_accessor to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition
 
         attr_accessor usage: Integer
 
         def initialize: (
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           usage: Integer
         ) -> void
 
         def to_hash: -> {
           all_labels: ::Array[String],
-          from_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubspotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
           usage: Integer
         }
       end

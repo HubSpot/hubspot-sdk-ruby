@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaBridgeProviderPartial < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgeProviderPartial < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute updated_at
         #
         #   @return [Integer]
@@ -13,7 +13,7 @@ module HubspotSDK
         #
         #   @return [Boolean, nil]
         optional :allow_import_on_disconnect,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowImportOnDisconnect
 
         # @!attribute module_name

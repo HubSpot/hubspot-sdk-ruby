@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubSpotSDK::Test::ResourceTest
   def test_update_required_params
     skip("Mock server tests are disabled")
 
@@ -24,13 +24,13 @@ class HubspotSDK::Test::Resources::Marketing::Campaigns::AssetsTest < HubspotSDK
     response = @hubspot.marketing.campaigns.assets.list("assetType", campaign_guid: "campaignGuid")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
+      response => HubSpotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicCampaignAsset]),
-        paging: HubspotSDK::ForwardPaging | nil
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaignAsset]),
+        paging: HubSpotSDK::ForwardPaging | nil
       }
     end
   end

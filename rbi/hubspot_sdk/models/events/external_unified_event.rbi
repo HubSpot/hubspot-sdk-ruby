@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     ExternalUnifiedEvent = Events::ExternalUnifiedEvent
 
     module Events
-      class ExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+      class ExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalUnifiedEvent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalUnifiedEvent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

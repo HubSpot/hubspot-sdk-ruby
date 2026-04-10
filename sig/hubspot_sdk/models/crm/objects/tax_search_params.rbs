@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         type tax_search_params =
-          {  } & HubspotSDK::Internal::Type::request_parameters
+          {  } & HubSpotSDK::Internal::Type::request_parameters
 
-        class TaxSearchParams < HubspotSDK::Models::Crm::PublicObjectSearchRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TaxSearchParams < HubSpotSDK::Models::Crm::PublicObjectSearchRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
-          def initialize: (?request_options: HubspotSDK::request_opts) -> void
+          def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-          def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+          def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
         end
       end
     end

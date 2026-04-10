@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_import_response =
@@ -6,28 +6,28 @@ module HubspotSDK
           id: String,
           created_at: Time,
           mapped_object_type_ids: ::Array[String],
-          metadata: HubspotSDK::Crm::PublicImportMetadata,
+          metadata: HubSpotSDK::Crm::PublicImportMetadata,
           opt_out_import: bool,
-          state: HubspotSDK::Models::Crm::PublicImportResponse::state,
+          state: HubSpotSDK::Models::Crm::PublicImportResponse::state,
           updated_at: Time,
           import_name: String,
           import_request_json: top,
-          import_source: HubspotSDK::Models::Crm::PublicImportResponse::import_source,
-          import_template: HubspotSDK::Crm::ImportTemplate
+          import_source: HubSpotSDK::Models::Crm::PublicImportResponse::import_source,
+          import_template: HubSpotSDK::Crm::ImportTemplate
         }
 
-      class PublicImportResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicImportResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
         attr_accessor mapped_object_type_ids: ::Array[String]
 
-        attr_accessor metadata: HubspotSDK::Crm::PublicImportMetadata
+        attr_accessor metadata: HubSpotSDK::Crm::PublicImportMetadata
 
         attr_accessor opt_out_import: bool
 
-        attr_accessor state: HubspotSDK::Models::Crm::PublicImportResponse::state
+        attr_accessor state: HubSpotSDK::Models::Crm::PublicImportResponse::state
 
         attr_accessor updated_at: Time
 
@@ -39,44 +39,44 @@ module HubspotSDK
 
         def import_request_json=: (top) -> top
 
-        attr_reader import_source: HubspotSDK::Models::Crm::PublicImportResponse::import_source?
+        attr_reader import_source: HubSpotSDK::Models::Crm::PublicImportResponse::import_source?
 
         def import_source=: (
-          HubspotSDK::Models::Crm::PublicImportResponse::import_source
-        ) -> HubspotSDK::Models::Crm::PublicImportResponse::import_source
+          HubSpotSDK::Models::Crm::PublicImportResponse::import_source
+        ) -> HubSpotSDK::Models::Crm::PublicImportResponse::import_source
 
-        attr_reader import_template: HubspotSDK::Crm::ImportTemplate?
+        attr_reader import_template: HubSpotSDK::Crm::ImportTemplate?
 
         def import_template=: (
-          HubspotSDK::Crm::ImportTemplate
-        ) -> HubspotSDK::Crm::ImportTemplate
+          HubSpotSDK::Crm::ImportTemplate
+        ) -> HubSpotSDK::Crm::ImportTemplate
 
         def initialize: (
           id: String,
           created_at: Time,
           mapped_object_type_ids: ::Array[String],
-          metadata: HubspotSDK::Crm::PublicImportMetadata,
+          metadata: HubSpotSDK::Crm::PublicImportMetadata,
           opt_out_import: bool,
-          state: HubspotSDK::Models::Crm::PublicImportResponse::state,
+          state: HubSpotSDK::Models::Crm::PublicImportResponse::state,
           updated_at: Time,
           ?import_name: String,
           ?import_request_json: top,
-          ?import_source: HubspotSDK::Models::Crm::PublicImportResponse::import_source,
-          ?import_template: HubspotSDK::Crm::ImportTemplate
+          ?import_source: HubSpotSDK::Models::Crm::PublicImportResponse::import_source,
+          ?import_template: HubSpotSDK::Crm::ImportTemplate
         ) -> void
 
         def to_hash: -> {
           id: String,
           created_at: Time,
           mapped_object_type_ids: ::Array[String],
-          metadata: HubspotSDK::Crm::PublicImportMetadata,
+          metadata: HubSpotSDK::Crm::PublicImportMetadata,
           opt_out_import: bool,
-          state: HubspotSDK::Models::Crm::PublicImportResponse::state,
+          state: HubSpotSDK::Models::Crm::PublicImportResponse::state,
           updated_at: Time,
           import_name: String,
           import_request_json: top,
-          import_source: HubspotSDK::Models::Crm::PublicImportResponse::import_source,
-          import_template: HubspotSDK::Crm::ImportTemplate
+          import_source: HubSpotSDK::Models::Crm::PublicImportResponse::import_source,
+          import_template: HubSpotSDK::Crm::ImportTemplate
         }
 
         type state =
@@ -89,7 +89,7 @@ module HubspotSDK
           | :STARTED
 
         module State
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           DEFERRED: :DEFERRED
@@ -99,14 +99,14 @@ module HubspotSDK
           REVERTED: :REVERTED
           STARTED: :STARTED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportResponse::state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicImportResponse::state]
         end
 
         type import_source =
           :API | :CRM_UI | :IMPORT | :MOBILE_ANDROID | :MOBILE_IOS | :SALESFORCE
 
         module ImportSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           API: :API
           CRM_UI: :CRM_UI
@@ -115,7 +115,7 @@ module HubspotSDK
           MOBILE_IOS: :MOBILE_IOS
           SALESFORCE: :SALESFORCE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PublicImportResponse::import_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PublicImportResponse::import_source]
         end
       end
     end

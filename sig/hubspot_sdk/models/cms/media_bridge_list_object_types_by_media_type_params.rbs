@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type media_bridge_list_object_types_by_media_type_params =
         {
           app_id: Integer,
-          media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           include_full_definition: bool
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class MediaBridgeListObjectTypesByMediaTypeParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class MediaBridgeListObjectTypesByMediaTypeParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor app_id: Integer
 
-        attr_accessor media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type
+        attr_accessor media_type: HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type
 
         attr_reader include_full_definition: bool?
 
@@ -23,22 +23,22 @@ module HubspotSDK
 
         def initialize: (
           app_id: Integer,
-          media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           ?include_full_definition: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           app_id: Integer,
-          media_type: HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
+          media_type: HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type,
           include_full_definition: bool,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type media_type = :AUDIO | :DOCUMENT | :IMAGE | :OTHER | :VIDEO
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO: :AUDIO
           DOCUMENT: :DOCUMENT
@@ -46,7 +46,7 @@ module HubspotSDK
           OTHER: :OTHER
           VIDEO: :VIDEO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::media_type]
         end
       end
     end

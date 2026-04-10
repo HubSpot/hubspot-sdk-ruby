@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class CollectionResponseExternalUnifiedEvent = Events::CollectionResponseExternalUnifiedEvent
 
     module Events
       type collection_response_external_unified_event =
         {
-          results: ::Array[HubspotSDK::Events::ExternalUnifiedEvent],
-          paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Events::ExternalUnifiedEvent],
+          paging: HubSpotSDK::Paging
         }
 
-      class CollectionResponseExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Events::ExternalUnifiedEvent]
+      class CollectionResponseExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Events::ExternalUnifiedEvent]
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Events::ExternalUnifiedEvent],
-          ?paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Events::ExternalUnifiedEvent],
+          ?paging: HubSpotSDK::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Events::ExternalUnifiedEvent],
-          paging: HubspotSDK::Paging
+          results: ::Array[HubSpotSDK::Events::ExternalUnifiedEvent],
+          paging: HubSpotSDK::Paging
         }
       end
     end

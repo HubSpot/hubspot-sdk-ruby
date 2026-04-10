@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
       class Origins
-        attr_reader ip_ranges: HubspotSDK::Resources::Meta::Origins::IPRanges
+        attr_reader ip_ranges: HubSpotSDK::Resources::Meta::Origins::IPRanges
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

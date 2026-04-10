@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
-      attr_reader currencies: HubspotSDK::Resources::Settings::Currencies
+      attr_reader currencies: HubSpotSDK::Resources::Settings::Currencies
 
-      attr_reader tax_rates: HubspotSDK::Resources::Settings::TaxRates
+      attr_reader tax_rates: HubSpotSDK::Resources::Settings::TaxRates
 
-      attr_reader users: HubspotSDK::Resources::Settings::Users
+      attr_reader users: HubSpotSDK::Resources::Settings::Users
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

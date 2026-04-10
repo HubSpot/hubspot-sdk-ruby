@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class IFrameActionBody < HubspotSDK::Internal::Type::BaseModel
+        class IFrameActionBody < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute height
           #   The height of the iframe in pixels.
           #
@@ -16,14 +16,14 @@ module HubspotSDK
           #
           #   @return [Array<String>]
           required :property_names_included,
-                   HubspotSDK::Internal::Type::ArrayOf[String],
+                   HubSpotSDK::Internal::Type::ArrayOf[String],
                    api_name: :propertyNamesIncluded
 
           # @!attribute type
           #   The type of status.
           #
-          #   @return [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type]
-          required :type, enum: -> { HubspotSDK::Crm::Extensions::IFrameActionBody::Type }
+          #   @return [Symbol, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::Type]
+          required :type, enum: -> { HubSpotSDK::Crm::Extensions::IFrameActionBody::Type }
 
           # @!attribute url
           #   The URL endpoint that will be loaded in the iframe when triggered.
@@ -48,7 +48,7 @@ module HubspotSDK
           #
           #   @param property_names_included [Array<String>] A list of property names that will be included on the url of the iframe.
           #
-          #   @param type [Symbol, HubspotSDK::Models::Crm::Extensions::IFrameActionBody::Type] The type of status.
+          #   @param type [Symbol, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody::Type] The type of status.
           #
           #   @param url [String] The URL endpoint that will be loaded in the iframe when triggered.
           #
@@ -58,9 +58,9 @@ module HubspotSDK
 
           # The type of status.
           #
-          # @see HubspotSDK::Models::Crm::Extensions::IFrameActionBody#type
+          # @see HubSpotSDK::Models::Crm::Extensions::IFrameActionBody#type
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             IFRAME = :IFRAME
 

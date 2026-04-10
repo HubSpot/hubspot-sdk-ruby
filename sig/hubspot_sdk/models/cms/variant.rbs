@@ -1,7 +1,7 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      Variant: HubspotSDK::Internal::Type::Converter
+      Variant: HubSpotSDK::Internal::Type::Converter
     end
   end
 end

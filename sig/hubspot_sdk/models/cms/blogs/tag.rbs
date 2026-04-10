@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
@@ -7,21 +7,21 @@ module HubspotSDK
             id: String,
             created: Time,
             deleted_at: Time,
-            language: HubspotSDK::Models::Cms::Blogs::Tag::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Tag::language,
             name: String,
             slug: String,
             translated_from_id: Integer,
             updated: Time
           }
 
-        class Tag < HubspotSDK::Internal::Type::BaseModel
+        class Tag < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor created: Time
 
           attr_accessor deleted_at: Time
 
-          attr_accessor language: HubspotSDK::Models::Cms::Blogs::Tag::language
+          attr_accessor language: HubSpotSDK::Models::Cms::Blogs::Tag::language
 
           attr_accessor name: String
 
@@ -35,7 +35,7 @@ module HubspotSDK
             id: String,
             created: Time,
             deleted_at: Time,
-            language: HubspotSDK::Models::Cms::Blogs::Tag::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Tag::language,
             name: String,
             slug: String,
             translated_from_id: Integer,
@@ -46,7 +46,7 @@ module HubspotSDK
             id: String,
             created: Time,
             deleted_at: Time,
-            language: HubspotSDK::Models::Cms::Blogs::Tag::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Tag::language,
             name: String,
             slug: String,
             translated_from_id: Integer,
@@ -899,7 +899,7 @@ module HubspotSDK
             | :"zu-za"
 
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA: :aa
             AB: :ab
@@ -1745,7 +1745,7 @@ module HubspotSDK
             ZU: :zu
             ZU_ZA: :"zu-za"
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::Blogs::Tag::language]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Blogs::Tag::language]
           end
         end
       end

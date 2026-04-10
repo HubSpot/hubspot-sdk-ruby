@@ -1,53 +1,53 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_meetings_user =
         {
           id: String,
-          calendar_provider: HubspotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
+          calendar_provider: HubSpotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
           is_sales_starter: bool,
           user_id: String,
-          user_profile: HubspotSDK::Scheduler::ExternalUserProfile
+          user_profile: HubSpotSDK::Scheduler::ExternalUserProfile
         }
 
-      class ExternalMeetingsUser < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingsUser < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor calendar_provider: HubspotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider
+        attr_accessor calendar_provider: HubSpotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider
 
         attr_accessor is_sales_starter: bool
 
         attr_accessor user_id: String
 
-        attr_accessor user_profile: HubspotSDK::Scheduler::ExternalUserProfile
+        attr_accessor user_profile: HubSpotSDK::Scheduler::ExternalUserProfile
 
         def initialize: (
           id: String,
-          calendar_provider: HubspotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
+          calendar_provider: HubSpotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
           is_sales_starter: bool,
           user_id: String,
-          user_profile: HubspotSDK::Scheduler::ExternalUserProfile
+          user_profile: HubSpotSDK::Scheduler::ExternalUserProfile
         ) -> void
 
         def to_hash: -> {
           id: String,
-          calendar_provider: HubspotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
+          calendar_provider: HubSpotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider,
           is_sales_starter: bool,
           user_id: String,
-          user_profile: HubspotSDK::Scheduler::ExternalUserProfile
+          user_profile: HubSpotSDK::Scheduler::ExternalUserProfile
         }
 
         type calendar_provider = :EXCHANGE | :GOOGLE | :OFFICE365 | :UNKNOWN
 
         module CalendarProvider
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EXCHANGE: :EXCHANGE
           GOOGLE: :GOOGLE
           OFFICE365: :OFFICE365
           UNKNOWN: :UNKNOWN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalMeetingsUser::calendar_provider]
         end
       end
     end

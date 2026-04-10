@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Timeline
-        # @return [HubspotSDK::Resources::Crm::Timeline::Batch]
+        # @return [HubSpotSDK::Resources::Crm::Timeline::Batch]
         attr_reader :batch
 
         # Send a single instance of event data to a specified event type.
@@ -19,16 +19,16 @@ module HubspotSDK
         # @param extra_data [Object]
         # @param object_id_ [String]
         # @param object_type_fully_qualified_name [String]
-        # @param timeline_i_frame [HubspotSDK::Models::Crm::TimelineEventIFrame]
+        # @param timeline_i_frame [HubSpotSDK::Models::Crm::TimelineEventIFrame]
         # @param timestamp [Time]
         # @param utk [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::TimelineCreateEventParams
+        # @see HubSpotSDK::Models::Crm::TimelineCreateEventParams
         def create_event(params)
-          parsed, options = HubspotSDK::Crm::TimelineCreateEventParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::TimelineCreateEventParams.dump_request(params)
           @client.request(
             method: :post,
             path: "integrators/timeline/2026-03/events",
@@ -42,28 +42,28 @@ module HubspotSDK
         #
         # @param developer_symbol [String]
         # @param project_name [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::AppEventResolutionResponse]
+        # @return [HubSpotSDK::Models::Crm::AppEventResolutionResponse]
         #
-        # @see HubspotSDK::Models::Crm::TimelineCreateProjectTypeParams
+        # @see HubSpotSDK::Models::Crm::TimelineCreateProjectTypeParams
         def create_project_type(params)
-          parsed, options = HubspotSDK::Crm::TimelineCreateProjectTypeParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::TimelineCreateProjectTypeParams.dump_request(params)
           @client.request(
             method: :post,
             path: "integrators/timeline/2026-03/types/projects",
             body: parsed,
-            model: HubspotSDK::Crm::AppEventResolutionResponse,
+            model: HubSpotSDK::Crm::AppEventResolutionResponse,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::Crm::Timeline::Batch.new(client: client)
+          @batch = HubSpotSDK::Resources::Crm::Timeline::Batch.new(client: client)
         end
       end
     end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type chirp_ai_context_object =
@@ -7,14 +7,14 @@ module HubspotSDK
           application_id: String,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
-          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
-          compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
           feature_id: String,
           inference_id: String,
           trajectory_id: String
         }
 
-      class ChirpAIContextObject < HubspotSDK::Internal::Type::BaseModel
+      class ChirpAIContextObject < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor application_group: String
 
         attr_accessor application_id: String
@@ -23,13 +23,13 @@ module HubspotSDK
 
         attr_accessor otel_context_holder: ::Hash[Symbol, String]
 
-        attr_accessor unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
+        attr_accessor unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
 
-        attr_reader compliance_ids: HubspotSDK::Automation::ComplianceIDs?
+        attr_reader compliance_ids: HubSpotSDK::Automation::ComplianceIDs?
 
         def compliance_ids=: (
-          HubspotSDK::Automation::ComplianceIDs
-        ) -> HubspotSDK::Automation::ComplianceIDs
+          HubSpotSDK::Automation::ComplianceIDs
+        ) -> HubSpotSDK::Automation::ComplianceIDs
 
         attr_reader feature_id: String?
 
@@ -48,8 +48,8 @@ module HubspotSDK
           application_id: String,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
-          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
-          ?compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          ?compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
           ?feature_id: String,
           ?inference_id: String,
           ?trajectory_id: String
@@ -60,8 +60,8 @@ module HubspotSDK
           application_id: String,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
-          unstructured_sources: ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
-          compliance_ids: HubspotSDK::Automation::ComplianceIDs,
+          unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
+          compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
           feature_id: String,
           inference_id: String,
           trajectory_id: String
@@ -91,7 +91,7 @@ module HubspotSDK
           | :DERIVED
 
         module UnstructuredSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NONE: :NONE
           USER_INPUT: :USER_INPUT
@@ -115,7 +115,7 @@ module HubspotSDK
           NOTE: :NOTE
           DERIVED: :DERIVED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source]
         end
       end
     end

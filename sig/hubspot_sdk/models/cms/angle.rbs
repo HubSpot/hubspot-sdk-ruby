@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type angle =
-        { units: HubspotSDK::Models::Cms::Angle::units, value: Float }
+        { units: HubSpotSDK::Models::Cms::Angle::units, value: Float }
 
-      class Angle < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor units: HubspotSDK::Models::Cms::Angle::units
+      class Angle < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor units: HubSpotSDK::Models::Cms::Angle::units
 
         attr_accessor value: Float
 
         def initialize: (
-          units: HubspotSDK::Models::Cms::Angle::units,
+          units: HubSpotSDK::Models::Cms::Angle::units,
           value: Float
         ) -> void
 
         def to_hash: -> {
-          units: HubspotSDK::Models::Cms::Angle::units,
+          units: HubSpotSDK::Models::Cms::Angle::units,
           value: Float
         }
 
         type units = :deg | :grad | :rad | :turn
 
         module Units
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEG: :deg
           GRAD: :grad
           RAD: :rad
           TURN: :turn
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::Angle::units]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Angle::units]
         end
       end
     end

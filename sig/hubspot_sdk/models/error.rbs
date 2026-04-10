@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type error =
       {
@@ -6,12 +6,12 @@ module HubspotSDK
         correlation_id: String,
         message: String,
         context: ::Hash[Symbol, ::Array[String]],
-        errors: ::Array[HubspotSDK::ErrorDetail],
+        errors: ::Array[HubSpotSDK::ErrorDetail],
         links: ::Hash[Symbol, String],
         sub_category: String
       }
 
-    class Error < HubspotSDK::Internal::Type::BaseModel
+    class Error < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor category: String
 
       attr_accessor correlation_id: String
@@ -24,11 +24,11 @@ module HubspotSDK
         ::Hash[Symbol, ::Array[String]]
       ) -> ::Hash[Symbol, ::Array[String]]
 
-      attr_reader errors: ::Array[HubspotSDK::ErrorDetail]?
+      attr_reader errors: ::Array[HubSpotSDK::ErrorDetail]?
 
       def errors=: (
-        ::Array[HubspotSDK::ErrorDetail]
-      ) -> ::Array[HubspotSDK::ErrorDetail]
+        ::Array[HubSpotSDK::ErrorDetail]
+      ) -> ::Array[HubSpotSDK::ErrorDetail]
 
       attr_reader links: ::Hash[Symbol, String]?
 
@@ -43,7 +43,7 @@ module HubspotSDK
         correlation_id: String,
         message: String,
         ?context: ::Hash[Symbol, ::Array[String]],
-        ?errors: ::Array[HubspotSDK::ErrorDetail],
+        ?errors: ::Array[HubSpotSDK::ErrorDetail],
         ?links: ::Hash[Symbol, String],
         ?sub_category: String
       ) -> void
@@ -53,7 +53,7 @@ module HubspotSDK
         correlation_id: String,
         message: String,
         context: ::Hash[Symbol, ::Array[String]],
-        errors: ::Array[HubspotSDK::ErrorDetail],
+        errors: ::Array[HubSpotSDK::ErrorDetail],
         links: ::Hash[Symbol, String],
         sub_category: String
       }

@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class FetchSingleCurrencyPortalCurrency < HubspotSDK::Internal::Type::BaseModel
+      class FetchSingleCurrencyPortalCurrency < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
+            HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -34,7 +34,7 @@ module HubspotSDK
         sig do
           params(
             operator:
-              HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::OrSymbol,
+              HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::OrSymbol,
             property_name: String,
             value: String
           ).returns(T.attached_class)
@@ -46,7 +46,7 @@ module HubspotSDK
           override.returns(
             {
               operator:
-                HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol,
               property_name: String,
               value: String
             }
@@ -56,13 +56,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator
+                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -70,13 +70,13 @@ module HubspotSDK
           FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY =
             T.let(
               :FETCH_SINGLE_CURRENCY_PORTAL_CURRENCY,
-              HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
+              HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
+                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::Operator::TaggedSymbol
               ]
             )
           end

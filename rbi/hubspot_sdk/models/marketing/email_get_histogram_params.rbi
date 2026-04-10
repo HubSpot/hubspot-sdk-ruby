@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EmailGetHistogramParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailGetHistogramParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::EmailGetHistogramParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::EmailGetHistogramParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol
             )
           )
         end
@@ -39,7 +39,7 @@ module HubspotSDK
         sig do
           params(
             interval:
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol
           ).void
         end
         attr_writer :interval
@@ -55,9 +55,9 @@ module HubspotSDK
             email_ids: T::Array[Integer],
             end_timestamp: String,
             interval:
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
             start_timestamp: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -75,9 +75,9 @@ module HubspotSDK
               email_ids: T::Array[Integer],
               end_timestamp: String,
               interval:
-                HubspotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
+                HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
               start_timestamp: String,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -85,13 +85,13 @@ module HubspotSDK
         end
 
         module Interval
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Marketing::EmailGetHistogramParams::Interval
+                HubSpotSDK::Marketing::EmailGetHistogramParams::Interval
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -99,53 +99,53 @@ module HubspotSDK
           DAY =
             T.let(
               :DAY,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           HOUR =
             T.let(
               :HOUR,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           MINUTE =
             T.let(
               :MINUTE,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           MONTH =
             T.let(
               :MONTH,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           QUARTER =
             T.let(
               :QUARTER,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           QUARTER_HOUR =
             T.let(
               :QUARTER_HOUR,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           SECOND =
             T.let(
               :SECOND,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           WEEK =
             T.let(
               :WEEK,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
           YEAR =
             T.let(
               :YEAR,
-              HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+              HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
+                HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::TaggedSymbol
               ]
             )
           end

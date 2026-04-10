@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class QuickReply < HubspotSDK::Internal::Type::BaseModel
+      class QuickReply < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute value
         #
         #   @return [String]
@@ -11,10 +11,10 @@ module HubspotSDK
 
         # @!attribute value_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Conversations::QuickReply::ValueType]
+        #   @return [Symbol, HubSpotSDK::Models::Conversations::QuickReply::ValueType]
         required :value_type,
                  enum: -> {
-                   HubspotSDK::Conversations::QuickReply::ValueType
+                   HubSpotSDK::Conversations::QuickReply::ValueType
                  },
                  api_name: :valueType
 
@@ -25,12 +25,12 @@ module HubspotSDK
 
         # @!method initialize(value:, value_type:, label: nil)
         #   @param value [String]
-        #   @param value_type [Symbol, HubspotSDK::Models::Conversations::QuickReply::ValueType]
+        #   @param value_type [Symbol, HubSpotSDK::Models::Conversations::QuickReply::ValueType]
         #   @param label [String]
 
-        # @see HubspotSDK::Models::Conversations::QuickReply#value_type
+        # @see HubSpotSDK::Models::Conversations::QuickReply#value_type
         module ValueType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TEXT = :TEXT
           URL = :URL

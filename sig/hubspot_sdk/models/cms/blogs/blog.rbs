@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       class Blog = Blogs::Blog
@@ -13,7 +13,7 @@ module HubspotSDK
             deleted_at: Time,
             description: String,
             html_title: String,
-            language: HubspotSDK::Models::Cms::Blogs::Blog::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Blog::language,
             listing_page_id: String,
             name: String,
             public_access_rules: ::Array[top],
@@ -24,7 +24,7 @@ module HubspotSDK
             updated: Time
           }
 
-        class Blog < HubspotSDK::Internal::Type::BaseModel
+        class Blog < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor absolute_url: String
@@ -39,7 +39,7 @@ module HubspotSDK
 
           attr_accessor html_title: String
 
-          attr_accessor language: HubspotSDK::Models::Cms::Blogs::Blog::language
+          attr_accessor language: HubSpotSDK::Models::Cms::Blogs::Blog::language
 
           attr_accessor listing_page_id: String
 
@@ -65,7 +65,7 @@ module HubspotSDK
             deleted_at: Time,
             description: String,
             html_title: String,
-            language: HubspotSDK::Models::Cms::Blogs::Blog::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Blog::language,
             listing_page_id: String,
             name: String,
             public_access_rules: ::Array[top],
@@ -84,7 +84,7 @@ module HubspotSDK
             deleted_at: Time,
             description: String,
             html_title: String,
-            language: HubspotSDK::Models::Cms::Blogs::Blog::language,
+            language: HubSpotSDK::Models::Cms::Blogs::Blog::language,
             listing_page_id: String,
             name: String,
             public_access_rules: ::Array[top],
@@ -941,7 +941,7 @@ module HubspotSDK
             | :"zu-za"
 
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA: :aa
             AB: :ab
@@ -1787,7 +1787,7 @@ module HubspotSDK
             ZU: :zu
             ZU_ZA: :"zu-za"
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Cms::Blogs::Blog::language]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Blogs::Blog::language]
           end
         end
       end

@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type hub_db_table_v3_request =
         {
           allow_child_tables: bool,
           allow_public_api_access: bool,
-          columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          columns: ::Array[HubSpotSDK::Cms::ColumnRequest],
           dynamic_meta_tags: ::Hash[Symbol, Integer],
           enable_child_table_pages: bool,
           label: String,
@@ -13,12 +13,12 @@ module HubspotSDK
           use_for_pages: bool
         }
 
-      class HubDBTableV3Request < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableV3Request < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor allow_child_tables: bool
 
         attr_accessor allow_public_api_access: bool
 
-        attr_accessor columns: ::Array[HubspotSDK::Cms::ColumnRequest]
+        attr_accessor columns: ::Array[HubSpotSDK::Cms::ColumnRequest]
 
         attr_accessor dynamic_meta_tags: ::Hash[Symbol, Integer]
 
@@ -33,7 +33,7 @@ module HubspotSDK
         def initialize: (
           allow_child_tables: bool,
           allow_public_api_access: bool,
-          columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          columns: ::Array[HubSpotSDK::Cms::ColumnRequest],
           dynamic_meta_tags: ::Hash[Symbol, Integer],
           enable_child_table_pages: bool,
           label: String,
@@ -44,7 +44,7 @@ module HubspotSDK
         def to_hash: -> {
           allow_child_tables: bool,
           allow_public_api_access: bool,
-          columns: ::Array[HubspotSDK::Cms::ColumnRequest],
+          columns: ::Array[HubSpotSDK::Cms::ColumnRequest],
           dynamic_meta_tags: ::Hash[Symbol, Integer],
           enable_child_table_pages: bool,
           label: String,

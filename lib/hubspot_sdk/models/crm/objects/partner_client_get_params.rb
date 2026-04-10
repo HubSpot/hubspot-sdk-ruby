@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        # @see HubspotSDK::Resources::Crm::Objects::PartnerClients#get
-        class PartnerClientGetParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::Objects::PartnerClients#get
+        class PartnerClientGetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute partner_client_id
           #
@@ -18,14 +18,14 @@ module HubspotSDK
           #   Whether to return only results that have been archived.
           #
           #   @return [Boolean, nil]
-          optional :archived, HubspotSDK::Internal::Type::Boolean
+          optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute associations
           #   A comma separated list of object types to retrieve associated IDs for. If any of
           #   the specified associations do not exist, they will be ignored.
           #
           #   @return [Array<String>, nil]
-          optional :associations, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :associations, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute id_property
           #   The name of a property whose values are unique for this object type
@@ -39,7 +39,7 @@ module HubspotSDK
           #   will be ignored.
           #
           #   @return [Array<String>, nil]
-          optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!attribute properties_with_history
           #   A comma separated list of the properties to be returned along with their history
@@ -47,11 +47,11 @@ module HubspotSDK
           #   requested object(s), they will be ignored.
           #
           #   @return [Array<String>, nil]
-          optional :properties_with_history, HubspotSDK::Internal::Type::ArrayOf[String]
+          optional :properties_with_history, HubSpotSDK::Internal::Type::ArrayOf[String]
 
           # @!method initialize(partner_client_id:, archived: nil, associations: nil, id_property: nil, properties: nil, properties_with_history: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Crm::Objects::PartnerClientGetParams} for more details.
+          #   {HubSpotSDK::Models::Crm::Objects::PartnerClientGetParams} for more details.
           #
           #   @param partner_client_id [String]
           #
@@ -65,7 +65,7 @@ module HubspotSDK
           #
           #   @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

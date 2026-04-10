@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingAvailability < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingAvailability < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute end_millis_utc
         #   The end time of the meeting availability, represented as Unix time in
         #   milliseconds.
@@ -20,7 +20,7 @@ module HubspotSDK
 
         # @!method initialize(end_millis_utc:, start_millis_utc:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalMeetingAvailability} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalMeetingAvailability} for more details.
         #
         #   @param end_millis_utc [Integer] The end time of the meeting availability, represented as Unix time in millisecon
         #

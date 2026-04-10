@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type batch_input_property_name =
-      { inputs: ::Array[HubspotSDK::PropertyName] }
+      { inputs: ::Array[HubSpotSDK::PropertyName] }
 
-    class BatchInputPropertyName < HubspotSDK::Internal::Type::BaseModel
-      attr_accessor inputs: ::Array[HubspotSDK::PropertyName]
+    class BatchInputPropertyName < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor inputs: ::Array[HubSpotSDK::PropertyName]
 
-      def initialize: (inputs: ::Array[HubspotSDK::PropertyName]) -> void
+      def initialize: (inputs: ::Array[HubSpotSDK::PropertyName]) -> void
 
-      def to_hash: -> { inputs: ::Array[HubspotSDK::PropertyName] }
+      def to_hash: -> { inputs: ::Array[HubSpotSDK::PropertyName] }
     end
   end
 end

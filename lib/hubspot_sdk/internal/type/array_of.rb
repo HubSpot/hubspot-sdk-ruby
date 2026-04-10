@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -11,14 +11,14 @@ module HubspotSDK
       #
       # Array of items of a given type.
       class ArrayOf
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         private_class_method :new
 
         # @overload [](type_info, spec = {})
         #
-        # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+        # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
         #
         # @param spec [Hash{Symbol=>Object}] .
         #
@@ -47,7 +47,7 @@ module HubspotSDK
         # @return [Boolean]
         def ==(other)
           # rubocop:disable Layout/LineLength
-          other.is_a?(HubspotSDK::Internal::Type::ArrayOf) && other.nilable? == nilable? && other.item_type == item_type
+          other.is_a?(HubSpotSDK::Internal::Type::ArrayOf) && other.nilable? == nilable? && other.item_type == item_type
           # rubocop:enable Layout/LineLength
         end
 
@@ -91,7 +91,7 @@ module HubspotSDK
                 exactness[:yes] += 1
                 nil
               else
-                HubspotSDK::Internal::Type::Converter.coerce(target, item, state: state)
+                HubSpotSDK::Internal::Type::Converter.coerce(target, item, state: state)
               end
             end
         end
@@ -109,7 +109,7 @@ module HubspotSDK
           target = item_type
           if value.is_a?(Array)
             value.map do
-              HubspotSDK::Internal::Type::Converter.dump(target, _1, state: state)
+              HubSpotSDK::Internal::Type::Converter.dump(target, _1, state: state)
             end
           else
             super
@@ -120,7 +120,7 @@ module HubspotSDK
         #
         # @return [Object]
         def to_sorbet_type
-          T::Array[HubspotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(item_type)]
+          T::Array[HubSpotSDK::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(item_type)]
         end
 
         # @api private
@@ -135,7 +135,7 @@ module HubspotSDK
 
         # @api private
         #
-        # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class]
+        # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class]
         #
         # @param spec [Hash{Symbol=>Object}] .
         #
@@ -147,8 +147,8 @@ module HubspotSDK
         #
         #   @option spec [Boolean] :"nil?"
         def initialize(type_info, spec = {})
-          @item_type_fn = HubspotSDK::Internal::Type::Converter.type_info(type_info || spec)
-          @meta = HubspotSDK::Internal::Type::Converter.meta_info(type_info, spec)
+          @item_type_fn = HubSpotSDK::Internal::Type::Converter.type_info(type_info || spec)
+          @meta = HubSpotSDK::Internal::Type::Converter.meta_info(type_info, spec)
           @nilable = spec.fetch(:nil?, false)
         end
 
@@ -158,7 +158,7 @@ module HubspotSDK
         #
         # @return [String]
         def inspect(depth: 0)
-          items = HubspotSDK::Internal::Type::Converter.inspect(item_type, depth: depth.succ)
+          items = HubSpotSDK::Internal::Type::Converter.inspect(item_type, depth: depth.succ)
 
           "#{self.class}[#{[items, nilable? ? 'nil' : nil].compact.join(' | ')}]"
         end

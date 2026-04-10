@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class Subscriptions
-          # @return [HubspotSDK::Resources::Crm::Objects::Subscriptions::Batch]
+          # @return [HubSpotSDK::Resources::Crm::Objects::Subscriptions::Batch]
           attr_reader :batch
 
           # Create a new subscription object with specified properties and optional
@@ -13,28 +13,28 @@ module HubspotSDK
           #
           # @overload create(associations:, properties:, request_options: {})
           #
-          # @param associations [Array<HubspotSDK::Models::Crm::PublicAssociationsForObject>]
+          # @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
           #
           # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionCreateParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Crm::Objects::SubscriptionCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::SubscriptionCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/subscriptions",
               body: parsed,
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::SubscriptionUpdateParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::SubscriptionUpdateParams} for more details.
           #
           # Update a specific subscription by its ID with new property values.
           #
@@ -46,27 +46,27 @@ module HubspotSDK
           #
           # @param id_property [String] Query param: The name of a property whose values are unique for this object type
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionUpdateParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionUpdateParams
           def update(subscription_id, params)
             query_params = [:id_property]
-            parsed, options = HubspotSDK::Crm::Objects::SubscriptionUpdateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Crm::Objects::SubscriptionUpdateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :patch,
               path: ["crm/objects/2026-03/subscriptions/%1$s", subscription_id],
               query: query.transform_keys(id_property: "idProperty"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Crm::SimplePublicObject,
+              model: HubSpotSDK::Crm::SimplePublicObject,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::SubscriptionListParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::SubscriptionListParams} for more details.
           #
           # Retrieve a list of subscription objects, with options to filter by properties,
           # associations, and archived status.
@@ -85,20 +85,20 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations>]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionListParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Crm::Objects::SubscriptionListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::SubscriptionListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "crm/objects/2026-03/subscriptions",
               query: query.transform_keys(properties_with_history: "propertiesWithHistory"),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -108,11 +108,11 @@ module HubspotSDK
           # @overload delete(subscription_id, request_options: {})
           #
           # @param subscription_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionDeleteParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionDeleteParams
           def delete(subscription_id, params = {})
             @client.request(
               method: :delete,
@@ -123,7 +123,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Objects::SubscriptionGetParams} for more details.
+          # {HubSpotSDK::Models::Crm::Objects::SubscriptionGetParams} for more details.
           #
           # Retrieve a specific subscription by its ID, including its properties and
           # associations.
@@ -142,14 +142,14 @@ module HubspotSDK
           #
           # @param properties_with_history [Array<String>] A comma separated list of the properties to be returned along with their history
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::SimplePublicObjectWithAssociations]
+          # @return [HubSpotSDK::Models::Crm::SimplePublicObjectWithAssociations]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionGetParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionGetParams
           def get(subscription_id, params = {})
-            parsed, options = HubspotSDK::Crm::Objects::SubscriptionGetParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Crm::Objects::SubscriptionGetParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: ["crm/objects/2026-03/subscriptions/%1$s", subscription_id],
@@ -157,7 +157,7 @@ module HubspotSDK
                 id_property: "idProperty",
                 properties_with_history: "propertiesWithHistory"
               ),
-              model: HubspotSDK::Crm::SimplePublicObjectWithAssociations,
+              model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
             )
           end
@@ -171,7 +171,7 @@ module HubspotSDK
           #
           # @param after [String] A paging cursor token for retrieving subsequent pages.
           #
-          # @param filter_groups [Array<HubspotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
+          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
           #
           # @param limit [Integer] The maximum results to return, up to 200 objects.
           #
@@ -181,28 +181,28 @@ module HubspotSDK
           #
           # @param query [String] The search query string, up to 3000 characters.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
+          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
           #
-          # @see HubspotSDK::Models::Crm::Objects::SubscriptionSearchParams
+          # @see HubSpotSDK::Models::Crm::Objects::SubscriptionSearchParams
           def search(params)
-            parsed, options = HubspotSDK::Crm::Objects::SubscriptionSearchParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Objects::SubscriptionSearchParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/objects/2026-03/subscriptions/search",
               body: parsed,
-              model: HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
+              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @batch = HubspotSDK::Resources::Crm::Objects::Subscriptions::Batch.new(client: client)
+            @batch = HubSpotSDK::Resources::Crm::Objects::Subscriptions::Batch.new(client: client)
           end
         end
       end

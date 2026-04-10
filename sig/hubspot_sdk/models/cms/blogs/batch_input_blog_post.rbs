@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         type batch_input_blog_post =
-          { inputs: ::Array[HubspotSDK::Cms::Blogs::BlogPost] }
+          { inputs: ::Array[HubSpotSDK::Cms::Blogs::BlogPost] }
 
-        class BatchInputBlogPost < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor inputs: ::Array[HubspotSDK::Cms::Blogs::BlogPost]
+        class BatchInputBlogPost < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor inputs: ::Array[HubSpotSDK::Cms::Blogs::BlogPost]
 
           def initialize: (
-            inputs: ::Array[HubspotSDK::Cms::Blogs::BlogPost]
+            inputs: ::Array[HubSpotSDK::Cms::Blogs::BlogPost]
           ) -> void
 
-          def to_hash: -> { inputs: ::Array[HubspotSDK::Cms::Blogs::BlogPost] }
+          def to_hash: -> { inputs: ::Array[HubSpotSDK::Cms::Blogs::BlogPost] }
         end
       end
     end

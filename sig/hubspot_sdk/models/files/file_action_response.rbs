@@ -1,33 +1,33 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file_action_response =
         {
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::Files::FileActionResponse::status,
+          status: HubSpotSDK::Models::Files::FileActionResponse::status,
           task_id: String,
-          errors: ::Array[HubspotSDK::StandardError],
+          errors: ::Array[HubSpotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time,
-          result: HubspotSDK::Files::File
+          result: HubSpotSDK::Files::File
         }
 
-      class FileActionResponse < HubspotSDK::Internal::Type::BaseModel
+      class FileActionResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
         attr_accessor started_at: Time
 
-        attr_accessor status: HubspotSDK::Models::Files::FileActionResponse::status
+        attr_accessor status: HubSpotSDK::Models::Files::FileActionResponse::status
 
         attr_accessor task_id: String
 
-        attr_reader errors: ::Array[HubspotSDK::StandardError]?
+        attr_reader errors: ::Array[HubSpotSDK::StandardError]?
 
         def errors=: (
-          ::Array[HubspotSDK::StandardError]
-        ) -> ::Array[HubspotSDK::StandardError]
+          ::Array[HubSpotSDK::StandardError]
+        ) -> ::Array[HubSpotSDK::StandardError]
 
         attr_reader links: ::Hash[Symbol, String]?
 
@@ -41,45 +41,45 @@ module HubspotSDK
 
         def requested_at=: (Time) -> Time
 
-        attr_reader result: HubspotSDK::Files::File?
+        attr_reader result: HubSpotSDK::Files::File?
 
-        def result=: (HubspotSDK::Files::File) -> HubspotSDK::Files::File
+        def result=: (HubSpotSDK::Files::File) -> HubSpotSDK::Files::File
 
         def initialize: (
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::Files::FileActionResponse::status,
+          status: HubSpotSDK::Models::Files::FileActionResponse::status,
           task_id: String,
-          ?errors: ::Array[HubspotSDK::StandardError],
+          ?errors: ::Array[HubSpotSDK::StandardError],
           ?links: ::Hash[Symbol, String],
           ?num_errors: Integer,
           ?requested_at: Time,
-          ?result: HubspotSDK::Files::File
+          ?result: HubSpotSDK::Files::File
         ) -> void
 
         def to_hash: -> {
           completed_at: Time,
           started_at: Time,
-          status: HubspotSDK::Models::Files::FileActionResponse::status,
+          status: HubSpotSDK::Models::Files::FileActionResponse::status,
           task_id: String,
-          errors: ::Array[HubspotSDK::StandardError],
+          errors: ::Array[HubSpotSDK::StandardError],
           links: ::Hash[Symbol, String],
           num_errors: Integer,
           requested_at: Time,
-          result: HubspotSDK::Files::File
+          result: HubSpotSDK::Files::File
         }
 
         type status = :CANCELED | :COMPLETE | :PENDING | :PROCESSING
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED: :CANCELED
           COMPLETE: :COMPLETE
           PENDING: :PENDING
           PROCESSING: :PROCESSING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Files::FileActionResponse::status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Files::FileActionResponse::status]
         end
       end
     end

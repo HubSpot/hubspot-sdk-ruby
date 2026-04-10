@@ -1,65 +1,65 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class FeatureFlags
-        attr_reader batch: HubspotSDK::Resources::Crm::FeatureFlags::Batch
+        attr_reader batch: HubSpotSDK::Resources::Crm::FeatureFlags::Batch
 
         def update: (
           String flag_name,
           app_id: Integer,
-          default_state: HubspotSDK::Models::Crm::FlagPutRequest::default_state,
-          ?override_state: HubspotSDK::Models::Crm::FlagPutRequest::override_state,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::FlagResponse
+          default_state: HubSpotSDK::Models::Crm::FlagPutRequest::default_state,
+          ?override_state: HubSpotSDK::Models::Crm::FlagPutRequest::override_state,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::FlagResponse
 
         def delete: (
           String flag_name,
           app_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::FlagResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::FlagResponse
 
         def delete_portal_state: (
           Integer portal_id,
           app_id: Integer,
           flag_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PortalFlagStateResponse
 
         def get: (
           String flag_name,
           app_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::FlagResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::FlagResponse
 
         def get_portal_state: (
           Integer portal_id,
           app_id: Integer,
           flag_name: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PortalFlagStateResponse
 
         def list_all: (
           Integer app_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::FlagsForAppResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::FlagsForAppResponse
 
         def list_portals: (
           String flag_name,
           app_id: Integer,
           ?limit: Integer,
           ?start_portal_id: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PortalFlagStateBatchResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PortalFlagStateBatchResponse
 
         def update_portal_state: (
           Integer portal_id,
           app_id: Integer,
           flag_name: String,
-          flag_state: HubspotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PortalFlagStateResponse
+          flag_state: HubSpotSDK::Models::Crm::PortalFlagStatePutRequest::flag_state,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PortalFlagStateResponse
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

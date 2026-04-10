@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAssociationInListFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicAssociationInListFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAssociationInListFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAssociationInListFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,15 +25,15 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-              HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-              HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-              HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-              HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-              HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-              HubspotSDK::Crm::PublicAllHistoryRefineBy,
-              HubspotSDK::Crm::PublicTimePointOperation,
-              HubspotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+              HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+              HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+              HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+              HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+              HubSpotSDK::Crm::PublicTimePointOperation,
+              HubSpotSDK::Crm::PublicRangedTimeOperation
             )
           )
         end
@@ -42,7 +42,7 @@ module HubspotSDK
         # Indicates the type of filter being applied, which is 'ASSOCIATION' by default.
         sig do
           returns(
-            HubspotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol
+            HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol
           )
         end
         attr_accessor :filter_type
@@ -76,18 +76,18 @@ module HubspotSDK
             association_type_id: Integer,
             coalescing_refine_by:
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               ),
             filter_type:
-              HubspotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
             list_id: String,
             operator: String,
             to_object_type: String,
@@ -123,18 +123,18 @@ module HubspotSDK
               association_type_id: Integer,
               coalescing_refine_by:
                 T.any(
-                  HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                  HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                  HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                  HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 ),
               filter_type:
-                HubspotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
               list_id: String,
               operator: String,
               to_object_type: String,
@@ -147,27 +147,27 @@ module HubspotSDK
 
         # Specifies the criteria for refining the association filter.
         module CoalescingRefineBy
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNumOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicSetOccurrencesRefineBy,
-                HubspotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
-                HubspotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
-                HubspotSDK::Crm::PublicAllHistoryRefineBy,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicNumOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicSetOccurrencesRefineBy,
+                HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
+                HubSpotSDK::Crm::PublicAllHistoryRefineBy,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAssociationInListFilter::CoalescingRefineBy::Variants
+                HubSpotSDK::Crm::PublicAssociationInListFilter::CoalescingRefineBy::Variants
               ]
             )
           end
@@ -177,13 +177,13 @@ module HubspotSDK
 
         # Indicates the type of filter being applied, which is 'ASSOCIATION' by default.
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicAssociationInListFilter::FilterType
+                HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -191,13 +191,13 @@ module HubspotSDK
           ASSOCIATION =
             T.let(
               :ASSOCIATION,
-              HubspotSDK::Crm::PublicAssociationInListFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAssociationInListFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::TaggedSymbol
               ]
             )
           end

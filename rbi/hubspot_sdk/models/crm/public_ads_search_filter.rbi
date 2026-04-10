@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAdsSearchFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicAdsSearchFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicAdsSearchFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicAdsSearchFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
 
         # Type of the filter (ADS_SEARCH)
         sig do
-          returns(HubspotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -42,7 +42,7 @@ module HubspotSDK
             ad_network: String,
             entity_type: String,
             filter_type:
-              HubspotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol,
             operator: String,
             search_terms: T::Array[String],
             search_term_type: String
@@ -69,7 +69,7 @@ module HubspotSDK
               ad_network: String,
               entity_type: String,
               filter_type:
-                HubspotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType::OrSymbol,
               operator: String,
               search_terms: T::Array[String],
               search_term_type: String
@@ -81,24 +81,24 @@ module HubspotSDK
 
         # Type of the filter (ADS_SEARCH)
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicAdsSearchFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ADS_SEARCH =
             T.let(
               :ADS_SEARCH,
-              HubspotSDK::Crm::PublicAdsSearchFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicAdsSearchFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType::TaggedSymbol
               ]
             )
           end

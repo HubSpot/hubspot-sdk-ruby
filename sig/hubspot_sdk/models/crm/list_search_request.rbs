@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type list_search_request =
@@ -13,7 +13,7 @@ module HubspotSDK
           sort: String
         }
 
-      class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListSearchRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_ids: ::Array[String]
 
         attr_accessor offset: Integer

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class CopilotRequestContext < HubspotSDK::Internal::Type::BaseModel
+      class CopilotRequestContext < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute source
         #   Indicates the source of the request, with the default value being 'COPILOT'.
         #
-        #   @return [Symbol, HubspotSDK::Models::Automation::CopilotRequestContext::Source]
-        required :source, enum: -> { HubspotSDK::Automation::CopilotRequestContext::Source }
+        #   @return [Symbol, HubSpotSDK::Models::Automation::CopilotRequestContext::Source]
+        required :source, enum: -> { HubSpotSDK::Automation::CopilotRequestContext::Source }
 
         # @!attribute trajectory_id
         #   The unique identifier for the trajectory.
@@ -17,15 +17,15 @@ module HubspotSDK
         optional :trajectory_id, String, api_name: :trajectoryId
 
         # @!method initialize(source:, trajectory_id: nil)
-        #   @param source [Symbol, HubspotSDK::Models::Automation::CopilotRequestContext::Source] Indicates the source of the request, with the default value being 'COPILOT'.
+        #   @param source [Symbol, HubSpotSDK::Models::Automation::CopilotRequestContext::Source] Indicates the source of the request, with the default value being 'COPILOT'.
         #
         #   @param trajectory_id [String] The unique identifier for the trajectory.
 
         # Indicates the source of the request, with the default value being 'COPILOT'.
         #
-        # @see HubspotSDK::Models::Automation::CopilotRequestContext#source
+        # @see HubSpotSDK::Models::Automation::CopilotRequestContext#source
         module Source
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COPILOT = :COPILOT
 

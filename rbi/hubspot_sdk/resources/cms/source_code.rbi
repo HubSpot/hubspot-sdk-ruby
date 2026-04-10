@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class SourceCode
@@ -11,9 +11,9 @@ module HubspotSDK
           params(
             path: String,
             environment: String,
-            file: HubspotSDK::Internal::FileInput,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::AssetFileMetadata)
+            file: HubSpotSDK::Internal::FileInput,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::AssetFileMetadata)
         end
         def create(
           # Path param
@@ -31,7 +31,7 @@ module HubspotSDK
           params(
             path: String,
             environment: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(path, environment:, request_options: {})
@@ -42,8 +42,8 @@ module HubspotSDK
         sig do
           params(
             path: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::TaskLocator)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::TaskLocator)
         end
         def extract_async(
           # The file system location where the zip file is to be extracted.
@@ -58,7 +58,7 @@ module HubspotSDK
           params(
             path: String,
             environment: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def get(path, environment:, request_options: {})
@@ -69,8 +69,8 @@ module HubspotSDK
         sig do
           params(
             task_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::ActionResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::ActionResponse)
         end
         def get_extraction_status(task_id, request_options: {})
         end
@@ -82,8 +82,8 @@ module HubspotSDK
             path: String,
             environment: String,
             properties: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::AssetFileMetadata)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::AssetFileMetadata)
         end
         def get_metadata(
           # Path param
@@ -102,9 +102,9 @@ module HubspotSDK
           params(
             path: String,
             environment: String,
-            file: HubspotSDK::Internal::FileInput,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::AssetFileMetadata)
+            file: HubSpotSDK::Internal::FileInput,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::AssetFileMetadata)
         end
         def upsert(
           # Path param
@@ -123,8 +123,8 @@ module HubspotSDK
           params(
             path: String,
             environment: String,
-            file: HubspotSDK::Internal::FileInput,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            file: HubSpotSDK::Internal::FileInput,
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(StringIO)
         end
         def validate(
@@ -139,7 +139,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

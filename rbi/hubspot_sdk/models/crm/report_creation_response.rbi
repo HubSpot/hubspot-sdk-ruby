@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ReportCreationResponse < HubspotSDK::Internal::Type::BaseModel
+      class ReportCreationResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ReportCreationResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ReportCreationResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Crm::DateTime) }
+        sig { returns(HubSpotSDK::Crm::DateTime) }
         attr_reader :enqueue_time
 
-        sig { params(enqueue_time: HubspotSDK::Crm::DateTime::OrHash).void }
+        sig { params(enqueue_time: HubSpotSDK::Crm::DateTime::OrHash).void }
         attr_writer :enqueue_time
 
         # Email of the user
@@ -28,7 +28,7 @@ module HubspotSDK
 
         sig do
           params(
-            enqueue_time: HubspotSDK::Crm::DateTime::OrHash,
+            enqueue_time: HubSpotSDK::Crm::DateTime::OrHash,
             user_email: String,
             user_id: Integer
           ).returns(T.attached_class)
@@ -45,7 +45,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              enqueue_time: HubspotSDK::Crm::DateTime,
+              enqueue_time: HubSpotSDK::Crm::DateTime,
               user_email: String,
               user_id: Integer
             }

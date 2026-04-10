@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ValueWithTimestamp < HubspotSDK::Internal::Type::BaseModel
+      class ValueWithTimestamp < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute source_type
         #   The property type.
         #

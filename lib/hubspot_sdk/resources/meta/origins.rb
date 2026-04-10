@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Meta
       class Origins
-        # @return [HubspotSDK::Resources::Meta::Origins::IPRanges]
+        # @return [HubSpotSDK::Resources::Meta::Origins::IPRanges]
         attr_reader :ip_ranges
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @ip_ranges = HubspotSDK::Resources::Meta::Origins::IPRanges.new(client: client)
+          @ip_ranges = HubSpotSDK::Resources::Meta::Origins::IPRanges.new(client: client)
         end
       end
     end

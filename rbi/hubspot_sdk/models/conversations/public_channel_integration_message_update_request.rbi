@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelIntegrationMessageUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationMessageUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Valid status are SENT, FAILED, and READ
         sig do
           returns(
-            HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol
+            HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol
           )
         end
         attr_accessor :status_type
@@ -29,7 +29,7 @@ module HubspotSDK
         sig do
           params(
             status_type:
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
+              HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
             error_message: String
           ).returns(T.attached_class)
         end
@@ -44,7 +44,7 @@ module HubspotSDK
           override.returns(
             {
               status_type:
-                HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
+                HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::OrSymbol,
               error_message: String
             }
           )
@@ -54,13 +54,13 @@ module HubspotSDK
 
         # Valid status are SENT, FAILED, and READ
         module StatusType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType
+                HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -68,23 +68,23 @@ module HubspotSDK
           FAILED =
             T.let(
               :FAILED,
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
             )
           READ =
             T.let(
               :READ,
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
             )
           SENT =
             T.let(
               :SENT,
-              HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
+              HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
+                HubSpotSDK::Conversations::PublicChannelIntegrationMessageUpdateRequest::StatusType::TaggedSymbol
               ]
             )
           end

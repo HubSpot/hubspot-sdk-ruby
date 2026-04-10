@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#update_oembed_domain
-      class MediaBridgeUpdateOembedDomainParams < HubspotSDK::Models::Cms::IntegratorOEmbedDomainRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#update_oembed_domain
+      class MediaBridgeUpdateOembedDomainParams < HubSpotSDK::Models::Cms::IntegratorOEmbedDomainRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute app_id
         #
@@ -21,7 +21,7 @@ module HubspotSDK
         # @!method initialize(app_id:, o_embed_domain_id:, request_options: {})
         #   @param app_id [Integer]
         #   @param o_embed_domain_id [String]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

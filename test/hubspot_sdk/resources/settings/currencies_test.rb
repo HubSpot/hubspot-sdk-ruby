@@ -2,14 +2,14 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Settings::CurrenciesTest < HubSpotSDK::Test::ResourceTest
   def test_get_company_currency
     skip("Mock server tests are disabled")
 
     response = @hubspot.settings.currencies.get_company_currency
 
     assert_pattern do
-      response => HubspotSDK::Settings::CompanyCurrency
+      response => HubSpotSDK::Settings::CompanyCurrency
     end
 
     assert_pattern do
@@ -26,12 +26,12 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     response = @hubspot.settings.currencies.list_codes
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
+      response => HubSpotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::CurrencyCodeInfo])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::CurrencyCodeInfo])
       }
     end
   end
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::Settings::CurrenciesTest < HubspotSDK::Test::
     response = @hubspot.settings.currencies.update_company_currency(currency_code: :AED)
 
     assert_pattern do
-      response => HubspotSDK::Settings::CompanyCurrency
+      response => HubSpotSDK::Settings::CompanyCurrency
     end
 
     assert_pattern do

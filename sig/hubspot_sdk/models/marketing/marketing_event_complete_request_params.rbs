@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventCompleteRequestParams = Marketing::MarketingEventCompleteRequestParams
 
@@ -6,7 +6,7 @@ module HubspotSDK
       type marketing_event_complete_request_params =
         { end_date_time: Time, start_date_time: Time }
 
-      class MarketingEventCompleteRequestParams < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventCompleteRequestParams < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor end_date_time: Time
 
         attr_accessor start_date_time: Time

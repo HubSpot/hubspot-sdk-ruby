@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class ListMembershipSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListMembershipSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute actions
         #
-        #   @return [Array<Symbol, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::Action>]
+        #   @return [Array<Symbol, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::Action>]
         required :actions,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[enum: HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::Action] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::Action] }
 
         # @!attribute list_ids
         #
         #   @return [Array<Integer>]
-        required :list_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
+        required :list_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
 
         # @!attribute object_ids
         #
         #   @return [Array<Integer>]
-        required :object_ids, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
+        required :object_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
 
         # @!attribute portal_id
         #
@@ -27,20 +27,20 @@ module HubspotSDK
 
         # @!attribute subscription_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType]
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType]
         required :subscription_type,
-                 enum: -> { HubspotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType },
+                 enum: -> { HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType },
                  api_name: :subscriptionType
 
         # @!method initialize(actions:, list_ids:, object_ids:, portal_id:, subscription_type:)
-        #   @param actions [Array<Symbol, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::Action>]
+        #   @param actions [Array<Symbol, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::Action>]
         #   @param list_ids [Array<Integer>]
         #   @param object_ids [Array<Integer>]
         #   @param portal_id [Integer]
-        #   @param subscription_type [Symbol, HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType]
+        #   @param subscription_type [Symbol, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::SubscriptionType]
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATE = :CREATE
           UPDATE = :UPDATE
@@ -59,9 +59,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest#subscription_type
+        # @see HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest#subscription_type
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT = :OBJECT
           ASSOCIATION = :ASSOCIATION

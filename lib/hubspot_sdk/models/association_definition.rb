@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class AssociationDefinition < HubspotSDK::Internal::Type::BaseModel
+    class AssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #   The unique ID of the associated object (e.g., a contact ID).
       #
@@ -42,7 +42,7 @@ module HubspotSDK
 
       # @!method initialize(id:, from_object_type_id:, to_object_type_id:, created_at: nil, name: nil, updated_at: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::AssociationDefinition} for more details.
+      #   {HubSpotSDK::Models::AssociationDefinition} for more details.
       #
       #   The definition of an association
       #

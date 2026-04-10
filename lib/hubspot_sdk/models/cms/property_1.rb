@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Property1 < HubspotSDK::Internal::Type::BaseModel
+      class Property1 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute description
         #
         #   @return [String]
@@ -31,8 +31,8 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Option1>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Option1] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Option1>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Option1] }
 
         # @!attribute type
         #
@@ -42,7 +42,7 @@ module HubspotSDK
         # @!attribute archived
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute archived_at
         #
@@ -52,7 +52,7 @@ module HubspotSDK
         # @!attribute calculated
         #
         #   @return [Boolean, nil]
-        optional :calculated, HubspotSDK::Internal::Type::Boolean
+        optional :calculated, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute calculation_formula
         #
@@ -71,16 +71,16 @@ module HubspotSDK
 
         # @!attribute data_sensitivity
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property1::DataSensitivity, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property1::DataSensitivity, nil]
         optional :data_sensitivity,
-                 enum: -> { HubspotSDK::Cms::Property1::DataSensitivity },
+                 enum: -> { HubSpotSDK::Cms::Property1::DataSensitivity },
                  api_name: :dataSensitivity
 
         # @!attribute date_display_hint
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Property1::DateDisplayHint, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property1::DateDisplayHint, nil]
         optional :date_display_hint,
-                 enum: -> { HubspotSDK::Cms::Property1::DateDisplayHint },
+                 enum: -> { HubSpotSDK::Cms::Property1::DateDisplayHint },
                  api_name: :dateDisplayHint
 
         # @!attribute display_order
@@ -91,33 +91,33 @@ module HubspotSDK
         # @!attribute external_options
         #
         #   @return [Boolean, nil]
-        optional :external_options, HubspotSDK::Internal::Type::Boolean, api_name: :externalOptions
+        optional :external_options, HubSpotSDK::Internal::Type::Boolean, api_name: :externalOptions
 
         # @!attribute form_field
         #
         #   @return [Boolean, nil]
-        optional :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        optional :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute has_unique_value
         #
         #   @return [Boolean, nil]
-        optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        optional :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #
         #   @return [Boolean, nil]
-        optional :hidden, HubspotSDK::Internal::Type::Boolean
+        optional :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute hubspot_defined
         #
         #   @return [Boolean, nil]
-        optional :hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
+        optional :hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :hubspotDefined
 
         # @!attribute modification_metadata
         #
-        #   @return [HubspotSDK::Models::PropertyModificationMetadata, nil]
+        #   @return [HubSpotSDK::Models::PropertyModificationMetadata, nil]
         optional :modification_metadata,
-                 -> { HubspotSDK::PropertyModificationMetadata },
+                 -> { HubSpotSDK::PropertyModificationMetadata },
                  api_name: :modificationMetadata
 
         # @!attribute referenced_object_type
@@ -129,13 +129,13 @@ module HubspotSDK
         #
         #   @return [Array<String>, nil]
         optional :sensitive_data_categories,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :sensitiveDataCategories
 
         # @!attribute show_currency_symbol
         #
         #   @return [Boolean, nil]
-        optional :show_currency_symbol, HubspotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
+        optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
         # @!attribute updated_at
         #
@@ -153,7 +153,7 @@ module HubspotSDK
         #   @param group_name [String]
         #   @param label [String]
         #   @param name [String]
-        #   @param options [Array<HubspotSDK::Models::Cms::Option1>]
+        #   @param options [Array<HubSpotSDK::Models::Cms::Option1>]
         #   @param type [String]
         #   @param archived [Boolean]
         #   @param archived_at [Time]
@@ -161,24 +161,24 @@ module HubspotSDK
         #   @param calculation_formula [String]
         #   @param created_at [Time]
         #   @param created_user_id [String]
-        #   @param data_sensitivity [Symbol, HubspotSDK::Models::Cms::Property1::DataSensitivity]
-        #   @param date_display_hint [Symbol, HubspotSDK::Models::Cms::Property1::DateDisplayHint]
+        #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Cms::Property1::DataSensitivity]
+        #   @param date_display_hint [Symbol, HubSpotSDK::Models::Cms::Property1::DateDisplayHint]
         #   @param display_order [Integer]
         #   @param external_options [Boolean]
         #   @param form_field [Boolean]
         #   @param has_unique_value [Boolean]
         #   @param hidden [Boolean]
         #   @param hubspot_defined [Boolean]
-        #   @param modification_metadata [HubspotSDK::Models::PropertyModificationMetadata]
+        #   @param modification_metadata [HubSpotSDK::Models::PropertyModificationMetadata]
         #   @param referenced_object_type [String]
         #   @param sensitive_data_categories [Array<String>]
         #   @param show_currency_symbol [Boolean]
         #   @param updated_at [Time]
         #   @param updated_user_id [String]
 
-        # @see HubspotSDK::Models::Cms::Property1#data_sensitivity
+        # @see HubSpotSDK::Models::Cms::Property1#data_sensitivity
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGHLY_SENSITIVE = :highly_sensitive
           NON_SENSITIVE = :non_sensitive
@@ -188,9 +188,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::Property1#date_display_hint
+        # @see HubSpotSDK::Models::Cms::Property1#date_display_hint
         module DateDisplayHint
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABSOLUTE = :absolute
           ABSOLUTE_WITH_RELATIVE = :absolute_with_relative

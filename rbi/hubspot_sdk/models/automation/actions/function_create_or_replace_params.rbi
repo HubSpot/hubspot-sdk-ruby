@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        class FunctionCreateOrReplaceParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class FunctionCreateOrReplaceParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -24,7 +24,7 @@ module HubspotSDK
 
           sig do
             returns(
-              HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol
+              HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol
             )
           end
           attr_accessor :function_type
@@ -40,10 +40,10 @@ module HubspotSDK
               app_id: Integer,
               definition_id: String,
               function_type:
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
               function_id: String,
               body: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -62,10 +62,10 @@ module HubspotSDK
                 app_id: Integer,
                 definition_id: String,
                 function_type:
-                  HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
+                  HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
                 function_id: String,
                 body: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end
@@ -73,13 +73,13 @@ module HubspotSDK
           end
 
           module FunctionType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType
+                  HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -87,28 +87,28 @@ module HubspotSDK
             POST_ACTION_EXECUTION =
               T.let(
                 :POST_ACTION_EXECUTION,
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
               )
             POST_FETCH_OPTIONS =
               T.let(
                 :POST_FETCH_OPTIONS,
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
               )
             PRE_ACTION_EXECUTION =
               T.let(
                 :PRE_ACTION_EXECUTION,
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
               )
             PRE_FETCH_OPTIONS =
               T.let(
                 :PRE_FETCH_OPTIONS,
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
+                  HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::TaggedSymbol
                 ]
               )
             end

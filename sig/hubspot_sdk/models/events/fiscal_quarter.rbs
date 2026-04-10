@@ -1,23 +1,23 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type fiscal_quarter =
         {
           day: Integer,
           month: Integer,
-          reference_type: HubspotSDK::Models::Events::FiscalQuarter::reference_type,
+          reference_type: HubSpotSDK::Models::Events::FiscalQuarter::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
           second: Integer
         }
 
-      class FiscalQuarter < HubspotSDK::Internal::Type::BaseModel
+      class FiscalQuarter < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor day: Integer
 
         attr_accessor month: Integer
 
-        attr_accessor reference_type: HubspotSDK::Models::Events::FiscalQuarter::reference_type
+        attr_accessor reference_type: HubSpotSDK::Models::Events::FiscalQuarter::reference_type
 
         attr_reader hour: Integer?
 
@@ -38,7 +38,7 @@ module HubspotSDK
         def initialize: (
           day: Integer,
           month: Integer,
-          reference_type: HubspotSDK::Models::Events::FiscalQuarter::reference_type,
+          reference_type: HubSpotSDK::Models::Events::FiscalQuarter::reference_type,
           ?hour: Integer,
           ?millisecond: Integer,
           ?minute: Integer,
@@ -48,7 +48,7 @@ module HubspotSDK
         def to_hash: -> {
           day: Integer,
           month: Integer,
-          reference_type: HubspotSDK::Models::Events::FiscalQuarter::reference_type,
+          reference_type: HubSpotSDK::Models::Events::FiscalQuarter::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
@@ -58,11 +58,11 @@ module HubspotSDK
         type reference_type = :FISCAL_QUARTER
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FISCAL_QUARTER: :FISCAL_QUARTER
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::FiscalQuarter::reference_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::FiscalQuarter::reference_type]
         end
       end
     end

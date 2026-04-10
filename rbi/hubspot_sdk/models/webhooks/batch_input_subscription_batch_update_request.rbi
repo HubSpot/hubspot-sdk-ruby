@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class BatchInputSubscriptionBatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputSubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::BatchInputSubscriptionBatchUpdateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::BatchInputSubscriptionBatchUpdateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+            T::Array[HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest]
           )
         end
         attr_accessor :inputs
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest::OrHash
+                HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -34,7 +34,7 @@ module HubspotSDK
           override.returns(
             {
               inputs:
-                T::Array[HubspotSDK::Webhooks::SubscriptionBatchUpdateRequest]
+                T::Array[HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest]
             }
           )
         end

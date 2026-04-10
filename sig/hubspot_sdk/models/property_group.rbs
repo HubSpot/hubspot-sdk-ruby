@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type property_group =
       { archived: bool, label: String, name: String, display_order: Integer }
 
-    class PropertyGroup < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroup < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor archived: bool
 
       attr_accessor label: String

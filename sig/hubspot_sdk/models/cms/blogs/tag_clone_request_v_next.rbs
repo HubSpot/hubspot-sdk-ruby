@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
@@ -10,7 +10,7 @@ module HubspotSDK
             primary_language: String
           }
 
-        class TagCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class TagCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
 
           attr_accessor name: String

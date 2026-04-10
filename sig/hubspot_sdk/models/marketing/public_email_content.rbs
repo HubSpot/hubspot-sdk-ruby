@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_content =
@@ -6,14 +6,14 @@ module HubspotSDK
           flex_areas: ::Hash[Symbol, top],
           plain_text_version: String,
           smart_fields: ::Hash[Symbol, top],
-          style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          style_settings: HubSpotSDK::Marketing::PublicEmailStyleSettings,
           template_path: String,
           theme_settings_values: ::Hash[Symbol, top],
           widget_containers: ::Hash[Symbol, top],
           widgets: ::Hash[Symbol, top]
         }
 
-      class PublicEmailContent < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailContent < HubSpotSDK::Internal::Type::BaseModel
         attr_reader flex_areas: ::Hash[Symbol, top]?
 
         def flex_areas=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
@@ -26,11 +26,11 @@ module HubspotSDK
 
         def smart_fields=: (::Hash[Symbol, top]) -> ::Hash[Symbol, top]
 
-        attr_reader style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings?
+        attr_reader style_settings: HubSpotSDK::Marketing::PublicEmailStyleSettings?
 
         def style_settings=: (
-          HubspotSDK::Marketing::PublicEmailStyleSettings
-        ) -> HubspotSDK::Marketing::PublicEmailStyleSettings
+          HubSpotSDK::Marketing::PublicEmailStyleSettings
+        ) -> HubSpotSDK::Marketing::PublicEmailStyleSettings
 
         attr_reader template_path: String?
 
@@ -52,7 +52,7 @@ module HubspotSDK
           ?flex_areas: ::Hash[Symbol, top],
           ?plain_text_version: String,
           ?smart_fields: ::Hash[Symbol, top],
-          ?style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          ?style_settings: HubSpotSDK::Marketing::PublicEmailStyleSettings,
           ?template_path: String,
           ?theme_settings_values: ::Hash[Symbol, top],
           ?widget_containers: ::Hash[Symbol, top],
@@ -63,7 +63,7 @@ module HubspotSDK
           flex_areas: ::Hash[Symbol, top],
           plain_text_version: String,
           smart_fields: ::Hash[Symbol, top],
-          style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+          style_settings: HubSpotSDK::Marketing::PublicEmailStyleSettings,
           template_path: String,
           theme_settings_values: ::Hash[Symbol, top],
           widget_containers: ::Hash[Symbol, top],

@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type list_search_response =
         {
           has_more: bool,
-          lists: ::Array[HubspotSDK::Crm::PublicObjectListSearchResult],
+          lists: ::Array[HubSpotSDK::Crm::PublicObjectListSearchResult],
           offset: Integer,
           total: Integer
         }
 
-      class ListSearchResponse < HubspotSDK::Internal::Type::BaseModel
+      class ListSearchResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor has_more: bool
 
-        attr_accessor lists: ::Array[HubspotSDK::Crm::PublicObjectListSearchResult]
+        attr_accessor lists: ::Array[HubSpotSDK::Crm::PublicObjectListSearchResult]
 
         attr_accessor offset: Integer
 
@@ -20,14 +20,14 @@ module HubspotSDK
 
         def initialize: (
           has_more: bool,
-          lists: ::Array[HubspotSDK::Crm::PublicObjectListSearchResult],
+          lists: ::Array[HubSpotSDK::Crm::PublicObjectListSearchResult],
           offset: Integer,
           total: Integer
         ) -> void
 
         def to_hash: -> {
           has_more: bool,
-          lists: ::Array[HubspotSDK::Crm::PublicObjectListSearchResult],
+          lists: ::Array[HubSpotSDK::Crm::PublicObjectListSearchResult],
           offset: Integer,
           total: Integer
         }

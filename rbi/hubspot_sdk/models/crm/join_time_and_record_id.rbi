@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class JoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
+      class JoinTimeAndRecordID < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::JoinTimeAndRecordID,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::JoinTimeAndRecordID,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

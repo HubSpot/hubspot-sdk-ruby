@@ -1,29 +1,29 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_sequence_response =
         {
           id: String,
           created_at: Time,
-          dependencies: ::Array[HubspotSDK::Automation::PublicSequenceStepDependencyResponse],
+          dependencies: ::Array[HubSpotSDK::Automation::PublicSequenceStepDependencyResponse],
           name: String,
-          steps: ::Array[HubspotSDK::Automation::PublicSequenceStepResponse],
+          steps: ::Array[HubSpotSDK::Automation::PublicSequenceStepResponse],
           updated_at: Time,
           user_id: String,
           folder_id: String,
-          settings: HubspotSDK::Automation::PublicSequenceSettingsResponse
+          settings: HubSpotSDK::Automation::PublicSequenceSettingsResponse
         }
 
-      class PublicSequenceResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
-        attr_accessor dependencies: ::Array[HubspotSDK::Automation::PublicSequenceStepDependencyResponse]
+        attr_accessor dependencies: ::Array[HubSpotSDK::Automation::PublicSequenceStepDependencyResponse]
 
         attr_accessor name: String
 
-        attr_accessor steps: ::Array[HubspotSDK::Automation::PublicSequenceStepResponse]
+        attr_accessor steps: ::Array[HubSpotSDK::Automation::PublicSequenceStepResponse]
 
         attr_accessor updated_at: Time
 
@@ -33,34 +33,34 @@ module HubspotSDK
 
         def folder_id=: (String) -> String
 
-        attr_reader settings: HubspotSDK::Automation::PublicSequenceSettingsResponse?
+        attr_reader settings: HubSpotSDK::Automation::PublicSequenceSettingsResponse?
 
         def settings=: (
-          HubspotSDK::Automation::PublicSequenceSettingsResponse
-        ) -> HubspotSDK::Automation::PublicSequenceSettingsResponse
+          HubSpotSDK::Automation::PublicSequenceSettingsResponse
+        ) -> HubSpotSDK::Automation::PublicSequenceSettingsResponse
 
         def initialize: (
           id: String,
           created_at: Time,
-          dependencies: ::Array[HubspotSDK::Automation::PublicSequenceStepDependencyResponse],
+          dependencies: ::Array[HubSpotSDK::Automation::PublicSequenceStepDependencyResponse],
           name: String,
-          steps: ::Array[HubspotSDK::Automation::PublicSequenceStepResponse],
+          steps: ::Array[HubSpotSDK::Automation::PublicSequenceStepResponse],
           updated_at: Time,
           user_id: String,
           ?folder_id: String,
-          ?settings: HubspotSDK::Automation::PublicSequenceSettingsResponse
+          ?settings: HubSpotSDK::Automation::PublicSequenceSettingsResponse
         ) -> void
 
         def to_hash: -> {
           id: String,
           created_at: Time,
-          dependencies: ::Array[HubspotSDK::Automation::PublicSequenceStepDependencyResponse],
+          dependencies: ::Array[HubSpotSDK::Automation::PublicSequenceStepDependencyResponse],
           name: String,
-          steps: ::Array[HubspotSDK::Automation::PublicSequenceStepResponse],
+          steps: ::Array[HubSpotSDK::Automation::PublicSequenceStepResponse],
           updated_at: Time,
           user_id: String,
           folder_id: String,
-          settings: HubspotSDK::Automation::PublicSequenceSettingsResponse
+          settings: HubSpotSDK::Automation::PublicSequenceSettingsResponse
         }
       end
     end

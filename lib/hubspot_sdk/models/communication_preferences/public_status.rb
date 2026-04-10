@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicStatus < HubspotSDK::Internal::Type::BaseModel
+      class PublicStatus < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute channel
         #   The type of communication channel, with 'EMAIL' as the only supported option.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::Channel]
-        required :channel, enum: -> { HubspotSDK::CommunicationPreferences::PublicStatus::Channel }
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::Channel]
+        required :channel, enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatus::Channel }
 
         # @!attribute source
         #   The origin or method through which the subscription status was set.
@@ -20,8 +20,8 @@ module HubspotSDK
         #   The current subscription status of the contact, which can be 'SUBSCRIBED',
         #   'UNSUBSCRIBED', or 'NOT_SPECIFIED'.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::Status]
-        required :status, enum: -> { HubspotSDK::CommunicationPreferences::PublicStatus::Status }
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::Status]
+        required :status, enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatus::Status }
 
         # @!attribute subscriber_id_string
         #   The contact's email address.
@@ -53,9 +53,9 @@ module HubspotSDK
         #   'PERFORMANCE_OF_CONTRACT', 'CONSENT_WITH_NOTICE', 'NON_GDPR',
         #   'PROCESS_AND_STORE', and 'LEGITIMATE_INTEREST_OTHER'.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::LegalBasis, nil]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::LegalBasis, nil]
         optional :legal_basis,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PublicStatus::LegalBasis },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatus::LegalBasis },
                  api_name: :legalBasis
 
         # @!attribute legal_basis_explanation
@@ -68,9 +68,9 @@ module HubspotSDK
         #   The reason for the successful change in subscription status, such as
         #   'RESUBSCRIBE_OCCURRED' or 'NO_STATUS_CHANGE'.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::SetStatusSuccessReason, nil]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::SetStatusSuccessReason, nil]
         optional :set_status_success_reason,
-                 enum: -> { HubspotSDK::CommunicationPreferences::PublicStatus::SetStatusSuccessReason },
+                 enum: -> { HubSpotSDK::CommunicationPreferences::PublicStatus::SetStatusSuccessReason },
                  api_name: :setStatusSuccessReason
 
         # @!attribute subscription_name
@@ -81,13 +81,13 @@ module HubspotSDK
 
         # @!method initialize(channel:, source:, status:, subscriber_id_string:, subscription_id:, timestamp:, business_unit_id: nil, legal_basis: nil, legal_basis_explanation: nil, set_status_success_reason: nil, subscription_name: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::PublicStatus} for more details.
+        #   {HubSpotSDK::Models::CommunicationPreferences::PublicStatus} for more details.
         #
-        #   @param channel [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::Channel] The type of communication channel, with 'EMAIL' as the only supported option.
+        #   @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::Channel] The type of communication channel, with 'EMAIL' as the only supported option.
         #
         #   @param source [String] The origin or method through which the subscription status was set.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::Status] The current subscription status of the contact, which can be 'SUBSCRIBED', 'UNSU
+        #   @param status [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::Status] The current subscription status of the contact, which can be 'SUBSCRIBED', 'UNSU
         #
         #   @param subscriber_id_string [String] The contact's email address.
         #
@@ -97,19 +97,19 @@ module HubspotSDK
         #
         #   @param business_unit_id [Integer] The ID of the business unit associated with the subscription.
         #
-        #   @param legal_basis [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::LegalBasis] The legal basis for communication, with options including 'LEGITIMATE_INTEREST_P
+        #   @param legal_basis [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::LegalBasis] The legal basis for communication, with options including 'LEGITIMATE_INTEREST_P
         #
         #   @param legal_basis_explanation [String] An explanation for the legal basis used for communication.
         #
-        #   @param set_status_success_reason [Symbol, HubspotSDK::Models::CommunicationPreferences::PublicStatus::SetStatusSuccessReason] The reason for the successful change in subscription status, such as 'RESUBSCRIB
+        #   @param set_status_success_reason [Symbol, HubSpotSDK::Models::CommunicationPreferences::PublicStatus::SetStatusSuccessReason] The reason for the successful change in subscription status, such as 'RESUBSCRIB
         #
         #   @param subscription_name [String] The name of the subscription.
 
         # The type of communication channel, with 'EMAIL' as the only supported option.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatus#channel
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatus#channel
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EMAIL = :EMAIL
 
@@ -120,9 +120,9 @@ module HubspotSDK
         # The current subscription status of the contact, which can be 'SUBSCRIBED',
         # 'UNSUBSCRIBED', or 'NOT_SPECIFIED'.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatus#status
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatus#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_SPECIFIED = :NOT_SPECIFIED
           SUBSCRIBED = :SUBSCRIBED
@@ -137,9 +137,9 @@ module HubspotSDK
         # 'PERFORMANCE_OF_CONTRACT', 'CONSENT_WITH_NOTICE', 'NON_GDPR',
         # 'PROCESS_AND_STORE', and 'LEGITIMATE_INTEREST_OTHER'.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatus#legal_basis
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatus#legal_basis
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE = :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT = :LEGITIMATE_INTEREST_CLIENT
@@ -156,9 +156,9 @@ module HubspotSDK
         # The reason for the successful change in subscription status, such as
         # 'RESUBSCRIBE_OCCURRED' or 'NO_STATUS_CHANGE'.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::PublicStatus#set_status_success_reason
+        # @see HubSpotSDK::Models::CommunicationPreferences::PublicStatus#set_status_success_reason
         module SetStatusSuccessReason
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NO_STATUS_CHANGE = :NO_STATUS_CHANGE
           REQUESTED_CHANGE_OCCURRED = :REQUESTED_CHANGE_OCCURRED

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class MarkRecordingAsReadyRequest < HubspotSDK::Internal::Type::BaseModel
+        class MarkRecordingAsReadyRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute engagement_id
           #   The unique identifier for the engagement associated with the call recording.
           #

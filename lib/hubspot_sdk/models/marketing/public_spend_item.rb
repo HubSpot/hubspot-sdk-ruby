@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicSpendItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicSpendItem < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Unique identifier for the spend item.
         #

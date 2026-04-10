@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class MembershipsUpdateResponse < HubspotSDK::Internal::Type::BaseModel
+      class MembershipsUpdateResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::MembershipsUpdateResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::MembershipsUpdateResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

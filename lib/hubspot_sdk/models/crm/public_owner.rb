@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Owners#list
-      class PublicOwner < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Owners#list
+      class PublicOwner < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the owner.
         #
@@ -15,7 +15,7 @@ module HubspotSDK
         #   Indicates whether the owner is archived.
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   The date and time when the owner was created.
@@ -26,8 +26,8 @@ module HubspotSDK
         # @!attribute type
         #   The type of the owner, which can be either PERSON or QUEUE.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicOwner::Type]
-        required :type, enum: -> { HubspotSDK::Crm::PublicOwner::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicOwner::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::PublicOwner::Type }
 
         # @!attribute updated_at
         #   The date and time when the owner was last updated.
@@ -55,8 +55,8 @@ module HubspotSDK
 
         # @!attribute teams
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicTeam>, nil]
-        optional :teams, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicTeam] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicTeam>, nil]
+        optional :teams, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicTeam] }
 
         # @!attribute user_id
         #   The user ID of the owner.
@@ -77,7 +77,7 @@ module HubspotSDK
         #
         #   @param created_at [Time] The date and time when the owner was created.
         #
-        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicOwner::Type] The type of the owner, which can be either PERSON or QUEUE.
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::PublicOwner::Type] The type of the owner, which can be either PERSON or QUEUE.
         #
         #   @param updated_at [Time] The date and time when the owner was last updated.
         #
@@ -87,7 +87,7 @@ module HubspotSDK
         #
         #   @param last_name [String] The last name of the owner.
         #
-        #   @param teams [Array<HubspotSDK::Models::Crm::PublicTeam>]
+        #   @param teams [Array<HubSpotSDK::Models::Crm::PublicTeam>]
         #
         #   @param user_id [Integer] The user ID of the owner.
         #
@@ -95,9 +95,9 @@ module HubspotSDK
 
         # The type of the owner, which can be either PERSON or QUEUE.
         #
-        # @see HubspotSDK::Models::Crm::PublicOwner#type
+        # @see HubSpotSDK::Models::Crm::PublicOwner#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           PERSON = :PERSON
           QUEUE = :QUEUE

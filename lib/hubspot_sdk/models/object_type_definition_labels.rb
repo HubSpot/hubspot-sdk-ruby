@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class ObjectTypeDefinitionLabels < HubspotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinitionLabels < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute plural
       #
       #   @return [String, nil]

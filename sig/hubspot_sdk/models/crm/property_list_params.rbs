@@ -1,19 +1,19 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type property_list_params =
         {
           object_type: String,
           archived: bool,
-          data_sensitivity: HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity,
+          data_sensitivity: HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity,
           locale: String,
           properties: String
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class PropertyListParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PropertyListParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor object_type: String
 
@@ -21,11 +21,11 @@ module HubspotSDK
 
         def archived=: (bool) -> bool
 
-        attr_reader data_sensitivity: HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity?
+        attr_reader data_sensitivity: HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity?
 
         def data_sensitivity=: (
-          HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity
-        ) -> HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity
+          HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity
+        ) -> HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity
 
         attr_reader locale: String?
 
@@ -38,31 +38,31 @@ module HubspotSDK
         def initialize: (
           object_type: String,
           ?archived: bool,
-          ?data_sensitivity: HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity,
+          ?data_sensitivity: HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity,
           ?locale: String,
           ?properties: String,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_type: String,
           archived: bool,
-          data_sensitivity: HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity,
+          data_sensitivity: HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity,
           locale: String,
           properties: String,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type data_sensitivity = :highly_sensitive | :non_sensitive | :sensitive
 
         module DataSensitivity
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIGHLY_SENSITIVE: :highly_sensitive
           NON_SENSITIVE: :non_sensitive
           SENSITIVE: :sensitive
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PropertyListParams::data_sensitivity]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertyListParams::data_sensitivity]
         end
       end
     end

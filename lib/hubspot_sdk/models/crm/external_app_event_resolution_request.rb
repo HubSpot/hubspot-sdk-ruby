@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ExternalAppEventResolutionRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalAppEventResolutionRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute developer_symbol
         #
         #   @return [String]

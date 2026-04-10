@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_legal_consent_options =
         {
-          communication_consent_checkboxes: ::Array[HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
+          communication_consent_checkboxes: ::Array[HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
           communication_consent_text: String,
           is_legitimate_interest: bool,
           legitimate_interest_subscription_types: ::Array[Integer],
@@ -11,12 +11,12 @@ module HubspotSDK
           processing_consent_checkbox_label: String,
           processing_consent_footer_text: String,
           processing_consent_text: String,
-          processing_consent_type: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
-          legitimate_interest_legal_basis: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
+          processing_consent_type: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
+          legitimate_interest_legal_basis: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
         }
 
-      class ExternalLegalConsentOptions < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor communication_consent_checkboxes: ::Array[HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox]
+      class ExternalLegalConsentOptions < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor communication_consent_checkboxes: ::Array[HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox]
 
         attr_accessor communication_consent_text: String
 
@@ -32,16 +32,16 @@ module HubspotSDK
 
         attr_accessor processing_consent_text: String
 
-        attr_accessor processing_consent_type: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type
+        attr_accessor processing_consent_type: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type
 
-        attr_reader legitimate_interest_legal_basis: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis?
+        attr_reader legitimate_interest_legal_basis: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis?
 
         def legitimate_interest_legal_basis=: (
-          HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
-        ) -> HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
+          HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
+        ) -> HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
 
         def initialize: (
-          communication_consent_checkboxes: ::Array[HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
+          communication_consent_checkboxes: ::Array[HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
           communication_consent_text: String,
           is_legitimate_interest: bool,
           legitimate_interest_subscription_types: ::Array[Integer],
@@ -49,12 +49,12 @@ module HubspotSDK
           processing_consent_checkbox_label: String,
           processing_consent_footer_text: String,
           processing_consent_text: String,
-          processing_consent_type: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
-          ?legitimate_interest_legal_basis: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
+          processing_consent_type: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
+          ?legitimate_interest_legal_basis: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
         ) -> void
 
         def to_hash: -> {
-          communication_consent_checkboxes: ::Array[HubspotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
+          communication_consent_checkboxes: ::Array[HubSpotSDK::Scheduler::ExternalCommunicationConsentCheckbox],
           communication_consent_text: String,
           is_legitimate_interest: bool,
           legitimate_interest_subscription_types: ::Array[Integer],
@@ -62,19 +62,19 @@ module HubspotSDK
           processing_consent_checkbox_label: String,
           processing_consent_footer_text: String,
           processing_consent_text: String,
-          processing_consent_type: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
-          legitimate_interest_legal_basis: HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
+          processing_consent_type: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type,
+          legitimate_interest_legal_basis: HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis
         }
 
         type processing_consent_type = :IMPLICIT | :REQUIRED_CHECKBOX
 
         module ProcessingConsentType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IMPLICIT: :IMPLICIT
           REQUIRED_CHECKBOX: :REQUIRED_CHECKBOX
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::processing_consent_type]
         end
 
         type legitimate_interest_legal_basis =
@@ -87,7 +87,7 @@ module HubspotSDK
           | :PROCESS_AND_STORE
 
         module LegitimateInterestLegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSENT_WITH_NOTICE: :CONSENT_WITH_NOTICE
           LEGITIMATE_INTEREST_CLIENT: :LEGITIMATE_INTEREST_CLIENT
@@ -97,7 +97,7 @@ module HubspotSDK
           PERFORMANCE_OF_CONTRACT: :PERFORMANCE_OF_CONTRACT
           PROCESS_AND_STORE: :PROCESS_AND_STORE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalLegalConsentOptions::legitimate_interest_legal_basis]
         end
       end
     end

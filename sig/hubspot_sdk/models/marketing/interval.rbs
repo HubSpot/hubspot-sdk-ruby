@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type interval = { end_: Time, start: Time }
 
-      class Interval < HubspotSDK::Internal::Type::BaseModel
+      class Interval < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor end_: Time
 
         attr_accessor start: Time

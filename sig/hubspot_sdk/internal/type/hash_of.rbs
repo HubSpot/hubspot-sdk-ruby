@@ -1,14 +1,14 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       class HashOf[Elem]
-        include HubspotSDK::Internal::Type::Converter
-        include HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        include HubSpotSDK::Internal::Type::Converter
+        include HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         def self.[]: (
           ::Hash[Symbol, top]
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input type_info,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input type_info,
           ?::Hash[Symbol, top] spec
         ) -> instance
 
@@ -20,12 +20,12 @@ module HubspotSDK
 
         def coerce: (
           ::Hash[top, top] | top value,
-          state: HubspotSDK::Internal::Type::Converter::coerce_state
+          state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> (::Hash[Symbol, top] | top)
 
         def dump: (
           ::Hash[top, top] | top value,
-          state: HubspotSDK::Internal::Type::Converter::dump_state
+          state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> (::Hash[Symbol, top] | top)
 
         def to_sorbet_type: -> top
@@ -36,8 +36,8 @@ module HubspotSDK
 
         def initialize: (
           ::Hash[Symbol, top]
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input type_info,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input type_info,
           ?::Hash[Symbol, top] spec
         ) -> void
 

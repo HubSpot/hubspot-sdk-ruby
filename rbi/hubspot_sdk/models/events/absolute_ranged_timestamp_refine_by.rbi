@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class AbsoluteRangedTimestampRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class AbsoluteRangedTimestampRefineBy < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,14 +17,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
+            HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
           )
         end
         attr_accessor :range_type
 
         sig do
           returns(
-            HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
+            HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
           )
         end
         attr_accessor :type
@@ -36,9 +36,9 @@ module HubspotSDK
           params(
             lower_timestamp: Integer,
             range_type:
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::OrSymbol,
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::OrSymbol,
             type:
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::OrSymbol,
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::OrSymbol,
             upper_timestamp: Integer
           ).returns(T.attached_class)
         end
@@ -50,9 +50,9 @@ module HubspotSDK
             {
               lower_timestamp: Integer,
               range_type:
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol,
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol,
               type:
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol,
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol,
               upper_timestamp: Integer
             }
           )
@@ -61,13 +61,13 @@ module HubspotSDK
         end
 
         module RangeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -75,18 +75,18 @@ module HubspotSDK
           BETWEEN =
             T.let(
               :BETWEEN,
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
             )
           NOT_BETWEEN =
             T.let(
               :NOT_BETWEEN,
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::RangeType::TaggedSymbol
               ]
             )
           end
@@ -95,13 +95,13 @@ module HubspotSDK
         end
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -109,13 +109,13 @@ module HubspotSDK
           ABSOLUTE_RANGED_TIMESTAMP_REFINE_BY =
             T.let(
               :AbsoluteRangedTimestampRefineBy,
-              HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
+              HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
+                HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy::Type::TaggedSymbol
               ]
             )
           end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_branding_metadata =
@@ -24,7 +24,7 @@ module HubspotSDK
           secondary_color: String
         }
 
-      class ExternalBrandingMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBrandingMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor logo_alt_text: String
 
         attr_accessor show_marketing_ad: bool

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class DealToDealSplits < HubspotSDK::Internal::Type::BaseModel
+      class DealToDealSplits < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the deal associated with the deal splits.
         #
@@ -14,16 +14,16 @@ module HubspotSDK
         #   An array of deal split objects, each representing a portion of the deal assigned
         #   to an owner.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::SimplePublicObject>]
-        required :splits, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::SimplePublicObject] }
+        #   @return [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
+        required :splits, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject] }
 
         # @!method initialize(id:, splits:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::DealToDealSplits} for more details.
+        #   {HubSpotSDK::Models::Crm::DealToDealSplits} for more details.
         #
         #   @param id [String] The unique identifier for the deal associated with the deal splits.
         #
-        #   @param splits [Array<HubspotSDK::Models::Crm::SimplePublicObject>] An array of deal split objects, each representing a portion of the deal assigned
+        #   @param splits [Array<HubSpotSDK::Models::Crm::SimplePublicObject>] An array of deal split objects, each representing a portion of the deal assigned
       end
     end
   end

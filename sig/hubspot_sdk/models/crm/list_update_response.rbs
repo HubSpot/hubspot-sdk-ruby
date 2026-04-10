@@ -1,21 +1,21 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type list_update_response =
-        { updated_list: HubspotSDK::Crm::PublicObjectList }
+        { updated_list: HubSpotSDK::Crm::PublicObjectList }
 
-      class ListUpdateResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_reader updated_list: HubspotSDK::Crm::PublicObjectList?
+      class ListUpdateResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_reader updated_list: HubSpotSDK::Crm::PublicObjectList?
 
         def updated_list=: (
-          HubspotSDK::Crm::PublicObjectList
-        ) -> HubspotSDK::Crm::PublicObjectList
+          HubSpotSDK::Crm::PublicObjectList
+        ) -> HubSpotSDK::Crm::PublicObjectList
 
         def initialize: (
-          ?updated_list: HubspotSDK::Crm::PublicObjectList
+          ?updated_list: HubSpotSDK::Crm::PublicObjectList
         ) -> void
 
-        def to_hash: -> { updated_list: HubspotSDK::Crm::PublicObjectList }
+        def to_hash: -> { updated_list: HubSpotSDK::Crm::PublicObjectList }
       end
     end
   end

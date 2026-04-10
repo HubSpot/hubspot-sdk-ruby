@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        class PartnerServiceListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class PartnerServiceListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Objects::PartnerServiceListParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Objects::PartnerServiceListParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -44,7 +44,7 @@ module HubspotSDK
               to_object_type: String,
               after: String,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -67,7 +67,7 @@ module HubspotSDK
                 to_object_type: String,
                 after: String,
                 limit: Integer,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

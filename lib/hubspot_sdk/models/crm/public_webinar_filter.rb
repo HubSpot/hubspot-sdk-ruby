@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicWebinarFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicWebinarFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Indicates the type of filter, (WEBINAR).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicWebinarFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicWebinarFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicWebinarFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicWebinarFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
@@ -28,9 +28,9 @@ module HubspotSDK
 
         # @!method initialize(filter_type:, operator:, webinar_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicWebinarFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicWebinarFilter} for more details.
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicWebinarFilter::FilterType] Indicates the type of filter, (WEBINAR).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicWebinarFilter::FilterType] Indicates the type of filter, (WEBINAR).
         #
         #   @param operator [String] Specifies the operation to be performed by the filter (HAS_WEBINAR_REGISTRATION,
         #
@@ -38,9 +38,9 @@ module HubspotSDK
 
         # Indicates the type of filter, (WEBINAR).
         #
-        # @see HubspotSDK::Models::Crm::PublicWebinarFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicWebinarFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WEBINAR = :WEBINAR
 

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type rgba_color = { a: Float, b: Integer, g: Integer, r: Integer }
 
-      class RgbaColor < HubspotSDK::Internal::Type::BaseModel
+      class RgbaColor < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor a: Float
 
         attr_accessor b: Integer

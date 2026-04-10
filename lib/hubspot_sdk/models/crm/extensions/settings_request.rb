@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class SettingsRequest < HubspotSDK::Internal::Type::BaseModel
+        class SettingsRequest < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute height
           #   Specifies the height of the calling extension interface.
           #
@@ -15,7 +15,7 @@ module HubspotSDK
           #   Indicates if the calling extension is ready for use.
           #
           #   @return [Boolean]
-          required :is_ready, HubspotSDK::Internal::Type::Boolean, api_name: :isReady
+          required :is_ready, HubSpotSDK::Internal::Type::Boolean, api_name: :isReady
 
           # @!attribute name
           #   The name of the calling extension.
@@ -28,7 +28,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :supports_custom_objects,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :supportsCustomObjects
 
           # @!attribute supports_inbound_calling
@@ -36,7 +36,7 @@ module HubspotSDK
           #
           #   @return [Boolean]
           required :supports_inbound_calling,
-                   HubspotSDK::Internal::Type::Boolean,
+                   HubSpotSDK::Internal::Type::Boolean,
                    api_name: :supportsInboundCalling
 
           # @!attribute url
@@ -49,13 +49,13 @@ module HubspotSDK
           #   Indicates if the calling extension uses a separate calling window.
           #
           #   @return [Boolean]
-          required :uses_calling_window, HubspotSDK::Internal::Type::Boolean, api_name: :usesCallingWindow
+          required :uses_calling_window, HubSpotSDK::Internal::Type::Boolean, api_name: :usesCallingWindow
 
           # @!attribute uses_remote
           #   Indicates if the calling extension uses remote services.
           #
           #   @return [Boolean]
-          required :uses_remote, HubspotSDK::Internal::Type::Boolean, api_name: :usesRemote
+          required :uses_remote, HubSpotSDK::Internal::Type::Boolean, api_name: :usesRemote
 
           # @!attribute width
           #   Specifies the width of the calling extension interface.

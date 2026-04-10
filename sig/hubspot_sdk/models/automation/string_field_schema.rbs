@@ -1,45 +1,45 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type string_field_schema =
         {
-          type: HubspotSDK::Models::Automation::StringFieldSchema::type_,
-          format_: HubspotSDK::Models::Automation::StringFieldSchema::format_
+          type: HubSpotSDK::Models::Automation::StringFieldSchema::type_,
+          format_: HubSpotSDK::Models::Automation::StringFieldSchema::format_
         }
 
-      class StringFieldSchema < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Automation::StringFieldSchema::type_
+      class StringFieldSchema < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Automation::StringFieldSchema::type_
 
-        attr_reader format_: HubspotSDK::Models::Automation::StringFieldSchema::format_?
+        attr_reader format_: HubSpotSDK::Models::Automation::StringFieldSchema::format_?
 
         def format_=: (
-          HubspotSDK::Models::Automation::StringFieldSchema::format_
-        ) -> HubspotSDK::Models::Automation::StringFieldSchema::format_
+          HubSpotSDK::Models::Automation::StringFieldSchema::format_
+        ) -> HubSpotSDK::Models::Automation::StringFieldSchema::format_
 
         def initialize: (
-          type: HubspotSDK::Models::Automation::StringFieldSchema::type_,
-          ?format_: HubspotSDK::Models::Automation::StringFieldSchema::format_
+          type: HubSpotSDK::Models::Automation::StringFieldSchema::type_,
+          ?format_: HubSpotSDK::Models::Automation::StringFieldSchema::format_
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Automation::StringFieldSchema::type_,
-          format_: HubspotSDK::Models::Automation::StringFieldSchema::format_
+          type: HubSpotSDK::Models::Automation::StringFieldSchema::type_,
+          format_: HubSpotSDK::Models::Automation::StringFieldSchema::format_
         }
 
         type type_ = :STRING
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING: :STRING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::StringFieldSchema::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::StringFieldSchema::type_]
         end
 
         type format_ = :DATE | :DATE_TIME | :OBJECT_COORDINATE | :TIME | :URI
 
         module Format
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE: :DATE
           DATE_TIME: :DATE_TIME
@@ -47,7 +47,7 @@ module HubspotSDK
           TIME: :TIME
           URI: :URI
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Automation::StringFieldSchema::format_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Automation::StringFieldSchema::format_]
         end
       end
     end

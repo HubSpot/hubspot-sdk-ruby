@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class MembershipChangeRequest < HubspotSDK::Internal::Type::BaseModel
+      class MembershipChangeRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute record_ids_to_add
         #
         #   @return [Array<String>]
-        required :record_ids_to_add, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :recordIdsToAdd
+        required :record_ids_to_add, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :recordIdsToAdd
 
         # @!attribute record_ids_to_remove
         #
         #   @return [Array<String>]
         required :record_ids_to_remove,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :recordIdsToRemove
 
         # @!method initialize(record_ids_to_add:, record_ids_to_remove:)

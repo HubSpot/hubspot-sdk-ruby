@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -10,14 +10,14 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
       @hubspot.marketing.transactional.smtp_tokens.create(campaign_name: "campaignName", create_contact: true)
 
     assert_pattern do
-      response => HubspotSDK::Marketing::SmtpAPITokenView
+      response => HubSpotSDK::Marketing::SmtpAPITokenView
     end
 
     assert_pattern do
       response => {
         id: String,
         campaign_name: String,
-        create_contact: HubspotSDK::Internal::Type::Boolean,
+        create_contact: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         created_by: String,
         email_campaign_id: String,
@@ -32,21 +32,21 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
     response = @hubspot.marketing.transactional.smtp_tokens.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Marketing::SmtpAPITokenView
+      row => HubSpotSDK::Marketing::SmtpAPITokenView
     end
 
     assert_pattern do
       row => {
         id: String,
         campaign_name: String,
-        create_contact: HubspotSDK::Internal::Type::Boolean,
+        create_contact: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         created_by: String,
         email_campaign_id: String,
@@ -71,14 +71,14 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
     response = @hubspot.marketing.transactional.smtp_tokens.get("tokenId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::SmtpAPITokenView
+      response => HubSpotSDK::Marketing::SmtpAPITokenView
     end
 
     assert_pattern do
       response => {
         id: String,
         campaign_name: String,
-        create_contact: HubspotSDK::Internal::Type::Boolean,
+        create_contact: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         created_by: String,
         email_campaign_id: String,
@@ -93,14 +93,14 @@ class HubspotSDK::Test::Resources::Marketing::Transactional::SmtpTokensTest < Hu
     response = @hubspot.marketing.transactional.smtp_tokens.reset_password("tokenId")
 
     assert_pattern do
-      response => HubspotSDK::Marketing::SmtpAPITokenView
+      response => HubSpotSDK::Marketing::SmtpAPITokenView
     end
 
     assert_pattern do
       response => {
         id: String,
         campaign_name: String,
-        create_contact: HubspotSDK::Internal::Type::Boolean,
+        create_contact: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         created_by: String,
         email_campaign_id: String,

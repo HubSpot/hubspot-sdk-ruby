@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Auth::OAuthTest < HubSpotSDK::Test::ResourceTest
   def test_create_token
     skip("Mock server tests are disabled")
 
@@ -19,13 +19,13 @@ class HubspotSDK::Test::Resources::Auth::OAuthTest < HubspotSDK::Test::ResourceT
     response = @hubspot.auth.oauth.introspect_token
 
     assert_pattern do
-      response => HubspotSDK::Auth::TokenInfoResponseBaseIf
+      response => HubSpotSDK::Auth::TokenInfoResponseBaseIf
     end
 
     assert_pattern do
       case response
-      in HubspotSDK::Auth::PublicAccessTokenInfoResponse
-      in HubspotSDK::Auth::PublicRefreshTokenInfoResponse
+      in HubSpotSDK::Auth::PublicAccessTokenInfoResponse
+      in HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
       end
     end
   end

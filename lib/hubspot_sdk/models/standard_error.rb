@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class StandardError < HubspotSDK::Internal::Type::BaseModel
+    class StandardError < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute category
       #   Error category.
       #
@@ -13,19 +13,19 @@ module HubspotSDK
       #   Error context.
       #
       #   @return [Hash{Symbol=>Array<String>}]
-      required :context, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
+      required :context, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[String]]
 
       # @!attribute errors
       #   List of error details.
       #
-      #   @return [Array<HubspotSDK::Models::ErrorDetail>]
-      required :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::ErrorDetail] }
+      #   @return [Array<HubSpotSDK::Models::ErrorDetail>]
+      required :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::ErrorDetail] }
 
       # @!attribute links
       #   Error links.
       #
       #   @return [Hash{Symbol=>String}]
-      required :links, HubspotSDK::Internal::Type::HashOf[String]
+      required :links, HubSpotSDK::Internal::Type::HashOf[String]
 
       # @!attribute message
       #   Error message.
@@ -49,7 +49,7 @@ module HubspotSDK
       #   Error subcategory.
       #
       #   @return [Object, nil]
-      optional :sub_category, HubspotSDK::Internal::Type::Unknown, api_name: :subCategory
+      optional :sub_category, HubSpotSDK::Internal::Type::Unknown, api_name: :subCategory
 
       # @!method initialize(category:, context:, errors:, links:, message:, status:, id: nil, sub_category: nil)
       #   Ye olde error
@@ -58,7 +58,7 @@ module HubspotSDK
       #
       #   @param context [Hash{Symbol=>Array<String>}] Error context.
       #
-      #   @param errors [Array<HubspotSDK::Models::ErrorDetail>] List of error details.
+      #   @param errors [Array<HubSpotSDK::Models::ErrorDetail>] List of error details.
       #
       #   @param links [Hash{Symbol=>String}] Error links.
       #

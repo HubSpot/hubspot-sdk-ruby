@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Extensions::CallingTest < HubSpotSDK::Test::ResourceTest
   def test_create_channel_connection_settings_required_params
     skip("Mock server tests are disabled")
 
@@ -10,13 +10,13 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
       @hubspot.crm.extensions.calling.create_channel_connection_settings(0, is_ready: true, url: "url")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String
       }
@@ -38,12 +38,12 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+      response => HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
     end
 
     assert_pattern do
       response => {
-        caller_id_matches: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch])
+        caller_id_matches: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch])
       }
     end
   end
@@ -68,7 +68,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do
@@ -96,21 +96,21 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::SettingsResponse
+      response => HubSpotSDK::Crm::Extensions::SettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
         height: Integer,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        supports_custom_objects: HubspotSDK::Internal::Type::Boolean,
-        supports_inbound_calling: HubspotSDK::Internal::Type::Boolean,
+        supports_custom_objects: HubSpotSDK::Internal::Type::Boolean,
+        supports_inbound_calling: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String,
-        uses_calling_window: HubspotSDK::Internal::Type::Boolean,
-        uses_remote: HubspotSDK::Internal::Type::Boolean,
+        uses_calling_window: HubSpotSDK::Internal::Type::Boolean,
+        uses_remote: HubSpotSDK::Internal::Type::Boolean,
         width: Integer
       }
     end
@@ -142,13 +142,13 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.get_channel_connection_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String
       }
@@ -161,7 +161,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.get_recording_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do
@@ -177,21 +177,21 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.get_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::SettingsResponse
+      response => HubSpotSDK::Crm::Extensions::SettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
         height: Integer,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        supports_custom_objects: HubspotSDK::Internal::Type::Boolean,
-        supports_inbound_calling: HubspotSDK::Internal::Type::Boolean,
+        supports_custom_objects: HubSpotSDK::Internal::Type::Boolean,
+        supports_inbound_calling: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String,
-        uses_calling_window: HubspotSDK::Internal::Type::Boolean,
-        uses_remote: HubspotSDK::Internal::Type::Boolean,
+        uses_calling_window: HubSpotSDK::Internal::Type::Boolean,
+        uses_remote: HubSpotSDK::Internal::Type::Boolean,
         width: Integer
       }
     end
@@ -203,13 +203,13 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.update_channel_connection_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String
       }
@@ -222,7 +222,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.update_recording_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::RecordingSettingsResponse
+      response => HubSpotSDK::Crm::Extensions::RecordingSettingsResponse
     end
 
     assert_pattern do
@@ -238,21 +238,21 @@ class HubspotSDK::Test::Resources::Crm::Extensions::CallingTest < HubspotSDK::Te
     response = @hubspot.crm.extensions.calling.update_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::SettingsResponse
+      response => HubSpotSDK::Crm::Extensions::SettingsResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
         height: Integer,
-        is_ready: HubspotSDK::Internal::Type::Boolean,
+        is_ready: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        supports_custom_objects: HubspotSDK::Internal::Type::Boolean,
-        supports_inbound_calling: HubspotSDK::Internal::Type::Boolean,
+        supports_custom_objects: HubSpotSDK::Internal::Type::Boolean,
+        supports_inbound_calling: HubSpotSDK::Internal::Type::Boolean,
         updated_at: Time,
         url: String,
-        uses_calling_window: HubspotSDK::Internal::Type::Boolean,
-        uses_remote: HubspotSDK::Internal::Type::Boolean,
+        uses_calling_window: HubSpotSDK::Internal::Type::Boolean,
+        uses_remote: HubSpotSDK::Internal::Type::Boolean,
         width: Integer
       }
     end

@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       #
       # Either `Pathname` or `StringIO`, or `IO`, or
-      # `HubspotSDK::Internal::Type::FileInput`.
+      # `HubSpotSDK::Internal::Type::FileInput`.
       #
       # Note: when `IO` is used, all retries are disabled, since many IO` streams are
       # not rewindable.
       class FileInput
-        extend HubspotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Type::Converter
 
         abstract!
 
@@ -29,7 +29,7 @@ module HubspotSDK
             override
               .params(
                 value: T.any(StringIO, String, T.anything),
-                state: HubspotSDK::Internal::Type::Converter::CoerceState
+                state: HubSpotSDK::Internal::Type::Converter::CoerceState
               )
               .returns(T.any(StringIO, T.anything))
           end
@@ -41,7 +41,7 @@ module HubspotSDK
             override
               .params(
                 value: T.any(Pathname, StringIO, IO, String, T.anything),
-                state: HubspotSDK::Internal::Type::Converter::DumpState
+                state: HubSpotSDK::Internal::Type::Converter::DumpState
               )
               .returns(T.any(Pathname, StringIO, IO, String, T.anything))
           end

@@ -1,30 +1,30 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CollectionResponsePublicOwnerForwardPaging < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponsePublicOwnerForwardPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CollectionResponsePublicOwnerForwardPaging,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CollectionResponsePublicOwnerForwardPaging,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicOwner]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicOwner]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::ForwardPaging)) }
+        sig { returns(T.nilable(HubSpotSDK::ForwardPaging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::ForwardPaging::OrHash).void }
+        sig { params(paging: HubSpotSDK::ForwardPaging::OrHash).void }
         attr_writer :paging
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Crm::PublicOwner::OrHash],
-            paging: HubspotSDK::ForwardPaging::OrHash
+            results: T::Array[HubSpotSDK::Crm::PublicOwner::OrHash],
+            paging: HubSpotSDK::ForwardPaging::OrHash
           ).returns(T.attached_class)
         end
         def self.new(results:, paging: nil)
@@ -33,8 +33,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Crm::PublicOwner],
-              paging: HubspotSDK::ForwardPaging
+              results: T::Array[HubSpotSDK::Crm::PublicOwner],
+              paging: HubSpotSDK::ForwardPaging
             }
           )
         end

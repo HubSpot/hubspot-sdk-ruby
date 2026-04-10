@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicInListFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicInListFilterMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The identifier for the filter metadata.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
 
         # @!method initialize(id:, in_list_type:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicInListFilterMetadata} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicInListFilterMetadata} for more details.
         #
         #   @param id [String] The identifier for the filter metadata.
         #

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      # @see HubspotSDK::Resources::Marketing::Campaigns#create
-      class PublicCampaign < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Marketing::Campaigns#create
+      class PublicCampaign < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the campaign.
         #
@@ -15,9 +15,9 @@ module HubspotSDK
         #   An array of business units associated with the campaign, each represented by a
         #   PublicBusinessUnit object.
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::PublicBusinessUnit>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::PublicBusinessUnit>]
         required :business_units,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::PublicBusinessUnit] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicBusinessUnit] },
                  api_name: :businessUnits
 
         # @!attribute created_at
@@ -32,7 +32,7 @@ module HubspotSDK
         #   campaign.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute updated_at
         #   The date and time when the campaign was last updated, formatted as a date-time
@@ -43,11 +43,11 @@ module HubspotSDK
 
         # @!method initialize(id:, business_units:, created_at:, properties:, updated_at:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicCampaign} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicCampaign} for more details.
         #
         #   @param id [String] The unique identifier for the campaign.
         #
-        #   @param business_units [Array<HubspotSDK::Models::Marketing::PublicBusinessUnit>] An array of business units associated with the campaign, each represented by a P
+        #   @param business_units [Array<HubSpotSDK::Models::Marketing::PublicBusinessUnit>] An array of business units associated with the campaign, each represented by a P
         #
         #   @param created_at [Time] The date and time when the campaign was created, formatted as a date-time string
         #

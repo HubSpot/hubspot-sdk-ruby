@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class CollectionResponseWithTotalDomain < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalDomain < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   The results of the query.
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Domain>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Domain] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Domain>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Domain] }
 
         # @!attribute total
         #   The number of available results.
@@ -18,15 +18,15 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Cms::Domain>] The results of the query.
+        #   @param results [Array<HubSpotSDK::Models::Cms::Domain>] The results of the query.
         #
         #   @param total [Integer] The number of available results.
         #
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_booking_form_field = { name: String, value: String }
 
-      class ExternalBookingFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBookingFormField < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor name: String
 
         attr_accessor value: String

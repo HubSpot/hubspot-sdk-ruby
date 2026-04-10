@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalBrandingMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBrandingMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute logo_alt_text
         #   The alternative text for the current logo.
         #
@@ -14,13 +14,13 @@ module HubspotSDK
         #   Whether Hubspot Marketing ads are shown.
         #
         #   @return [Boolean]
-        required :show_marketing_ad, HubspotSDK::Internal::Type::Boolean, api_name: :showMarketingAd
+        required :show_marketing_ad, HubSpotSDK::Internal::Type::Boolean, api_name: :showMarketingAd
 
         # @!attribute show_sales_ad
         #   Whether Hubspot Sales ads are shown.
         #
         #   @return [Boolean]
-        required :show_sales_ad, HubspotSDK::Internal::Type::Boolean, api_name: :showSalesAd
+        required :show_sales_ad, HubSpotSDK::Internal::Type::Boolean, api_name: :showSalesAd
 
         # @!attribute accent2_color
         #   The secondary accent color used in branding.

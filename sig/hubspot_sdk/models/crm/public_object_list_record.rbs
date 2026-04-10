@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_object_list_record = { list_id: String, object_type: String }
 
-      class PublicObjectListRecord < HubspotSDK::Internal::Type::BaseModel
+      class PublicObjectListRecord < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_id: String
 
         attr_accessor object_type: String

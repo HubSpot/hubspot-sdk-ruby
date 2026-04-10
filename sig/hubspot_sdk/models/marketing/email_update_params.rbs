@@ -1,13 +1,13 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type email_update_params =
         { email_id: String, query_archived: bool }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class EmailUpdateParams < HubspotSDK::Models::Marketing::EmailUpdateRequest
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class EmailUpdateParams < HubSpotSDK::Models::Marketing::EmailUpdateRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def email_id: -> String
 
@@ -20,13 +20,13 @@ module HubspotSDK
         def initialize: (
           email_id: String,
           ?query_archived: bool,
-          ?request_options: HubspotSDK::request_opts
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           email_id: String,
           query_archived: bool,
-          request_options: HubspotSDK::RequestOptions
+          request_options: HubSpotSDK::RequestOptions
         }
       end
     end

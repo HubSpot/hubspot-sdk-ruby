@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Definitions#create
-      class ExternalBehavioralEventTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Events::Definitions#create
+      class ExternalBehavioralEventTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -13,13 +13,13 @@ module HubspotSDK
         # @!attribute archived
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute associations
         #
-        #   @return [Array<HubspotSDK::Models::Events::AssociationDefinition>]
+        #   @return [Array<HubSpotSDK::Models::Events::AssociationDefinition>]
         required :associations,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::AssociationDefinition] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #
@@ -28,8 +28,8 @@ module HubspotSDK
 
         # @!attribute labels
         #
-        #   @return [HubspotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
-        required :labels, -> { HubspotSDK::Events::BehavioralEventTypeDefinitionLabels }
+        #   @return [HubSpotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
+        required :labels, -> { HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels }
 
         # @!attribute name
         #
@@ -43,15 +43,15 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [Array<HubspotSDK::Models::Events::Property>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Events::Property] }
+        #   @return [Array<HubSpotSDK::Models::Events::Property>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::Property] }
 
         # @!attribute combo_event_rules
         #
-        #   @return [HubspotSDK::Models::Events::ComboEventRuleBranch, nil]
+        #   @return [HubSpotSDK::Models::Events::ComboEventRuleBranch, nil]
         optional :combo_event_rules,
                  -> {
-                   HubspotSDK::Events::ComboEventRuleBranch
+                   HubSpotSDK::Events::ComboEventRuleBranch
                  },
                  api_name: :comboEventRules
 
@@ -67,9 +67,9 @@ module HubspotSDK
 
         # @!attribute custom_matching_id
         #
-        #   @return [HubspotSDK::Models::Events::ExternalObjectResolutionMappingResponse, nil]
+        #   @return [HubSpotSDK::Models::Events::ExternalObjectResolutionMappingResponse, nil]
         optional :custom_matching_id,
-                 -> { HubspotSDK::Events::ExternalObjectResolutionMappingResponse },
+                 -> { HubSpotSDK::Events::ExternalObjectResolutionMappingResponse },
                  api_name: :customMatchingId
 
         # @!attribute description
@@ -89,9 +89,9 @@ module HubspotSDK
 
         # @!attribute tracking_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::TrackingType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::TrackingType, nil]
         optional :tracking_type,
-                 enum: -> { HubspotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType },
+                 enum: -> { HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType },
                  api_name: :trackingType
 
         # @!attribute updated_at
@@ -107,26 +107,26 @@ module HubspotSDK
         # @!method initialize(id:, archived:, associations:, fully_qualified_name:, labels:, name:, object_type_id:, properties:, combo_event_rules: nil, created_at: nil, created_user_id: nil, custom_matching_id: nil, description: nil, primary_object: nil, primary_object_id: nil, tracking_type: nil, updated_at: nil, updated_user_id: nil)
         #   @param id [String]
         #   @param archived [Boolean]
-        #   @param associations [Array<HubspotSDK::Models::Events::AssociationDefinition>]
+        #   @param associations [Array<HubSpotSDK::Models::Events::AssociationDefinition>]
         #   @param fully_qualified_name [String]
-        #   @param labels [HubspotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
+        #   @param labels [HubSpotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
         #   @param name [String]
         #   @param object_type_id [String]
-        #   @param properties [Array<HubspotSDK::Models::Events::Property>]
-        #   @param combo_event_rules [HubspotSDK::Models::Events::ComboEventRuleBranch]
+        #   @param properties [Array<HubSpotSDK::Models::Events::Property>]
+        #   @param combo_event_rules [HubSpotSDK::Models::Events::ComboEventRuleBranch]
         #   @param created_at [Time]
         #   @param created_user_id [Integer]
-        #   @param custom_matching_id [HubspotSDK::Models::Events::ExternalObjectResolutionMappingResponse]
+        #   @param custom_matching_id [HubSpotSDK::Models::Events::ExternalObjectResolutionMappingResponse]
         #   @param description [String]
         #   @param primary_object [String]
         #   @param primary_object_id [String]
-        #   @param tracking_type [Symbol, HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::TrackingType]
+        #   @param tracking_type [Symbol, HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::TrackingType]
         #   @param updated_at [Time]
         #   @param updated_user_id [Integer]
 
-        # @see HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinition#tracking_type
+        # @see HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition#tracking_type
         module TrackingType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APP_EVENT = :APP_EVENT
           AUTOCAPTURE_EVENT = :AUTOCAPTURE_EVENT

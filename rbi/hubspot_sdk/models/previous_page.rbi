@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PreviousPage < HubspotSDK::Internal::Type::BaseModel
+    class PreviousPage < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::PreviousPage, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::PreviousPage, HubSpotSDK::Internal::AnyHash)
         end
 
       # A string token used to identify the position before the current page in the

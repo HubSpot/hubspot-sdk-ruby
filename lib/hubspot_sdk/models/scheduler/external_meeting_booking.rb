@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingBooking < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingBooking < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute duration
         #   The duration of the meeting in milliseconds.
         #
@@ -24,9 +24,9 @@ module HubspotSDK
 
         # @!attribute form_fields
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalBookingFormField>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalBookingFormField>]
         required :form_fields,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalBookingFormField] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalBookingFormField] },
                  api_name: :formFields
 
         # @!attribute last_name
@@ -37,10 +37,10 @@ module HubspotSDK
 
         # @!attribute legal_consent_responses
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
         required :legal_consent_responses,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLegalConsentResponse]
+                   HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalLegalConsentResponse]
                  },
                  api_name: :legalConsentResponses
 
@@ -48,7 +48,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :likely_available_user_ids,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :likelyAvailableUserIds
 
         # @!attribute slug
@@ -82,11 +82,11 @@ module HubspotSDK
         #
         #   @param first_name [String] The first name of the person booking the meeting.
         #
-        #   @param form_fields [Array<HubspotSDK::Models::Scheduler::ExternalBookingFormField>]
+        #   @param form_fields [Array<HubSpotSDK::Models::Scheduler::ExternalBookingFormField>]
         #
         #   @param last_name [String] The last name of the person booking the meeting.
         #
-        #   @param legal_consent_responses [Array<HubspotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
+        #   @param legal_consent_responses [Array<HubSpotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
         #
         #   @param likely_available_user_ids [Array<String>]
         #

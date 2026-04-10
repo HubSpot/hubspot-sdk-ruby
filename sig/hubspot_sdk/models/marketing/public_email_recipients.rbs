@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_recipients =
         { exclude: ::Array[String], include: ::Array[String] }
 
-      class PublicEmailRecipients < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailRecipients < HubSpotSDK::Internal::Type::BaseModel
         attr_reader exclude: ::Array[String]?
 
         def exclude=: (::Array[String]) -> ::Array[String]

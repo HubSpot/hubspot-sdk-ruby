@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class ContactAssociation < HubspotSDK::Internal::Type::BaseModel
+      class ContactAssociation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_id
         #   The internal ID of the contact in HubSpot
         #

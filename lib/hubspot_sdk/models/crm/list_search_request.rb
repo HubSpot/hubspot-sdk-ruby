@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListSearchRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListSearchRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute list_ids
         #   ILS list ids to be included in search results. If not specified, all lists
         #   matching other criteria will be included
         #
         #   @return [Array<String>]
-        required :list_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :listIds
+        required :list_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :listIds
 
         # @!attribute offset
         #   Value used to paginate through lists. The `offset` provided in the response can
@@ -24,7 +24,7 @@ module HubspotSDK
         #   lists with all processing types will be included.
         #
         #   @return [Array<String>]
-        required :processing_types, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :processingTypes
+        required :processing_types, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :processingTypes
 
         # @!attribute additional_filter_properties
         #   The property names of any additional list properties to include in the response.
@@ -36,7 +36,7 @@ module HubspotSDK
         #   `hs_folder_name`, and `hs_list_reference_count`.
         #
         #   @return [Array<String>, nil]
-        optional :additional_filter_properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :additional_filter_properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute count
         #   The number of lists to include in the response. Defaults to `20` if no value is
@@ -65,7 +65,7 @@ module HubspotSDK
 
         # @!method initialize(list_ids:, offset:, processing_types:, additional_filter_properties: nil, count: nil, object_type_id: nil, query: nil, sort: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ListSearchRequest} for more details.
+        #   {HubSpotSDK::Models::Crm::ListSearchRequest} for more details.
         #
         #   @param list_ids [Array<String>] ILS list ids to be included in search results. If not specified, all lists match
         #

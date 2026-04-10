@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class InboundDBObjectType < HubspotSDK::Internal::Type::BaseModel
+      class InboundDBObjectType < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::InboundDBObjectType,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::InboundDBObjectType,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -52,7 +52,7 @@ module HubspotSDK
         attr_accessor :last_modified_property_name
 
         sig do
-          returns(HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol)
+          returns(HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol)
         end
         attr_accessor :meta_type
 
@@ -67,7 +67,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+            HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
           )
         end
         attr_accessor :permissioning_type
@@ -84,7 +84,7 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :restorable
 
-        sig { returns(T::Array[HubspotSDK::Cms::ScopeMapping]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::ScopeMapping]) }
         attr_accessor :scope_mappings
 
         sig { returns(T::Array[String]) }
@@ -165,7 +165,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
             )
           )
         end
@@ -173,7 +173,7 @@ module HubspotSDK
 
         sig do
           params(
-            status: HubspotSDK::Cms::InboundDBObjectType::Status::OrSymbol
+            status: HubSpotSDK::Cms::InboundDBObjectType::Status::OrSymbol
           ).void
         end
         attr_writer :status
@@ -181,7 +181,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           )
         end
@@ -190,7 +190,7 @@ module HubspotSDK
         sig do
           params(
             visibility:
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
           ).void
         end
         attr_writer :visibility
@@ -216,17 +216,17 @@ module HubspotSDK
             has_pipelines: T::Boolean,
             indexed_for_filters_and_reports: T::Boolean,
             last_modified_property_name: String,
-            meta_type: HubspotSDK::Cms::InboundDBObjectType::MetaType::OrSymbol,
+            meta_type: HubSpotSDK::Cms::InboundDBObjectType::MetaType::OrSymbol,
             meta_type_id: Integer,
             name: String,
             object_type_id: String,
             permissioning_type:
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::OrSymbol,
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::OrSymbol,
             pipeline_property_name: String,
             pipeline_stage_property_name: String,
             required_properties: T::Array[String],
             restorable: T::Boolean,
-            scope_mappings: T::Array[HubspotSDK::Cms::ScopeMapping::OrHash],
+            scope_mappings: T::Array[HubSpotSDK::Cms::ScopeMapping::OrHash],
             secondary_display_label_property_names: T::Array[String],
             access_scope_name: String,
             created_at: Integer,
@@ -240,9 +240,9 @@ module HubspotSDK
             primary_display_label_property_name: String,
             read_scope_name: String,
             singular_form: String,
-            status: HubspotSDK::Cms::InboundDBObjectType::Status::OrSymbol,
+            status: HubSpotSDK::Cms::InboundDBObjectType::Status::OrSymbol,
             visibility:
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol,
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol,
             write_scope_name: String
           ).returns(T.attached_class)
         end
@@ -306,17 +306,17 @@ module HubspotSDK
               indexed_for_filters_and_reports: T::Boolean,
               last_modified_property_name: String,
               meta_type:
-                HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol,
+                HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol,
               meta_type_id: Integer,
               name: String,
               object_type_id: String,
               permissioning_type:
-                HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol,
+                HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol,
               pipeline_property_name: String,
               pipeline_stage_property_name: String,
               required_properties: T::Array[String],
               restorable: T::Boolean,
-              scope_mappings: T::Array[HubspotSDK::Cms::ScopeMapping],
+              scope_mappings: T::Array[HubSpotSDK::Cms::ScopeMapping],
               secondary_display_label_property_names: T::Array[String],
               access_scope_name: String,
               created_at: Integer,
@@ -331,9 +331,9 @@ module HubspotSDK
               read_scope_name: String,
               singular_form: String,
               status:
-                HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol,
+                HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol,
               visibility:
-                HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol,
+                HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol,
               write_scope_name: String
             }
           )
@@ -342,64 +342,64 @@ module HubspotSDK
         end
 
         module MetaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::InboundDBObjectType::MetaType)
+              T.all(Symbol, HubSpotSDK::Cms::InboundDBObjectType::MetaType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CMS_HUBDB =
             T.let(
               :CMS_HUBDB,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           HUBSPOT =
             T.let(
               :HUBSPOT,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           HUBSPOT_EVENT =
             T.let(
               :HUBSPOT_EVENT,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           INTEGRATION =
             T.let(
               :INTEGRATION,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           INTEGRATION_EVENT =
             T.let(
               :INTEGRATION_EVENT,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           PORTAL_SPECIFIC =
             T.let(
               :PORTAL_SPECIFIC,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           PORTAL_SPECIFIC_EVENT =
             T.let(
               :PORTAL_SPECIFIC_EVENT,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           WORK =
             T.let(
               :WORK,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
           WORK_SUB =
             T.let(
               :WORK_SUB,
-              HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
+                HubSpotSDK::Cms::InboundDBObjectType::MetaType::TaggedSymbol
               ]
             )
           end
@@ -408,13 +408,13 @@ module HubspotSDK
         end
 
         module PermissioningType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Cms::InboundDBObjectType::PermissioningType
+                HubSpotSDK::Cms::InboundDBObjectType::PermissioningType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -422,33 +422,33 @@ module HubspotSDK
           ALL_OR_NONE =
             T.let(
               :ALL_OR_NONE,
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
             )
           DO_NOT_CHECK_PERMISSIONS =
             T.let(
               :DO_NOT_CHECK_PERMISSIONS,
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
             )
           EXPLICIT =
             T.let(
               :EXPLICIT,
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
             )
           OWNER_BASED =
             T.let(
               :OWNER_BASED,
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
             )
           TEAM_BASED =
             T.let(
               :TEAM_BASED,
-              HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
+                HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
               ]
             )
           end
@@ -457,34 +457,34 @@ module HubspotSDK
         end
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::InboundDBObjectType::Status)
+              T.all(Symbol, HubSpotSDK::Cms::InboundDBObjectType::Status)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DEPRECATED =
             T.let(
               :Deprecated,
-              HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
             )
           IN_DEVELOPMENT =
             T.let(
               :"In development",
-              HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
             )
           LIVE =
             T.let(
               :Live,
-              HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
+                HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol
               ]
             )
           end
@@ -493,39 +493,39 @@ module HubspotSDK
         end
 
         module Visibility
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Cms::InboundDBObjectType::Visibility)
+              T.all(Symbol, HubSpotSDK::Cms::InboundDBObjectType::Visibility)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CUSTOMER_FACING =
             T.let(
               :"Customer-facing",
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           CUSTOMER_FACING_PUBLIC_API =
             T.let(
               :"Customer-facing public API",
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           CUSTOMER_FACING_UI =
             T.let(
               :"Customer-facing UI",
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           INTERNAL_ONLY =
             T.let(
               :"Internal only",
-              HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+                HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
               ]
             )
           end

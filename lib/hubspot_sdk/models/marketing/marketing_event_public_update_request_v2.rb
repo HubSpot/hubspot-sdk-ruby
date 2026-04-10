@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class MarketingEventPublicUpdateRequestV2 < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicUpdateRequestV2 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute custom_properties
         #
-        #   @return [Array<HubspotSDK::Models::PropertyValue>]
+        #   @return [Array<HubSpotSDK::Models::PropertyValue>]
         required :custom_properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyValue] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyValue] },
                  api_name: :customProperties
 
         # @!attribute end_date_time
@@ -21,7 +21,7 @@ module HubspotSDK
         #   Indicates if the marketing event has been cancelled
         #
         #   @return [Boolean, nil]
-        optional :event_cancelled, HubspotSDK::Internal::Type::Boolean, api_name: :eventCancelled
+        optional :event_cancelled, HubSpotSDK::Internal::Type::Boolean, api_name: :eventCancelled
 
         # @!attribute event_description
         #   The description of the marketing event
@@ -61,10 +61,10 @@ module HubspotSDK
 
         # @!method initialize(custom_properties:, end_date_time: nil, event_cancelled: nil, event_description: nil, event_name: nil, event_organizer: nil, event_type: nil, event_url: nil, start_date_time: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::MarketingEventPublicUpdateRequestV2} for more
+        #   {HubSpotSDK::Models::Marketing::MarketingEventPublicUpdateRequestV2} for more
         #   details.
         #
-        #   @param custom_properties [Array<HubspotSDK::Models::PropertyValue>]
+        #   @param custom_properties [Array<HubSpotSDK::Models::PropertyValue>]
         #
         #   @param end_date_time [Time] The end date and time of the marketing event
         #

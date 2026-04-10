@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
-        # @return [HubspotSDK::Resources::Crm::Properties::Batch]
+        # @return [HubSpotSDK::Resources::Crm::Properties::Batch]
         attr_reader :batch
 
-        # @return [HubspotSDK::Resources::Crm::Properties::Groups]
+        # @return [HubSpotSDK::Resources::Crm::Properties::Groups]
         attr_reader :groups
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::PropertyCreateParams} for more details.
+        # {HubSpotSDK::Models::Crm::PropertyCreateParams} for more details.
         #
         # Create and return a copy of a new property for the specified object type.
         #
@@ -19,7 +19,7 @@ module HubspotSDK
         #
         # @param object_type [String]
         #
-        # @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyCreate::FieldType] Controls how the property appears in HubSpot.
+        # @param field_type [Symbol, HubSpotSDK::Models::Crm::PropertyCreate::FieldType] Controls how the property appears in HubSpot.
         #
         # @param group_name [String] The name of the property group the property belongs to.
         #
@@ -27,13 +27,13 @@ module HubspotSDK
         #
         # @param name [String] The internal property name, which must be used when referencing the property via
         #
-        # @param type [Symbol, HubspotSDK::Models::Crm::PropertyCreate::Type] The data type of the property.
+        # @param type [Symbol, HubSpotSDK::Models::Crm::PropertyCreate::Type] The data type of the property.
         #
         # @param calculation_formula [String] Represents a formula that is used to compute a calculated property.
         #
         # @param currency_property_name [String]
         #
-        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyCreate::DataSensitivity] Indicates the sensitivity level of the property, with options: highly_sensitive,
+        # @param data_sensitivity [Symbol, HubSpotSDK::Models::Crm::PropertyCreate::DataSensitivity] Indicates the sensitivity level of the property, with options: highly_sensitive,
         #
         # @param description [String] A description of the property that will be shown as help text in HubSpot.
         #
@@ -47,30 +47,30 @@ module HubspotSDK
         #
         # @param hidden [Boolean] If true, the property won't be visible and can't be used in HubSpot.
         #
-        # @param options [Array<HubspotSDK::Models::OptionInput>] A list of valid options for the property. This field is required for enumerated
+        # @param options [Array<HubSpotSDK::Models::OptionInput>] A list of valid options for the property. This field is required for enumerated
         #
         # @param referenced_object_type [String] Should be set to 'OWNER' when 'externalOptions' is true, which causes the proper
         #
         # @param show_currency_symbol [Boolean]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::Property]
+        # @return [HubSpotSDK::Models::Crm::Property]
         #
-        # @see HubspotSDK::Models::Crm::PropertyCreateParams
+        # @see HubSpotSDK::Models::Crm::PropertyCreateParams
         def create(object_type, params)
-          parsed, options = HubspotSDK::Crm::PropertyCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::PropertyCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: ["crm/properties/2026-03/%1$s", object_type],
             body: parsed,
-            model: HubspotSDK::Crm::Property,
+            model: HubSpotSDK::Crm::Property,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Crm::PropertyUpdateParams} for more details.
+        # {HubSpotSDK::Models::Crm::PropertyUpdateParams} for more details.
         #
         # Perform a partial update of a property identified by { propertyName }. Provided
         # fields will be overwritten.
@@ -89,7 +89,7 @@ module HubspotSDK
         #
         # @param display_order [Integer] Body param: Properties are displayed in order starting with the lowest positive
         #
-        # @param field_type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::FieldType] Body param: Controls how the property appears in HubSpot.
+        # @param field_type [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::FieldType] Body param: Controls how the property appears in HubSpot.
         #
         # @param form_field [Boolean] Body param: Whether or not the property can be used in a HubSpot form.
         #
@@ -99,19 +99,19 @@ module HubspotSDK
         #
         # @param label [String] Body param: A human-readable property label that will be shown in HubSpot.
         #
-        # @param options [Array<HubspotSDK::Models::OptionInput>] Body param: A list of valid options for the property.
+        # @param options [Array<HubSpotSDK::Models::OptionInput>] Body param: A list of valid options for the property.
         #
         # @param show_currency_symbol [Boolean] Body param
         #
-        # @param type [Symbol, HubspotSDK::Models::Crm::PropertyUpdate::Type] Body param: The data type of the property.
+        # @param type [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::Type] Body param: The data type of the property.
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::Property]
+        # @return [HubSpotSDK::Models::Crm::Property]
         #
-        # @see HubspotSDK::Models::Crm::PropertyUpdateParams
+        # @see HubSpotSDK::Models::Crm::PropertyUpdateParams
         def update(property_name, params)
-          parsed, options = HubspotSDK::Crm::PropertyUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::PropertyUpdateParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -120,7 +120,7 @@ module HubspotSDK
             method: :patch,
             path: ["crm/properties/2026-03/%1$s/%2$s", object_type, property_name],
             body: parsed,
-            model: HubspotSDK::Crm::Property,
+            model: HubSpotSDK::Crm::Property,
             options: options
           )
         end
@@ -133,25 +133,25 @@ module HubspotSDK
         #
         # @param archived [Boolean] Whether to return only results that have been archived.
         #
-        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyListParams::DataSensitivity]
+        # @param data_sensitivity [Symbol, HubSpotSDK::Models::Crm::PropertyListParams::DataSensitivity]
         #
         # @param locale [String]
         #
         # @param properties [String]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::CollectionResponsePropertyNoPaging]
+        # @return [HubSpotSDK::Models::Crm::CollectionResponsePropertyNoPaging]
         #
-        # @see HubspotSDK::Models::Crm::PropertyListParams
+        # @see HubSpotSDK::Models::Crm::PropertyListParams
         def list(object_type, params = {})
-          parsed, options = HubspotSDK::Crm::PropertyListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::PropertyListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["crm/properties/2026-03/%1$s", object_type],
             query: query.transform_keys(data_sensitivity: "dataSensitivity"),
-            model: HubspotSDK::Crm::CollectionResponsePropertyNoPaging,
+            model: HubSpotSDK::Crm::CollectionResponsePropertyNoPaging,
             options: options
           )
         end
@@ -162,13 +162,13 @@ module HubspotSDK
         #
         # @param property_name [String]
         # @param object_type [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Crm::PropertyDeleteParams
+        # @see HubSpotSDK::Models::Crm::PropertyDeleteParams
         def delete(property_name, params)
-          parsed, options = HubspotSDK::Crm::PropertyDeleteParams.dump_request(params)
+          parsed, options = HubSpotSDK::Crm::PropertyDeleteParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -191,20 +191,20 @@ module HubspotSDK
         #
         # @param archived [Boolean] Query param: Whether to return only results that have been archived.
         #
-        # @param data_sensitivity [Symbol, HubspotSDK::Models::Crm::PropertyGetParams::DataSensitivity] Query param
+        # @param data_sensitivity [Symbol, HubSpotSDK::Models::Crm::PropertyGetParams::DataSensitivity] Query param
         #
         # @param locale [String] Query param
         #
         # @param properties [String] Query param
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Crm::Property]
+        # @return [HubSpotSDK::Models::Crm::Property]
         #
-        # @see HubspotSDK::Models::Crm::PropertyGetParams
+        # @see HubSpotSDK::Models::Crm::PropertyGetParams
         def get(property_name, params)
-          parsed, options = HubspotSDK::Crm::PropertyGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Crm::PropertyGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")
@@ -213,18 +213,18 @@ module HubspotSDK
             method: :get,
             path: ["crm/properties/2026-03/%1$s/%2$s", object_type, property_name],
             query: query.transform_keys(data_sensitivity: "dataSensitivity"),
-            model: HubspotSDK::Crm::Property,
+            model: HubSpotSDK::Crm::Property,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @batch = HubspotSDK::Resources::Crm::Properties::Batch.new(client: client)
-          @groups = HubspotSDK::Resources::Crm::Properties::Groups.new(client: client)
+          @batch = HubSpotSDK::Resources::Crm::Properties::Batch.new(client: client)
+          @groups = HubSpotSDK::Resources::Crm::Properties::Groups.new(client: client)
         end
       end
     end

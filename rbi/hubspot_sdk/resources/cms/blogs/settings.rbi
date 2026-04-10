@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Blogs
         class Settings
           sig do
-            returns(HubspotSDK::Resources::Cms::Blogs::Settings::MultiLanguage)
+            returns(HubSpotSDK::Resources::Cms::Blogs::Settings::MultiLanguage)
           end
           attr_reader :multi_language
 
@@ -24,8 +24,8 @@ module HubspotSDK
               updated_after: Time,
               updated_at: Time,
               updated_before: Time,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::Blog])
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Blogs::Blog])
           end
           def list(
             # The paging cursor token of the last successfully read resource will be returned
@@ -51,8 +51,8 @@ module HubspotSDK
           sig do
             params(
               blog_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::Blogs::Blog)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::Blogs::Blog)
           end
           def get(blog_id, request_options: {})
           end
@@ -62,8 +62,8 @@ module HubspotSDK
             params(
               revision_id: String,
               blog_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::Blogs::BlogVersion)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::Blogs::BlogVersion)
           end
           def get_revision(revision_id, blog_id:, request_options: {})
           end
@@ -76,9 +76,9 @@ module HubspotSDK
               after: String,
               before: String,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[HubspotSDK::Cms::Blogs::VersionBlog]
+              HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Blogs::VersionBlog]
             )
           end
           def list_revisions(
@@ -95,7 +95,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

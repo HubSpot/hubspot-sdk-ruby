@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicBoolPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicBoolPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicBoolPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicBoolPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # Specifies the type of operation (BOOL).
         sig do
           returns(
-            HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol,
             operator: String,
             value: T::Boolean
           ).returns(T.attached_class)
@@ -62,7 +62,7 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType::OrSymbol,
               operator: String,
               value: T::Boolean
             }
@@ -73,13 +73,13 @@ module HubspotSDK
 
         # Specifies the type of operation (BOOL).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -87,13 +87,13 @@ module HubspotSDK
           BOOL =
             T.let(
               :BOOL,
-              HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicBoolPropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicBoolPropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

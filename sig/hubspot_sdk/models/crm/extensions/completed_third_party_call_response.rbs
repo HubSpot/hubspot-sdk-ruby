@@ -1,31 +1,31 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type completed_third_party_call_response =
           {
-            caller_id_matches: ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
+            caller_id_matches: ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
           }
 
-        class CompletedThirdPartyCallResponse < HubspotSDK::Internal::Type::BaseModel
-          attr_accessor caller_id_matches: ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
+        class CompletedThirdPartyCallResponse < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor caller_id_matches: ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
 
           def initialize: (
-            caller_id_matches: ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
+            caller_id_matches: ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
           ) -> void
 
           def to_hash: -> {
-            caller_id_matches: ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
+            caller_id_matches: ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
           }
 
           type caller_id_match =
-            HubspotSDK::Crm::Extensions::ContactCallerID
-            | HubspotSDK::Crm::Extensions::CompanyCallerID
+            HubSpotSDK::Crm::Extensions::ContactCallerID
+            | HubSpotSDK::Crm::Extensions::CompanyCallerID
 
           module CallerIDMatch
-            extend HubspotSDK::Internal::Type::Union
+            extend HubSpotSDK::Internal::Type::Union
 
-            def self?.variants: -> ::Array[HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
+            def self?.variants: -> ::Array[HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse::caller_id_match]
           end
         end
       end

@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventPublicUpdateRequestV2 =
       Marketing::MarketingEventPublicUpdateRequestV2
 
     module Marketing
-      class MarketingEventPublicUpdateRequestV2 < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicUpdateRequestV2 < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventPublicUpdateRequestV2,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventPublicUpdateRequestV2,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::PropertyValue]) }
+        sig { returns(T::Array[HubSpotSDK::PropertyValue]) }
         attr_accessor :custom_properties
 
         # The end date and time of the marketing event
@@ -76,7 +76,7 @@ module HubspotSDK
 
         sig do
           params(
-            custom_properties: T::Array[HubspotSDK::PropertyValue::OrHash],
+            custom_properties: T::Array[HubSpotSDK::PropertyValue::OrHash],
             end_date_time: Time,
             event_cancelled: T::Boolean,
             event_description: String,
@@ -111,7 +111,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              custom_properties: T::Array[HubspotSDK::PropertyValue],
+              custom_properties: T::Array[HubSpotSDK::PropertyValue],
               end_date_time: Time,
               event_cancelled: T::Boolean,
               event_description: String,

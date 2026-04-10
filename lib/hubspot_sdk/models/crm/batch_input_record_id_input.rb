@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputRecordIDInput < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputRecordIDInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::RecordIDInput>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::RecordIDInput] }
+        #   @return [Array<HubSpotSDK::Models::Crm::RecordIDInput>]
+        required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::RecordIDInput] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::RecordIDInput>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::RecordIDInput>]
       end
     end
   end

@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicConstantFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicConstantFilter < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicConstantFilter,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicConstantFilter,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Specifies the type of filter, which is (CONSTANT).
         sig do
-          returns(HubspotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol)
         end
         attr_accessor :filter_type
 
@@ -32,7 +32,7 @@ module HubspotSDK
         sig do
           params(
             filter_type:
-              HubspotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol,
+              HubSpotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol,
             should_accept: T::Boolean,
             source: String
           ).returns(T.attached_class)
@@ -51,7 +51,7 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol,
+                HubSpotSDK::Crm::PublicConstantFilter::FilterType::OrSymbol,
               should_accept: T::Boolean,
               source: String
             }
@@ -62,24 +62,24 @@ module HubspotSDK
 
         # Specifies the type of filter, which is (CONSTANT).
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicConstantFilter::FilterType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicConstantFilter::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CONSTANT =
             T.let(
               :CONSTANT,
-              HubspotSDK::Crm::PublicConstantFilter::FilterType::TaggedSymbol
+              HubSpotSDK::Crm::PublicConstantFilter::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicConstantFilter::FilterType::TaggedSymbol
+                HubSpotSDK::Crm::PublicConstantFilter::FilterType::TaggedSymbol
               ]
             )
           end

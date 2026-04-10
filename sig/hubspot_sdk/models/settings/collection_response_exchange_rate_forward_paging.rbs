@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type collection_response_exchange_rate_forward_paging =
         {
-          results: ::Array[HubspotSDK::Settings::ExchangeRate],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Settings::ExchangeRate],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponseExchangeRateForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Settings::ExchangeRate]
+      class CollectionResponseExchangeRateForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Settings::ExchangeRate]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Settings::ExchangeRate],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Settings::ExchangeRate],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Settings::ExchangeRate],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Settings::ExchangeRate],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectTypeNearOrAtAssociationLimit < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypeNearOrAtAssociationLimit < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute has_records_at_limit
         #   Indicates whether there are records that have reached the association limit.
         #
         #   @return [Boolean]
-        required :has_records_at_limit, HubspotSDK::Internal::Type::Boolean, api_name: :hasRecordsAtLimit
+        required :has_records_at_limit, HubSpotSDK::Internal::Type::Boolean, api_name: :hasRecordsAtLimit
 
         # @!attribute has_records_near_limit
         #   Indicates whether there are records that are approaching the association limit.
         #
         #   @return [Boolean]
-        required :has_records_near_limit, HubspotSDK::Internal::Type::Boolean, api_name: :hasRecordsNearLimit
+        required :has_records_near_limit, HubSpotSDK::Internal::Type::Boolean, api_name: :hasRecordsNearLimit
 
         # @!attribute object_type_id
         #   The unique identifier for the object type.

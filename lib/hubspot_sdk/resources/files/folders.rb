@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Files
       class Folders
@@ -9,11 +9,11 @@ module HubspotSDK
         # @overload delete_by_id(folder_id, request_options: {})
         #
         # @param folder_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Files::FolderDeleteByIDParams
+        # @see HubSpotSDK::Models::Files::FolderDeleteByIDParams
         def delete_by_id(folder_id, params = {})
           @client.request(
             method: :delete,
@@ -28,11 +28,11 @@ module HubspotSDK
         # @overload delete_by_path(folder_path, request_options: {})
         #
         # @param folder_path [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Files::FolderDeleteByPathParams
+        # @see HubSpotSDK::Models::Files::FolderDeleteByPathParams
         def delete_by_path(folder_path, params = {})
           @client.request(
             method: :delete,
@@ -48,19 +48,19 @@ module HubspotSDK
         #
         # @param folder_id [String]
         # @param properties [Array<String>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::Folder]
+        # @return [HubSpotSDK::Models::Files::Folder]
         #
-        # @see HubspotSDK::Models::Files::FolderGetByIDParams
+        # @see HubSpotSDK::Models::Files::FolderGetByIDParams
         def get_by_id(folder_id, params = {})
-          parsed, options = HubspotSDK::Files::FolderGetByIDParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FolderGetByIDParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["files/2026-03/folders/%1$s", folder_id],
             query: query,
-            model: HubspotSDK::Files::Folder,
+            model: HubSpotSDK::Files::Folder,
             options: options
           )
         end
@@ -71,19 +71,19 @@ module HubspotSDK
         #
         # @param folder_path [String]
         # @param properties [Array<String>]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::Folder]
+        # @return [HubSpotSDK::Models::Files::Folder]
         #
-        # @see HubspotSDK::Models::Files::FolderGetByPathParams
+        # @see HubSpotSDK::Models::Files::FolderGetByPathParams
         def get_by_path(folder_path, params = {})
-          parsed, options = HubspotSDK::Files::FolderGetByPathParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FolderGetByPathParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["files/2026-03/folders/%1$s", folder_path],
             query: query,
-            model: HubspotSDK::Files::Folder,
+            model: HubSpotSDK::Files::Folder,
             options: options
           )
         end
@@ -93,22 +93,22 @@ module HubspotSDK
         # @overload get_update_async_status(task_id, request_options: {})
         #
         # @param task_id [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::FolderActionResponse]
+        # @return [HubSpotSDK::Models::Files::FolderActionResponse]
         #
-        # @see HubspotSDK::Models::Files::FolderGetUpdateAsyncStatusParams
+        # @see HubSpotSDK::Models::Files::FolderGetUpdateAsyncStatusParams
         def get_update_async_status(task_id, params = {})
           @client.request(
             method: :get,
             path: ["files/2026-03/folders/update/async/tasks/%1$s/status", task_id],
-            model: HubspotSDK::Files::FolderActionResponse,
+            model: HubSpotSDK::Files::FolderActionResponse,
             options: params[:request_options]
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FolderSearchParams} for more details.
+        # {HubSpotSDK::Models::Files::FolderSearchParams} for more details.
         #
         # Search for folders. Does not contain hidden or archived folders.
         #
@@ -148,14 +148,14 @@ module HubspotSDK
         #
         # @param updated_at_lte [Time]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Files::Folder>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Files::Folder>]
         #
-        # @see HubspotSDK::Models::Files::FolderSearchParams
+        # @see HubSpotSDK::Models::Files::FolderSearchParams
         def search(params = {})
-          parsed, options = HubspotSDK::Files::FolderSearchParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Files::FolderSearchParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "files/2026-03/folders/search",
@@ -170,14 +170,14 @@ module HubspotSDK
               updated_at_gte: "updatedAtGte",
               updated_at_lte: "updatedAtLte"
             ),
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Files::Folder,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Files::Folder,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FolderUpdateAsyncByIDParams} for more details.
+        # {HubSpotSDK::Models::Files::FolderUpdateAsyncByIDParams} for more details.
         #
         # Update properties of folder by given ID. This action happens asynchronously and
         # will update all of the folder's children as well.
@@ -190,24 +190,24 @@ module HubspotSDK
         #
         # @param parent_folder_id [Integer] New parent folderId. If changed, the folder and all it's children will be moved
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::FolderUpdateTaskLocator]
+        # @return [HubSpotSDK::Models::Files::FolderUpdateTaskLocator]
         #
-        # @see HubspotSDK::Models::Files::FolderUpdateAsyncByIDParams
+        # @see HubSpotSDK::Models::Files::FolderUpdateAsyncByIDParams
         def update_async_by_id(params)
-          parsed, options = HubspotSDK::Files::FolderUpdateAsyncByIDParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FolderUpdateAsyncByIDParams.dump_request(params)
           @client.request(
             method: :post,
             path: "files/2026-03/folders/update/async",
             body: parsed,
-            model: HubspotSDK::Files::FolderUpdateTaskLocator,
+            model: HubSpotSDK::Files::FolderUpdateTaskLocator,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Files::FolderUpdateByIDParams} for more details.
+        # {HubSpotSDK::Models::Files::FolderUpdateByIDParams} for more details.
         #
         # Update a folder's properties, identified by folder ID.
         #
@@ -219,25 +219,25 @@ module HubspotSDK
         #
         # @param parent_folder_id [Integer] New parent folderId. If changed, the folder and all it's children will be moved
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Files::Folder]
+        # @return [HubSpotSDK::Models::Files::Folder]
         #
-        # @see HubspotSDK::Models::Files::FolderUpdateByIDParams
+        # @see HubSpotSDK::Models::Files::FolderUpdateByIDParams
         def update_by_id(folder_id, params = {})
-          parsed, options = HubspotSDK::Files::FolderUpdateByIDParams.dump_request(params)
+          parsed, options = HubSpotSDK::Files::FolderUpdateByIDParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["files/2026-03/folders/%1$s", folder_id],
             body: parsed,
-            model: HubspotSDK::Files::Folder,
+            model: HubSpotSDK::Files::Folder,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
         end

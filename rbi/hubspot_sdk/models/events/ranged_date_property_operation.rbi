@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RangedDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RangedDatePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RangedDatePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -62,10 +62,10 @@ module HubspotSDK
             lower_bound_timestamp: Integer,
             operation_type: String,
             operator:
-              HubspotSDK::Events::RangedDatePropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::RangedDatePropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::RangedDatePropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType::OrSymbol,
             requires_time_zone_conversion: T::Boolean,
             upper_bound_timestamp: Integer,
             default_value: String,
@@ -93,10 +93,10 @@ module HubspotSDK
               lower_bound_timestamp: Integer,
               operation_type: String,
               operator:
-                HubspotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol,
               requires_time_zone_conversion: T::Boolean,
               upper_bound_timestamp: Integer,
               default_value: String,
@@ -108,13 +108,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedDatePropertyOperation::Operator
+                HubSpotSDK::Events::RangedDatePropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -122,18 +122,18 @@ module HubspotSDK
           IS_BETWEEN =
             T.let(
               :IS_BETWEEN,
-              HubspotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
             )
           IS_NOT_BETWEEN =
             T.let(
               :IS_NOT_BETWEEN,
-              HubspotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::RangedDatePropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -142,13 +142,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedDatePropertyOperation::PropertyType
+                HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -156,13 +156,13 @@ module HubspotSDK
           DATETIME_RANGED =
             T.let(
               :"datetime-ranged",
-              HubspotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::RangedDatePropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

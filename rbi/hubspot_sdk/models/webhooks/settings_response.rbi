@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class SettingsResponse < HubspotSDK::Internal::Type::BaseModel
+      class SettingsResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::SettingsResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::SettingsResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,12 +23,12 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :target_url
 
-        sig { returns(HubspotSDK::Webhooks::ThrottlingSettings) }
+        sig { returns(HubSpotSDK::Webhooks::ThrottlingSettings) }
         attr_reader :throttling
 
         sig do
           params(
-            throttling: HubspotSDK::Webhooks::ThrottlingSettings::OrHash
+            throttling: HubSpotSDK::Webhooks::ThrottlingSettings::OrHash
           ).void
         end
         attr_writer :throttling
@@ -45,7 +45,7 @@ module HubspotSDK
           params(
             created_at: Time,
             target_url: String,
-            throttling: HubspotSDK::Webhooks::ThrottlingSettings::OrHash,
+            throttling: HubSpotSDK::Webhooks::ThrottlingSettings::OrHash,
             updated_at: Time
           ).returns(T.attached_class)
         end
@@ -69,7 +69,7 @@ module HubspotSDK
             {
               created_at: Time,
               target_url: String,
-              throttling: HubspotSDK::Webhooks::ThrottlingSettings,
+              throttling: HubSpotSDK::Webhooks::ThrottlingSettings,
               updated_at: Time
             }
           )

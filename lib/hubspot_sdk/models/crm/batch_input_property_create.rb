@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchInputPropertyCreate < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputPropertyCreate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PropertyCreate>]
-        required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PropertyCreate] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PropertyCreate>]
+        required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PropertyCreate] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Crm::PropertyCreate>]
+        #   @param inputs [Array<HubSpotSDK::Models::Crm::PropertyCreate>]
       end
     end
   end

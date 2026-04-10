@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectBatchInputForCreate < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectBatchInputForCreate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::SimplePublicObjectBatchInputForCreate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::PublicAssociationsForObject]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::PublicAssociationsForObject]) }
         attr_accessor :associations
 
         # Key value pairs representing the properties of the object.
@@ -31,7 +31,7 @@ module HubspotSDK
         sig do
           params(
             associations:
-              T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+              T::Array[HubSpotSDK::Crm::PublicAssociationsForObject::OrHash],
             properties: T::Hash[Symbol, String],
             object_write_trace_id: String
           ).returns(T.attached_class)
@@ -49,7 +49,7 @@ module HubspotSDK
           override.returns(
             {
               associations:
-                T::Array[HubspotSDK::Crm::PublicAssociationsForObject],
+                T::Array[HubSpotSDK::Crm::PublicAssociationsForObject],
               properties: T::Hash[Symbol, String],
               object_write_trace_id: String
             }

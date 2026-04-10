@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class PublicNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicNumberPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicNumberPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # Specifies the type of operation (NUMBER).
         sig do
           returns(
-            HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol
+            HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol
           )
         end
         attr_accessor :operation_type
@@ -40,7 +40,7 @@ module HubspotSDK
           params(
             include_objects_with_no_value_set: T::Boolean,
             operation_type:
-              HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol,
+              HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol,
             operator: String,
             value: Float
           ).returns(T.attached_class)
@@ -66,7 +66,7 @@ module HubspotSDK
             {
               include_objects_with_no_value_set: T::Boolean,
               operation_type:
-                HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol,
+                HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType::OrSymbol,
               operator: String,
               value: Float
             }
@@ -77,13 +77,13 @@ module HubspotSDK
 
         # Specifies the type of operation (NUMBER).
         module OperationType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType
+                HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -91,13 +91,13 @@ module HubspotSDK
           NUMBER =
             T.let(
               :NUMBER,
-              HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType::TaggedSymbol
+              HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicNumberPropertyOperation::OperationType::TaggedSymbol
+                HubSpotSDK::Crm::PublicNumberPropertyOperation::OperationType::TaggedSymbol
               ]
             )
           end

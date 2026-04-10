@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
-        # @return [HubspotSDK::Resources::Settings::Currencies::CentralFxRates]
+        # @return [HubSpotSDK::Resources::Settings::Currencies::CentralFxRates]
         attr_reader :central_fx_rates
 
-        # @return [HubspotSDK::Resources::Settings::Currencies::ExchangeRates]
+        # @return [HubSpotSDK::Resources::Settings::Currencies::ExchangeRates]
         attr_reader :exchange_rates
 
         # Get the details for the company currency. The company currency is used in deal
@@ -15,16 +15,16 @@ module HubspotSDK
         #
         # @overload get_company_currency(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CompanyCurrency]
+        # @return [HubSpotSDK::Models::Settings::CompanyCurrency]
         #
-        # @see HubspotSDK::Models::Settings::CurrencyGetCompanyCurrencyParams
+        # @see HubSpotSDK::Models::Settings::CurrencyGetCompanyCurrencyParams
         def get_company_currency(params = {})
           @client.request(
             method: :get,
             path: "settings/currencies/2026-03/company-currency",
-            model: HubspotSDK::Settings::CompanyCurrency,
+            model: HubSpotSDK::Settings::CompanyCurrency,
             options: params[:request_options]
           )
         end
@@ -33,16 +33,16 @@ module HubspotSDK
         #
         # @overload list_codes(request_options: {})
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CollectionResponseCurrencyCodeInfoNoPaging]
+        # @return [HubSpotSDK::Models::Settings::CollectionResponseCurrencyCodeInfoNoPaging]
         #
-        # @see HubspotSDK::Models::Settings::CurrencyListCodesParams
+        # @see HubSpotSDK::Models::Settings::CurrencyListCodesParams
         def list_codes(params = {})
           @client.request(
             method: :get,
             path: "settings/currencies/2026-03/codes",
-            model: HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging,
+            model: HubSpotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging,
             options: params[:request_options]
           )
         end
@@ -51,31 +51,31 @@ module HubspotSDK
         #
         # @overload update_company_currency(currency_code:, request_options: {})
         #
-        # @param currency_code [Symbol, HubspotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).
+        # @param currency_code [Symbol, HubSpotSDK::Models::Settings::CompanyCurrencyUpdateRequest::CurrencyCode] The three-letter code representing a specific currency (ex. USD).
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Settings::CompanyCurrency]
+        # @return [HubSpotSDK::Models::Settings::CompanyCurrency]
         #
-        # @see HubspotSDK::Models::Settings::CurrencyUpdateCompanyCurrencyParams
+        # @see HubSpotSDK::Models::Settings::CurrencyUpdateCompanyCurrencyParams
         def update_company_currency(params)
-          parsed, options = HubspotSDK::Settings::CurrencyUpdateCompanyCurrencyParams.dump_request(params)
+          parsed, options = HubSpotSDK::Settings::CurrencyUpdateCompanyCurrencyParams.dump_request(params)
           @client.request(
             method: :put,
             path: "settings/currencies/2026-03/company-currency",
             body: parsed,
-            model: HubspotSDK::Settings::CompanyCurrency,
+            model: HubSpotSDK::Settings::CompanyCurrency,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @central_fx_rates = HubspotSDK::Resources::Settings::Currencies::CentralFxRates.new(client: client)
-          @exchange_rates = HubspotSDK::Resources::Settings::Currencies::ExchangeRates.new(client: client)
+          @central_fx_rates = HubSpotSDK::Resources::Settings::Currencies::CentralFxRates.new(client: client)
+          @exchange_rates = HubSpotSDK::Resources::Settings::Currencies::ExchangeRates.new(client: client)
         end
       end
     end

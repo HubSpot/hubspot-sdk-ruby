@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Events
       class Send
@@ -9,9 +9,9 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
+                HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
               ],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def batch_send(inputs:, request_options: {})
@@ -27,7 +27,7 @@ module HubspotSDK
             occurred_at: Time,
             utk: String,
             uuid: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def send_(
@@ -52,7 +52,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

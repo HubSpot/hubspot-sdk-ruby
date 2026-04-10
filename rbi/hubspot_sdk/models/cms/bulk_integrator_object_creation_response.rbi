@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BulkIntegratorObjectCreationResponse < HubspotSDK::Internal::Type::BaseModel
+      class BulkIntegratorObjectCreationResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BulkIntegratorObjectCreationResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BulkIntegratorObjectCreationResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Hash[Symbol, HubspotSDK::Cms::IntegratorObjectCreationResponse]
+            T::Hash[Symbol, HubSpotSDK::Cms::IntegratorObjectCreationResponse]
           )
         end
         attr_accessor :created_objects
@@ -24,7 +24,7 @@ module HubspotSDK
             created_objects:
               T::Hash[
                 Symbol,
-                HubspotSDK::Cms::IntegratorObjectCreationResponse::OrHash
+                HubSpotSDK::Cms::IntegratorObjectCreationResponse::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -37,7 +37,7 @@ module HubspotSDK
               created_objects:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Cms::IntegratorObjectCreationResponse
+                  HubSpotSDK::Cms::IntegratorObjectCreationResponse
                 ]
             }
           )

@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account#get
-      class PortalInformationResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Account#get
+      class PortalInformationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute account_type
         #   The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
         #   STANDARD.
         #
-        #   @return [Symbol, HubspotSDK::Models::Account::PortalInformationResponse::AccountType]
+        #   @return [Symbol, HubSpotSDK::Models::Account::PortalInformationResponse::AccountType]
         required :account_type,
-                 enum: -> { HubspotSDK::Account::PortalInformationResponse::AccountType },
+                 enum: -> { HubSpotSDK::Account::PortalInformationResponse::AccountType },
                  api_name: :accountType
 
         # @!attribute additional_currencies
         #
         #   @return [Array<String>]
         required :additional_currencies,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :additionalCurrencies
 
         # @!attribute company_currency
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # @!method initialize(account_type:, additional_currencies:, company_currency:, data_hosting_location:, portal_id:, time_zone:, ui_domain:, utc_offset:, utc_offset_milliseconds:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Account::PortalInformationResponse} for more details.
+        #   {HubSpotSDK::Models::Account::PortalInformationResponse} for more details.
         #
-        #   @param account_type [Symbol, HubspotSDK::Models::Account::PortalInformationResponse::AccountType] The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or STANDARD
+        #   @param account_type [Symbol, HubSpotSDK::Models::Account::PortalInformationResponse::AccountType] The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or STANDARD
         #
         #   @param additional_currencies [Array<String>]
         #
@@ -88,9 +88,9 @@ module HubspotSDK
         # The type of account, such as APP_DEVELOPER, DEVELOPER_TEST, SANDBOX, or
         # STANDARD.
         #
-        # @see HubspotSDK::Models::Account::PortalInformationResponse#account_type
+        # @see HubSpotSDK::Models::Account::PortalInformationResponse#account_type
         module AccountType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APP_DEVELOPER = :APP_DEVELOPER
           DEVELOPER_TEST = :DEVELOPER_TEST

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type property_modification_metadata =
       {
@@ -8,7 +8,7 @@ module HubspotSDK
         read_only_options: bool
       }
 
-    class PropertyModificationMetadata < HubspotSDK::Internal::Type::BaseModel
+    class PropertyModificationMetadata < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor archivable: bool
 
       attr_accessor read_only_definition: bool

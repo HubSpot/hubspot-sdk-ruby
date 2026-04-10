@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class CalendarDatePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class CalendarDatePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::CalendarDatePropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::CalendarDatePropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -30,14 +30,14 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
 
         sig do
           returns(
-            HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+            HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
           )
         end
         attr_accessor :time_unit
@@ -57,7 +57,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           )
         end
@@ -66,7 +66,7 @@ module HubspotSDK
         sig do
           params(
             fiscal_year_start:
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::OrSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::OrSymbol
           ).void
         end
         attr_writer :fiscal_year_start
@@ -82,17 +82,17 @@ module HubspotSDK
             include_objects_with_no_value_set: T::Boolean,
             operation_type: String,
             operator:
-              HubspotSDK::Events::CalendarDatePropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType::OrSymbol,
             time_unit:
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::OrSymbol,
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::OrSymbol,
             time_unit_count: Integer,
             use_fiscal_year: T::Boolean,
             default_value: String,
             fiscal_year_start:
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::OrSymbol,
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::OrSymbol,
             render_spec: String
           ).returns(T.attached_class)
         end
@@ -117,17 +117,17 @@ module HubspotSDK
               include_objects_with_no_value_set: T::Boolean,
               operation_type: String,
               operator:
-                HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol,
               time_unit:
-                HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol,
+                HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol,
               time_unit_count: Integer,
               use_fiscal_year: T::Boolean,
               default_value: String,
               fiscal_year_start:
-                HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol,
+                HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol,
               render_spec: String
             }
           )
@@ -136,13 +136,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::CalendarDatePropertyOperation::Operator
+                HubSpotSDK::Events::CalendarDatePropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -150,28 +150,28 @@ module HubspotSDK
           IN_LAST_TIME_UNIT =
             T.let(
               :IN_LAST_TIME_UNIT,
-              HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
             )
           IN_NEXT_TIME_UNIT =
             T.let(
               :IN_NEXT_TIME_UNIT,
-              HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
             )
           IN_THIS_TIME_UNIT =
             T.let(
               :IN_THIS_TIME_UNIT,
-              HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
             )
           IN_THIS_TIME_UNIT_SO_FAR =
             T.let(
               :IN_THIS_TIME_UNIT_SO_FAR,
-              HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::CalendarDatePropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -180,13 +180,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType
+                HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -194,13 +194,13 @@ module HubspotSDK
           CALENDAR_DATE =
             T.let(
               :"calendar-date",
-              HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::CalendarDatePropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end
@@ -209,13 +209,13 @@ module HubspotSDK
         end
 
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit
+                HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -223,33 +223,33 @@ module HubspotSDK
           DAY =
             T.let(
               :DAY,
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
             )
           MONTH =
             T.let(
               :MONTH,
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
             )
           QUARTER =
             T.let(
               :QUARTER,
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
             )
           WEEK =
             T.let(
               :WEEK,
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
             )
           YEAR =
             T.let(
               :YEAR,
-              HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
+                HubSpotSDK::Events::CalendarDatePropertyOperation::TimeUnit::TaggedSymbol
               ]
             )
           end
@@ -258,13 +258,13 @@ module HubspotSDK
         end
 
         module FiscalYearStart
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart
+                HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -272,68 +272,68 @@ module HubspotSDK
           APRIL =
             T.let(
               :APRIL,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           AUGUST =
             T.let(
               :AUGUST,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           DECEMBER =
             T.let(
               :DECEMBER,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           FEBRUARY =
             T.let(
               :FEBRUARY,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           JANUARY =
             T.let(
               :JANUARY,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           JULY =
             T.let(
               :JULY,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           JUNE =
             T.let(
               :JUNE,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           MARCH =
             T.let(
               :MARCH,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           MAY =
             T.let(
               :MAY,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           NOVEMBER =
             T.let(
               :NOVEMBER,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           OCTOBER =
             T.let(
               :OCTOBER,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
           SEPTEMBER =
             T.let(
               :SEPTEMBER,
-              HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+              HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
+                HubSpotSDK::Events::CalendarDatePropertyOperation::FiscalYearStart::TaggedSymbol
               ]
             )
           end

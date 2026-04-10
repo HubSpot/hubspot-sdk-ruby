@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Properties
@@ -8,37 +8,37 @@ module HubspotSDK
             label: String,
             name: String,
             ?display_order: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::PropertyGroup
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::PropertyGroup
 
           def update: (
             String group_name,
             object_type: String,
             ?display_order: Integer,
             ?label: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::PropertyGroup
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::PropertyGroup
 
           def list: (
             String object_type,
             ?locale: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CollectionResponsePropertyGroupNoPaging
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::CollectionResponsePropertyGroupNoPaging
 
           def delete: (
             String group_name,
             object_type: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             String group_name,
             object_type: String,
             ?locale: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::PropertyGroup
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::PropertyGroup
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
       module Statuses
-        # @see HubspotSDK::Resources::CommunicationPreferences::Statuses::Batch#read
-        class BatchReadParams < HubspotSDK::Models::BatchInputString
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::CommunicationPreferences::Statuses::Batch#read
+        class BatchReadParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute channel
           #
-          #   @return [Symbol, HubspotSDK::Models::BatchInputString::Channel]
-          required :channel, enum: -> { HubspotSDK::BatchInputString::Channel }
+          #   @return [Symbol, HubSpotSDK::Models::BatchInputString::Channel]
+          required :channel, enum: -> { HubSpotSDK::BatchInputString::Channel }
 
           # @!attribute business_unit_id
           #
@@ -20,12 +20,12 @@ module HubspotSDK
           optional :business_unit_id, Integer
 
           # @!method initialize(channel:, business_unit_id: nil, request_options: {})
-          #   @param channel [Symbol, HubspotSDK::Models::BatchInputString::Channel]
+          #   @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel]
           #   @param business_unit_id [Integer]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
           module Channel
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             EMAIL = :EMAIL
 

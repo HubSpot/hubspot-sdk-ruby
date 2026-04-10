@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
@@ -9,8 +9,8 @@ module HubspotSDK
       #
       # When we don't know what to expect for the value.
       class Unknown
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # rubocop:disable Lint/UnusedMethodArgument
 
@@ -28,7 +28,7 @@ module HubspotSDK
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= HubspotSDK::Internal::Type::Unknown
+        def self.==(other) = other.is_a?(Class) && other <= HubSpotSDK::Internal::Type::Unknown
 
         class << self
           # @api private

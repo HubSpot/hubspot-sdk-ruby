@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalUserProfile < HubspotSDK::Internal::Type::BaseModel
+      class ExternalUserProfile < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #   The email address of the user.
         #

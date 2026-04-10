@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class BusinessUnits
       class BusinessUnitEntries
@@ -6,10 +6,10 @@ module HubspotSDK
           String user_id,
           ?name: ::Array[String],
           ?properties: ::Array[String],
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::BusinessUnits::CollectionResponsePublicBusinessUnitNoPaging
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

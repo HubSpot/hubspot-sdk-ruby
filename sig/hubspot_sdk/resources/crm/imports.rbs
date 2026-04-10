@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Imports
         def create: (
-          ?files: HubspotSDK::Internal::file_input,
+          ?files: HubSpotSDK::Internal::file_input,
           ?import_request: String,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicImportResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicImportResponse
 
         def list: (
           ?after: String,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportResponse]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicImportResponse]
 
         def cancel: (
           Integer import_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::ActionResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::ActionResponse
 
         def get: (
           Integer import_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Crm::PublicImportResponse
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::PublicImportResponse
 
         def list_errors: (
           Integer import_id,
@@ -30,10 +30,10 @@ module HubspotSDK
           ?include_error_message: bool,
           ?include_row_data: bool,
           ?limit: Integer,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Crm::PublicImportError]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::PublicImportError]
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Blogs::Posts::RevisionsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Blogs::Posts::RevisionsTest < HubSpotSDK::Test::ResourceTest
   def test_get_previous_version_required_params
     skip("Mock server tests are disabled")
 

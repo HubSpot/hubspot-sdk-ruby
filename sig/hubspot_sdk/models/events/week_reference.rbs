@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type week_reference =
         {
-          day_of_week: HubspotSDK::Models::Events::WeekReference::day_of_week,
-          reference_type: HubspotSDK::Models::Events::WeekReference::reference_type,
+          day_of_week: HubSpotSDK::Models::Events::WeekReference::day_of_week,
+          reference_type: HubSpotSDK::Models::Events::WeekReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
           second: Integer
         }
 
-      class WeekReference < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor day_of_week: HubspotSDK::Models::Events::WeekReference::day_of_week
+      class WeekReference < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor day_of_week: HubSpotSDK::Models::Events::WeekReference::day_of_week
 
-        attr_accessor reference_type: HubspotSDK::Models::Events::WeekReference::reference_type
+        attr_accessor reference_type: HubSpotSDK::Models::Events::WeekReference::reference_type
 
         attr_reader hour: Integer?
 
@@ -33,8 +33,8 @@ module HubspotSDK
         def second=: (Integer) -> Integer
 
         def initialize: (
-          day_of_week: HubspotSDK::Models::Events::WeekReference::day_of_week,
-          reference_type: HubspotSDK::Models::Events::WeekReference::reference_type,
+          day_of_week: HubSpotSDK::Models::Events::WeekReference::day_of_week,
+          reference_type: HubSpotSDK::Models::Events::WeekReference::reference_type,
           ?hour: Integer,
           ?millisecond: Integer,
           ?minute: Integer,
@@ -42,8 +42,8 @@ module HubspotSDK
         ) -> void
 
         def to_hash: -> {
-          day_of_week: HubspotSDK::Models::Events::WeekReference::day_of_week,
-          reference_type: HubspotSDK::Models::Events::WeekReference::reference_type,
+          day_of_week: HubSpotSDK::Models::Events::WeekReference::day_of_week,
+          reference_type: HubSpotSDK::Models::Events::WeekReference::reference_type,
           hour: Integer,
           millisecond: Integer,
           minute: Integer,
@@ -60,7 +60,7 @@ module HubspotSDK
           | :WEDNESDAY
 
         module DayOfWeek
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FRIDAY: :FRIDAY
           MONDAY: :MONDAY
@@ -70,17 +70,17 @@ module HubspotSDK
           TUESDAY: :TUESDAY
           WEDNESDAY: :WEDNESDAY
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::WeekReference::day_of_week]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::WeekReference::day_of_week]
         end
 
         type reference_type = :WEEK
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           WEEK: :WEEK
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::WeekReference::reference_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::WeekReference::reference_type]
         end
       end
     end

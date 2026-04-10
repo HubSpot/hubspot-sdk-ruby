@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       class Definitions
@@ -9,9 +9,9 @@ module HubspotSDK
           params(
             business_unit_id: Integer,
             include_translations: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition
+            HubSpotSDK::CommunicationPreferences::ActionResponseWithResultsSubscriptionDefinition
           )
         end
         def list(
@@ -22,7 +22,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

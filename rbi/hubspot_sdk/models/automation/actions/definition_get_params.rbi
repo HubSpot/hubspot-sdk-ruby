@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       module Actions
-        class DefinitionGetParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class DefinitionGetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::Actions::DefinitionGetParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Automation::Actions::DefinitionGetParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -34,7 +34,7 @@ module HubspotSDK
               app_id: Integer,
               definition_id: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -52,7 +52,7 @@ module HubspotSDK
                 app_id: Integer,
                 definition_id: String,
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableV3 < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableV3 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Id of the table
         #
@@ -14,14 +14,14 @@ module HubspotSDK
         #   Specifies whether child tables can be created
         #
         #   @return [Boolean]
-        required :allow_child_tables, HubspotSDK::Internal::Type::Boolean, api_name: :allowChildTables
+        required :allow_child_tables, HubSpotSDK::Internal::Type::Boolean, api_name: :allowChildTables
 
         # @!attribute allow_public_api_access
         #   Specifies whether the table can be read by public without authorization
         #
         #   @return [Boolean]
         required :allow_public_api_access,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowPublicApiAccess
 
         # @!attribute column_count
@@ -33,8 +33,8 @@ module HubspotSDK
         # @!attribute columns
         #   List of columns in the table
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Column>]
-        required :columns, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Column] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Column>]
+        required :columns, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Column] }
 
         # @!attribute created_at
         #   Timestamp at which the table is created
@@ -46,7 +46,7 @@ module HubspotSDK
         #   Specifies whether the table is marked as deleted.
         #
         #   @return [Boolean]
-        required :deleted, HubspotSDK::Internal::Type::Boolean
+        required :deleted, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute deleted_at
         #   The timestamp indicating when the table was deleted.
@@ -60,14 +60,14 @@ module HubspotSDK
         #   with the associated column IDs.
         #
         #   @return [Hash{Symbol=>Integer}]
-        required :dynamic_meta_tags, HubspotSDK::Internal::Type::HashOf[Integer], api_name: :dynamicMetaTags
+        required :dynamic_meta_tags, HubSpotSDK::Internal::Type::HashOf[Integer], api_name: :dynamicMetaTags
 
         # @!attribute enable_child_table_pages
         #   Specifies creation of multi-level dynamic pages using child tables
         #
         #   @return [Boolean]
         required :enable_child_table_pages,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :enableChildTablePages
 
         # @!attribute label
@@ -86,7 +86,7 @@ module HubspotSDK
         #   Indicates whether the table is currently published.
         #
         #   @return [Boolean]
-        required :published, HubspotSDK::Internal::Type::Boolean
+        required :published, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute published_at
         #   Timestamp at which the table is published recently
@@ -110,27 +110,27 @@ module HubspotSDK
         #   Specifies whether the table can be used for creation of dynamic pages
         #
         #   @return [Boolean]
-        required :use_for_pages, HubspotSDK::Internal::Type::Boolean, api_name: :useForPages
+        required :use_for_pages, HubSpotSDK::Internal::Type::Boolean, api_name: :useForPages
 
         # @!attribute created_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :created_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :createdBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :created_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :createdBy
 
         # @!attribute is_ordered_manually
         #   Indicates whether the table rows are ordered manually.
         #
         #   @return [Boolean, nil]
-        optional :is_ordered_manually, HubspotSDK::Internal::Type::Boolean, api_name: :isOrderedManually
+        optional :is_ordered_manually, HubSpotSDK::Internal::Type::Boolean, api_name: :isOrderedManually
 
         # @!attribute updated_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :updated_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :updatedBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :updated_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :updatedBy
 
         # @!method initialize(id:, allow_child_tables:, allow_public_api_access:, column_count:, columns:, created_at:, deleted:, deleted_at:, dynamic_meta_tags:, enable_child_table_pages:, label:, name:, published:, published_at:, row_count:, updated_at:, use_for_pages:, created_by: nil, is_ordered_manually: nil, updated_by: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::HubDBTableV3} for more details.
+        #   {HubSpotSDK::Models::Cms::HubDBTableV3} for more details.
         #
         #   @param id [String] Id of the table
         #
@@ -140,7 +140,7 @@ module HubspotSDK
         #
         #   @param column_count [Integer] Number of columns including deleted
         #
-        #   @param columns [Array<HubspotSDK::Models::Cms::Column>] List of columns in the table
+        #   @param columns [Array<HubSpotSDK::Models::Cms::Column>] List of columns in the table
         #
         #   @param created_at [Time] Timestamp at which the table is created
         #
@@ -166,11 +166,11 @@ module HubspotSDK
         #
         #   @param use_for_pages [Boolean] Specifies whether the table can be used for creation of dynamic pages
         #
-        #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param created_by [HubSpotSDK::Models::Cms::SimpleUser]
         #
         #   @param is_ordered_manually [Boolean] Indicates whether the table rows are ordered manually.
         #
-        #   @param updated_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param updated_by [HubSpotSDK::Models::Cms::SimpleUser]
       end
     end
   end

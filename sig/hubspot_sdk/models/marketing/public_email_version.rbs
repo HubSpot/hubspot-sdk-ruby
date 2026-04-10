@@ -1,35 +1,35 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_email_version =
         {
           id: String,
-          object: HubspotSDK::Marketing::PublicEmail,
+          object: HubSpotSDK::Marketing::PublicEmail,
           updated_at: Time,
-          user: HubspotSDK::VersionUser
+          user: HubSpotSDK::VersionUser
         }
 
-      class PublicEmailVersion < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailVersion < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor object: HubspotSDK::Marketing::PublicEmail
+        attr_accessor object: HubSpotSDK::Marketing::PublicEmail
 
         attr_accessor updated_at: Time
 
-        attr_accessor user: HubspotSDK::VersionUser
+        attr_accessor user: HubSpotSDK::VersionUser
 
         def initialize: (
           id: String,
-          object: HubspotSDK::Marketing::PublicEmail,
+          object: HubSpotSDK::Marketing::PublicEmail,
           updated_at: Time,
-          user: HubspotSDK::VersionUser
+          user: HubSpotSDK::VersionUser
         ) -> void
 
         def to_hash: -> {
           id: String,
-          object: HubspotSDK::Marketing::PublicEmail,
+          object: HubSpotSDK::Marketing::PublicEmail,
           updated_at: Time,
-          user: HubspotSDK::VersionUser
+          user: HubSpotSDK::VersionUser
         }
       end
     end

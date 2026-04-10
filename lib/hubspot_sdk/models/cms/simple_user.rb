@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class SimpleUser < HubspotSDK::Internal::Type::BaseModel
+      class SimpleUser < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the user.
         #

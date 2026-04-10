@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class BooleanFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class BooleanFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::BooleanFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::BooleanFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # Specifies the field type as BOOLEAN, indicating that the field can hold a true
         # or false value.
         sig do
-          returns(HubspotSDK::Automation::BooleanFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::BooleanFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
         sig do
           params(
-            type: HubspotSDK::Automation::BooleanFieldSchema::Type::OrSymbol
+            type: HubSpotSDK::Automation::BooleanFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { type: HubspotSDK::Automation::BooleanFieldSchema::Type::OrSymbol }
+            { type: HubSpotSDK::Automation::BooleanFieldSchema::Type::OrSymbol }
           )
         end
         def to_hash
@@ -42,24 +42,24 @@ module HubspotSDK
         # Specifies the field type as BOOLEAN, indicating that the field can hold a true
         # or false value.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::BooleanFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::BooleanFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           BOOLEAN =
             T.let(
               :BOOLEAN,
-              HubspotSDK::Automation::BooleanFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::BooleanFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::BooleanFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::BooleanFieldSchema::Type::TaggedSymbol
               ]
             )
           end

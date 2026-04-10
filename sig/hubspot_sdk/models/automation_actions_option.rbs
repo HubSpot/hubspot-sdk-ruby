@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     type automation_actions_option =
       {
@@ -11,7 +11,7 @@ module HubspotSDK
         value: String
       }
 
-    class AutomationActionsOption < HubspotSDK::Internal::Type::BaseModel
+    class AutomationActionsOption < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor description: String
 
       attr_accessor display_order: Integer

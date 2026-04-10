@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type owner_get_params =
         {
           owner_id: Integer,
           archived: bool,
-          id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property
+          id_property: HubSpotSDK::Models::Crm::OwnerGetParams::id_property
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class OwnerGetParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class OwnerGetParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         attr_accessor owner_id: Integer
 
@@ -19,35 +19,35 @@ module HubspotSDK
 
         def archived=: (bool) -> bool
 
-        attr_reader id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property?
+        attr_reader id_property: HubSpotSDK::Models::Crm::OwnerGetParams::id_property?
 
         def id_property=: (
-          HubspotSDK::Models::Crm::OwnerGetParams::id_property
-        ) -> HubspotSDK::Models::Crm::OwnerGetParams::id_property
+          HubSpotSDK::Models::Crm::OwnerGetParams::id_property
+        ) -> HubSpotSDK::Models::Crm::OwnerGetParams::id_property
 
         def initialize: (
           owner_id: Integer,
           ?archived: bool,
-          ?id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property,
-          ?request_options: HubspotSDK::request_opts
+          ?id_property: HubSpotSDK::Models::Crm::OwnerGetParams::id_property,
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           owner_id: Integer,
           archived: bool,
-          id_property: HubspotSDK::Models::Crm::OwnerGetParams::id_property,
-          request_options: HubspotSDK::RequestOptions
+          id_property: HubSpotSDK::Models::Crm::OwnerGetParams::id_property,
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type id_property = :id | :userId
 
         module IDProperty
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ID: :id
           USER_ID: :userId
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::OwnerGetParams::id_property]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::OwnerGetParams::id_property]
         end
       end
     end

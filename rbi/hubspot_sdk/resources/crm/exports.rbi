@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Exports
@@ -9,11 +9,11 @@ module HubspotSDK
           params(
             public_export_request:
               T.any(
-                HubspotSDK::Crm::PublicExportViewRequest::OrHash,
-                HubspotSDK::Crm::PublicExportListRequest::OrHash
+                HubSpotSDK::Crm::PublicExportViewRequest::OrHash,
+                HubSpotSDK::Crm::PublicExportListRequest::OrHash
               ),
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::TaskLocator)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::TaskLocator)
         end
         def create_async(public_export_request:, request_options: {})
         end
@@ -23,8 +23,8 @@ module HubspotSDK
         sig do
           params(
             export_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::PublicExportResponse)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::PublicExportResponse)
         end
         def get(export_id, request_options: {})
         end
@@ -34,14 +34,14 @@ module HubspotSDK
         sig do
           params(
             task_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ActionResponseWithSingleResultUri)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ActionResponseWithSingleResultUri)
         end
         def get_status(task_id, request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

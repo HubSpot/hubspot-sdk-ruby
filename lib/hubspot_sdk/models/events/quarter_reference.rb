@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class QuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class QuarterReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #
         #   @return [Integer]
@@ -16,9 +16,9 @@ module HubspotSDK
 
         # @!attribute reference_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::QuarterReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::QuarterReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Events::QuarterReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Events::QuarterReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -44,15 +44,15 @@ module HubspotSDK
         # @!method initialize(day:, month:, reference_type:, hour: nil, millisecond: nil, minute: nil, second: nil)
         #   @param day [Integer]
         #   @param month [Integer]
-        #   @param reference_type [Symbol, HubspotSDK::Models::Events::QuarterReference::ReferenceType]
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Events::QuarterReference::ReferenceType]
         #   @param hour [Integer]
         #   @param millisecond [Integer]
         #   @param minute [Integer]
         #   @param second [Integer]
 
-        # @see HubspotSDK::Models::Events::QuarterReference#reference_type
+        # @see HubSpotSDK::Models::Events::QuarterReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           QUARTER = :QUARTER
 

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RangedNumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedNumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::RangedNumberPropertyOperation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::RangedNumberPropertyOperation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
+            HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
           )
         end
         attr_accessor :operator
@@ -33,7 +33,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
+            HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
           )
         end
         attr_accessor :property_type
@@ -59,10 +59,10 @@ module HubspotSDK
             lower_bound: Float,
             operation_type: String,
             operator:
-              HubspotSDK::Events::RangedNumberPropertyOperation::Operator::OrSymbol,
+              HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::OrSymbol,
             operator_name: String,
             property_type:
-              HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType::OrSymbol,
+              HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType::OrSymbol,
             upper_bound: Float,
             default_value: String,
             render_spec: String
@@ -88,10 +88,10 @@ module HubspotSDK
               lower_bound: Float,
               operation_type: String,
               operator:
-                HubspotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol,
+                HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol,
               operator_name: String,
               property_type:
-                HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol,
+                HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol,
               upper_bound: Float,
               default_value: String,
               render_spec: String
@@ -102,13 +102,13 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedNumberPropertyOperation::Operator
+                HubSpotSDK::Events::RangedNumberPropertyOperation::Operator
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -116,18 +116,18 @@ module HubspotSDK
           IS_BETWEEN =
             T.let(
               :IS_BETWEEN,
-              HubspotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
             )
           IS_NOT_BETWEEN =
             T.let(
               :IS_NOT_BETWEEN,
-              HubspotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
+              HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
+                HubSpotSDK::Events::RangedNumberPropertyOperation::Operator::TaggedSymbol
               ]
             )
           end
@@ -136,13 +136,13 @@ module HubspotSDK
         end
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType
+                HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -150,13 +150,13 @@ module HubspotSDK
           NUMBER_RANGED =
             T.let(
               :"number-ranged",
-              HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
+              HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
+                HubSpotSDK::Events::RangedNumberPropertyOperation::PropertyType::TaggedSymbol
               ]
             )
           end

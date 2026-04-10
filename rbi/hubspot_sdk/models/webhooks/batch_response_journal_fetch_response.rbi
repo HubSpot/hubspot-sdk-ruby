@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class BatchResponseJournalFetchResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseJournalFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubspotSDK::Webhooks::JournalFetchResponse]) }
+        sig { returns(T::Array[HubSpotSDK::Webhooks::JournalFetchResponse]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -23,7 +23,7 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+            HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -44,10 +44,10 @@ module HubspotSDK
           params(
             completed_at: Time,
             results:
-              T::Array[HubspotSDK::Webhooks::JournalFetchResponse::OrHash],
+              T::Array[HubSpotSDK::Webhooks::JournalFetchResponse::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::OrSymbol,
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::OrSymbol,
             links: T::Hash[Symbol, String],
             requested_at: Time
           ).returns(T.attached_class)
@@ -66,10 +66,10 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Webhooks::JournalFetchResponse],
+              results: T::Array[HubSpotSDK::Webhooks::JournalFetchResponse],
               started_at: Time,
               status:
-                HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol,
+                HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }
@@ -79,13 +79,13 @@ module HubspotSDK
         end
 
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status
+                HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -93,28 +93,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+              HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
+                HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
               ]
             )
           end

@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableCloneRequest < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableCloneRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute copy_rows
         #   Specifies whether to copy the rows during clone
         #
         #   @return [Boolean]
-        required :copy_rows, HubspotSDK::Internal::Type::Boolean, api_name: :copyRows
+        required :copy_rows, HubSpotSDK::Internal::Type::Boolean, api_name: :copyRows
 
         # @!attribute is_hubspot_defined
         #   Indicates whether the table is defined by HubSpot.
         #
         #   @return [Boolean]
-        required :is_hubspot_defined, HubspotSDK::Internal::Type::Boolean, api_name: :isHubspotDefined
+        required :is_hubspot_defined, HubSpotSDK::Internal::Type::Boolean, api_name: :isHubspotDefined
 
         # @!attribute new_label
         #   The new label for the cloned table

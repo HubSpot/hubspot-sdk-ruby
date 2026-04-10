@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicEmailPatternResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailPatternResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the email pattern.
         #

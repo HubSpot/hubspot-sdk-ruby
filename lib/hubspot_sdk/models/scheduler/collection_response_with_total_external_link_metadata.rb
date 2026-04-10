@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class CollectionResponseWithTotalExternalLinkMetadata < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalExternalLinkMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalLinkMetadata>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalLinkMetadata] }
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalLinkMetadata>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalLinkMetadata] }
 
         # @!attribute total
         #
@@ -16,13 +16,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Scheduler::ExternalLinkMetadata>]
+        #   @param results [Array<HubSpotSDK::Models::Scheduler::ExternalLinkMetadata>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
         sig do
-          returns(HubspotSDK::Resources::Settings::Currencies::CentralFxRates)
+          returns(HubSpotSDK::Resources::Settings::Currencies::CentralFxRates)
         end
         attr_reader :central_fx_rates
 
         sig do
-          returns(HubspotSDK::Resources::Settings::Currencies::ExchangeRates)
+          returns(HubSpotSDK::Resources::Settings::Currencies::ExchangeRates)
         end
         attr_reader :exchange_rates
 
         # Get the details for the company currency. The company currency is used in deal
         # totals, reports, and the default currency for new deals.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CompanyCurrency
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+            HubSpotSDK::Settings::CompanyCurrency
           )
         end
         def get_company_currency(request_options: {})
@@ -26,8 +26,8 @@ module HubspotSDK
 
         # Retrieve a list of all available currency codes and their names.
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+            HubSpotSDK::Settings::CollectionResponseCurrencyCodeInfoNoPaging
           )
         end
         def list_codes(request_options: {})
@@ -37,9 +37,9 @@ module HubspotSDK
         sig do
           params(
             currency_code:
-              HubspotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::CompanyCurrency)
+              HubSpotSDK::Settings::CompanyCurrencyUpdateRequest::CurrencyCode::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Settings::CompanyCurrency)
         end
         def update_company_currency(
           # The three-letter code representing a specific currency (ex. USD).
@@ -49,7 +49,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

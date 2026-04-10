@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::PipelinesTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -15,17 +15,17 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Pipeline
+      response => HubSpotSDK::Crm::Pipeline
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
+        stages: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -38,17 +38,17 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.update("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Pipeline
+      response => HubSpotSDK::Crm::Pipeline
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
+        stages: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -61,12 +61,12 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.list("objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePipelineNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePipelineNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Pipeline])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Pipeline])
       }
     end
   end
@@ -94,19 +94,19 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PipelineStage
+      response => HubSpotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
+        metadata: ^(HubSpotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
-        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions,
+        write_permissions: HubSpotSDK::Crm::PipelineStage::WritePermissions,
         archived_at: Time | nil
       }
     end
@@ -129,17 +129,17 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.get("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Pipeline
+      response => HubSpotSDK::Crm::Pipeline
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
+        stages: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -153,19 +153,19 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       @hubspot.crm.pipelines.get_stage("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::PipelineStage
+      response => HubSpotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
+        metadata: ^(HubSpotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
-        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions,
+        write_permissions: HubSpotSDK::Crm::PipelineStage::WritePermissions,
         archived_at: Time | nil
       }
     end
@@ -177,12 +177,12 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.list_audit("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAuditInfo])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAuditInfo])
       }
     end
   end
@@ -194,12 +194,12 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       @hubspot.crm.pipelines.list_stage_audit("stageId", object_type: "objectType", pipeline_id: "pipelineId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePublicAuditInfoNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicAuditInfo])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicAuditInfo])
       }
     end
   end
@@ -210,12 +210,12 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
     response = @hubspot.crm.pipelines.list_stages("pipelineId", object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponsePipelineStageNoPaging
+      response => HubSpotSDK::Crm::CollectionResponsePipelineStageNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStage])
       }
     end
   end
@@ -233,17 +233,17 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Pipeline
+      response => HubSpotSDK::Crm::Pipeline
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        stages: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PipelineStage]),
+        stages: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PipelineStage]),
         updated_at: Time,
         archived_at: Time | nil
       }
@@ -262,19 +262,19 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PipelineStage
+      response => HubSpotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
+        metadata: ^(HubSpotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
-        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions,
+        write_permissions: HubSpotSDK::Crm::PipelineStage::WritePermissions,
         archived_at: Time | nil
       }
     end
@@ -294,19 +294,19 @@ class HubspotSDK::Test::Resources::Crm::PipelinesTest < HubspotSDK::Test::Resour
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::PipelineStage
+      response => HubSpotSDK::Crm::PipelineStage
     end
 
     assert_pattern do
       response => {
         id: String,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         created_at: Time,
         display_order: Integer,
         label: String,
-        metadata: ^(HubspotSDK::Internal::Type::HashOf[String]),
+        metadata: ^(HubSpotSDK::Internal::Type::HashOf[String]),
         updated_at: Time,
-        write_permissions: HubspotSDK::Crm::PipelineStage::WritePermissions,
+        write_permissions: HubSpotSDK::Crm::PipelineStage::WritePermissions,
         archived_at: Time | nil
       }
     end

@@ -1,31 +1,31 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class TimeOffset < HubspotSDK::Internal::Type::BaseModel
+      class TimeOffset < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Events::TimeOffset, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Events::TimeOffset, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(Integer) }
         attr_accessor :amount
 
         sig do
-          returns(HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol)
+          returns(HubSpotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol)
         end
         attr_accessor :offset_direction
 
-        sig { returns(HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol) }
         attr_accessor :time_unit
 
         sig do
           params(
             amount: Integer,
             offset_direction:
-              HubspotSDK::Events::TimeOffset::OffsetDirection::OrSymbol,
-            time_unit: HubspotSDK::Events::TimeOffset::TimeUnit::OrSymbol
+              HubSpotSDK::Events::TimeOffset::OffsetDirection::OrSymbol,
+            time_unit: HubSpotSDK::Events::TimeOffset::TimeUnit::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(amount:, offset_direction:, time_unit:)
@@ -36,8 +36,8 @@ module HubspotSDK
             {
               amount: Integer,
               offset_direction:
-                HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol,
-              time_unit: HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
+                HubSpotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol,
+              time_unit: HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
             }
           )
         end
@@ -45,29 +45,29 @@ module HubspotSDK
         end
 
         module OffsetDirection
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::TimeOffset::OffsetDirection)
+              T.all(Symbol, HubSpotSDK::Events::TimeOffset::OffsetDirection)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           FUTURE =
             T.let(
               :FUTURE,
-              HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
+              HubSpotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
             )
           PAST =
             T.let(
               :PAST,
-              HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
+              HubSpotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
+                HubSpotSDK::Events::TimeOffset::OffsetDirection::TaggedSymbol
               ]
             )
           end
@@ -76,35 +76,35 @@ module HubspotSDK
         end
 
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::TimeOffset::TimeUnit)
+              T.all(Symbol, HubSpotSDK::Events::TimeOffset::TimeUnit)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DAYS =
-            T.let(:DAYS, HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol)
+            T.let(:DAYS, HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol)
           HOURS =
             T.let(
               :HOURS,
-              HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
             )
           MINUTES =
             T.let(
               :MINUTES,
-              HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
             )
           WEEKS =
             T.let(
               :WEEKS,
-              HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
+              HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol]
+              T::Array[HubSpotSDK::Events::TimeOffset::TimeUnit::TaggedSymbol]
             )
           end
           def self.values

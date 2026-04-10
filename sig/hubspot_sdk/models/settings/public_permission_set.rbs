@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type public_permission_set =
         { id: String, name: String, requires_billing_write: bool }
 
-      class PublicPermissionSet < HubspotSDK::Internal::Type::BaseModel
+      class PublicPermissionSet < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String

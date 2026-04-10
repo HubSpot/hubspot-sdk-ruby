@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#list_schemas
-      class CollectionResponseObjectSchemaNoPaging < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#list_schemas
+      class CollectionResponseObjectSchemaNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ObjectSchema>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectSchema] }
+        #   @return [Array<HubSpotSDK::Models::Cms::ObjectSchema>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectSchema] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubspotSDK::Models::Cms::ObjectSchema>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::ObjectSchema>]
       end
     end
   end

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
         class Calling
-          # @return [HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts]
+          # @return [HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts]
           attr_reader :transcripts
 
           # Establish new channel connection settings for the specified app.
@@ -18,25 +18,25 @@ module HubspotSDK
           #
           # @param url [String] The URL associated with the channel connection settings.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingCreateChannelConnectionSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingCreateChannelConnectionSettingsParams
           def create_channel_connection_settings(app_id, params)
             parsed, options =
-              HubspotSDK::Crm::Extensions::CallingCreateChannelConnectionSettingsParams.dump_request(params)
+              HubSpotSDK::Crm::Extensions::CallingCreateChannelConnectionSettingsParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/channel-connection", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Crm::Extensions::CallingCreateInboundCallParams} for more
+          # {HubSpotSDK::Models::Crm::Extensions::CallingCreateInboundCallParams} for more
           # details.
           #
           # @overload create_inbound_call(create_engagement:, engagement_properties:, external_call_id:, final_call_status:, from_number:, potential_recipient_user_ids:, to_number:, call_started_timestamp: nil, duration_seconds: nil, user_id: nil, request_options: {})
@@ -47,13 +47,13 @@ module HubspotSDK
           #
           # @param external_call_id [String] The unique identifier for the call from an external system.
           #
-          # @param final_call_status [Symbol, HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
+          # @param final_call_status [Symbol, HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallRequest::FinalCallStatus] The final status of the call, with accepted values including: BUSY, CALLING*CRM*
           #
-          # @param from_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          # @param from_number [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
           #
           # @param potential_recipient_user_ids [Array<Integer>]
           #
-          # @param to_number [HubspotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
+          # @param to_number [HubSpotSDK::Models::Crm::Extensions::FormattedPhoneNumber]
           #
           # @param call_started_timestamp [Time] The timestamp indicating when the call started, formatted as a date-time string.
           #
@@ -61,18 +61,18 @@ module HubspotSDK
           #
           # @param user_id [Integer] The ID of the user associated with the call.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::CompletedThirdPartyCallResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingCreateInboundCallParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingCreateInboundCallParams
           def create_inbound_call(params)
-            parsed, options = HubspotSDK::Crm::Extensions::CallingCreateInboundCallParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingCreateInboundCallParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/extensions/calling/2026-03/inbound-call",
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse,
+              model: HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse,
               options: options
             )
           end
@@ -84,13 +84,13 @@ module HubspotSDK
           #
           # @param engagement_id [Integer] The unique identifier for the engagement associated with the call recording.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingCreateRecordingReadyParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingCreateRecordingReadyParams
           def create_recording_ready(params)
-            parsed, options = HubspotSDK::Crm::Extensions::CallingCreateRecordingReadyParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingCreateRecordingReadyParams.dump_request(params)
             @client.request(
               method: :post,
               path: "crm/extensions/calling/2026-03/recordings/ready",
@@ -108,18 +108,18 @@ module HubspotSDK
           #
           # @param url_to_retrieve_authed_recording [String] The URL used to access authenticated call recordings.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingCreateRecordingSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingCreateRecordingSettingsParams
           def create_recording_settings(app_id, params)
-            parsed, options = HubspotSDK::Crm::Extensions::CallingCreateRecordingSettingsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingCreateRecordingSettingsParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/recording", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::RecordingSettingsResponse,
               options: options
             )
           end
@@ -149,18 +149,18 @@ module HubspotSDK
           #
           # @param width [Integer] Specifies the width of the calling extension interface.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::SettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::SettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingCreateSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingCreateSettingsParams
           def create_settings(app_id, params)
-            parsed, options = HubspotSDK::Crm::Extensions::CallingCreateSettingsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingCreateSettingsParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["crm/extensions/calling/2026-03/%1$s/settings", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::SettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::SettingsResponse,
               options: options
             )
           end
@@ -170,11 +170,11 @@ module HubspotSDK
           # @overload delete_channel_connection_settings(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingDeleteChannelConnectionSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingDeleteChannelConnectionSettingsParams
           def delete_channel_connection_settings(app_id, params = {})
             @client.request(
               method: :delete,
@@ -190,11 +190,11 @@ module HubspotSDK
           # @overload delete_settings(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingDeleteSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingDeleteSettingsParams
           def delete_settings(app_id, params = {})
             @client.request(
               method: :delete,
@@ -209,16 +209,16 @@ module HubspotSDK
           # @overload get_channel_connection_settings(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingGetChannelConnectionSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingGetChannelConnectionSettingsParams
           def get_channel_connection_settings(app_id, params = {})
             @client.request(
               method: :get,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/channel-connection", app_id],
-              model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
               options: params[:request_options]
             )
           end
@@ -229,16 +229,16 @@ module HubspotSDK
           # @overload get_recording_settings(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingGetRecordingSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingGetRecordingSettingsParams
           def get_recording_settings(app_id, params = {})
             @client.request(
               method: :get,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/recording", app_id],
-              model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::RecordingSettingsResponse,
               options: params[:request_options]
             )
           end
@@ -248,16 +248,16 @@ module HubspotSDK
           # @overload get_settings(app_id, request_options: {})
           #
           # @param app_id [Integer]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::SettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::SettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingGetSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingGetSettingsParams
           def get_settings(app_id, params = {})
             @client.request(
               method: :get,
               path: ["crm/extensions/calling/2026-03/%1$s/settings", app_id],
-              model: HubspotSDK::Crm::Extensions::SettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::SettingsResponse,
               options: params[:request_options]
             )
           end
@@ -272,19 +272,19 @@ module HubspotSDK
           #
           # @param url [String] The URL for the channel connection settings.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::ChannelConnectionSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingUpdateChannelConnectionSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingUpdateChannelConnectionSettingsParams
           def update_channel_connection_settings(app_id, params = {})
             parsed, options =
-              HubspotSDK::Crm::Extensions::CallingUpdateChannelConnectionSettingsParams.dump_request(params)
+              HubSpotSDK::Crm::Extensions::CallingUpdateChannelConnectionSettingsParams.dump_request(params)
             @client.request(
               method: :patch,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/channel-connection", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::ChannelConnectionSettingsResponse,
               options: options
             )
           end
@@ -297,18 +297,18 @@ module HubspotSDK
           #
           # @param url_to_retrieve_authed_recording [String] The URL used to access authenticated call recordings.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::RecordingSettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingUpdateRecordingSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingUpdateRecordingSettingsParams
           def update_recording_settings(app_id, params = {})
-            parsed, options = HubspotSDK::Crm::Extensions::CallingUpdateRecordingSettingsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingUpdateRecordingSettingsParams.dump_request(params)
             @client.request(
               method: :patch,
               path: ["crm/extensions/calling/2026-03/%1$s/settings/recording", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::RecordingSettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::RecordingSettingsResponse,
               options: options
             )
           end
@@ -338,28 +338,28 @@ module HubspotSDK
           #
           # @param width [Integer] The width setting for the calling extension interface.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Crm::Extensions::SettingsResponse]
+          # @return [HubSpotSDK::Models::Crm::Extensions::SettingsResponse]
           #
-          # @see HubspotSDK::Models::Crm::Extensions::CallingUpdateSettingsParams
+          # @see HubSpotSDK::Models::Crm::Extensions::CallingUpdateSettingsParams
           def update_settings(app_id, params = {})
-            parsed, options = HubspotSDK::Crm::Extensions::CallingUpdateSettingsParams.dump_request(params)
+            parsed, options = HubSpotSDK::Crm::Extensions::CallingUpdateSettingsParams.dump_request(params)
             @client.request(
               method: :patch,
               path: ["crm/extensions/calling/2026-03/%1$s/settings", app_id],
               body: parsed,
-              model: HubspotSDK::Crm::Extensions::SettingsResponse,
+              model: HubSpotSDK::Crm::Extensions::SettingsResponse,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
-            @transcripts = HubspotSDK::Resources::Crm::Extensions::Calling::Transcripts.new(client: client)
+            @transcripts = HubSpotSDK::Resources::Crm::Extensions::Calling::Transcripts.new(client: client)
           end
         end
       end

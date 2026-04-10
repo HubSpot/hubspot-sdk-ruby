@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class TodayReference < HubspotSDK::Internal::Type::BaseModel
+      class TodayReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::TodayReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::TodayReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            HubspotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
+            HubSpotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
           )
         end
         attr_accessor :reference_type
@@ -46,7 +46,7 @@ module HubspotSDK
         sig do
           params(
             reference_type:
-              HubspotSDK::Events::TodayReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::TodayReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -66,7 +66,7 @@ module HubspotSDK
           override.returns(
             {
               reference_type:
-                HubspotSDK::Events::TodayReference::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::TodayReference::ReferenceType::TaggedSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -78,24 +78,24 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::TodayReference::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Events::TodayReference::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           TODAY =
             T.let(
               :TODAY,
-              HubspotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::TodayReference::ReferenceType::TaggedSymbol
               ]
             )
           end

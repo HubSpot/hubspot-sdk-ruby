@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type crm_property_wrapper = { name: String, value: String }
 
-      class CrmPropertyWrapper < HubspotSDK::Internal::Type::BaseModel
+      class CrmPropertyWrapper < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor name: String
 
         attr_accessor value: String

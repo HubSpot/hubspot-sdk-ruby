@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectTypeDefinition < HubspotSDK::Internal::Type::BaseModel
+      class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_type_id
         #   The unique identifier for the object type.
         #

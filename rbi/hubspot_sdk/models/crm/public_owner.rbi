@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicOwner < HubspotSDK::Internal::Type::BaseModel
+      class PublicOwner < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::PublicOwner, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::PublicOwner, HubSpotSDK::Internal::AnyHash)
           end
 
         # The unique identifier of the owner.
@@ -22,7 +22,7 @@ module HubspotSDK
         attr_accessor :created_at
 
         # The type of the owner, which can be either PERSON or QUEUE.
-        sig { returns(HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Crm::PublicOwner::Type::TaggedSymbol) }
         attr_accessor :type
 
         # The date and time when the owner was last updated.
@@ -50,11 +50,11 @@ module HubspotSDK
         sig { params(last_name: String).void }
         attr_writer :last_name
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::Crm::PublicTeam])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::Crm::PublicTeam])) }
         attr_reader :teams
 
         sig do
-          params(teams: T::Array[HubspotSDK::Crm::PublicTeam::OrHash]).void
+          params(teams: T::Array[HubSpotSDK::Crm::PublicTeam::OrHash]).void
         end
         attr_writer :teams
 
@@ -77,12 +77,12 @@ module HubspotSDK
             id: String,
             archived: T::Boolean,
             created_at: Time,
-            type: HubspotSDK::Crm::PublicOwner::Type::OrSymbol,
+            type: HubSpotSDK::Crm::PublicOwner::Type::OrSymbol,
             updated_at: Time,
             email: String,
             first_name: String,
             last_name: String,
-            teams: T::Array[HubspotSDK::Crm::PublicTeam::OrHash],
+            teams: T::Array[HubSpotSDK::Crm::PublicTeam::OrHash],
             user_id: Integer,
             user_id_including_inactive: Integer
           ).returns(T.attached_class)
@@ -118,12 +118,12 @@ module HubspotSDK
               id: String,
               archived: T::Boolean,
               created_at: Time,
-              type: HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol,
+              type: HubSpotSDK::Crm::PublicOwner::Type::TaggedSymbol,
               updated_at: Time,
               email: String,
               first_name: String,
               last_name: String,
-              teams: T::Array[HubspotSDK::Crm::PublicTeam],
+              teams: T::Array[HubSpotSDK::Crm::PublicTeam],
               user_id: Integer,
               user_id_including_inactive: Integer
             }
@@ -134,20 +134,20 @@ module HubspotSDK
 
         # The type of the owner, which can be either PERSON or QUEUE.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Crm::PublicOwner::Type) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Crm::PublicOwner::Type) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           PERSON =
-            T.let(:PERSON, HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol)
+            T.let(:PERSON, HubSpotSDK::Crm::PublicOwner::Type::TaggedSymbol)
           QUEUE =
-            T.let(:QUEUE, HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol)
+            T.let(:QUEUE, HubSpotSDK::Crm::PublicOwner::Type::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Crm::PublicOwner::Type::TaggedSymbol]
+              T::Array[HubSpotSDK::Crm::PublicOwner::Type::TaggedSymbol]
             )
           end
           def self.values

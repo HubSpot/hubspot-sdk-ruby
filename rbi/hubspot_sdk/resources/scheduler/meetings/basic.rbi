@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
@@ -13,11 +13,11 @@ module HubspotSDK
               name: String,
               organizer_user_id: String,
               type:
-                HubspotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Scheduler::Meetings::BasicListParams::Type::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Scheduler::ExternalLinkMetadata
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Scheduler::ExternalLinkMetadata
               ]
             )
           end
@@ -41,9 +41,9 @@ module HubspotSDK
               slug: String,
               timezone: String,
               month_offset: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
+              HubSpotSDK::Scheduler::ExternalLinkAvailabilityAndBusyTimes
             )
           end
           def get_availability_by_slug(
@@ -59,14 +59,14 @@ module HubspotSDK
             params(
               slug: String,
               timezone: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Scheduler::ExternalBookingInfo)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Scheduler::ExternalBookingInfo)
           end
           def get_booking_info_by_slug(slug, timezone:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

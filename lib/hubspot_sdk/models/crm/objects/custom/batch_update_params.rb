@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         module Custom
-          # @see HubspotSDK::Resources::Crm::Objects::Custom::Batch#update
-          class BatchUpdateParams < HubspotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          # @see HubSpotSDK::Resources::Crm::Objects::Custom::Batch#update
+          class BatchUpdateParams < HubSpotSDK::Models::Crm::BatchInputSimplePublicObjectBatchInput
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             # @!attribute object_type
             #
@@ -17,7 +17,7 @@ module HubspotSDK
 
             # @!method initialize(object_type:, request_options: {})
             #   @param object_type [String]
-            #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+            #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
           end
         end
       end

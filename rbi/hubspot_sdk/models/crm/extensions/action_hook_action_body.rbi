@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class ActionHookActionBody < HubspotSDK::Internal::Type::BaseModel
+        class ActionHookActionBody < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::ActionHookActionBody,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -17,7 +17,7 @@ module HubspotSDK
           # PUT, DELETE, or PATCH. If using GET or DELETE
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
             )
           end
           attr_accessor :http_method
@@ -30,7 +30,7 @@ module HubspotSDK
           # The type of status.
           sig do
             returns(
-              HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
+              HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
             )
           end
           attr_accessor :type
@@ -41,7 +41,7 @@ module HubspotSDK
 
           sig do
             returns(
-              T.nilable(HubspotSDK::Crm::Extensions::ActionConfirmationBody)
+              T.nilable(HubSpotSDK::Crm::Extensions::ActionConfirmationBody)
             )
           end
           attr_reader :confirmation
@@ -49,7 +49,7 @@ module HubspotSDK
           sig do
             params(
               confirmation:
-                HubspotSDK::Crm::Extensions::ActionConfirmationBody::OrHash
+                HubSpotSDK::Crm::Extensions::ActionConfirmationBody::OrHash
             ).void
           end
           attr_writer :confirmation
@@ -64,13 +64,13 @@ module HubspotSDK
           sig do
             params(
               http_method:
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::OrSymbol,
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::OrSymbol,
               property_names_included: T::Array[String],
               type:
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::OrSymbol,
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type::OrSymbol,
               url: String,
               confirmation:
-                HubspotSDK::Crm::Extensions::ActionConfirmationBody::OrHash,
+                HubSpotSDK::Crm::Extensions::ActionConfirmationBody::OrHash,
               label: String
             ).returns(T.attached_class)
           end
@@ -95,13 +95,13 @@ module HubspotSDK
             override.returns(
               {
                 http_method:
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol,
                 property_names_included: T::Array[String],
                 type:
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol,
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol,
                 url: String,
                 confirmation:
-                  HubspotSDK::Crm::Extensions::ActionConfirmationBody,
+                  HubSpotSDK::Crm::Extensions::ActionConfirmationBody,
                 label: String
               }
             )
@@ -112,13 +112,13 @@ module HubspotSDK
           # The HTTP method to be used when making the call, which can be set to GET, POST,
           # PUT, DELETE, or PATCH. If using GET or DELETE
           module HTTPMethod
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -126,53 +126,53 @@ module HubspotSDK
             CONNECT =
               T.let(
                 :CONNECT,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             DELETE =
               T.let(
                 :DELETE,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             GET =
               T.let(
                 :GET,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             HEAD =
               T.let(
                 :HEAD,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             OPTIONS =
               T.let(
                 :OPTIONS,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             PATCH =
               T.let(
                 :PATCH,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             POST =
               T.let(
                 :POST,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             PUT =
               T.let(
                 :PUT,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
             TRACE =
               T.let(
                 :TRACE,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::HTTPMethod::TaggedSymbol
                 ]
               )
             end
@@ -182,13 +182,13 @@ module HubspotSDK
 
           # The type of status.
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::Type
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -196,13 +196,13 @@ module HubspotSDK
             ACTION_HOOK =
               T.let(
                 :ACTION_HOOK,
-                HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::ActionHookActionBody::Type::TaggedSymbol
                 ]
               )
             end

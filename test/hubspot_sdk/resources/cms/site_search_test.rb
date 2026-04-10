@@ -2,21 +2,21 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::SiteSearchTest < HubSpotSDK::Test::ResourceTest
   def test_get_indexed_data
     skip("Mock server tests are disabled")
 
     response = @hubspot.cms.site_search.get_indexed_data("contentId")
 
     assert_pattern do
-      response => HubspotSDK::Cms::IndexedData
+      response => HubSpotSDK::Cms::IndexedData
     end
 
     assert_pattern do
       response => {
         id: String,
-        fields: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IndexedField]),
-        type: HubspotSDK::Cms::IndexedData::Type
+        fields: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::IndexedField]),
+        type: HubSpotSDK::Cms::IndexedData::Type
       }
     end
   end
@@ -27,7 +27,7 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
     response = @hubspot.cms.site_search.search
 
     assert_pattern do
-      response => HubspotSDK::Cms::PublicSearchResults
+      response => HubSpotSDK::Cms::PublicSearchResults
     end
 
     assert_pattern do
@@ -35,7 +35,7 @@ class HubspotSDK::Test::Resources::Cms::SiteSearchTest < HubspotSDK::Test::Resou
         limit: Integer,
         offset: Integer,
         page: Integer,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ContentSearchResult]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentSearchResult]),
         total: Integer,
         search_term: String | nil
       }

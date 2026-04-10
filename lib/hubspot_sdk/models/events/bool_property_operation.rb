@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class BoolPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class BoolPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::BoolPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::BoolPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::BoolPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::BoolPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,15 +28,15 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::BoolPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::BoolPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::BoolPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::BoolPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute value
         #
         #   @return [Boolean]
-        required :value, HubspotSDK::Internal::Type::Boolean
+        required :value, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute default_value
         #
@@ -51,16 +51,16 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, value:, default_value: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::BoolPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::BoolPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::BoolPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::BoolPropertyOperation::PropertyType]
         #   @param value [Boolean]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::BoolPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::BoolPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HAS_EVER_BEEN_EQUAL_TO = :HAS_EVER_BEEN_EQUAL_TO
           HAS_NEVER_BEEN_EQUAL_TO = :HAS_NEVER_BEEN_EQUAL_TO
@@ -71,9 +71,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::BoolPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::BoolPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
 

@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileStat < HubspotSDK::Internal::Type::BaseModel
+      class FileStat < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute file
         #
-        #   @return [HubspotSDK::Models::Files::File, nil]
-        optional :file, -> { HubspotSDK::Files::File }
+        #   @return [HubSpotSDK::Models::Files::File, nil]
+        optional :file, -> { HubSpotSDK::Files::File }
 
         # @!attribute folder
         #
-        #   @return [HubspotSDK::Models::Files::Folder, nil]
-        optional :folder, -> { HubspotSDK::Files::Folder }
+        #   @return [HubSpotSDK::Models::Files::Folder, nil]
+        optional :folder, -> { HubSpotSDK::Files::Folder }
 
         # @!method initialize(file: nil, folder: nil)
-        #   @param file [HubspotSDK::Models::Files::File]
-        #   @param folder [HubspotSDK::Models::Files::Folder]
+        #   @param file [HubSpotSDK::Models::Files::File]
+        #   @param folder [HubSpotSDK::Models::Files::Folder]
       end
     end
   end

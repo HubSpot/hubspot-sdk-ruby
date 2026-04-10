@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type list_membership_subscription_upsert_request =
         {
-          actions: ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
           list_ids: ::Array[Integer],
           object_ids: ::Array[Integer],
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
         }
 
-      class ListMembershipSubscriptionUpsertRequest < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor actions: ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action]
+      class ListMembershipSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action]
 
         attr_accessor list_ids: ::Array[Integer]
 
@@ -19,22 +19,22 @@ module HubspotSDK
 
         attr_accessor portal_id: Integer
 
-        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
 
         def initialize: (
-          actions: ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
           list_ids: ::Array[Integer],
           object_ids: ::Array[Integer],
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
         ) -> void
 
         def to_hash: -> {
-          actions: ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action],
           list_ids: ::Array[Integer],
           object_ids: ::Array[Integer],
           portal_id: Integer,
-          subscription_type: HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
+          subscription_type: HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type
         }
 
         type action =
@@ -52,7 +52,7 @@ module HubspotSDK
           | :REMOVED_FROM_LIST
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATE: :CREATE
           UPDATE: :UPDATE
@@ -67,7 +67,7 @@ module HubspotSDK
           ADDED_TO_LIST: :ADDED_TO_LIST
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::action]
         end
 
         type subscription_type =
@@ -78,7 +78,7 @@ module HubspotSDK
           | :LIST_MEMBERSHIP
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           OBJECT: :OBJECT
           ASSOCIATION: :ASSOCIATION
@@ -86,7 +86,7 @@ module HubspotSDK
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest::subscription_type]
         end
       end
     end

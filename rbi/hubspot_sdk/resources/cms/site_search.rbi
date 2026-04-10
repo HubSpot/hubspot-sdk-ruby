@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class SiteSearch
@@ -11,8 +11,8 @@ module HubspotSDK
           params(
             content_id: String,
             type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::IndexedData)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::IndexedData)
         end
         def get_indexed_data(content_id, type: nil, request_options: {})
         end
@@ -31,8 +31,8 @@ module HubspotSDK
             group_id: T::Array[Integer],
             hubdb_query: String,
             language:
-              HubspotSDK::Cms::SiteSearchSearchParams::Language::OrSymbol,
-            length: HubspotSDK::Cms::SiteSearchSearchParams::Length::OrSymbol,
+              HubSpotSDK::Cms::SiteSearchSearchParams::Language::OrSymbol,
+            length: HubSpotSDK::Cms::SiteSearchSearchParams::Length::OrSymbol,
             limit: Integer,
             match_prefix: T::Boolean,
             offset: Integer,
@@ -43,9 +43,9 @@ module HubspotSDK
             table_id: Integer,
             type: T::Array[String],
             types:
-              T::Array[HubspotSDK::Cms::SiteSearchSearchParams::Type::OrSymbol],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Cms::PublicSearchResults)
+              T::Array[HubSpotSDK::Cms::SiteSearchSearchParams::Type::OrSymbol],
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Cms::PublicSearchResults)
         end
         def search(
           analytics: nil,
@@ -73,7 +73,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

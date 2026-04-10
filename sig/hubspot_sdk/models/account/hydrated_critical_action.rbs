@@ -1,11 +1,11 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
       type hydrated_critical_action =
         {
           id: String,
           created_at: Time,
-          type: HubspotSDK::Models::Account::HydratedCriticalAction::type_,
+          type: HubSpotSDK::Models::Account::HydratedCriticalAction::type_,
           user_id: Integer,
           acting_user: String,
           country_code: String,
@@ -16,12 +16,12 @@ module HubspotSDK
           region_code: String
         }
 
-      class HydratedCriticalAction < HubspotSDK::Internal::Type::BaseModel
+      class HydratedCriticalAction < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
 
-        attr_accessor type: HubspotSDK::Models::Account::HydratedCriticalAction::type_
+        attr_accessor type: HubSpotSDK::Models::Account::HydratedCriticalAction::type_
 
         attr_accessor user_id: Integer
 
@@ -56,7 +56,7 @@ module HubspotSDK
         def initialize: (
           id: String,
           created_at: Time,
-          type: HubspotSDK::Models::Account::HydratedCriticalAction::type_,
+          type: HubSpotSDK::Models::Account::HydratedCriticalAction::type_,
           user_id: Integer,
           ?acting_user: String,
           ?country_code: String,
@@ -70,7 +70,7 @@ module HubspotSDK
         def to_hash: -> {
           id: String,
           created_at: Time,
-          type: HubspotSDK::Models::Account::HydratedCriticalAction::type_,
+          type: HubSpotSDK::Models::Account::HydratedCriticalAction::type_,
           user_id: Integer,
           acting_user: String,
           country_code: String,
@@ -223,7 +223,7 @@ module HubspotSDK
           | :WEBHOOK_SUBSCRIPTION_UPDATE
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ACCEPTANCE_TEST: :ACCEPTANCE_TEST
           ACCOUNT_ADDED_TO_MULTI_ACCOUNT_ORGANIZATION: :ACCOUNT_ADDED_TO_MULTI_ACCOUNT_ORGANIZATION
@@ -365,7 +365,7 @@ module HubspotSDK
           WEBHOOK_SUBSCRIPTION_CREATE: :WEBHOOK_SUBSCRIPTION_CREATE
           WEBHOOK_SUBSCRIPTION_UPDATE: :WEBHOOK_SUBSCRIPTION_UPDATE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Account::HydratedCriticalAction::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Account::HydratedCriticalAction::type_]
         end
       end
     end

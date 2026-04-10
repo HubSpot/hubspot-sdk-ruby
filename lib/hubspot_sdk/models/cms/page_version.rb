@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::Pages#get_landing_page_revision
-      class PageVersion < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::Pages#get_landing_page_revision
+      class PageVersion < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -12,8 +12,8 @@ module HubspotSDK
 
         # @!attribute object
         #
-        #   @return [HubspotSDK::Models::Cms::PageData]
-        required :object, -> { HubspotSDK::Cms::PageData }
+        #   @return [HubSpotSDK::Models::Cms::PageData]
+        required :object, -> { HubSpotSDK::Cms::PageData }
 
         # @!attribute updated_at
         #
@@ -22,14 +22,14 @@ module HubspotSDK
 
         # @!attribute user
         #
-        #   @return [HubspotSDK::Models::VersionUser]
-        required :user, -> { HubspotSDK::VersionUser }
+        #   @return [HubSpotSDK::Models::VersionUser]
+        required :user, -> { HubSpotSDK::VersionUser }
 
         # @!method initialize(id:, object:, updated_at:, user:)
         #   @param id [String]
-        #   @param object [HubspotSDK::Models::Cms::PageData]
+        #   @param object [HubSpotSDK::Models::Cms::PageData]
         #   @param updated_at [Time]
-        #   @param user [HubspotSDK::Models::VersionUser]
+        #   @param user [HubSpotSDK::Models::VersionUser]
       end
     end
   end

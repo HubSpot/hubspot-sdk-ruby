@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicMergeInput < HubspotSDK::Internal::Type::BaseModel
+      class PublicMergeInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_to_merge
         #   The ID of the company to merge into the primary.
         #

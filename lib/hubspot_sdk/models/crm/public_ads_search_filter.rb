@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAdsSearchFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicAdsSearchFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute ad_network
         #   Ad network (ADWORDS, FACEBOOK, LINKEDIN, ALL)
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute filter_type
         #   Type of the filter (ADS_SEARCH)
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicAdsSearchFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicAdsSearchFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicAdsSearchFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicAdsSearchFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute operator
@@ -33,7 +33,7 @@ module HubspotSDK
         # @!attribute search_terms
         #
         #   @return [Array<String>]
-        required :search_terms, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :searchTerms
+        required :search_terms, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :searchTerms
 
         # @!attribute search_term_type
         #   Search term to match an ad
@@ -43,13 +43,13 @@ module HubspotSDK
 
         # @!method initialize(ad_network:, entity_type:, filter_type:, operator:, search_terms:, search_term_type:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicAdsSearchFilter} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicAdsSearchFilter} for more details.
         #
         #   @param ad_network [String] Ad network (ADWORDS, FACEBOOK, LINKEDIN, ALL)
         #
         #   @param entity_type [String] Type of ad entity (KEYWORD, ADGROUP, AD, CAMPAIGN)
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicAdsSearchFilter::FilterType] Type of the filter (ADS_SEARCH)
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicAdsSearchFilter::FilterType] Type of the filter (ADS_SEARCH)
         #
         #   @param operator [String] Operator to be applied (CONTAINS, IS_EQUAL_TO, ENDS_WITH, STARTS_WITH, IS_KNOWN)
         #
@@ -59,9 +59,9 @@ module HubspotSDK
 
         # Type of the filter (ADS_SEARCH)
         #
-        # @see HubspotSDK::Models::Crm::PublicAdsSearchFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicAdsSearchFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ADS_SEARCH = :ADS_SEARCH
 

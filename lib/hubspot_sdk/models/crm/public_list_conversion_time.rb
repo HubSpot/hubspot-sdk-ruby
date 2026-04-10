@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module PublicListConversionTime
-        extend HubspotSDK::Internal::Type::Union
+        extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubspotSDK::Crm::PublicListConversionDate }
+        variant -> { HubSpotSDK::Crm::PublicListConversionDate }
 
-        variant -> { HubspotSDK::Crm::PublicListConversionInactivity }
+        variant -> { HubSpotSDK::Crm::PublicListConversionInactivity }
 
         # @!method self.variants
-        #   @return [Array(HubspotSDK::Models::Crm::PublicListConversionDate, HubspotSDK::Models::Crm::PublicListConversionInactivity)]
+        #   @return [Array(HubSpotSDK::Models::Crm::PublicListConversionDate, HubSpotSDK::Models::Crm::PublicListConversionInactivity)]
       end
     end
   end

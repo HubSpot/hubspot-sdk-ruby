@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type file =
@@ -7,7 +7,7 @@ module HubspotSDK
           archived: bool,
           created_at: Time,
           updated_at: Time,
-          access: HubspotSDK::Models::Files::File::access,
+          access: HubSpotSDK::Models::Files::File::access,
           archived_at: Time,
           default_hosting_url: String,
           encoding: String,
@@ -20,13 +20,13 @@ module HubspotSDK
           parent_folder_id: String,
           path: String,
           size: Integer,
-          source_group: HubspotSDK::Models::Files::File::source_group,
+          source_group: HubSpotSDK::Models::Files::File::source_group,
           type: String,
           url: String,
           width: Integer
         }
 
-      class File < HubspotSDK::Internal::Type::BaseModel
+      class File < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
@@ -35,11 +35,11 @@ module HubspotSDK
 
         attr_accessor updated_at: Time
 
-        attr_reader access: HubspotSDK::Models::Files::File::access?
+        attr_reader access: HubSpotSDK::Models::Files::File::access?
 
         def access=: (
-          HubspotSDK::Models::Files::File::access
-        ) -> HubspotSDK::Models::Files::File::access
+          HubSpotSDK::Models::Files::File::access
+        ) -> HubSpotSDK::Models::Files::File::access
 
         attr_reader archived_at: Time?
 
@@ -89,11 +89,11 @@ module HubspotSDK
 
         def size=: (Integer) -> Integer
 
-        attr_reader source_group: HubspotSDK::Models::Files::File::source_group?
+        attr_reader source_group: HubSpotSDK::Models::Files::File::source_group?
 
         def source_group=: (
-          HubspotSDK::Models::Files::File::source_group
-        ) -> HubspotSDK::Models::Files::File::source_group
+          HubSpotSDK::Models::Files::File::source_group
+        ) -> HubSpotSDK::Models::Files::File::source_group
 
         attr_reader type: String?
 
@@ -112,7 +112,7 @@ module HubspotSDK
           archived: bool,
           created_at: Time,
           updated_at: Time,
-          ?access: HubspotSDK::Models::Files::File::access,
+          ?access: HubSpotSDK::Models::Files::File::access,
           ?archived_at: Time,
           ?default_hosting_url: String,
           ?encoding: String,
@@ -125,7 +125,7 @@ module HubspotSDK
           ?parent_folder_id: String,
           ?path: String,
           ?size: Integer,
-          ?source_group: HubspotSDK::Models::Files::File::source_group,
+          ?source_group: HubSpotSDK::Models::Files::File::source_group,
           ?type: String,
           ?url: String,
           ?width: Integer
@@ -136,7 +136,7 @@ module HubspotSDK
           archived: bool,
           created_at: Time,
           updated_at: Time,
-          access: HubspotSDK::Models::Files::File::access,
+          access: HubSpotSDK::Models::Files::File::access,
           archived_at: Time,
           default_hosting_url: String,
           encoding: String,
@@ -149,7 +149,7 @@ module HubspotSDK
           parent_folder_id: String,
           path: String,
           size: Integer,
-          source_group: HubspotSDK::Models::Files::File::source_group,
+          source_group: HubSpotSDK::Models::Files::File::source_group,
           type: String,
           url: String,
           width: Integer
@@ -166,7 +166,7 @@ module HubspotSDK
           | :SENSITIVE
 
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HIDDEN_INDEXABLE: :HIDDEN_INDEXABLE
           HIDDEN_NOT_INDEXABLE: :HIDDEN_NOT_INDEXABLE
@@ -177,14 +177,14 @@ module HubspotSDK
           PUBLIC_NOT_INDEXABLE: :PUBLIC_NOT_INDEXABLE
           SENSITIVE: :SENSITIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Files::File::access]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Files::File::access]
         end
 
         type source_group =
           :CONTENT | :CONVERSATIONS | :FORMS | :UI_EXTENSIONS | :UNKNOWN
 
         module SourceGroup
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTENT: :CONTENT
           CONVERSATIONS: :CONVERSATIONS
@@ -192,7 +192,7 @@ module HubspotSDK
           UI_EXTENSIONS: :UI_EXTENSIONS
           UNKNOWN: :UNKNOWN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Files::File::source_group]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Files::File::source_group]
         end
       end
     end

@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type public_search_results =
@@ -6,19 +6,19 @@ module HubspotSDK
           limit: Integer,
           offset: Integer,
           page: Integer,
-          results: ::Array[HubspotSDK::Cms::ContentSearchResult],
+          results: ::Array[HubSpotSDK::Cms::ContentSearchResult],
           total: Integer,
           search_term: String
         }
 
-      class PublicSearchResults < HubspotSDK::Internal::Type::BaseModel
+      class PublicSearchResults < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor limit: Integer
 
         attr_accessor offset: Integer
 
         attr_accessor page: Integer
 
-        attr_accessor results: ::Array[HubspotSDK::Cms::ContentSearchResult]
+        attr_accessor results: ::Array[HubSpotSDK::Cms::ContentSearchResult]
 
         attr_accessor total: Integer
 
@@ -30,7 +30,7 @@ module HubspotSDK
           limit: Integer,
           offset: Integer,
           page: Integer,
-          results: ::Array[HubspotSDK::Cms::ContentSearchResult],
+          results: ::Array[HubSpotSDK::Cms::ContentSearchResult],
           total: Integer,
           ?search_term: String
         ) -> void
@@ -39,7 +39,7 @@ module HubspotSDK
           limit: Integer,
           offset: Integer,
           page: Integer,
-          results: ::Array[HubspotSDK::Cms::ContentSearchResult],
+          results: ::Array[HubSpotSDK::Cms::ContentSearchResult],
           total: Integer,
           search_term: String
         }

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CardsDevUpdateParams < HubspotSDK::Models::Crm::Extensions::CardPatchRequest
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CardsDevUpdateParams < HubSpotSDK::Models::Crm::Extensions::CardPatchRequest
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CardsDevUpdateParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CardsDevUpdateParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -26,7 +26,7 @@ module HubspotSDK
             params(
               app_id: Integer,
               card_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(app_id:, card_id:, request_options: {})
@@ -37,7 +37,7 @@ module HubspotSDK
               {
                 app_id: Integer,
                 card_id: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

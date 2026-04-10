@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class HubDBTableRowV3BatchUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class HubDBTableRowV3BatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute child_table_id
         #   Specifies the value for the column child table id
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         #   List of key value pairs with the column name and column value
         #
         #   @return [Hash{Symbol=>Object}]
-        required :values, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+        required :values, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
         # @!attribute id
         #   The id of the table row
@@ -44,7 +44,7 @@ module HubspotSDK
 
         # @!method initialize(child_table_id:, display_index:, values:, id: nil, name: nil, path: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest} for more details.
+        #   {HubSpotSDK::Models::Cms::HubDBTableRowV3BatchUpdateRequest} for more details.
         #
         #   @param child_table_id [Integer] Specifies the value for the column child table id
         #

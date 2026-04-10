@@ -1,35 +1,35 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class CollectionResponseWithTotalBlogVersion < HubspotSDK::Internal::Type::BaseModel
+        class CollectionResponseWithTotalBlogVersion < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::CollectionResponseWithTotalBlogVersion,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::CollectionResponseWithTotalBlogVersion,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
-          sig { returns(T::Array[HubspotSDK::Cms::Blogs::VersionBlog]) }
+          sig { returns(T::Array[HubSpotSDK::Cms::Blogs::VersionBlog]) }
           attr_accessor :results
 
           sig { returns(Integer) }
           attr_accessor :total
 
-          sig { returns(T.nilable(HubspotSDK::Paging)) }
+          sig { returns(T.nilable(HubSpotSDK::Paging)) }
           attr_reader :paging
 
-          sig { params(paging: HubspotSDK::Paging::OrHash).void }
+          sig { params(paging: HubSpotSDK::Paging::OrHash).void }
           attr_writer :paging
 
           sig do
             params(
-              results: T::Array[HubspotSDK::Cms::Blogs::VersionBlog::OrHash],
+              results: T::Array[HubSpotSDK::Cms::Blogs::VersionBlog::OrHash],
               total: Integer,
-              paging: HubspotSDK::Paging::OrHash
+              paging: HubSpotSDK::Paging::OrHash
             ).returns(T.attached_class)
           end
           def self.new(results:, total:, paging: nil)
@@ -38,9 +38,9 @@ module HubspotSDK
           sig do
             override.returns(
               {
-                results: T::Array[HubspotSDK::Cms::Blogs::VersionBlog],
+                results: T::Array[HubSpotSDK::Cms::Blogs::VersionBlog],
                 total: Integer,
-                paging: HubspotSDK::Paging
+                paging: HubSpotSDK::Paging
               }
             )
           end

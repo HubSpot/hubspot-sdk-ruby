@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class Option < HubspotSDK::Internal::Type::BaseModel
+    class Option < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute hidden
       #   Hidden options will not be displayed in HubSpot.
       #
       #   @return [Boolean]
-      required :hidden, HubspotSDK::Internal::Type::Boolean
+      required :hidden, HubSpotSDK::Internal::Type::Boolean
 
       # @!attribute label
       #   A human-readable option label that will be shown in HubSpot.
@@ -37,7 +37,7 @@ module HubspotSDK
 
       # @!method initialize(hidden:, label:, value:, description: nil, display_order: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::Option} for more details.
+      #   {HubSpotSDK::Models::Option} for more details.
       #
       #   A HubSpot property option
       #

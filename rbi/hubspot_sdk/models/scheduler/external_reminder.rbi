@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalReminder < HubspotSDK::Internal::Type::BaseModel
+      class ExternalReminder < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalReminder,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalReminder,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # Accepted values are: WEEKS, DAYS, HOURS, MINUTES.
         sig do
-          returns(HubspotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol)
+          returns(HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol)
         end
         attr_accessor :time_unit
 
@@ -27,7 +27,7 @@ module HubspotSDK
           params(
             number_of_time_units: Integer,
             time_unit:
-              HubspotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol
+              HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -44,7 +44,7 @@ module HubspotSDK
             {
               number_of_time_units: Integer,
               time_unit:
-                HubspotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol
+                HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::OrSymbol
             }
           )
         end
@@ -53,39 +53,39 @@ module HubspotSDK
 
         # Accepted values are: WEEKS, DAYS, HOURS, MINUTES.
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Scheduler::ExternalReminder::TimeUnit)
+              T.all(Symbol, HubSpotSDK::Scheduler::ExternalReminder::TimeUnit)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           DAYS =
             T.let(
               :DAYS,
-              HubspotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
             )
           HOURS =
             T.let(
               :HOURS,
-              HubspotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
             )
           MINUTES =
             T.let(
               :MINUTES,
-              HubspotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
             )
           WEEKS =
             T.let(
               :WEEKS,
-              HubspotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalReminder::TimeUnit::TaggedSymbol
               ]
             )
           end

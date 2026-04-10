@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
       type subscription_response1 =
         {
           id: Integer,
-          actions: ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
+          subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
+          action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,
@@ -20,10 +20,10 @@ module HubspotSDK
           properties: ::Array[String]
         }
 
-      class SubscriptionResponse1 < HubspotSDK::Internal::Type::BaseModel
+      class SubscriptionResponse1 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
-        attr_accessor actions: ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::action]
+        attr_accessor actions: ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action]
 
         attr_accessor app_id: Integer
 
@@ -31,15 +31,15 @@ module HubspotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type
 
         attr_accessor updated_at: Time
 
-        attr_reader action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]?
+        attr_reader action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]?
 
         def action_overrides=: (
-          ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
-        ) -> ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest]
+          ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
+        ) -> ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
 
         attr_reader associated_object_type_ids: ::Array[String]?
 
@@ -71,13 +71,13 @@ module HubspotSDK
 
         def initialize: (
           id: Integer,
-          actions: ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
+          subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          ?action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
+          ?action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
           ?associated_object_type_ids: ::Array[String],
           ?created_by: Integer,
           ?deleted_at: Time,
@@ -89,13 +89,13 @@ module HubspotSDK
 
         def to_hash: -> {
           id: Integer,
-          actions: ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::action],
+          actions: ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
+          subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          action_overrides: ::Hash[Symbol, HubspotSDK::Webhooks::ActionOverrideRequest],
+          action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,
@@ -120,7 +120,7 @@ module HubspotSDK
           | :REMOVED_FROM_LIST
 
         module Action
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CREATE: :CREATE
           UPDATE: :UPDATE
@@ -135,7 +135,7 @@ module HubspotSDK
           ADDED_TO_LIST: :ADDED_TO_LIST
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::action]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action]
         end
 
         type subscription_type =
@@ -146,7 +146,7 @@ module HubspotSDK
           | :OBJECT
 
         module SubscriptionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           ASSOCIATION: :ASSOCIATION
@@ -154,7 +154,7 @@ module HubspotSDK
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
           OBJECT: :OBJECT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type]
         end
       end
     end

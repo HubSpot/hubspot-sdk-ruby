@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class CollectionResponseWithTotalBlogAuthorForwardPaging < HubspotSDK::Internal::Type::BaseModel
+        class CollectionResponseWithTotalBlogAuthorForwardPaging < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute results
           #   Collection of blog authors.
           #
-          #   @return [Array<HubspotSDK::Models::Cms::Blogs::BlogAuthor>]
-          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::BlogAuthor] }
+          #   @return [Array<HubSpotSDK::Models::Cms::Blogs::BlogAuthor>]
+          required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Blogs::BlogAuthor] }
 
           # @!attribute total
           #   Total number of blog authors.
@@ -19,15 +19,15 @@ module HubspotSDK
 
           # @!attribute paging
           #
-          #   @return [HubspotSDK::Models::ForwardPaging, nil]
-          optional :paging, -> { HubspotSDK::ForwardPaging }
+          #   @return [HubSpotSDK::Models::ForwardPaging, nil]
+          optional :paging, -> { HubSpotSDK::ForwardPaging }
 
           # @!method initialize(results:, total:, paging: nil)
-          #   @param results [Array<HubspotSDK::Models::Cms::Blogs::BlogAuthor>] Collection of blog authors.
+          #   @param results [Array<HubSpotSDK::Models::Cms::Blogs::BlogAuthor>] Collection of blog authors.
           #
           #   @param total [Integer] Total number of blog authors.
           #
-          #   @param paging [HubspotSDK::Models::ForwardPaging]
+          #   @param paging [HubSpotSDK::Models::ForwardPaging]
         end
       end
     end

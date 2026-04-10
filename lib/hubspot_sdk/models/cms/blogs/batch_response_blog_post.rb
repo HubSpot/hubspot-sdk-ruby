@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchResponseBlogPost < HubspotSDK::Internal::Type::BaseModel
+        class BatchResponseBlogPost < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute completed_at
           #   Time of batch operation completion.
           #
@@ -14,8 +14,8 @@ module HubspotSDK
           # @!attribute results
           #   Results of batch operation.
           #
-          #   @return [Array<HubspotSDK::Models::Cms::Blogs::BlogPost>]
-          required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Blogs::BlogPost] }
+          #   @return [Array<HubSpotSDK::Models::Cms::Blogs::BlogPost>]
+          required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Blogs::BlogPost] }
 
           # @!attribute started_at
           #   Time of batch operation start.
@@ -26,14 +26,14 @@ module HubspotSDK
           # @!attribute status
           #   Status of batch operation.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::BatchResponseBlogPost::Status]
-          required :status, enum: -> { HubspotSDK::Cms::Blogs::BatchResponseBlogPost::Status }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::BatchResponseBlogPost::Status]
+          required :status, enum: -> { HubSpotSDK::Cms::Blogs::BatchResponseBlogPost::Status }
 
           # @!attribute links
           #   Links associated with batch operation.
           #
           #   @return [Hash{Symbol=>String}, nil]
-          optional :links, HubspotSDK::Internal::Type::HashOf[String]
+          optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
           # @!attribute requested_at
           #   Time of batch operation request.
@@ -44,11 +44,11 @@ module HubspotSDK
           # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
           #   @param completed_at [Time] Time of batch operation completion.
           #
-          #   @param results [Array<HubspotSDK::Models::Cms::Blogs::BlogPost>] Results of batch operation.
+          #   @param results [Array<HubSpotSDK::Models::Cms::Blogs::BlogPost>] Results of batch operation.
           #
           #   @param started_at [Time] Time of batch operation start.
           #
-          #   @param status [Symbol, HubspotSDK::Models::Cms::Blogs::BatchResponseBlogPost::Status] Status of batch operation.
+          #   @param status [Symbol, HubSpotSDK::Models::Cms::Blogs::BatchResponseBlogPost::Status] Status of batch operation.
           #
           #   @param links [Hash{Symbol=>String}] Links associated with batch operation.
           #
@@ -56,9 +56,9 @@ module HubspotSDK
 
           # Status of batch operation.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::BatchResponseBlogPost#status
+          # @see HubSpotSDK::Models::Cms::Blogs::BatchResponseBlogPost#status
           module Status
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             CANCELED = :CANCELED
             COMPLETE = :COMPLETE

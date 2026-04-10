@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      # @see HubspotSDK::Resources::Files::FileAssets#search
-      class FileAssetSearchParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Files::FileAssets#search
+      class FileAssetSearchParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -19,7 +19,7 @@ module HubspotSDK
         # @!attribute allows_anonymous_access
         #
         #   @return [Boolean, nil]
-        optional :allows_anonymous_access, HubspotSDK::Internal::Type::Boolean
+        optional :allows_anonymous_access, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute before
         #
@@ -99,12 +99,12 @@ module HubspotSDK
         # @!attribute ids
         #
         #   @return [Array<Integer>, nil]
-        optional :ids, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :ids, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute is_usable_in_content
         #
         #   @return [Boolean, nil]
-        optional :is_usable_in_content, HubspotSDK::Internal::Type::Boolean
+        optional :is_usable_in_content, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute limit
         #   The maximum number of results to display per page.
@@ -120,7 +120,7 @@ module HubspotSDK
         # @!attribute parent_folder_ids
         #
         #   @return [Array<Integer>, nil]
-        optional :parent_folder_ids, HubspotSDK::Internal::Type::ArrayOf[Integer]
+        optional :parent_folder_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer]
 
         # @!attribute path
         #
@@ -130,7 +130,7 @@ module HubspotSDK
         # @!attribute properties
         #
         #   @return [Array<String>, nil]
-        optional :properties, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute size
         #
@@ -150,7 +150,7 @@ module HubspotSDK
         # @!attribute sort
         #
         #   @return [Array<String>, nil]
-        optional :sort, HubspotSDK::Internal::Type::ArrayOf[String]
+        optional :sort, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute type
         #
@@ -194,7 +194,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, allows_anonymous_access: nil, before: nil, created_at: nil, created_at_gte: nil, created_at_lte: nil, encoding: nil, expires_at: nil, expires_at_gte: nil, expires_at_lte: nil, extension: nil, file_md5: nil, height: nil, height_gte: nil, height_lte: nil, id_gte: nil, id_lte: nil, ids: nil, is_usable_in_content: nil, limit: nil, name: nil, parent_folder_ids: nil, path: nil, properties: nil, size: nil, size_gte: nil, size_lte: nil, sort: nil, type: nil, updated_at: nil, updated_at_gte: nil, updated_at_lte: nil, url: nil, width: nil, width_gte: nil, width_lte: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FileAssetSearchParams} for more details.
+        #   {HubSpotSDK::Models::Files::FileAssetSearchParams} for more details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
         #
@@ -268,7 +268,7 @@ module HubspotSDK
         #
         #   @param width_lte [Integer]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

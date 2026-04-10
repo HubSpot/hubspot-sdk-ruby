@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Domains
@@ -13,15 +13,15 @@ module HubspotSDK
           ?updated_after: Time,
           ?updated_at: Time,
           ?updated_before: Time,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Internal::Page[HubspotSDK::Cms::Domain]
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::Domain]
 
         def get: (
           String domain_id,
-          ?request_options: HubspotSDK::request_opts
-        ) -> HubspotSDK::Cms::Domain
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Cms::Domain
 
-        def initialize: (client: HubspotSDK::Client) -> void
+        def initialize: (client: HubSpotSDK::Client) -> void
       end
     end
   end

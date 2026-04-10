@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -19,18 +19,18 @@ module HubspotSDK
           #
           # @param description [String] A detailed explanation or notes about the budget item.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::PublicBudgetItem]
+          # @return [HubSpotSDK::Models::Marketing::PublicBudgetItem]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::BudgetCreateParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::BudgetCreateParams
           def create(campaign_guid, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::BudgetCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::BudgetCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: ["marketing/campaigns/2026-03/%1$s/budget", campaign_guid],
               body: parsed,
-              model: HubspotSDK::Marketing::PublicBudgetItem,
+              model: HubSpotSDK::Marketing::PublicBudgetItem,
               options: options
             )
           end
@@ -51,13 +51,13 @@ module HubspotSDK
           #
           # @param description [String] Body param: A detailed explanation or notes about the budget item.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::PublicBudgetItem]
+          # @return [HubSpotSDK::Models::Marketing::PublicBudgetItem]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::BudgetUpdateParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::BudgetUpdateParams
           def update(budget_id, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::BudgetUpdateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::BudgetUpdateParams.dump_request(params)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -66,7 +66,7 @@ module HubspotSDK
               method: :put,
               path: ["marketing/campaigns/2026-03/%1$s/budget/%2$s", campaign_guid, budget_id],
               body: parsed,
-              model: HubspotSDK::Marketing::PublicBudgetItem,
+              model: HubSpotSDK::Marketing::PublicBudgetItem,
               options: options
             )
           end
@@ -77,13 +77,13 @@ module HubspotSDK
           #
           # @param budget_id [Integer]
           # @param campaign_guid [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::BudgetDeleteParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::BudgetDeleteParams
           def delete(budget_id, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::BudgetDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::BudgetDeleteParams.dump_request(params)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -102,13 +102,13 @@ module HubspotSDK
           #
           # @param budget_id [Integer]
           # @param campaign_guid [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::PublicBudgetItem]
+          # @return [HubSpotSDK::Models::Marketing::PublicBudgetItem]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::BudgetGetParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::BudgetGetParams
           def get(budget_id, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::BudgetGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::BudgetGetParams.dump_request(params)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -116,7 +116,7 @@ module HubspotSDK
             @client.request(
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/budget/%2$s", campaign_guid, budget_id],
-              model: HubspotSDK::Marketing::PublicBudgetItem,
+              model: HubSpotSDK::Marketing::PublicBudgetItem,
               options: options
             )
           end
@@ -130,23 +130,23 @@ module HubspotSDK
           # @overload get_totals(campaign_guid, request_options: {})
           #
           # @param campaign_guid [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::PublicBudgetTotals]
+          # @return [HubSpotSDK::Models::Marketing::PublicBudgetTotals]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::BudgetGetTotalsParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::BudgetGetTotalsParams
           def get_totals(campaign_guid, params = {})
             @client.request(
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/budget/totals", campaign_guid],
-              model: HubspotSDK::Marketing::PublicBudgetTotals,
+              model: HubSpotSDK::Marketing::PublicBudgetTotals,
               options: params[:request_options]
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

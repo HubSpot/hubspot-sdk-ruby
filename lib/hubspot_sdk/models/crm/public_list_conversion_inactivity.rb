@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicListConversionInactivity < HubspotSDK::Internal::Type::BaseModel
+      class PublicListConversionInactivity < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute conversion_type
         #   Specifies the type of conversion (INACTIVITY).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::ConversionType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicListConversionInactivity::ConversionType]
         required :conversion_type,
-                 enum: -> { HubspotSDK::Crm::PublicListConversionInactivity::ConversionType },
+                 enum: -> { HubSpotSDK::Crm::PublicListConversionInactivity::ConversionType },
                  api_name: :conversionType
 
         # @!attribute offset
@@ -23,26 +23,26 @@ module HubspotSDK
         # @!attribute time_unit
         #   The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit]
         required :time_unit,
-                 enum: -> { HubspotSDK::Crm::PublicListConversionInactivity::TimeUnit },
+                 enum: -> { HubSpotSDK::Crm::PublicListConversionInactivity::TimeUnit },
                  api_name: :timeUnit
 
         # @!method initialize(conversion_type:, offset:, time_unit:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicListConversionInactivity} for more details.
+        #   {HubSpotSDK::Models::Crm::PublicListConversionInactivity} for more details.
         #
-        #   @param conversion_type [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::ConversionType] Specifies the type of conversion (INACTIVITY).
+        #   @param conversion_type [Symbol, HubSpotSDK::Models::Crm::PublicListConversionInactivity::ConversionType] Specifies the type of conversion (INACTIVITY).
         #
         #   @param offset [Integer] Value used to paginate through lists. The `offset` provided in the response can
         #
-        #   @param time_unit [Symbol, HubspotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit] The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
+        #   @param time_unit [Symbol, HubSpotSDK::Models::Crm::PublicListConversionInactivity::TimeUnit] The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
 
         # Specifies the type of conversion (INACTIVITY).
         #
-        # @see HubspotSDK::Models::Crm::PublicListConversionInactivity#conversion_type
+        # @see HubSpotSDK::Models::Crm::PublicListConversionInactivity#conversion_type
         module ConversionType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INACTIVITY = :INACTIVITY
 
@@ -52,9 +52,9 @@ module HubspotSDK
 
         # The unit of time for the inactivity period, such as (DAY, MONTH, WEEK).
         #
-        # @see HubspotSDK::Models::Crm::PublicListConversionInactivity#time_unit
+        # @see HubSpotSDK::Models::Crm::PublicListConversionInactivity#time_unit
         module TimeUnit
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DAY = :DAY
           MONTH = :MONTH

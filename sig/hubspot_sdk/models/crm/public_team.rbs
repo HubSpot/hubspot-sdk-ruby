@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_team = { id: String, name: String, primary: bool }
 
-      class PublicTeam < HubspotSDK::Internal::Type::BaseModel
+      class PublicTeam < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor name: String

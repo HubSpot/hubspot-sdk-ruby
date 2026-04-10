@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type batch_input_content_folder =
-        { inputs: ::Array[HubspotSDK::Cms::ContentFolder] }
+        { inputs: ::Array[HubSpotSDK::Cms::ContentFolder] }
 
-      class BatchInputContentFolder < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Cms::ContentFolder]
+      class BatchInputContentFolder < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Cms::ContentFolder]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Cms::ContentFolder]
+          inputs: ::Array[HubSpotSDK::Cms::ContentFolder]
         ) -> void
 
-        def to_hash: -> { inputs: ::Array[HubspotSDK::Cms::ContentFolder] }
+        def to_hash: -> { inputs: ::Array[HubSpotSDK::Cms::ContentFolder] }
       end
     end
   end

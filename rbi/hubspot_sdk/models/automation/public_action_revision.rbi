@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicActionRevision < HubspotSDK::Internal::Type::BaseModel
+      class PublicActionRevision < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicActionRevision,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicActionRevision,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,12 +20,12 @@ module HubspotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
-        sig { returns(HubspotSDK::Automation::PublicActionDefinition) }
+        sig { returns(HubSpotSDK::Automation::PublicActionDefinition) }
         attr_reader :definition
 
         sig do
           params(
-            definition: HubspotSDK::Automation::PublicActionDefinition::OrHash
+            definition: HubSpotSDK::Automation::PublicActionDefinition::OrHash
           ).void
         end
         attr_writer :definition
@@ -38,7 +38,7 @@ module HubspotSDK
           params(
             id: String,
             created_at: Time,
-            definition: HubspotSDK::Automation::PublicActionDefinition::OrHash,
+            definition: HubSpotSDK::Automation::PublicActionDefinition::OrHash,
             revision_id: String
           ).returns(T.attached_class)
         end
@@ -58,7 +58,7 @@ module HubspotSDK
             {
               id: String,
               created_at: Time,
-              definition: HubspotSDK::Automation::PublicActionDefinition,
+              definition: HubSpotSDK::Automation::PublicActionDefinition,
               revision_id: String
             }
           )

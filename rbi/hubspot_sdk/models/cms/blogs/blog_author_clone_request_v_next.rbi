@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       BlogAuthorCloneRequestVNext = Blogs::BlogAuthorCloneRequestVNext
 
       module Blogs
-        class BlogAuthorCloneRequestVNext < HubspotSDK::Internal::Type::BaseModel
+        class BlogAuthorCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BlogAuthorCloneRequestVNext,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BlogAuthorCloneRequestVNext,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -19,11 +19,11 @@ module HubspotSDK
           sig { returns(String) }
           attr_accessor :id
 
-          sig { returns(HubspotSDK::Cms::Blogs::BlogAuthor) }
+          sig { returns(HubSpotSDK::Cms::Blogs::BlogAuthor) }
           attr_reader :blog_author
 
           sig do
-            params(blog_author: HubspotSDK::Cms::Blogs::BlogAuthor::OrHash).void
+            params(blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor::OrHash).void
           end
           attr_writer :blog_author
 
@@ -44,7 +44,7 @@ module HubspotSDK
           sig do
             params(
               id: String,
-              blog_author: HubspotSDK::Cms::Blogs::BlogAuthor::OrHash,
+              blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor::OrHash,
               language: String,
               primary_language: String
             ).returns(T.attached_class)
@@ -64,7 +64,7 @@ module HubspotSDK
             override.returns(
               {
                 id: String,
-                blog_author: HubspotSDK::Cms::Blogs::BlogAuthor,
+                blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor,
                 language: String,
                 primary_language: String
               }

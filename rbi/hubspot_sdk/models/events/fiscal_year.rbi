@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class FiscalYear < HubspotSDK::Internal::Type::BaseModel
+      class FiscalYear < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Events::FiscalYear, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Events::FiscalYear, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(Integer) }
@@ -16,7 +16,7 @@ module HubspotSDK
         attr_accessor :month
 
         sig do
-          returns(HubspotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol)
+          returns(HubSpotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol)
         end
         attr_accessor :reference_type
 
@@ -49,7 +49,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Events::FiscalYear::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::FiscalYear::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -73,7 +73,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -85,24 +85,24 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Events::FiscalYear::ReferenceType)
+              T.all(Symbol, HubSpotSDK::Events::FiscalYear::ReferenceType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           FISCAL_YEAR =
             T.let(
               :FISCAL_YEAR,
-              HubspotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::FiscalYear::ReferenceType::TaggedSymbol
               ]
             )
           end

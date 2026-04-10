@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   # Specify HTTP behaviour to use for a specific request. These options supplement
   # or override those provided at the client level.
   #
   # When making a request, you can pass an actual {RequestOptions} instance, or
   # simply pass a Hash with symbol keys matching the attributes on this class.
-  class RequestOptions < HubspotSDK::Internal::Type::BaseModel
+  class RequestOptions < HubSpotSDK::Internal::Type::BaseModel
     # @api private
     #
-    # @param opts [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+    # @param opts [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
     #
     # @raise [ArgumentError]
     def self.validate!(opts)
       case opts
-      in HubspotSDK::RequestOptions | Hash
+      in HubSpotSDK::RequestOptions | Hash
         opts.to_h.each_key do |k|
           unless fields.include?(k)
             raise ArgumentError.new("Request `opts` keys must be one of #{fields.keys}, got #{k.inspect}")
@@ -37,21 +37,21 @@ module HubspotSDK
     #   `query` given at the client level.
     #
     #   @return [Hash{String=>Array<String>, String, nil}, nil]
-    optional :extra_query, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::ArrayOf[String]]
+    optional :extra_query, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::ArrayOf[String]]
 
     # @!attribute extra_headers
     #   Extra headers to send with the request. These are `.merged`’d into any
     #   `extra_headers` given at the client level.
     #
     #   @return [Hash{String=>String, nil}, nil]
-    optional :extra_headers, HubspotSDK::Internal::Type::HashOf[String, nil?: true]
+    optional :extra_headers, HubSpotSDK::Internal::Type::HashOf[String, nil?: true]
 
     # @!attribute extra_body
     #   Extra data to send with the request. These are deep merged into any data
     #   generated as part of the normal request.
     #
     #   @return [Object, nil]
-    optional :extra_body, HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown]
+    optional :extra_body, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
 
     # @!attribute max_retries
     #   Maximum number of retries to attempt after a failed initial request.
@@ -71,7 +71,7 @@ module HubspotSDK
     #   @param values [Hash{Symbol=>Object}]
 
     define_sorbet_constant!(:OrHash) do
-      T.type_alias { T.any(HubspotSDK::RequestOptions, HubspotSDK::Internal::AnyHash) }
+      T.type_alias { T.any(HubSpotSDK::RequestOptions, HubSpotSDK::Internal::AnyHash) }
     end
   end
 end

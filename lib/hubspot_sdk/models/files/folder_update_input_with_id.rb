@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderUpdateInputWithID < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateInputWithID < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the folder to be updated.
         #
@@ -27,7 +27,7 @@ module HubspotSDK
 
         # @!method initialize(id:, name: nil, parent_folder_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FolderUpdateInputWithID} for more details.
+        #   {HubSpotSDK::Models::Files::FolderUpdateInputWithID} for more details.
         #
         #   @param id [String] The unique identifier of the folder to be updated.
         #

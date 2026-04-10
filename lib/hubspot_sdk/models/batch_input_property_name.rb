@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchInputPropertyName < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputPropertyName < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute inputs
       #
-      #   @return [Array<HubspotSDK::Models::PropertyName>]
-      required :inputs, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyName] }
+      #   @return [Array<HubSpotSDK::Models::PropertyName>]
+      required :inputs, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyName] }
 
       # @!method initialize(inputs:)
-      #   @param inputs [Array<HubspotSDK::Models::PropertyName>]
+      #   @param inputs [Array<HubSpotSDK::Models::PropertyName>]
     end
   end
 end

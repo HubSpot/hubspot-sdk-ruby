@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FolderUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FolderUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute name
         #   New name. If specified the folder's name and fullPath will change. All children
         #   of the folder will be updated accordingly.
@@ -21,7 +21,7 @@ module HubspotSDK
 
         # @!method initialize(name: nil, parent_folder_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Files::FolderUpdateInput} for more details.
+        #   {HubSpotSDK::Models::Files::FolderUpdateInput} for more details.
         #
         #   @param name [String] New name. If specified the folder's name and fullPath will change. All children
         #

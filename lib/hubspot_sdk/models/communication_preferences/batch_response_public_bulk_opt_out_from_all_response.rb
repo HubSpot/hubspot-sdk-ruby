@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class BatchResponsePublicBulkOptOutFromAllResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponsePublicBulkOptOutFromAllResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The date and time when the bulk opt-out operation was completed.
         #
@@ -14,9 +14,9 @@ module HubspotSDK
         #   An array containing the results of the bulk opt-out from all communications
         #   operation.
         #
-        #   @return [Array<HubspotSDK::Models::CommunicationPreferences::PublicBulkOptOutFromAllResponse>]
+        #   @return [Array<HubSpotSDK::Models::CommunicationPreferences::PublicBulkOptOutFromAllResponse>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CommunicationPreferences::PublicBulkOptOutFromAllResponse] }
 
         # @!attribute started_at
         #   The date and time when the bulk opt-out operation began.
@@ -28,22 +28,22 @@ module HubspotSDK
         #   The current status of the bulk opt-out operation, which can be PENDING,
         #   PROCESSING, CANCELED, or COMPLETE.
         #
-        #   @return [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status]
+        #   @return [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status]
         required :status,
-                 enum: -> { HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status }
+                 enum: -> { HubSpotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status }
 
         # @!attribute errors
         #   An array of error objects detailing any issues encountered during the bulk
         #   opt-out operation.
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   A collection of URLs linking to related resources or documentation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The total number of errors encountered during the bulk opt-out operation.
@@ -59,18 +59,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse}
+        #   {HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse}
         #   for more details.
         #
         #   @param completed_at [Time] The date and time when the bulk opt-out operation was completed.
         #
-        #   @param results [Array<HubspotSDK::Models::CommunicationPreferences::PublicBulkOptOutFromAllResponse>] An array containing the results of the bulk opt-out from all communications oper
+        #   @param results [Array<HubSpotSDK::Models::CommunicationPreferences::PublicBulkOptOutFromAllResponse>] An array containing the results of the bulk opt-out from all communications oper
         #
         #   @param started_at [Time] The date and time when the bulk opt-out operation began.
         #
-        #   @param status [Symbol, HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status] The current status of the bulk opt-out operation, which can be PENDING, PROCESSI
+        #   @param status [Symbol, HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse::Status] The current status of the bulk opt-out operation, which can be PENDING, PROCESSI
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of error objects detailing any issues encountered during the bulk opt-o
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of error objects detailing any issues encountered during the bulk opt-o
         #
         #   @param links [Hash{Symbol=>String}] A collection of URLs linking to related resources or documentation.
         #
@@ -81,9 +81,9 @@ module HubspotSDK
         # The current status of the bulk opt-out operation, which can be PENDING,
         # PROCESSING, CANCELED, or COMPLETE.
         #
-        # @see HubspotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse#status
+        # @see HubSpotSDK::Models::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

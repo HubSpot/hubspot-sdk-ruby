@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ContactID < HubspotSDK::Internal::Type::BaseModel
+      class ContactID < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ContactID,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ContactID,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

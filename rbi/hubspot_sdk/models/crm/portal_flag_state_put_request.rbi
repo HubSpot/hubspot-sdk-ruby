@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PortalFlagStatePutRequest < HubspotSDK::Internal::Type::BaseModel
+      class PortalFlagStatePutRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PortalFlagStatePutRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PortalFlagStatePutRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The state that the given flag should be in for this portal
         sig do
           returns(
-            HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
+            HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
           )
         end
         attr_accessor :flag_state
@@ -23,7 +23,7 @@ module HubspotSDK
         sig do
           params(
             flag_state:
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
+              HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -36,7 +36,7 @@ module HubspotSDK
           override.returns(
             {
               flag_state:
-                HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
+                HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::OrSymbol
             }
           )
         end
@@ -45,13 +45,13 @@ module HubspotSDK
 
         # The state that the given flag should be in for this portal
         module FlagState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState
+                HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -59,23 +59,23 @@ module HubspotSDK
           ABSENT =
             T.let(
               :ABSENT,
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
             )
           OFF =
             T.let(
               :OFF,
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
             )
           ON =
             T.let(
               :ON,
-              HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
+              HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
+                HubSpotSDK::Crm::PortalFlagStatePutRequest::FlagState::TaggedSymbol
               ]
             )
           end

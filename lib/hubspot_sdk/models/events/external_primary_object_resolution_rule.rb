@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalPrimaryObjectResolutionRule < HubspotSDK::Internal::Type::BaseModel
+      class ExternalPrimaryObjectResolutionRule < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute event_property_name
         #
         #   @return [String]

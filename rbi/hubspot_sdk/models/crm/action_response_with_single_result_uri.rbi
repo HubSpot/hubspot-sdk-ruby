@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ActionResponseWithSingleResultUri < HubspotSDK::Internal::Type::BaseModel
+      class ActionResponseWithSingleResultUri < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -24,15 +24,15 @@ module HubspotSDK
         # CANCELED.
         sig do
           returns(
-            HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+            HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
           )
         end
         attr_accessor :status
 
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # A collection of related links associated with the export.
@@ -68,8 +68,8 @@ module HubspotSDK
             completed_at: Time,
             started_at: Time,
             status:
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time,
@@ -102,8 +102,8 @@ module HubspotSDK
               completed_at: Time,
               started_at: Time,
               status:
-                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time,
@@ -117,13 +117,13 @@ module HubspotSDK
         # The current status of the export, which can be PENDING, PROCESSING, COMPLETE or
         # CANCELED.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status
+                HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -131,28 +131,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+              HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
+                HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status::TaggedSymbol
               ]
             )
           end

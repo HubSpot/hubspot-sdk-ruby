@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         module Calling
-          class TranscriptCreateRequest < HubspotSDK::Internal::Type::BaseModel
+          class TranscriptCreateRequest < HubSpotSDK::Internal::Type::BaseModel
             # @!attribute engagement_id
             #
             #   @return [Integer]
@@ -13,16 +13,16 @@ module HubspotSDK
 
             # @!attribute transcript_create_utterances
             #
-            #   @return [Array<HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateUtterance>]
+            #   @return [Array<HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptCreateUtterance>]
             required :transcript_create_utterances,
                      -> {
-                       HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
+                       HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateUtterance]
                      },
                      api_name: :transcriptCreateUtterances
 
             # @!method initialize(engagement_id:, transcript_create_utterances:)
             #   @param engagement_id [Integer]
-            #   @param transcript_create_utterances [Array<HubspotSDK::Models::Crm::Extensions::Calling::TranscriptCreateUtterance>]
+            #   @param transcript_create_utterances [Array<HubSpotSDK::Models::Crm::Extensions::Calling::TranscriptCreateUtterance>]
           end
         end
       end

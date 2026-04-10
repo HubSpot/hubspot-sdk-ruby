@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicConstantFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicConstantFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
         #   Specifies the type of filter, which is (CONSTANT).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicConstantFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicConstantFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicConstantFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicConstantFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute should_accept
         #   Indicates whether the filter should accept the condition.
         #
         #   @return [Boolean]
-        required :should_accept, HubspotSDK::Internal::Type::Boolean, api_name: :shouldAccept
+        required :should_accept, HubSpotSDK::Internal::Type::Boolean, api_name: :shouldAccept
 
         # @!attribute source
         #   Defines the source of the constant filter.
@@ -25,7 +25,7 @@ module HubspotSDK
         optional :source, String
 
         # @!method initialize(filter_type:, should_accept:, source: nil)
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicConstantFilter::FilterType] Specifies the type of filter, which is (CONSTANT).
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicConstantFilter::FilterType] Specifies the type of filter, which is (CONSTANT).
         #
         #   @param should_accept [Boolean] Indicates whether the filter should accept the condition.
         #
@@ -33,9 +33,9 @@ module HubspotSDK
 
         # Specifies the type of filter, which is (CONSTANT).
         #
-        # @see HubspotSDK::Models::Crm::PublicConstantFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicConstantFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONSTANT = :CONSTANT
 

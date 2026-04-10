@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
@@ -10,20 +10,20 @@ module HubspotSDK
             ?fetch_accounts_uri: String,
             ?update_meeting_url: String,
             ?user_verify_url: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::ExternalSettings
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::ExternalSettings
 
           def delete: (
             Integer app_id,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> nil
 
           def get: (
             Integer app_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Crm::Extensions::ExternalSettings
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Crm::Extensions::ExternalSettings
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

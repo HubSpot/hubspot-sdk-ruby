@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class TimePointOperation < HubspotSDK::Internal::Type::BaseModel
+      class TimePointOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute endpoint_behavior
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimePointOperation::EndpointBehavior]
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimePointOperation::EndpointBehavior]
         required :endpoint_behavior,
-                 enum: -> { HubspotSDK::Events::TimePointOperation::EndpointBehavior },
+                 enum: -> { HubSpotSDK::Events::TimePointOperation::EndpointBehavior },
                  api_name: :endpointBehavior
 
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -25,8 +25,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimePointOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::TimePointOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimePointOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::TimePointOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -35,23 +35,23 @@ module HubspotSDK
 
         # @!attribute property_parser
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimePointOperation::PropertyParser]
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimePointOperation::PropertyParser]
         required :property_parser,
-                 enum: -> { HubspotSDK::Events::TimePointOperation::PropertyParser },
+                 enum: -> { HubSpotSDK::Events::TimePointOperation::PropertyParser },
                  api_name: :propertyParser
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::TimePointOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::TimePointOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::TimePointOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::TimePointOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute time_point
         #
-        #   @return [HubspotSDK::Models::Events::DatePoint, HubspotSDK::Models::Events::IndexedTimePoint, HubspotSDK::Models::Events::PropertyReferencedTime]
+        #   @return [HubSpotSDK::Models::Events::DatePoint, HubSpotSDK::Models::Events::IndexedTimePoint, HubSpotSDK::Models::Events::PropertyReferencedTime]
         required :time_point,
-                 union: -> { HubspotSDK::Events::TimePointOperation::TimePoint },
+                 union: -> { HubSpotSDK::Events::TimePointOperation::TimePoint },
                  api_name: :timePoint
 
         # @!attribute type
@@ -70,21 +70,21 @@ module HubspotSDK
         optional :render_spec, String, api_name: :renderSpec
 
         # @!method initialize(endpoint_behavior:, include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_parser:, property_type:, time_point:, type:, default_value: nil, render_spec: nil)
-        #   @param endpoint_behavior [Symbol, HubspotSDK::Models::Events::TimePointOperation::EndpointBehavior]
+        #   @param endpoint_behavior [Symbol, HubSpotSDK::Models::Events::TimePointOperation::EndpointBehavior]
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::TimePointOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::TimePointOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_parser [Symbol, HubspotSDK::Models::Events::TimePointOperation::PropertyParser]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::TimePointOperation::PropertyType]
-        #   @param time_point [HubspotSDK::Models::Events::DatePoint, HubspotSDK::Models::Events::IndexedTimePoint, HubspotSDK::Models::Events::PropertyReferencedTime]
+        #   @param property_parser [Symbol, HubSpotSDK::Models::Events::TimePointOperation::PropertyParser]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::TimePointOperation::PropertyType]
+        #   @param time_point [HubSpotSDK::Models::Events::DatePoint, HubSpotSDK::Models::Events::IndexedTimePoint, HubSpotSDK::Models::Events::PropertyReferencedTime]
         #   @param type [String]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::TimePointOperation#endpoint_behavior
+        # @see HubSpotSDK::Models::Events::TimePointOperation#endpoint_behavior
         module EndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EXCLUSIVE = :EXCLUSIVE
           INCLUSIVE = :INCLUSIVE
@@ -93,9 +93,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::TimePointOperation#operator
+        # @see HubSpotSDK::Models::Events::TimePointOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_AFTER = :IS_AFTER
           IS_BEFORE = :IS_BEFORE
@@ -104,9 +104,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::TimePointOperation#property_parser
+        # @see HubSpotSDK::Models::Events::TimePointOperation#property_parser
         module PropertyParser
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ANNIVERSARY = :ANNIVERSARY
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION = :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
@@ -118,9 +118,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::TimePointOperation#property_type
+        # @see HubSpotSDK::Models::Events::TimePointOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TIMEPOINT = :timepoint
 
@@ -128,18 +128,18 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::TimePointOperation#time_point
+        # @see HubSpotSDK::Models::Events::TimePointOperation#time_point
         module TimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubspotSDK::Events::DatePoint }
+          variant -> { HubSpotSDK::Events::DatePoint }
 
-          variant -> { HubspotSDK::Events::IndexedTimePoint }
+          variant -> { HubSpotSDK::Events::IndexedTimePoint }
 
-          variant -> { HubspotSDK::Events::PropertyReferencedTime }
+          variant -> { HubSpotSDK::Events::PropertyReferencedTime }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Events::DatePoint, HubspotSDK::Models::Events::IndexedTimePoint, HubspotSDK::Models::Events::PropertyReferencedTime)]
+          #   @return [Array(HubSpotSDK::Models::Events::DatePoint, HubSpotSDK::Models::Events::IndexedTimePoint, HubSpotSDK::Models::Events::PropertyReferencedTime)]
         end
       end
     end

@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
         module GoalTargets
-          class BatchGetParams < HubspotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class BatchGetParams < HubSpotSDK::Models::Crm::BatchReadInputSimplePublicObjectID
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Crm::Objects::GoalTargets::BatchGetParams,
-                  HubspotSDK::Internal::AnyHash
+                  HubSpotSDK::Crm::Objects::GoalTargets::BatchGetParams,
+                  HubSpotSDK::Internal::AnyHash
                 )
               end
 
@@ -27,7 +27,7 @@ module HubspotSDK
             sig do
               params(
                 archived: T::Boolean,
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
             def self.new(
@@ -41,7 +41,7 @@ module HubspotSDK
               override.returns(
                 {
                   archived: T::Boolean,
-                  request_options: HubspotSDK::RequestOptions
+                  request_options: HubSpotSDK::RequestOptions
                 }
               )
             end

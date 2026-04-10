@@ -1,18 +1,18 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type option_decorations =
-        { color: HubspotSDK::Models::Cms::OptionDecorations::color }
+        { color: HubSpotSDK::Models::Cms::OptionDecorations::color }
 
-      class OptionDecorations < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor color: HubspotSDK::Models::Cms::OptionDecorations::color
+      class OptionDecorations < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor color: HubSpotSDK::Models::Cms::OptionDecorations::color
 
         def initialize: (
-          color: HubspotSDK::Models::Cms::OptionDecorations::color
+          color: HubSpotSDK::Models::Cms::OptionDecorations::color
         ) -> void
 
         def to_hash: -> {
-          color: HubspotSDK::Models::Cms::OptionDecorations::color
+          color: HubSpotSDK::Models::Cms::OptionDecorations::color
         }
 
         type color =
@@ -36,7 +36,7 @@ module HubspotSDK
           | :YELLOW_LIGHT
 
         module Color
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BLACK: :BLACK
           BLUE: :BLUE
@@ -57,7 +57,7 @@ module HubspotSDK
           YELLOW: :YELLOW
           YELLOW_LIGHT: :YELLOW_LIGHT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::OptionDecorations::color]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::OptionDecorations::color]
         end
       end
     end

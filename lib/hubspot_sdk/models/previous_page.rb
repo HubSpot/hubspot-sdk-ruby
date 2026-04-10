@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PreviousPage < HubspotSDK::Internal::Type::BaseModel
+    class PreviousPage < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute before
       #   A string token used to identify the position before the current page in the
       #   pagination sequence.
@@ -18,7 +18,7 @@ module HubspotSDK
 
       # @!method initialize(before:, link: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::PreviousPage} for more details.
+      #   {HubSpotSDK::Models::PreviousPage} for more details.
       #
       #   specifies the paging information needed to retrieve the previous set of results
       #   in a paginated API response

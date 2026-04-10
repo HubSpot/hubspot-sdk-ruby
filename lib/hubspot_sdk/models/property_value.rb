@@ -1,28 +1,28 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyValue < HubspotSDK::Internal::Type::BaseModel
+    class PropertyValue < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute data_sensitivity
       #   The sensitivity level of the property, such as "non_sensitive", "sensitive", and
       #   "highly_sensitive".
       #
-      #   @return [Symbol, HubspotSDK::Models::PropertyValue::DataSensitivity]
+      #   @return [Symbol, HubSpotSDK::Models::PropertyValue::DataSensitivity]
       required :data_sensitivity,
-               enum: -> { HubspotSDK::PropertyValue::DataSensitivity },
+               enum: -> { HubSpotSDK::PropertyValue::DataSensitivity },
                api_name: :dataSensitivity
 
       # @!attribute is_encrypted
       #   Whether the property value is encrypted.
       #
       #   @return [Boolean]
-      required :is_encrypted, HubspotSDK::Internal::Type::Boolean, api_name: :isEncrypted
+      required :is_encrypted, HubSpotSDK::Internal::Type::Boolean, api_name: :isEncrypted
 
       # @!attribute is_large_value
       #   Indicates if the value exceeds normal size limits.
       #
       #   @return [Boolean]
-      required :is_large_value, HubspotSDK::Internal::Type::Boolean, api_name: :isLargeValue
+      required :is_large_value, HubSpotSDK::Internal::Type::Boolean, api_name: :isLargeValue
 
       # @!attribute name
       #   The unique property name.
@@ -46,7 +46,7 @@ module HubspotSDK
       #   Whether the value was selected by a user.
       #
       #   @return [Boolean]
-      required :selected_by_user, HubspotSDK::Internal::Type::Boolean, api_name: :selectedByUser
+      required :selected_by_user, HubSpotSDK::Internal::Type::Boolean, api_name: :selectedByUser
 
       # @!attribute selected_by_user_timestamp
       #   The timestamp when the value was selected by a user, if applicable.
@@ -57,8 +57,8 @@ module HubspotSDK
       # @!attribute source
       #   The origin of the property value, such as "IMPORT" or "API".
       #
-      #   @return [Symbol, HubspotSDK::Models::PropertyValue::Source]
-      required :source, enum: -> { HubspotSDK::PropertyValue::Source }
+      #   @return [Symbol, HubSpotSDK::Models::PropertyValue::Source]
+      required :source, enum: -> { HubSpotSDK::PropertyValue::Source }
 
       # @!attribute source_id
       #   The ID of the property source indicating where it was created.
@@ -87,7 +87,7 @@ module HubspotSDK
       #   The unique identifier associated with the source.
       #
       #   @return [Array<Integer>]
-      required :source_vid, HubspotSDK::Internal::Type::ArrayOf[Integer], api_name: :sourceVid
+      required :source_vid, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :sourceVid
 
       # @!attribute timestamp
       #   When the value was set, as a 64-bit integer.
@@ -112,7 +112,7 @@ module HubspotSDK
       #
       #   @return [Boolean]
       required :use_timestamp_as_persistence_timestamp,
-               HubspotSDK::Internal::Type::Boolean,
+               HubSpotSDK::Internal::Type::Boolean,
                api_name: :useTimestampAsPersistenceTimestamp
 
       # @!attribute value
@@ -123,13 +123,13 @@ module HubspotSDK
 
       # @!method initialize(data_sensitivity:, is_encrypted:, is_large_value:, name:, persistence_timestamp:, request_id:, selected_by_user:, selected_by_user_timestamp:, source:, source_id:, source_label:, source_metadata:, source_upstream_deployable:, source_vid:, timestamp:, unit:, updated_by_user_id:, use_timestamp_as_persistence_timestamp:, value:)
       #   Some parameter documentations has been truncated, see
-      #   {HubspotSDK::Models::PropertyValue} for more details.
+      #   {HubSpotSDK::Models::PropertyValue} for more details.
       #
       #   Represents a single custom property of a marketing event, storing its name,
       #   value, metadata (like source, timestamp, and sensitivity), and related audit
       #   information for tracking changes.
       #
-      #   @param data_sensitivity [Symbol, HubspotSDK::Models::PropertyValue::DataSensitivity] The sensitivity level of the property, such as "non_sensitive", "sensitive", and
+      #   @param data_sensitivity [Symbol, HubSpotSDK::Models::PropertyValue::DataSensitivity] The sensitivity level of the property, such as "non_sensitive", "sensitive", and
       #
       #   @param is_encrypted [Boolean] Whether the property value is encrypted.
       #
@@ -145,7 +145,7 @@ module HubspotSDK
       #
       #   @param selected_by_user_timestamp [Integer] The timestamp when the value was selected by a user, if applicable.
       #
-      #   @param source [Symbol, HubspotSDK::Models::PropertyValue::Source] The origin of the property value, such as "IMPORT" or "API".
+      #   @param source [Symbol, HubSpotSDK::Models::PropertyValue::Source] The origin of the property value, such as "IMPORT" or "API".
       #
       #   @param source_id [String] The ID of the property source indicating where it was created.
       #
@@ -170,9 +170,9 @@ module HubspotSDK
       # The sensitivity level of the property, such as "non_sensitive", "sensitive", and
       # "highly_sensitive".
       #
-      # @see HubspotSDK::Models::PropertyValue#data_sensitivity
+      # @see HubSpotSDK::Models::PropertyValue#data_sensitivity
       module DataSensitivity
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         HIGH = :high
         NONE = :none
@@ -184,9 +184,9 @@ module HubspotSDK
 
       # The origin of the property value, such as "IMPORT" or "API".
       #
-      # @see HubspotSDK::Models::PropertyValue#source
+      # @see HubSpotSDK::Models::PropertyValue#source
       module Source
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         ACADEMY = :ACADEMY
         ACCEPTANCE_TEST = :ACCEPTANCE_TEST

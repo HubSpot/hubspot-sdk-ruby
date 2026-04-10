@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type number_property_operation =
         {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::NumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::NumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::NumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::NumberPropertyOperation::property_type,
           value: Float,
           default_value: String,
           render_spec: String
         }
 
-      class NumberPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class NumberPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::NumberPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::NumberPropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::NumberPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::NumberPropertyOperation::property_type
 
         attr_accessor value: Float
 
@@ -37,9 +37,9 @@ module HubspotSDK
         def initialize: (
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::NumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::NumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::NumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::NumberPropertyOperation::property_type,
           value: Float,
           ?default_value: String,
           ?render_spec: String
@@ -48,9 +48,9 @@ module HubspotSDK
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::NumberPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::NumberPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::NumberPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::NumberPropertyOperation::property_type,
           value: Float,
           default_value: String,
           render_spec: String
@@ -67,7 +67,7 @@ module HubspotSDK
           | :IS_NOT_EQUAL_TO
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HAS_EVER_BEEN_EQUAL_TO: :HAS_EVER_BEEN_EQUAL_TO
           HAS_NEVER_BEEN_EQUAL_TO: :HAS_NEVER_BEEN_EQUAL_TO
@@ -78,17 +78,17 @@ module HubspotSDK
           IS_LESS_THAN_OR_EQUAL_TO: :IS_LESS_THAN_OR_EQUAL_TO
           IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::NumberPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::NumberPropertyOperation::operator]
         end
 
         type property_type = :number
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NUMBER: :number
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::NumberPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::NumberPropertyOperation::property_type]
         end
       end
     end

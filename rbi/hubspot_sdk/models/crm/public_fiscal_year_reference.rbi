@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFiscalYearReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicFiscalYearReference < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicFiscalYearReference,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicFiscalYearReference,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # Indicates the type of reference (FISCAL_YEAR).
         sig do
           returns(
-            HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol
+            HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol
           )
         end
         attr_accessor :reference_type
@@ -61,7 +61,7 @@ module HubspotSDK
             day: Integer,
             month: Integer,
             reference_type:
-              HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol,
+              HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol,
             hour: Integer,
             millisecond: Integer,
             minute: Integer,
@@ -92,7 +92,7 @@ module HubspotSDK
               day: Integer,
               month: Integer,
               reference_type:
-                HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol,
+                HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType::OrSymbol,
               hour: Integer,
               millisecond: Integer,
               minute: Integer,
@@ -105,13 +105,13 @@ module HubspotSDK
 
         # Indicates the type of reference (FISCAL_YEAR).
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType
+                HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -119,13 +119,13 @@ module HubspotSDK
           FISCAL_YEAR =
             T.let(
               :FISCAL_YEAR,
-              HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType::TaggedSymbol
+              HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicFiscalYearReference::ReferenceType::TaggedSymbol
+                HubSpotSDK::Crm::PublicFiscalYearReference::ReferenceType::TaggedSymbol
               ]
             )
           end

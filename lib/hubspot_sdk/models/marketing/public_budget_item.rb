@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicBudgetItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicBudgetItem < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the budget item.
         #

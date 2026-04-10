@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Errors
     class Error < StandardError
       # @!attribute cause
@@ -8,7 +8,7 @@ module HubspotSDK
       #   @return [StandardError, nil]
     end
 
-    class ConversionError < HubspotSDK::Errors::Error
+    class ConversionError < HubSpotSDK::Errors::Error
       # @return [StandardError, nil]
       def cause = @cause.nil? ? super : @cause
 
@@ -33,7 +33,7 @@ module HubspotSDK
       end
     end
 
-    class APIError < HubspotSDK::Errors::Error
+    class APIError < HubSpotSDK::Errors::Error
       # @return [URI::Generic]
       attr_accessor :url
 
@@ -66,7 +66,7 @@ module HubspotSDK
       end
     end
 
-    class APIConnectionError < HubspotSDK::Errors::APIError
+    class APIConnectionError < HubSpotSDK::Errors::APIError
       # @!attribute status
       #
       #   @return [nil]
@@ -97,7 +97,7 @@ module HubspotSDK
       end
     end
 
-    class APITimeoutError < HubspotSDK::Errors::APIConnectionError
+    class APITimeoutError < HubSpotSDK::Errors::APIConnectionError
       # @api private
       #
       # @param url [URI::Generic]
@@ -120,7 +120,7 @@ module HubspotSDK
       end
     end
 
-    class APIStatusError < HubspotSDK::Errors::APIError
+    class APIStatusError < HubSpotSDK::Errors::APIError
       # @api private
       #
       # @param url [URI::Generic]
@@ -146,23 +146,23 @@ module HubspotSDK
 
         case status
         in 400
-          HubspotSDK::Errors::BadRequestError.new(**kwargs)
+          HubSpotSDK::Errors::BadRequestError.new(**kwargs)
         in 401
-          HubspotSDK::Errors::AuthenticationError.new(**kwargs)
+          HubSpotSDK::Errors::AuthenticationError.new(**kwargs)
         in 403
-          HubspotSDK::Errors::PermissionDeniedError.new(**kwargs)
+          HubSpotSDK::Errors::PermissionDeniedError.new(**kwargs)
         in 404
-          HubspotSDK::Errors::NotFoundError.new(**kwargs)
+          HubSpotSDK::Errors::NotFoundError.new(**kwargs)
         in 409
-          HubspotSDK::Errors::ConflictError.new(**kwargs)
+          HubSpotSDK::Errors::ConflictError.new(**kwargs)
         in 422
-          HubspotSDK::Errors::UnprocessableEntityError.new(**kwargs)
+          HubSpotSDK::Errors::UnprocessableEntityError.new(**kwargs)
         in 429
-          HubspotSDK::Errors::RateLimitError.new(**kwargs)
+          HubSpotSDK::Errors::RateLimitError.new(**kwargs)
         in (500..)
-          HubspotSDK::Errors::InternalServerError.new(**kwargs)
+          HubSpotSDK::Errors::InternalServerError.new(**kwargs)
         else
-          HubspotSDK::Errors::APIStatusError.new(**kwargs)
+          HubSpotSDK::Errors::APIStatusError.new(**kwargs)
         end
       end
 
@@ -193,35 +193,35 @@ module HubspotSDK
       end
     end
 
-    class BadRequestError < HubspotSDK::Errors::APIStatusError
+    class BadRequestError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 400
     end
 
-    class AuthenticationError < HubspotSDK::Errors::APIStatusError
+    class AuthenticationError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 401
     end
 
-    class PermissionDeniedError < HubspotSDK::Errors::APIStatusError
+    class PermissionDeniedError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 403
     end
 
-    class NotFoundError < HubspotSDK::Errors::APIStatusError
+    class NotFoundError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 404
     end
 
-    class ConflictError < HubspotSDK::Errors::APIStatusError
+    class ConflictError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 409
     end
 
-    class UnprocessableEntityError < HubspotSDK::Errors::APIStatusError
+    class UnprocessableEntityError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 422
     end
 
-    class RateLimitError < HubspotSDK::Errors::APIStatusError
+    class RateLimitError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = 429
     end
 
-    class InternalServerError < HubspotSDK::Errors::APIStatusError
+    class InternalServerError < HubSpotSDK::Errors::APIStatusError
       HTTP_STATUS = (500..)
     end
   end

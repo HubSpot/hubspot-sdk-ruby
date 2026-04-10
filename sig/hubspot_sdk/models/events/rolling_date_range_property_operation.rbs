@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type rolling_date_range_property_operation =
@@ -6,26 +6,26 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           default_value: String,
           render_spec: String
         }
 
-      class RollingDateRangePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingDateRangePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor number_of_days: Integer
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::property_type
 
         attr_accessor requires_time_zone_conversion: bool
 
@@ -41,9 +41,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           ?default_value: String,
           ?render_spec: String
@@ -53,9 +53,9 @@ module HubspotSDK
           include_objects_with_no_value_set: bool,
           number_of_days: Integer,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::property_type,
           requires_time_zone_conversion: bool,
           default_value: String,
           render_spec: String
@@ -68,24 +68,24 @@ module HubspotSDK
           | :IS_MORE_THAN_X_DAYS_FROM_NOW
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_LESS_THAN_X_DAYS_AGO: :IS_LESS_THAN_X_DAYS_AGO
           IS_LESS_THAN_X_DAYS_FROM_NOW: :IS_LESS_THAN_X_DAYS_FROM_NOW
           IS_MORE_THAN_X_DAYS_AGO: :IS_MORE_THAN_X_DAYS_AGO
           IS_MORE_THAN_X_DAYS_FROM_NOW: :IS_MORE_THAN_X_DAYS_FROM_NOW
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingDateRangePropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::operator]
         end
 
         type property_type = :"datetime-rolling"
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME_ROLLING: :"datetime-rolling"
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RollingDateRangePropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::property_type]
         end
       end
     end

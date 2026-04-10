@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Transactional
@@ -10,8 +10,8 @@ module HubspotSDK
             params(
               campaign_name: String,
               create_contact: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::SmtpAPITokenView)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::SmtpAPITokenView)
           end
           def create(
             # A name for the campaign tied to the SMTP API token.
@@ -30,10 +30,10 @@ module HubspotSDK
               campaign_name: String,
               email_campaign_id: String,
               limit: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Marketing::SmtpAPITokenView
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Marketing::SmtpAPITokenView
               ]
             )
           end
@@ -54,7 +54,7 @@ module HubspotSDK
           sig do
             params(
               token_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(token_id, request_options: {})
@@ -64,8 +64,8 @@ module HubspotSDK
           sig do
             params(
               token_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::SmtpAPITokenView)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::SmtpAPITokenView)
           end
           def get(token_id, request_options: {})
           end
@@ -75,14 +75,14 @@ module HubspotSDK
           sig do
             params(
               token_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::SmtpAPITokenView)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::SmtpAPITokenView)
           end
           def reset_password(token_id, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

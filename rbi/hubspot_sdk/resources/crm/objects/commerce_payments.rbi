@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
         class CommercePayments
           sig do
             returns(
-              HubspotSDK::Resources::Crm::Objects::CommercePayments::Batch
+              HubSpotSDK::Resources::Crm::Objects::CommercePayments::Batch
             )
           end
           attr_reader :batch
@@ -18,10 +18,10 @@ module HubspotSDK
           sig do
             params(
               associations:
-                T::Array[HubspotSDK::Crm::PublicAssociationsForObject::OrHash],
+                T::Array[HubSpotSDK::Crm::PublicAssociationsForObject::OrHash],
               properties: T::Hash[Symbol, String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::SimplePublicObject)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::SimplePublicObject)
           end
           def create(
             associations:,
@@ -43,8 +43,8 @@ module HubspotSDK
               commerce_payment_id: String,
               properties: T::Hash[Symbol, String],
               id_property: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::SimplePublicObject)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::SimplePublicObject)
           end
           def update(
             # Path param
@@ -67,10 +67,10 @@ module HubspotSDK
               limit: Integer,
               properties: T::Array[String],
               properties_with_history: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Crm::SimplePublicObjectWithAssociations
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Crm::SimplePublicObjectWithAssociations
               ]
             )
           end
@@ -103,7 +103,7 @@ module HubspotSDK
           sig do
             params(
               commerce_payment_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(commerce_payment_id, request_options: {})
@@ -121,8 +121,8 @@ module HubspotSDK
               id_property: String,
               properties: T::Array[String],
               properties_with_history: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::SimplePublicObjectWithAssociations)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::SimplePublicObjectWithAssociations)
           end
           def get(
             commerce_payment_id,
@@ -151,14 +151,14 @@ module HubspotSDK
           sig do
             params(
               after: String,
-              filter_groups: T::Array[HubspotSDK::Crm::FilterGroup::OrHash],
+              filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup::OrHash],
               limit: Integer,
               properties: T::Array[String],
               sorts: T::Array[String],
               query: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
+              HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
             )
           end
           def search(
@@ -179,7 +179,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

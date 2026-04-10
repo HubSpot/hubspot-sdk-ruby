@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicBusinessUnit < HubspotSDK::Internal::Type::BaseModel
+      class PublicBusinessUnit < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the business unit, represented as an integer.
         #

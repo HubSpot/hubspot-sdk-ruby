@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class AssociationDefinition < HubspotSDK::Internal::Type::BaseModel
+      class AssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the associated object (e.g., a contact ID).
         #
@@ -14,20 +14,20 @@ module HubspotSDK
         #   Whether custom labels can be used in the association.
         #
         #   @return [Boolean]
-        required :allows_custom_labels, HubspotSDK::Internal::Type::Boolean, api_name: :allowsCustomLabels
+        required :allows_custom_labels, HubSpotSDK::Internal::Type::Boolean, api_name: :allowsCustomLabels
 
         # @!attribute cardinality
         #   The cardinality from the source object's perspective, either "ONE_TO_ONE" or
         #   "ONE_TO_MANY".
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::Cardinality]
-        required :cardinality, enum: -> { HubspotSDK::Events::AssociationDefinition::Cardinality }
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::Cardinality]
+        required :cardinality, enum: -> { HubSpotSDK::Events::AssociationDefinition::Cardinality }
 
         # @!attribute category
         #   The error category
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::Category]
-        required :category, enum: -> { HubspotSDK::Events::AssociationDefinition::Category }
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::Category]
+        required :category, enum: -> { HubSpotSDK::Events::AssociationDefinition::Category }
 
         # @!attribute from_object_type_id
         #   The ID of the source object type (e.g., 0-1 for contacts).
@@ -40,7 +40,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :has_all_associated_objects,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :hasAllAssociatedObjects
 
         # @!attribute has_cascading_deletes
@@ -48,14 +48,14 @@ module HubspotSDK
         #   objects.
         #
         #   @return [Boolean]
-        required :has_cascading_deletes, HubspotSDK::Internal::Type::Boolean, api_name: :hasCascadingDeletes
+        required :has_cascading_deletes, HubSpotSDK::Internal::Type::Boolean, api_name: :hasCascadingDeletes
 
         # @!attribute has_user_enforced_max_from_object_ids
         #   Whether a user has set a limit for the number of source objects.
         #
         #   @return [Boolean]
         required :has_user_enforced_max_from_object_ids,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :hasUserEnforcedMaxFromObjectIds
 
         # @!attribute has_user_enforced_max_to_object_ids
@@ -63,30 +63,30 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :has_user_enforced_max_to_object_ids,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :hasUserEnforcedMaxToObjectIds
 
         # @!attribute hidden
         #   Whether the association is hidden or not.
         #
         #   @return [Boolean]
-        required :hidden, HubspotSDK::Internal::Type::Boolean
+        required :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute inverse_allows_custom_labels
         #   Whether the reverse association can also support custom labels.
         #
         #   @return [Boolean]
         required :inverse_allows_custom_labels,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :inverseAllowsCustomLabels
 
         # @!attribute inverse_cardinality
         #   The cardinality from the destination object's perspective, either "ONE_TO_ONE"
         #   or "ONE_TO_MANY".
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::InverseCardinality]
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::InverseCardinality]
         required :inverse_cardinality,
-                 enum: -> { HubspotSDK::Events::AssociationDefinition::InverseCardinality },
+                 enum: -> { HubSpotSDK::Events::AssociationDefinition::InverseCardinality },
                  api_name: :inverseCardinality
 
         # @!attribute inverse_has_all_associated_objects
@@ -94,7 +94,7 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :inverse_has_all_associated_objects,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :inverseHasAllAssociatedObjects
 
         # @!attribute inverse_id
@@ -112,19 +112,19 @@ module HubspotSDK
         # @!attribute is_default
         #
         #   @return [Boolean]
-        required :is_default, HubspotSDK::Internal::Type::Boolean, api_name: :isDefault
+        required :is_default, HubSpotSDK::Internal::Type::Boolean, api_name: :isDefault
 
         # @!attribute is_inverse_primary
         #   Whether the inverse association is considered primary.
         #
         #   @return [Boolean]
-        required :is_inverse_primary, HubspotSDK::Internal::Type::Boolean, api_name: :isInversePrimary
+        required :is_inverse_primary, HubSpotSDK::Internal::Type::Boolean, api_name: :isInversePrimary
 
         # @!attribute is_primary
         #   Whether the association is the primary link between the entities involved.
         #
         #   @return [Boolean]
-        required :is_primary, HubspotSDK::Internal::Type::Boolean, api_name: :isPrimary
+        required :is_primary, HubSpotSDK::Internal::Type::Boolean, api_name: :isPrimary
 
         # @!attribute max_from_object_ids
         #   The maximum number of source object IDs allowed in the association.
@@ -153,7 +153,7 @@ module HubspotSDK
         # @!attribute read_only
         #
         #   @return [Boolean]
-        required :read_only, HubspotSDK::Internal::Type::Boolean, api_name: :readOnly
+        required :read_only, HubSpotSDK::Internal::Type::Boolean, api_name: :readOnly
 
         # @!attribute to_object_type_id
         #   The ID of the destination object type (e.g., 0-3 for deals).
@@ -164,16 +164,16 @@ module HubspotSDK
         # @!attribute from_object_type
         #   The name of the source object type (e.g,. "DEAL" or "QUOTE").
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::FromObjectType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::FromObjectType, nil]
         optional :from_object_type,
-                 enum: -> { HubspotSDK::Events::AssociationDefinition::FromObjectType },
+                 enum: -> { HubSpotSDK::Events::AssociationDefinition::FromObjectType },
                  api_name: :fromObjectType
 
         # @!attribute hidden_reason
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::HiddenReason, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::HiddenReason, nil]
         optional :hidden_reason,
-                 enum: -> { HubspotSDK::Events::AssociationDefinition::HiddenReason },
+                 enum: -> { HubSpotSDK::Events::AssociationDefinition::HiddenReason },
                  api_name: :hiddenReason
 
         # @!attribute inverse_label
@@ -191,14 +191,14 @@ module HubspotSDK
         # @!attribute to_object_type
         #   The name of the destination object type (e.g,. "DEAL" or "QUOTE").
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::AssociationDefinition::ToObjectType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::ToObjectType, nil]
         optional :to_object_type,
-                 enum: -> { HubspotSDK::Events::AssociationDefinition::ToObjectType },
+                 enum: -> { HubSpotSDK::Events::AssociationDefinition::ToObjectType },
                  api_name: :toObjectType
 
         # @!method initialize(id:, allows_custom_labels:, cardinality:, category:, from_object_type_id:, has_all_associated_objects:, has_cascading_deletes:, has_user_enforced_max_from_object_ids:, has_user_enforced_max_to_object_ids:, hidden:, inverse_allows_custom_labels:, inverse_cardinality:, inverse_has_all_associated_objects:, inverse_id:, inverse_name:, is_default:, is_inverse_primary:, is_primary:, max_from_object_ids:, max_to_object_ids:, name:, portal_unique_identifier:, read_only:, to_object_type_id:, from_object_type: nil, hidden_reason: nil, inverse_label: nil, label: nil, to_object_type: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::AssociationDefinition} for more details.
+        #   {HubSpotSDK::Models::Events::AssociationDefinition} for more details.
         #
         #   The definition of an association
         #
@@ -206,9 +206,9 @@ module HubspotSDK
         #
         #   @param allows_custom_labels [Boolean] Whether custom labels can be used in the association.
         #
-        #   @param cardinality [Symbol, HubspotSDK::Models::Events::AssociationDefinition::Cardinality] The cardinality from the source object's perspective, either "ONE_TO_ONE" or "ON
+        #   @param cardinality [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::Cardinality] The cardinality from the source object's perspective, either "ONE_TO_ONE" or "ON
         #
-        #   @param category [Symbol, HubspotSDK::Models::Events::AssociationDefinition::Category] The error category
+        #   @param category [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::Category] The error category
         #
         #   @param from_object_type_id [String] The ID of the source object type (e.g., 0-1 for contacts).
         #
@@ -224,7 +224,7 @@ module HubspotSDK
         #
         #   @param inverse_allows_custom_labels [Boolean] Whether the reverse association can also support custom labels.
         #
-        #   @param inverse_cardinality [Symbol, HubspotSDK::Models::Events::AssociationDefinition::InverseCardinality] The cardinality from the destination object's perspective, either "ONE_TO_ONE" o
+        #   @param inverse_cardinality [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::InverseCardinality] The cardinality from the destination object's perspective, either "ONE_TO_ONE" o
         #
         #   @param inverse_has_all_associated_objects [Boolean] Whether all potential reverse linked objects are included in the association.
         #
@@ -250,22 +250,22 @@ module HubspotSDK
         #
         #   @param to_object_type_id [String] The ID of the destination object type (e.g., 0-3 for deals).
         #
-        #   @param from_object_type [Symbol, HubspotSDK::Models::Events::AssociationDefinition::FromObjectType] The name of the source object type (e.g,. "DEAL" or "QUOTE").
+        #   @param from_object_type [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::FromObjectType] The name of the source object type (e.g,. "DEAL" or "QUOTE").
         #
-        #   @param hidden_reason [Symbol, HubspotSDK::Models::Events::AssociationDefinition::HiddenReason]
+        #   @param hidden_reason [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::HiddenReason]
         #
         #   @param inverse_label [String] The label used to describe the reverse relationship in an association.
         #
         #   @param label [String] The label given to an association.
         #
-        #   @param to_object_type [Symbol, HubspotSDK::Models::Events::AssociationDefinition::ToObjectType] The name of the destination object type (e.g,. "DEAL" or "QUOTE").
+        #   @param to_object_type [Symbol, HubSpotSDK::Models::Events::AssociationDefinition::ToObjectType] The name of the destination object type (e.g,. "DEAL" or "QUOTE").
 
         # The cardinality from the source object's perspective, either "ONE_TO_ONE" or
         # "ONE_TO_MANY".
         #
-        # @see HubspotSDK::Models::Events::AssociationDefinition#cardinality
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#cardinality
         module Cardinality
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ONE_TO_MANY = :ONE_TO_MANY
           ONE_TO_ONE = :ONE_TO_ONE
@@ -276,9 +276,9 @@ module HubspotSDK
 
         # The error category
         #
-        # @see HubspotSDK::Models::Events::AssociationDefinition#category
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#category
         module Category
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           HUBSPOT_DEFINED = :HUBSPOT_DEFINED
           INTEGRATOR_DEFINED = :INTEGRATOR_DEFINED
@@ -292,9 +292,9 @@ module HubspotSDK
         # The cardinality from the destination object's perspective, either "ONE_TO_ONE"
         # or "ONE_TO_MANY".
         #
-        # @see HubspotSDK::Models::Events::AssociationDefinition#inverse_cardinality
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#inverse_cardinality
         module InverseCardinality
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ONE_TO_MANY = :ONE_TO_MANY
           ONE_TO_ONE = :ONE_TO_ONE
@@ -305,9 +305,9 @@ module HubspotSDK
 
         # The name of the source object type (e.g,. "DEAL" or "QUOTE").
         #
-        # @see HubspotSDK::Models::Events::AssociationDefinition#from_object_type
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#from_object_type
         module FromObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART = :ABANDONED_CART
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST
@@ -475,9 +475,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::AssociationDefinition#hidden_reason
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#hidden_reason
         module HiddenReason
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DEFAULT = :DEFAULT
           INTERNAL = :INTERNAL
@@ -489,9 +489,9 @@ module HubspotSDK
 
         # The name of the destination object type (e.g,. "DEAL" or "QUOTE").
         #
-        # @see HubspotSDK::Models::Events::AssociationDefinition#to_object_type
+        # @see HubSpotSDK::Models::Events::AssociationDefinition#to_object_type
         module ToObjectType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ABANDONED_CART = :ABANDONED_CART
           ACCEPTANCE_TEST = :ACCEPTANCE_TEST

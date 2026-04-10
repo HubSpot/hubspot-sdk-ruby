@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileUpdateInput < HubspotSDK::Internal::Type::BaseModel
+      class FileUpdateInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FileUpdateInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FileUpdateInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,14 +20,14 @@ module HubspotSDK
         # a new file and return the found duplicate instead.
         sig do
           returns(
-            T.nilable(HubspotSDK::Files::FileUpdateInput::Access::OrSymbol)
+            T.nilable(HubSpotSDK::Files::FileUpdateInput::Access::OrSymbol)
           )
         end
         attr_reader :access
 
         sig do
           params(
-            access: HubspotSDK::Files::FileUpdateInput::Access::OrSymbol
+            access: HubSpotSDK::Files::FileUpdateInput::Access::OrSymbol
           ).void
         end
         attr_writer :access
@@ -71,7 +71,7 @@ module HubspotSDK
         sig do
           params(
             clear_expires: T::Boolean,
-            access: HubspotSDK::Files::FileUpdateInput::Access::OrSymbol,
+            access: HubSpotSDK::Files::FileUpdateInput::Access::OrSymbol,
             expires_at: Time,
             is_usable_in_content: T::Boolean,
             name: String,
@@ -103,7 +103,7 @@ module HubspotSDK
           override.returns(
             {
               clear_expires: T::Boolean,
-              access: HubspotSDK::Files::FileUpdateInput::Access::OrSymbol,
+              access: HubSpotSDK::Files::FileUpdateInput::Access::OrSymbol,
               expires_at: Time,
               is_usable_in_content: T::Boolean,
               name: String,
@@ -119,58 +119,58 @@ module HubspotSDK
         # duplicate is found. RETURN_EXISTING: If a duplicate file is found, do not upload
         # a new file and return the found duplicate instead.
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Files::FileUpdateInput::Access)
+              T.all(Symbol, HubSpotSDK::Files::FileUpdateInput::Access)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIDDEN_INDEXABLE =
             T.let(
               :HIDDEN_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           HIDDEN_NOT_INDEXABLE =
             T.let(
               :HIDDEN_NOT_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           HIDDEN_PRIVATE =
             T.let(
               :HIDDEN_PRIVATE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           HIDDEN_SENSITIVE =
             T.let(
               :HIDDEN_SENSITIVE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           PRIVATE =
             T.let(
               :PRIVATE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           PUBLIC_INDEXABLE =
             T.let(
               :PUBLIC_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           PUBLIC_NOT_INDEXABLE =
             T.let(
               :PUBLIC_NOT_INDEXABLE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
           SENSITIVE =
             T.let(
               :SENSITIVE,
-              HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol
+              HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Files::FileUpdateInput::Access::TaggedSymbol]
+              T::Array[HubSpotSDK::Files::FileUpdateInput::Access::TaggedSymbol]
             )
           end
           def self.values

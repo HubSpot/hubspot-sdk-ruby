@@ -1,29 +1,29 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class ColorStop < HubspotSDK::Internal::Type::BaseModel
+      class ColorStop < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::ColorStop, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::ColorStop, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::RgbaColor) }
+        sig { returns(HubSpotSDK::Cms::RgbaColor) }
         attr_reader :color
 
-        sig { params(color: HubspotSDK::Cms::RgbaColor::OrHash).void }
+        sig { params(color: HubSpotSDK::Cms::RgbaColor::OrHash).void }
         attr_writer :color
 
         sig do
-          params(color: HubspotSDK::Cms::RgbaColor::OrHash).returns(
+          params(color: HubSpotSDK::Cms::RgbaColor::OrHash).returns(
             T.attached_class
           )
         end
         def self.new(color:)
         end
 
-        sig { override.returns({ color: HubspotSDK::Cms::RgbaColor }) }
+        sig { override.returns({ color: HubSpotSDK::Cms::RgbaColor }) }
         def to_hash
         end
       end

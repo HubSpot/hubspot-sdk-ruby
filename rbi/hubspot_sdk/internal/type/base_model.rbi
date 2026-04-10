@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       class BaseModel
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         abstract!
 
@@ -21,8 +21,8 @@ module HubspotSDK
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Internal::Type::BaseModel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Internal::Type::BaseModel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -31,7 +31,7 @@ module HubspotSDK
           #
           # Assumes superclass fields are totally defined before fields are accessed /
           # defined on subclasses.
-          sig { params(child: HubspotSDK::Internal::Type::BaseModel).void }
+          sig { params(child: HubSpotSDK::Internal::Type::BaseModel).void }
           def inherited(child)
           end
 
@@ -41,11 +41,11 @@ module HubspotSDK
               T::Hash[
                 Symbol,
                 T.all(
-                  HubspotSDK::Internal::Type::BaseModel::KnownField,
+                  HubSpotSDK::Internal::Type::BaseModel::KnownField,
                   {
                     type_fn:
                       T.proc.returns(
-                        HubspotSDK::Internal::Type::Converter::Input
+                        HubSpotSDK::Internal::Type::Converter::Input
                       )
                   }
                 )
@@ -61,8 +61,8 @@ module HubspotSDK
               T::Hash[
                 Symbol,
                 T.all(
-                  HubspotSDK::Internal::Type::BaseModel::KnownField,
-                  { type: HubspotSDK::Internal::Type::Converter::Input }
+                  HubSpotSDK::Internal::Type::BaseModel::KnownField,
+                  { type: HubSpotSDK::Internal::Type::Converter::Input }
                 )
               ]
             )
@@ -85,22 +85,22 @@ module HubspotSDK
                     enum:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       ),
                     union:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       ),
                     api_name: Symbol,
                     nil?: T::Boolean
                   },
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 ),
-              spec: HubspotSDK::Internal::AnyHash
+              spec: HubSpotSDK::Internal::AnyHash
             ).void
           end
           private def add_field(name_sym, required:, type_info:, spec:)
@@ -112,11 +112,11 @@ module HubspotSDK
               name_sym: Symbol,
               type_info:
                 T.any(
-                  HubspotSDK::Internal::AnyHash,
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  HubSpotSDK::Internal::AnyHash,
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 ),
-              spec: HubspotSDK::Internal::AnyHash
+              spec: HubSpotSDK::Internal::AnyHash
             ).void
           end
           def required(name_sym, type_info, spec = {})
@@ -128,11 +128,11 @@ module HubspotSDK
               name_sym: Symbol,
               type_info:
                 T.any(
-                  HubspotSDK::Internal::AnyHash,
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  HubSpotSDK::Internal::AnyHash,
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 ),
-              spec: HubspotSDK::Internal::AnyHash
+              spec: HubSpotSDK::Internal::AnyHash
             ).void
           end
           def optional(name_sym, type_info, spec = {})
@@ -177,11 +177,11 @@ module HubspotSDK
               .params(
                 value:
                   T.any(
-                    HubspotSDK::Internal::Type::BaseModel,
+                    HubSpotSDK::Internal::Type::BaseModel,
                     T::Hash[T.anything, T.anything],
                     T.anything
                   ),
-                state: HubspotSDK::Internal::Type::Converter::CoerceState
+                state: HubSpotSDK::Internal::Type::Converter::CoerceState
               )
               .returns(T.any(T.attached_class, T.anything))
           end
@@ -193,7 +193,7 @@ module HubspotSDK
             override
               .params(
                 value: T.any(T.attached_class, T.anything),
-                state: HubspotSDK::Internal::Type::Converter::DumpState
+                state: HubSpotSDK::Internal::Type::Converter::DumpState
               )
               .returns(T.any(T::Hash[T.anything, T.anything], T.anything))
           end
@@ -210,9 +210,9 @@ module HubspotSDK
           # @api private
           sig do
             params(
-              model: HubspotSDK::Internal::Type::BaseModel,
+              model: HubSpotSDK::Internal::Type::BaseModel,
               convert: T::Boolean
-            ).returns(HubspotSDK::Internal::AnyHash)
+            ).returns(HubSpotSDK::Internal::AnyHash)
           end
           def recursively_to_h(model, convert:)
           end
@@ -236,7 +236,7 @@ module HubspotSDK
         #
         # This method is not recursive. The returned value is shared by the object, so it
         # should not be mutated.
-        sig { overridable.returns(HubspotSDK::Internal::AnyHash) }
+        sig { overridable.returns(HubSpotSDK::Internal::AnyHash) }
         def to_h
         end
 
@@ -248,19 +248,19 @@ module HubspotSDK
         #
         # This method is not recursive. The returned value is shared by the object, so it
         # should not be mutated.
-        sig { overridable.returns(HubspotSDK::Internal::AnyHash) }
+        sig { overridable.returns(HubSpotSDK::Internal::AnyHash) }
         def to_hash
         end
 
         # In addition to the behaviour of `#to_h`, this method will recursively call
         # `#to_h` on nested models.
-        sig { overridable.returns(HubspotSDK::Internal::AnyHash) }
+        sig { overridable.returns(HubSpotSDK::Internal::AnyHash) }
         def deep_to_h
         end
 
         sig do
           params(keys: T.nilable(T::Array[Symbol])).returns(
-            HubspotSDK::Internal::AnyHash
+            HubSpotSDK::Internal::AnyHash
           )
         end
         def deconstruct_keys(keys)
@@ -280,7 +280,7 @@ module HubspotSDK
             data:
               T.any(
                 T::Hash[Symbol, T.anything],
-                HubspotSDK::Internal::Type::BaseModel
+                HubSpotSDK::Internal::Type::BaseModel
               )
           ).returns(T.attached_class)
         end

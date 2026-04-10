@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -6,34 +6,34 @@ module HubspotSDK
           def create_by_event_id_and_contact_id: (
             String subscriber_state,
             object_id_: String,
-            inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::BatchResponseSubscriberVidResponse
+            inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse
 
           def create_by_event_id_and_email: (
             String subscriber_state,
             object_id_: String,
-            inputs: ::Array[HubspotSDK::Marketing::MarketingEventEmailSubscriber],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+            inputs: ::Array[HubSpotSDK::Marketing::MarketingEventEmailSubscriber],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
 
           def create_by_external_event_id_and_contact_id: (
             String subscriber_state,
             external_event_id: String,
-            inputs: ::Array[HubspotSDK::Marketing::MarketingEventSubscriber],
+            inputs: ::Array[HubSpotSDK::Marketing::MarketingEventSubscriber],
             ?external_account_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::BatchResponseSubscriberVidResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::BatchResponseSubscriberVidResponse
 
           def create_by_external_event_id_and_email: (
             String subscriber_state,
             external_event_id: String,
-            inputs: ::Array[HubspotSDK::Marketing::MarketingEventEmailSubscriber],
+            inputs: ::Array[HubSpotSDK::Marketing::MarketingEventEmailSubscriber],
             ?external_account_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

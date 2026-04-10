@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Column < HubspotSDK::Internal::Type::BaseModel
+      class Column < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   Column Id
         #
@@ -14,7 +14,7 @@ module HubspotSDK
         #   Indicates whether the column has been deleted.
         #
         #   @return [Boolean]
-        required :deleted, HubspotSDK::Internal::Type::Boolean
+        required :deleted, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute description
         #   The description of the column.
@@ -37,8 +37,8 @@ module HubspotSDK
         # @!attribute type
         #   Type of the column
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::Column::Type]
-        required :type, enum: -> { HubspotSDK::Cms::Column::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Column::Type]
+        required :type, enum: -> { HubSpotSDK::Cms::Column::Type }
 
         # @!attribute created_at
         #   The timestamp when the column was created.
@@ -48,8 +48,8 @@ module HubspotSDK
 
         # @!attribute created_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :created_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :createdBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :created_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :createdBy
 
         # @!attribute created_by_user_id
         #   The ID of the user who created the column.
@@ -66,25 +66,25 @@ module HubspotSDK
         # @!attribute foreign_ids
         #   Foreign Ids
         #
-        #   @return [Array<HubspotSDK::Models::Cms::ForeignID>, nil]
+        #   @return [Array<HubSpotSDK::Models::Cms::ForeignID>, nil]
         optional :foreign_ids,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ForeignID] },
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ForeignID] },
                  api_name: :foreignIds
 
         # @!attribute foreign_ids_by_id
         #   Foreign ids
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}, nil]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::ForeignID}, nil]
         optional :foreign_ids_by_id,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ForeignID] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::ForeignID] },
                  api_name: :foreignIdsById
 
         # @!attribute foreign_ids_by_name
         #   Foreign ids by name
         #
-        #   @return [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}, nil]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::Cms::ForeignID}, nil]
         optional :foreign_ids_by_name,
-                 -> { HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::ForeignID] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::ForeignID] },
                  api_name: :foreignIdsByName
 
         # @!attribute foreign_table_id
@@ -102,8 +102,8 @@ module HubspotSDK
         # @!attribute options
         #   Options to choose for select and multi-select columns
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Option>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Option] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Option>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Option] }
 
         # @!attribute updated_at
         #   The timestamp when the column was last updated.
@@ -113,8 +113,8 @@ module HubspotSDK
 
         # @!attribute updated_by
         #
-        #   @return [HubspotSDK::Models::Cms::SimpleUser, nil]
-        optional :updated_by, -> { HubspotSDK::Cms::SimpleUser }, api_name: :updatedBy
+        #   @return [HubSpotSDK::Models::Cms::SimpleUser, nil]
+        optional :updated_by, -> { HubSpotSDK::Cms::SimpleUser }, api_name: :updatedBy
 
         # @!attribute updated_by_user_id
         #   The ID of the user who last updated the column.
@@ -139,31 +139,31 @@ module HubspotSDK
         #
         #   @param name [String] Name of the column
         #
-        #   @param type [Symbol, HubspotSDK::Models::Cms::Column::Type] Type of the column
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::Column::Type] Type of the column
         #
         #   @param created_at [Time] The timestamp when the column was created.
         #
-        #   @param created_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param created_by [HubSpotSDK::Models::Cms::SimpleUser]
         #
         #   @param created_by_user_id [Integer] The ID of the user who created the column.
         #
         #   @param foreign_column_id [Integer] Foreign Column id
         #
-        #   @param foreign_ids [Array<HubspotSDK::Models::Cms::ForeignID>] Foreign Ids
+        #   @param foreign_ids [Array<HubSpotSDK::Models::Cms::ForeignID>] Foreign Ids
         #
-        #   @param foreign_ids_by_id [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}] Foreign ids
+        #   @param foreign_ids_by_id [Hash{Symbol=>HubSpotSDK::Models::Cms::ForeignID}] Foreign ids
         #
-        #   @param foreign_ids_by_name [Hash{Symbol=>HubspotSDK::Models::Cms::ForeignID}] Foreign ids by name
+        #   @param foreign_ids_by_name [Hash{Symbol=>HubSpotSDK::Models::Cms::ForeignID}] Foreign ids by name
         #
         #   @param foreign_table_id [Integer] Foreign table id referenced
         #
         #   @param option_count [Integer] Number of options available
         #
-        #   @param options [Array<HubspotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
+        #   @param options [Array<HubSpotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
         #
         #   @param updated_at [Time] The timestamp when the column was last updated.
         #
-        #   @param updated_by [HubspotSDK::Models::Cms::SimpleUser]
+        #   @param updated_by [HubSpotSDK::Models::Cms::SimpleUser]
         #
         #   @param updated_by_user_id [Integer] The ID of the user who last updated the column.
         #
@@ -171,9 +171,9 @@ module HubspotSDK
 
         # Type of the column
         #
-        # @see HubspotSDK::Models::Cms::Column#type
+        # @see HubSpotSDK::Models::Cms::Column#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEAN = :BOOLEAN
           CODE = :CODE

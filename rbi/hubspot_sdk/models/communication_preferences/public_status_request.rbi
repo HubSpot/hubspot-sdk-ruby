@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module CommunicationPreferences
-      class PublicStatusRequest < HubspotSDK::Internal::Type::BaseModel
+      class PublicStatusRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         # The type of communication channel. Currently, only `EMAIL` is supported.
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol
+            HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol
           )
         end
         attr_accessor :channel
@@ -23,7 +23,7 @@ module HubspotSDK
         # The status of the contact's subscription.
         sig do
           returns(
-            HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol
+            HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol
           )
         end
         attr_accessor :status_state
@@ -40,7 +40,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol
             )
           )
         end
@@ -49,7 +49,7 @@ module HubspotSDK
         sig do
           params(
             legal_basis:
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol
           ).void
         end
         attr_writer :legal_basis
@@ -64,13 +64,13 @@ module HubspotSDK
         sig do
           params(
             channel:
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol,
             status_state:
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol,
             subscriber_id_string: String,
             subscription_id: Integer,
             legal_basis:
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol,
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol,
             legal_basis_explanation: String
           ).returns(T.attached_class)
         end
@@ -94,13 +94,13 @@ module HubspotSDK
           override.returns(
             {
               channel:
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol,
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel::OrSymbol,
               status_state:
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol,
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::OrSymbol,
               subscriber_id_string: String,
               subscription_id: Integer,
               legal_basis:
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol,
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::OrSymbol,
               legal_basis_explanation: String
             }
           )
@@ -110,13 +110,13 @@ module HubspotSDK
 
         # The type of communication channel. Currently, only `EMAIL` is supported.
         module Channel
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -124,13 +124,13 @@ module HubspotSDK
           EMAIL =
             T.let(
               :EMAIL,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::Channel::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::Channel::TaggedSymbol
               ]
             )
           end
@@ -140,13 +140,13 @@ module HubspotSDK
 
         # The status of the contact's subscription.
         module StatusState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -154,23 +154,23 @@ module HubspotSDK
           NOT_SPECIFIED =
             T.let(
               :NOT_SPECIFIED,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
             )
           SUBSCRIBED =
             T.let(
               :SUBSCRIBED,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
             )
           UNSUBSCRIBED =
             T.let(
               :UNSUBSCRIBED,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::StatusState::TaggedSymbol
               ]
             )
           end
@@ -180,13 +180,13 @@ module HubspotSDK
 
         # The legal basis for communication.
         module LegalBasis
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -194,43 +194,43 @@ module HubspotSDK
           CONSENT_WITH_NOTICE =
             T.let(
               :CONSENT_WITH_NOTICE,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_CLIENT =
             T.let(
               :LEGITIMATE_INTEREST_CLIENT,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_OTHER =
             T.let(
               :LEGITIMATE_INTEREST_OTHER,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           LEGITIMATE_INTEREST_PQL =
             T.let(
               :LEGITIMATE_INTEREST_PQL,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           NON_GDPR =
             T.let(
               :NON_GDPR,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           PERFORMANCE_OF_CONTRACT =
             T.let(
               :PERFORMANCE_OF_CONTRACT,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
           PROCESS_AND_STORE =
             T.let(
               :PROCESS_AND_STORE,
-              HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+              HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
+                HubSpotSDK::CommunicationPreferences::PublicStatusRequest::LegalBasis::TaggedSymbol
               ]
             )
           end

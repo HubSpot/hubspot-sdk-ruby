@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type property_filter_context = { object_type_id: String }
 
-      class PropertyFilterContext < HubspotSDK::Internal::Type::BaseModel
+      class PropertyFilterContext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
         def initialize: (object_type_id: String) -> void

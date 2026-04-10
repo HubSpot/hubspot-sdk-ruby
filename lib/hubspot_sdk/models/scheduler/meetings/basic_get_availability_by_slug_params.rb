@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       module Meetings
-        # @see HubspotSDK::Resources::Scheduler::Meetings::Basic#get_availability_by_slug
-        class BasicGetAvailabilityBySlugParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Scheduler::Meetings::Basic#get_availability_by_slug
+        class BasicGetAvailabilityBySlugParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute slug
           #
@@ -28,7 +28,7 @@ module HubspotSDK
           #   @param slug [String]
           #   @param timezone [String]
           #   @param month_offset [Integer]
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

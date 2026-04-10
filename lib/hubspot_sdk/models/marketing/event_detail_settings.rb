@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class EventDetailSettings < HubspotSDK::Internal::Type::BaseModel
+      class EventDetailSettings < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #   The id of the application the settings are for
         #

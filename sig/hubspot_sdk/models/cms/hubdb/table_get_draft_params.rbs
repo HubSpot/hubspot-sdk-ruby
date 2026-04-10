@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Hubdb
@@ -9,11 +9,11 @@ module HubspotSDK
             include_foreign_ids: bool,
             is_get_localized_schema: bool
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class TableGetDraftParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class TableGetDraftParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor table_id_or_name: String
 
@@ -34,7 +34,7 @@ module HubspotSDK
             ?archived: bool,
             ?include_foreign_ids: bool,
             ?is_get_localized_schema: bool,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
@@ -42,7 +42,7 @@ module HubspotSDK
             archived: bool,
             include_foreign_ids: bool,
             is_get_localized_schema: bool,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

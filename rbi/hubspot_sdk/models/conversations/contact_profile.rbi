@@ -1,52 +1,52 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ContactProfile < HubspotSDK::Internal::Type::BaseModel
+      class ContactProfile < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::ContactProfile,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::ContactProfile,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Conversations::ContactAddress]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::ContactAddress]) }
         attr_accessor :addresses
 
-        sig { returns(T::Array[HubspotSDK::Conversations::ContactEmail]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::ContactEmail]) }
         attr_accessor :emails
 
-        sig { returns(T::Array[HubspotSDK::Conversations::ContactPhone]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::ContactPhone]) }
         attr_accessor :phones
 
-        sig { returns(T::Array[HubspotSDK::Conversations::ContactURL]) }
+        sig { returns(T::Array[HubSpotSDK::Conversations::ContactURL]) }
         attr_accessor :urls
 
-        sig { returns(T.nilable(HubspotSDK::Conversations::ContactName)) }
+        sig { returns(T.nilable(HubSpotSDK::Conversations::ContactName)) }
         attr_reader :name
 
         sig do
-          params(name: HubspotSDK::Conversations::ContactName::OrHash).void
+          params(name: HubSpotSDK::Conversations::ContactName::OrHash).void
         end
         attr_writer :name
 
-        sig { returns(T.nilable(HubspotSDK::Conversations::ContactOrg)) }
+        sig { returns(T.nilable(HubSpotSDK::Conversations::ContactOrg)) }
         attr_reader :org
 
-        sig { params(org: HubspotSDK::Conversations::ContactOrg::OrHash).void }
+        sig { params(org: HubSpotSDK::Conversations::ContactOrg::OrHash).void }
         attr_writer :org
 
         sig do
           params(
             addresses:
-              T::Array[HubspotSDK::Conversations::ContactAddress::OrHash],
-            emails: T::Array[HubspotSDK::Conversations::ContactEmail::OrHash],
-            phones: T::Array[HubspotSDK::Conversations::ContactPhone::OrHash],
-            urls: T::Array[HubspotSDK::Conversations::ContactURL::OrHash],
-            name: HubspotSDK::Conversations::ContactName::OrHash,
-            org: HubspotSDK::Conversations::ContactOrg::OrHash
+              T::Array[HubSpotSDK::Conversations::ContactAddress::OrHash],
+            emails: T::Array[HubSpotSDK::Conversations::ContactEmail::OrHash],
+            phones: T::Array[HubSpotSDK::Conversations::ContactPhone::OrHash],
+            urls: T::Array[HubSpotSDK::Conversations::ContactURL::OrHash],
+            name: HubSpotSDK::Conversations::ContactName::OrHash,
+            org: HubSpotSDK::Conversations::ContactOrg::OrHash
           ).returns(T.attached_class)
         end
         def self.new(addresses:, emails:, phones:, urls:, name: nil, org: nil)
@@ -55,12 +55,12 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              addresses: T::Array[HubspotSDK::Conversations::ContactAddress],
-              emails: T::Array[HubspotSDK::Conversations::ContactEmail],
-              phones: T::Array[HubspotSDK::Conversations::ContactPhone],
-              urls: T::Array[HubspotSDK::Conversations::ContactURL],
-              name: HubspotSDK::Conversations::ContactName,
-              org: HubspotSDK::Conversations::ContactOrg
+              addresses: T::Array[HubSpotSDK::Conversations::ContactAddress],
+              emails: T::Array[HubSpotSDK::Conversations::ContactEmail],
+              phones: T::Array[HubSpotSDK::Conversations::ContactPhone],
+              urls: T::Array[HubSpotSDK::Conversations::ContactURL],
+              name: HubSpotSDK::Conversations::ContactName,
+              org: HubSpotSDK::Conversations::ContactOrg
             }
           )
         end

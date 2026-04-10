@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#create_oembed_domain
-      class IntegratorOEmbedDomainModel < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#create_oembed_domain
+      class IntegratorOEmbedDomainModel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [Integer]
@@ -27,8 +27,8 @@ module HubspotSDK
 
         # @!attribute endpoints
         #
-        #   @return [HubspotSDK::Models::Cms::Endpoints]
-        required :endpoints, -> { HubspotSDK::Cms::Endpoints }
+        #   @return [HubSpotSDK::Models::Cms::Endpoints]
+        required :endpoints, -> { HubSpotSDK::Cms::Endpoints }
 
         # @!attribute portal_id
         #
@@ -45,7 +45,7 @@ module HubspotSDK
         #   @param app_id [Integer]
         #   @param created_at [Integer]
         #   @param deleted_at [Integer]
-        #   @param endpoints [HubspotSDK::Models::Cms::Endpoints]
+        #   @param endpoints [HubSpotSDK::Models::Cms::Endpoints]
         #   @param portal_id [Integer]
         #   @param updated_at [Integer]
       end

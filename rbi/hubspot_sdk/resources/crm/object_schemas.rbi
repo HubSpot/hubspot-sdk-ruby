@@ -1,10 +1,10 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class ObjectSchemas
-        sig { returns(HubspotSDK::Resources::Crm::ObjectSchemas::Batch) }
+        sig { returns(HubSpotSDK::Resources::Crm::ObjectSchemas::Batch) }
         attr_reader :batch
 
         # Create a new custom object schema by defining its properties and associations.
@@ -12,17 +12,17 @@ module HubspotSDK
           params(
             allows_sensitive_properties: T::Boolean,
             associated_objects: T::Array[String],
-            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
             properties:
-              T::Array[HubspotSDK::Crm::ObjectTypePropertyCreate::OrHash],
+              T::Array[HubSpotSDK::Crm::ObjectTypePropertyCreate::OrHash],
             required_properties: T::Array[String],
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
             description: String,
             primary_display_property: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ObjectSchema)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ObjectSchema)
         end
         def create(
           # Determines if the object type can include properties that are marked as
@@ -61,14 +61,14 @@ module HubspotSDK
             clear_description: T::Boolean,
             allows_sensitive_properties: T::Boolean,
             description: String,
-            labels: HubspotSDK::ObjectTypeDefinitionLabels::OrHash,
+            labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             primary_display_property: String,
             required_properties: T::Array[String],
             restorable: T::Boolean,
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::ObjectTypeDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::ObjectTypeDefinition)
         end
         def update(
           object_type,
@@ -93,8 +93,8 @@ module HubspotSDK
             include_association_definitions: T::Boolean,
             include_audit_metadata: T::Boolean,
             include_property_definitions: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging)
         end
         def list(
           # Whether to return only results that have been archived.
@@ -112,7 +112,7 @@ module HubspotSDK
           params(
             object_type: String,
             archived: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(
@@ -132,8 +132,8 @@ module HubspotSDK
             from_object_type_id: String,
             to_object_type_id: String,
             name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::AssociationDefinition)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::AssociationDefinition)
         end
         def create_association(
           object_type,
@@ -151,7 +151,7 @@ module HubspotSDK
           params(
             association_identifier: String,
             object_type: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete_association(
@@ -169,8 +169,8 @@ module HubspotSDK
             include_association_definitions: T::Boolean,
             include_audit_metadata: T::Boolean,
             include_property_definitions: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Crm::ObjectSchema)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::ObjectSchema)
         end
         def get(
           object_type,
@@ -182,7 +182,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

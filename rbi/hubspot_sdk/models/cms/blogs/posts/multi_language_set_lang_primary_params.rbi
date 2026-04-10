@@ -1,32 +1,32 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
         module Posts
-          class MultiLanguageSetLangPrimaryParams < HubspotSDK::Models::Cms::SetNewLanguagePrimaryRequestVNext
-            extend HubspotSDK::Internal::Type::RequestParameters::Converter
-            include HubspotSDK::Internal::Type::RequestParameters
+          class MultiLanguageSetLangPrimaryParams < HubSpotSDK::Models::Cms::SetNewLanguagePrimaryRequestVNext
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
 
             OrHash =
               T.type_alias do
                 T.any(
-                  HubspotSDK::Cms::Blogs::Posts::MultiLanguageSetLangPrimaryParams,
-                  HubspotSDK::Internal::AnyHash
+                  HubSpotSDK::Cms::Blogs::Posts::MultiLanguageSetLangPrimaryParams,
+                  HubSpotSDK::Internal::AnyHash
                 )
               end
 
             sig do
               params(
-                request_options: HubspotSDK::RequestOptions::OrHash
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(T.attached_class)
             end
             def self.new(request_options: {})
             end
 
             sig do
-              override.returns({ request_options: HubspotSDK::RequestOptions })
+              override.returns({ request_options: HubSpotSDK::RequestOptions })
             end
             def to_hash
             end

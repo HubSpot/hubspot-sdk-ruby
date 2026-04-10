@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::ExportsTest < HubSpotSDK::Test::ResourceTest
   def test_create_async_required_params
     skip("Mock server tests are disabled")
 
@@ -24,13 +24,13 @@ class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::Resource
       )
 
     assert_pattern do
-      response => HubspotSDK::TaskLocator
+      response => HubSpotSDK::TaskLocator
     end
 
     assert_pattern do
       response => {
         id: String,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil
       }
     end
   end
@@ -41,16 +41,16 @@ class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.exports.get(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::PublicExportResponse
+      response => HubSpotSDK::Crm::PublicExportResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         created_at: Time,
-        export_state: HubspotSDK::Crm::PublicExportResponse::ExportState,
-        export_type: HubspotSDK::Crm::PublicExportResponse::ExportType,
-        object_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        export_state: HubSpotSDK::Crm::PublicExportResponse::ExportState,
+        export_type: HubSpotSDK::Crm::PublicExportResponse::ExportType,
+        object_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         object_type: String,
         updated_at: Time,
         export_name: String | nil,
@@ -65,16 +65,16 @@ class HubspotSDK::Test::Resources::Crm::ExportsTest < HubspotSDK::Test::Resource
     response = @hubspot.crm.exports.get_status(0)
 
     assert_pattern do
-      response => HubspotSDK::Crm::ActionResponseWithSingleResultUri
+      response => HubSpotSDK::Crm::ActionResponseWithSingleResultUri
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
         started_at: Time,
-        status: HubspotSDK::Crm::ActionResponseWithSingleResultUri::Status,
-        errors: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError]) | nil,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Crm::ActionResponseWithSingleResultUri::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         num_errors: Integer | nil,
         requested_at: Time | nil,
         result: String | nil

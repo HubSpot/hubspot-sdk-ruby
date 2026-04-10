@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseDealToDealSplitsWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseDealToDealSplitsWithErrors < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # An array of deal-to-deal split objects representing the results of the batch
         # operation.
-        sig { returns(T::Array[HubspotSDK::Crm::DealToDealSplits]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::DealToDealSplits]) }
         attr_accessor :results
 
         # The timestamp indicating when the batch operation started, in date-time format.
@@ -30,17 +30,17 @@ module HubspotSDK
         # COMPLETE, PENDING, PROCESSING.
         sig do
           returns(
-            HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol
+            HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol
           )
         end
         attr_accessor :status
 
         # An array of error objects detailing the errors that occurred during the batch
         # operation.
-        sig { returns(T.nilable(T::Array[HubspotSDK::StandardError])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
-        sig { params(errors: T::Array[HubspotSDK::StandardError::OrHash]).void }
+        sig { params(errors: T::Array[HubSpotSDK::StandardError::OrHash]).void }
         attr_writer :errors
 
         # A map of link names to associated URIs for additional resources or
@@ -69,11 +69,11 @@ module HubspotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubspotSDK::Crm::DealToDealSplits::OrHash],
+            results: T::Array[HubSpotSDK::Crm::DealToDealSplits::OrHash],
             started_at: Time,
             status:
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol,
-            errors: T::Array[HubspotSDK::StandardError::OrHash],
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol,
+            errors: T::Array[HubSpotSDK::StandardError::OrHash],
             links: T::Hash[Symbol, String],
             num_errors: Integer,
             requested_at: Time
@@ -109,11 +109,11 @@ module HubspotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubspotSDK::Crm::DealToDealSplits],
+              results: T::Array[HubSpotSDK::Crm::DealToDealSplits],
               started_at: Time,
               status:
-                HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol,
-              errors: T::Array[HubspotSDK::StandardError],
+                HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::OrSymbol,
+              errors: T::Array[HubSpotSDK::StandardError],
               links: T::Hash[Symbol, String],
               num_errors: Integer,
               requested_at: Time
@@ -126,13 +126,13 @@ module HubspotSDK
         # The current status of the batch operation, with possible values: CANCELED,
         # COMPLETE, PENDING, PROCESSING.
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status
+                HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -140,28 +140,28 @@ module HubspotSDK
           CANCELED =
             T.let(
               :CANCELED,
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
             )
           COMPLETE =
             T.let(
               :COMPLETE,
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
             )
           PENDING =
             T.let(
               :PENDING,
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
             )
           PROCESSING =
             T.let(
               :PROCESSING,
-              HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
+              HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
+                HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status::TaggedSymbol
               ]
             )
           end

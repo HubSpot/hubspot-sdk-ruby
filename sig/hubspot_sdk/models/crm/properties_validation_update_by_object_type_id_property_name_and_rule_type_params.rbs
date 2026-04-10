@@ -1,17 +1,17 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type properties_validation_update_by_object_type_id_property_name_and_rule_type_params =
         {
           object_type_id: String,
           property_name: String,
-          rule_type: HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
+          rule_type: HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
         }
-        & HubspotSDK::Internal::Type::request_parameters
+        & HubSpotSDK::Internal::Type::request_parameters
 
-      class PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams < HubspotSDK::Models::Crm::PublicPropertyValidationRuleUpdate
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams < HubSpotSDK::Models::Crm::PublicPropertyValidationRuleUpdate
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         def object_type_id: -> String
 
@@ -21,24 +21,24 @@ module HubspotSDK
 
         def property_name=: (String _) -> String
 
-        def rule_type: -> HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
+        def rule_type: -> HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
 
         def rule_type=: (
-          HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type _
-        ) -> HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
+          HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type _
+        ) -> HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type
 
         def initialize: (
           object_type_id: String,
           property_name: String,
-          rule_type: HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type,
-          ?request_options: HubspotSDK::request_opts
+          rule_type: HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type,
+          ?request_options: HubSpotSDK::request_opts
         ) -> void
 
         def to_hash: -> {
           object_type_id: String,
           property_name: String,
-          rule_type: HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type,
-          request_options: HubspotSDK::RequestOptions
+          rule_type: HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type,
+          request_options: HubSpotSDK::RequestOptions
         }
 
         type rule_type =
@@ -71,7 +71,7 @@ module HubspotSDK
           | :WHITESPACE
 
         module RuleType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AFTER_DATETIME_DURATION: :AFTER_DATETIME_DURATION
           AFTER_DURATION: :AFTER_DURATION
@@ -101,7 +101,7 @@ module HubspotSDK
           URL_BLOCKED_DOMAINS: :URL_BLOCKED_DOMAINS
           WHITESPACE: :WHITESPACE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertiesValidationUpdateByObjectTypeIDPropertyNameAndRuleTypeParams::rule_type]
         end
       end
     end

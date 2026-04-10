@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type search_public_response_wrapper =
@@ -9,7 +9,7 @@ module HubspotSDK
           object_id_: String
         }
 
-      class SearchPublicResponseWrapper < HubspotSDK::Internal::Type::BaseModel
+      class SearchPublicResponseWrapper < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor app_id: Integer
 
         attr_accessor external_account_id: String

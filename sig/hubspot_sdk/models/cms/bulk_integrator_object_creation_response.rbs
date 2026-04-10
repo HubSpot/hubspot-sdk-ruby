@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type bulk_integrator_object_creation_response =
         {
-          created_objects: ::Hash[Symbol, HubspotSDK::Cms::IntegratorObjectCreationResponse]
+          created_objects: ::Hash[Symbol, HubSpotSDK::Cms::IntegratorObjectCreationResponse]
         }
 
-      class BulkIntegratorObjectCreationResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor created_objects: ::Hash[Symbol, HubspotSDK::Cms::IntegratorObjectCreationResponse]
+      class BulkIntegratorObjectCreationResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor created_objects: ::Hash[Symbol, HubSpotSDK::Cms::IntegratorObjectCreationResponse]
 
         def initialize: (
-          created_objects: ::Hash[Symbol, HubspotSDK::Cms::IntegratorObjectCreationResponse]
+          created_objects: ::Hash[Symbol, HubSpotSDK::Cms::IntegratorObjectCreationResponse]
         ) -> void
 
         def to_hash: -> {
-          created_objects: ::Hash[Symbol, HubspotSDK::Cms::IntegratorObjectCreationResponse]
+          created_objects: ::Hash[Symbol, HubSpotSDK::Cms::IntegratorObjectCreationResponse]
         }
       end
     end

@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Objects
@@ -15,10 +15,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
+                    HubSpotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def create(inputs:, request_options: {})
             end
@@ -31,10 +31,10 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::SimplePublicObjectBatchInput::OrHash
+                    HubSpotSDK::Crm::SimplePublicObjectBatchInput::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def update(inputs:, request_options: {})
             end
@@ -44,8 +44,8 @@ module HubspotSDK
             # [restoring records](https://knowledge.hubspot.com/records/restore-deleted-records).
             sig do
               params(
-                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
-                request_options: HubspotSDK::RequestOptions::OrHash
+                inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID::OrHash],
+                request_options: HubSpotSDK::RequestOptions::OrHash
               ).void
             end
             def delete(inputs:, request_options: {})
@@ -55,13 +55,13 @@ module HubspotSDK
             # (`idProperty`).
             sig do
               params(
-                inputs: T::Array[HubspotSDK::Crm::SimplePublicObjectID::OrHash],
+                inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID::OrHash],
                 properties: T::Array[String],
                 properties_with_history: T::Array[String],
                 archived: T::Boolean,
                 id_property: String,
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
             end
             def get(
               # Body param
@@ -87,16 +87,16 @@ module HubspotSDK
               params(
                 inputs:
                   T::Array[
-                    HubspotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
+                    HubSpotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
                   ],
-                request_options: HubspotSDK::RequestOptions::OrHash
-              ).returns(HubspotSDK::Crm::BatchResponseSimplePublicUpsertObject)
+                request_options: HubSpotSDK::RequestOptions::OrHash
+              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicUpsertObject)
             end
             def upsert(inputs:, request_options: {})
             end
 
             # @api private
-            sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+            sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
             def self.new(client:)
             end
           end

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class PublicPermissionSet < HubspotSDK::Internal::Type::BaseModel
+      class PublicPermissionSet < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The role's unique ID
         #
@@ -21,11 +21,11 @@ module HubspotSDK
         #   assign/unassign to users
         #
         #   @return [Boolean]
-        required :requires_billing_write, HubspotSDK::Internal::Type::Boolean, api_name: :requiresBillingWrite
+        required :requires_billing_write, HubSpotSDK::Internal::Type::Boolean, api_name: :requiresBillingWrite
 
         # @!method initialize(id:, name:, requires_billing_write:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::PublicPermissionSet} for more details.
+        #   {HubSpotSDK::Models::Settings::PublicPermissionSet} for more details.
         #
         #   @param id [String] The role's unique ID
         #

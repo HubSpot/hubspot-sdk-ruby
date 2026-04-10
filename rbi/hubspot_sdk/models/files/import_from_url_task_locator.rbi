@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class ImportFromURLTaskLocator < HubspotSDK::Internal::Type::BaseModel
+      class ImportFromURLTaskLocator < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::ImportFromURLTaskLocator,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::ImportFromURLTaskLocator,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

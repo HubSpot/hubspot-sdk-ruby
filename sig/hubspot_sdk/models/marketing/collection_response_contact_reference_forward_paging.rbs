@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type collection_response_contact_reference_forward_paging =
         {
-          results: ::Array[HubspotSDK::Marketing::ContactReference],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Marketing::ContactReference],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponseContactReferenceForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Marketing::ContactReference]
+      class CollectionResponseContactReferenceForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Marketing::ContactReference]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Marketing::ContactReference],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Marketing::ContactReference],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Marketing::ContactReference],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Marketing::ContactReference],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

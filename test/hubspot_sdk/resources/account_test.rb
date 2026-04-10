@@ -2,20 +2,20 @@
 
 require_relative "../test_helper"
 
-class HubspotSDK::Test::Resources::AccountTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::AccountTest < HubSpotSDK::Test::ResourceTest
   def test_get
     skip("Mock server tests are disabled")
 
     response = @hubspot.account.get
 
     assert_pattern do
-      response => HubspotSDK::Account::PortalInformationResponse
+      response => HubSpotSDK::Account::PortalInformationResponse
     end
 
     assert_pattern do
       response => {
-        account_type: HubspotSDK::Account::PortalInformationResponse::AccountType,
-        additional_currencies: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        account_type: HubSpotSDK::Account::PortalInformationResponse::AccountType,
+        additional_currencies: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         company_currency: String,
         data_hosting_location: String,
         portal_id: Integer,
@@ -33,12 +33,12 @@ class HubspotSDK::Test::Resources::AccountTest < HubspotSDK::Test::ResourceTest
     response = @hubspot.account.get_daily_private_apps_usage
 
     assert_pattern do
-      response => HubspotSDK::Account::CollectionResponseAPIUsageNoPaging
+      response => HubSpotSDK::Account::CollectionResponseAPIUsageNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Account::APIUsage])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Account::APIUsage])
       }
     end
   end

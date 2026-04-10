@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#create_subscription
-      class SubscriptionResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#create_subscription
+      class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the webhook subscription.
         #
@@ -17,7 +17,7 @@ module HubspotSDK
         #   send notifications.
         #
         #   @return [Boolean]
-        required :active, HubspotSDK::Internal::Type::Boolean
+        required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
         #   The timestamp when the webhook subscription was created, in ISO 8601 format
@@ -31,9 +31,9 @@ module HubspotSDK
         #   contact.deletion, contact.propertyChange, and similar event types for other CRM
         #   objects and custom objects.
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::SubscriptionResponse::EventType]
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType]
         required :event_type,
-                 enum: -> { HubspotSDK::Webhooks::SubscriptionResponse::EventType },
+                 enum: -> { HubSpotSDK::Webhooks::SubscriptionResponse::EventType },
                  api_name: :eventType
 
         # @!attribute event_type_name
@@ -67,7 +67,7 @@ module HubspotSDK
 
         # @!method initialize(id:, active:, created_at:, event_type:, event_type_name: nil, object_type_id: nil, property_name: nil, updated_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Webhooks::SubscriptionResponse} for more details.
+        #   {HubSpotSDK::Models::Webhooks::SubscriptionResponse} for more details.
         #
         #   @param id [String] The unique ID of the webhook subscription.
         #
@@ -75,7 +75,7 @@ module HubspotSDK
         #
         #   @param created_at [Time] The timestamp when the webhook subscription was created, in ISO 8601 format (e.g
         #
-        #   @param event_type [Symbol, HubspotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event to listen for. Accepted values include contact.creation, conta
+        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event to listen for. Accepted values include contact.creation, conta
         #
         #   @param event_type_name [String] The name of the event to listen for. This is used with custom objects to specify
         #
@@ -89,9 +89,9 @@ module HubspotSDK
         # contact.deletion, contact.propertyChange, and similar event types for other CRM
         # objects and custom objects.
         #
-        # @see HubspotSDK::Models::Webhooks::SubscriptionResponse#event_type
+        # @see HubSpotSDK::Models::Webhooks::SubscriptionResponse#event_type
         module EventType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPANY_ASSOCIATION_CHANGE = :"company.associationChange"
           COMPANY_CREATION = :"company.creation"

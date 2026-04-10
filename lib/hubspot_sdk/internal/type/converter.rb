@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       module Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # rubocop:disable Lint/UnusedMethodArgument
 
@@ -40,17 +40,17 @@ module HubspotSDK
         def dump(value, state:)
           case value
           in Array
-            value.map { HubspotSDK::Internal::Type::Unknown.dump(_1, state: state) }
+            value.map { HubSpotSDK::Internal::Type::Unknown.dump(_1, state: state) }
           in Hash
-            value.transform_values { HubspotSDK::Internal::Type::Unknown.dump(_1, state: state) }
-          in HubspotSDK::Internal::Type::BaseModel
+            value.transform_values { HubSpotSDK::Internal::Type::Unknown.dump(_1, state: state) }
+          in HubSpotSDK::Internal::Type::BaseModel
             value.class.dump(value, state: state)
           in StringIO
             value.string
           in Pathname | IO
             state[:can_retry] = false if value.is_a?(IO)
-            HubspotSDK::FilePart.new(value)
-          in HubspotSDK::FilePart
+            HubSpotSDK::FilePart.new(value)
+          in HubSpotSDK::FilePart
             state[:can_retry] = false if value.content.is_a?(IO)
             value
           else
@@ -72,7 +72,7 @@ module HubspotSDK
         class << self
           # @api private
           #
-          # @param spec [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class] .
+          # @param spec [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class] .
           #
           #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
           #
@@ -90,8 +90,8 @@ module HubspotSDK
             in Hash
               type_info(spec.slice(:const, :enum, :union).first&.last)
             in true | false
-              -> { HubspotSDK::Internal::Type::Boolean }
-            in HubspotSDK::Internal::Type::Converter | Class | Symbol
+              -> { HubSpotSDK::Internal::Type::Boolean }
+            in HubSpotSDK::Internal::Type::Converter | Class | Symbol
               -> { spec }
             in NilClass | Integer | Float
               -> { spec.class }
@@ -100,7 +100,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param type_info [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class] .
+          # @param type_info [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class] .
           #
           #   @option type_info [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
           #
@@ -110,7 +110,7 @@ module HubspotSDK
           #
           #   @option type_info [Boolean] :"nil?"
           #
-          # @param spec [Hash{Symbol=>Object}, Proc, HubspotSDK::Internal::Type::Converter, Class] .
+          # @param spec [Hash{Symbol=>Object}, Proc, HubSpotSDK::Internal::Type::Converter, Class] .
           #
           #   @option spec [NilClass, TrueClass, FalseClass, Integer, Float, Symbol] :const
           #
@@ -152,7 +152,7 @@ module HubspotSDK
           # The coercion process is subject to improvement between minor release versions.
           # See https://docs.pydantic.dev/latest/concepts/unions/#smart-mode
           #
-          # @param target [HubspotSDK::Internal::Type::Converter, Class]
+          # @param target [HubSpotSDK::Internal::Type::Converter, Class]
           #
           # @param value [Object]
           #
@@ -184,12 +184,12 @@ module HubspotSDK
           #   @option state [Integer] :branched
           #
           # @return [Object]
-          def coerce(target, value, state: HubspotSDK::Internal::Type::Converter.new_coerce_state)
+          def coerce(target, value, state: HubSpotSDK::Internal::Type::Converter.new_coerce_state)
             # rubocop:disable Metrics/BlockNesting
             exactness = state.fetch(:exactness)
 
             case target
-            in HubspotSDK::Internal::Type::Converter
+            in HubSpotSDK::Internal::Type::Converter
               return target.coerce(value, state: state)
             in Class
               if value.is_a?(target)
@@ -270,7 +270,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param target [HubspotSDK::Internal::Type::Converter, Class]
+          # @param target [HubSpotSDK::Internal::Type::Converter, Class]
           #
           # @param value [Object]
           #
@@ -281,10 +281,10 @@ module HubspotSDK
           # @return [Object]
           def dump(target, value, state: {can_retry: true})
             case target
-            in HubspotSDK::Internal::Type::Converter
+            in HubSpotSDK::Internal::Type::Converter
               target.dump(value, state: state)
             else
-              HubspotSDK::Internal::Type::Unknown.dump(value, state: state)
+              HubSpotSDK::Internal::Type::Unknown.dump(value, state: state)
             end
           end
 
@@ -296,7 +296,7 @@ module HubspotSDK
           # @return [String]
           def inspect(target, depth:)
             case target
-            in HubspotSDK::Internal::Type::Converter
+            in HubSpotSDK::Internal::Type::Converter
               target.inspect(depth: depth.succ)
             else
               target.inspect
@@ -305,7 +305,7 @@ module HubspotSDK
         end
 
         define_sorbet_constant!(:Input) do
-          T.type_alias { T.any(HubspotSDK::Internal::Type::Converter, T::Class[T.anything]) }
+          T.type_alias { T.any(HubSpotSDK::Internal::Type::Converter, T::Class[T.anything]) }
         end
         define_sorbet_constant!(:CoerceState) do
           T.type_alias do

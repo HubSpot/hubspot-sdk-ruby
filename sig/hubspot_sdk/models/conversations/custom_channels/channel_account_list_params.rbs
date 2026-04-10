@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
@@ -8,16 +8,16 @@ module HubspotSDK
             after: String,
             archived: bool,
             default_page_length: Integer,
-            delivery_identifier_type: ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
+            delivery_identifier_type: ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
             delivery_identifier_value: ::Array[String],
             limit: Integer,
             sort: ::Array[String]
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class ChannelAccountListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ChannelAccountListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           attr_accessor channel_id: Integer
 
@@ -33,11 +33,11 @@ module HubspotSDK
 
           def default_page_length=: (Integer) -> Integer
 
-          attr_reader delivery_identifier_type: ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]?
+          attr_reader delivery_identifier_type: ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]?
 
           def delivery_identifier_type=: (
-            ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
-          ) -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
+            ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
+          ) -> ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
 
           attr_reader delivery_identifier_value: ::Array[String]?
 
@@ -56,11 +56,11 @@ module HubspotSDK
             ?after: String,
             ?archived: bool,
             ?default_page_length: Integer,
-            ?delivery_identifier_type: ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
+            ?delivery_identifier_type: ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
             ?delivery_identifier_value: ::Array[String],
             ?limit: Integer,
             ?sort: ::Array[String],
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
@@ -68,11 +68,11 @@ module HubspotSDK
             after: String,
             archived: bool,
             default_page_length: Integer,
-            delivery_identifier_type: ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
+            delivery_identifier_type: ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type],
             delivery_identifier_value: ::Array[String],
             limit: Integer,
             sort: ::Array[String],
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
 
           type delivery_identifier_type =
@@ -82,14 +82,14 @@ module HubspotSDK
             | :CHANNEL_SPECIFIC_OPAQUE_ID
 
           module DeliveryIdentifierType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             HS_EMAIL_ADDRESS: :HS_EMAIL_ADDRESS
             HS_PHONE_NUMBER: :HS_PHONE_NUMBER
             HS_SHORT_CODE: :HS_SHORT_CODE
             CHANNEL_SPECIFIC_OPAQUE_ID: :CHANNEL_SPECIFIC_OPAQUE_ID
 
-            def self?.values: -> ::Array[HubspotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
+            def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::CustomChannels::ChannelAccountListParams::delivery_identifier_type]
           end
         end
       end

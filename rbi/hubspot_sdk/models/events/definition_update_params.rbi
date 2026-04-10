@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class DefinitionUpdateParams < HubspotSDK::Models::Events::ExternalBehavioralEventTypeDefinitionPatch
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class DefinitionUpdateParams < HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinitionPatch
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::DefinitionUpdateParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::DefinitionUpdateParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
         sig do
           params(
             event_name: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(event_name:, request_options: {})
@@ -29,7 +29,7 @@ module HubspotSDK
 
         sig do
           override.returns(
-            { event_name: String, request_options: HubspotSDK::RequestOptions }
+            { event_name: String, request_options: HubSpotSDK::RequestOptions }
           )
         end
         def to_hash

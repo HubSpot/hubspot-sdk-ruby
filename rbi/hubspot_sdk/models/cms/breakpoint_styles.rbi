@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class BreakpointStyles < HubspotSDK::Internal::Type::BaseModel
+      class BreakpointStyles < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Cms::BreakpointStyles,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Cms::BreakpointStyles,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,23 +16,23 @@ module HubspotSDK
         sig { returns(T::Boolean) }
         attr_accessor :hidden
 
-        sig { returns(HubspotSDK::Cms::Margin) }
+        sig { returns(HubSpotSDK::Cms::Margin) }
         attr_reader :margin
 
-        sig { params(margin: HubspotSDK::Cms::Margin::OrHash).void }
+        sig { params(margin: HubSpotSDK::Cms::Margin::OrHash).void }
         attr_writer :margin
 
-        sig { returns(HubspotSDK::Cms::Padding) }
+        sig { returns(HubSpotSDK::Cms::Padding) }
         attr_reader :padding
 
-        sig { params(padding: HubspotSDK::Cms::Padding::OrHash).void }
+        sig { params(padding: HubSpotSDK::Cms::Padding::OrHash).void }
         attr_writer :padding
 
         sig do
           params(
             hidden: T::Boolean,
-            margin: HubspotSDK::Cms::Margin::OrHash,
-            padding: HubspotSDK::Cms::Padding::OrHash
+            margin: HubSpotSDK::Cms::Margin::OrHash,
+            padding: HubSpotSDK::Cms::Padding::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -47,8 +47,8 @@ module HubspotSDK
           override.returns(
             {
               hidden: T::Boolean,
-              margin: HubspotSDK::Cms::Margin,
-              padding: HubspotSDK::Cms::Padding
+              margin: HubSpotSDK::Cms::Margin,
+              padding: HubSpotSDK::Cms::Padding
             }
           )
         end

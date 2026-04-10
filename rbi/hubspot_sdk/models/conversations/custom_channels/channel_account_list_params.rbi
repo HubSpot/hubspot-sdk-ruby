@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       module CustomChannels
-        class ChannelAccountListParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class ChannelAccountListParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -45,7 +45,7 @@ module HubspotSDK
             returns(
               T.nilable(
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
                 ]
               )
             )
@@ -56,7 +56,7 @@ module HubspotSDK
             params(
               delivery_identifier_type:
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
                 ]
             ).void
           end
@@ -89,12 +89,12 @@ module HubspotSDK
               default_page_length: Integer,
               delivery_identifier_type:
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
                 ],
               delivery_identifier_value: T::Array[String],
               limit: Integer,
               sort: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(
@@ -124,12 +124,12 @@ module HubspotSDK
                 default_page_length: Integer,
                 delivery_identifier_type:
                   T::Array[
-                    HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
+                    HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
                   ],
                 delivery_identifier_value: T::Array[String],
                 limit: Integer,
                 sort: T::Array[String],
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end
@@ -137,13 +137,13 @@ module HubspotSDK
           end
 
           module DeliveryIdentifierType
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
                 T.all(
                   Symbol,
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType
                 )
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -151,28 +151,28 @@ module HubspotSDK
             HS_EMAIL_ADDRESS =
               T.let(
                 :HS_EMAIL_ADDRESS,
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
               )
             HS_PHONE_NUMBER =
               T.let(
                 :HS_PHONE_NUMBER,
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
               )
             HS_SHORT_CODE =
               T.let(
                 :HS_SHORT_CODE,
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
               )
             CHANNEL_SPECIFIC_OPAQUE_ID =
               T.let(
                 :CHANNEL_SPECIFIC_OPAQUE_ID,
-                HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
+                HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::TaggedSymbol
                 ]
               )
             end

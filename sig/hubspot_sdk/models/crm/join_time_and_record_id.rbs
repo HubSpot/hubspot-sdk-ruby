@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type join_time_and_record_id =
         { membership_timestamp: Time, record_id: String }
 
-      class JoinTimeAndRecordID < HubspotSDK::Internal::Type::BaseModel
+      class JoinTimeAndRecordID < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor membership_timestamp: Time
 
         attr_accessor record_id: String

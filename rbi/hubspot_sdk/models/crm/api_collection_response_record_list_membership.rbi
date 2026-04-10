@@ -1,24 +1,24 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class APICollectionResponseRecordListMembership < HubspotSDK::Internal::Type::BaseModel
+      class APICollectionResponseRecordListMembership < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::APICollectionResponseRecordListMembership,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::APICollectionResponseRecordListMembership,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::RecordListMembership]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::RecordListMembership]) }
         attr_accessor :results
 
-        sig { returns(T.nilable(HubspotSDK::Paging)) }
+        sig { returns(T.nilable(HubSpotSDK::Paging)) }
         attr_reader :paging
 
-        sig { params(paging: HubspotSDK::Paging::OrHash).void }
+        sig { params(paging: HubSpotSDK::Paging::OrHash).void }
         attr_writer :paging
 
         sig { returns(T.nilable(Integer)) }
@@ -29,8 +29,8 @@ module HubspotSDK
 
         sig do
           params(
-            results: T::Array[HubspotSDK::Crm::RecordListMembership::OrHash],
-            paging: HubspotSDK::Paging::OrHash,
+            results: T::Array[HubSpotSDK::Crm::RecordListMembership::OrHash],
+            paging: HubSpotSDK::Paging::OrHash,
             total: Integer
           ).returns(T.attached_class)
         end
@@ -40,8 +40,8 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              results: T::Array[HubspotSDK::Crm::RecordListMembership],
-              paging: HubspotSDK::Paging,
+              results: T::Array[HubSpotSDK::Crm::RecordListMembership],
+              paging: HubSpotSDK::Paging,
               total: Integer
             }
           )

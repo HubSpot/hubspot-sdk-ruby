@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class MarketingEvents
@@ -6,21 +6,21 @@ module HubspotSDK
           def get_by_external_account_and_event_id: (
             String external_event_id,
             external_account_id: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::AttendanceCounters
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::AttendanceCounters
 
           def get_by_id: (
             Integer marketing_event_id,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Marketing::AttendanceCounters
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Marketing::AttendanceCounters
 
           def list_breakdown_by_contact: (
             String contact_identifier,
             ?after: String,
             ?limit: Integer,
             ?state: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::ParticipationBreakdown]
 
           def list_breakdown_by_external_account_and_event_id: (
             String external_event_id,
@@ -29,8 +29,8 @@ module HubspotSDK
             ?contact_identifier: String,
             ?limit: Integer,
             ?state: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::ParticipationBreakdown]
 
           def list_breakdown_by_id: (
             Integer marketing_event_id,
@@ -38,10 +38,10 @@ module HubspotSDK
             ?contact_identifier: String,
             ?limit: Integer,
             ?state: String,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::Internal::Page[HubspotSDK::Marketing::ParticipationBreakdown]
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Marketing::ParticipationBreakdown]
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

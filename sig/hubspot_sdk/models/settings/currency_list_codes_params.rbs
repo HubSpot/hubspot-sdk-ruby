@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type currency_list_codes_params =
-        {  } & HubspotSDK::Internal::Type::request_parameters
+        {  } & HubSpotSDK::Internal::Type::request_parameters
 
-      class CurrencyListCodesParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class CurrencyListCodesParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
-        def initialize: (?request_options: HubspotSDK::request_opts) -> void
+        def initialize: (?request_options: HubSpotSDK::request_opts) -> void
 
-        def to_hash: -> { request_options: HubspotSDK::RequestOptions }
+        def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
       end
     end
   end

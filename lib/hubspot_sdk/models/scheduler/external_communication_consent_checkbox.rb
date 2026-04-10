@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCommunicationConsentCheckbox < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCommunicationConsentCheckbox < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute communication_type_id
         #   The ID of the communication consent form being recorded.
         #
@@ -20,7 +20,7 @@ module HubspotSDK
         #   Whether the consent checkbox is required.
         #
         #   @return [Boolean]
-        required :required, HubspotSDK::Internal::Type::Boolean
+        required :required, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(communication_type_id:, label:, required:)
         #   @param communication_type_id [String] The ID of the communication consent form being recorded.

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineStagePatchInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineStagePatchInput < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute metadata
         #   A JSON object containing properties that are not present on all object
         #   pipelines.
@@ -18,13 +18,13 @@ module HubspotSDK
         #   `CLOSED`.
         #
         #   @return [Hash{Symbol=>String}]
-        required :metadata, HubspotSDK::Internal::Type::HashOf[String]
+        required :metadata, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute archived
         #   Whether the pipeline is archived.
         #
         #   @return [Boolean, nil]
-        optional :archived, HubspotSDK::Internal::Type::Boolean
+        optional :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute display_order
         #   The order for displaying this pipeline stage. If two pipeline stages have a
@@ -42,7 +42,7 @@ module HubspotSDK
 
         # @!method initialize(metadata:, archived: nil, display_order: nil, label: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PipelineStagePatchInput} for more details.
+        #   {HubSpotSDK::Models::Crm::PipelineStagePatchInput} for more details.
         #
         #   @param metadata [Hash{Symbol=>String}] A JSON object containing properties that are not present on all object pipelines
         #

@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class RecordIDInput < HubspotSDK::Internal::Type::BaseModel
+      class RecordIDInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Crm::RecordIDInput, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Crm::RecordIDInput, HubSpotSDK::Internal::AnyHash)
           end
 
         sig { returns(String) }

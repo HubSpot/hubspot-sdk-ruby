@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class AppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AppEventOccurrence,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AppEventOccurrence,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -51,12 +51,12 @@ module HubspotSDK
         sig { params(object_type_fully_qualified_name: String).void }
         attr_writer :object_type_fully_qualified_name
 
-        sig { returns(T.nilable(HubspotSDK::Crm::TimelineEventIFrame)) }
+        sig { returns(T.nilable(HubSpotSDK::Crm::TimelineEventIFrame)) }
         attr_reader :timeline_i_frame
 
         sig do
           params(
-            timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash
+            timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame::OrHash
           ).void
         end
         attr_writer :timeline_i_frame
@@ -83,7 +83,7 @@ module HubspotSDK
             extra_data: T.anything,
             object_id_: String,
             object_type_fully_qualified_name: String,
-            timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame::OrHash,
+            timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame::OrHash,
             timestamp: Time,
             utk: String
           ).returns(T.attached_class)
@@ -114,7 +114,7 @@ module HubspotSDK
               extra_data: T.anything,
               object_id_: String,
               object_type_fully_qualified_name: String,
-              timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
+              timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame,
               timestamp: Time,
               utk: String
             }

@@ -1,33 +1,33 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class Paging < HubspotSDK::Internal::Type::BaseModel
+    class Paging < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::Paging, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::Paging, HubSpotSDK::Internal::AnyHash)
         end
 
       # Specifies the paging information needed to retrieve the next set of results in a
       # paginated API response
-      sig { returns(T.nilable(HubspotSDK::NextPage)) }
+      sig { returns(T.nilable(HubSpotSDK::NextPage)) }
       attr_reader :next_
 
-      sig { params(next_: HubspotSDK::NextPage::OrHash).void }
+      sig { params(next_: HubSpotSDK::NextPage::OrHash).void }
       attr_writer :next_
 
       # specifies the paging information needed to retrieve the previous set of results
       # in a paginated API response
-      sig { returns(T.nilable(HubspotSDK::PreviousPage)) }
+      sig { returns(T.nilable(HubSpotSDK::PreviousPage)) }
       attr_reader :prev
 
-      sig { params(prev: HubspotSDK::PreviousPage::OrHash).void }
+      sig { params(prev: HubSpotSDK::PreviousPage::OrHash).void }
       attr_writer :prev
 
       sig do
         params(
-          next_: HubspotSDK::NextPage::OrHash,
-          prev: HubspotSDK::PreviousPage::OrHash
+          next_: HubSpotSDK::NextPage::OrHash,
+          prev: HubSpotSDK::PreviousPage::OrHash
         ).returns(T.attached_class)
       end
       def self.new(
@@ -42,7 +42,7 @@ module HubspotSDK
 
       sig do
         override.returns(
-          { next_: HubspotSDK::NextPage, prev: HubspotSDK::PreviousPage }
+          { next_: HubSpotSDK::NextPage, prev: HubSpotSDK::PreviousPage }
         )
       end
       def to_hash

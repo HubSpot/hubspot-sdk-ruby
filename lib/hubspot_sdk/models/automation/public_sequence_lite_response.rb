@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      # @see HubspotSDK::Resources::Automation::Sequences#list
-      class PublicSequenceLiteResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Automation::Sequences#list
+      class PublicSequenceLiteResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier of the sequence.
         #

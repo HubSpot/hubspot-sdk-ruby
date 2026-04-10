@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Currencies
@@ -10,19 +10,19 @@ module HubspotSDK
             #
             # @overload create(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::Settings::ExchangeRateCreateRequest>]
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param inputs [Array<HubSpotSDK::Models::Settings::ExchangeRateCreateRequest>]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Settings::BatchResponseExchangeRate]
+            # @return [HubSpotSDK::Models::Settings::BatchResponseExchangeRate]
             #
-            # @see HubspotSDK::Models::Settings::Currencies::ExchangeRates::BatchCreateParams
+            # @see HubSpotSDK::Models::Settings::Currencies::ExchangeRates::BatchCreateParams
             def create(params)
-              parsed, options = HubspotSDK::Settings::Currencies::ExchangeRates::BatchCreateParams.dump_request(params)
+              parsed, options = HubSpotSDK::Settings::Currencies::ExchangeRates::BatchCreateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "settings/currencies/2026-03/exchange-rates/batch/create",
                 body: parsed,
-                model: HubspotSDK::Settings::BatchResponseExchangeRate,
+                model: HubSpotSDK::Settings::BatchResponseExchangeRate,
                 options: options
               )
             end
@@ -31,19 +31,19 @@ module HubspotSDK
             #
             # @overload update(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::Settings::ExchangeRateUpdateRequest>]
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param inputs [Array<HubSpotSDK::Models::Settings::ExchangeRateUpdateRequest>]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Settings::BatchResponseExchangeRate]
+            # @return [HubSpotSDK::Models::Settings::BatchResponseExchangeRate]
             #
-            # @see HubspotSDK::Models::Settings::Currencies::ExchangeRates::BatchUpdateParams
+            # @see HubSpotSDK::Models::Settings::Currencies::ExchangeRates::BatchUpdateParams
             def update(params)
-              parsed, options = HubspotSDK::Settings::Currencies::ExchangeRates::BatchUpdateParams.dump_request(params)
+              parsed, options = HubSpotSDK::Settings::Currencies::ExchangeRates::BatchUpdateParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "settings/currencies/2026-03/exchange-rates/batch/update",
                 body: parsed,
-                model: HubspotSDK::Settings::BatchResponseExchangeRate,
+                model: HubSpotSDK::Settings::BatchResponseExchangeRate,
                 options: options
               )
             end
@@ -53,27 +53,27 @@ module HubspotSDK
             #
             # @overload get(inputs:, request_options: {})
             #
-            # @param inputs [Array<HubspotSDK::Models::PublicObjectID>] An array of deal split inputs
+            # @param inputs [Array<HubSpotSDK::Models::PublicObjectID>] An array of deal split inputs
             #
-            # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
             #
-            # @return [HubspotSDK::Models::Settings::BatchResponseExchangeRate]
+            # @return [HubSpotSDK::Models::Settings::BatchResponseExchangeRate]
             #
-            # @see HubspotSDK::Models::Settings::Currencies::ExchangeRates::BatchGetParams
+            # @see HubSpotSDK::Models::Settings::Currencies::ExchangeRates::BatchGetParams
             def get(params)
-              parsed, options = HubspotSDK::Settings::Currencies::ExchangeRates::BatchGetParams.dump_request(params)
+              parsed, options = HubSpotSDK::Settings::Currencies::ExchangeRates::BatchGetParams.dump_request(params)
               @client.request(
                 method: :post,
                 path: "settings/currencies/2026-03/exchange-rates/batch/read",
                 body: parsed,
-                model: HubspotSDK::Settings::BatchResponseExchangeRate,
+                model: HubSpotSDK::Settings::BatchResponseExchangeRate,
                 options: options
               )
             end
 
             # @api private
             #
-            # @param client [HubspotSDK::Client]
+            # @param client [HubSpotSDK::Client]
             def initialize(client:)
               @client = client
             end

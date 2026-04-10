@@ -2,7 +2,7 @@
 
 require_relative "test_helper"
 
-class HubspotSDKTest < Minitest::Test
+class HubSpotSDKTest < Minitest::Test
   extend Minitest::Serial
   include WebMock::API
 
@@ -33,9 +33,9 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -57,9 +57,9 @@ class HubspotSDKTest < Minitest::Test
     )
 
     hubspot =
-      HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 3)
+      HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 3)
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -80,9 +80,9 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -105,9 +105,9 @@ class HubspotSDKTest < Minitest::Test
     )
 
     hubspot =
-      HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 3)
+      HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 3)
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -131,9 +131,9 @@ class HubspotSDKTest < Minitest::Test
     )
 
     hubspot =
-      HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
+      HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -159,10 +159,10 @@ class HubspotSDKTest < Minitest::Test
     )
 
     hubspot =
-      HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
+      HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
 
     Thread.current.thread_variable_set(:time_now, time_now)
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -187,9 +187,9 @@ class HubspotSDKTest < Minitest::Test
     )
 
     hubspot =
-      HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
+      HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token", max_retries: 1)
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -211,9 +211,9 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -236,9 +236,9 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -262,9 +262,9 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::InternalServerError) do
+    assert_raises(HubSpotSDK::Errors::InternalServerError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -291,9 +291,9 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::APIConnectionError) do
+    assert_raises(HubSpotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -308,7 +308,7 @@ class HubspotSDKTest < Minitest::Test
 
     recorded, = WebMock::RequestRegistry.instance.requested_signatures.hash.first
 
-    assert_requested(:any, "http://localhost/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
+    assert_requested(:any, "http://localhost/redirected", times: HubSpotSDK::Client::MAX_REDIRECTS) do
       assert_equal(recorded.method, _1.method)
       assert_equal(recorded.body, _1.body)
       assert_equal(
@@ -329,9 +329,9 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::APIConnectionError) do
+    assert_raises(HubSpotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -344,7 +344,7 @@ class HubspotSDKTest < Minitest::Test
       )
     end
 
-    assert_requested(:get, "http://localhost/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
+    assert_requested(:get, "http://localhost/redirected", times: HubSpotSDK::Client::MAX_REDIRECTS) do
       headers = _1.headers.keys.map(&:downcase)
       refute_includes(headers, "content-type")
       assert_nil(_1.body)
@@ -362,9 +362,9 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "/redirected"}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::APIConnectionError) do
+    assert_raises(HubSpotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -381,7 +381,7 @@ class HubspotSDKTest < Minitest::Test
     auth_header = recorded.headers.transform_keys(&:downcase).fetch("authorization")
 
     assert_equal("Bearer xyz", auth_header)
-    assert_requested(:any, "http://localhost/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
+    assert_requested(:any, "http://localhost/redirected", times: HubSpotSDK::Client::MAX_REDIRECTS) do
       auth_header = _1.headers.transform_keys(&:downcase).fetch("authorization")
       assert_equal("Bearer xyz", auth_header)
     end
@@ -398,9 +398,9 @@ class HubspotSDKTest < Minitest::Test
       headers: {"location" => "https://example.com/redirected"}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
-    assert_raises(HubspotSDK::Errors::APIConnectionError) do
+    assert_raises(HubSpotSDK::Errors::APIConnectionError) do
       hubspot.crm.objects.contacts.create(
         associations: [
           {
@@ -413,7 +413,7 @@ class HubspotSDKTest < Minitest::Test
       )
     end
 
-    assert_requested(:any, "https://example.com/redirected", times: HubspotSDK::Client::MAX_REDIRECTS) do
+    assert_requested(:any, "https://example.com/redirected", times: HubSpotSDK::Client::MAX_REDIRECTS) do
       headers = _1.headers.keys.map(&:downcase)
       refute_includes(headers, "authorization")
     end
@@ -425,7 +425,7 @@ class HubspotSDKTest < Minitest::Test
       body: {}
     )
 
-    hubspot = HubspotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
+    hubspot = HubSpotSDK::Client.new(base_url: "http://localhost", access_token: "My Access Token")
 
     hubspot.crm.objects.contacts.create(
       associations: [

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class CustomPropertyLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class CustomPropertyLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::CustomPropertyLimitResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::CustomPropertyLimitResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType]) }
         attr_accessor :by_object_type
 
         # The total limit for custom properties across all objects.
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           params(
             by_object_type:
-              T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType::OrHash],
+              T::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType::OrHash],
             overall_limit: Integer,
             overall_percentage: Float,
             overall_usage: Integer
@@ -51,7 +51,7 @@ module HubspotSDK
           override.returns(
             {
               by_object_type:
-                T::Array[HubspotSDK::Crm::LimitAndUsageForObjectType],
+                T::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType],
               overall_limit: Integer,
               overall_percentage: Float,
               overall_usage: Integer

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class IsEngagementType < HubspotSDK::Internal::Type::BaseModel
+      class IsEngagementType < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::IsEngagementType::Operator]
-        required :operator, enum: -> { HubspotSDK::Cms::IsEngagementType::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::IsEngagementType::Operator]
+        required :operator, enum: -> { HubSpotSDK::Cms::IsEngagementType::Operator }
 
         # @!attribute property_name
         #
@@ -17,16 +17,16 @@ module HubspotSDK
         # @!attribute value
         #
         #   @return [Boolean, nil]
-        optional :value, HubspotSDK::Internal::Type::Boolean
+        optional :value, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(operator:, property_name: nil, value: nil)
-        #   @param operator [Symbol, HubspotSDK::Models::Cms::IsEngagementType::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Cms::IsEngagementType::Operator]
         #   @param property_name [String]
         #   @param value [Boolean]
 
-        # @see HubspotSDK::Models::Cms::IsEngagementType#operator
+        # @see HubSpotSDK::Models::Cms::IsEngagementType#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_ENGAGEMENT_TYPE = :IS_ENGAGEMENT_TYPE
 

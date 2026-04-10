@@ -1,47 +1,47 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type streaming_collection_response_with_total_hub_db_table_row_v3 =
         {
           results: ::Array[top],
           total: Integer,
-          type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          paging: HubspotSDK::Paging
+          type: HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
+          paging: HubSpotSDK::Paging
         }
 
-      class StreamingCollectionResponseWithTotalHubDBTableRowV3 < HubspotSDK::Internal::Type::BaseModel
+      class StreamingCollectionResponseWithTotalHubDBTableRowV3 < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor results: ::Array[top]
 
         attr_accessor total: Integer
 
-        attr_accessor type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_
+        attr_accessor type: HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         def initialize: (
           results: ::Array[top],
           total: Integer,
-          type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          ?paging: HubspotSDK::Paging
+          type: HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
+          ?paging: HubSpotSDK::Paging
         ) -> void
 
         def to_hash: -> {
           results: ::Array[top],
           total: Integer,
-          type: HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
-          paging: HubspotSDK::Paging
+          type: HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_,
+          paging: HubSpotSDK::Paging
         }
 
         type type_ = :STREAMING
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STREAMING: :STREAMING
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3::type_]
         end
       end
     end

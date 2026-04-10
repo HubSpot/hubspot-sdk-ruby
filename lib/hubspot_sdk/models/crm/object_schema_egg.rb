@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ObjectSchemaEgg < HubspotSDK::Internal::Type::BaseModel
+      class ObjectSchemaEgg < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute allows_sensitive_properties
         #   Determines if the object type can include properties that are marked as
         #   sensitive.
         #
         #   @return [Boolean]
         required :allows_sensitive_properties,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowsSensitiveProperties
 
         # @!attribute associated_objects
@@ -18,13 +18,13 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :associated_objects,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :associatedObjects
 
         # @!attribute labels
         #
-        #   @return [HubspotSDK::Models::ObjectTypeDefinitionLabels]
-        required :labels, -> { HubspotSDK::ObjectTypeDefinitionLabels }
+        #   @return [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
+        required :labels, -> { HubSpotSDK::ObjectTypeDefinitionLabels }
 
         # @!attribute name
         #   A unique name for this object. For internal use only.
@@ -35,9 +35,9 @@ module HubspotSDK
         # @!attribute properties
         #   Properties defined for this object type.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::ObjectTypePropertyCreate>]
+        #   @return [Array<HubSpotSDK::Models::Crm::ObjectTypePropertyCreate>]
         required :properties,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectTypePropertyCreate] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ObjectTypePropertyCreate] }
 
         # @!attribute required_properties
         #   The names of properties that should be **required** when creating an object of
@@ -45,7 +45,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :required_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :requiredProperties
 
         # @!attribute searchable_properties
@@ -54,7 +54,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :searchable_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :searchableProperties
 
         # @!attribute secondary_display_properties
@@ -63,7 +63,7 @@ module HubspotSDK
         #
         #   @return [Array<String>]
         required :secondary_display_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :secondaryDisplayProperties
 
         # @!attribute description
@@ -81,17 +81,17 @@ module HubspotSDK
 
         # @!method initialize(allows_sensitive_properties:, associated_objects:, labels:, name:, properties:, required_properties:, searchable_properties:, secondary_display_properties:, description: nil, primary_display_property: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::ObjectSchemaEgg} for more details.
+        #   {HubSpotSDK::Models::Crm::ObjectSchemaEgg} for more details.
         #
         #   @param allows_sensitive_properties [Boolean] Determines if the object type can include properties that are marked as sensitiv
         #
         #   @param associated_objects [Array<String>] Associations defined for this object type.
         #
-        #   @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        #   @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         #
         #   @param name [String] A unique name for this object. For internal use only.
         #
-        #   @param properties [Array<HubspotSDK::Models::Crm::ObjectTypePropertyCreate>] Properties defined for this object type.
+        #   @param properties [Array<HubSpotSDK::Models::Crm::ObjectTypePropertyCreate>] Properties defined for this object type.
         #
         #   @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
         #

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicEmailContent < HubspotSDK::Internal::Type::BaseModel
+      class PublicEmailContent < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicEmailContent,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicEmailContent,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -31,14 +31,14 @@ module HubspotSDK
         attr_writer :smart_fields
 
         sig do
-          returns(T.nilable(HubspotSDK::Marketing::PublicEmailStyleSettings))
+          returns(T.nilable(HubSpotSDK::Marketing::PublicEmailStyleSettings))
         end
         attr_reader :style_settings
 
         sig do
           params(
             style_settings:
-              HubspotSDK::Marketing::PublicEmailStyleSettings::OrHash
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::OrHash
           ).void
         end
         attr_writer :style_settings
@@ -73,7 +73,7 @@ module HubspotSDK
             plain_text_version: String,
             smart_fields: T::Hash[Symbol, T.anything],
             style_settings:
-              HubspotSDK::Marketing::PublicEmailStyleSettings::OrHash,
+              HubSpotSDK::Marketing::PublicEmailStyleSettings::OrHash,
             template_path: String,
             theme_settings_values: T::Hash[Symbol, T.anything],
             widget_containers: T::Hash[Symbol, T.anything],
@@ -98,7 +98,7 @@ module HubspotSDK
               flex_areas: T::Hash[Symbol, T.anything],
               plain_text_version: String,
               smart_fields: T::Hash[Symbol, T.anything],
-              style_settings: HubspotSDK::Marketing::PublicEmailStyleSettings,
+              style_settings: HubSpotSDK::Marketing::PublicEmailStyleSettings,
               template_path: String,
               theme_settings_values: T::Hash[Symbol, T.anything],
               widget_containers: T::Hash[Symbol, T.anything],

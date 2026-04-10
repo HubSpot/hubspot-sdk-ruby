@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicSequenceResponse < HubspotSDK::Internal::Type::BaseModel
+      class PublicSequenceResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicSequenceResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicSequenceResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,7 +25,7 @@ module HubspotSDK
         sig do
           returns(
             T::Array[
-              HubspotSDK::Automation::PublicSequenceStepDependencyResponse
+              HubSpotSDK::Automation::PublicSequenceStepDependencyResponse
             ]
           )
         end
@@ -38,7 +38,7 @@ module HubspotSDK
         # An array of steps included in the sequence, each represented by a
         # PublicSequenceStepResponse object.
         sig do
-          returns(T::Array[HubspotSDK::Automation::PublicSequenceStepResponse])
+          returns(T::Array[HubSpotSDK::Automation::PublicSequenceStepResponse])
         end
         attr_accessor :steps
 
@@ -59,7 +59,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Automation::PublicSequenceSettingsResponse)
+            T.nilable(HubSpotSDK::Automation::PublicSequenceSettingsResponse)
           )
         end
         attr_reader :settings
@@ -67,7 +67,7 @@ module HubspotSDK
         sig do
           params(
             settings:
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::OrHash
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::OrHash
           ).void
         end
         attr_writer :settings
@@ -78,18 +78,18 @@ module HubspotSDK
             created_at: Time,
             dependencies:
               T::Array[
-                HubspotSDK::Automation::PublicSequenceStepDependencyResponse::OrHash
+                HubSpotSDK::Automation::PublicSequenceStepDependencyResponse::OrHash
               ],
             name: String,
             steps:
               T::Array[
-                HubspotSDK::Automation::PublicSequenceStepResponse::OrHash
+                HubSpotSDK::Automation::PublicSequenceStepResponse::OrHash
               ],
             updated_at: Time,
             user_id: String,
             folder_id: String,
             settings:
-              HubspotSDK::Automation::PublicSequenceSettingsResponse::OrHash
+              HubSpotSDK::Automation::PublicSequenceSettingsResponse::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -122,15 +122,15 @@ module HubspotSDK
               created_at: Time,
               dependencies:
                 T::Array[
-                  HubspotSDK::Automation::PublicSequenceStepDependencyResponse
+                  HubSpotSDK::Automation::PublicSequenceStepDependencyResponse
                 ],
               name: String,
               steps:
-                T::Array[HubspotSDK::Automation::PublicSequenceStepResponse],
+                T::Array[HubSpotSDK::Automation::PublicSequenceStepResponse],
               updated_at: Time,
               user_id: String,
               folder_id: String,
-              settings: HubspotSDK::Automation::PublicSequenceSettingsResponse
+              settings: HubSpotSDK::Automation::PublicSequenceSettingsResponse
             }
           )
         end

@@ -1,27 +1,27 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalBookingInfo < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBookingInfo < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalBookingInfo,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalBookingInfo,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes]) }
+        sig { returns(T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes]) }
         attr_accessor :all_users_busy_times
 
-        sig { returns(HubspotSDK::Scheduler::ExternalMeetingsLinkSettings) }
+        sig { returns(HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings) }
         attr_reader :custom_params
 
         sig do
           params(
             custom_params:
-              HubspotSDK::Scheduler::ExternalMeetingsLinkSettings::OrHash
+              HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings::OrHash
           ).void
         end
         attr_writer :custom_params
@@ -39,33 +39,33 @@ module HubspotSDK
         # PERSONAL_LINK, ROUND_ROBIN_CALENDAR.
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+            HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
           )
         end
         attr_accessor :link_type
 
         sig do
-          returns(T.nilable(HubspotSDK::Scheduler::ExternalBrandingMetadata))
+          returns(T.nilable(HubSpotSDK::Scheduler::ExternalBrandingMetadata))
         end
         attr_reader :branding_metadata
 
         sig do
           params(
             branding_metadata:
-              HubspotSDK::Scheduler::ExternalBrandingMetadata::OrHash
+              HubSpotSDK::Scheduler::ExternalBrandingMetadata::OrHash
           ).void
         end
         attr_writer :branding_metadata
 
         sig do
-          returns(T.nilable(HubspotSDK::Scheduler::ExternalLinkAvailability))
+          returns(T.nilable(HubSpotSDK::Scheduler::ExternalLinkAvailability))
         end
         attr_reader :link_availability
 
         sig do
           params(
             link_availability:
-              HubspotSDK::Scheduler::ExternalLinkAvailability::OrHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailability::OrHash
           ).void
         end
         attr_writer :link_availability
@@ -73,17 +73,17 @@ module HubspotSDK
         sig do
           params(
             all_users_busy_times:
-              T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes::OrHash],
+              T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes::OrHash],
             custom_params:
-              HubspotSDK::Scheduler::ExternalMeetingsLinkSettings::OrHash,
+              HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings::OrHash,
             is_offline: T::Boolean,
             link_id: String,
             link_type:
-              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::OrSymbol,
+              HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::OrSymbol,
             branding_metadata:
-              HubspotSDK::Scheduler::ExternalBrandingMetadata::OrHash,
+              HubSpotSDK::Scheduler::ExternalBrandingMetadata::OrHash,
             link_availability:
-              HubspotSDK::Scheduler::ExternalLinkAvailability::OrHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailability::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -106,16 +106,16 @@ module HubspotSDK
           override.returns(
             {
               all_users_busy_times:
-                T::Array[HubspotSDK::Scheduler::ExternalUserBusyTimes],
+                T::Array[HubSpotSDK::Scheduler::ExternalUserBusyTimes],
               custom_params:
-                HubspotSDK::Scheduler::ExternalMeetingsLinkSettings,
+                HubSpotSDK::Scheduler::ExternalMeetingsLinkSettings,
               is_offline: T::Boolean,
               link_id: String,
               link_type:
-                HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol,
+                HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol,
               branding_metadata:
-                HubspotSDK::Scheduler::ExternalBrandingMetadata,
-              link_availability: HubspotSDK::Scheduler::ExternalLinkAvailability
+                HubSpotSDK::Scheduler::ExternalBrandingMetadata,
+              link_availability: HubSpotSDK::Scheduler::ExternalLinkAvailability
             }
           )
         end
@@ -125,13 +125,13 @@ module HubspotSDK
         # The type of the meeting link. Accepted values are: GROUP_CALENDAR,
         # PERSONAL_LINK, ROUND_ROBIN_CALENDAR.
         module LinkType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalBookingInfo::LinkType
+                HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -139,23 +139,23 @@ module HubspotSDK
           GROUP_CALENDAR =
             T.let(
               :GROUP_CALENDAR,
-              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
             )
           PERSONAL_LINK =
             T.let(
               :PERSONAL_LINK,
-              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
             )
           ROUND_ROBIN_CALENDAR =
             T.let(
               :ROUND_ROBIN_CALENDAR,
-              HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalBookingInfo::LinkType::TaggedSymbol
               ]
             )
           end

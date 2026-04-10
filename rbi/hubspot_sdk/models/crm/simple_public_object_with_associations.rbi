@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class SimplePublicObjectWithAssociations < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObjectWithAssociations < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::SimplePublicObjectWithAssociations,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -43,7 +43,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Hash[Symbol, HubspotSDK::Crm::CollectionResponseAssociatedID]
+              T::Hash[Symbol, HubSpotSDK::Crm::CollectionResponseAssociatedID]
             )
           )
         end
@@ -54,7 +54,7 @@ module HubspotSDK
             associations:
               T::Hash[
                 Symbol,
-                HubspotSDK::Crm::CollectionResponseAssociatedID::OrHash
+                HubSpotSDK::Crm::CollectionResponseAssociatedID::OrHash
               ]
           ).void
         end
@@ -72,7 +72,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]]
+              T::Hash[Symbol, T::Array[HubSpotSDK::Crm::ValueWithTimestamp]]
             )
           )
         end
@@ -83,7 +83,7 @@ module HubspotSDK
             properties_with_history:
               T::Hash[
                 Symbol,
-                T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
+                T::Array[HubSpotSDK::Crm::ValueWithTimestamp::OrHash]
               ]
           ).void
         end
@@ -110,13 +110,13 @@ module HubspotSDK
             associations:
               T::Hash[
                 Symbol,
-                HubspotSDK::Crm::CollectionResponseAssociatedID::OrHash
+                HubSpotSDK::Crm::CollectionResponseAssociatedID::OrHash
               ],
             object_write_trace_id: String,
             properties_with_history:
               T::Hash[
                 Symbol,
-                T::Array[HubspotSDK::Crm::ValueWithTimestamp::OrHash]
+                T::Array[HubSpotSDK::Crm::ValueWithTimestamp::OrHash]
               ],
             url: String
           ).returns(T.attached_class)
@@ -159,11 +159,11 @@ module HubspotSDK
               associations:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Crm::CollectionResponseAssociatedID
+                  HubSpotSDK::Crm::CollectionResponseAssociatedID
                 ],
               object_write_trace_id: String,
               properties_with_history:
-                T::Hash[Symbol, T::Array[HubspotSDK::Crm::ValueWithTimestamp]],
+                T::Hash[Symbol, T::Array[HubSpotSDK::Crm::ValueWithTimestamp]],
               url: String
             }
           )

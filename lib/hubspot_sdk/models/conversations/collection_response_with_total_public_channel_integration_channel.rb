@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class CollectionResponseWithTotalPublicChannelIntegrationChannel < HubspotSDK::Internal::Type::BaseModel
+      class CollectionResponseWithTotalPublicChannelIntegrationChannel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
+        #   @return [Array<HubSpotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Conversations::PublicChannelIntegrationChannel] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Conversations::PublicChannelIntegrationChannel] }
 
         # @!attribute total
         #
@@ -17,13 +17,13 @@ module HubspotSDK
 
         # @!attribute paging
         #
-        #   @return [HubspotSDK::Models::Paging, nil]
-        optional :paging, -> { HubspotSDK::Paging }
+        #   @return [HubSpotSDK::Models::Paging, nil]
+        optional :paging, -> { HubSpotSDK::Paging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubspotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
+        #   @param results [Array<HubSpotSDK::Models::Conversations::PublicChannelIntegrationChannel>]
         #   @param total [Integer]
-        #   @param paging [HubspotSDK::Models::Paging]
+        #   @param paging [HubSpotSDK::Models::Paging]
       end
     end
   end

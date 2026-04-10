@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchInputString < HubspotSDK::Internal::Type::BaseModel
+    class BatchInputString < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::BatchInputString, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::BatchInputString, HubSpotSDK::Internal::AnyHash)
         end
 
       # Strings to input.

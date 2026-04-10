@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class BusinessUnits
-      # @return [HubspotSDK::Resources::BusinessUnits::BusinessUnitEntries]
+      # @return [HubSpotSDK::Resources::BusinessUnits::BusinessUnitEntries]
       attr_reader :business_unit_entries
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @business_unit_entries = HubspotSDK::Resources::BusinessUnits::BusinessUnitEntries.new(client: client)
+        @business_unit_entries = HubSpotSDK::Resources::BusinessUnits::BusinessUnitEntries.new(client: client)
       end
     end
   end

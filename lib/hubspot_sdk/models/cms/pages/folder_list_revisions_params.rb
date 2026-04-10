@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Pages
-        # @see HubspotSDK::Resources::Cms::Pages::Folders#list_revisions
-        class FolderListRevisionsParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Pages::Folders#list_revisions
+        class FolderListRevisionsParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute object_id_
           #
@@ -35,7 +35,7 @@ module HubspotSDK
 
           # @!method initialize(object_id_:, after: nil, before: nil, limit: nil, request_options: {})
           #   Some parameter documentations has been truncated, see
-          #   {HubspotSDK::Models::Cms::Pages::FolderListRevisionsParams} for more details.
+          #   {HubSpotSDK::Models::Cms::Pages::FolderListRevisionsParams} for more details.
           #
           #   @param object_id_ [String]
           #
@@ -45,7 +45,7 @@ module HubspotSDK
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

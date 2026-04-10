@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Pages
@@ -9,21 +9,21 @@ module HubspotSDK
           #
           # @overload create_folders(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Cms::ContentFolder>] Content folders to input.
+          # @param inputs [Array<HubSpotSDK::Models::Cms::ContentFolder>] Content folders to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseContentFolder]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchCreateFoldersParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchCreateFoldersParams
           def create_folders(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchCreateFoldersParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchCreateFoldersParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/folders/batch/create",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseContentFolder,
+              model: HubSpotSDK::Cms::BatchResponseContentFolder,
               options: options
             )
           end
@@ -32,21 +32,21 @@ module HubspotSDK
           #
           # @overload create_landing_pages(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Cms::PageData>] Pages to input.
+          # @param inputs [Array<HubSpotSDK::Models::Cms::PageData>] Pages to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchCreateLandingPagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchCreateLandingPagesParams
           def create_landing_pages(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchCreateLandingPagesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchCreateLandingPagesParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/batch/create",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
@@ -55,21 +55,21 @@ module HubspotSDK
           #
           # @overload create_site_pages(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubspotSDK::Models::Cms::PageData>] Pages to input.
+          # @param inputs [Array<HubSpotSDK::Models::Cms::PageData>] Pages to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchCreateSitePagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchCreateSitePagesParams
           def create_site_pages(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchCreateSitePagesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchCreateSitePagesParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/batch/create",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
@@ -80,13 +80,13 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchDeleteFoldersParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchDeleteFoldersParams
           def delete_folders(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchDeleteFoldersParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchDeleteFoldersParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/folders/batch/archive",
@@ -105,13 +105,13 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchDeleteLandingPagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchDeleteLandingPagesParams
           def delete_landing_pages(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchDeleteLandingPagesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchDeleteLandingPagesParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/batch/archive",
@@ -131,13 +131,13 @@ module HubspotSDK
           #
           # @param inputs [Array<String>] Strings to input.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchDeleteSitePagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchDeleteSitePagesParams
           def delete_site_pages(params)
-            parsed, options = HubspotSDK::Cms::Pages::BatchDeleteSitePagesParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::Pages::BatchDeleteSitePagesParams.dump_request(params)
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/batch/archive",
@@ -156,22 +156,22 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchGetLandingPagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchGetLandingPagesParams
           def get_landing_pages(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::BatchGetLandingPagesParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::BatchGetLandingPagesParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/batch/read",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
@@ -184,22 +184,22 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchGetSitePagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchGetSitePagesParams
           def get_site_pages(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::BatchGetSitePagesParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::BatchGetSitePagesParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/batch/read",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
@@ -212,22 +212,22 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseContentFolder]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseContentFolder]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchUpdateFoldersParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchUpdateFoldersParams
           def update_folders(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::BatchUpdateFoldersParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::BatchUpdateFoldersParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/folders/batch/update",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponseContentFolder,
+              model: HubSpotSDK::Cms::BatchResponseContentFolder,
               options: options
             )
           end
@@ -240,22 +240,22 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchUpdateLandingPagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchUpdateLandingPagesParams
           def update_landing_pages(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::BatchUpdateLandingPagesParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::BatchUpdateLandingPagesParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/landing-pages/batch/update",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
@@ -268,29 +268,29 @@ module HubspotSDK
           #
           # @param archived [Boolean] Query param: Whether to return only results that have been archived.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponsePage]
+          # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
           #
-          # @see HubspotSDK::Models::Cms::Pages::BatchUpdateSitePagesParams
+          # @see HubSpotSDK::Models::Cms::Pages::BatchUpdateSitePagesParams
           def update_site_pages(params)
             query_params = [:archived]
-            parsed, options = HubspotSDK::Cms::Pages::BatchUpdateSitePagesParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Cms::Pages::BatchUpdateSitePagesParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "cms/pages/2026-03/site-pages/batch/update",
               query: query,
               headers: {"content-type" => "*/*"},
               body: parsed.except(*query_params),
-              model: HubspotSDK::Cms::BatchResponsePage,
+              model: HubSpotSDK::Cms::BatchResponsePage,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

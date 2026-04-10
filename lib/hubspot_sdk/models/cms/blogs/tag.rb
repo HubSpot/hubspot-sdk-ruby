@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class Tag < HubspotSDK::Internal::Type::BaseModel
+        class Tag < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute id
           #   The unique ID of the Blog Tag.
           #
@@ -26,8 +26,8 @@ module HubspotSDK
           # @!attribute language
           #   The explicitly defined ISO 639 language code of the tag.
           #
-          #   @return [Symbol, HubspotSDK::Models::Cms::Blogs::Tag::Language]
-          required :language, enum: -> { HubspotSDK::Cms::Blogs::Tag::Language }
+          #   @return [Symbol, HubSpotSDK::Models::Cms::Blogs::Tag::Language]
+          required :language, enum: -> { HubSpotSDK::Cms::Blogs::Tag::Language }
 
           # @!attribute name
           #   The name of the tag.
@@ -59,7 +59,7 @@ module HubspotSDK
           #
           #   @param deleted_at [Time] The timestamp (ISO8601 format) when this Blog Tag was deleted.
           #
-          #   @param language [Symbol, HubspotSDK::Models::Cms::Blogs::Tag::Language] The explicitly defined ISO 639 language code of the tag.
+          #   @param language [Symbol, HubSpotSDK::Models::Cms::Blogs::Tag::Language] The explicitly defined ISO 639 language code of the tag.
           #
           #   @param name [String] The name of the tag.
           #
@@ -71,9 +71,9 @@ module HubspotSDK
 
           # The explicitly defined ISO 639 language code of the tag.
           #
-          # @see HubspotSDK::Models::Cms::Blogs::Tag#language
+          # @see HubSpotSDK::Models::Cms::Blogs::Tag#language
           module Language
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             AA = :aa
             AB = :ab

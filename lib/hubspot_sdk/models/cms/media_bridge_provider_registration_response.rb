@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#register_app_name
-      class MediaBridgeProviderRegistrationResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#register_app_name
+      class MediaBridgeProviderRegistrationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute app_id
         #
         #   @return [Integer]

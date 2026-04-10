@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
       class Meetings
@@ -13,29 +13,29 @@ module HubspotSDK
           #
           # @param organizer_user_id [String] Query param
           #
-          # @param associations [Array<HubspotSDK::Models::Scheduler::ExternalAssociationCreateRequest>] Body param
+          # @param associations [Array<HubSpotSDK::Models::Scheduler::ExternalAssociationCreateRequest>] Body param
           #
-          # @param email_reminder_schedule [HubspotSDK::Models::Scheduler::ExternalEmailReminderSchedule] Body param
+          # @param email_reminder_schedule [HubSpotSDK::Models::Scheduler::ExternalEmailReminderSchedule] Body param
           #
-          # @param properties [HubspotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties] Body param
+          # @param properties [HubSpotSDK::Models::Scheduler::ExternalCalendarMeetingEventCreateProperties] Body param
           #
           # @param timezone [String] Body param: The timezone property that will be set on the meeting event.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Scheduler::ExternalCalenderMeetingEventResponse]
+          # @return [HubSpotSDK::Models::Scheduler::ExternalCalenderMeetingEventResponse]
           #
-          # @see HubspotSDK::Models::Scheduler::Meetings::AdvancedCreateParams
+          # @see HubSpotSDK::Models::Scheduler::Meetings::AdvancedCreateParams
           def create(params)
             query_params = [:organizer_user_id]
-            parsed, options = HubspotSDK::Scheduler::Meetings::AdvancedCreateParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+            parsed, options = HubSpotSDK::Scheduler::Meetings::AdvancedCreateParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
             @client.request(
               method: :post,
               path: "scheduler/2026-03/meetings/calendar",
               query: query.transform_keys(organizer_user_id: "organizerUserId"),
               body: parsed.except(*query_params),
-              model: HubspotSDK::Scheduler::ExternalCalenderMeetingEventResponse,
+              model: HubSpotSDK::Scheduler::ExternalCalenderMeetingEventResponse,
               options: options
             )
           end
@@ -50,11 +50,11 @@ module HubspotSDK
           #
           # @param first_name [String] The first name of the person booking the meeting.
           #
-          # @param form_fields [Array<HubspotSDK::Models::Scheduler::ExternalBookingFormField>]
+          # @param form_fields [Array<HubSpotSDK::Models::Scheduler::ExternalBookingFormField>]
           #
           # @param last_name [String] The last name of the person booking the meeting.
           #
-          # @param legal_consent_responses [Array<HubspotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
+          # @param legal_consent_responses [Array<HubSpotSDK::Models::Scheduler::ExternalLegalConsentResponse>]
           #
           # @param likely_available_user_ids [Array<String>]
           #
@@ -66,25 +66,25 @@ module HubspotSDK
           #
           # @param timezone [String] The timezone in which the meeting is scheduled.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Scheduler::ExternalMeetingBookingResponse]
+          # @return [HubSpotSDK::Models::Scheduler::ExternalMeetingBookingResponse]
           #
-          # @see HubspotSDK::Models::Scheduler::Meetings::AdvancedBookParams
+          # @see HubSpotSDK::Models::Scheduler::Meetings::AdvancedBookParams
           def book(params)
-            parsed, options = HubspotSDK::Scheduler::Meetings::AdvancedBookParams.dump_request(params)
+            parsed, options = HubSpotSDK::Scheduler::Meetings::AdvancedBookParams.dump_request(params)
             @client.request(
               method: :post,
               path: "scheduler/2026-03/meetings/meeting-links/book",
               body: parsed,
-              model: HubspotSDK::Scheduler::ExternalMeetingBookingResponse,
+              model: HubSpotSDK::Scheduler::ExternalMeetingBookingResponse,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

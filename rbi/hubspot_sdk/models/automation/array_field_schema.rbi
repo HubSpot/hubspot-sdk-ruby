@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class ArrayFieldSchema < HubspotSDK::Internal::Type::BaseModel
+      class ArrayFieldSchema < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::ArrayFieldSchema,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::ArrayFieldSchema,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,13 +17,13 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Automation::IntegerFieldSchema,
-              HubspotSDK::Automation::LongFieldSchema,
-              HubspotSDK::Automation::DoubleFieldSchema,
-              HubspotSDK::Automation::StringFieldSchema,
-              HubspotSDK::Automation::BooleanFieldSchema,
-              HubspotSDK::Automation::ArrayFieldSchema,
-              HubspotSDK::Automation::ObjectFieldSchema
+              HubSpotSDK::Automation::IntegerFieldSchema,
+              HubSpotSDK::Automation::LongFieldSchema,
+              HubSpotSDK::Automation::DoubleFieldSchema,
+              HubSpotSDK::Automation::StringFieldSchema,
+              HubSpotSDK::Automation::BooleanFieldSchema,
+              HubSpotSDK::Automation::ArrayFieldSchema,
+              HubSpotSDK::Automation::ObjectFieldSchema
             )
           )
         end
@@ -31,7 +31,7 @@ module HubspotSDK
 
         # Specifies that the field is of type 'ARRAY'.
         sig do
-          returns(HubspotSDK::Automation::ArrayFieldSchema::Type::OrSymbol)
+          returns(HubSpotSDK::Automation::ArrayFieldSchema::Type::OrSymbol)
         end
         attr_accessor :type
 
@@ -39,15 +39,15 @@ module HubspotSDK
           params(
             items:
               T.any(
-                HubspotSDK::Automation::IntegerFieldSchema::OrHash,
-                HubspotSDK::Automation::LongFieldSchema::OrHash,
-                HubspotSDK::Automation::DoubleFieldSchema::OrHash,
-                HubspotSDK::Automation::StringFieldSchema::OrHash,
-                HubspotSDK::Automation::BooleanFieldSchema::OrHash,
-                HubspotSDK::Automation::ArrayFieldSchema,
-                HubspotSDK::Automation::ObjectFieldSchema::OrHash
+                HubSpotSDK::Automation::IntegerFieldSchema::OrHash,
+                HubSpotSDK::Automation::LongFieldSchema::OrHash,
+                HubSpotSDK::Automation::DoubleFieldSchema::OrHash,
+                HubSpotSDK::Automation::StringFieldSchema::OrHash,
+                HubSpotSDK::Automation::BooleanFieldSchema::OrHash,
+                HubSpotSDK::Automation::ArrayFieldSchema,
+                HubSpotSDK::Automation::ObjectFieldSchema::OrHash
               ),
-            type: HubspotSDK::Automation::ArrayFieldSchema::Type::OrSymbol
+            type: HubSpotSDK::Automation::ArrayFieldSchema::Type::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -64,15 +64,15 @@ module HubspotSDK
             {
               items:
                 T.any(
-                  HubspotSDK::Automation::IntegerFieldSchema,
-                  HubspotSDK::Automation::LongFieldSchema,
-                  HubspotSDK::Automation::DoubleFieldSchema,
-                  HubspotSDK::Automation::StringFieldSchema,
-                  HubspotSDK::Automation::BooleanFieldSchema,
-                  HubspotSDK::Automation::ArrayFieldSchema,
-                  HubspotSDK::Automation::ObjectFieldSchema
+                  HubSpotSDK::Automation::IntegerFieldSchema,
+                  HubSpotSDK::Automation::LongFieldSchema,
+                  HubSpotSDK::Automation::DoubleFieldSchema,
+                  HubSpotSDK::Automation::StringFieldSchema,
+                  HubSpotSDK::Automation::BooleanFieldSchema,
+                  HubSpotSDK::Automation::ArrayFieldSchema,
+                  HubSpotSDK::Automation::ObjectFieldSchema
                 ),
-              type: HubspotSDK::Automation::ArrayFieldSchema::Type::OrSymbol
+              type: HubSpotSDK::Automation::ArrayFieldSchema::Type::OrSymbol
             }
           )
         end
@@ -82,25 +82,25 @@ module HubspotSDK
         # Defines the type of elements contained within the array, which can be an
         # integer, long, double, string, boolean, another array, or an object.
         module Items
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Automation::IntegerFieldSchema,
-                HubspotSDK::Automation::LongFieldSchema,
-                HubspotSDK::Automation::DoubleFieldSchema,
-                HubspotSDK::Automation::StringFieldSchema,
-                HubspotSDK::Automation::BooleanFieldSchema,
-                HubspotSDK::Automation::ArrayFieldSchema,
-                HubspotSDK::Automation::ObjectFieldSchema
+                HubSpotSDK::Automation::IntegerFieldSchema,
+                HubSpotSDK::Automation::LongFieldSchema,
+                HubSpotSDK::Automation::DoubleFieldSchema,
+                HubSpotSDK::Automation::StringFieldSchema,
+                HubSpotSDK::Automation::BooleanFieldSchema,
+                HubSpotSDK::Automation::ArrayFieldSchema,
+                HubSpotSDK::Automation::ObjectFieldSchema
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::ArrayFieldSchema::Items::Variants
+                HubSpotSDK::Automation::ArrayFieldSchema::Items::Variants
               ]
             )
           end
@@ -110,24 +110,24 @@ module HubspotSDK
 
         # Specifies that the field is of type 'ARRAY'.
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Automation::ArrayFieldSchema::Type)
+              T.all(Symbol, HubSpotSDK::Automation::ArrayFieldSchema::Type)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ARRAY =
             T.let(
               :ARRAY,
-              HubspotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
+              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
+                HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
               ]
             )
           end

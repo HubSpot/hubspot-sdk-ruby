@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicTeam < HubspotSDK::Internal::Type::BaseModel
+      class PublicTeam < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -17,7 +17,7 @@ module HubspotSDK
         # @!attribute primary
         #
         #   @return [Boolean]
-        required :primary, HubspotSDK::Internal::Type::Boolean
+        required :primary, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(id:, name:, primary:)
         #   @param id [String]

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkFormField < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkFormField < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute field_type
         #   The specific field type of the form field. Corresponds to property types (e.g.,
         #   `select`, `radio`, `date`, etc)
@@ -15,13 +15,13 @@ module HubspotSDK
         #   Whether the form field is a custom field.
         #
         #   @return [Boolean]
-        required :is_custom, HubspotSDK::Internal::Type::Boolean, api_name: :isCustom
+        required :is_custom, HubSpotSDK::Internal::Type::Boolean, api_name: :isCustom
 
         # @!attribute is_required
         #   Whether the form field is mandatory.
         #
         #   @return [Boolean]
-        required :is_required, HubspotSDK::Internal::Type::Boolean, api_name: :isRequired
+        required :is_required, HubSpotSDK::Internal::Type::Boolean, api_name: :isRequired
 
         # @!attribute label
         #   The text label for the form field.
@@ -37,8 +37,8 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::Scheduler::ExternalOption>]
-        required :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Scheduler::ExternalOption] }
+        #   @return [Array<HubSpotSDK::Models::Scheduler::ExternalOption>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Scheduler::ExternalOption] }
 
         # @!attribute type
         #   The data type of the form field accepts (e.g. `date`, `enumeration`, etc)
@@ -48,7 +48,7 @@ module HubspotSDK
 
         # @!method initialize(field_type:, is_custom:, is_required:, label:, name:, options:, type:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Scheduler::ExternalLinkFormField} for more details.
+        #   {HubSpotSDK::Models::Scheduler::ExternalLinkFormField} for more details.
         #
         #   @param field_type [String] The specific field type of the form field. Corresponds to property types (e.g.,
         #
@@ -60,7 +60,7 @@ module HubspotSDK
         #
         #   @param name [String] The name identifier for the form field.
         #
-        #   @param options [Array<HubspotSDK::Models::Scheduler::ExternalOption>]
+        #   @param options [Array<HubSpotSDK::Models::Scheduler::ExternalOption>]
         #
         #   @param type [String] The data type of the form field accepts (e.g. `date`, `enumeration`, etc)
       end

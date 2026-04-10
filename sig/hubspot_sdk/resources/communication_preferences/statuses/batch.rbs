@@ -1,36 +1,36 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class CommunicationPreferences
       class Statuses
         class Batch
           def get_unsubscribe_all_statuses: (
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             inputs: ::Array[String],
             ?business_unit_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::CommunicationPreferences::BatchResponsePublicWideStatusBulkResponse
 
           def read: (
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             inputs: ::Array[String],
             ?business_unit_id: Integer,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatusBulkResponse
 
           def unsubscribe_all: (
-            channel: HubspotSDK::Models::BatchInputString::channel,
+            channel: HubSpotSDK::Models::BatchInputString::channel,
             inputs: ::Array[String],
             ?business_unit_id: Integer,
             ?verbose: bool,
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::CommunicationPreferences::BatchResponsePublicBulkOptOutFromAllResponse
 
           def update_statuses: (
-            inputs: ::Array[HubspotSDK::CommunicationPreferences::PublicStatusRequest],
-            ?request_options: HubspotSDK::request_opts
-          ) -> HubspotSDK::CommunicationPreferences::BatchResponsePublicStatus
+            inputs: ::Array[HubSpotSDK::CommunicationPreferences::PublicStatusRequest],
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::CommunicationPreferences::BatchResponsePublicStatus
 
-          def initialize: (client: HubspotSDK::Client) -> void
+          def initialize: (client: HubSpotSDK::Client) -> void
         end
       end
     end

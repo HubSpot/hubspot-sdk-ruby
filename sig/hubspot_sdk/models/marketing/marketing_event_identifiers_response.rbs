@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     class MarketingEventIdentifiersResponse = Marketing::MarketingEventIdentifiersResponse
 
@@ -8,22 +8,22 @@ module HubspotSDK
           external_event_id: String,
           marketing_event_name: String,
           object_id_: String,
-          app_info: HubspotSDK::Marketing::AppInfo,
+          app_info: HubSpotSDK::Marketing::AppInfo,
           external_account_id: String
         }
 
-      class MarketingEventIdentifiersResponse < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventIdentifiersResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor external_event_id: String
 
         attr_accessor marketing_event_name: String
 
         attr_accessor object_id_: String
 
-        attr_reader app_info: HubspotSDK::Marketing::AppInfo?
+        attr_reader app_info: HubSpotSDK::Marketing::AppInfo?
 
         def app_info=: (
-          HubspotSDK::Marketing::AppInfo
-        ) -> HubspotSDK::Marketing::AppInfo
+          HubSpotSDK::Marketing::AppInfo
+        ) -> HubSpotSDK::Marketing::AppInfo
 
         attr_reader external_account_id: String?
 
@@ -33,7 +33,7 @@ module HubspotSDK
           external_event_id: String,
           marketing_event_name: String,
           object_id_: String,
-          ?app_info: HubspotSDK::Marketing::AppInfo,
+          ?app_info: HubSpotSDK::Marketing::AppInfo,
           ?external_account_id: String
         ) -> void
 
@@ -41,7 +41,7 @@ module HubspotSDK
           external_event_id: String,
           marketing_event_name: String,
           object_id_: String,
-          app_info: HubspotSDK::Marketing::AppInfo,
+          app_info: HubSpotSDK::Marketing::AppInfo,
           external_account_id: String
         }
       end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#list_object_types_by_media_type
-      class MediaBridgeListObjectTypesByMediaTypeParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#list_object_types_by_media_type
+      class MediaBridgeListObjectTypesByMediaTypeParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute app_id
         #
@@ -15,22 +15,22 @@ module HubspotSDK
 
         # @!attribute media_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType]
-        required :media_type, enum: -> { HubspotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType]
+        required :media_type, enum: -> { HubSpotSDK::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType }
 
         # @!attribute include_full_definition
         #
         #   @return [Boolean, nil]
-        optional :include_full_definition, HubspotSDK::Internal::Type::Boolean
+        optional :include_full_definition, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(app_id:, media_type:, include_full_definition: nil, request_options: {})
         #   @param app_id [Integer]
-        #   @param media_type [Symbol, HubspotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType]
+        #   @param media_type [Symbol, HubSpotSDK::Models::Cms::MediaBridgeListObjectTypesByMediaTypeParams::MediaType]
         #   @param include_full_definition [Boolean]
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module MediaType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AUDIO = :AUDIO
           DOCUMENT = :DOCUMENT

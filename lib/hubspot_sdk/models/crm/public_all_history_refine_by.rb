@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicAllHistoryRefineBy < HubspotSDK::Internal::Type::BaseModel
+      class PublicAllHistoryRefineBy < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute type
         #   Type of refine by (ALL_HISTORY)
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::Type]
-        required :type, enum: -> { HubspotSDK::Crm::PublicAllHistoryRefineBy::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy::Type]
+        required :type, enum: -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy::Type }
 
         # @!method initialize(type:)
-        #   @param type [Symbol, HubspotSDK::Models::Crm::PublicAllHistoryRefineBy::Type] Type of refine by (ALL_HISTORY)
+        #   @param type [Symbol, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy::Type] Type of refine by (ALL_HISTORY)
 
         # Type of refine by (ALL_HISTORY)
         #
-        # @see HubspotSDK::Models::Crm::PublicAllHistoryRefineBy#type
+        # @see HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_HISTORY = :ALL_HISTORY
 

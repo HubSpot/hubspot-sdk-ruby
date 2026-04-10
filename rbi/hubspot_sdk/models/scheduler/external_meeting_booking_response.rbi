@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingBookingResponse < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingBookingResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalMeetingBookingResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalMeetingBookingResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -33,7 +33,7 @@ module HubspotSDK
         attr_accessor :end_
 
         sig do
-          returns(T::Array[HubspotSDK::Scheduler::ExternalValidatedFormField])
+          returns(T::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField])
         end
         attr_accessor :form_fields
 
@@ -46,7 +46,7 @@ module HubspotSDK
         attr_accessor :is_offline
 
         sig do
-          returns(T::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse])
+          returns(T::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse])
         end
         attr_accessor :legal_consent_responses
 
@@ -96,13 +96,13 @@ module HubspotSDK
             end_: Time,
             form_fields:
               T::Array[
-                HubspotSDK::Scheduler::ExternalValidatedFormField::OrHash
+                HubSpotSDK::Scheduler::ExternalValidatedFormField::OrHash
               ],
             guest_emails: T::Array[String],
             is_offline: T::Boolean,
             legal_consent_responses:
               T::Array[
-                HubspotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
+                HubSpotSDK::Scheduler::ExternalLegalConsentResponse::OrHash
               ],
             start: Time,
             subject: String,
@@ -154,11 +154,11 @@ module HubspotSDK
               duration: Integer,
               end_: Time,
               form_fields:
-                T::Array[HubspotSDK::Scheduler::ExternalValidatedFormField],
+                T::Array[HubSpotSDK::Scheduler::ExternalValidatedFormField],
               guest_emails: T::Array[String],
               is_offline: T::Boolean,
               legal_consent_responses:
-                T::Array[HubspotSDK::Scheduler::ExternalLegalConsentResponse],
+                T::Array[HubSpotSDK::Scheduler::ExternalLegalConsentResponse],
               start: Time,
               subject: String,
               locale: String,

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class ChannelIntegrationMessageEgg < HubspotSDK::Internal::Type::BaseModel
+      class ChannelIntegrationMessageEgg < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::ChannelIntegrationMessageEgg,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::ChannelIntegrationMessageEgg,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,13 +16,13 @@ module HubspotSDK
           returns(
             T::Array[
               T.any(
-                HubspotSDK::Conversations::FileAttachment,
-                HubspotSDK::Conversations::LocationAttachment,
-                HubspotSDK::Conversations::ContactAttachment,
-                HubspotSDK::Conversations::UnsupportedContentAttachment,
-                HubspotSDK::Conversations::MessageHeaderAttachment,
-                HubspotSDK::Conversations::QuickRepliesAttachment,
-                HubspotSDK::Conversations::SocialMetadataIntegrationAttachment
+                HubSpotSDK::Conversations::FileAttachment,
+                HubSpotSDK::Conversations::LocationAttachment,
+                HubSpotSDK::Conversations::ContactAttachment,
+                HubSpotSDK::Conversations::UnsupportedContentAttachment,
+                HubSpotSDK::Conversations::MessageHeaderAttachment,
+                HubSpotSDK::Conversations::QuickRepliesAttachment,
+                HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment
               )
             ]
           )
@@ -34,21 +34,21 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol
+            HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol
           )
         end
         attr_accessor :message_direction
 
         sig do
           returns(
-            T::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant]
+            T::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant]
           )
         end
         attr_accessor :recipients
 
         sig do
           returns(
-            T::Array[HubspotSDK::Conversations::ChannelIntegrationParticipant]
+            T::Array[HubSpotSDK::Conversations::ChannelIntegrationParticipant]
           )
         end
         attr_accessor :senders
@@ -84,14 +84,14 @@ module HubspotSDK
         attr_writer :integration_thread_id
 
         sig do
-          returns(T.nilable(HubspotSDK::Conversations::PreResolvedContacts))
+          returns(T.nilable(HubSpotSDK::Conversations::PreResolvedContacts))
         end
         attr_reader :pre_resolved_contacts
 
         sig do
           params(
             pre_resolved_contacts:
-              HubspotSDK::Conversations::PreResolvedContacts::OrHash
+              HubSpotSDK::Conversations::PreResolvedContacts::OrHash
           ).void
         end
         attr_writer :pre_resolved_contacts
@@ -107,25 +107,25 @@ module HubspotSDK
             attachments:
               T::Array[
                 T.any(
-                  HubspotSDK::Conversations::FileAttachment::OrHash,
-                  HubspotSDK::Conversations::LocationAttachment::OrHash,
-                  HubspotSDK::Conversations::ContactAttachment::OrHash,
-                  HubspotSDK::Conversations::UnsupportedContentAttachment::OrHash,
-                  HubspotSDK::Conversations::MessageHeaderAttachment::OrHash,
-                  HubspotSDK::Conversations::QuickRepliesAttachment::OrHash,
-                  HubspotSDK::Conversations::SocialMetadataIntegrationAttachment::OrHash
+                  HubSpotSDK::Conversations::FileAttachment::OrHash,
+                  HubSpotSDK::Conversations::LocationAttachment::OrHash,
+                  HubSpotSDK::Conversations::ContactAttachment::OrHash,
+                  HubSpotSDK::Conversations::UnsupportedContentAttachment::OrHash,
+                  HubSpotSDK::Conversations::MessageHeaderAttachment::OrHash,
+                  HubSpotSDK::Conversations::QuickRepliesAttachment::OrHash,
+                  HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment::OrHash
                 )
               ],
             channel_account_id: String,
             message_direction:
-              HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
+              HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
             recipients:
               T::Array[
-                HubspotSDK::Conversations::ChannelIntegrationParticipant::OrHash
+                HubSpotSDK::Conversations::ChannelIntegrationParticipant::OrHash
               ],
             senders:
               T::Array[
-                HubspotSDK::Conversations::ChannelIntegrationParticipant::OrHash
+                HubSpotSDK::Conversations::ChannelIntegrationParticipant::OrHash
               ],
             text: String,
             timestamp: Time,
@@ -134,7 +134,7 @@ module HubspotSDK
             integration_idempotency_id: String,
             integration_thread_id: String,
             pre_resolved_contacts:
-              HubspotSDK::Conversations::PreResolvedContacts::OrHash,
+              HubSpotSDK::Conversations::PreResolvedContacts::OrHash,
             rich_text: String
           ).returns(T.attached_class)
         end
@@ -161,25 +161,25 @@ module HubspotSDK
               attachments:
                 T::Array[
                   T.any(
-                    HubspotSDK::Conversations::FileAttachment,
-                    HubspotSDK::Conversations::LocationAttachment,
-                    HubspotSDK::Conversations::ContactAttachment,
-                    HubspotSDK::Conversations::UnsupportedContentAttachment,
-                    HubspotSDK::Conversations::MessageHeaderAttachment,
-                    HubspotSDK::Conversations::QuickRepliesAttachment,
-                    HubspotSDK::Conversations::SocialMetadataIntegrationAttachment
+                    HubSpotSDK::Conversations::FileAttachment,
+                    HubSpotSDK::Conversations::LocationAttachment,
+                    HubSpotSDK::Conversations::ContactAttachment,
+                    HubSpotSDK::Conversations::UnsupportedContentAttachment,
+                    HubSpotSDK::Conversations::MessageHeaderAttachment,
+                    HubSpotSDK::Conversations::QuickRepliesAttachment,
+                    HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment
                   )
                 ],
               channel_account_id: String,
               message_direction:
-                HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
+                HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::OrSymbol,
               recipients:
                 T::Array[
-                  HubspotSDK::Conversations::ChannelIntegrationParticipant
+                  HubSpotSDK::Conversations::ChannelIntegrationParticipant
                 ],
               senders:
                 T::Array[
-                  HubspotSDK::Conversations::ChannelIntegrationParticipant
+                  HubSpotSDK::Conversations::ChannelIntegrationParticipant
                 ],
               text: String,
               timestamp: Time,
@@ -188,7 +188,7 @@ module HubspotSDK
               integration_idempotency_id: String,
               integration_thread_id: String,
               pre_resolved_contacts:
-                HubspotSDK::Conversations::PreResolvedContacts,
+                HubSpotSDK::Conversations::PreResolvedContacts,
               rich_text: String
             }
           )
@@ -197,25 +197,25 @@ module HubspotSDK
         end
 
         module Attachment
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Conversations::FileAttachment,
-                HubspotSDK::Conversations::LocationAttachment,
-                HubspotSDK::Conversations::ContactAttachment,
-                HubspotSDK::Conversations::UnsupportedContentAttachment,
-                HubspotSDK::Conversations::MessageHeaderAttachment,
-                HubspotSDK::Conversations::QuickRepliesAttachment,
-                HubspotSDK::Conversations::SocialMetadataIntegrationAttachment
+                HubSpotSDK::Conversations::FileAttachment,
+                HubSpotSDK::Conversations::LocationAttachment,
+                HubSpotSDK::Conversations::ContactAttachment,
+                HubSpotSDK::Conversations::UnsupportedContentAttachment,
+                HubSpotSDK::Conversations::MessageHeaderAttachment,
+                HubSpotSDK::Conversations::QuickRepliesAttachment,
+                HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::ChannelIntegrationMessageEgg::Attachment::Variants
+                HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::Attachment::Variants
               ]
             )
           end
@@ -224,13 +224,13 @@ module HubspotSDK
         end
 
         module MessageDirection
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection
+                HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -238,18 +238,18 @@ module HubspotSDK
           INCOMING =
             T.let(
               :INCOMING,
-              HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
+              HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
             )
           OUTGOING =
             T.let(
               :OUTGOING,
-              HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
+              HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
+                HubSpotSDK::Conversations::ChannelIntegrationMessageEgg::MessageDirection::TaggedSymbol
               ]
             )
           end

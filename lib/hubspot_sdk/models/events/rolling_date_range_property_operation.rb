@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class RollingDateRangePropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class RollingDateRangePropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute number_of_days
@@ -23,8 +23,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RollingDateRangePropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::RollingDateRangePropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::RollingDateRangePropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -33,16 +33,16 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::RollingDateRangePropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::RollingDateRangePropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::RollingDateRangePropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute requires_time_zone_conversion
         #
         #   @return [Boolean]
         required :requires_time_zone_conversion,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :requiresTimeZoneConversion
 
         # @!attribute default_value
@@ -59,16 +59,16 @@ module HubspotSDK
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param number_of_days [Integer]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::RollingDateRangePropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::RollingDateRangePropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::RollingDateRangePropertyOperation::PropertyType]
         #   @param requires_time_zone_conversion [Boolean]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::RollingDateRangePropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::RollingDateRangePropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_LESS_THAN_X_DAYS_AGO = :IS_LESS_THAN_X_DAYS_AGO
           IS_LESS_THAN_X_DAYS_FROM_NOW = :IS_LESS_THAN_X_DAYS_FROM_NOW
@@ -79,9 +79,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::RollingDateRangePropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::RollingDateRangePropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATETIME_ROLLING = :"datetime-rolling"
 

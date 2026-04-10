@@ -2,7 +2,7 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::ResourceTest
   def test_create_association_required_params
     skip("Mock server tests are disabled")
 
@@ -15,7 +15,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::AssociationDefinition
+      response => HubSpotSDK::AssociationDefinition
     end
 
     assert_pattern do
@@ -42,7 +42,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::AttentionSpanEvent
+      response => HubSpotSDK::Cms::AttentionSpanEvent
     end
 
     assert_pattern do
@@ -52,14 +52,14 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::AttentionSpanEvent::MediaType,
+        media_type: HubSpotSDK::Cms::AttentionSpanEvent::MediaType,
         occurred_timestamp: Integer,
         percent_range: String,
         portal_id: Integer,
         provider_id: Integer,
         session_id: String,
         total_percent_played: Float,
-        external_play_context: HubspotSDK::Cms::AttentionSpanEvent::ExternalPlayContext | nil,
+        external_play_context: HubSpotSDK::Cms::AttentionSpanEvent::ExternalPlayContext | nil,
         media_url: String | nil,
         page_id: Integer | nil,
         page_name: String | nil,
@@ -83,7 +83,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaPlayedEvent
+      response => HubSpotSDK::Cms::MediaPlayedEvent
     end
 
     assert_pattern do
@@ -93,13 +93,13 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::MediaPlayedEvent::MediaType,
+        media_type: HubSpotSDK::Cms::MediaPlayedEvent::MediaType,
         occurred_timestamp: Integer,
         portal_id: Integer,
         provider_id: Integer,
         session_id: String,
-        state: HubspotSDK::Cms::MediaPlayedEvent::State,
-        external_play_context: HubspotSDK::Cms::MediaPlayedEvent::ExternalPlayContext | nil,
+        state: HubSpotSDK::Cms::MediaPlayedEvent::State,
+        external_play_context: HubSpotSDK::Cms::MediaPlayedEvent::ExternalPlayContext | nil,
         iframe_url: String | nil,
         media_url: String | nil,
         page_id: Integer | nil,
@@ -122,7 +122,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaPlayedPercentageEvent
+      response => HubSpotSDK::Cms::MediaPlayedPercentageEvent
     end
 
     assert_pattern do
@@ -132,13 +132,13 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         media_bridge_object_coordinates: String,
         media_bridge_object_type_id: String,
         media_name: String,
-        media_type: HubspotSDK::Cms::MediaPlayedPercentageEvent::MediaType,
+        media_type: HubSpotSDK::Cms::MediaPlayedPercentageEvent::MediaType,
         occurred_timestamp: Integer,
         played_percent: Integer,
         portal_id: Integer,
         provider_id: Integer,
         session_id: String,
-        external_play_context: HubspotSDK::Cms::MediaPlayedPercentageEvent::ExternalPlayContext | nil,
+        external_play_context: HubSpotSDK::Cms::MediaPlayedPercentageEvent::ExternalPlayContext | nil,
         media_url: String | nil,
         page_id: Integer | nil,
         page_name: String | nil,
@@ -154,12 +154,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.create_object_type(0, media_types: [:VIDEO])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BulkIntegratorObjectCreationResponse
+      response => HubSpotSDK::Cms::BulkIntegratorObjectCreationResponse
     end
 
     assert_pattern do
       response => {
-        created_objects: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Cms::IntegratorObjectCreationResponse])
+        created_objects: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Cms::IntegratorObjectCreationResponse])
       }
     end
   end
@@ -174,7 +174,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
+      response => HubSpotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -183,7 +183,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Cms::Endpoints,
+        endpoints: HubSpotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }
@@ -205,57 +205,57 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::Property
+      response => HubSpotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
-        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
-        calculated: HubspotSDK::Internal::Type::Boolean,
-        can_archive: HubspotSDK::Internal::Type::Boolean,
-        can_restore: HubspotSDK::Internal::Type::Boolean,
+        allowed_object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubSpotSDK::Internal::Type::Boolean,
+        can_archive: HubSpotSDK::Internal::Type::Boolean,
+        can_restore: HubSpotSDK::Internal::Type::Boolean,
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
-        deleted: HubspotSDK::Internal::Type::Boolean,
+        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
         display_order: Integer,
-        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
-        external_options: HubspotSDK::Internal::Type::Boolean,
+        enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
+        external_options: HubSpotSDK::Internal::Type::Boolean,
         external_options_reference_type: String,
-        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited: HubSpotSDK::Internal::Type::Boolean,
         favorited_order: Integer,
         field_type: String,
-        form_field: HubspotSDK::Internal::Type::Boolean,
+        form_field: HubSpotSDK::Internal::Type::Boolean,
         from_user_id: Integer,
         group_name: String,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
-        is_customized_default: HubspotSDK::Internal::Type::Boolean,
-        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
-        is_partial: HubspotSDK::Internal::Type::Boolean,
+        has_unique_value: HubSpotSDK::Internal::Type::Boolean,
+        hidden: HubSpotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubSpotSDK::Internal::Type::Boolean,
+        is_customized_default: HubSpotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubSpotSDK::Internal::Type::Boolean,
+        is_partial: HubSpotSDK::Internal::Type::Boolean,
         label: String,
-        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
+        mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
-        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
+        options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
-        read_only_definition: HubspotSDK::Internal::Type::Boolean,
-        read_only_value: HubspotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
-        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
-        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
-        type: HubspotSDK::Cms::Property::Type,
+        read_only_definition: HubSpotSDK::Internal::Type::Boolean,
+        read_only_value: HubSpotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
+        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
+        type: HubSpotSDK::Cms::Property::Type,
         updated_at: Integer
       }
     end
@@ -268,12 +268,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       @hubspot.cms.media_bridge.create_property_group("objectType", app_id: 0, label: "label", name: "name")
 
     assert_pattern do
-      response => HubspotSDK::PropertyGroup
+      response => HubSpotSDK::PropertyGroup
     end
 
     assert_pattern do
       response => {
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
         display_order: Integer | nil
@@ -287,7 +287,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.create_video_association_definition(0)
 
     assert_pattern do
-      response => HubspotSDK::AssociationDefinition
+      response => HubSpotSDK::AssociationDefinition
     end
 
     assert_pattern do
@@ -351,13 +351,13 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.get_event_visibility_settings(0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::EventVisibilityResponse
+      response => HubSpotSDK::Cms::EventVisibilityResponse
     end
 
     assert_pattern do
       response => {
         created_at: Time,
-        visibility_settings: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::EventVisibilityChange])
+        visibility_settings: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::EventVisibilityChange])
       }
     end
   end
@@ -368,7 +368,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.get_oembed_domain("oEmbedDomainId", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
+      response => HubSpotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -377,7 +377,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Cms::Endpoints,
+        endpoints: HubSpotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }
@@ -390,57 +390,57 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.get_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Property
+      response => HubSpotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
-        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
-        calculated: HubspotSDK::Internal::Type::Boolean,
-        can_archive: HubspotSDK::Internal::Type::Boolean,
-        can_restore: HubspotSDK::Internal::Type::Boolean,
+        allowed_object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubSpotSDK::Internal::Type::Boolean,
+        can_archive: HubSpotSDK::Internal::Type::Boolean,
+        can_restore: HubSpotSDK::Internal::Type::Boolean,
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
-        deleted: HubspotSDK::Internal::Type::Boolean,
+        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
         display_order: Integer,
-        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
-        external_options: HubspotSDK::Internal::Type::Boolean,
+        enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
+        external_options: HubSpotSDK::Internal::Type::Boolean,
         external_options_reference_type: String,
-        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited: HubSpotSDK::Internal::Type::Boolean,
         favorited_order: Integer,
         field_type: String,
-        form_field: HubspotSDK::Internal::Type::Boolean,
+        form_field: HubSpotSDK::Internal::Type::Boolean,
         from_user_id: Integer,
         group_name: String,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
-        is_customized_default: HubspotSDK::Internal::Type::Boolean,
-        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
-        is_partial: HubspotSDK::Internal::Type::Boolean,
+        has_unique_value: HubSpotSDK::Internal::Type::Boolean,
+        hidden: HubSpotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubSpotSDK::Internal::Type::Boolean,
+        is_customized_default: HubSpotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubSpotSDK::Internal::Type::Boolean,
+        is_partial: HubSpotSDK::Internal::Type::Boolean,
         label: String,
-        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
+        mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
-        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
+        options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
-        read_only_definition: HubspotSDK::Internal::Type::Boolean,
-        read_only_value: HubspotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
-        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
-        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
-        type: HubspotSDK::Cms::Property::Type,
+        read_only_definition: HubSpotSDK::Internal::Type::Boolean,
+        read_only_value: HubSpotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
+        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
+        type: HubSpotSDK::Cms::Property::Type,
         updated_at: Integer
       }
     end
@@ -453,12 +453,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       @hubspot.cms.media_bridge.get_property_group("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::PropertyGroup
+      response => HubSpotSDK::PropertyGroup
     end
 
     assert_pattern do
       response => {
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
         display_order: Integer | nil
@@ -472,23 +472,23 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.get_schema("objectType", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::ObjectSchema
+      response => HubSpotSDK::Cms::ObjectSchema
     end
 
     assert_pattern do
       response => {
         id: String,
-        allows_sensitive_properties: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
-        associations: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition]),
+        allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition]),
         fully_qualified_name: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1]),
-        required_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        searchable_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        secondary_display_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property1]),
+        required_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        searchable_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        secondary_display_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         created_at: Time | nil,
         created_by_user_id: Integer | nil,
         description: String | nil,
@@ -505,16 +505,16 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.list_object_types_by_media_type(:AUDIO, app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::ObjectDefinitionResponse
+      response => HubSpotSDK::Cms::ObjectDefinitionResponse
     end
 
     assert_pattern do
       response => {
         object_type_id: String,
         object_type_name: String,
-        properties: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::PropertyDefinition]),
-        property_groups: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::GroupView]),
-        schema: HubspotSDK::Cms::InboundDBObjectType | nil
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PropertyDefinition]),
+        property_groups: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::GroupView]),
+        schema: HubSpotSDK::Cms::InboundDBObjectType | nil
       }
     end
   end
@@ -525,12 +525,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.list_oembed_domains(0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::OEmbedDomainsCollectionResponse
+      response => HubSpotSDK::Cms::OEmbedDomainsCollectionResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::IntegratorOEmbedDomainModel]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::IntegratorOEmbedDomainModel]),
         total_count: Integer | nil
       }
     end
@@ -542,12 +542,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.list_properties("objectType", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponsePropertyNoPaging
+      response => HubSpotSDK::Cms::CollectionResponsePropertyNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property1])
       }
     end
   end
@@ -558,12 +558,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.list_property_groups("objectType", app_id: 0)
 
     assert_pattern do
-      response => HubspotSDK::CollectionResponsePropertyGroupNoPaging
+      response => HubSpotSDK::CollectionResponsePropertyGroupNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::PropertyGroup])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::PropertyGroup])
       }
     end
   end
@@ -574,12 +574,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.list_schemas(0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::CollectionResponseObjectSchemaNoPaging
+      response => HubSpotSDK::Cms::CollectionResponseObjectSchemaNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectSchema])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectSchema])
       }
     end
   end
@@ -590,7 +590,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.register_app_name(0, updated_at: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
+      response => HubSpotSDK::Cms::MediaBridgeProviderRegistrationResponse
     end
 
     assert_pattern do
@@ -607,16 +607,16 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.update_event_visibility_settings(0, event_type: :ALL, updated_at: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::EventVisibilityChange
+      response => HubSpotSDK::Cms::EventVisibilityChange
     end
 
     assert_pattern do
       response => {
-        event_type: HubspotSDK::Cms::EventVisibilityChange::EventType,
+        event_type: HubSpotSDK::Cms::EventVisibilityChange::EventType,
         updated_at: Integer,
-        show_in_reporting: HubspotSDK::Internal::Type::Boolean | nil,
-        show_in_timeline: HubspotSDK::Internal::Type::Boolean | nil,
-        show_in_workflows: HubspotSDK::Internal::Type::Boolean | nil
+        show_in_reporting: HubSpotSDK::Internal::Type::Boolean | nil,
+        show_in_timeline: HubSpotSDK::Internal::Type::Boolean | nil,
+        show_in_workflows: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end
@@ -632,7 +632,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::IntegratorOEmbedDomainModel
+      response => HubSpotSDK::Cms::IntegratorOEmbedDomainModel
     end
 
     assert_pattern do
@@ -641,7 +641,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
         app_id: Integer,
         created_at: Integer,
         deleted_at: Integer,
-        endpoints: HubspotSDK::Cms::Endpoints,
+        endpoints: HubSpotSDK::Cms::Endpoints,
         portal_id: Integer,
         updated_at: Integer
       }
@@ -655,57 +655,57 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       @hubspot.cms.media_bridge.update_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::Cms::Property
+      response => HubSpotSDK::Cms::Property
     end
 
     assert_pattern do
       response => {
-        allowed_object_types: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::ObjectTypeIDProto]),
-        calculated: HubspotSDK::Internal::Type::Boolean,
-        can_archive: HubspotSDK::Internal::Type::Boolean,
-        can_restore: HubspotSDK::Internal::Type::Boolean,
+        allowed_object_types: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ObjectTypeIDProto]),
+        calculated: HubSpotSDK::Internal::Type::Boolean,
+        can_archive: HubSpotSDK::Internal::Type::Boolean,
+        can_restore: HubSpotSDK::Internal::Type::Boolean,
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubspotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubspotSDK::Cms::Property::DateDisplayHint,
-        deleted: HubspotSDK::Internal::Type::Boolean,
+        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubspotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
         display_order: Integer,
-        enforce_multivalue_uniqueness: HubspotSDK::Internal::Type::Boolean,
-        external_options: HubspotSDK::Internal::Type::Boolean,
+        enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
+        external_options: HubSpotSDK::Internal::Type::Boolean,
         external_options_reference_type: String,
-        favorited: HubspotSDK::Internal::Type::Boolean,
+        favorited: HubSpotSDK::Internal::Type::Boolean,
         favorited_order: Integer,
         field_type: String,
-        form_field: HubspotSDK::Internal::Type::Boolean,
+        form_field: HubSpotSDK::Internal::Type::Boolean,
         from_user_id: Integer,
         group_name: String,
-        has_unique_value: HubspotSDK::Internal::Type::Boolean,
-        hidden: HubspotSDK::Internal::Type::Boolean,
-        hubspot_defined: HubspotSDK::Internal::Type::Boolean,
-        is_customized_default: HubspotSDK::Internal::Type::Boolean,
-        is_multi_valued: HubspotSDK::Internal::Type::Boolean,
-        is_partial: HubspotSDK::Internal::Type::Boolean,
+        has_unique_value: HubSpotSDK::Internal::Type::Boolean,
+        hidden: HubSpotSDK::Internal::Type::Boolean,
+        hubspot_defined: HubSpotSDK::Internal::Type::Boolean,
+        is_customized_default: HubSpotSDK::Internal::Type::Boolean,
+        is_multi_valued: HubSpotSDK::Internal::Type::Boolean,
+        is_partial: HubSpotSDK::Internal::Type::Boolean,
         label: String,
-        mutable_definition_not_deletable: HubspotSDK::Internal::Type::Boolean,
+        mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubspotSDK::Cms::Property::NumberDisplayHint,
-        options: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AutomationActionsOption]),
-        options_are_mutable: HubspotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubspotSDK::Cms::Property::OptionSortStrategy,
+        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
+        options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
+        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
-        read_only_definition: HubspotSDK::Internal::Type::Boolean,
-        read_only_value: HubspotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubspotSDK::Cms::Property::ReferencedObjectType,
-        searchable_in_global_search: HubspotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubspotSDK::Cms::Property::SearchTextAnalysisMode,
-        sensitive_data_categories: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        show_currency_symbol: HubspotSDK::Internal::Type::Boolean,
-        text_display_hint: HubspotSDK::Cms::Property::TextDisplayHint,
-        type: HubspotSDK::Cms::Property::Type,
+        read_only_definition: HubSpotSDK::Internal::Type::Boolean,
+        read_only_value: HubSpotSDK::Internal::Type::Boolean,
+        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
+        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
+        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
+        type: HubSpotSDK::Cms::Property::Type,
         updated_at: Integer
       }
     end
@@ -718,12 +718,12 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
       @hubspot.cms.media_bridge.update_property_group("groupName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubspotSDK::PropertyGroup
+      response => HubSpotSDK::PropertyGroup
     end
 
     assert_pattern do
       response => {
-        archived: HubspotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         label: String,
         name: String,
         display_order: Integer | nil
@@ -737,21 +737,21 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.update_schema("objectType", app_id: 0, clear_description: true)
 
     assert_pattern do
-      response => HubspotSDK::ObjectTypeDefinition
+      response => HubSpotSDK::ObjectTypeDefinition
     end
 
     assert_pattern do
       response => {
         id: String,
-        allows_sensitive_properties: HubspotSDK::Internal::Type::Boolean,
-        archived: HubspotSDK::Internal::Type::Boolean,
+        allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
+        archived: HubSpotSDK::Internal::Type::Boolean,
         fully_qualified_name: String,
-        labels: HubspotSDK::ObjectTypeDefinitionLabels,
+        labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        required_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        searchable_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        secondary_display_properties: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
+        required_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        searchable_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        secondary_display_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         created_at: Time | nil,
         description: String | nil,
         portal_id: Integer | nil,
@@ -767,7 +767,7 @@ class HubspotSDK::Test::Resources::Cms::MediaBridgeTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.update_settings(0, updated_at: 0)
 
     assert_pattern do
-      response => HubspotSDK::Cms::MediaBridgeProviderRegistrationResponse
+      response => HubSpotSDK::Cms::MediaBridgeProviderRegistrationResponse
     end
 
     assert_pattern do

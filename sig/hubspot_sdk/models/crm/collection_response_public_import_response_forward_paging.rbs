@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type collection_response_public_import_response_forward_paging =
         {
-          results: ::Array[HubspotSDK::Crm::PublicImportResponse],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::PublicImportResponse],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponsePublicImportResponseForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Crm::PublicImportResponse]
+      class CollectionResponsePublicImportResponseForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Crm::PublicImportResponse]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Crm::PublicImportResponse],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::PublicImportResponse],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Crm::PublicImportResponse],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Crm::PublicImportResponse],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

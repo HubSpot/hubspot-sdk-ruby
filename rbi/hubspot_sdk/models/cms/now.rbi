@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class Now < HubspotSDK::Internal::Type::BaseModel
+      class Now < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::Now, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::Now, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubspotSDK::Cms::Now::Operator::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::Now::Operator::TaggedSymbol) }
         attr_accessor :operator
 
         sig { returns(T.nilable(String)) }
@@ -26,7 +26,7 @@ module HubspotSDK
 
         sig do
           params(
-            operator: HubspotSDK::Cms::Now::Operator::OrSymbol,
+            operator: HubSpotSDK::Cms::Now::Operator::OrSymbol,
             property_name: String,
             value: Float
           ).returns(T.attached_class)
@@ -37,7 +37,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              operator: HubspotSDK::Cms::Now::Operator::TaggedSymbol,
+              operator: HubSpotSDK::Cms::Now::Operator::TaggedSymbol,
               property_name: String,
               value: Float
             }
@@ -47,17 +47,17 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Cms::Now::Operator) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Now::Operator) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          NOW = T.let(:NOW, HubspotSDK::Cms::Now::Operator::TaggedSymbol)
+          NOW = T.let(:NOW, HubSpotSDK::Cms::Now::Operator::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Cms::Now::Operator::TaggedSymbol]
+              T::Array[HubSpotSDK::Cms::Now::Operator::TaggedSymbol]
             )
           end
           def self.values

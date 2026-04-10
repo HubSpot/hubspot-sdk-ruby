@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type behavioral_event_http_completion_request =
@@ -12,7 +12,7 @@ module HubspotSDK
           uuid: String
         }
 
-      class BehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+      class BehavioralEventHTTPCompletionRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor event_name: String
 
         attr_accessor properties: ::Hash[Symbol, String]

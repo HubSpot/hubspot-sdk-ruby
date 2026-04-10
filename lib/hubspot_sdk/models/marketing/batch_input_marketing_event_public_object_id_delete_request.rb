@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventPublicObjectIDDeleteRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventPublicObjectIDDeleteRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
+        #   @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventPublicObjectIDDeleteRequest>]
       end
     end
   end

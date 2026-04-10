@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type participation_properties =
         {
-          attendance_state: HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state,
+          attendance_state: HubSpotSDK::Models::Marketing::ParticipationProperties::attendance_state,
           occurred_at: Integer,
           attendance_duration_seconds: Integer,
           attendance_percentage: String
         }
 
-      class ParticipationProperties < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor attendance_state: HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state
+      class ParticipationProperties < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor attendance_state: HubSpotSDK::Models::Marketing::ParticipationProperties::attendance_state
 
         attr_accessor occurred_at: Integer
 
@@ -23,14 +23,14 @@ module HubspotSDK
         def attendance_percentage=: (String) -> String
 
         def initialize: (
-          attendance_state: HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state,
+          attendance_state: HubSpotSDK::Models::Marketing::ParticipationProperties::attendance_state,
           occurred_at: Integer,
           ?attendance_duration_seconds: Integer,
           ?attendance_percentage: String
         ) -> void
 
         def to_hash: -> {
-          attendance_state: HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state,
+          attendance_state: HubSpotSDK::Models::Marketing::ParticipationProperties::attendance_state,
           occurred_at: Integer,
           attendance_duration_seconds: Integer,
           attendance_percentage: String
@@ -40,7 +40,7 @@ module HubspotSDK
           :ATTENDED | :CANCELLED | :EMPTY | :NO_SHOW | :REGISTERED
 
         module AttendanceState
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ATTENDED: :ATTENDED
           CANCELLED: :CANCELLED
@@ -48,7 +48,7 @@ module HubspotSDK
           NO_SHOW: :NO_SHOW
           REGISTERED: :REGISTERED
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Marketing::ParticipationProperties::attendance_state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Marketing::ParticipationProperties::attendance_state]
         end
       end
     end

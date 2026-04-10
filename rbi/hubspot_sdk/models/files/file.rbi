@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class File < HubspotSDK::Internal::Type::BaseModel
+      class File < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Files::File, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Files::File, HubSpotSDK::Internal::AnyHash)
           end
 
         # File ID.
@@ -27,11 +27,11 @@ module HubspotSDK
 
         # File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
         sig do
-          returns(T.nilable(HubspotSDK::Files::File::Access::TaggedSymbol))
+          returns(T.nilable(HubSpotSDK::Files::File::Access::TaggedSymbol))
         end
         attr_reader :access
 
-        sig { params(access: HubspotSDK::Files::File::Access::OrSymbol).void }
+        sig { params(access: HubSpotSDK::Files::File::Access::OrSymbol).void }
         attr_writer :access
 
         # Deletion time of the file object.
@@ -120,13 +120,13 @@ module HubspotSDK
         attr_writer :size
 
         sig do
-          returns(T.nilable(HubspotSDK::Files::File::SourceGroup::TaggedSymbol))
+          returns(T.nilable(HubSpotSDK::Files::File::SourceGroup::TaggedSymbol))
         end
         attr_reader :source_group
 
         sig do
           params(
-            source_group: HubspotSDK::Files::File::SourceGroup::OrSymbol
+            source_group: HubSpotSDK::Files::File::SourceGroup::OrSymbol
           ).void
         end
         attr_writer :source_group
@@ -159,7 +159,7 @@ module HubspotSDK
             archived: T::Boolean,
             created_at: Time,
             updated_at: Time,
-            access: HubspotSDK::Files::File::Access::OrSymbol,
+            access: HubSpotSDK::Files::File::Access::OrSymbol,
             archived_at: Time,
             default_hosting_url: String,
             encoding: String,
@@ -172,7 +172,7 @@ module HubspotSDK
             parent_folder_id: String,
             path: String,
             size: Integer,
-            source_group: HubspotSDK::Files::File::SourceGroup::OrSymbol,
+            source_group: HubSpotSDK::Files::File::SourceGroup::OrSymbol,
             type: String,
             url: String,
             width: Integer
@@ -232,7 +232,7 @@ module HubspotSDK
               archived: T::Boolean,
               created_at: Time,
               updated_at: Time,
-              access: HubspotSDK::Files::File::Access::TaggedSymbol,
+              access: HubSpotSDK::Files::File::Access::TaggedSymbol,
               archived_at: Time,
               default_hosting_url: String,
               encoding: String,
@@ -245,7 +245,7 @@ module HubspotSDK
               parent_folder_id: String,
               path: String,
               size: Integer,
-              source_group: HubspotSDK::Files::File::SourceGroup::TaggedSymbol,
+              source_group: HubSpotSDK::Files::File::SourceGroup::TaggedSymbol,
               type: String,
               url: String,
               width: Integer
@@ -257,50 +257,50 @@ module HubspotSDK
 
         # File access. Can be PUBLIC_INDEXABLE, PUBLIC_NOT_INDEXABLE, PRIVATE.
         module Access
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Files::File::Access) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Files::File::Access) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           HIDDEN_INDEXABLE =
             T.let(
               :HIDDEN_INDEXABLE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           HIDDEN_NOT_INDEXABLE =
             T.let(
               :HIDDEN_NOT_INDEXABLE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           HIDDEN_PRIVATE =
             T.let(
               :HIDDEN_PRIVATE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           HIDDEN_SENSITIVE =
             T.let(
               :HIDDEN_SENSITIVE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           PRIVATE =
-            T.let(:PRIVATE, HubspotSDK::Files::File::Access::TaggedSymbol)
+            T.let(:PRIVATE, HubSpotSDK::Files::File::Access::TaggedSymbol)
           PUBLIC_INDEXABLE =
             T.let(
               :PUBLIC_INDEXABLE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           PUBLIC_NOT_INDEXABLE =
             T.let(
               :PUBLIC_NOT_INDEXABLE,
-              HubspotSDK::Files::File::Access::TaggedSymbol
+              HubSpotSDK::Files::File::Access::TaggedSymbol
             )
           SENSITIVE =
-            T.let(:SENSITIVE, HubspotSDK::Files::File::Access::TaggedSymbol)
+            T.let(:SENSITIVE, HubSpotSDK::Files::File::Access::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Files::File::Access::TaggedSymbol]
+              T::Array[HubSpotSDK::Files::File::Access::TaggedSymbol]
             )
           end
           def self.values
@@ -308,32 +308,32 @@ module HubspotSDK
         end
 
         module SourceGroup
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
-            T.type_alias { T.all(Symbol, HubspotSDK::Files::File::SourceGroup) }
+            T.type_alias { T.all(Symbol, HubSpotSDK::Files::File::SourceGroup) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CONTENT =
-            T.let(:CONTENT, HubspotSDK::Files::File::SourceGroup::TaggedSymbol)
+            T.let(:CONTENT, HubSpotSDK::Files::File::SourceGroup::TaggedSymbol)
           CONVERSATIONS =
             T.let(
               :CONVERSATIONS,
-              HubspotSDK::Files::File::SourceGroup::TaggedSymbol
+              HubSpotSDK::Files::File::SourceGroup::TaggedSymbol
             )
           FORMS =
-            T.let(:FORMS, HubspotSDK::Files::File::SourceGroup::TaggedSymbol)
+            T.let(:FORMS, HubSpotSDK::Files::File::SourceGroup::TaggedSymbol)
           UI_EXTENSIONS =
             T.let(
               :UI_EXTENSIONS,
-              HubspotSDK::Files::File::SourceGroup::TaggedSymbol
+              HubSpotSDK::Files::File::SourceGroup::TaggedSymbol
             )
           UNKNOWN =
-            T.let(:UNKNOWN, HubspotSDK::Files::File::SourceGroup::TaggedSymbol)
+            T.let(:UNKNOWN, HubSpotSDK::Files::File::SourceGroup::TaggedSymbol)
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Files::File::SourceGroup::TaggedSymbol]
+              T::Array[HubSpotSDK::Files::File::SourceGroup::TaggedSymbol]
             )
           end
           def self.values

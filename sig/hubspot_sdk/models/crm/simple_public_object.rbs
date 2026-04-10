@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type simple_public_object =
@@ -10,11 +10,11 @@ module HubspotSDK
           updated_at: Time,
           archived_at: Time,
           object_write_trace_id: String,
-          properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
+          properties_with_history: ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]],
           url: String
         }
 
-      class SimplePublicObject < HubspotSDK::Internal::Type::BaseModel
+      class SimplePublicObject < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool
@@ -33,11 +33,11 @@ module HubspotSDK
 
         def object_write_trace_id=: (String) -> String
 
-        attr_reader properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]?
+        attr_reader properties_with_history: ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]]?
 
         def properties_with_history=: (
-          ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]
-        ) -> ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]]
+          ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]]
+        ) -> ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]]
 
         attr_reader url: String?
 
@@ -51,7 +51,7 @@ module HubspotSDK
           updated_at: Time,
           ?archived_at: Time,
           ?object_write_trace_id: String,
-          ?properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
+          ?properties_with_history: ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]],
           ?url: String
         ) -> void
 
@@ -63,7 +63,7 @@ module HubspotSDK
           updated_at: Time,
           archived_at: Time,
           object_write_trace_id: String,
-          properties_with_history: ::Hash[Symbol, ::Array[HubspotSDK::Crm::ValueWithTimestamp]],
+          properties_with_history: ::Hash[Symbol, ::Array[HubSpotSDK::Crm::ValueWithTimestamp]],
           url: String
         }
       end

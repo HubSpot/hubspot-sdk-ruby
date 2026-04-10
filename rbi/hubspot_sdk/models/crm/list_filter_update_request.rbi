@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ListFilterUpdateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListFilterUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ListFilterUpdateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ListFilterUpdateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,14 +16,14 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicOrFilterBranch,
-              HubspotSDK::Crm::PublicAndFilterBranch,
-              HubspotSDK::Crm::PublicNotAllFilterBranch,
-              HubspotSDK::Crm::PublicNotAnyFilterBranch,
-              HubspotSDK::Crm::PublicRestrictedFilterBranch,
-              HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-              HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-              HubspotSDK::Crm::PublicAssociationFilterBranch
+              HubSpotSDK::Crm::PublicOrFilterBranch,
+              HubSpotSDK::Crm::PublicAndFilterBranch,
+              HubSpotSDK::Crm::PublicNotAllFilterBranch,
+              HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+              HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+              HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+              HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+              HubSpotSDK::Crm::PublicAssociationFilterBranch
             )
           )
         end
@@ -33,14 +33,14 @@ module HubspotSDK
           params(
             filter_branch:
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAndFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAllFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
-                HubspotSDK::Crm::PublicAssociationFilterBranch::OrHash
+                HubSpotSDK::Crm::PublicOrFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAndFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -55,14 +55,14 @@ module HubspotSDK
             {
               filter_branch:
                 T.any(
-                  HubspotSDK::Crm::PublicOrFilterBranch,
-                  HubspotSDK::Crm::PublicAndFilterBranch,
-                  HubspotSDK::Crm::PublicNotAllFilterBranch,
-                  HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                  HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                  HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                  HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                  HubspotSDK::Crm::PublicAssociationFilterBranch
+                  HubSpotSDK::Crm::PublicOrFilterBranch,
+                  HubSpotSDK::Crm::PublicAndFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                  HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                  HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                  HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                  HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                  HubSpotSDK::Crm::PublicAssociationFilterBranch
                 )
             }
           )
@@ -72,26 +72,26 @@ module HubspotSDK
 
         # Updated filtering criteria for the list
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicOrFilterBranch,
-                HubspotSDK::Crm::PublicAndFilterBranch,
-                HubspotSDK::Crm::PublicNotAllFilterBranch,
-                HubspotSDK::Crm::PublicNotAnyFilterBranch,
-                HubspotSDK::Crm::PublicRestrictedFilterBranch,
-                HubspotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubspotSDK::Crm::PublicPropertyAssociationFilterBranch,
-                HubspotSDK::Crm::PublicAssociationFilterBranch
+                HubSpotSDK::Crm::PublicOrFilterBranch,
+                HubSpotSDK::Crm::PublicAndFilterBranch,
+                HubSpotSDK::Crm::PublicNotAllFilterBranch,
+                HubSpotSDK::Crm::PublicNotAnyFilterBranch,
+                HubSpotSDK::Crm::PublicRestrictedFilterBranch,
+                HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
+                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
+                HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ListFilterUpdateRequest::FilterBranch::Variants
+                HubSpotSDK::Crm::ListFilterUpdateRequest::FilterBranch::Variants
               ]
             )
           end

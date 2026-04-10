@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Settings
       class Users
@@ -13,8 +13,8 @@ module HubspotSDK
             primary_team_id: String,
             role_id: String,
             secondary_team_ids: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::PublicUser)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Settings::PublicUser)
         end
         def create(
           # The user's email.
@@ -41,14 +41,14 @@ module HubspotSDK
           params(
             user_id: String,
             id_property:
-              HubspotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
+              HubSpotSDK::Settings::PublicUserUpdate::IDProperty::OrSymbol,
             first_name: String,
             last_name: String,
             primary_team_id: String,
             role_id: String,
             secondary_team_ids: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::PublicUser)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Settings::PublicUser)
         end
         def update(
           # Path param
@@ -73,9 +73,9 @@ module HubspotSDK
           params(
             after: String,
             limit: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[HubspotSDK::Settings::PublicUser]
+            HubSpotSDK::Internal::Page[HubSpotSDK::Settings::PublicUser]
           )
         end
         def list(
@@ -95,8 +95,8 @@ module HubspotSDK
           params(
             user_id: String,
             id_property:
-              HubspotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
+              HubSpotSDK::Settings::UserDeleteParams::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(user_id, id_property: nil, request_options: {})
@@ -108,17 +108,17 @@ module HubspotSDK
           params(
             user_id: String,
             id_property:
-              HubspotSDK::Settings::UserGetParams::IDProperty::OrSymbol,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Settings::PublicUser)
+              HubSpotSDK::Settings::UserGetParams::IDProperty::OrSymbol,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Settings::PublicUser)
         end
         def get(user_id, id_property: nil, request_options: {})
         end
 
         # Retrieves the roles on an account
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+            HubSpotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
           )
         end
         def list_roles(request_options: {})
@@ -126,15 +126,15 @@ module HubspotSDK
 
         # View teams for this account
         sig do
-          params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-            HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging
+          params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+            HubSpotSDK::Settings::CollectionResponsePublicTeamNoPaging
           )
         end
         def list_teams(request_options: {})
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

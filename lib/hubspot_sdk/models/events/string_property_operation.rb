@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class StringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class StringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute include_objects_with_no_value_set
         #
         #   @return [Boolean]
         required :include_objects_with_no_value_set,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :includeObjectsWithNoValueSet
 
         # @!attribute operation_type
@@ -18,8 +18,8 @@ module HubspotSDK
 
         # @!attribute operator
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::StringPropertyOperation::Operator]
-        required :operator, enum: -> { HubspotSDK::Events::StringPropertyOperation::Operator }
+        #   @return [Symbol, HubSpotSDK::Models::Events::StringPropertyOperation::Operator]
+        required :operator, enum: -> { HubSpotSDK::Events::StringPropertyOperation::Operator }
 
         # @!attribute operator_name
         #
@@ -28,9 +28,9 @@ module HubspotSDK
 
         # @!attribute property_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Events::StringPropertyOperation::PropertyType]
+        #   @return [Symbol, HubSpotSDK::Models::Events::StringPropertyOperation::PropertyType]
         required :property_type,
-                 enum: -> { HubspotSDK::Events::StringPropertyOperation::PropertyType },
+                 enum: -> { HubSpotSDK::Events::StringPropertyOperation::PropertyType },
                  api_name: :propertyType
 
         # @!attribute value
@@ -51,16 +51,16 @@ module HubspotSDK
         # @!method initialize(include_objects_with_no_value_set:, operation_type:, operator:, operator_name:, property_type:, value:, default_value: nil, render_spec: nil)
         #   @param include_objects_with_no_value_set [Boolean]
         #   @param operation_type [String]
-        #   @param operator [Symbol, HubspotSDK::Models::Events::StringPropertyOperation::Operator]
+        #   @param operator [Symbol, HubSpotSDK::Models::Events::StringPropertyOperation::Operator]
         #   @param operator_name [String]
-        #   @param property_type [Symbol, HubspotSDK::Models::Events::StringPropertyOperation::PropertyType]
+        #   @param property_type [Symbol, HubSpotSDK::Models::Events::StringPropertyOperation::PropertyType]
         #   @param value [String]
         #   @param default_value [String]
         #   @param render_spec [String]
 
-        # @see HubspotSDK::Models::Events::StringPropertyOperation#operator
+        # @see HubSpotSDK::Models::Events::StringPropertyOperation#operator
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS = :CONTAINS
           DOES_NOT_CONTAIN = :DOES_NOT_CONTAIN
@@ -77,9 +77,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Events::StringPropertyOperation#property_type
+        # @see HubSpotSDK::Models::Events::StringPropertyOperation#property_type
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING = :string
 

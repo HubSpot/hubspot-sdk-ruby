@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicCommunicationSubscriptionFilter < HubspotSDK::Internal::Type::BaseModel
+      class PublicCommunicationSubscriptionFilter < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute accepted_opt_states
         #
         #   @return [Array<String>]
         required :accepted_opt_states,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :acceptedOptStates
 
         # @!attribute channel
@@ -21,15 +21,15 @@ module HubspotSDK
         # @!attribute filter_type
         #   Indicates the type of filter, which is (COMMUNICATION_SUBSCRIPTION)
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::FilterType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::FilterType]
         required :filter_type,
-                 enum: -> { HubspotSDK::Crm::PublicCommunicationSubscriptionFilter::FilterType },
+                 enum: -> { HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter::FilterType },
                  api_name: :filterType
 
         # @!attribute subscription_ids
         #
         #   @return [Array<String>]
-        required :subscription_ids, HubspotSDK::Internal::Type::ArrayOf[String], api_name: :subscriptionIds
+        required :subscription_ids, HubSpotSDK::Internal::Type::ArrayOf[String], api_name: :subscriptionIds
 
         # @!attribute subscription_type
         #   Defines the type of subscription related to the filter (PORTAL_WIDE,
@@ -46,14 +46,14 @@ module HubspotSDK
 
         # @!method initialize(accepted_opt_states:, channel:, filter_type:, subscription_ids:, subscription_type:, business_unit_id: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter} for more
+        #   {HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter} for more
         #   details.
         #
         #   @param accepted_opt_states [Array<String>]
         #
         #   @param channel [String] Specifies the communication channel associated with the subscription filter (EMA
         #
-        #   @param filter_type [Symbol, HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::FilterType] Indicates the type of filter, which is (COMMUNICATION_SUBSCRIPTION)
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter::FilterType] Indicates the type of filter, which is (COMMUNICATION_SUBSCRIPTION)
         #
         #   @param subscription_ids [Array<String>]
         #
@@ -63,9 +63,9 @@ module HubspotSDK
 
         # Indicates the type of filter, which is (COMMUNICATION_SUBSCRIPTION)
         #
-        # @see HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter#filter_type
+        # @see HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter#filter_type
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMMUNICATION_SUBSCRIPTION = :COMMUNICATION_SUBSCRIPTION
 

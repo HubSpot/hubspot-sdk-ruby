@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type public_option =
@@ -9,7 +9,7 @@ module HubspotSDK
           display_order: Integer
         }
 
-      class PublicOption < HubspotSDK::Internal::Type::BaseModel
+      class PublicOption < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor label: String
 
         attr_accessor value: String

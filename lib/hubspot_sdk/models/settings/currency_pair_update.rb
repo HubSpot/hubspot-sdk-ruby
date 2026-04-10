@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class CurrencyPairUpdate < HubspotSDK::Internal::Type::BaseModel
+      class CurrencyPairUpdate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute from_currency_code
         #   This represents the three-letter currency code (such as USD for US Dollar) of
         #   the currency you want to convert from.
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::FromCurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::CurrencyPairUpdate::FromCurrencyCode]
         required :from_currency_code,
-                 enum: -> { HubspotSDK::Settings::CurrencyPairUpdate::FromCurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::CurrencyPairUpdate::FromCurrencyCode },
                  api_name: :fromCurrencyCode
 
         # @!attribute to_currency_code
         #   This represents the three-letter currency code (such as USD for US Dollar) of
         #   the currency you want to convert to.
         #
-        #   @return [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::ToCurrencyCode]
+        #   @return [Symbol, HubSpotSDK::Models::Settings::CurrencyPairUpdate::ToCurrencyCode]
         required :to_currency_code,
-                 enum: -> { HubspotSDK::Settings::CurrencyPairUpdate::ToCurrencyCode },
+                 enum: -> { HubSpotSDK::Settings::CurrencyPairUpdate::ToCurrencyCode },
                  api_name: :toCurrencyCode
 
         # @!attribute visible_in_ui
@@ -27,24 +27,24 @@ module HubspotSDK
         #   Setting this to false will remove the currency pair from the settings page.
         #
         #   @return [Boolean]
-        required :visible_in_ui, HubspotSDK::Internal::Type::Boolean, api_name: :visibleInUI
+        required :visible_in_ui, HubSpotSDK::Internal::Type::Boolean, api_name: :visibleInUI
 
         # @!method initialize(from_currency_code:, to_currency_code:, visible_in_ui:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::CurrencyPairUpdate} for more details.
+        #   {HubSpotSDK::Models::Settings::CurrencyPairUpdate} for more details.
         #
-        #   @param from_currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #   @param from_currency_code [Symbol, HubSpotSDK::Models::Settings::CurrencyPairUpdate::FromCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
         #
-        #   @param to_currency_code [Symbol, HubspotSDK::Models::Settings::CurrencyPairUpdate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
+        #   @param to_currency_code [Symbol, HubSpotSDK::Models::Settings::CurrencyPairUpdate::ToCurrencyCode] This represents the three-letter currency code (such as USD for US Dollar) of th
         #
         #   @param visible_in_ui [Boolean] This indicates if the currency pair is shown in the MultiCurrency settings page.
 
         # This represents the three-letter currency code (such as USD for US Dollar) of
         # the currency you want to convert from.
         #
-        # @see HubspotSDK::Models::Settings::CurrencyPairUpdate#from_currency_code
+        # @see HubSpotSDK::Models::Settings::CurrencyPairUpdate#from_currency_code
         module FromCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN
@@ -230,9 +230,9 @@ module HubspotSDK
         # This represents the three-letter currency code (such as USD for US Dollar) of
         # the currency you want to convert to.
         #
-        # @see HubspotSDK::Models::Settings::CurrencyPairUpdate#to_currency_code
+        # @see HubSpotSDK::Models::Settings::CurrencyPairUpdate#to_currency_code
         module ToCurrencyCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           AED = :AED
           AFN = :AFN

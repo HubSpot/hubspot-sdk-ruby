@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicChannelIntegrationChannel < HubspotSDK::Internal::Type::BaseModel
+      class PublicChannelIntegrationChannel < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicChannelIntegrationChannel,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicChannelIntegrationChannel,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

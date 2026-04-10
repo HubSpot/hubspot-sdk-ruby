@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module BusinessUnits
-      class BusinessUnitEntryGetByUserIDParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class BusinessUnitEntryGetByUserIDParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::BusinessUnits::BusinessUnitEntryGetByUserIDParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::BusinessUnits::BusinessUnitEntryGetByUserIDParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -35,7 +35,7 @@ module HubspotSDK
             user_id: String,
             name: T::Array[String],
             properties: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(user_id:, name: nil, properties: nil, request_options: {})
@@ -47,7 +47,7 @@ module HubspotSDK
               user_id: String,
               name: T::Array[String],
               properties: T::Array[String],
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end

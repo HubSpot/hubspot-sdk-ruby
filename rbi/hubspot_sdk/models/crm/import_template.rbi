@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class ImportTemplate < HubspotSDK::Internal::Type::BaseModel
+      class ImportTemplate < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::ImportTemplate,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::ImportTemplate,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # The classification of what type of template this represents, and what is its
         # origin or purpose.
         sig do
-          returns(HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol)
+          returns(HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol)
         end
         attr_accessor :template_type
 
@@ -28,7 +28,7 @@ module HubspotSDK
           params(
             template_id: Integer,
             template_type:
-              HubspotSDK::Crm::ImportTemplate::TemplateType::OrSymbol
+              HubSpotSDK::Crm::ImportTemplate::TemplateType::OrSymbol
           ).returns(T.attached_class)
         end
         def self.new(
@@ -46,7 +46,7 @@ module HubspotSDK
             {
               template_id: Integer,
               template_type:
-                HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
+                HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
             }
           )
         end
@@ -56,34 +56,34 @@ module HubspotSDK
         # The classification of what type of template this represents, and what is its
         # origin or purpose.
         module TemplateType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::ImportTemplate::TemplateType)
+              T.all(Symbol, HubSpotSDK::Crm::ImportTemplate::TemplateType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           ADMIN_DEFINED =
             T.let(
               :admin_defined,
-              HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
+              HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
             )
           PREVIOUS_IMPORT =
             T.let(
               :previous_import,
-              HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
+              HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
             )
           USER_FILE =
             T.let(
               :user_file,
-              HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
+              HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
+                HubSpotSDK::Crm::ImportTemplate::TemplateType::TaggedSymbol
               ]
             )
           end

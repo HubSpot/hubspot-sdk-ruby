@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicInListFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicInListFilterMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicInListFilterMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicInListFilterMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

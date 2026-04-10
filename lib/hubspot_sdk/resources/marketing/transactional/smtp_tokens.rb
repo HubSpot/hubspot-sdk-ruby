@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Transactional
@@ -13,24 +13,24 @@ module HubspotSDK
           #
           # @param create_contact [Boolean] Indicates whether a contact should be created for email recipients.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::SmtpAPITokenView]
+          # @return [HubSpotSDK::Models::Marketing::SmtpAPITokenView]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SmtpTokenCreateParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SmtpTokenCreateParams
           def create(params)
-            parsed, options = HubspotSDK::Marketing::Transactional::SmtpTokenCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Transactional::SmtpTokenCreateParams.dump_request(params)
             @client.request(
               method: :post,
               path: "marketing/transactional/2026-03/smtp-tokens",
               body: parsed,
-              model: HubspotSDK::Marketing::SmtpAPITokenView,
+              model: HubSpotSDK::Marketing::SmtpAPITokenView,
               options: options
             )
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Transactional::SmtpTokenListParams} for more
+          # {HubSpotSDK::Models::Marketing::Transactional::SmtpTokenListParams} for more
           # details.
           #
           # Query multiple SMTP API tokens by campaign name or a single token by
@@ -46,14 +46,14 @@ module HubspotSDK
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::SmtpAPITokenView>]
+          # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::SmtpAPITokenView>]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SmtpTokenListParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SmtpTokenListParams
           def list(params = {})
-            parsed, options = HubspotSDK::Marketing::Transactional::SmtpTokenListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Marketing::Transactional::SmtpTokenListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             @client.request(
               method: :get,
               path: "marketing/transactional/2026-03/smtp-tokens",
@@ -61,8 +61,8 @@ module HubspotSDK
                 campaign_name: "campaignName",
                 email_campaign_id: "emailCampaignId"
               ),
-              page: HubspotSDK::Internal::Page,
-              model: HubspotSDK::Marketing::SmtpAPITokenView,
+              page: HubSpotSDK::Internal::Page,
+              model: HubSpotSDK::Marketing::SmtpAPITokenView,
               options: options
             )
           end
@@ -72,11 +72,11 @@ module HubspotSDK
           # @overload delete(token_id, request_options: {})
           #
           # @param token_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SmtpTokenDeleteParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SmtpTokenDeleteParams
           def delete(token_id, params = {})
             @client.request(
               method: :delete,
@@ -91,16 +91,16 @@ module HubspotSDK
           # @overload get(token_id, request_options: {})
           #
           # @param token_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::SmtpAPITokenView]
+          # @return [HubSpotSDK::Models::Marketing::SmtpAPITokenView]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SmtpTokenGetParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SmtpTokenGetParams
           def get(token_id, params = {})
             @client.request(
               method: :get,
               path: ["marketing/transactional/2026-03/smtp-tokens/%1$s", token_id],
-              model: HubspotSDK::Marketing::SmtpAPITokenView,
+              model: HubSpotSDK::Marketing::SmtpAPITokenView,
               options: params[:request_options]
             )
           end
@@ -111,23 +111,23 @@ module HubspotSDK
           # @overload reset_password(token_id, request_options: {})
           #
           # @param token_id [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::SmtpAPITokenView]
+          # @return [HubSpotSDK::Models::Marketing::SmtpAPITokenView]
           #
-          # @see HubspotSDK::Models::Marketing::Transactional::SmtpTokenResetPasswordParams
+          # @see HubSpotSDK::Models::Marketing::Transactional::SmtpTokenResetPasswordParams
           def reset_password(token_id, params = {})
             @client.request(
               method: :post,
               path: ["marketing/transactional/2026-03/smtp-tokens/%1$s/password-reset", token_id],
-              model: HubspotSDK::Marketing::SmtpAPITokenView,
+              model: HubSpotSDK::Marketing::SmtpAPITokenView,
               options: params[:request_options]
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

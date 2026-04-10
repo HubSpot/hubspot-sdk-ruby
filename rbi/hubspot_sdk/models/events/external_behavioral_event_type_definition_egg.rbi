@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class ExternalBehavioralEventTypeDefinitionEgg < HubspotSDK::Internal::Type::BaseModel
+      class ExternalBehavioralEventTypeDefinitionEgg < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::ExternalBehavioralEventTypeDefinitionEgg,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::ExternalBehavioralEventTypeDefinitionEgg,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -22,7 +22,7 @@ module HubspotSDK
         # List of custom properties on event
         sig do
           returns(
-            T::Array[HubspotSDK::Events::ExternalBehavioralEventPropertyCreate]
+            T::Array[HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate]
           )
         end
         attr_accessor :property_definitions
@@ -30,7 +30,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Events::ExternalObjectResolutionMappingRequest
+              HubSpotSDK::Events::ExternalObjectResolutionMappingRequest
             )
           )
         end
@@ -39,7 +39,7 @@ module HubspotSDK
         sig do
           params(
             custom_matching_id:
-              HubspotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash
+              HubSpotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash
           ).void
         end
         attr_writer :custom_matching_id
@@ -77,10 +77,10 @@ module HubspotSDK
             label: String,
             property_definitions:
               T::Array[
-                HubspotSDK::Events::ExternalBehavioralEventPropertyCreate::OrHash
+                HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate::OrHash
               ],
             custom_matching_id:
-              HubspotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash,
+              HubSpotSDK::Events::ExternalObjectResolutionMappingRequest::OrHash,
             description: String,
             name: String,
             primary_object: String
@@ -115,10 +115,10 @@ module HubspotSDK
               label: String,
               property_definitions:
                 T::Array[
-                  HubspotSDK::Events::ExternalBehavioralEventPropertyCreate
+                  HubSpotSDK::Events::ExternalBehavioralEventPropertyCreate
                 ],
               custom_matching_id:
-                HubspotSDK::Events::ExternalObjectResolutionMappingRequest,
+                HubSpotSDK::Events::ExternalObjectResolutionMappingRequest,
               description: String,
               name: String,
               primary_object: String

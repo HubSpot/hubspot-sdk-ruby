@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       # @api private
       module Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         Input =
           T.type_alias do
-            T.any(HubspotSDK::Internal::Type::Converter, T::Class[T.anything])
+            T.any(HubSpotSDK::Internal::Type::Converter, T::Class[T.anything])
           end
 
         CoerceState =
@@ -34,7 +34,7 @@ module HubspotSDK
           overridable
             .params(
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::CoerceState
+              state: HubSpotSDK::Internal::Type::Converter::CoerceState
             )
             .returns(T.anything)
         end
@@ -46,7 +46,7 @@ module HubspotSDK
           overridable
             .params(
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::DumpState
+              state: HubSpotSDK::Internal::Type::Converter::DumpState
             )
             .returns(T.anything)
         end
@@ -72,18 +72,18 @@ module HubspotSDK
                     enum:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       ),
                     union:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       )
                   },
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 )
             ).returns(T.proc.returns(T.anything))
           end
@@ -103,18 +103,18 @@ module HubspotSDK
                     enum:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       ),
                     union:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       )
                   },
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 ),
               spec:
                 T.any(
@@ -126,20 +126,20 @@ module HubspotSDK
                     enum:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       ),
                     union:
                       T.nilable(
                         T.proc.returns(
-                          HubspotSDK::Internal::Type::Converter::Input
+                          HubSpotSDK::Internal::Type::Converter::Input
                         )
                       )
                   },
-                  T.proc.returns(HubspotSDK::Internal::Type::Converter::Input),
-                  HubspotSDK::Internal::Type::Converter::Input
+                  T.proc.returns(HubSpotSDK::Internal::Type::Converter::Input),
+                  HubSpotSDK::Internal::Type::Converter::Input
                 )
-            ).returns(HubspotSDK::Internal::AnyHash)
+            ).returns(HubSpotSDK::Internal::AnyHash)
           end
           def self.meta_info(type_info, spec)
           end
@@ -147,7 +147,7 @@ module HubspotSDK
           # @api private
           sig do
             params(translate_names: T::Boolean).returns(
-              HubspotSDK::Internal::Type::Converter::CoerceState
+              HubSpotSDK::Internal::Type::Converter::CoerceState
             )
           end
           def self.new_coerce_state(translate_names: true)
@@ -166,9 +166,9 @@ module HubspotSDK
           # See https://docs.pydantic.dev/latest/concepts/unions/#smart-mode
           sig do
             params(
-              target: HubspotSDK::Internal::Type::Converter::Input,
+              target: HubSpotSDK::Internal::Type::Converter::Input,
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::CoerceState
+              state: HubSpotSDK::Internal::Type::Converter::CoerceState
             ).returns(T.anything)
           end
           def self.coerce(
@@ -190,16 +190,16 @@ module HubspotSDK
             # - `no`: the value cannot be converted to the target type.
             #
             # See implementation below for more details.
-            state: HubspotSDK::Internal::Type::Converter.new_coerce_state
+            state: HubSpotSDK::Internal::Type::Converter.new_coerce_state
           )
           end
 
           # @api private
           sig do
             params(
-              target: HubspotSDK::Internal::Type::Converter::Input,
+              target: HubSpotSDK::Internal::Type::Converter::Input,
               value: T.anything,
-              state: HubspotSDK::Internal::Type::Converter::DumpState
+              state: HubSpotSDK::Internal::Type::Converter::DumpState
             ).returns(T.anything)
           end
           def self.dump(target, value, state: { can_retry: true })

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Scheduler
-      # @return [HubspotSDK::Resources::Scheduler::Meetings]
+      # @return [HubSpotSDK::Resources::Scheduler::Meetings]
       attr_reader :meetings
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @meetings = HubspotSDK::Resources::Scheduler::Meetings.new(client: client)
+        @meetings = HubSpotSDK::Resources::Scheduler::Meetings.new(client: client)
       end
     end
   end

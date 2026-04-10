@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PipelineStageInput < HubspotSDK::Internal::Type::BaseModel
+      class PipelineStageInput < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PipelineStageInput,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PipelineStageInput,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

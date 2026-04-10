@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
       type exchange_rate_multiplier =
         { conversion_rate: Float, effective_at: Time }
 
-      class ExchangeRateMultiplier < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRateMultiplier < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor conversion_rate: Float
 
         attr_reader effective_at: Time?

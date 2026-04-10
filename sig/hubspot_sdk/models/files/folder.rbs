@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
       type folder =
@@ -13,7 +13,7 @@ module HubspotSDK
           path: String
         }
 
-      class Folder < HubspotSDK::Internal::Type::BaseModel
+      class Folder < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor archived: bool

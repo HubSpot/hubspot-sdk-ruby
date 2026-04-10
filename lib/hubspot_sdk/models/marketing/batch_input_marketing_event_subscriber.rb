@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchInputMarketingEventSubscriber < HubspotSDK::Internal::Type::BaseModel
+      class BatchInputMarketingEventSubscriber < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute inputs
         #   List of HubSpot contacts to subscribe to the marketing event
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::MarketingEventSubscriber>]
         required :inputs,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::MarketingEventSubscriber] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::MarketingEventSubscriber] }
 
         # @!method initialize(inputs:)
-        #   @param inputs [Array<HubspotSDK::Models::Marketing::MarketingEventSubscriber>] List of HubSpot contacts to subscribe to the marketing event
+        #   @param inputs [Array<HubSpotSDK::Models::Marketing::MarketingEventSubscriber>] List of HubSpot contacts to subscribe to the marketing event
       end
     end
   end

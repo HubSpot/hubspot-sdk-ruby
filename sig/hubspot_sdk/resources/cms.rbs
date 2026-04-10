@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
-      attr_reader audit_logs: HubspotSDK::Resources::Cms::AuditLogs
+      attr_reader audit_logs: HubSpotSDK::Resources::Cms::AuditLogs
 
-      attr_reader blogs: HubspotSDK::Resources::Cms::Blogs
+      attr_reader blogs: HubSpotSDK::Resources::Cms::Blogs
 
-      attr_reader domains: HubspotSDK::Resources::Cms::Domains
+      attr_reader domains: HubSpotSDK::Resources::Cms::Domains
 
-      attr_reader hubdb: HubspotSDK::Resources::Cms::Hubdb
+      attr_reader hubdb: HubSpotSDK::Resources::Cms::Hubdb
 
-      attr_reader media_bridge: HubspotSDK::Resources::Cms::MediaBridge
+      attr_reader media_bridge: HubSpotSDK::Resources::Cms::MediaBridge
 
-      attr_reader pages: HubspotSDK::Resources::Cms::Pages
+      attr_reader pages: HubSpotSDK::Resources::Cms::Pages
 
-      attr_reader site_search: HubspotSDK::Resources::Cms::SiteSearch
+      attr_reader site_search: HubSpotSDK::Resources::Cms::SiteSearch
 
-      attr_reader source_code: HubspotSDK::Resources::Cms::SourceCode
+      attr_reader source_code: HubSpotSDK::Resources::Cms::SourceCode
 
-      attr_reader url_mappings: HubspotSDK::Resources::Cms::URLMappings
+      attr_reader url_mappings: HubSpotSDK::Resources::Cms::URLMappings
 
-      attr_reader url_redirects: HubspotSDK::Resources::Cms::URLRedirects
+      attr_reader url_redirects: HubSpotSDK::Resources::Cms::URLRedirects
 
-      def initialize: (client: HubspotSDK::Client) -> void
+      def initialize: (client: HubSpotSDK::Client) -> void
     end
   end
 end

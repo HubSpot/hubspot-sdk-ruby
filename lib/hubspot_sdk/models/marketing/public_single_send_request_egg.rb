@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicSingleSendRequestEgg < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleSendRequestEgg < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute contact_properties
         #   The contactProperties field is a map of contact property values. Each contact
         #   property value contains a name and value property. Each property will get set on
@@ -14,7 +14,7 @@ module HubspotSDK
         #   about the last payment.
         #
         #   @return [Hash{Symbol=>String}]
-        required :contact_properties, HubspotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
+        required :contact_properties, HubSpotSDK::Internal::Type::HashOf[String], api_name: :contactProperties
 
         # @!attribute custom_properties
         #   The customProperties field is a map of property values. Each property value
@@ -25,7 +25,7 @@ module HubspotSDK
         #
         #   @return [Hash{Symbol=>Object}]
         required :custom_properties,
-                 HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown],
+                 HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown],
                  api_name: :customProperties
 
         # @!attribute email_id
@@ -36,12 +36,12 @@ module HubspotSDK
 
         # @!attribute message
         #
-        #   @return [HubspotSDK::Models::Marketing::PublicSingleSendEmail]
-        required :message, -> { HubspotSDK::Marketing::PublicSingleSendEmail }
+        #   @return [HubSpotSDK::Models::Marketing::PublicSingleSendEmail]
+        required :message, -> { HubSpotSDK::Marketing::PublicSingleSendEmail }
 
         # @!method initialize(contact_properties:, custom_properties:, email_id:, message:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Marketing::PublicSingleSendRequestEgg} for more details.
+        #   {HubSpotSDK::Models::Marketing::PublicSingleSendRequestEgg} for more details.
         #
         #   @param contact_properties [Hash{Symbol=>String}] The contactProperties field is a map of contact property values. Each contact pr
         #
@@ -49,7 +49,7 @@ module HubspotSDK
         #
         #   @param email_id [Integer] The content ID for the email, which can be found in email tool UI.
         #
-        #   @param message [HubspotSDK::Models::Marketing::PublicSingleSendEmail]
+        #   @param message [HubSpotSDK::Models::Marketing::PublicSingleSendEmail]
       end
     end
   end

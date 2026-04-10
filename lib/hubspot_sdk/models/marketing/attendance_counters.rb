@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class AttendanceCounters < HubspotSDK::Internal::Type::BaseModel
+      class AttendanceCounters < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute attended
         #   Number of attended contact records of a marketing event
         #

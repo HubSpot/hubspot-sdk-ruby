@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Objects
-        # @see HubspotSDK::Resources::Crm::Objects::Calls#update
-        class CallUpdateParams < HubspotSDK::Models::Crm::SimplePublicObjectInput
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Crm::Objects::Calls#update
+        class CallUpdateParams < HubSpotSDK::Models::Crm::SimplePublicObjectInput
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute call_id
           #
@@ -25,7 +25,7 @@ module HubspotSDK
           #
           #   @param id_property [String] The name of a property whose values are unique for this object type
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

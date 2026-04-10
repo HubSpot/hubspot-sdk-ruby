@@ -1,19 +1,19 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
         sig do
           returns(
-            HubspotSDK::Resources::Conversations::CustomChannels::ChannelAccounts
+            HubSpotSDK::Resources::Conversations::CustomChannels::ChannelAccounts
           )
         end
         attr_reader :channel_accounts
 
         sig do
           returns(
-            HubspotSDK::Resources::Conversations::CustomChannels::Messages
+            HubSpotSDK::Resources::Conversations::CustomChannels::Messages
           )
         end
         attr_reader :messages
@@ -26,8 +26,8 @@ module HubspotSDK
             channel_description: String,
             channel_logo_url: String,
             webhook_url: String,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def create(
           capabilities:,
@@ -51,8 +51,8 @@ module HubspotSDK
             channel_logo_url: T.anything,
             name: T.anything,
             webhook_url: T.anything,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::PublicChannelIntegrationChannel)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Conversations::PublicChannelIntegrationChannel)
         end
         def update(
           channel_id,
@@ -72,10 +72,10 @@ module HubspotSDK
             default_page_length: Integer,
             limit: Integer,
             sort: T::Array[String],
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
-            HubspotSDK::Internal::Page[
-              HubspotSDK::Conversations::PublicChannelIntegrationChannel
+            HubSpotSDK::Internal::Page[
+              HubSpotSDK::Conversations::PublicChannelIntegrationChannel
             ]
           )
         end
@@ -96,7 +96,7 @@ module HubspotSDK
         sig do
           params(
             channel_id: Integer,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
         def delete(channel_id, request_options: {})
@@ -110,8 +110,8 @@ module HubspotSDK
             channel_account_id: Integer,
             channel_id: Integer,
             archived: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
-          ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Conversations::PublicChannelAccount)
         end
         def get(
           # Path param
@@ -125,7 +125,7 @@ module HubspotSDK
         end
 
         # @api private
-        sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+        sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
         def self.new(client:)
         end
       end

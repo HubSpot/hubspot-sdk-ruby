@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      # @see HubspotSDK::Resources::Account::Activity#list_security_activities
-      class ActivityListSecurityActivitiesParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      # @see HubSpotSDK::Resources::Account::Activity#list_security_activities
+      class ActivityListSecurityActivitiesParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute after
         #   The paging cursor token of the last successfully read resource will be returned
@@ -39,7 +39,7 @@ module HubspotSDK
 
         # @!method initialize(after: nil, from_timestamp: nil, limit: nil, to_timestamp: nil, user_id: nil, request_options: {})
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Account::ActivityListSecurityActivitiesParams} for more
+        #   {HubSpotSDK::Models::Account::ActivityListSecurityActivitiesParams} for more
         #   details.
         #
         #   @param after [String] The paging cursor token of the last successfully read resource will be returned
@@ -52,7 +52,7 @@ module HubspotSDK
         #
         #   @param user_id [Integer]
         #
-        #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+        #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end
   end

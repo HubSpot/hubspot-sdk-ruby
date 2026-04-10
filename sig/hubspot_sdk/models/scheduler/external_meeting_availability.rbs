@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_meeting_availability =
         { end_millis_utc: Integer, start_millis_utc: Integer }
 
-      class ExternalMeetingAvailability < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingAvailability < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor end_millis_utc: Integer
 
         attr_accessor start_millis_utc: Integer

@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalMeetingsUser < HubspotSDK::Internal::Type::BaseModel
+      class ExternalMeetingsUser < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalMeetingsUser,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalMeetingsUser,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
         # OFFICE365, EXCHANGE, UNKNOWN.
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+            HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
           )
         end
         attr_accessor :calendar_provider
@@ -33,12 +33,12 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :user_id
 
-        sig { returns(HubspotSDK::Scheduler::ExternalUserProfile) }
+        sig { returns(HubSpotSDK::Scheduler::ExternalUserProfile) }
         attr_reader :user_profile
 
         sig do
           params(
-            user_profile: HubspotSDK::Scheduler::ExternalUserProfile::OrHash
+            user_profile: HubSpotSDK::Scheduler::ExternalUserProfile::OrHash
           ).void
         end
         attr_writer :user_profile
@@ -47,10 +47,10 @@ module HubspotSDK
           params(
             id: String,
             calendar_provider:
-              HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::OrSymbol,
+              HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::OrSymbol,
             is_sales_starter: T::Boolean,
             user_id: String,
-            user_profile: HubspotSDK::Scheduler::ExternalUserProfile::OrHash
+            user_profile: HubSpotSDK::Scheduler::ExternalUserProfile::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -72,10 +72,10 @@ module HubspotSDK
             {
               id: String,
               calendar_provider:
-                HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol,
+                HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol,
               is_sales_starter: T::Boolean,
               user_id: String,
-              user_profile: HubspotSDK::Scheduler::ExternalUserProfile
+              user_profile: HubSpotSDK::Scheduler::ExternalUserProfile
             }
           )
         end
@@ -85,13 +85,13 @@ module HubspotSDK
         # The calendar provider associated with the user. Accepted values are: GOOGLE,
         # OFFICE365, EXCHANGE, UNKNOWN.
         module CalendarProvider
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider
+                HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -99,28 +99,28 @@ module HubspotSDK
           EXCHANGE =
             T.let(
               :EXCHANGE,
-              HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
             )
           GOOGLE =
             T.let(
               :GOOGLE,
-              HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
             )
           OFFICE365 =
             T.let(
               :OFFICE365,
-              HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
             )
           UNKNOWN =
             T.let(
               :UNKNOWN,
-              HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+              HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
+                HubSpotSDK::Scheduler::ExternalMeetingsUser::CalendarProvider::TaggedSymbol
               ]
             )
           end

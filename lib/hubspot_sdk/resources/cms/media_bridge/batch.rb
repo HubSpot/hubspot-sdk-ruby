@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class MediaBridge
@@ -13,15 +13,15 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::Cms::PropertyCreate>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::Cms::PropertyCreate>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseProperty]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseProperty]
           #
-          # @see HubspotSDK::Models::Cms::MediaBridge::BatchCreateParams
+          # @see HubSpotSDK::Models::Cms::MediaBridge::BatchCreateParams
           def create(object_type, params)
-            parsed, options = HubspotSDK::Cms::MediaBridge::BatchCreateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::MediaBridge::BatchCreateParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -30,7 +30,7 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/2026-03/%1$s/properties/%2$s/batch/create", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseProperty,
+              model: HubSpotSDK::Cms::BatchResponseProperty,
               options: options
             )
           end
@@ -43,15 +43,15 @@ module HubspotSDK
           #
           # @param app_id [Integer] Path param
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::PropertyName>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Cms::MediaBridge::BatchDeleteParams
+          # @see HubSpotSDK::Models::Cms::MediaBridge::BatchDeleteParams
           def delete(object_type, params)
-            parsed, options = HubspotSDK::Cms::MediaBridge::BatchDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::MediaBridge::BatchDeleteParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -75,17 +75,17 @@ module HubspotSDK
           #
           # @param archived [Boolean] Body param
           #
-          # @param data_sensitivity [Symbol, HubspotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param
+          # @param data_sensitivity [Symbol, HubSpotSDK::Models::BatchReadInputPropertyName::DataSensitivity] Body param
           #
-          # @param inputs [Array<HubspotSDK::Models::PropertyName>] Body param
+          # @param inputs [Array<HubSpotSDK::Models::PropertyName>] Body param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Cms::BatchResponseProperty]
+          # @return [HubSpotSDK::Models::Cms::BatchResponseProperty]
           #
-          # @see HubspotSDK::Models::Cms::MediaBridge::BatchGetParams
+          # @see HubSpotSDK::Models::Cms::MediaBridge::BatchGetParams
           def get(object_type, params)
-            parsed, options = HubspotSDK::Cms::MediaBridge::BatchGetParams.dump_request(params)
+            parsed, options = HubSpotSDK::Cms::MediaBridge::BatchGetParams.dump_request(params)
             app_id =
               parsed.delete(:app_id) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -94,14 +94,14 @@ module HubspotSDK
               method: :post,
               path: ["media-bridge/2026-03/%1$s/properties/%2$s/batch/read", app_id, object_type],
               body: parsed,
-              model: HubspotSDK::Cms::BatchResponseProperty,
+              model: HubSpotSDK::Cms::BatchResponseProperty,
               options: options
             )
           end
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

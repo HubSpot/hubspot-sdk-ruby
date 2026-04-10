@@ -1,21 +1,21 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      class Condition < HubspotSDK::Internal::Type::BaseModel
+      class Condition < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Webhooks::Condition,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Webhooks::Condition,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(HubspotSDK::Webhooks::Condition::FilterType::OrSymbol) }
+        sig { returns(HubSpotSDK::Webhooks::Condition::FilterType::OrSymbol) }
         attr_accessor :filter_type
 
-        sig { returns(HubspotSDK::Webhooks::Condition::Operator::OrSymbol) }
+        sig { returns(HubSpotSDK::Webhooks::Condition::Operator::OrSymbol) }
         attr_accessor :operator
 
         sig { returns(String) }
@@ -35,8 +35,8 @@ module HubspotSDK
 
         sig do
           params(
-            filter_type: HubspotSDK::Webhooks::Condition::FilterType::OrSymbol,
-            operator: HubspotSDK::Webhooks::Condition::Operator::OrSymbol,
+            filter_type: HubSpotSDK::Webhooks::Condition::FilterType::OrSymbol,
+            operator: HubSpotSDK::Webhooks::Condition::Operator::OrSymbol,
             property: String,
             value: String,
             values: T::Array[String]
@@ -55,8 +55,8 @@ module HubspotSDK
           override.returns(
             {
               filter_type:
-                HubspotSDK::Webhooks::Condition::FilterType::OrSymbol,
-              operator: HubspotSDK::Webhooks::Condition::Operator::OrSymbol,
+                HubSpotSDK::Webhooks::Condition::FilterType::OrSymbol,
+              operator: HubSpotSDK::Webhooks::Condition::Operator::OrSymbol,
               property: String,
               value: String,
               values: T::Array[String]
@@ -67,24 +67,24 @@ module HubspotSDK
         end
 
         module FilterType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Webhooks::Condition::FilterType)
+              T.all(Symbol, HubSpotSDK::Webhooks::Condition::FilterType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CRM_OBJECT_PROPERTY =
             T.let(
               :CRM_OBJECT_PROPERTY,
-              HubspotSDK::Webhooks::Condition::FilterType::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::FilterType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Webhooks::Condition::FilterType::TaggedSymbol
+                HubSpotSDK::Webhooks::Condition::FilterType::TaggedSymbol
               ]
             )
           end
@@ -93,65 +93,65 @@ module HubspotSDK
         end
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Webhooks::Condition::Operator)
+              T.all(Symbol, HubSpotSDK::Webhooks::Condition::Operator)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CONTAINS =
             T.let(
               :CONTAINS,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           ENDS_WITH =
             T.let(
               :ENDS_WITH,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           EQ =
-            T.let(:EQ, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:EQ, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           GT =
-            T.let(:GT, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:GT, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           GTE =
-            T.let(:GTE, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:GTE, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           IN =
-            T.let(:IN, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:IN, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           IS_EMPTY =
             T.let(
               :IS_EMPTY,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           IS_NOT_EMPTY =
             T.let(
               :IS_NOT_EMPTY,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           LT =
-            T.let(:LT, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:LT, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           LTE =
-            T.let(:LTE, HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol)
+            T.let(:LTE, HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol)
           N_EQ =
             T.let(
               :N_EQ,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           NOT_IN =
             T.let(
               :NOT_IN,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
           STARTS_WITH =
             T.let(
               :STARTS_WITH,
-              HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol
+              HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Webhooks::Condition::Operator::TaggedSymbol]
+              T::Array[HubSpotSDK::Webhooks::Condition::Operator::TaggedSymbol]
             )
           end
           def self.values

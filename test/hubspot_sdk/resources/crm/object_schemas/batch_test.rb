@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::ObjectSchemas::BatchTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::ObjectSchemas::BatchTest < HubSpotSDK::Test::ResourceTest
   def test_get_required_params
     skip("Mock server tests are disabled")
 
@@ -15,12 +15,12 @@ class HubspotSDK::Test::Resources::Crm::ObjectSchemas::BatchTest < HubspotSDK::T
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::CollectionResponseObjectSchemaNoPaging
+      response => HubSpotSDK::Crm::CollectionResponseObjectSchemaNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::ObjectSchema])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::ObjectSchema])
       }
     end
   end

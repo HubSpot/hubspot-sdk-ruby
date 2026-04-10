@@ -1,30 +1,30 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
       type public_unsupported_content =
         {
-          type: HubspotSDK::Models::Conversations::PublicUnsupportedContent::type_
+          type: HubSpotSDK::Models::Conversations::PublicUnsupportedContent::type_
         }
 
-      class PublicUnsupportedContent < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Conversations::PublicUnsupportedContent::type_
+      class PublicUnsupportedContent < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Conversations::PublicUnsupportedContent::type_
 
         def initialize: (
-          type: HubspotSDK::Models::Conversations::PublicUnsupportedContent::type_
+          type: HubSpotSDK::Models::Conversations::PublicUnsupportedContent::type_
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Conversations::PublicUnsupportedContent::type_
+          type: HubSpotSDK::Models::Conversations::PublicUnsupportedContent::type_
         }
 
         type type_ = :UNSUPPORTED_CONTENT
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           UNSUPPORTED_CONTENT: :UNSUPPORTED_CONTENT
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Conversations::PublicUnsupportedContent::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Conversations::PublicUnsupportedContent::type_]
         end
       end
     end

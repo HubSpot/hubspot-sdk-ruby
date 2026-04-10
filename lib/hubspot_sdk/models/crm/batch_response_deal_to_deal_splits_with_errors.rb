@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class BatchResponseDealToDealSplitsWithErrors < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseDealToDealSplitsWithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   The timestamp indicating when the batch operation was completed, in date-time
         #   format.
@@ -15,8 +15,8 @@ module HubspotSDK
         #   An array of deal-to-deal split objects representing the results of the batch
         #   operation.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::DealToDealSplits>]
-        required :results, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::DealToDealSplits] }
+        #   @return [Array<HubSpotSDK::Models::Crm::DealToDealSplits>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::DealToDealSplits] }
 
         # @!attribute started_at
         #   The timestamp indicating when the batch operation started, in date-time format.
@@ -28,22 +28,22 @@ module HubspotSDK
         #   The current status of the batch operation, with possible values: CANCELED,
         #   COMPLETE, PENDING, PROCESSING.
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors::Status]
-        required :status, enum: -> { HubspotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors::Status]
+        required :status, enum: -> { HubSpotSDK::Crm::BatchResponseDealToDealSplitsWithErrors::Status }
 
         # @!attribute errors
         #   An array of error objects detailing the errors that occurred during the batch
         #   operation.
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   A map of link names to associated URIs for additional resources or
         #   documentation.
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The total number of errors encountered during the batch operation.
@@ -60,18 +60,18 @@ module HubspotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors} for more
+        #   {HubSpotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors} for more
         #   details.
         #
         #   @param completed_at [Time] The timestamp indicating when the batch operation was completed, in date-time fo
         #
-        #   @param results [Array<HubspotSDK::Models::Crm::DealToDealSplits>] An array of deal-to-deal split objects representing the results of the batch ope
+        #   @param results [Array<HubSpotSDK::Models::Crm::DealToDealSplits>] An array of deal-to-deal split objects representing the results of the batch ope
         #
         #   @param started_at [Time] The timestamp indicating when the batch operation started, in date-time format.
         #
-        #   @param status [Symbol, HubspotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors::Status] The current status of the batch operation, with possible values: CANCELED, COMPL
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>] An array of error objects detailing the errors that occurred during the batch op
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of error objects detailing the errors that occurred during the batch op
         #
         #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs for additional resources or documentation
         #
@@ -82,9 +82,9 @@ module HubspotSDK
         # The current status of the batch operation, with possible values: CANCELED,
         # COMPLETE, PENDING, PROCESSING.
         #
-        # @see HubspotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors#status
+        # @see HubSpotSDK::Models::Crm::BatchResponseDealToDealSplitsWithErrors#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

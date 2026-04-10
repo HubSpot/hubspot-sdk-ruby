@@ -1,45 +1,45 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type ranged_time_operation =
         {
           include_objects_with_no_value_set: bool,
-          lower_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
-          lower_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
+          lower_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
+          lower_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedTimeOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedTimeOperation::operator,
           operator_name: String,
-          property_parser: HubspotSDK::Models::Events::RangedTimeOperation::property_parser,
-          property_type: HubspotSDK::Models::Events::RangedTimeOperation::property_type,
+          property_parser: HubSpotSDK::Models::Events::RangedTimeOperation::property_parser,
+          property_type: HubSpotSDK::Models::Events::RangedTimeOperation::property_type,
           type: String,
-          upper_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
-          upper_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
+          upper_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
+          upper_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
           default_value: String,
           render_spec: String
         }
 
-      class RangedTimeOperation < HubspotSDK::Internal::Type::BaseModel
+      class RangedTimeOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
-        attr_accessor lower_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior
+        attr_accessor lower_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior
 
-        attr_accessor lower_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point
+        attr_accessor lower_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::RangedTimeOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::RangedTimeOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_parser: HubspotSDK::Models::Events::RangedTimeOperation::property_parser
+        attr_accessor property_parser: HubSpotSDK::Models::Events::RangedTimeOperation::property_parser
 
-        attr_accessor property_type: HubspotSDK::Models::Events::RangedTimeOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::RangedTimeOperation::property_type
 
         attr_accessor type: String
 
-        attr_accessor upper_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior
+        attr_accessor upper_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior
 
-        attr_accessor upper_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point
+        attr_accessor upper_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point
 
         attr_reader default_value: String?
 
@@ -51,32 +51,32 @@ module HubspotSDK
 
         def initialize: (
           include_objects_with_no_value_set: bool,
-          lower_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
-          lower_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
+          lower_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
+          lower_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedTimeOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedTimeOperation::operator,
           operator_name: String,
-          property_parser: HubspotSDK::Models::Events::RangedTimeOperation::property_parser,
-          property_type: HubspotSDK::Models::Events::RangedTimeOperation::property_type,
+          property_parser: HubSpotSDK::Models::Events::RangedTimeOperation::property_parser,
+          property_type: HubSpotSDK::Models::Events::RangedTimeOperation::property_type,
           type: String,
-          upper_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
-          upper_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
+          upper_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
+          upper_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
           ?default_value: String,
           ?render_spec: String
         ) -> void
 
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
-          lower_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
-          lower_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
+          lower_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior,
+          lower_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::RangedTimeOperation::operator,
+          operator: HubSpotSDK::Models::Events::RangedTimeOperation::operator,
           operator_name: String,
-          property_parser: HubspotSDK::Models::Events::RangedTimeOperation::property_parser,
-          property_type: HubspotSDK::Models::Events::RangedTimeOperation::property_type,
+          property_parser: HubSpotSDK::Models::Events::RangedTimeOperation::property_parser,
+          property_type: HubSpotSDK::Models::Events::RangedTimeOperation::property_type,
           type: String,
-          upper_bound_endpoint_behavior: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
-          upper_bound_time_point: HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
+          upper_bound_endpoint_behavior: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior,
+          upper_bound_time_point: HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point,
           default_value: String,
           render_spec: String
         }
@@ -84,34 +84,34 @@ module HubspotSDK
         type lower_bound_endpoint_behavior = :EXCLUSIVE | :INCLUSIVE
 
         module LowerBoundEndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EXCLUSIVE: :EXCLUSIVE
           INCLUSIVE: :INCLUSIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_endpoint_behavior]
         end
 
         type lower_bound_time_point =
-          HubspotSDK::Events::DatePoint
-          | HubspotSDK::Events::IndexedTimePoint
-          | HubspotSDK::Events::PropertyReferencedTime
+          HubSpotSDK::Events::DatePoint
+          | HubSpotSDK::Events::IndexedTimePoint
+          | HubSpotSDK::Events::PropertyReferencedTime
 
         module LowerBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::lower_bound_time_point]
         end
 
         type operator = :IS_BETWEEN | :IS_NOT_BETWEEN
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           IS_BETWEEN: :IS_BETWEEN
           IS_NOT_BETWEEN: :IS_NOT_BETWEEN
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::operator]
         end
 
         type property_parser =
@@ -122,7 +122,7 @@ module HubspotSDK
           | :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
         module PropertyParser
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ANNIVERSARY: :ANNIVERSARY
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION: :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION
@@ -130,39 +130,39 @@ module HubspotSDK
           VALUE: :VALUE
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION: :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::property_parser]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::property_parser]
         end
 
         type property_type = :rangedtime
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           RANGEDTIME: :rangedtime
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::property_type]
         end
 
         type upper_bound_endpoint_behavior = :EXCLUSIVE | :INCLUSIVE
 
         module UpperBoundEndpointBehavior
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           EXCLUSIVE: :EXCLUSIVE
           INCLUSIVE: :INCLUSIVE
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_endpoint_behavior]
         end
 
         type upper_bound_time_point =
-          HubspotSDK::Events::DatePoint
-          | HubspotSDK::Events::IndexedTimePoint
-          | HubspotSDK::Events::PropertyReferencedTime
+          HubSpotSDK::Events::DatePoint
+          | HubSpotSDK::Events::IndexedTimePoint
+          | HubSpotSDK::Events::PropertyReferencedTime
 
         module UpperBoundTimePoint
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
-          def self?.variants: -> ::Array[HubspotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point]
+          def self?.variants: -> ::Array[HubSpotSDK::Models::Events::RangedTimeOperation::upper_bound_time_point]
         end
       end
     end

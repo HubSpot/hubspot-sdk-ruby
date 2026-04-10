@@ -1,32 +1,32 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       type collection_response_with_total_domain =
         {
-          results: ::Array[HubspotSDK::Cms::Domain],
+          results: ::Array[HubSpotSDK::Cms::Domain],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubSpotSDK::Paging
         }
 
-      class CollectionResponseWithTotalDomain < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Cms::Domain]
+      class CollectionResponseWithTotalDomain < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Cms::Domain]
 
         attr_accessor total: Integer
 
-        attr_reader paging: HubspotSDK::Paging?
+        attr_reader paging: HubSpotSDK::Paging?
 
-        def paging=: (HubspotSDK::Paging) -> HubspotSDK::Paging
+        def paging=: (HubSpotSDK::Paging) -> HubSpotSDK::Paging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Cms::Domain],
+          results: ::Array[HubSpotSDK::Cms::Domain],
           total: Integer,
-          ?paging: HubspotSDK::Paging
+          ?paging: HubSpotSDK::Paging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Cms::Domain],
+          results: ::Array[HubSpotSDK::Cms::Domain],
           total: Integer,
-          paging: HubspotSDK::Paging
+          paging: HubSpotSDK::Paging
         }
       end
     end

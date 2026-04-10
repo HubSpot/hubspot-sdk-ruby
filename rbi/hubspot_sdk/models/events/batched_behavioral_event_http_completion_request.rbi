@@ -1,20 +1,20 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class BatchedBehavioralEventHTTPCompletionRequest < HubspotSDK::Internal::Type::BaseModel
+      class BatchedBehavioralEventHTTPCompletionRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::BatchedBehavioralEventHTTPCompletionRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::BatchedBehavioralEventHTTPCompletionRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Events::BehavioralEventHTTPCompletionRequest]
+            T::Array[HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest]
           )
         end
         attr_accessor :inputs
@@ -23,7 +23,7 @@ module HubspotSDK
           params(
             inputs:
               T::Array[
-                HubspotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
+                HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -35,7 +35,7 @@ module HubspotSDK
             {
               inputs:
                 T::Array[
-                  HubspotSDK::Events::BehavioralEventHTTPCompletionRequest
+                  HubSpotSDK::Events::BehavioralEventHTTPCompletionRequest
                 ]
             }
           )

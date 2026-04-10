@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type import_row_core =
@@ -11,7 +11,7 @@ module HubspotSDK
           page_name: String
         }
 
-      class ImportRowCore < HubspotSDK::Internal::Type::BaseModel
+      class ImportRowCore < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor additional_row_data: ::Array[String]
 
         attr_accessor contains_encrypted_properties: bool

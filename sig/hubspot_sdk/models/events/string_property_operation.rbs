@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type string_property_operation =
         {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::StringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::StringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::StringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::StringPropertyOperation::property_type,
           value: String,
           default_value: String,
           render_spec: String
         }
 
-      class StringPropertyOperation < HubspotSDK::Internal::Type::BaseModel
+      class StringPropertyOperation < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor include_objects_with_no_value_set: bool
 
         attr_accessor operation_type: String
 
-        attr_accessor operator: HubspotSDK::Models::Events::StringPropertyOperation::operator
+        attr_accessor operator: HubSpotSDK::Models::Events::StringPropertyOperation::operator
 
         attr_accessor operator_name: String
 
-        attr_accessor property_type: HubspotSDK::Models::Events::StringPropertyOperation::property_type
+        attr_accessor property_type: HubSpotSDK::Models::Events::StringPropertyOperation::property_type
 
         attr_accessor value: String
 
@@ -37,9 +37,9 @@ module HubspotSDK
         def initialize: (
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::StringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::StringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::StringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::StringPropertyOperation::property_type,
           value: String,
           ?default_value: String,
           ?render_spec: String
@@ -48,9 +48,9 @@ module HubspotSDK
         def to_hash: -> {
           include_objects_with_no_value_set: bool,
           operation_type: String,
-          operator: HubspotSDK::Models::Events::StringPropertyOperation::operator,
+          operator: HubSpotSDK::Models::Events::StringPropertyOperation::operator,
           operator_name: String,
-          property_type: HubspotSDK::Models::Events::StringPropertyOperation::property_type,
+          property_type: HubSpotSDK::Models::Events::StringPropertyOperation::property_type,
           value: String,
           default_value: String,
           render_spec: String
@@ -69,7 +69,7 @@ module HubspotSDK
           | :STARTS_WITH
 
         module Operator
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CONTAINS: :CONTAINS
           DOES_NOT_CONTAIN: :DOES_NOT_CONTAIN
@@ -82,17 +82,17 @@ module HubspotSDK
           IS_NOT_EQUAL_TO: :IS_NOT_EQUAL_TO
           STARTS_WITH: :STARTS_WITH
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::StringPropertyOperation::operator]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::StringPropertyOperation::operator]
         end
 
         type property_type = :string
 
         module PropertyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           STRING: :string
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::StringPropertyOperation::property_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::StringPropertyOperation::property_type]
         end
       end
     end

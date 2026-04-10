@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
-        # @return [HubspotSDK::Resources::Marketing::Campaigns::Assets]
+        # @return [HubSpotSDK::Resources::Marketing::Campaigns::Assets]
         attr_reader :assets
 
-        # @return [HubspotSDK::Resources::Marketing::Campaigns::Batch]
+        # @return [HubSpotSDK::Resources::Marketing::Campaigns::Batch]
         attr_reader :batch
 
-        # @return [HubspotSDK::Resources::Marketing::Campaigns::Budget]
+        # @return [HubSpotSDK::Resources::Marketing::Campaigns::Budget]
         attr_reader :budget
 
-        # @return [HubspotSDK::Resources::Marketing::Campaigns::Metrics]
+        # @return [HubSpotSDK::Resources::Marketing::Campaigns::Metrics]
         attr_reader :metrics
 
-        # @return [HubspotSDK::Resources::Marketing::Campaigns::Spend]
+        # @return [HubSpotSDK::Resources::Marketing::Campaigns::Spend]
         attr_reader :spend
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::CampaignCreateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::CampaignCreateParams} for more details.
         #
         # Create a campaign with the specified properties and receive a copy of the
         # campaign object, including its ID. Note that the 'hs_goal' property is
@@ -30,24 +30,24 @@ module HubspotSDK
         #
         # @param properties [Hash{Symbol=>String}] A collection of key-value pairs representing the properties of the campaign. Eac
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicCampaign]
+        # @return [HubSpotSDK::Models::Marketing::PublicCampaign]
         #
-        # @see HubspotSDK::Models::Marketing::CampaignCreateParams
+        # @see HubSpotSDK::Models::Marketing::CampaignCreateParams
         def create(params)
-          parsed, options = HubspotSDK::Marketing::CampaignCreateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::CampaignCreateParams.dump_request(params)
           @client.request(
             method: :post,
             path: "marketing/campaigns/2026-03",
             body: parsed,
-            model: HubspotSDK::Marketing::PublicCampaign,
+            model: HubSpotSDK::Marketing::PublicCampaign,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::CampaignUpdateParams} for more details.
+        # {HubSpotSDK::Models::Marketing::CampaignUpdateParams} for more details.
         #
         # Perform a partial update of a campaign identified by the specified campaignGuid.
         # Provided property values will be overwritten. Read-only and non-existent
@@ -60,24 +60,24 @@ module HubspotSDK
         #
         # @param properties [Hash{Symbol=>String}] A collection of key-value pairs representing the properties of the campaign. Eac
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicCampaign]
+        # @return [HubSpotSDK::Models::Marketing::PublicCampaign]
         #
-        # @see HubspotSDK::Models::Marketing::CampaignUpdateParams
+        # @see HubSpotSDK::Models::Marketing::CampaignUpdateParams
         def update(campaign_guid, params)
-          parsed, options = HubspotSDK::Marketing::CampaignUpdateParams.dump_request(params)
+          parsed, options = HubSpotSDK::Marketing::CampaignUpdateParams.dump_request(params)
           @client.request(
             method: :patch,
             path: ["marketing/campaigns/2026-03/%1$s", campaign_guid],
             body: parsed,
-            model: HubspotSDK::Marketing::PublicCampaign,
+            model: HubSpotSDK::Marketing::PublicCampaign,
             options: options
           )
         end
 
         # Some parameter documentations has been truncated, see
-        # {HubspotSDK::Models::Marketing::CampaignListParams} for more details.
+        # {HubSpotSDK::Models::Marketing::CampaignListParams} for more details.
         #
         # Retrieve a paginated list of campaigns from your HubSpot account. This endpoint
         # allows you to specify sorting, pagination, and filtering options to tailor the
@@ -95,20 +95,20 @@ module HubspotSDK
         #
         # @param sort [String]
         #
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Internal::Page<HubspotSDK::Models::Marketing::PublicCampaign>]
+        # @return [HubSpotSDK::Internal::Page<HubSpotSDK::Models::Marketing::PublicCampaign>]
         #
-        # @see HubspotSDK::Models::Marketing::CampaignListParams
+        # @see HubSpotSDK::Models::Marketing::CampaignListParams
         def list(params = {})
-          parsed, options = HubspotSDK::Marketing::CampaignListParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::CampaignListParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: "marketing/campaigns/2026-03",
             query: query,
-            page: HubspotSDK::Internal::Page,
-            model: HubspotSDK::Marketing::PublicCampaign,
+            page: HubSpotSDK::Internal::Page,
+            model: HubSpotSDK::Marketing::PublicCampaign,
             options: options
           )
         end
@@ -120,11 +120,11 @@ module HubspotSDK
         # @overload delete(campaign_guid, request_options: {})
         #
         # @param campaign_guid [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
         #
-        # @see HubspotSDK::Models::Marketing::CampaignDeleteParams
+        # @see HubSpotSDK::Models::Marketing::CampaignDeleteParams
         def delete(campaign_guid, params = {})
           @client.request(
             method: :delete,
@@ -146,33 +146,33 @@ module HubspotSDK
         # @param end_date [String]
         # @param properties [Array<String>]
         # @param start_date [String]
-        # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubspotSDK::Models::Marketing::PublicCampaignWithAssets]
+        # @return [HubSpotSDK::Models::Marketing::PublicCampaignWithAssets]
         #
-        # @see HubspotSDK::Models::Marketing::CampaignGetParams
+        # @see HubSpotSDK::Models::Marketing::CampaignGetParams
         def get(campaign_guid, params = {})
-          parsed, options = HubspotSDK::Marketing::CampaignGetParams.dump_request(params)
-          query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+          parsed, options = HubSpotSDK::Marketing::CampaignGetParams.dump_request(params)
+          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
           @client.request(
             method: :get,
             path: ["marketing/campaigns/2026-03/%1$s", campaign_guid],
             query: query.transform_keys(end_date: "endDate", start_date: "startDate"),
-            model: HubspotSDK::Marketing::PublicCampaignWithAssets,
+            model: HubSpotSDK::Marketing::PublicCampaignWithAssets,
             options: options
           )
         end
 
         # @api private
         #
-        # @param client [HubspotSDK::Client]
+        # @param client [HubSpotSDK::Client]
         def initialize(client:)
           @client = client
-          @assets = HubspotSDK::Resources::Marketing::Campaigns::Assets.new(client: client)
-          @batch = HubspotSDK::Resources::Marketing::Campaigns::Batch.new(client: client)
-          @budget = HubspotSDK::Resources::Marketing::Campaigns::Budget.new(client: client)
-          @metrics = HubspotSDK::Resources::Marketing::Campaigns::Metrics.new(client: client)
-          @spend = HubspotSDK::Resources::Marketing::Campaigns::Spend.new(client: client)
+          @assets = HubSpotSDK::Resources::Marketing::Campaigns::Assets.new(client: client)
+          @batch = HubSpotSDK::Resources::Marketing::Campaigns::Batch.new(client: client)
+          @budget = HubSpotSDK::Resources::Marketing::Campaigns::Budget.new(client: client)
+          @metrics = HubSpotSDK::Resources::Marketing::Campaigns::Metrics.new(client: client)
+          @spend = HubSpotSDK::Resources::Marketing::Campaigns::Spend.new(client: client)
         end
       end
     end

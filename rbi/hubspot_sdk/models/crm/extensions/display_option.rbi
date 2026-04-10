@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class DisplayOption < HubspotSDK::Internal::Type::BaseModel
+        class DisplayOption < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::DisplayOption,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::DisplayOption,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -23,7 +23,7 @@ module HubspotSDK
 
           # The type of status.
           sig do
-            returns(HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol)
+            returns(HubSpotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol)
           end
           attr_accessor :type
 
@@ -31,7 +31,7 @@ module HubspotSDK
             params(
               label: String,
               name: String,
-              type: HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
+              type: HubSpotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
             ).returns(T.attached_class)
           end
           def self.new(
@@ -49,7 +49,7 @@ module HubspotSDK
               {
                 label: String,
                 name: String,
-                type: HubspotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
+                type: HubSpotSDK::Crm::Extensions::DisplayOption::Type::OrSymbol
               }
             )
           end
@@ -58,44 +58,44 @@ module HubspotSDK
 
           # The type of status.
           module Type
-            extend HubspotSDK::Internal::Type::Enum
+            extend HubSpotSDK::Internal::Type::Enum
 
             TaggedSymbol =
               T.type_alias do
-                T.all(Symbol, HubspotSDK::Crm::Extensions::DisplayOption::Type)
+                T.all(Symbol, HubSpotSDK::Crm::Extensions::DisplayOption::Type)
               end
             OrSymbol = T.type_alias { T.any(Symbol, String) }
 
             DANGER =
               T.let(
                 :DANGER,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             DEFAULT =
               T.let(
                 :DEFAULT,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             INFO =
               T.let(
                 :INFO,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             SUCCESS =
               T.let(
                 :SUCCESS,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
             WARNING =
               T.let(
                 :WARNING,
-                HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
               )
 
             sig do
               override.returns(
                 T::Array[
-                  HubspotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
+                  HubSpotSDK::Crm::Extensions::DisplayOption::Type::TaggedSymbol
                 ]
               )
             end

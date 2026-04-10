@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      # @see HubspotSDK::Resources::Events::Occurrences#list
-      class ExternalUnifiedEvent < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Events::Occurrences#list
+      class ExternalUnifiedEvent < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   A unique identifier for the event.
         #
@@ -42,11 +42,11 @@ module HubspotSDK
         #   the event type definition.
         #
         #   @return [Hash{Symbol=>String}]
-        required :properties, HubspotSDK::Internal::Type::HashOf[String]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!method initialize(id:, event_type:, object_id_:, object_type:, occurred_at:, properties:)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Events::ExternalUnifiedEvent} for more details.
+        #   {HubSpotSDK::Models::Events::ExternalUnifiedEvent} for more details.
         #
         #   @param id [String] A unique identifier for the event.
         #

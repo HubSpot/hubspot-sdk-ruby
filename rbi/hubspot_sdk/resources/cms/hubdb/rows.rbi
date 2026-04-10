@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Cms
       class Hubdb
@@ -16,8 +16,8 @@ module HubspotSDK
               values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def create(
             table_id_or_name,
@@ -56,9 +56,9 @@ module HubspotSDK
               offset: Integer,
               properties: T::Array[String],
               sort: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3::Variants
+              HubSpotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3::Variants
             )
           end
           def list(
@@ -85,10 +85,10 @@ module HubspotSDK
               table_id_or_name: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Cms::HubDBTableRowBatchCloneRequest::OrHash
+                  HubSpotSDK::Cms::HubDBTableRowBatchCloneRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def clone_batch(table_id_or_name, inputs:, request_options: {})
           end
@@ -99,8 +99,8 @@ module HubspotSDK
               row_id: String,
               table_id_or_name: String,
               name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def clone_draft(
             # Path param
@@ -119,9 +119,9 @@ module HubspotSDK
           sig do
             params(
               table_id_or_name: String,
-              inputs: T::Array[HubspotSDK::Cms::HubDBTableRowV3Request::OrHash],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              inputs: T::Array[HubSpotSDK::Cms::HubDBTableRowV3Request::OrHash],
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def create_batch(table_id_or_name, inputs:, request_options: {})
           end
@@ -131,7 +131,7 @@ module HubspotSDK
             params(
               row_id: String,
               table_id_or_name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_draft(row_id, table_id_or_name:, request_options: {})
@@ -145,8 +145,8 @@ module HubspotSDK
               row_id: String,
               table_id_or_name: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def get(
             # Path param
@@ -166,8 +166,8 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def get_batch(
             table_id_or_name,
@@ -183,8 +183,8 @@ module HubspotSDK
               row_id: String,
               table_id_or_name: String,
               archived: T::Boolean,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def get_draft(
             # Path param
@@ -203,8 +203,8 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def get_draft_batch(
             table_id_or_name,
@@ -220,7 +220,7 @@ module HubspotSDK
             params(
               table_id_or_name: String,
               inputs: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def purge_batch(
@@ -240,10 +240,10 @@ module HubspotSDK
               table_id_or_name: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
+                  HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def replace_batch(table_id_or_name, inputs:, request_options: {})
           end
@@ -261,8 +261,8 @@ module HubspotSDK
               values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def replace_draft(
             # Path param
@@ -294,10 +294,10 @@ module HubspotSDK
               table_id_or_name: String,
               inputs:
                 T::Array[
-                  HubspotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
+                  HubSpotSDK::Cms::HubDBTableRowV3BatchUpdateRequest::OrHash
                 ],
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::BatchResponseHubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::BatchResponseHubDBTableRowV3)
           end
           def update_batch(table_id_or_name, inputs:, request_options: {})
           end
@@ -315,8 +315,8 @@ module HubspotSDK
               values: T::Hash[Symbol, T.anything],
               name: String,
               path: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Cms::HubDBTableRowV3)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Cms::HubDBTableRowV3)
           end
           def update_draft(
             # Path param
@@ -340,7 +340,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

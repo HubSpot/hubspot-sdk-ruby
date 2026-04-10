@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -21,13 +21,13 @@ module HubspotSDK
           # @param asset_id [String]
           # @param campaign_guid [String]
           # @param asset_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::AssetUpdateParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::AssetUpdateParams
           def update(asset_id, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::AssetUpdateParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::AssetUpdateParams.dump_request(params)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -50,7 +50,7 @@ module HubspotSDK
           end
 
           # Some parameter documentations has been truncated, see
-          # {HubspotSDK::Models::Marketing::Campaigns::AssetListParams} for more details.
+          # {HubSpotSDK::Models::Marketing::Campaigns::AssetListParams} for more details.
           #
           # This endpoint lists all assets of the campaign by asset type. The assetType
           # parameter is required, and each request can only fetch assets of a single type.
@@ -71,14 +71,14 @@ module HubspotSDK
           #
           # @param start_date [String] Query param
           #
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubspotSDK::Models::Marketing::CollectionResponsePublicCampaignAssetForwardPaging]
+          # @return [HubSpotSDK::Models::Marketing::CollectionResponsePublicCampaignAssetForwardPaging]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::AssetListParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::AssetListParams
           def list(asset_type, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::AssetListParams.dump_request(params)
-            query = HubspotSDK::Internal::Util.encode_query_params(parsed)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::AssetListParams.dump_request(params)
+            query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -87,7 +87,7 @@ module HubspotSDK
               method: :get,
               path: ["marketing/campaigns/2026-03/%1$s/assets/%2$s", campaign_guid, asset_type],
               query: query.transform_keys(end_date: "endDate", start_date: "startDate"),
-              model: HubspotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging,
+              model: HubSpotSDK::Marketing::CollectionResponsePublicCampaignAssetForwardPaging,
               options: options
             )
           end
@@ -108,13 +108,13 @@ module HubspotSDK
           # @param asset_id [String]
           # @param campaign_guid [String]
           # @param asset_type [String]
-          # @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
           #
-          # @see HubspotSDK::Models::Marketing::Campaigns::AssetDeleteParams
+          # @see HubSpotSDK::Models::Marketing::Campaigns::AssetDeleteParams
           def delete(asset_id, params)
-            parsed, options = HubspotSDK::Marketing::Campaigns::AssetDeleteParams.dump_request(params)
+            parsed, options = HubSpotSDK::Marketing::Campaigns::AssetDeleteParams.dump_request(params)
             campaign_guid =
               parsed.delete(:campaign_guid) do
                 raise ArgumentError.new("missing required path argument #{_1}")
@@ -138,7 +138,7 @@ module HubspotSDK
 
           # @api private
           #
-          # @param client [HubspotSDK::Client]
+          # @param client [HubSpotSDK::Client]
           def initialize(client:)
             @client = client
           end

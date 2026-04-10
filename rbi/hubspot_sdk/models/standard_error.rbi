@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class StandardError < HubspotSDK::Internal::Type::BaseModel
+    class StandardError < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::StandardError, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::StandardError, HubSpotSDK::Internal::AnyHash)
         end
 
       # Error category.
@@ -17,7 +17,7 @@ module HubspotSDK
       attr_accessor :context
 
       # List of error details.
-      sig { returns(T::Array[HubspotSDK::ErrorDetail]) }
+      sig { returns(T::Array[HubSpotSDK::ErrorDetail]) }
       attr_accessor :errors
 
       # Error links.
@@ -51,7 +51,7 @@ module HubspotSDK
         params(
           category: String,
           context: T::Hash[Symbol, T::Array[String]],
-          errors: T::Array[HubspotSDK::ErrorDetail::OrHash],
+          errors: T::Array[HubSpotSDK::ErrorDetail::OrHash],
           links: T::Hash[Symbol, String],
           message: String,
           status: String,
@@ -84,7 +84,7 @@ module HubspotSDK
           {
             category: String,
             context: T::Hash[Symbol, T::Array[String]],
-            errors: T::Array[HubspotSDK::ErrorDetail],
+            errors: T::Array[HubSpotSDK::ErrorDetail],
             links: T::Hash[Symbol, String],
             message: String,
             status: String,

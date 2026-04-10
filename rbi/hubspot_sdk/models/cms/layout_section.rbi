@@ -1,15 +1,15 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class LayoutSection < HubspotSDK::Internal::Type::BaseModel
+      class LayoutSection < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Cms::LayoutSection, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Cms::LayoutSection, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(T::Array[HubspotSDK::Cms::LayoutSection]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::LayoutSection]) }
         attr_accessor :cells
 
         # The CSS class applied to the layout section.
@@ -36,18 +36,18 @@ module HubspotSDK
         sig { returns(T::Hash[Symbol, T.anything]) }
         attr_accessor :params
 
-        sig { returns(T::Array[HubspotSDK::Cms::RowMetaData]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::RowMetaData]) }
         attr_accessor :row_meta_data
 
         sig do
-          returns(T::Array[T::Hash[Symbol, HubspotSDK::Cms::LayoutSection]])
+          returns(T::Array[T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection]])
         end
         attr_accessor :rows
 
-        sig { returns(HubspotSDK::Cms::Styles) }
+        sig { returns(HubSpotSDK::Cms::Styles) }
         attr_reader :styles
 
-        sig { params(styles: HubspotSDK::Cms::Styles::OrHash).void }
+        sig { params(styles: HubSpotSDK::Cms::Styles::OrHash).void }
         attr_writer :styles
 
         # The type of the layout section.
@@ -64,16 +64,16 @@ module HubspotSDK
 
         sig do
           params(
-            cells: T::Array[HubspotSDK::Cms::LayoutSection],
+            cells: T::Array[HubSpotSDK::Cms::LayoutSection],
             css_class: String,
             css_id: String,
             css_style: String,
             label: String,
             name: String,
             params: T::Hash[Symbol, T.anything],
-            row_meta_data: T::Array[HubspotSDK::Cms::RowMetaData::OrHash],
-            rows: T::Array[T::Hash[Symbol, HubspotSDK::Cms::LayoutSection]],
-            styles: HubspotSDK::Cms::Styles::OrHash,
+            row_meta_data: T::Array[HubSpotSDK::Cms::RowMetaData::OrHash],
+            rows: T::Array[T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection]],
+            styles: HubSpotSDK::Cms::Styles::OrHash,
             type: String,
             w: Integer,
             x: Integer
@@ -108,16 +108,16 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              cells: T::Array[HubspotSDK::Cms::LayoutSection],
+              cells: T::Array[HubSpotSDK::Cms::LayoutSection],
               css_class: String,
               css_id: String,
               css_style: String,
               label: String,
               name: String,
               params: T::Hash[Symbol, T.anything],
-              row_meta_data: T::Array[HubspotSDK::Cms::RowMetaData],
-              rows: T::Array[T::Hash[Symbol, HubspotSDK::Cms::LayoutSection]],
-              styles: HubspotSDK::Cms::Styles,
+              row_meta_data: T::Array[HubSpotSDK::Cms::RowMetaData],
+              rows: T::Array[T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection]],
+              styles: HubSpotSDK::Cms::Styles,
               type: String,
               w: Integer,
               x: Integer

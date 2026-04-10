@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalLinkAvailability < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkAvailability < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalLinkAvailability,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalLinkAvailability,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -21,7 +21,7 @@ module HubspotSDK
           returns(
             T::Hash[
               Symbol,
-              HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration
+              HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration
             ]
           )
         end
@@ -33,7 +33,7 @@ module HubspotSDK
             link_availability_by_duration:
               T::Hash[
                 Symbol,
-                HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration::OrHash
+                HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -52,7 +52,7 @@ module HubspotSDK
               link_availability_by_duration:
                 T::Hash[
                   Symbol,
-                  HubspotSDK::Scheduler::ExternalLinkAvailabilityForDuration
+                  HubSpotSDK::Scheduler::ExternalLinkAvailabilityForDuration
                 ]
             }
           )

@@ -1,27 +1,27 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
       type collection_response_public_action_definition_forward_paging =
         {
-          results: ::Array[HubspotSDK::Automation::PublicActionDefinition],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Automation::PublicActionDefinition],
+          paging: HubSpotSDK::ForwardPaging
         }
 
-      class CollectionResponsePublicActionDefinitionForwardPaging < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubspotSDK::Automation::PublicActionDefinition]
+      class CollectionResponsePublicActionDefinitionForwardPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::Automation::PublicActionDefinition]
 
-        attr_reader paging: HubspotSDK::ForwardPaging?
+        attr_reader paging: HubSpotSDK::ForwardPaging?
 
-        def paging=: (HubspotSDK::ForwardPaging) -> HubspotSDK::ForwardPaging
+        def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubspotSDK::Automation::PublicActionDefinition],
-          ?paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Automation::PublicActionDefinition],
+          ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubspotSDK::Automation::PublicActionDefinition],
-          paging: HubspotSDK::ForwardPaging
+          results: ::Array[HubSpotSDK::Automation::PublicActionDefinition],
+          paging: HubSpotSDK::ForwardPaging
         }
       end
     end

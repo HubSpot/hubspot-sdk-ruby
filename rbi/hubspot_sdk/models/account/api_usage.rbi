@@ -1,12 +1,12 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Account
-      class APIUsage < HubspotSDK::Internal::Type::BaseModel
+      class APIUsage < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
-            T.any(HubspotSDK::Account::APIUsage, HubspotSDK::Internal::AnyHash)
+            T.any(HubSpotSDK::Account::APIUsage, HubSpotSDK::Internal::AnyHash)
           end
 
         # Indicates when the cache was last updated.
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # Status of fetching the information, including if the data came from the cache.
         sig do
-          returns(HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol)
+          returns(HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol)
         end
         attr_accessor :fetch_status
 
@@ -42,7 +42,7 @@ module HubspotSDK
           params(
             collected_at: Time,
             current_usage: Integer,
-            fetch_status: HubspotSDK::Account::APIUsage::FetchStatus::OrSymbol,
+            fetch_status: HubSpotSDK::Account::APIUsage::FetchStatus::OrSymbol,
             name: String,
             usage_limit: Integer,
             resets_at: Time
@@ -70,7 +70,7 @@ module HubspotSDK
               collected_at: Time,
               current_usage: Integer,
               fetch_status:
-                HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol,
+                HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol,
               name: String,
               usage_limit: Integer,
               resets_at: Time
@@ -82,43 +82,43 @@ module HubspotSDK
 
         # Status of fetching the information, including if the data came from the cache.
         module FetchStatus
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Account::APIUsage::FetchStatus)
+              T.all(Symbol, HubSpotSDK::Account::APIUsage::FetchStatus)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           CACHED =
             T.let(
               :CACHED,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+              HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
           FAILURE =
             T.let(
               :FAILURE,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+              HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
           NOTFOUND =
             T.let(
               :NOTFOUND,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+              HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
           SUCCESS =
             T.let(
               :SUCCESS,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+              HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
           TIMEOUT =
             T.let(
               :TIMEOUT,
-              HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
+              HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol
             )
 
           sig do
             override.returns(
-              T::Array[HubspotSDK::Account::APIUsage::FetchStatus::TaggedSymbol]
+              T::Array[HubSpotSDK::Account::APIUsage::FetchStatus::TaggedSymbol]
             )
           end
           def self.values

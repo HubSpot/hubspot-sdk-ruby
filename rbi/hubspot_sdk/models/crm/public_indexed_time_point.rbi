@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicIndexedTimePoint < HubspotSDK::Internal::Type::BaseModel
+      class PublicIndexedTimePoint < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicIndexedTimePoint,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicIndexedTimePoint,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,14 +16,14 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicNowReference,
-              HubspotSDK::Crm::PublicTodayReference,
-              HubspotSDK::Crm::PublicWeekReference,
-              HubspotSDK::Crm::PublicFiscalQuarterReference,
-              HubspotSDK::Crm::PublicFiscalYearReference,
-              HubspotSDK::Crm::PublicYearReference,
-              HubspotSDK::Crm::PublicQuarterReference,
-              HubspotSDK::Crm::PublicMonthReference
+              HubSpotSDK::Crm::PublicNowReference,
+              HubSpotSDK::Crm::PublicTodayReference,
+              HubSpotSDK::Crm::PublicWeekReference,
+              HubSpotSDK::Crm::PublicFiscalQuarterReference,
+              HubSpotSDK::Crm::PublicFiscalYearReference,
+              HubSpotSDK::Crm::PublicYearReference,
+              HubSpotSDK::Crm::PublicQuarterReference,
+              HubSpotSDK::Crm::PublicMonthReference
             )
           )
         end
@@ -31,7 +31,7 @@ module HubspotSDK
 
         # Defines the type of time (INDEXED).
         sig do
-          returns(HubspotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol)
+          returns(HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol)
         end
         attr_accessor :time_type
 
@@ -40,10 +40,10 @@ module HubspotSDK
         sig { returns(String) }
         attr_accessor :zone_id
 
-        sig { returns(T.nilable(HubspotSDK::Crm::PublicIndexOffset)) }
+        sig { returns(T.nilable(HubSpotSDK::Crm::PublicIndexOffset)) }
         attr_reader :offset
 
-        sig { params(offset: HubspotSDK::Crm::PublicIndexOffset::OrHash).void }
+        sig { params(offset: HubSpotSDK::Crm::PublicIndexOffset::OrHash).void }
         attr_writer :offset
 
         # Specifies the source of the time zone information for the indexed time point
@@ -58,19 +58,19 @@ module HubspotSDK
           params(
             index_reference:
               T.any(
-                HubspotSDK::Crm::PublicNowReference::OrHash,
-                HubspotSDK::Crm::PublicTodayReference::OrHash,
-                HubspotSDK::Crm::PublicWeekReference::OrHash,
-                HubspotSDK::Crm::PublicFiscalQuarterReference::OrHash,
-                HubspotSDK::Crm::PublicFiscalYearReference::OrHash,
-                HubspotSDK::Crm::PublicYearReference::OrHash,
-                HubspotSDK::Crm::PublicQuarterReference::OrHash,
-                HubspotSDK::Crm::PublicMonthReference::OrHash
+                HubSpotSDK::Crm::PublicNowReference::OrHash,
+                HubSpotSDK::Crm::PublicTodayReference::OrHash,
+                HubSpotSDK::Crm::PublicWeekReference::OrHash,
+                HubSpotSDK::Crm::PublicFiscalQuarterReference::OrHash,
+                HubSpotSDK::Crm::PublicFiscalYearReference::OrHash,
+                HubSpotSDK::Crm::PublicYearReference::OrHash,
+                HubSpotSDK::Crm::PublicQuarterReference::OrHash,
+                HubSpotSDK::Crm::PublicMonthReference::OrHash
               ),
             time_type:
-              HubspotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol,
+              HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol,
             zone_id: String,
-            offset: HubspotSDK::Crm::PublicIndexOffset::OrHash,
+            offset: HubSpotSDK::Crm::PublicIndexOffset::OrHash,
             timezone_source: String
           ).returns(T.attached_class)
         end
@@ -94,19 +94,19 @@ module HubspotSDK
             {
               index_reference:
                 T.any(
-                  HubspotSDK::Crm::PublicNowReference,
-                  HubspotSDK::Crm::PublicTodayReference,
-                  HubspotSDK::Crm::PublicWeekReference,
-                  HubspotSDK::Crm::PublicFiscalQuarterReference,
-                  HubspotSDK::Crm::PublicFiscalYearReference,
-                  HubspotSDK::Crm::PublicYearReference,
-                  HubspotSDK::Crm::PublicQuarterReference,
-                  HubspotSDK::Crm::PublicMonthReference
+                  HubSpotSDK::Crm::PublicNowReference,
+                  HubSpotSDK::Crm::PublicTodayReference,
+                  HubSpotSDK::Crm::PublicWeekReference,
+                  HubSpotSDK::Crm::PublicFiscalQuarterReference,
+                  HubSpotSDK::Crm::PublicFiscalYearReference,
+                  HubSpotSDK::Crm::PublicYearReference,
+                  HubSpotSDK::Crm::PublicQuarterReference,
+                  HubSpotSDK::Crm::PublicMonthReference
                 ),
               time_type:
-                HubspotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol,
+                HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType::OrSymbol,
               zone_id: String,
-              offset: HubspotSDK::Crm::PublicIndexOffset,
+              offset: HubSpotSDK::Crm::PublicIndexOffset,
               timezone_source: String
             }
           )
@@ -116,26 +116,26 @@ module HubspotSDK
 
         # Specifies the reference point in time for the indexed time point.
         module IndexReference
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicNowReference,
-                HubspotSDK::Crm::PublicTodayReference,
-                HubspotSDK::Crm::PublicWeekReference,
-                HubspotSDK::Crm::PublicFiscalQuarterReference,
-                HubspotSDK::Crm::PublicFiscalYearReference,
-                HubspotSDK::Crm::PublicYearReference,
-                HubspotSDK::Crm::PublicQuarterReference,
-                HubspotSDK::Crm::PublicMonthReference
+                HubSpotSDK::Crm::PublicNowReference,
+                HubSpotSDK::Crm::PublicTodayReference,
+                HubSpotSDK::Crm::PublicWeekReference,
+                HubSpotSDK::Crm::PublicFiscalQuarterReference,
+                HubSpotSDK::Crm::PublicFiscalYearReference,
+                HubSpotSDK::Crm::PublicYearReference,
+                HubSpotSDK::Crm::PublicQuarterReference,
+                HubSpotSDK::Crm::PublicMonthReference
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicIndexedTimePoint::IndexReference::Variants
+                HubSpotSDK::Crm::PublicIndexedTimePoint::IndexReference::Variants
               ]
             )
           end
@@ -145,24 +145,24 @@ module HubspotSDK
 
         # Defines the type of time (INDEXED).
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
-              T.all(Symbol, HubspotSDK::Crm::PublicIndexedTimePoint::TimeType)
+              T.all(Symbol, HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType)
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
           INDEXED =
             T.let(
               :INDEXED,
-              HubspotSDK::Crm::PublicIndexedTimePoint::TimeType::TaggedSymbol
+              HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicIndexedTimePoint::TimeType::TaggedSymbol
+                HubSpotSDK::Crm::PublicIndexedTimePoint::TimeType::TaggedSymbol
               ]
             )
           end

@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalEmailReminderSchedule < HubspotSDK::Internal::Type::BaseModel
+      class ExternalEmailReminderSchedule < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Scheduler::ExternalReminder]) }
+        sig { returns(T::Array[HubSpotSDK::Scheduler::ExternalReminder]) }
         attr_accessor :reminders
 
         # Whether the invite description should be included in the reminder.
@@ -22,7 +22,7 @@ module HubspotSDK
         sig do
           params(
             reminders:
-              T::Array[HubspotSDK::Scheduler::ExternalReminder::OrHash],
+              T::Array[HubSpotSDK::Scheduler::ExternalReminder::OrHash],
             should_include_invite_description: T::Boolean
           ).returns(T.attached_class)
         end
@@ -36,7 +36,7 @@ module HubspotSDK
         sig do
           override.returns(
             {
-              reminders: T::Array[HubspotSDK::Scheduler::ExternalReminder],
+              reminders: T::Array[HubSpotSDK::Scheduler::ExternalReminder],
               should_include_invite_description: T::Boolean
             }
           )

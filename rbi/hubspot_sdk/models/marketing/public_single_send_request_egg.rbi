@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class PublicSingleSendRequestEgg < HubspotSDK::Internal::Type::BaseModel
+      class PublicSingleSendRequestEgg < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::PublicSingleSendRequestEgg,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::PublicSingleSendRequestEgg,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -34,12 +34,12 @@ module HubspotSDK
         sig { returns(Integer) }
         attr_accessor :email_id
 
-        sig { returns(HubspotSDK::Marketing::PublicSingleSendEmail) }
+        sig { returns(HubSpotSDK::Marketing::PublicSingleSendEmail) }
         attr_reader :message
 
         sig do
           params(
-            message: HubspotSDK::Marketing::PublicSingleSendEmail::OrHash
+            message: HubSpotSDK::Marketing::PublicSingleSendEmail::OrHash
           ).void
         end
         attr_writer :message
@@ -49,7 +49,7 @@ module HubspotSDK
             contact_properties: T::Hash[Symbol, String],
             custom_properties: T::Hash[Symbol, T.anything],
             email_id: Integer,
-            message: HubspotSDK::Marketing::PublicSingleSendEmail::OrHash
+            message: HubSpotSDK::Marketing::PublicSingleSendEmail::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -79,7 +79,7 @@ module HubspotSDK
               contact_properties: T::Hash[Symbol, String],
               custom_properties: T::Hash[Symbol, T.anything],
               email_id: Integer,
-              message: HubspotSDK::Marketing::PublicSingleSendEmail
+              message: HubSpotSDK::Marketing::PublicSingleSendEmail
             }
           )
         end

@@ -2,5 +2,5 @@
 
 require_relative "../test_helper"
 
-class HubspotSDK::Test::Resources::CmsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::CmsTest < HubSpotSDK::Test::ResourceTest
 end

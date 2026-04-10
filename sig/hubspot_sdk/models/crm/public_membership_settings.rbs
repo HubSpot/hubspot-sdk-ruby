@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type public_membership_settings =
         { include_unassigned: bool, membership_team_id: Integer }
 
-      class PublicMembershipSettings < HubspotSDK::Internal::Type::BaseModel
+      class PublicMembershipSettings < HubSpotSDK::Internal::Type::BaseModel
         attr_reader include_unassigned: bool?
 
         def include_unassigned=: (bool) -> bool

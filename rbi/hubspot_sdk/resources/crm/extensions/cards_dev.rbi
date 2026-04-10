@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Crm
       class Extensions
@@ -10,12 +10,12 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::Crm::Extensions::CardFetchBody::OrHash,
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubSpotSDK::Crm::Extensions::CardFetchBody::OrHash,
               title: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def create(
             app_id,
@@ -33,12 +33,12 @@ module HubspotSDK
             params(
               card_id: String,
               app_id: Integer,
-              actions: HubspotSDK::Crm::Extensions::CardActions::OrHash,
-              display_: HubspotSDK::Crm::Extensions::CardDisplayBody::OrHash,
-              fetch: HubspotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
+              actions: HubSpotSDK::Crm::Extensions::CardActions::OrHash,
+              display_: HubSpotSDK::Crm::Extensions::CardDisplayBody::OrHash,
+              fetch: HubSpotSDK::Crm::Extensions::CardFetchBodyPatch::OrHash,
               title: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def update(
             # Path param
@@ -64,7 +64,7 @@ module HubspotSDK
             params(
               card_id: String,
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(card_id, app_id:, request_options: {})
@@ -74,8 +74,8 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::PublicCardListResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::PublicCardListResponse)
           end
           def get(app_id, request_options: {})
           end
@@ -85,8 +85,8 @@ module HubspotSDK
             params(
               card_id: String,
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::PublicCardResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def get_by_id(card_id, app_id:, request_options: {})
           end
@@ -95,8 +95,8 @@ module HubspotSDK
           # details for a card that will be shown to a user. An app should send this in
           # response to the data fetch request.
           sig do
-            params(request_options: HubspotSDK::RequestOptions::OrHash).returns(
-              HubspotSDK::Crm::Extensions::IntegratorCardPayloadResponse
+            params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
+              HubSpotSDK::Crm::Extensions::IntegratorCardPayloadResponse
             )
           end
           def get_sample_response(request_options: {})
@@ -108,8 +108,8 @@ module HubspotSDK
               app_card_id: Integer,
               legacy_crm_card_id: Integer,
               helpdesk_app_card_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Crm::Extensions::CardMigrateViewsResponse)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Crm::Extensions::CardMigrateViewsResponse)
           end
           def migrate_views(
             app_id,
@@ -121,7 +121,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

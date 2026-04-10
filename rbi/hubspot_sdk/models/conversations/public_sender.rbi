@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Conversations
-      class PublicSender < HubspotSDK::Internal::Type::BaseModel
+      class PublicSender < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Conversations::PublicSender,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Conversations::PublicSender,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -20,7 +20,7 @@ module HubspotSDK
 
         sig do
           returns(
-            T.nilable(HubspotSDK::Conversations::PublicDeliveryIdentifier)
+            T.nilable(HubSpotSDK::Conversations::PublicDeliveryIdentifier)
           )
         end
         attr_reader :delivery_identifier
@@ -28,7 +28,7 @@ module HubspotSDK
         sig do
           params(
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash
           ).void
         end
         attr_writer :delivery_identifier
@@ -49,7 +49,7 @@ module HubspotSDK
           params(
             actor_id: String,
             delivery_identifier:
-              HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
+              HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
             name: String,
             sender_field: String
           ).returns(T.attached_class)
@@ -67,7 +67,7 @@ module HubspotSDK
             {
               actor_id: String,
               delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier,
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier,
               name: String,
               sender_field: String
             }

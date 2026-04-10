@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type public_campaign_batch_update_item =
         { id: String, properties: ::Hash[Symbol, String] }
 
-      class PublicCampaignBatchUpdateItem < HubspotSDK::Internal::Type::BaseModel
+      class PublicCampaignBatchUpdateItem < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor properties: ::Hash[Symbol, String]

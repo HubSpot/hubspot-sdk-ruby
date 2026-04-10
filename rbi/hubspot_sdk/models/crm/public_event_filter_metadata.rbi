@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicEventFilterMetadata < HubspotSDK::Internal::Type::BaseModel
+      class PublicEventFilterMetadata < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicEventFilterMetadata,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicEventFilterMetadata,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -16,23 +16,23 @@ module HubspotSDK
         sig do
           returns(
             T.any(
-              HubspotSDK::Crm::PublicBoolPropertyOperation,
-              HubspotSDK::Crm::PublicNumberPropertyOperation,
-              HubspotSDK::Crm::PublicStringPropertyOperation,
-              HubspotSDK::Crm::PublicDateTimePropertyOperation,
-              HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-              HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-              HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-              HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-              HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-              HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-              HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-              HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-              HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-              HubspotSDK::Crm::PublicDatePropertyOperation,
-              HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-              HubspotSDK::Crm::PublicTimePointOperation,
-              HubspotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicBoolPropertyOperation,
+              HubSpotSDK::Crm::PublicNumberPropertyOperation,
+              HubSpotSDK::Crm::PublicStringPropertyOperation,
+              HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+              HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+              HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+              HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+              HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+              HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+              HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+              HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+              HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+              HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+              HubSpotSDK::Crm::PublicDatePropertyOperation,
+              HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+              HubSpotSDK::Crm::PublicTimePointOperation,
+              HubSpotSDK::Crm::PublicRangedTimeOperation
             )
           )
         end
@@ -46,23 +46,23 @@ module HubspotSDK
           params(
             operation:
               T.any(
-                HubspotSDK::Crm::PublicBoolPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicNumberPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicStringPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicDateTimePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation::OrHash,
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRollingDateRangePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation::OrHash,
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicAllPropertyTypesOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedNumberPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicCalendarDatePropertyOperation::OrHash,
-                HubspotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubspotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicBoolPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicNumberPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicStringPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation::OrHash,
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicAllPropertyTypesOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedNumberPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicCalendarDatePropertyOperation::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
               ),
             property: String
           ).returns(T.attached_class)
@@ -80,23 +80,23 @@ module HubspotSDK
             {
               operation:
                 T.any(
-                  HubspotSDK::Crm::PublicBoolPropertyOperation,
-                  HubspotSDK::Crm::PublicNumberPropertyOperation,
-                  HubspotSDK::Crm::PublicStringPropertyOperation,
-                  HubspotSDK::Crm::PublicDateTimePropertyOperation,
-                  HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-                  HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-                  HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-                  HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-                  HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-                  HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-                  HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-                  HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-                  HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-                  HubspotSDK::Crm::PublicDatePropertyOperation,
-                  HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-                  HubspotSDK::Crm::PublicTimePointOperation,
-                  HubspotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicBoolPropertyOperation,
+                  HubSpotSDK::Crm::PublicNumberPropertyOperation,
+                  HubSpotSDK::Crm::PublicStringPropertyOperation,
+                  HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+                  HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+                  HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+                  HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+                  HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+                  HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+                  HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+                  HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+                  HubSpotSDK::Crm::PublicDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+                  HubSpotSDK::Crm::PublicTimePointOperation,
+                  HubSpotSDK::Crm::PublicRangedTimeOperation
                 ),
               property: String
             }
@@ -107,35 +107,35 @@ module HubspotSDK
 
         # Defines the operation to be performed on the property
         module Operation
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           Variants =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::PublicBoolPropertyOperation,
-                HubspotSDK::Crm::PublicNumberPropertyOperation,
-                HubspotSDK::Crm::PublicStringPropertyOperation,
-                HubspotSDK::Crm::PublicDateTimePropertyOperation,
-                HubspotSDK::Crm::PublicRangedDatePropertyOperation,
-                HubspotSDK::Crm::PublicComparativePropertyUpdatedOperation,
-                HubspotSDK::Crm::PublicComparativeDatePropertyOperation,
-                HubspotSDK::Crm::PublicRollingDateRangePropertyOperation,
-                HubspotSDK::Crm::PublicRollingPropertyUpdatedOperation,
-                HubspotSDK::Crm::PublicEnumerationPropertyOperation,
-                HubspotSDK::Crm::PublicAllPropertyTypesOperation,
-                HubspotSDK::Crm::PublicRangedNumberPropertyOperation,
-                HubspotSDK::Crm::PublicMultiStringPropertyOperation,
-                HubspotSDK::Crm::PublicDatePropertyOperation,
-                HubspotSDK::Crm::PublicCalendarDatePropertyOperation,
-                HubspotSDK::Crm::PublicTimePointOperation,
-                HubspotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicBoolPropertyOperation,
+                HubSpotSDK::Crm::PublicNumberPropertyOperation,
+                HubSpotSDK::Crm::PublicStringPropertyOperation,
+                HubSpotSDK::Crm::PublicDateTimePropertyOperation,
+                HubSpotSDK::Crm::PublicRangedDatePropertyOperation,
+                HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation,
+                HubSpotSDK::Crm::PublicComparativeDatePropertyOperation,
+                HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation,
+                HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation,
+                HubSpotSDK::Crm::PublicEnumerationPropertyOperation,
+                HubSpotSDK::Crm::PublicAllPropertyTypesOperation,
+                HubSpotSDK::Crm::PublicRangedNumberPropertyOperation,
+                HubSpotSDK::Crm::PublicMultiStringPropertyOperation,
+                HubSpotSDK::Crm::PublicDatePropertyOperation,
+                HubSpotSDK::Crm::PublicCalendarDatePropertyOperation,
+                HubSpotSDK::Crm::PublicTimePointOperation,
+                HubSpotSDK::Crm::PublicRangedTimeOperation
               )
             end
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicEventFilterMetadata::Operation::Variants
+                HubSpotSDK::Crm::PublicEventFilterMetadata::Operation::Variants
               ]
             )
           end

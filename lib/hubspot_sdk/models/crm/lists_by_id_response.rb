@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Lists#list
-      class ListsByIDResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Lists#list
+      class ListsByIDResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute lists
         #   The object list definitions.
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicObjectList>]
-        required :lists, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::PublicObjectList] }
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicObjectList>]
+        required :lists, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicObjectList] }
 
         # @!method initialize(lists:)
-        #   @param lists [Array<HubspotSDK::Models::Crm::PublicObjectList>] The object list definitions.
+        #   @param lists [Array<HubSpotSDK::Models::Crm::PublicObjectList>] The object list definitions.
       end
     end
   end

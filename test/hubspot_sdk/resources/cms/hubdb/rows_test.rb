@@ -2,7 +2,7 @@
 
 require_relative "../../../test_helper"
 
-class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -10,7 +10,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       @hubspot.cms.hubdb.rows.create("tableIdOrName", child_table_id: 0, display_index: 0, values: {foo: {}})
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -22,7 +22,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -33,13 +33,13 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.list("tableIdOrName")
 
     assert_pattern do
-      response => HubspotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
+      response => HubSpotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
     end
 
     assert_pattern do
       case response
-      in HubspotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
-      in HubspotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
+      in HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
+      in HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
       end
     end
   end
@@ -50,16 +50,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.clone_batch("tableIdOrName", inputs: [{id: "id"}])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.clone_draft("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -83,7 +83,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -98,16 +98,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -129,7 +129,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.get("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -141,7 +141,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -152,16 +152,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.get_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -173,7 +173,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.get_draft("321669910225", table_id_or_name: "tableIdOrName")
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -185,7 +185,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -196,16 +196,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
     response = @hubspot.cms.hubdb.rows.get_draft_batch("tableIdOrName", inputs: ["string"])
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -231,16 +231,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -259,7 +259,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -271,7 +271,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end
@@ -286,16 +286,16 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::BatchResponseHubDBTableRowV3
+      response => HubSpotSDK::Cms::BatchResponseHubDBTableRowV3
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::HubDBTableRowV3]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubDBTableRowV3]),
         started_at: Time,
-        status: HubspotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
-        links: ^(HubspotSDK::Internal::Type::HashOf[String]) | nil,
+        status: HubSpotSDK::Cms::BatchResponseHubDBTableRowV3::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
     end
@@ -314,7 +314,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubspotSDK::Cms::HubDBTableRowV3
+      response => HubSpotSDK::Cms::HubDBTableRowV3
     end
 
     assert_pattern do
@@ -326,7 +326,7 @@ class HubspotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubspotSDK::Test::Reso
         path: String,
         published_at: Time,
         updated_at: Time,
-        values: ^(HubspotSDK::Internal::Type::HashOf[HubspotSDK::Internal::Type::Unknown])
+        values: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown])
       }
     end
   end

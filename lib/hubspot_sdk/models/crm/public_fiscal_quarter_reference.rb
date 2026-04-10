@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicFiscalQuarterReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicFiscalQuarterReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the fiscal quarter reference.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute reference_type
         #   Indicates the type of reference (FISCAL_QUARTER).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicFiscalQuarterReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicFiscalQuarterReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicFiscalQuarterReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -53,7 +53,7 @@ module HubspotSDK
         #
         #   @param month [Integer] The month component of the fiscal quarter reference.
         #
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicFiscalQuarterReference::ReferenceType] Indicates the type of reference (FISCAL_QUARTER).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference::ReferenceType] Indicates the type of reference (FISCAL_QUARTER).
         #
         #   @param hour [Integer] The hour component of the fiscal quarter reference.
         #
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # Indicates the type of reference (FISCAL_QUARTER).
         #
-        # @see HubspotSDK::Models::Crm::PublicFiscalQuarterReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicFiscalQuarterReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           FISCAL_QUARTER = :FISCAL_QUARTER
 

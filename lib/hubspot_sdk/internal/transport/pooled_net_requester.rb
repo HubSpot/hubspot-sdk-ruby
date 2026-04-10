@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Transport
       # @api private
       class PooledNetRequester
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         # from the golang stdlib
         # https://github.com/golang/go/blob/c8eced8580028328fde7c03cbfcb720ce15b2358/src/net/http/transport.go#L49
@@ -44,7 +44,7 @@ module HubspotSDK
           # @param conn [Net::HTTP]
           # @param deadline [Float]
           def calibrate_socket_timeout(conn, deadline)
-            timeout = deadline - HubspotSDK::Internal::Util.monotonic_secs
+            timeout = deadline - HubSpotSDK::Internal::Util.monotonic_secs
             conn.open_timeout = conn.read_timeout = conn.write_timeout = conn.continue_timeout = timeout
           end
 
@@ -78,13 +78,13 @@ module HubspotSDK
               req["content-length"] ||= 0 unless req["transfer-encoding"]
             in String
               req["content-length"] ||= body.bytesize.to_s unless req["transfer-encoding"]
-              req.body_stream = HubspotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
+              req.body_stream = HubSpotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
             in StringIO
               req["content-length"] ||= body.size.to_s unless req["transfer-encoding"]
-              req.body_stream = HubspotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
+              req.body_stream = HubSpotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
             in Pathname | IO | Enumerator
               req["transfer-encoding"] ||= "chunked" unless req["content-length"]
-              req.body_stream = HubspotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
+              req.body_stream = HubSpotSDK::Internal::Util::ReadIOAdapter.new(body, &blk)
             end
 
             [req, req.body_stream&.method(:close)]
@@ -100,8 +100,8 @@ module HubspotSDK
         # @raise [Timeout::Error]
         # @yieldparam [Net::HTTP]
         private def with_pool(url, deadline:, &blk)
-          origin = HubspotSDK::Internal::Util.uri_origin(url)
-          timeout = deadline - HubspotSDK::Internal::Util.monotonic_secs
+          origin = HubSpotSDK::Internal::Util.uri_origin(url)
+          timeout = deadline - HubSpotSDK::Internal::Util.monotonic_secs
           pool =
             @mutex.synchronize do
               @pools[origin] ||= ConnectionPool.new(size: @size) do
@@ -177,14 +177,14 @@ module HubspotSDK
               end
             end
           rescue Timeout::Error
-            raise HubspotSDK::Errors::APITimeoutError.new(url: url, request: req)
+            raise HubSpotSDK::Errors::APITimeoutError.new(url: url, request: req)
           rescue StandardError
-            raise HubspotSDK::Errors::APIConnectionError.new(url: url, request: req)
+            raise HubSpotSDK::Errors::APIConnectionError.new(url: url, request: req)
           end
           # rubocop:enable Metrics/BlockLength
 
           _, response = enum.next
-          body = HubspotSDK::Internal::Util.fused_enum(enum, external: true) do
+          body = HubSpotSDK::Internal::Util.fused_enum(enum, external: true) do
             finished = true
             loop { enum.next }
           end

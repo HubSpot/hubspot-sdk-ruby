@@ -1,11 +1,11 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class PropertyGroupUpdate < HubspotSDK::Internal::Type::BaseModel
+    class PropertyGroupUpdate < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubspotSDK::PropertyGroupUpdate, HubspotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::PropertyGroupUpdate, HubSpotSDK::Internal::AnyHash)
         end
 
       sig { returns(T.nilable(Integer)) }

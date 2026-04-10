@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Internal
     # @generic Elem
     #
@@ -14,7 +14,7 @@ module HubspotSDK
     #     puts(activity)
     #   end
     class Page
-      include HubspotSDK::Internal::Type::BasePage
+      include HubSpotSDK::Internal::Type::BasePage
 
       # @return [Array<generic<Elem>>, nil]
       attr_accessor :results
@@ -27,7 +27,7 @@ module HubspotSDK
         !results.to_a.empty? && !paging&.next_&.after.to_s.empty?
       end
 
-      # @raise [HubspotSDK::HTTP::Error]
+      # @raise [HubSpotSDK::HTTP::Error]
       # @return [self]
       def next_page
         unless next_page?
@@ -35,7 +35,7 @@ module HubspotSDK
           raise RuntimeError.new(message)
         end
 
-        req = HubspotSDK::Internal::Util.deep_merge(@req, {query: {after: paging&.next_&.after}})
+        req = HubSpotSDK::Internal::Util.deep_merge(@req, {query: {after: paging&.next_&.after}})
         @client.request(req)
       end
 
@@ -58,7 +58,7 @@ module HubspotSDK
 
       # @api private
       #
-      # @param client [HubspotSDK::Internal::Transport::BaseClient]
+      # @param client [HubSpotSDK::Internal::Transport::BaseClient]
       # @param req [Hash{Symbol=>Object}]
       # @param headers [Hash{String=>String}]
       # @param page_data [Hash{Symbol=>Object}]
@@ -67,12 +67,12 @@ module HubspotSDK
 
         case page_data
         in {results: Array => results}
-          @results = results.map { HubspotSDK::Internal::Type::Converter.coerce(@model, _1) }
+          @results = results.map { HubSpotSDK::Internal::Type::Converter.coerce(@model, _1) }
         else
         end
         case page_data
         in {paging: Hash | nil => paging}
-          @paging = HubspotSDK::Internal::Type::Converter.coerce(HubspotSDK::Internal::Page::Paging, paging)
+          @paging = HubSpotSDK::Internal::Type::Converter.coerce(HubSpotSDK::Internal::Page::Paging, paging)
         else
         end
       end
@@ -81,12 +81,12 @@ module HubspotSDK
       #
       # @return [String]
       def inspect
-        model = HubspotSDK::Internal::Type::Converter.inspect(@model, depth: 1)
+        model = HubSpotSDK::Internal::Type::Converter.inspect(@model, depth: 1)
 
         "#<#{self.class}[#{model}]:0x#{object_id.to_s(16)}>"
       end
 
-      class Paging < HubspotSDK::Internal::Type::BaseModel
+      class Paging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute next_
         #
         #   @return [Paging::Next, nil]
@@ -96,7 +96,7 @@ module HubspotSDK
         #   @param next_ [Paging::Next]
 
         # @see Paging#next_
-        class Next < HubspotSDK::Internal::Type::BaseModel
+        class Next < HubSpotSDK::Internal::Type::BaseModel
           # @!attribute after
           #
           #   @return [String, nil]

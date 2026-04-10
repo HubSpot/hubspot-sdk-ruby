@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class SubscriberEmailResponse < HubspotSDK::Internal::Type::BaseModel
+      class SubscriberEmailResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute email
         #   The email of the contact
         #

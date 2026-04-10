@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      # @see HubspotSDK::Resources::Cms::MediaBridge#get_schema
-      class ObjectSchema < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Cms::MediaBridge#get_schema
+      class ObjectSchema < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -14,18 +14,18 @@ module HubspotSDK
         #
         #   @return [Boolean]
         required :allows_sensitive_properties,
-                 HubspotSDK::Internal::Type::Boolean,
+                 HubSpotSDK::Internal::Type::Boolean,
                  api_name: :allowsSensitiveProperties
 
         # @!attribute archived
         #
         #   @return [Boolean]
-        required :archived, HubspotSDK::Internal::Type::Boolean
+        required :archived, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute associations
         #
-        #   @return [Array<HubspotSDK::Models::AssociationDefinition>]
-        required :associations, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::AssociationDefinition] }
+        #   @return [Array<HubSpotSDK::Models::AssociationDefinition>]
+        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #
@@ -34,8 +34,8 @@ module HubspotSDK
 
         # @!attribute labels
         #
-        #   @return [HubspotSDK::Models::ObjectTypeDefinitionLabels]
-        required :labels, -> { HubspotSDK::ObjectTypeDefinitionLabels }
+        #   @return [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
+        required :labels, -> { HubSpotSDK::ObjectTypeDefinitionLabels }
 
         # @!attribute name
         #
@@ -49,28 +49,28 @@ module HubspotSDK
 
         # @!attribute properties
         #
-        #   @return [Array<HubspotSDK::Models::Cms::Property1>]
-        required :properties, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Cms::Property1] }
+        #   @return [Array<HubSpotSDK::Models::Cms::Property1>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property1] }
 
         # @!attribute required_properties
         #
         #   @return [Array<String>]
         required :required_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :requiredProperties
 
         # @!attribute searchable_properties
         #
         #   @return [Array<String>]
         required :searchable_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :searchableProperties
 
         # @!attribute secondary_display_properties
         #
         #   @return [Array<String>]
         required :secondary_display_properties,
-                 HubspotSDK::Internal::Type::ArrayOf[String],
+                 HubSpotSDK::Internal::Type::ArrayOf[String],
                  api_name: :secondaryDisplayProperties
 
         # @!attribute created_at
@@ -107,12 +107,12 @@ module HubspotSDK
         #   @param id [String]
         #   @param allows_sensitive_properties [Boolean]
         #   @param archived [Boolean]
-        #   @param associations [Array<HubspotSDK::Models::AssociationDefinition>]
+        #   @param associations [Array<HubSpotSDK::Models::AssociationDefinition>]
         #   @param fully_qualified_name [String]
-        #   @param labels [HubspotSDK::Models::ObjectTypeDefinitionLabels]
+        #   @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         #   @param name [String]
         #   @param object_type_id [String]
-        #   @param properties [Array<HubspotSDK::Models::Cms::Property1>]
+        #   @param properties [Array<HubSpotSDK::Models::Cms::Property1>]
         #   @param required_properties [Array<String>]
         #   @param searchable_properties [Array<String>]
         #   @param secondary_display_properties [Array<String>]

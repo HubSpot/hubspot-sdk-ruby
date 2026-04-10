@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type app_event_occurrence =
@@ -11,12 +11,12 @@ module HubspotSDK
           extra_data: top,
           object_id_: String,
           object_type_fully_qualified_name: String,
-          timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
+          timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame,
           timestamp: Time,
           utk: String
         }
 
-      class AppEventOccurrence < HubspotSDK::Internal::Type::BaseModel
+      class AppEventOccurrence < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor event_type_name: String
@@ -43,11 +43,11 @@ module HubspotSDK
 
         def object_type_fully_qualified_name=: (String) -> String
 
-        attr_reader timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame?
+        attr_reader timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame?
 
         def timeline_i_frame=: (
-          HubspotSDK::Crm::TimelineEventIFrame
-        ) -> HubspotSDK::Crm::TimelineEventIFrame
+          HubSpotSDK::Crm::TimelineEventIFrame
+        ) -> HubSpotSDK::Crm::TimelineEventIFrame
 
         attr_reader timestamp: Time?
 
@@ -66,7 +66,7 @@ module HubspotSDK
           ?extra_data: top,
           ?object_id_: String,
           ?object_type_fully_qualified_name: String,
-          ?timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
+          ?timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame,
           ?timestamp: Time,
           ?utk: String
         ) -> void
@@ -80,7 +80,7 @@ module HubspotSDK
           extra_data: top,
           object_id_: String,
           object_type_fully_qualified_name: String,
-          timeline_i_frame: HubspotSDK::Crm::TimelineEventIFrame,
+          timeline_i_frame: HubSpotSDK::Crm::TimelineEventIFrame,
           timestamp: Time,
           utk: String
         }

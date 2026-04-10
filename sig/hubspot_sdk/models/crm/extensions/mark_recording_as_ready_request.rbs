@@ -1,10 +1,10 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
         type mark_recording_as_ready_request = { engagement_id: Integer }
 
-        class MarkRecordingAsReadyRequest < HubspotSDK::Internal::Type::BaseModel
+        class MarkRecordingAsReadyRequest < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor engagement_id: Integer
 
           def initialize: (engagement_id: Integer) -> void

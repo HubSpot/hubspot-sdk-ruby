@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventPublicObjectIDDeleteRequest =
       Marketing::MarketingEventPublicObjectIDDeleteRequest
 
     module Marketing
-      class MarketingEventPublicObjectIDDeleteRequest < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventPublicObjectIDDeleteRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventPublicObjectIDDeleteRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

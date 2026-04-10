@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
-      class PropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+      class PropertyReferencedTime < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Events::PropertyReferencedTime,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Events::PropertyReferencedTime,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -17,21 +17,21 @@ module HubspotSDK
 
         sig do
           returns(
-            HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+            HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
           )
         end
         attr_accessor :reference_type
 
         sig do
           returns(
-            HubspotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
+            HubSpotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
           )
         end
         attr_accessor :time_type
 
         sig do
           returns(
-            HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+            HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
           )
         end
         attr_accessor :timezone_source
@@ -43,11 +43,11 @@ module HubspotSDK
           params(
             property: String,
             reference_type:
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::OrSymbol,
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::OrSymbol,
             time_type:
-              HubspotSDK::Events::PropertyReferencedTime::TimeType::OrSymbol,
+              HubSpotSDK::Events::PropertyReferencedTime::TimeType::OrSymbol,
             timezone_source:
-              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::OrSymbol,
+              HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::OrSymbol,
             zone_id: String
           ).returns(T.attached_class)
         end
@@ -65,11 +65,11 @@ module HubspotSDK
             {
               property: String,
               reference_type:
-                HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol,
+                HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol,
               time_type:
-                HubspotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol,
+                HubSpotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol,
               timezone_source:
-                HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol,
+                HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol,
               zone_id: String
             }
           )
@@ -78,13 +78,13 @@ module HubspotSDK
         end
 
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::PropertyReferencedTime::ReferenceType
+                HubSpotSDK::Events::PropertyReferencedTime::ReferenceType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -92,33 +92,33 @@ module HubspotSDK
           ANNIVERSARY =
             T.let(
               :ANNIVERSARY,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :ANNIVERSARY_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           UPDATED_AT =
             T.let(
               :UPDATED_AT,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           VALUE =
             T.let(
               :VALUE,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
           VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION =
             T.let(
               :VALUE_WITH_ZONE_SAME_LOCAL_CONVERSION,
-              HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
+                HubSpotSDK::Events::PropertyReferencedTime::ReferenceType::TaggedSymbol
               ]
             )
           end
@@ -127,13 +127,13 @@ module HubspotSDK
         end
 
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::PropertyReferencedTime::TimeType
+                HubSpotSDK::Events::PropertyReferencedTime::TimeType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -141,13 +141,13 @@ module HubspotSDK
           PROPERTY_REFERENCED =
             T.let(
               :PROPERTY_REFERENCED,
-              HubspotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
+                HubSpotSDK::Events::PropertyReferencedTime::TimeType::TaggedSymbol
               ]
             )
           end
@@ -156,13 +156,13 @@ module HubspotSDK
         end
 
         module TimezoneSource
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Events::PropertyReferencedTime::TimezoneSource
+                HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -170,23 +170,23 @@ module HubspotSDK
           CUSTOM =
             T.let(
               :CUSTOM,
-              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
             )
           PORTAL =
             T.let(
               :PORTAL,
-              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
             )
           USER =
             T.let(
               :USER,
-              HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+              HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
+                HubSpotSDK::Events::PropertyReferencedTime::TimezoneSource::TaggedSymbol
               ]
             )
           end

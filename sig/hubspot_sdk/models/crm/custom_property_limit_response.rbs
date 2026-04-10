@@ -1,16 +1,16 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type custom_property_limit_response =
         {
-          by_object_type: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType],
+          by_object_type: ::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer
         }
 
-      class CustomPropertyLimitResponse < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor by_object_type: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType]
+      class CustomPropertyLimitResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor by_object_type: ::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType]
 
         attr_accessor overall_limit: Integer
 
@@ -19,14 +19,14 @@ module HubspotSDK
         attr_accessor overall_usage: Integer
 
         def initialize: (
-          by_object_type: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType],
+          by_object_type: ::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer
         ) -> void
 
         def to_hash: -> {
-          by_object_type: ::Array[HubspotSDK::Crm::LimitAndUsageForObjectType],
+          by_object_type: ::Array[HubSpotSDK::Crm::LimitAndUsageForObjectType],
           overall_limit: Integer,
           overall_percentage: Float,
           overall_usage: Integer

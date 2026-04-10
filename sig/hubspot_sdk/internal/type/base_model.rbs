@@ -1,48 +1,48 @@
-module HubspotSDK
+module HubSpotSDK
   module Internal
     module Type
       class BaseModel
-        extend HubspotSDK::Internal::Type::Converter
-        extend HubspotSDK::Internal::Util::SorbetRuntimeSupport
+        extend HubSpotSDK::Internal::Type::Converter
+        extend HubSpotSDK::Internal::Util::SorbetRuntimeSupport
 
         type known_field =
           { mode: (:coerce | :dump)?, required: bool, nilable: bool }
 
         def self.inherited: (self child) -> void
 
-        def self.known_fields: -> ::Hash[Symbol, (HubspotSDK::Internal::Type::BaseModel::known_field
-        & { type_fn: (^-> HubspotSDK::Internal::Type::Converter::input) })]
+        def self.known_fields: -> ::Hash[Symbol, (HubSpotSDK::Internal::Type::BaseModel::known_field
+        & { type_fn: (^-> HubSpotSDK::Internal::Type::Converter::input) })]
 
-        def self.fields: -> ::Hash[Symbol, (HubspotSDK::Internal::Type::BaseModel::known_field
-        & { type: HubspotSDK::Internal::Type::Converter::input })]
+        def self.fields: -> ::Hash[Symbol, (HubSpotSDK::Internal::Type::BaseModel::known_field
+        & { type: HubSpotSDK::Internal::Type::Converter::input })]
 
         private def self.add_field: (
           Symbol name_sym,
           required: bool,
           type_info: {
             const: (nil | bool | Integer | Float | Symbol)?,
-            enum: ^-> HubspotSDK::Internal::Type::Converter::input?,
-            union: ^-> HubspotSDK::Internal::Type::Converter::input?,
+            enum: ^-> HubSpotSDK::Internal::Type::Converter::input?,
+            union: ^-> HubSpotSDK::Internal::Type::Converter::input?,
             api_name: Symbol
           }
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input,
           spec: ::Hash[Symbol, top]
         ) -> void
 
         def self.required: (
           Symbol name_sym,
           ::Hash[Symbol, top]
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input type_info,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input type_info,
           ?::Hash[Symbol, top] spec
         ) -> void
 
         def self.optional: (
           Symbol name_sym,
           ::Hash[Symbol, top]
-          | ^-> HubspotSDK::Internal::Type::Converter::input
-          | HubspotSDK::Internal::Type::Converter::input type_info,
+          | ^-> HubSpotSDK::Internal::Type::Converter::input
+          | HubSpotSDK::Internal::Type::Converter::input type_info,
           ?::Hash[Symbol, top] spec
         ) -> void
 
@@ -59,19 +59,19 @@ module HubspotSDK
         def hash: -> Integer
 
         def self.coerce: (
-          HubspotSDK::Internal::Type::BaseModel | ::Hash[top, top] | top value,
-          state: HubspotSDK::Internal::Type::Converter::coerce_state
+          HubSpotSDK::Internal::Type::BaseModel | ::Hash[top, top] | top value,
+          state: HubSpotSDK::Internal::Type::Converter::coerce_state
         ) -> (instance | top)
 
         def self.dump: (
           instance | top value,
-          state: HubspotSDK::Internal::Type::Converter::dump_state
+          state: HubSpotSDK::Internal::Type::Converter::dump_state
         ) -> (::Hash[top, top] | top)
 
         def self.to_sorbet_type: -> top
 
         def self.recursively_to_h: (
-          HubspotSDK::Internal::Type::BaseModel model,
+          HubSpotSDK::Internal::Type::BaseModel model,
           convert: bool
         ) -> ::Hash[Symbol, top]
 

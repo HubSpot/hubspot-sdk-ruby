@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        class CallingDeleteSettingsParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class CallingDeleteSettingsParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Extensions::CallingDeleteSettingsParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Extensions::CallingDeleteSettingsParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -22,7 +22,7 @@ module HubspotSDK
           sig do
             params(
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(app_id:, request_options: {})
@@ -30,7 +30,7 @@ module HubspotSDK
 
           sig do
             override.returns(
-              { app_id: Integer, request_options: HubspotSDK::RequestOptions }
+              { app_id: Integer, request_options: HubSpotSDK::RequestOptions }
             )
           end
           def to_hash

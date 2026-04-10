@@ -1,9 +1,9 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       type list_move_request = { list_id: String, new_folder_id: String }
 
-      class ListMoveRequest < HubspotSDK::Internal::Type::BaseModel
+      class ListMoveRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor list_id: String
 
         attr_accessor new_folder_id: String

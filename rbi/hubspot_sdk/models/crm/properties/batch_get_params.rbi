@@ -1,18 +1,18 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
       module Properties
-        class BatchGetParams < HubspotSDK::Models::BatchReadInputPropertyName
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class BatchGetParams < HubSpotSDK::Models::BatchReadInputPropertyName
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Crm::Properties::BatchGetParams,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Crm::Properties::BatchGetParams,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
@@ -29,7 +29,7 @@ module HubspotSDK
             params(
               object_type: String,
               locale: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
           def self.new(object_type:, locale: nil, request_options: {})
@@ -40,7 +40,7 @@ module HubspotSDK
               {
                 object_type: String,
                 locale: String,
-                request_options: HubspotSDK::RequestOptions
+                request_options: HubSpotSDK::RequestOptions
               }
             )
           end

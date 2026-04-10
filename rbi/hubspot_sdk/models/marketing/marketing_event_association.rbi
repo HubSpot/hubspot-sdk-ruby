@@ -1,16 +1,16 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     MarketingEventAssociation = Marketing::MarketingEventAssociation
 
     module Marketing
-      class MarketingEventAssociation < HubspotSDK::Internal::Type::BaseModel
+      class MarketingEventAssociation < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Marketing::MarketingEventAssociation,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Marketing::MarketingEventAssociation,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 

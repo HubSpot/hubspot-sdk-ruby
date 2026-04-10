@@ -2,28 +2,28 @@
 
 require_relative "../../test_helper"
 
-class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Settings::UsersTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
     response = @hubspot.settings.users.create(email: "email", send_welcome_email: true)
 
     assert_pattern do
-      response => HubspotSDK::Settings::PublicUser
+      response => HubSpotSDK::Settings::PublicUser
     end
 
     assert_pattern do
       response => {
         id: String,
         email: String,
-        role_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        super_admin: HubspotSDK::Internal::Type::Boolean,
+        role_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        super_admin: HubSpotSDK::Internal::Type::Boolean,
         first_name: String | nil,
         last_name: String | nil,
         primary_team_id: String | nil,
         role_id: String | nil,
-        secondary_team_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        send_welcome_email: HubspotSDK::Internal::Type::Boolean | nil
+        secondary_team_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        send_welcome_email: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end
@@ -34,21 +34,21 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
     response = @hubspot.settings.users.update("userId")
 
     assert_pattern do
-      response => HubspotSDK::Settings::PublicUser
+      response => HubSpotSDK::Settings::PublicUser
     end
 
     assert_pattern do
       response => {
         id: String,
         email: String,
-        role_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        super_admin: HubspotSDK::Internal::Type::Boolean,
+        role_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        super_admin: HubSpotSDK::Internal::Type::Boolean,
         first_name: String | nil,
         last_name: String | nil,
         primary_team_id: String | nil,
         role_id: String | nil,
-        secondary_team_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        send_welcome_email: HubspotSDK::Internal::Type::Boolean | nil
+        secondary_team_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        send_welcome_email: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end
@@ -59,28 +59,28 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
     response = @hubspot.settings.users.list
 
     assert_pattern do
-      response => HubspotSDK::Internal::Page
+      response => HubSpotSDK::Internal::Page
     end
 
     row = response.to_enum.first
     return if row.nil?
 
     assert_pattern do
-      row => HubspotSDK::Settings::PublicUser
+      row => HubSpotSDK::Settings::PublicUser
     end
 
     assert_pattern do
       row => {
         id: String,
         email: String,
-        role_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        super_admin: HubspotSDK::Internal::Type::Boolean,
+        role_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        super_admin: HubSpotSDK::Internal::Type::Boolean,
         first_name: String | nil,
         last_name: String | nil,
         primary_team_id: String | nil,
         role_id: String | nil,
-        secondary_team_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        send_welcome_email: HubspotSDK::Internal::Type::Boolean | nil
+        secondary_team_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        send_welcome_email: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end
@@ -101,21 +101,21 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
     response = @hubspot.settings.users.get("userId")
 
     assert_pattern do
-      response => HubspotSDK::Settings::PublicUser
+      response => HubSpotSDK::Settings::PublicUser
     end
 
     assert_pattern do
       response => {
         id: String,
         email: String,
-        role_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]),
-        super_admin: HubspotSDK::Internal::Type::Boolean,
+        role_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        super_admin: HubSpotSDK::Internal::Type::Boolean,
         first_name: String | nil,
         last_name: String | nil,
         primary_team_id: String | nil,
         role_id: String | nil,
-        secondary_team_ids: ^(HubspotSDK::Internal::Type::ArrayOf[String]) | nil,
-        send_welcome_email: HubspotSDK::Internal::Type::Boolean | nil
+        secondary_team_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        send_welcome_email: HubSpotSDK::Internal::Type::Boolean | nil
       }
     end
   end
@@ -126,12 +126,12 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
     response = @hubspot.settings.users.list_roles
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
+      response => HubSpotSDK::Settings::CollectionResponsePublicPermissionSetNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicPermissionSet])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::PublicPermissionSet])
       }
     end
   end
@@ -142,12 +142,12 @@ class HubspotSDK::Test::Resources::Settings::UsersTest < HubspotSDK::Test::Resou
     response = @hubspot.settings.users.list_teams
 
     assert_pattern do
-      response => HubspotSDK::Settings::CollectionResponsePublicTeamNoPaging
+      response => HubSpotSDK::Settings::CollectionResponsePublicTeamNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Settings::PublicTeam])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Settings::PublicTeam])
       }
     end
   end

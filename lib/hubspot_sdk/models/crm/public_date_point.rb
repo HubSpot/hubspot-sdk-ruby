@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicDatePoint < HubspotSDK::Internal::Type::BaseModel
+      class PublicDatePoint < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the date.
         #
@@ -19,8 +19,8 @@ module HubspotSDK
         # @!attribute time_type
         #   Specifies the type of time (DATE).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicDatePoint::TimeType]
-        required :time_type, enum: -> { HubspotSDK::Crm::PublicDatePoint::TimeType }, api_name: :timeType
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicDatePoint::TimeType]
+        required :time_type, enum: -> { HubSpotSDK::Crm::PublicDatePoint::TimeType }, api_name: :timeType
 
         # @!attribute year
         #   The year component of the date.
@@ -69,7 +69,7 @@ module HubspotSDK
         #
         #   @param month [Integer] The month component of the date.
         #
-        #   @param time_type [Symbol, HubspotSDK::Models::Crm::PublicDatePoint::TimeType] Specifies the type of time (DATE).
+        #   @param time_type [Symbol, HubSpotSDK::Models::Crm::PublicDatePoint::TimeType] Specifies the type of time (DATE).
         #
         #   @param year [Integer] The year component of the date.
         #
@@ -87,9 +87,9 @@ module HubspotSDK
 
         # Specifies the type of time (DATE).
         #
-        # @see HubspotSDK::Models::Crm::PublicDatePoint#time_type
+        # @see HubSpotSDK::Models::Crm::PublicDatePoint#time_type
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           DATE = :DATE
 

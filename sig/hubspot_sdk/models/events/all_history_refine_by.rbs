@@ -1,28 +1,28 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Events
       type all_history_refine_by =
-        { type: HubspotSDK::Models::Events::AllHistoryRefineBy::type_ }
+        { type: HubSpotSDK::Models::Events::AllHistoryRefineBy::type_ }
 
-      class AllHistoryRefineBy < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor type: HubspotSDK::Models::Events::AllHistoryRefineBy::type_
+      class AllHistoryRefineBy < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor type: HubSpotSDK::Models::Events::AllHistoryRefineBy::type_
 
         def initialize: (
-          type: HubspotSDK::Models::Events::AllHistoryRefineBy::type_
+          type: HubSpotSDK::Models::Events::AllHistoryRefineBy::type_
         ) -> void
 
         def to_hash: -> {
-          type: HubspotSDK::Models::Events::AllHistoryRefineBy::type_
+          type: HubSpotSDK::Models::Events::AllHistoryRefineBy::type_
         }
 
         type type_ = :AllHistoryRefineBy
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           ALL_HISTORY_REFINE_BY: :AllHistoryRefineBy
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Events::AllHistoryRefineBy::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Events::AllHistoryRefineBy::type_]
         end
       end
     end

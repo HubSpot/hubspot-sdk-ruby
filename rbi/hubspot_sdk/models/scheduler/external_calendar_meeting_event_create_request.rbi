@@ -1,38 +1,38 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
-      class ExternalCalendarMeetingEventCreateRequest < HubspotSDK::Internal::Type::BaseModel
+      class ExternalCalendarMeetingEventCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateRequest,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateRequest,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
         sig do
           returns(
-            T::Array[HubspotSDK::Scheduler::ExternalAssociationCreateRequest]
+            T::Array[HubSpotSDK::Scheduler::ExternalAssociationCreateRequest]
           )
         end
         attr_accessor :associations
 
-        sig { returns(HubspotSDK::Scheduler::ExternalEmailReminderSchedule) }
+        sig { returns(HubSpotSDK::Scheduler::ExternalEmailReminderSchedule) }
         attr_reader :email_reminder_schedule
 
         sig do
           params(
             email_reminder_schedule:
-              HubspotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash
+              HubSpotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash
           ).void
         end
         attr_writer :email_reminder_schedule
 
         sig do
           returns(
-            HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties
+            HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties
           )
         end
         attr_reader :properties
@@ -40,7 +40,7 @@ module HubspotSDK
         sig do
           params(
             properties:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash
           ).void
         end
         attr_writer :properties
@@ -53,12 +53,12 @@ module HubspotSDK
           params(
             associations:
               T::Array[
-                HubspotSDK::Scheduler::ExternalAssociationCreateRequest::OrHash
+                HubSpotSDK::Scheduler::ExternalAssociationCreateRequest::OrHash
               ],
             email_reminder_schedule:
-              HubspotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash,
+              HubSpotSDK::Scheduler::ExternalEmailReminderSchedule::OrHash,
             properties:
-              HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties::OrHash,
             timezone: String
           ).returns(T.attached_class)
         end
@@ -76,12 +76,12 @@ module HubspotSDK
             {
               associations:
                 T::Array[
-                  HubspotSDK::Scheduler::ExternalAssociationCreateRequest
+                  HubSpotSDK::Scheduler::ExternalAssociationCreateRequest
                 ],
               email_reminder_schedule:
-                HubspotSDK::Scheduler::ExternalEmailReminderSchedule,
+                HubSpotSDK::Scheduler::ExternalEmailReminderSchedule,
               properties:
-                HubspotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
+                HubSpotSDK::Scheduler::ExternalCalendarMeetingEventCreateProperties,
               timezone: String
             }
           )

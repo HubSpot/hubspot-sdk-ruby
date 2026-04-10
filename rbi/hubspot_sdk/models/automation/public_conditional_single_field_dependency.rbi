@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Automation
-      class PublicConditionalSingleFieldDependency < HubspotSDK::Internal::Type::BaseModel
+      class PublicConditionalSingleFieldDependency < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Automation::PublicConditionalSingleFieldDependency,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Automation::PublicConditionalSingleFieldDependency,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -23,7 +23,7 @@ module HubspotSDK
         # The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.
         sig do
           returns(
-            HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol
+            HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol
           )
         end
         attr_accessor :dependency_type
@@ -36,7 +36,7 @@ module HubspotSDK
             controlling_field_name: String,
             controlling_field_value: String,
             dependency_type:
-              HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol,
+              HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol,
             dependent_field_names: T::Array[String]
           ).returns(T.attached_class)
         end
@@ -57,7 +57,7 @@ module HubspotSDK
               controlling_field_name: String,
               controlling_field_value: String,
               dependency_type:
-                HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol,
+                HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::OrSymbol,
               dependent_field_names: T::Array[String]
             }
           )
@@ -67,13 +67,13 @@ module HubspotSDK
 
         # The type of dependency, with the default value being CONDITIONAL_SINGLE_FIELD.
         module DependencyType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType
+                HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -81,13 +81,13 @@ module HubspotSDK
           CONDITIONAL_SINGLE_FIELD =
             T.let(
               :CONDITIONAL_SINGLE_FIELD,
-              HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::TaggedSymbol
+              HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::TaggedSymbol
+                HubSpotSDK::Automation::PublicConditionalSingleFieldDependency::DependencyType::TaggedSymbol
               ]
             )
           end

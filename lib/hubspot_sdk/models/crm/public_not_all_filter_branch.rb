@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicNotAllFilterBranch < HubspotSDK::Internal::Type::BaseModel
+      class PublicNotAllFilterBranch < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_branches
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch>]
         required :filter_branches,
                  -> {
-                   HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::PublicNotAllFilterBranch::FilterBranch]
+                   HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::PublicNotAllFilterBranch::FilterBranch]
                  },
                  api_name: :filterBranches
 
@@ -22,56 +22,56 @@ module HubspotSDK
         # @!attribute filter_branch_type
         #   The type of the filter branch (NOT_ALL).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicNotAllFilterBranch::FilterBranchType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch::FilterBranchType]
         required :filter_branch_type,
-                 enum: -> { HubspotSDK::Crm::PublicNotAllFilterBranch::FilterBranchType },
+                 enum: -> { HubSpotSDK::Crm::PublicNotAllFilterBranch::FilterBranchType },
                  api_name: :filterBranchType
 
         # @!attribute filters
         #
-        #   @return [Array<HubspotSDK::Models::Crm::PublicPropertyFilter, HubspotSDK::Models::Crm::PublicAssociationInListFilter, HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubspotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubspotSDK::Models::Crm::PublicEventAnalyticsFilter, HubspotSDK::Models::Crm::PublicFormSubmissionFilter, HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubspotSDK::Models::Crm::PublicIntegrationEventFilter, HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubspotSDK::Models::Crm::PublicWebinarFilter, HubspotSDK::Models::Crm::PublicEmailEventFilter, HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubspotSDK::Models::Crm::PublicAdsSearchFilter, HubspotSDK::Models::Crm::PublicAdsTimeFilter, HubspotSDK::Models::Crm::PublicInListFilter, HubspotSDK::Models::Crm::PublicNumAssociationsFilter, HubspotSDK::Models::Crm::PublicUnifiedEventsFilter, HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubspotSDK::Models::Crm::PublicConstantFilter>]
+        #   @return [Array<HubSpotSDK::Models::Crm::PublicPropertyFilter, HubSpotSDK::Models::Crm::PublicAssociationInListFilter, HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubSpotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubSpotSDK::Models::Crm::PublicEventAnalyticsFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubSpotSDK::Models::Crm::PublicIntegrationEventFilter, HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubSpotSDK::Models::Crm::PublicWebinarFilter, HubSpotSDK::Models::Crm::PublicEmailEventFilter, HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubSpotSDK::Models::Crm::PublicAdsSearchFilter, HubSpotSDK::Models::Crm::PublicAdsTimeFilter, HubSpotSDK::Models::Crm::PublicInListFilter, HubSpotSDK::Models::Crm::PublicNumAssociationsFilter, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilter, HubSpotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubSpotSDK::Models::Crm::PublicConstantFilter>]
         required :filters,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::PublicNotAllFilterBranch::Filter] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::PublicNotAllFilterBranch::Filter] }
 
         # @!method initialize(filter_branches:, filter_branch_operator:, filter_branch_type:, filters:)
-        #   @param filter_branches [Array<HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch>]
+        #   @param filter_branches [Array<HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch>]
         #
         #   @param filter_branch_operator [String] The operator used to combine filters within the branch (NOT_ALL).
         #
-        #   @param filter_branch_type [Symbol, HubspotSDK::Models::Crm::PublicNotAllFilterBranch::FilterBranchType] The type of the filter branch (NOT_ALL).
+        #   @param filter_branch_type [Symbol, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch::FilterBranchType] The type of the filter branch (NOT_ALL).
         #
-        #   @param filters [Array<HubspotSDK::Models::Crm::PublicPropertyFilter, HubspotSDK::Models::Crm::PublicAssociationInListFilter, HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubspotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubspotSDK::Models::Crm::PublicEventAnalyticsFilter, HubspotSDK::Models::Crm::PublicFormSubmissionFilter, HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubspotSDK::Models::Crm::PublicIntegrationEventFilter, HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubspotSDK::Models::Crm::PublicWebinarFilter, HubspotSDK::Models::Crm::PublicEmailEventFilter, HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubspotSDK::Models::Crm::PublicAdsSearchFilter, HubspotSDK::Models::Crm::PublicAdsTimeFilter, HubspotSDK::Models::Crm::PublicInListFilter, HubspotSDK::Models::Crm::PublicNumAssociationsFilter, HubspotSDK::Models::Crm::PublicUnifiedEventsFilter, HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubspotSDK::Models::Crm::PublicConstantFilter>]
+        #   @param filters [Array<HubSpotSDK::Models::Crm::PublicPropertyFilter, HubSpotSDK::Models::Crm::PublicAssociationInListFilter, HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubSpotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubSpotSDK::Models::Crm::PublicEventAnalyticsFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubSpotSDK::Models::Crm::PublicIntegrationEventFilter, HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubSpotSDK::Models::Crm::PublicWebinarFilter, HubSpotSDK::Models::Crm::PublicEmailEventFilter, HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubSpotSDK::Models::Crm::PublicAdsSearchFilter, HubSpotSDK::Models::Crm::PublicAdsTimeFilter, HubSpotSDK::Models::Crm::PublicInListFilter, HubSpotSDK::Models::Crm::PublicNumAssociationsFilter, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilter, HubSpotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubSpotSDK::Models::Crm::PublicConstantFilter>]
 
         module FilterBranch
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           discriminator :filterBranchType
 
-          variant :OR, -> { HubspotSDK::Crm::PublicOrFilterBranch }
+          variant :OR, -> { HubSpotSDK::Crm::PublicOrFilterBranch }
 
-          variant :AND, -> { HubspotSDK::Crm::PublicAndFilterBranch }
+          variant :AND, -> { HubSpotSDK::Crm::PublicAndFilterBranch }
 
-          variant :NOT_ALL, -> { HubspotSDK::Crm::PublicNotAllFilterBranch }
+          variant :NOT_ALL, -> { HubSpotSDK::Crm::PublicNotAllFilterBranch }
 
-          variant :NOT_ANY, -> { HubspotSDK::Crm::PublicNotAnyFilterBranch }
+          variant :NOT_ANY, -> { HubSpotSDK::Crm::PublicNotAnyFilterBranch }
 
-          variant :RESTRICTED, -> { HubspotSDK::Crm::PublicRestrictedFilterBranch }
+          variant :RESTRICTED, -> { HubSpotSDK::Crm::PublicRestrictedFilterBranch }
 
-          variant :UNIFIED_EVENTS, -> { HubspotSDK::Crm::PublicUnifiedEventsFilterBranch }
+          variant :UNIFIED_EVENTS, -> { HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch }
 
-          variant :PROPERTY_ASSOCIATION, -> { HubspotSDK::Crm::PublicPropertyAssociationFilterBranch }
+          variant :PROPERTY_ASSOCIATION, -> { HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch }
 
-          variant :ASSOCIATION, -> { HubspotSDK::Crm::PublicAssociationFilterBranch }
+          variant :ASSOCIATION, -> { HubSpotSDK::Crm::PublicAssociationFilterBranch }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicOrFilterBranch, HubspotSDK::Models::Crm::PublicAndFilterBranch, HubspotSDK::Models::Crm::PublicNotAllFilterBranch, HubspotSDK::Models::Crm::PublicNotAnyFilterBranch, HubspotSDK::Models::Crm::PublicRestrictedFilterBranch, HubspotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubspotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubspotSDK::Models::Crm::PublicAssociationFilterBranch)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicOrFilterBranch, HubSpotSDK::Models::Crm::PublicAndFilterBranch, HubSpotSDK::Models::Crm::PublicNotAllFilterBranch, HubSpotSDK::Models::Crm::PublicNotAnyFilterBranch, HubSpotSDK::Models::Crm::PublicRestrictedFilterBranch, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilterBranch, HubSpotSDK::Models::Crm::PublicPropertyAssociationFilterBranch, HubSpotSDK::Models::Crm::PublicAssociationFilterBranch)]
         end
 
         # The type of the filter branch (NOT_ALL).
         #
-        # @see HubspotSDK::Models::Crm::PublicNotAllFilterBranch#filter_branch_type
+        # @see HubSpotSDK::Models::Crm::PublicNotAllFilterBranch#filter_branch_type
         module FilterBranchType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           NOT_ALL = :NOT_ALL
 
@@ -80,58 +80,58 @@ module HubspotSDK
         end
 
         module Filter
-          extend HubspotSDK::Internal::Type::Union
+          extend HubSpotSDK::Internal::Type::Union
 
           discriminator :filterType
 
-          variant :PROPERTY, -> { HubspotSDK::Crm::PublicPropertyFilter }
+          variant :PROPERTY, -> { HubSpotSDK::Crm::PublicPropertyFilter }
 
-          variant :ASSOCIATION, -> { HubspotSDK::Crm::PublicAssociationInListFilter }
+          variant :ASSOCIATION, -> { HubSpotSDK::Crm::PublicAssociationInListFilter }
 
-          variant :PAGE_VIEW, -> { HubspotSDK::Crm::PublicPageViewAnalyticsFilter }
+          variant :PAGE_VIEW, -> { HubSpotSDK::Crm::PublicPageViewAnalyticsFilter }
 
-          variant :CTA, -> { HubspotSDK::Crm::PublicCtaAnalyticsFilter }
+          variant :CTA, -> { HubSpotSDK::Crm::PublicCtaAnalyticsFilter }
 
-          variant :EVENT, -> { HubspotSDK::Crm::PublicEventAnalyticsFilter }
+          variant :EVENT, -> { HubSpotSDK::Crm::PublicEventAnalyticsFilter }
 
-          variant :FORM_SUBMISSION, -> { HubspotSDK::Crm::PublicFormSubmissionFilter }
+          variant :FORM_SUBMISSION, -> { HubSpotSDK::Crm::PublicFormSubmissionFilter }
 
-          variant :FORM_SUBMISSION_ON_PAGE, -> { HubspotSDK::Crm::PublicFormSubmissionOnPageFilter }
+          variant :FORM_SUBMISSION_ON_PAGE, -> { HubSpotSDK::Crm::PublicFormSubmissionOnPageFilter }
 
-          variant :INTEGRATION_EVENT, -> { HubspotSDK::Crm::PublicIntegrationEventFilter }
+          variant :INTEGRATION_EVENT, -> { HubSpotSDK::Crm::PublicIntegrationEventFilter }
 
-          variant :EMAIL_SUBSCRIPTION, -> { HubspotSDK::Crm::PublicEmailSubscriptionFilter }
+          variant :EMAIL_SUBSCRIPTION, -> { HubSpotSDK::Crm::PublicEmailSubscriptionFilter }
 
-          variant :COMMUNICATION_SUBSCRIPTION, -> { HubspotSDK::Crm::PublicCommunicationSubscriptionFilter }
+          variant :COMMUNICATION_SUBSCRIPTION, -> { HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter }
 
-          variant :CAMPAIGN_INFLUENCED, -> { HubspotSDK::Crm::PublicCampaignInfluencedFilter }
+          variant :CAMPAIGN_INFLUENCED, -> { HubSpotSDK::Crm::PublicCampaignInfluencedFilter }
 
-          variant :SURVEY_MONKEY, -> { HubspotSDK::Crm::PublicSurveyMonkeyFilter }
+          variant :SURVEY_MONKEY, -> { HubSpotSDK::Crm::PublicSurveyMonkeyFilter }
 
-          variant :SURVEY_MONKEY_VALUE, -> { HubspotSDK::Crm::PublicSurveyMonkeyValueFilter }
+          variant :SURVEY_MONKEY_VALUE, -> { HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter }
 
-          variant :WEBINAR, -> { HubspotSDK::Crm::PublicWebinarFilter }
+          variant :WEBINAR, -> { HubSpotSDK::Crm::PublicWebinarFilter }
 
-          variant :EMAIL_EVENT, -> { HubspotSDK::Crm::PublicEmailEventFilter }
+          variant :EMAIL_EVENT, -> { HubSpotSDK::Crm::PublicEmailEventFilter }
 
-          variant :PRIVACY, -> { HubspotSDK::Crm::PublicPrivacyAnalyticsFilter }
+          variant :PRIVACY, -> { HubSpotSDK::Crm::PublicPrivacyAnalyticsFilter }
 
-          variant :ADS_SEARCH, -> { HubspotSDK::Crm::PublicAdsSearchFilter }
+          variant :ADS_SEARCH, -> { HubSpotSDK::Crm::PublicAdsSearchFilter }
 
-          variant :ADS_TIME, -> { HubspotSDK::Crm::PublicAdsTimeFilter }
+          variant :ADS_TIME, -> { HubSpotSDK::Crm::PublicAdsTimeFilter }
 
-          variant :IN_LIST, -> { HubspotSDK::Crm::PublicInListFilter }
+          variant :IN_LIST, -> { HubSpotSDK::Crm::PublicInListFilter }
 
-          variant :NUM_ASSOCIATIONS, -> { HubspotSDK::Crm::PublicNumAssociationsFilter }
+          variant :NUM_ASSOCIATIONS, -> { HubSpotSDK::Crm::PublicNumAssociationsFilter }
 
-          variant :UNIFIED_EVENTS, -> { HubspotSDK::Crm::PublicUnifiedEventsFilter }
+          variant :UNIFIED_EVENTS, -> { HubSpotSDK::Crm::PublicUnifiedEventsFilter }
 
-          variant :PROPERTY_ASSOCIATION, -> { HubspotSDK::Crm::PublicPropertyAssociationInListFilter }
+          variant :PROPERTY_ASSOCIATION, -> { HubSpotSDK::Crm::PublicPropertyAssociationInListFilter }
 
-          variant :CONSTANT, -> { HubspotSDK::Crm::PublicConstantFilter }
+          variant :CONSTANT, -> { HubSpotSDK::Crm::PublicConstantFilter }
 
           # @!method self.variants
-          #   @return [Array(HubspotSDK::Models::Crm::PublicPropertyFilter, HubspotSDK::Models::Crm::PublicAssociationInListFilter, HubspotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubspotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubspotSDK::Models::Crm::PublicEventAnalyticsFilter, HubspotSDK::Models::Crm::PublicFormSubmissionFilter, HubspotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubspotSDK::Models::Crm::PublicIntegrationEventFilter, HubspotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubspotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubspotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubspotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubspotSDK::Models::Crm::PublicWebinarFilter, HubspotSDK::Models::Crm::PublicEmailEventFilter, HubspotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubspotSDK::Models::Crm::PublicAdsSearchFilter, HubspotSDK::Models::Crm::PublicAdsTimeFilter, HubspotSDK::Models::Crm::PublicInListFilter, HubspotSDK::Models::Crm::PublicNumAssociationsFilter, HubspotSDK::Models::Crm::PublicUnifiedEventsFilter, HubspotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubspotSDK::Models::Crm::PublicConstantFilter)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicPropertyFilter, HubSpotSDK::Models::Crm::PublicAssociationInListFilter, HubSpotSDK::Models::Crm::PublicPageViewAnalyticsFilter, HubSpotSDK::Models::Crm::PublicCtaAnalyticsFilter, HubSpotSDK::Models::Crm::PublicEventAnalyticsFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionFilter, HubSpotSDK::Models::Crm::PublicFormSubmissionOnPageFilter, HubSpotSDK::Models::Crm::PublicIntegrationEventFilter, HubSpotSDK::Models::Crm::PublicEmailSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCommunicationSubscriptionFilter, HubSpotSDK::Models::Crm::PublicCampaignInfluencedFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyFilter, HubSpotSDK::Models::Crm::PublicSurveyMonkeyValueFilter, HubSpotSDK::Models::Crm::PublicWebinarFilter, HubSpotSDK::Models::Crm::PublicEmailEventFilter, HubSpotSDK::Models::Crm::PublicPrivacyAnalyticsFilter, HubSpotSDK::Models::Crm::PublicAdsSearchFilter, HubSpotSDK::Models::Crm::PublicAdsTimeFilter, HubSpotSDK::Models::Crm::PublicInListFilter, HubSpotSDK::Models::Crm::PublicNumAssociationsFilter, HubSpotSDK::Models::Crm::PublicUnifiedEventsFilter, HubSpotSDK::Models::Crm::PublicPropertyAssociationInListFilter, HubSpotSDK::Models::Crm::PublicConstantFilter)]
         end
       end
     end

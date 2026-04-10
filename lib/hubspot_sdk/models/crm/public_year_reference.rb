@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicYearReference < HubspotSDK::Internal::Type::BaseModel
+      class PublicYearReference < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute day
         #   The day component of the year reference.
         #
@@ -19,9 +19,9 @@ module HubspotSDK
         # @!attribute reference_type
         #   Indicates the type of reference (YEAR).
         #
-        #   @return [Symbol, HubspotSDK::Models::Crm::PublicYearReference::ReferenceType]
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicYearReference::ReferenceType]
         required :reference_type,
-                 enum: -> { HubspotSDK::Crm::PublicYearReference::ReferenceType },
+                 enum: -> { HubSpotSDK::Crm::PublicYearReference::ReferenceType },
                  api_name: :referenceType
 
         # @!attribute hour
@@ -53,7 +53,7 @@ module HubspotSDK
         #
         #   @param month [Integer] The month component of the year reference.
         #
-        #   @param reference_type [Symbol, HubspotSDK::Models::Crm::PublicYearReference::ReferenceType] Indicates the type of reference (YEAR).
+        #   @param reference_type [Symbol, HubSpotSDK::Models::Crm::PublicYearReference::ReferenceType] Indicates the type of reference (YEAR).
         #
         #   @param hour [Integer] The hour component of the year reference.
         #
@@ -65,9 +65,9 @@ module HubspotSDK
 
         # Indicates the type of reference (YEAR).
         #
-        # @see HubspotSDK::Models::Crm::PublicYearReference#reference_type
+        # @see HubSpotSDK::Models::Crm::PublicYearReference#reference_type
         module ReferenceType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           YEAR = :YEAR
 

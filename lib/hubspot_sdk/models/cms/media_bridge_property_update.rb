@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
-      class MediaBridgePropertyUpdate < HubspotSDK::Internal::Type::BaseModel
+      class MediaBridgePropertyUpdate < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute calculation_formula
         #
         #   @return [String, nil]
@@ -21,15 +21,15 @@ module HubspotSDK
 
         # @!attribute field_type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType, nil]
         optional :field_type,
-                 enum: -> { HubspotSDK::Cms::MediaBridgePropertyUpdate::FieldType },
+                 enum: -> { HubSpotSDK::Cms::MediaBridgePropertyUpdate::FieldType },
                  api_name: :fieldType
 
         # @!attribute form_field
         #
         #   @return [Boolean, nil]
-        optional :form_field, HubspotSDK::Internal::Type::Boolean, api_name: :formField
+        optional :form_field, HubSpotSDK::Internal::Type::Boolean, api_name: :formField
 
         # @!attribute group_name
         #
@@ -39,12 +39,12 @@ module HubspotSDK
         # @!attribute has_unique_value
         #
         #   @return [Boolean, nil]
-        optional :has_unique_value, HubspotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
+        optional :has_unique_value, HubSpotSDK::Internal::Type::Boolean, api_name: :hasUniqueValue
 
         # @!attribute hidden
         #
         #   @return [Boolean, nil]
-        optional :hidden, HubspotSDK::Internal::Type::Boolean
+        optional :hidden, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute label
         #
@@ -53,30 +53,30 @@ module HubspotSDK
 
         # @!attribute options
         #
-        #   @return [Array<HubspotSDK::Models::OptionInput>, nil]
-        optional :options, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::OptionInput] }
+        #   @return [Array<HubSpotSDK::Models::OptionInput>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::OptionInput] }
 
         # @!attribute type
         #
-        #   @return [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::Type, nil]
-        optional :type, enum: -> { HubspotSDK::Cms::MediaBridgePropertyUpdate::Type }
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type, nil]
+        optional :type, enum: -> { HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type }
 
         # @!method initialize(calculation_formula: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, options: nil, type: nil)
         #   @param calculation_formula [String]
         #   @param description [String]
         #   @param display_order [Integer]
-        #   @param field_type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType]
+        #   @param field_type [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::FieldType]
         #   @param form_field [Boolean]
         #   @param group_name [String]
         #   @param has_unique_value [Boolean]
         #   @param hidden [Boolean]
         #   @param label [String]
-        #   @param options [Array<HubspotSDK::Models::OptionInput>]
-        #   @param type [Symbol, HubspotSDK::Models::Cms::MediaBridgePropertyUpdate::Type]
+        #   @param options [Array<HubSpotSDK::Models::OptionInput>]
+        #   @param type [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type]
 
-        # @see HubspotSDK::Models::Cms::MediaBridgePropertyUpdate#field_type
+        # @see HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate#field_type
         module FieldType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOLEANCHECKBOX = :booleancheckbox
           CALCULATION_EQUATION = :calculation_equation
@@ -95,9 +95,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Cms::MediaBridgePropertyUpdate#type
+        # @see HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate#type
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           BOOL = :bool
           DATE = :date

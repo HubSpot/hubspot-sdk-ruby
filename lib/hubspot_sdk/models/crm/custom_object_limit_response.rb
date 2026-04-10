@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      # @see HubspotSDK::Resources::Crm::Limits#get_custom_object_type_limits
-      class CustomObjectLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Crm::Limits#get_custom_object_type_limits
+      class CustomObjectLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute limit
         #   The maximum number of custom objects allowed.
         #

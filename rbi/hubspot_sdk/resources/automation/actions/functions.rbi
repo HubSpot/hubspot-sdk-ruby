@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Automation
       class Actions
@@ -10,9 +10,9 @@ module HubspotSDK
             params(
               definition_id: String,
               app_id: Integer,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
+              HubSpotSDK::Automation::CollectionResponsePublicActionFunctionIdentifierNoPaging
             )
           end
           def list(definition_id, app_id:, request_options: {})
@@ -25,8 +25,8 @@ module HubspotSDK
               app_id: Integer,
               definition_id: String,
               function_type:
-                HubspotSDK::Automation::Actions::FunctionDeleteParams::FunctionType::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Automation::Actions::FunctionDeleteParams::FunctionType::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(
@@ -45,10 +45,10 @@ module HubspotSDK
               app_id: Integer,
               definition_id: String,
               function_type:
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceParams::FunctionType::OrSymbol,
               body: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionFunctionIdentifier)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionFunctionIdentifier)
           end
           def create_or_replace(
             # Path param
@@ -69,12 +69,12 @@ module HubspotSDK
           sig do
             params(
               function_type:
-                HubspotSDK::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::FunctionType::OrSymbol,
+                HubSpotSDK::Automation::Actions::FunctionCreateOrReplaceByFunctionTypeParams::FunctionType::OrSymbol,
               app_id: Integer,
               definition_id: String,
               body: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionFunctionIdentifier)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionFunctionIdentifier)
           end
           def create_or_replace_by_function_type(
             # Path param
@@ -93,10 +93,10 @@ module HubspotSDK
           sig do
             params(
               function_type:
-                HubspotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType::OrSymbol,
+                HubSpotSDK::Automation::Actions::FunctionDeleteByFunctionTypeParams::FunctionType::OrSymbol,
               app_id: Integer,
               definition_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete_by_function_type(
@@ -114,9 +114,9 @@ module HubspotSDK
               app_id: Integer,
               definition_id: String,
               function_type:
-                HubspotSDK::Automation::Actions::FunctionGetParams::FunctionType::OrSymbol,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionFunction)
+                HubSpotSDK::Automation::Actions::FunctionGetParams::FunctionType::OrSymbol,
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionFunction)
           end
           def get(
             function_id,
@@ -131,11 +131,11 @@ module HubspotSDK
           sig do
             params(
               function_type:
-                HubspotSDK::Automation::Actions::FunctionGetByFunctionTypeParams::FunctionType::OrSymbol,
+                HubSpotSDK::Automation::Actions::FunctionGetByFunctionTypeParams::FunctionType::OrSymbol,
               app_id: Integer,
               definition_id: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Automation::PublicActionFunction)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Automation::PublicActionFunction)
           end
           def get_by_function_type(
             function_type,
@@ -146,7 +146,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

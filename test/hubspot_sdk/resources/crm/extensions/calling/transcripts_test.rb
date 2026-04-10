@@ -2,7 +2,7 @@
 
 require_relative "../../../../test_helper"
 
-class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < HubspotSDK::Test::ResourceTest
+class HubSpotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < HubSpotSDK::Test::ResourceTest
   def test_create_required_params
     skip("Mock server tests are disabled")
 
@@ -20,7 +20,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < H
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
+      response => HubSpotSDK::Crm::Extensions::Calling::TranscriptCreateResponse
     end
 
     assert_pattern do
@@ -55,12 +55,12 @@ class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < H
       )
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
+      response => HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse
     end
 
     assert_pattern do
       response => {
-        caller_id_matches: ^(HubspotSDK::Internal::Type::ArrayOf[union: HubspotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch])
+        caller_id_matches: ^(HubSpotSDK::Internal::Type::ArrayOf[union: HubSpotSDK::Crm::Extensions::CompletedThirdPartyCallResponse::CallerIDMatch])
       }
     end
   end
@@ -71,7 +71,7 @@ class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < H
     response = @hubspot.crm.extensions.calling.transcripts.get("transcriptId")
 
     assert_pattern do
-      response => HubspotSDK::Crm::Extensions::Calling::TranscriptResponse
+      response => HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse
     end
 
     assert_pattern do
@@ -79,8 +79,8 @@ class HubspotSDK::Test::Resources::Crm::Extensions::Calling::TranscriptsTest < H
         id: String,
         created_at: Time,
         engagement_id: Integer,
-        transcript_source: HubspotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource,
-        transcript_utterances: ^(HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Crm::Extensions::Calling::TranscriptUtterance]),
+        transcript_source: HubSpotSDK::Crm::Extensions::Calling::TranscriptResponse::TranscriptSource,
+        transcript_utterances: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Extensions::Calling::TranscriptUtterance]),
         updated_at: Time
       }
     end

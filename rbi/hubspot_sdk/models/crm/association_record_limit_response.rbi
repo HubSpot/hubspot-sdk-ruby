@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class AssociationRecordLimitResponse < HubspotSDK::Internal::Type::BaseModel
+      class AssociationRecordLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::AssociationRecordLimitResponse,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::AssociationRecordLimitResponse,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
-        sig { returns(T::Array[HubspotSDK::Crm::AtLimitRecordSample]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::AtLimitRecordSample]) }
         attr_accessor :at_limit_from_record_samples
 
         # The maximum number of associations allowed for records.
         sig { returns(Integer) }
         attr_accessor :limit
 
-        sig { returns(T::Array[HubspotSDK::Crm::NearLimitRecordSample]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::NearLimitRecordSample]) }
         attr_accessor :near_limit_from_record_samples
 
         # The total number of records that have reached their association limit.
@@ -33,10 +33,10 @@ module HubspotSDK
         sig do
           params(
             at_limit_from_record_samples:
-              T::Array[HubspotSDK::Crm::AtLimitRecordSample::OrHash],
+              T::Array[HubSpotSDK::Crm::AtLimitRecordSample::OrHash],
             limit: Integer,
             near_limit_from_record_samples:
-              T::Array[HubspotSDK::Crm::NearLimitRecordSample::OrHash],
+              T::Array[HubSpotSDK::Crm::NearLimitRecordSample::OrHash],
             total_records_at_limit: Integer,
             total_records_near_limit: Integer
           ).returns(T.attached_class)
@@ -57,10 +57,10 @@ module HubspotSDK
           override.returns(
             {
               at_limit_from_record_samples:
-                T::Array[HubspotSDK::Crm::AtLimitRecordSample],
+                T::Array[HubSpotSDK::Crm::AtLimitRecordSample],
               limit: Integer,
               near_limit_from_record_samples:
-                T::Array[HubspotSDK::Crm::NearLimitRecordSample],
+                T::Array[HubSpotSDK::Crm::NearLimitRecordSample],
               total_records_at_limit: Integer,
               total_records_near_limit: Integer
             }

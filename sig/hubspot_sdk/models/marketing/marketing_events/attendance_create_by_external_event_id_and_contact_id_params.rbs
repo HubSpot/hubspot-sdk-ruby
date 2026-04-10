@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       module MarketingEvents
@@ -8,11 +8,11 @@ module HubspotSDK
             subscriber_state: String,
             external_account_id: String
           }
-          & HubspotSDK::Internal::Type::request_parameters
+          & HubSpotSDK::Internal::Type::request_parameters
 
-        class AttendanceCreateByExternalEventIDAndContactIDParams < HubspotSDK::Models::Marketing::BatchInputMarketingEventSubscriber
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        class AttendanceCreateByExternalEventIDAndContactIDParams < HubSpotSDK::Models::Marketing::BatchInputMarketingEventSubscriber
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           def external_event_id: -> String
 
@@ -30,14 +30,14 @@ module HubspotSDK
             external_event_id: String,
             subscriber_state: String,
             ?external_account_id: String,
-            ?request_options: HubspotSDK::request_opts
+            ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             external_event_id: String,
             subscriber_state: String,
             external_account_id: String,
-            request_options: HubspotSDK::RequestOptions
+            request_options: HubSpotSDK::RequestOptions
           }
         end
       end

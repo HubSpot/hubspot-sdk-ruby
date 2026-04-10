@@ -42,13 +42,13 @@ class Time
   def self.now = Thread.current.thread_variable_get(:time_now) || _now
 end
 
-class HubspotSDK::Test::SingletonClient < HubspotSDK::Client
+class HubSpotSDK::Test::SingletonClient < HubSpotSDK::Client
   include Singleton
 
   TEST_API_BASE_URL = ENV.fetch("TEST_API_BASE_URL", "http://localhost:4010")
 
   def initialize
-    super(base_url: HubspotSDK::Test::SingletonClient::TEST_API_BASE_URL, access_token: "My Access Token")
+    super(base_url: HubSpotSDK::Test::SingletonClient::TEST_API_BASE_URL, access_token: "My Access Token")
   end
 end
 
@@ -66,7 +66,7 @@ class Minitest::Test
   prove_it!
 end
 
-class HubspotSDK::Test::ResourceTest < Minitest::Test
+class HubSpotSDK::Test::ResourceTest < Minitest::Test
   def async?
     return @async unless @async.nil?
     @async = Digest::SHA256.hexdigest(self.class.name).to_i(16).odd?
@@ -74,7 +74,7 @@ class HubspotSDK::Test::ResourceTest < Minitest::Test
 
   def before_all
     super
-    @hubspot = HubspotSDK::Test::SingletonClient.instance
+    @hubspot = HubSpotSDK::Test::SingletonClient.instance
   end
 
   def around_all = async? ? Sync { super } : super

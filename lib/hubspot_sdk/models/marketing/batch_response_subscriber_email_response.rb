@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
-      class BatchResponseSubscriberEmailResponse < HubspotSDK::Internal::Type::BaseModel
+      class BatchResponseSubscriberEmailResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
         #   Timestamp that represents when the request finished processing
         #
@@ -12,9 +12,9 @@ module HubspotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubspotSDK::Models::Marketing::SubscriberEmailResponse>]
+        #   @return [Array<HubSpotSDK::Models::Marketing::SubscriberEmailResponse>]
         required :results,
-                 -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::Marketing::SubscriberEmailResponse] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::SubscriberEmailResponse] }
 
         # @!attribute started_at
         #   Timestamp that represents when the request started processing
@@ -25,19 +25,19 @@ module HubspotSDK
         # @!attribute status
         #   The status of the request processing
         #
-        #   @return [Symbol, HubspotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse::Status]
-        required :status, enum: -> { HubspotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse::Status]
+        required :status, enum: -> { HubSpotSDK::Marketing::BatchResponseSubscriberEmailResponse::Status }
 
         # @!attribute errors
         #
-        #   @return [Array<HubspotSDK::Models::StandardError>, nil]
-        optional :errors, -> { HubspotSDK::Internal::Type::ArrayOf[HubspotSDK::StandardError] }
+        #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
+        optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
         #   Result of the request
         #
         #   @return [Hash{Symbol=>String}, nil]
-        optional :links, HubspotSDK::Internal::Type::HashOf[String]
+        optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
         #   The number of errors that occurred during the processing
@@ -54,13 +54,13 @@ module HubspotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time] Timestamp that represents when the request finished processing
         #
-        #   @param results [Array<HubspotSDK::Models::Marketing::SubscriberEmailResponse>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::SubscriberEmailResponse>]
         #
         #   @param started_at [Time] Timestamp that represents when the request started processing
         #
-        #   @param status [Symbol, HubspotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse::Status] The status of the request processing
+        #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse::Status] The status of the request processing
         #
-        #   @param errors [Array<HubspotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] Result of the request
         #
@@ -70,9 +70,9 @@ module HubspotSDK
 
         # The status of the request processing
         #
-        # @see HubspotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse#status
+        # @see HubSpotSDK::Models::Marketing::BatchResponseSubscriberEmailResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           CANCELED = :CANCELED
           COMPLETE = :COMPLETE

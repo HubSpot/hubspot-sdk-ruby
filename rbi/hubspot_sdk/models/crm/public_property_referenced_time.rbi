@@ -1,14 +1,14 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Crm
-      class PublicPropertyReferencedTime < HubspotSDK::Internal::Type::BaseModel
+      class PublicPropertyReferencedTime < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Crm::PublicPropertyReferencedTime,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Crm::PublicPropertyReferencedTime,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -25,7 +25,7 @@ module HubspotSDK
         # Defines the type of time (PROPERTY_REFERENCED).
         sig do
           returns(
-            HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol
+            HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol
           )
         end
         attr_accessor :time_type
@@ -47,7 +47,7 @@ module HubspotSDK
             property: String,
             reference_type: String,
             time_type:
-              HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol,
+              HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol,
             zone_id: String,
             timezone_source: String
           ).returns(T.attached_class)
@@ -75,7 +75,7 @@ module HubspotSDK
               property: String,
               reference_type: String,
               time_type:
-                HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol,
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType::OrSymbol,
               zone_id: String,
               timezone_source: String
             }
@@ -86,13 +86,13 @@ module HubspotSDK
 
         # Defines the type of time (PROPERTY_REFERENCED).
         module TimeType
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -100,13 +100,13 @@ module HubspotSDK
           PROPERTY_REFERENCED =
             T.let(
               :PROPERTY_REFERENCED,
-              HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType::TaggedSymbol
+              HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Crm::PublicPropertyReferencedTime::TimeType::TaggedSymbol
+                HubSpotSDK::Crm::PublicPropertyReferencedTime::TimeType::TaggedSymbol
               ]
             )
           end

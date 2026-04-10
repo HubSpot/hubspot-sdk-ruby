@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
-      sig { returns(HubspotSDK::Resources::Marketing::Campaigns) }
+      sig { returns(HubSpotSDK::Resources::Marketing::Campaigns) }
       attr_reader :campaigns
 
-      sig { returns(HubspotSDK::Resources::Marketing::Emails) }
+      sig { returns(HubSpotSDK::Resources::Marketing::Emails) }
       attr_reader :emails
 
-      sig { returns(HubspotSDK::Resources::Marketing::MarketingEvents) }
+      sig { returns(HubSpotSDK::Resources::Marketing::MarketingEvents) }
       attr_reader :marketing_events
 
-      sig { returns(HubspotSDK::Resources::Marketing::SingleSend) }
+      sig { returns(HubSpotSDK::Resources::Marketing::SingleSend) }
       attr_reader :single_send
 
-      sig { returns(HubspotSDK::Resources::Marketing::Transactional) }
+      sig { returns(HubSpotSDK::Resources::Marketing::Transactional) }
       attr_reader :transactional
 
       # @api private
-      sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+      sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
       def self.new(client:)
       end
     end

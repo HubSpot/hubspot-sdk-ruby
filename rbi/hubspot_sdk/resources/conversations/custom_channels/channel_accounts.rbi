@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Conversations
       class CustomChannels
@@ -14,9 +14,9 @@ module HubspotSDK
               inbox_id: String,
               name: String,
               delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Conversations::PublicChannelAccount)
           end
           def create(
             channel_id,
@@ -36,8 +36,8 @@ module HubspotSDK
               channel_id: Integer,
               authorized: T::Boolean,
               name: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Conversations::PublicChannelAccount)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Conversations::PublicChannelAccount)
           end
           def update(
             # Path param
@@ -61,15 +61,15 @@ module HubspotSDK
               default_page_length: Integer,
               delivery_identifier_type:
                 T::Array[
-                  HubspotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
+                  HubSpotSDK::Conversations::CustomChannels::ChannelAccountListParams::DeliveryIdentifierType::OrSymbol
                 ],
               delivery_identifier_value: T::Array[String],
               limit: Integer,
               sort: T::Array[String],
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Internal::Page[
-                HubspotSDK::Conversations::PublicChannelAccount
+              HubSpotSDK::Internal::Page[
+                HubSpotSDK::Conversations::PublicChannelAccount
               ]
             )
           end
@@ -100,10 +100,10 @@ module HubspotSDK
               channel_id: Integer,
               account_name: String,
               delivery_identifier:
-                HubspotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
-              request_options: HubspotSDK::RequestOptions::OrHash
+                HubSpotSDK::Conversations::PublicDeliveryIdentifier::OrHash,
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(
-              HubspotSDK::Conversations::PublicChannelAccountStagingToken
+              HubSpotSDK::Conversations::PublicChannelAccountStagingToken
             )
           end
           def update_staging_token(
@@ -120,7 +120,7 @@ module HubspotSDK
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

@@ -1,33 +1,33 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
-      # @return [HubspotSDK::Resources::Marketing::Campaigns]
+      # @return [HubSpotSDK::Resources::Marketing::Campaigns]
       attr_reader :campaigns
 
-      # @return [HubspotSDK::Resources::Marketing::Emails]
+      # @return [HubSpotSDK::Resources::Marketing::Emails]
       attr_reader :emails
 
-      # @return [HubspotSDK::Resources::Marketing::MarketingEvents]
+      # @return [HubSpotSDK::Resources::Marketing::MarketingEvents]
       attr_reader :marketing_events
 
-      # @return [HubspotSDK::Resources::Marketing::SingleSend]
+      # @return [HubSpotSDK::Resources::Marketing::SingleSend]
       attr_reader :single_send
 
-      # @return [HubspotSDK::Resources::Marketing::Transactional]
+      # @return [HubSpotSDK::Resources::Marketing::Transactional]
       attr_reader :transactional
 
       # @api private
       #
-      # @param client [HubspotSDK::Client]
+      # @param client [HubSpotSDK::Client]
       def initialize(client:)
         @client = client
-        @campaigns = HubspotSDK::Resources::Marketing::Campaigns.new(client: client)
-        @emails = HubspotSDK::Resources::Marketing::Emails.new(client: client)
-        @marketing_events = HubspotSDK::Resources::Marketing::MarketingEvents.new(client: client)
-        @single_send = HubspotSDK::Resources::Marketing::SingleSend.new(client: client)
-        @transactional = HubspotSDK::Resources::Marketing::Transactional.new(client: client)
+        @campaigns = HubSpotSDK::Resources::Marketing::Campaigns.new(client: client)
+        @emails = HubSpotSDK::Resources::Marketing::Emails.new(client: client)
+        @marketing_events = HubSpotSDK::Resources::Marketing::MarketingEvents.new(client: client)
+        @single_send = HubSpotSDK::Resources::Marketing::SingleSend.new(client: client)
+        @transactional = HubSpotSDK::Resources::Marketing::Transactional.new(client: client)
       end
     end
   end

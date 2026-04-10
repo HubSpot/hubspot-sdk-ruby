@@ -1,25 +1,25 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        class BatchInputTag < HubspotSDK::Internal::Type::BaseModel
+        class BatchInputTag < HubSpotSDK::Internal::Type::BaseModel
           OrHash =
             T.type_alias do
               T.any(
-                HubspotSDK::Cms::Blogs::BatchInputTag,
-                HubspotSDK::Internal::AnyHash
+                HubSpotSDK::Cms::Blogs::BatchInputTag,
+                HubSpotSDK::Internal::AnyHash
               )
             end
 
           # Blog tags to input.
-          sig { returns(T::Array[HubspotSDK::Cms::Blogs::Tag]) }
+          sig { returns(T::Array[HubSpotSDK::Cms::Blogs::Tag]) }
           attr_accessor :inputs
 
           sig do
             params(
-              inputs: T::Array[HubspotSDK::Cms::Blogs::Tag::OrHash]
+              inputs: T::Array[HubSpotSDK::Cms::Blogs::Tag::OrHash]
             ).returns(T.attached_class)
           end
           def self.new(
@@ -29,7 +29,7 @@ module HubspotSDK
           end
 
           sig do
-            override.returns({ inputs: T::Array[HubspotSDK::Cms::Blogs::Tag] })
+            override.returns({ inputs: T::Array[HubSpotSDK::Cms::Blogs::Tag] })
           end
           def to_hash
           end

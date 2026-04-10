@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Scheduler
       type external_link_metadata =
@@ -9,13 +9,13 @@ module HubspotSDK
           link: String,
           organizer_user_id: String,
           slug: String,
-          type: HubspotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
+          type: HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
           user_ids_of_link_members: ::Array[String],
           name: String,
           updated_at: Time
         }
 
-      class ExternalLinkMetadata < HubspotSDK::Internal::Type::BaseModel
+      class ExternalLinkMetadata < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
         attr_accessor created_at: Time
@@ -28,7 +28,7 @@ module HubspotSDK
 
         attr_accessor slug: String
 
-        attr_accessor type: HubspotSDK::Models::Scheduler::ExternalLinkMetadata::type_
+        attr_accessor type: HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::type_
 
         attr_accessor user_ids_of_link_members: ::Array[String]
 
@@ -47,7 +47,7 @@ module HubspotSDK
           link: String,
           organizer_user_id: String,
           slug: String,
-          type: HubspotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
+          type: HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
           user_ids_of_link_members: ::Array[String],
           ?name: String,
           ?updated_at: Time
@@ -60,7 +60,7 @@ module HubspotSDK
           link: String,
           organizer_user_id: String,
           slug: String,
-          type: HubspotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
+          type: HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::type_,
           user_ids_of_link_members: ::Array[String],
           name: String,
           updated_at: Time
@@ -69,13 +69,13 @@ module HubspotSDK
         type type_ = :GROUP_CALENDAR | :PERSONAL_LINK | :ROUND_ROBIN_CALENDAR
 
         module Type
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           GROUP_CALENDAR: :GROUP_CALENDAR
           PERSONAL_LINK: :PERSONAL_LINK
           ROUND_ROBIN_CALENDAR: :ROUND_ROBIN_CALENDAR
 
-          def self?.values: -> ::Array[HubspotSDK::Models::Scheduler::ExternalLinkMetadata::type_]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Scheduler::ExternalLinkMetadata::type_]
         end
       end
     end

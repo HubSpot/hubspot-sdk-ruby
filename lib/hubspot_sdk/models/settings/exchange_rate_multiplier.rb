@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Settings
-      class ExchangeRateMultiplier < HubspotSDK::Internal::Type::BaseModel
+      class ExchangeRateMultiplier < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute conversion_rate
         #   The updated conversion rate between the to and from currency code of this
         #   exchange rate.
@@ -19,7 +19,7 @@ module HubspotSDK
 
         # @!method initialize(conversion_rate:, effective_at: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubspotSDK::Models::Settings::ExchangeRateMultiplier} for more details.
+        #   {HubSpotSDK::Models::Settings::ExchangeRateMultiplier} for more details.
         #
         #   @param conversion_rate [Float] The updated conversion rate between the to and from currency code of this exchan
         #

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Cms
       module Blogs
-        # @see HubspotSDK::Resources::Cms::Blogs::Posts#get
-        class PostGetParams < HubspotSDK::Internal::Type::BaseModel
-          extend HubspotSDK::Internal::Type::RequestParameters::Converter
-          include HubspotSDK::Internal::Type::RequestParameters
+        # @see HubSpotSDK::Resources::Cms::Blogs::Posts#get
+        class PostGetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
 
           # @!attribute object_id_
           #
@@ -18,7 +18,7 @@ module HubspotSDK
           #   Whether to return only results that have been archived.
           #
           #   @return [Boolean, nil]
-          optional :archived, HubspotSDK::Internal::Type::Boolean
+          optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute property
           #
@@ -32,7 +32,7 @@ module HubspotSDK
           #
           #   @param property [String]
           #
-          #   @param request_options [HubspotSDK::RequestOptions, Hash{Symbol=>Object}]
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end
       end
     end

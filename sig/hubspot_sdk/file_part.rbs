@@ -1,4 +1,4 @@
-module HubspotSDK
+module HubSpotSDK
   class FilePart
     attr_reader content: Pathname | StringIO | IO | String
 

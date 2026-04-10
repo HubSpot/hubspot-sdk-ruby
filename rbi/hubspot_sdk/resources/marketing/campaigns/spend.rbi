@@ -1,6 +1,6 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Resources
     class Marketing
       class Campaigns
@@ -13,8 +13,8 @@ module HubspotSDK
               name: String,
               order: Integer,
               description: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::PublicSpendItem)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
           def create(
             campaign_guid,
@@ -39,8 +39,8 @@ module HubspotSDK
               name: String,
               order: Integer,
               description: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::PublicSpendItem)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
           def update(
             # Path param
@@ -64,7 +64,7 @@ module HubspotSDK
             params(
               spend_id: Integer,
               campaign_guid: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
+              request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
           def delete(spend_id, campaign_guid:, request_options: {})
@@ -75,14 +75,14 @@ module HubspotSDK
             params(
               spend_id: Integer,
               campaign_guid: String,
-              request_options: HubspotSDK::RequestOptions::OrHash
-            ).returns(HubspotSDK::Marketing::PublicSpendItem)
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
           def get(spend_id, campaign_guid:, request_options: {})
           end
 
           # @api private
-          sig { params(client: HubspotSDK::Client).returns(T.attached_class) }
+          sig { params(client: HubSpotSDK::Client).returns(T.attached_class) }
           def self.new(client:)
           end
         end

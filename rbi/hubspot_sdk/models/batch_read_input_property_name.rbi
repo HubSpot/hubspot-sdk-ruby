@@ -1,13 +1,13 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
-    class BatchReadInputPropertyName < HubspotSDK::Internal::Type::BaseModel
+    class BatchReadInputPropertyName < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
           T.any(
-            HubspotSDK::BatchReadInputPropertyName,
-            HubspotSDK::Internal::AnyHash
+            HubSpotSDK::BatchReadInputPropertyName,
+            HubSpotSDK::Internal::AnyHash
           )
         end
 
@@ -16,20 +16,20 @@ module HubspotSDK
 
       sig do
         returns(
-          HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol
+          HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol
         )
       end
       attr_accessor :data_sensitivity
 
-      sig { returns(T::Array[HubspotSDK::PropertyName]) }
+      sig { returns(T::Array[HubSpotSDK::PropertyName]) }
       attr_accessor :inputs
 
       sig do
         params(
           archived: T::Boolean,
           data_sensitivity:
-            HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
-          inputs: T::Array[HubspotSDK::PropertyName::OrHash]
+            HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+          inputs: T::Array[HubSpotSDK::PropertyName::OrHash]
         ).returns(T.attached_class)
       end
       def self.new(archived:, data_sensitivity:, inputs:)
@@ -40,8 +40,8 @@ module HubspotSDK
           {
             archived: T::Boolean,
             data_sensitivity:
-              HubspotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
-            inputs: T::Array[HubspotSDK::PropertyName]
+              HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::OrSymbol,
+            inputs: T::Array[HubSpotSDK::PropertyName]
           }
         )
       end
@@ -49,13 +49,13 @@ module HubspotSDK
       end
 
       module DataSensitivity
-        extend HubspotSDK::Internal::Type::Enum
+        extend HubSpotSDK::Internal::Type::Enum
 
         TaggedSymbol =
           T.type_alias do
             T.all(
               Symbol,
-              HubspotSDK::BatchReadInputPropertyName::DataSensitivity
+              HubSpotSDK::BatchReadInputPropertyName::DataSensitivity
             )
           end
         OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -63,23 +63,23 @@ module HubspotSDK
         HIGHLY_SENSITIVE =
           T.let(
             :highly_sensitive,
-            HubspotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+            HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
           )
         NON_SENSITIVE =
           T.let(
             :non_sensitive,
-            HubspotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+            HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
           )
         SENSITIVE =
           T.let(
             :sensitive,
-            HubspotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+            HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
           )
 
         sig do
           override.returns(
             T::Array[
-              HubspotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
+              HubSpotSDK::BatchReadInputPropertyName::DataSensitivity::TaggedSymbol
             ]
           )
         end

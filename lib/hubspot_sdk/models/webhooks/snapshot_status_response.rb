@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubspotSDK::Resources::Webhooks#get_journal_status
-      class SnapshotStatusResponse < HubspotSDK::Internal::Type::BaseModel
+      # @see HubSpotSDK::Resources::Webhooks#get_journal_status
+      class SnapshotStatusResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #
         #   @return [String]
@@ -17,8 +17,8 @@ module HubspotSDK
 
         # @!attribute status
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::SnapshotStatusResponse::Status]
-        required :status, enum: -> { HubspotSDK::Webhooks::SnapshotStatusResponse::Status }
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::Status]
+        required :status, enum: -> { HubSpotSDK::Webhooks::SnapshotStatusResponse::Status }
 
         # @!attribute completed_at
         #
@@ -27,9 +27,9 @@ module HubspotSDK
 
         # @!attribute error_code
         #
-        #   @return [Symbol, HubspotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode, nil]
+        #   @return [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode, nil]
         optional :error_code,
-                 enum: -> { HubspotSDK::Webhooks::SnapshotStatusResponse::ErrorCode },
+                 enum: -> { HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode },
                  api_name: :errorCode
 
         # @!attribute message
@@ -40,14 +40,14 @@ module HubspotSDK
         # @!method initialize(id:, initiated_at:, status:, completed_at: nil, error_code: nil, message: nil)
         #   @param id [String]
         #   @param initiated_at [Integer]
-        #   @param status [Symbol, HubspotSDK::Models::Webhooks::SnapshotStatusResponse::Status]
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::Status]
         #   @param completed_at [Integer]
-        #   @param error_code [Symbol, HubspotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode]
+        #   @param error_code [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode]
         #   @param message [String]
 
-        # @see HubspotSDK::Models::Webhooks::SnapshotStatusResponse#status
+        # @see HubSpotSDK::Models::Webhooks::SnapshotStatusResponse#status
         module Status
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           COMPLETED = :COMPLETED
           EXPIRED = :EXPIRED
@@ -59,9 +59,9 @@ module HubspotSDK
           #   @return [Array<Symbol>]
         end
 
-        # @see HubspotSDK::Models::Webhooks::SnapshotStatusResponse#error_code
+        # @see HubSpotSDK::Models::Webhooks::SnapshotStatusResponse#error_code
         module ErrorCode
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           INTERNAL_ERROR = :INTERNAL_ERROR
           PERMISSION_DENIED = :PERMISSION_DENIED

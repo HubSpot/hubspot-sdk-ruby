@@ -1,17 +1,17 @@
 # typed: strong
 
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Files
-      class FileAssetGetSignedURLParams < HubspotSDK::Internal::Type::BaseModel
-        extend HubspotSDK::Internal::Type::RequestParameters::Converter
-        include HubspotSDK::Internal::Type::RequestParameters
+      class FileAssetGetSignedURLParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
 
         OrHash =
           T.type_alias do
             T.any(
-              HubspotSDK::Files::FileAssetGetSignedURLParams,
-              HubspotSDK::Internal::AnyHash
+              HubSpotSDK::Files::FileAssetGetSignedURLParams,
+              HubSpotSDK::Internal::AnyHash
             )
           end
 
@@ -27,7 +27,7 @@ module HubspotSDK
         sig do
           returns(
             T.nilable(
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol
             )
           )
         end
@@ -35,7 +35,7 @@ module HubspotSDK
 
         sig do
           params(
-            size: HubspotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol
+            size: HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol
           ).void
         end
         attr_writer :size
@@ -51,9 +51,9 @@ module HubspotSDK
             file_id: String,
             expiration_seconds: Integer,
             size:
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
             upscale: T::Boolean,
-            request_options: HubspotSDK::RequestOptions::OrHash
+            request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
         def self.new(
@@ -71,9 +71,9 @@ module HubspotSDK
               file_id: String,
               expiration_seconds: Integer,
               size:
-                HubspotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
+                HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::OrSymbol,
               upscale: T::Boolean,
-              request_options: HubspotSDK::RequestOptions
+              request_options: HubSpotSDK::RequestOptions
             }
           )
         end
@@ -81,13 +81,13 @@ module HubspotSDK
         end
 
         module Size
-          extend HubspotSDK::Internal::Type::Enum
+          extend HubSpotSDK::Internal::Type::Enum
 
           TaggedSymbol =
             T.type_alias do
               T.all(
                 Symbol,
-                HubspotSDK::Files::FileAssetGetSignedURLParams::Size
+                HubSpotSDK::Files::FileAssetGetSignedURLParams::Size
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -95,28 +95,28 @@ module HubspotSDK
           ICON =
             T.let(
               :icon,
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
             )
           MEDIUM =
             T.let(
               :medium,
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
             )
           PREVIEW =
             T.let(
               :preview,
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
             )
           THUMB =
             T.let(
               :thumb,
-              HubspotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
+              HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubspotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
+                HubSpotSDK::Files::FileAssetGetSignedURLParams::Size::TaggedSymbol
               ]
             )
           end

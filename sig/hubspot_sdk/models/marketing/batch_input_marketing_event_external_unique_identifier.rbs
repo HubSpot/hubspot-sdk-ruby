@@ -1,20 +1,20 @@
-module HubspotSDK
+module HubSpotSDK
   module Models
     module Marketing
       type batch_input_marketing_event_external_unique_identifier =
         {
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
         }
 
-      class BatchInputMarketingEventExternalUniqueIdentifier < HubspotSDK::Internal::Type::BaseModel
-        attr_accessor inputs: ::Array[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
+      class BatchInputMarketingEventExternalUniqueIdentifier < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor inputs: ::Array[HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
 
         def initialize: (
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
         ) -> void
 
         def to_hash: -> {
-          inputs: ::Array[HubspotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
+          inputs: ::Array[HubSpotSDK::Marketing::MarketingEventExternalUniqueIdentifier]
         }
       end
     end
