@@ -1,6 +1,6 @@
 # HubSpot Ruby API library
 
-The HubSpot Ruby library provides convenient access to the HubSpot REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/stainless-sdks/hubspot-sdk-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
+The HubSpot Ruby library provides convenient access to the HubSpot REST API from any Ruby 3.2.0+ application. It ships with comprehensive types & docstrings in Yard, RBS, and RBI – [see below](https://github.com/HubSpot/hubspot-api-ruby#Sorbet) for usage with Sorbet. The standard library's `net/http` is used as the HTTP transport, with connection pooling via the `connection_pool` gem.
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -14,9 +14,13 @@ The REST API documentation can be found on [developers.hubspot.com](https://deve
 
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
+<!-- x-release-please-start-version -->
+
 ```ruby
 gem "hubspot-sdk", "~> 0.0.1"
 ```
+
+<!-- x-release-please-end -->
 
 ## Usage
 
@@ -288,4 +292,4 @@ Ruby 3.2.0 or higher.
 
 ## Contributing
 
-See [the contributing documentation](https://github.com/stainless-sdks/hubspot-sdk-ruby/tree/main/CONTRIBUTING.md).
+See [the contributing documentation](https://github.com/HubSpot/hubspot-api-ruby/tree/main/CONTRIBUTING.md).
