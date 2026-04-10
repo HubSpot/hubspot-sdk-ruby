@@ -14,9 +14,13 @@ The REST API documentation can be found on [developers.hubspot.com](https://deve
 
 To use this gem, install via Bundler by adding the following to your application's `Gemfile`:
 
+<!-- x-release-please-start-version -->
+
 ```ruby
 gem "hubspot-sdk", "~> 0.0.1"
 ```
+
+<!-- x-release-please-end -->
 
 ## Usage
 
@@ -288,4 +292,4 @@ Ruby 3.2.0 or higher.
 
 ## Contributing
 
-See [the contributing documentation](https://github.com/stainless-sdks/hubspot-sdk-ruby/tree/main/CONTRIBUTING.md).
+See [the contributing documentation](https://github.com/HubSpot/hubspot-api-ruby/tree/main/CONTRIBUTING.md).
