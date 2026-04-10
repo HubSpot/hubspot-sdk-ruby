@@ -292,4 +292,4 @@ Ruby 3.2.0 or higher.
 
 ## Contributing
 
-See [the contributing documentation](https://github.com/HubSpot/hubspot-api-ruby/tree/main/CONTRIBUTING.md).
+See [the contributing documentation](https://github.com/HubSpot/hubspot-sdk-ruby/tree/main/CONTRIBUTING.md).
