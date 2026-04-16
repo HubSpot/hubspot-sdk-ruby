@@ -11,7 +11,7 @@ module HubSpotSDK
           # @overload create(object_type, inputs:, request_options: {})
           #
           # @param object_type [String]
-          # @param inputs [Array<HubSpotSDK::Models::Crm::PropertyCreate>]
+          # @param inputs [Array<HubSpotSDK::Models::PropertyCreate>]
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Crm::BatchResponseProperty]

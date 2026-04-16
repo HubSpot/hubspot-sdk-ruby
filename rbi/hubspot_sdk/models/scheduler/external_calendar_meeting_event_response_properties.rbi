@@ -603,6 +603,11 @@ module HubSpotSDK
               :MARKETPLACE,
               HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
             )
+          MARKETS =
+            T.let(
+              :MARKETS,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
+            )
           MEETINGS =
             T.let(
               :MEETINGS,
@@ -721,6 +726,11 @@ module HubSpotSDK
           RESTORE_OBJECTS =
             T.let(
               :RESTORE_OBJECTS,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
+            )
+          REVENUE_PLATFORM =
+            T.let(
+              :REVENUE_PLATFORM,
               HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
             )
           SALES =

@@ -6,11 +6,14 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#get_subscription_filter
       class FilterResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
+        #   The unique identifier for the filter. It is an integer in int64 format.
         #
         #   @return [Integer]
         required :id, Integer
 
         # @!attribute created_at
+        #   A timestamp indicating when the filter was created, represented as an integer in
+        #   int64 format.
         #
         #   @return [Integer]
         required :created_at, Integer, api_name: :createdAt
@@ -27,9 +30,9 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::FilterResponse} for more details.
         #
-        #   @param id [Integer]
+        #   @param id [Integer] The unique identifier for the filter. It is an integer in int64 format.
         #
-        #   @param created_at [Integer]
+        #   @param created_at [Integer] A timestamp indicating when the filter was created, represented as an integer in
         #
         #   @param filter [HubSpotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
       end

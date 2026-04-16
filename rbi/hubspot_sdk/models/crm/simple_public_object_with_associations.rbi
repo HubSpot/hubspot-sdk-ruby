@@ -25,7 +25,7 @@ module HubSpotSDK
         attr_accessor :created_at
 
         # Key value pairs representing the properties of the object.
-        sig { returns(T::Hash[Symbol, T.nilable(String)]) }
+        sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :properties
 
         # The timestamp when the object was last updated, in ISO 8601 format.
@@ -104,7 +104,7 @@ module HubSpotSDK
             id: String,
             archived: T::Boolean,
             created_at: Time,
-            properties: T::Hash[Symbol, T.nilable(String)],
+            properties: T::Hash[Symbol, String],
             updated_at: Time,
             archived_at: Time,
             associations:
@@ -153,7 +153,7 @@ module HubSpotSDK
               id: String,
               archived: T::Boolean,
               created_at: Time,
-              properties: T::Hash[Symbol, T.nilable(String)],
+              properties: T::Hash[Symbol, String],
               updated_at: Time,
               archived_at: Time,
               associations:

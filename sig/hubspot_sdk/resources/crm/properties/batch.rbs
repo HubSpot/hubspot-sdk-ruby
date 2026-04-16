@@ -5,7 +5,7 @@ module HubSpotSDK
         class Batch
           def create: (
             String object_type,
-            inputs: ::Array[HubSpotSDK::Crm::PropertyCreate],
+            inputs: ::Array[HubSpotSDK::PropertyCreate],
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Crm::BatchResponseProperty
 

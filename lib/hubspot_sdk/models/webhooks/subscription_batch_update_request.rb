@@ -5,26 +5,21 @@ module HubSpotSDK
     module Webhooks
       class SubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The ID of the webhook subscription to update.
+        #   The unique identifier for the subscription to be updated. It is an integer.
         #
         #   @return [Integer]
         required :id, Integer
 
         # @!attribute active
-        #   Whether to activate or pause the webhook subscription. If true, the subscription
-        #   will send webhook notifications. If false, the subscription is paused and will
-        #   not send notifications.
+        #   A boolean indicating whether the subscription is active.
         #
         #   @return [Boolean]
         required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(id:, active:)
-        #   Some parameter documentations has been truncated, see
-        #   {HubSpotSDK::Models::Webhooks::SubscriptionBatchUpdateRequest} for more details.
+        #   @param id [Integer] The unique identifier for the subscription to be updated. It is an integer.
         #
-        #   @param id [Integer] The ID of the webhook subscription to update.
-        #
-        #   @param active [Boolean] Whether to activate or pause the webhook subscription. If true, the subscription
+        #   @param active [Boolean] A boolean indicating whether the subscription is active.
       end
     end
   end

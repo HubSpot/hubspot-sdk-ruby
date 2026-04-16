@@ -69,6 +69,11 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :created_user_id, String, api_name: :createdUserId
 
+        # @!attribute currency_property_name
+        #
+        #   @return [String, nil]
+        optional :currency_property_name, String, api_name: :currencyPropertyName
+
         # @!attribute data_sensitivity
         #
         #   @return [Symbol, HubSpotSDK::Models::Cms::Property1::DataSensitivity, nil]
@@ -120,6 +125,13 @@ module HubSpotSDK
                  -> { HubSpotSDK::PropertyModificationMetadata },
                  api_name: :modificationMetadata
 
+        # @!attribute number_display_hint
+        #
+        #   @return [Symbol, HubSpotSDK::Models::Cms::Property1::NumberDisplayHint, nil]
+        optional :number_display_hint,
+                 enum: -> { HubSpotSDK::Cms::Property1::NumberDisplayHint },
+                 api_name: :numberDisplayHint
+
         # @!attribute referenced_object_type
         #
         #   @return [String, nil]
@@ -147,7 +159,7 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :updated_user_id, String, api_name: :updatedUserId
 
-        # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, updated_at: nil, updated_user_id: nil)
+        # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, currency_property_name: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, number_display_hint: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, updated_at: nil, updated_user_id: nil)
         #   @param description [String]
         #   @param field_type [String]
         #   @param group_name [String]
@@ -161,6 +173,7 @@ module HubSpotSDK
         #   @param calculation_formula [String]
         #   @param created_at [Time]
         #   @param created_user_id [String]
+        #   @param currency_property_name [String]
         #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Cms::Property1::DataSensitivity]
         #   @param date_display_hint [Symbol, HubSpotSDK::Models::Cms::Property1::DateDisplayHint]
         #   @param display_order [Integer]
@@ -170,6 +183,7 @@ module HubSpotSDK
         #   @param hidden [Boolean]
         #   @param hubspot_defined [Boolean]
         #   @param modification_metadata [HubSpotSDK::Models::PropertyModificationMetadata]
+        #   @param number_display_hint [Symbol, HubSpotSDK::Models::Cms::Property1::NumberDisplayHint]
         #   @param referenced_object_type [String]
         #   @param sensitive_data_categories [Array<String>]
         #   @param show_currency_symbol [Boolean]
@@ -196,6 +210,21 @@ module HubSpotSDK
           ABSOLUTE_WITH_RELATIVE = :absolute_with_relative
           TIME_SINCE = :time_since
           TIME_UNTIL = :time_until
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        # @see HubSpotSDK::Models::Cms::Property1#number_display_hint
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY = :currency
+          DURATION = :duration
+          FORMATTED = :formatted
+          PERCENTAGE = :percentage
+          PROBABILITY = :probability
+          UNFORMATTED = :unformatted
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -12,7 +12,8 @@ module HubSpotSDK
               HubSpotSDK::Webhooks::ObjectSubscriptionUpsertRequest,
               HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest,
               HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest,
-              HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
+              HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest,
+              HubSpotSDK::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest
             )
           end
 

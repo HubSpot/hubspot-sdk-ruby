@@ -21,6 +21,8 @@ module HubSpotSDK
         sig { params(filter: HubSpotSDK::Webhooks::Filter::OrHash).void }
         attr_writer :filter
 
+        # The unique identifier of the subscription to which the filter will be applied.
+        # It is an integer in int64 format.
         sig { returns(Integer) }
         attr_accessor :subscription_id
 
@@ -35,6 +37,8 @@ module HubSpotSDK
           # filter on, the operator to use (such as equals, greater than, or contains), and
           # the value(s) to compare against.
           filter:,
+          # The unique identifier of the subscription to which the filter will be applied.
+          # It is an integer in int64 format.
           subscription_id:
         )
         end

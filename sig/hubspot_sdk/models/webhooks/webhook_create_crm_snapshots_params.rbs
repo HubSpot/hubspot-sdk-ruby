@@ -1,0 +1,17 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_create_crm_snapshots_params =
+        {  } & HubSpotSDK::Internal::Type::request_parameters
+
+      class WebhookCreateCrmSnapshotsParams < HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: HubSpotSDK::request_opts) -> void
+
+        def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
+      end
+    end
+  end
+end

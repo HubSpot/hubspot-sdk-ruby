@@ -14,13 +14,21 @@ module HubSpotSDK
         required :count, Integer
 
         # @!attribute install_portal_id
+        #   The ID of the portal installation for which to fetch the journal entries. This
+        #   is an optional parameter.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
 
         # @!method initialize(count:, install_portal_id: nil, request_options: {})
+        #   Some parameter documentations has been truncated, see
+        #   {HubSpotSDK::Models::Webhooks::WebhookGetEarliestJournalBatchParams} for more
+        #   details.
+        #
         #   @param count [Integer]
-        #   @param install_portal_id [Integer]
+        #
+        #   @param install_portal_id [Integer] The ID of the portal installation for which to fetch the journal entries. This i
+        #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

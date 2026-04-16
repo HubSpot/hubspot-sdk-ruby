@@ -18,6 +18,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def create(
+            # The appId of the app containing the Legacy CRM Card(s)
             app_id,
             actions:,
             display_:,
@@ -43,7 +44,7 @@ module HubSpotSDK
           def update(
             # Path param
             card_id,
-            # Path param
+            # Path param: The appId of the app containing the Legacy CRM Card(s)
             app_id:,
             # Body param
             actions: nil,
@@ -67,7 +68,12 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(card_id, app_id:, request_options: {})
+          def delete(
+            card_id,
+            # The appId of the app containing the Legacy CRM Card(s)
+            app_id:,
+            request_options: {}
+          )
           end
 
           # Returns a list of cards for a given app.
@@ -77,7 +83,11 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Crm::Extensions::PublicCardListResponse)
           end
-          def get(app_id, request_options: {})
+          def get(
+            # The appId of the app containing the Legacy CRM Card(s)
+            app_id,
+            request_options: {}
+          )
           end
 
           # Returns the definition for a card with the given ID.
@@ -88,7 +98,12 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
-          def get_by_id(card_id, app_id:, request_options: {})
+          def get_by_id(
+            card_id,
+            # The appId of the app containing the Legacy CRM Card(s)
+            app_id:,
+            request_options: {}
+          )
           end
 
           # Returns an example card detail response. This is the payload with displayed
@@ -105,6 +120,7 @@ module HubSpotSDK
           sig do
             params(
               app_id: Integer,
+              allow_duplicate_app_card_ids: T::Boolean,
               app_card_id: Integer,
               legacy_crm_card_id: Integer,
               helpdesk_app_card_id: Integer,
@@ -112,7 +128,9 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Crm::Extensions::CardMigrateViewsResponse)
           end
           def migrate_views(
+            # The appId of the app containing the Legacy CRM Card(s)
             app_id,
+            allow_duplicate_app_card_ids:,
             app_card_id:,
             legacy_crm_card_id:,
             helpdesk_app_card_id: nil,

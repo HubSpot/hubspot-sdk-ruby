@@ -142,7 +142,13 @@ class HubSpotSDK::Test::Resources::Crm::Extensions::CardsDevTest < HubSpotSDK::T
   def test_migrate_views_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.crm.extensions.cards_dev.migrate_views(0, app_card_id: 0, legacy_crm_card_id: 0)
+    response =
+      @hubspot.crm.extensions.cards_dev.migrate_views(
+        0,
+        allow_duplicate_app_card_ids: true,
+        app_card_id: 0,
+        legacy_crm_card_id: 0
+      )
 
     assert_pattern do
       response => HubSpotSDK::Crm::Extensions::CardMigrateViewsResponse

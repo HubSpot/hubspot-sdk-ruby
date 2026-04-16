@@ -12,6 +12,8 @@ module HubSpotSDK
             )
           end
 
+        # An array of CrmObjectSnapshotResponse objects, each containing the details of a
+        # single CRM object snapshot request. This property is required.
         sig do
           returns(T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse])
         end
@@ -23,7 +25,11 @@ module HubSpotSDK
               T::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse::OrHash]
           ).returns(T.attached_class)
         end
-        def self.new(snapshot_responses:)
+        def self.new(
+          # An array of CrmObjectSnapshotResponse objects, each containing the details of a
+          # single CRM object snapshot request. This property is required.
+          snapshot_responses:
+        )
         end
 
         sig do

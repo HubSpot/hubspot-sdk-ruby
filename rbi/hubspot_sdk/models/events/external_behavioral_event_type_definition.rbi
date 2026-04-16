@@ -41,7 +41,7 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        sig { returns(T::Array[HubSpotSDK::Events::Property]) }
+        sig { returns(T::Array[HubSpotSDK::Property]) }
         attr_accessor :properties
 
         sig { returns(T.nilable(HubSpotSDK::Events::ComboEventRuleBranch)) }
@@ -141,7 +141,7 @@ module HubSpotSDK
               HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubSpotSDK::Events::Property::OrHash],
+            properties: T::Array[HubSpotSDK::Property::OrHash],
             combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch::OrHash,
             created_at: Time,
             created_user_id: Integer,
@@ -188,7 +188,7 @@ module HubSpotSDK
               labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubSpotSDK::Events::Property],
+              properties: T::Array[HubSpotSDK::Property],
               combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
               created_at: Time,
               created_user_id: Integer,

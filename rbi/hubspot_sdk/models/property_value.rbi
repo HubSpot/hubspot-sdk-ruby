@@ -440,6 +440,8 @@ module HubSpotSDK
           )
         MARKETPLACE =
           T.let(:MARKETPLACE, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
+        MARKETS =
+          T.let(:MARKETS, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         MEETINGS =
           T.let(:MEETINGS, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         MERGE_COMPANIES =
@@ -523,6 +525,11 @@ module HubSpotSDK
         RESTORE_OBJECTS =
           T.let(
             :RESTORE_OBJECTS,
+            HubSpotSDK::PropertyValue::Source::TaggedSymbol
+          )
+        REVENUE_PLATFORM =
+          T.let(
+            :REVENUE_PLATFORM,
             HubSpotSDK::PropertyValue::Source::TaggedSymbol
           )
         SALES = T.let(:SALES, HubSpotSDK::PropertyValue::Source::TaggedSymbol)

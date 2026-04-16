@@ -14,8 +14,10 @@ module HubSpotSDK
 
         variant -> { HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest }
 
+        variant -> { HubSpotSDK::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest }
+
         # @!method self.variants
-        #   @return [Array(HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest)]
+        #   @return [Array(HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest)]
       end
     end
   end

@@ -10,7 +10,7 @@ module HubSpotSDK
           #
           # @overload create(app_id, actions:, display_:, fetch:, title:, request_options: {})
           #
-          # @param app_id [Integer]
+          # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
           #
           # @param actions [HubSpotSDK::Models::Crm::Extensions::CardActions]
           #
@@ -45,7 +45,7 @@ module HubSpotSDK
           #
           # @param card_id [String] Path param
           #
-          # @param app_id [Integer] Path param
+          # @param app_id [Integer] Path param: The appId of the app containing the Legacy CRM Card(s)
           #
           # @param actions [HubSpotSDK::Models::Crm::Extensions::CardActions] Body param
           #
@@ -82,7 +82,9 @@ module HubSpotSDK
           # @overload delete(card_id, app_id:, request_options: {})
           #
           # @param card_id [String]
-          # @param app_id [Integer]
+          #
+          # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -106,7 +108,8 @@ module HubSpotSDK
           #
           # @overload get(app_id, request_options: {})
           #
-          # @param app_id [Integer]
+          # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Crm::Extensions::PublicCardListResponse]
@@ -126,7 +129,9 @@ module HubSpotSDK
           # @overload get_by_id(card_id, app_id:, request_options: {})
           #
           # @param card_id [String]
-          # @param app_id [Integer]
+          #
+          # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Crm::Extensions::PublicCardResponse]
@@ -166,12 +171,18 @@ module HubSpotSDK
             )
           end
 
-          # @overload migrate_views(app_id, app_card_id:, legacy_crm_card_id:, helpdesk_app_card_id: nil, request_options: {})
+          # @overload migrate_views(app_id, allow_duplicate_app_card_ids:, app_card_id:, legacy_crm_card_id:, helpdesk_app_card_id: nil, request_options: {})
           #
-          # @param app_id [Integer]
+          # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
+          #
+          # @param allow_duplicate_app_card_ids [Boolean]
+          #
           # @param app_card_id [Integer]
+          #
           # @param legacy_crm_card_id [Integer]
+          #
           # @param helpdesk_app_card_id [Integer]
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Crm::Extensions::CardMigrateViewsResponse]

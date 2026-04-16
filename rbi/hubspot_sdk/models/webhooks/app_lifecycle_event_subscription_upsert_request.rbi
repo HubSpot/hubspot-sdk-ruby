@@ -86,6 +86,11 @@ module HubSpotSDK
               :LIST_MEMBERSHIP,
               HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
+          GDPR_PRIVACY_DELETION =
+            T.let(
+              :GDPR_PRIVACY_DELETION,
+              HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+            )
 
           sig do
             override.returns(

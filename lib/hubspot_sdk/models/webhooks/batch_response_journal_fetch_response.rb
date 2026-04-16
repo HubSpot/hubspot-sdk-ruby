@@ -6,43 +6,64 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#get_earliest_journal_batch
       class BatchResponseJournalFetchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
+        #   The date and time when the batch operation was completed, in ISO 8601 format.
         #
         #   @return [Time]
         required :completed_at, Time, api_name: :completedAt
 
         # @!attribute results
+        #   An array of journal fetch responses, each containing details about individual
+        #   journal entries.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>]
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse] }
 
         # @!attribute started_at
+        #   The date and time when the batch operation started, in ISO 8601 format.
         #
         #   @return [Time]
         required :started_at, Time, api_name: :startedAt
 
         # @!attribute status
+        #   The current status of the batch operation. Valid values include 'PENDING',
+        #   'PROCESSING', 'CANCELED', and 'COMPLETE'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
         required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status }
 
         # @!attribute links
+        #   A map of link names to associated URIs, providing additional resources or
+        #   documentation related to the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute requested_at
+        #   The date and time when the batch operation was requested, in ISO 8601 format.
         #
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
-        #   @param completed_at [Time]
-        #   @param results [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>]
-        #   @param started_at [Time]
-        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status]
-        #   @param links [Hash{Symbol=>String}]
-        #   @param requested_at [Time]
+        #   Some parameter documentations has been truncated, see
+        #   {HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse} for more
+        #   details.
+        #
+        #   @param completed_at [Time] The date and time when the batch operation was completed, in ISO 8601 format.
+        #
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>] An array of journal fetch responses, each containing details about individual jo
+        #
+        #   @param started_at [Time] The date and time when the batch operation started, in ISO 8601 format.
+        #
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse::Status] The current status of the batch operation. Valid values include 'PENDING', 'PROC
+        #
+        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs, providing additional resources or docume
+        #
+        #   @param requested_at [Time] The date and time when the batch operation was requested, in ISO 8601 format.
 
+        # The current status of the batch operation. Valid values include 'PENDING',
+        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
+        #
         # @see HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse#status
         module Status
           extend HubSpotSDK::Internal::Type::Enum

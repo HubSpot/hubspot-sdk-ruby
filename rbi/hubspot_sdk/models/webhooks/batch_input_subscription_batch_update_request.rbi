@@ -12,6 +12,8 @@ module HubSpotSDK
             )
           end
 
+        # An array of SubscriptionBatchUpdateRequest objects, each representing a
+        # subscription to be updated. This property is required.
         sig do
           returns(
             T::Array[HubSpotSDK::Webhooks::SubscriptionBatchUpdateRequest]
@@ -27,7 +29,11 @@ module HubSpotSDK
               ]
           ).returns(T.attached_class)
         end
-        def self.new(inputs:)
+        def self.new(
+          # An array of SubscriptionBatchUpdateRequest objects, each representing a
+          # subscription to be updated. This property is required.
+          inputs:
+        )
         end
 
         sig do

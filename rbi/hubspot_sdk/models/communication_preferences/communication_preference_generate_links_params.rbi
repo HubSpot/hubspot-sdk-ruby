@@ -15,6 +15,7 @@ module HubSpotSDK
             )
           end
 
+        # The communication channel for which the links are generated. Must be 'EMAIL'.
         sig do
           returns(
             HubSpotSDK::CommunicationPreferences::LinkGenerationRequest::Channel::OrSymbol
@@ -22,6 +23,7 @@ module HubSpotSDK
         end
         attr_accessor :channel
 
+        # The identifier of the business unit. Defaults to 0 if not specified.
         sig { returns(T.nilable(Integer)) }
         attr_reader :business_unit_id
 
@@ -36,7 +38,13 @@ module HubSpotSDK
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
-        def self.new(channel:, business_unit_id: nil, request_options: {})
+        def self.new(
+          # The communication channel for which the links are generated. Must be 'EMAIL'.
+          channel:,
+          # The identifier of the business unit. Defaults to 0 if not specified.
+          business_unit_id: nil,
+          request_options: {}
+        )
         end
 
         sig do
@@ -52,6 +60,7 @@ module HubSpotSDK
         def to_hash
         end
 
+        # The communication channel for which the links are generated. Must be 'EMAIL'.
         module Channel
           extend HubSpotSDK::Internal::Type::Enum
 

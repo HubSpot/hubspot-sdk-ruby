@@ -1,0 +1,25 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_delete_journal_subscription_for_portal_params =
+        { portal_id: Integer } & HubSpotSDK::Internal::Type::request_parameters
+
+      class WebhookDeleteJournalSubscriptionForPortalParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        attr_accessor portal_id: Integer
+
+        def initialize: (
+          portal_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          portal_id: Integer,
+          request_options: HubSpotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

@@ -55,8 +55,8 @@ module HubSpotSDK
         # @!attribute properties
         #   Properties defined for this object type.
         #
-        #   @return [Array<HubSpotSDK::Models::Crm::Property>]
-        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Property] }
+        #   @return [Array<HubSpotSDK::Models::Property>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
 
         # @!attribute required_properties
         #   The names of properties that should be **required** when creating an object of
@@ -139,7 +139,7 @@ module HubSpotSDK
         #
         #   @param object_type_id [String]
         #
-        #   @param properties [Array<HubSpotSDK::Models::Crm::Property>] Properties defined for this object type.
+        #   @param properties [Array<HubSpotSDK::Models::Property>] Properties defined for this object type.
         #
         #   @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
         #

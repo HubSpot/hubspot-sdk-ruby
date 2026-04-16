@@ -26,6 +26,7 @@ class HubSpotSDK::Test::Resources::Cms::URLMappingsTest < HubSpotSDK::Test::Reso
         is_regex: true,
         is_trailing_slash_optional: true,
         label: "label",
+        last_used_at: 0,
         name: "name",
         note: "note",
         portal_id: 0,

@@ -20,6 +20,7 @@ module HubSpotSDK
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
+          object_type_id_string: String,
           permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,
@@ -78,6 +79,8 @@ module HubSpotSDK
         attr_accessor name: String
 
         attr_accessor object_type_id: String
+
+        attr_accessor object_type_id_string: String
 
         attr_accessor permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type
 
@@ -175,6 +178,7 @@ module HubSpotSDK
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
+          object_type_id_string: String,
           permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,
@@ -217,6 +221,7 @@ module HubSpotSDK
           meta_type_id: Integer,
           name: String,
           object_type_id: String,
+          object_type_id_string: String,
           permissioning_type: HubSpotSDK::Models::Cms::InboundDBObjectType::permissioning_type,
           pipeline_property_name: String,
           pipeline_stage_property_name: String,

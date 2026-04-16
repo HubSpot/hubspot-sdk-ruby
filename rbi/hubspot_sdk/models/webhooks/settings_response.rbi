@@ -12,14 +12,11 @@ module HubSpotSDK
             )
           end
 
-        # When this subscription was created. Formatted as milliseconds from the
-        # [Unix epoch](#).
+        # The date and time when the webhook settings were created, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :created_at
 
-        # A publicly available URL for Hubspot to call where event payloads will be
-        # delivered. See [link-so-some-doc](#) for details about the format of these event
-        # payloads.
+        # The URL to which the webhook events will be sent. It is a string.
         sig { returns(String) }
         attr_accessor :target_url
 
@@ -33,8 +30,8 @@ module HubSpotSDK
         end
         attr_writer :throttling
 
-        # When this subscription was last updated. Formatted as milliseconds from the
-        # [Unix epoch](#).
+        # The date and time when the webhook settings were last updated, in ISO 8601
+        # format.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_at
 
@@ -50,16 +47,13 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # When this subscription was created. Formatted as milliseconds from the
-          # [Unix epoch](#).
+          # The date and time when the webhook settings were created, in ISO 8601 format.
           created_at:,
-          # A publicly available URL for Hubspot to call where event payloads will be
-          # delivered. See [link-so-some-doc](#) for details about the format of these event
-          # payloads.
+          # The URL to which the webhook events will be sent. It is a string.
           target_url:,
           throttling:,
-          # When this subscription was last updated. Formatted as milliseconds from the
-          # [Unix epoch](#).
+          # The date and time when the webhook settings were last updated, in ISO 8601
+          # format.
           updated_at: nil
         )
         end

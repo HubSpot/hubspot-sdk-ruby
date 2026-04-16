@@ -6,7 +6,7 @@ module HubSpotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          properties: ::Hash[Symbol, String?],
+          properties: ::Hash[Symbol, String],
           updated_at: Time,
           archived_at: Time,
           object_write_trace_id: String,
@@ -21,7 +21,7 @@ module HubSpotSDK
 
         attr_accessor created_at: Time
 
-        attr_accessor properties: ::Hash[Symbol, String?]
+        attr_accessor properties: ::Hash[Symbol, String]
 
         attr_accessor updated_at: Time
 
@@ -47,7 +47,7 @@ module HubSpotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          properties: ::Hash[Symbol, String?],
+          properties: ::Hash[Symbol, String],
           updated_at: Time,
           ?archived_at: Time,
           ?object_write_trace_id: String,
@@ -59,7 +59,7 @@ module HubSpotSDK
           id: String,
           archived: bool,
           created_at: Time,
-          properties: ::Hash[Symbol, String?],
+          properties: ::Hash[Symbol, String],
           updated_at: Time,
           archived_at: Time,
           object_write_trace_id: String,

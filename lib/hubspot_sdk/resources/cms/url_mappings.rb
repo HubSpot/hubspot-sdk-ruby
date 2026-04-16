@@ -12,7 +12,7 @@ module HubSpotSDK
         # navigation and SEO. The request body must include all required properties of the
         # UrlMapping schema.
         #
-        # @overload create(id:, cdn_purge_embargo_time:, content_group_id:, cos_object_type:, created:, created_by_id:, deleted_at:, destination:, internally_created:, is_active:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_regex:, is_trailing_slash_optional:, label:, name:, note:, portal_id:, precedence:, redirect_style:, route_prefix:, updated:, updated_by_id:, request_options: {})
+        # @overload create(id:, cdn_purge_embargo_time:, content_group_id:, cos_object_type:, created:, created_by_id:, deleted_at:, destination:, internally_created:, is_active:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_regex:, is_trailing_slash_optional:, label:, last_used_at:, name:, note:, portal_id:, precedence:, redirect_style:, route_prefix:, updated:, updated_by_id:, request_options: {})
         #
         # @param id [Integer] The unique identifier for the URL mapping, represented as a 64-bit integer.
         #
@@ -49,6 +49,8 @@ module HubSpotSDK
         # @param is_trailing_slash_optional [Boolean] A boolean indicating if the trailing slash in the URL is optional.
         #
         # @param label [String] A label for the URL mapping.
+        #
+        # @param last_used_at [Integer]
         #
         # @param name [String] The name of the URL mapping.
         #

@@ -13,6 +13,8 @@ module HubSpotSDK
         required :filter, -> { HubSpotSDK::Webhooks::Filter }
 
         # @!attribute subscription_id
+        #   The unique identifier of the subscription to which the filter will be applied.
+        #   It is an integer in int64 format.
         #
         #   @return [Integer]
         required :subscription_id, Integer, api_name: :subscriptionId
@@ -23,7 +25,7 @@ module HubSpotSDK
         #
         #   @param filter [HubSpotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
         #
-        #   @param subscription_id [Integer]
+        #   @param subscription_id [Integer] The unique identifier of the subscription to which the filter will be applied. I
       end
     end
   end

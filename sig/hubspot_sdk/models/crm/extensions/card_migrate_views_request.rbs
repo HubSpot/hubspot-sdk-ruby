@@ -4,12 +4,15 @@ module HubSpotSDK
       module Extensions
         type card_migrate_views_request =
           {
+            allow_duplicate_app_card_ids: bool,
             app_card_id: Integer,
             legacy_crm_card_id: Integer,
             helpdesk_app_card_id: Integer
           }
 
         class CardMigrateViewsRequest < HubSpotSDK::Internal::Type::BaseModel
+          attr_accessor allow_duplicate_app_card_ids: bool
+
           attr_accessor app_card_id: Integer
 
           attr_accessor legacy_crm_card_id: Integer
@@ -19,12 +22,14 @@ module HubSpotSDK
           def helpdesk_app_card_id=: (Integer) -> Integer
 
           def initialize: (
+            allow_duplicate_app_card_ids: bool,
             app_card_id: Integer,
             legacy_crm_card_id: Integer,
             ?helpdesk_app_card_id: Integer
           ) -> void
 
           def to_hash: -> {
+            allow_duplicate_app_card_ids: bool,
             app_card_id: Integer,
             legacy_crm_card_id: Integer,
             helpdesk_app_card_id: Integer

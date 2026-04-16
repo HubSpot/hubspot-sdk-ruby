@@ -16,15 +16,21 @@ module HubSpotSDK
               )
             end
 
+          # The communication channel from which subscribers will be unsubscribed. This
+          # parameter is required and currently supports only 'EMAIL'.
           sig { returns(HubSpotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
+          # An optional integer representing the business unit ID for which the operation is
+          # being performed.
           sig { returns(T.nilable(Integer)) }
           attr_reader :business_unit_id
 
           sig { params(business_unit_id: Integer).void }
           attr_writer :business_unit_id
 
+          # A boolean indicating whether to include detailed information in the response.
+          # Defaults to false.
           sig { returns(T.nilable(T::Boolean)) }
           attr_reader :verbose
 
@@ -40,8 +46,14 @@ module HubSpotSDK
             ).returns(T.attached_class)
           end
           def self.new(
+            # The communication channel from which subscribers will be unsubscribed. This
+            # parameter is required and currently supports only 'EMAIL'.
             channel:,
+            # An optional integer representing the business unit ID for which the operation is
+            # being performed.
             business_unit_id: nil,
+            # A boolean indicating whether to include detailed information in the response.
+            # Defaults to false.
             verbose: nil,
             request_options: {}
           )
@@ -60,6 +72,8 @@ module HubSpotSDK
           def to_hash
           end
 
+          # The communication channel from which subscribers will be unsubscribed. This
+          # parameter is required and currently supports only 'EMAIL'.
           module Channel
             extend HubSpotSDK::Internal::Type::Enum
 

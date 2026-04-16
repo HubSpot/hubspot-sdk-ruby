@@ -3,33 +3,30 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubSpotSDK::Resources::Webhooks#create_subscription
+      # @see HubSpotSDK::Resources::Webhooks#create_event_subscription
       class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique ID of the webhook subscription.
+        #   The unique identifier for the subscription, represented as an integer.
         #
         #   @return [String]
         required :id, String
 
         # @!attribute active
-        #   Whether the subscription is active or paused. If true, the subscription will
-        #   send webhook notifications. If false, the subscription is paused and will not
-        #   send notifications.
+        #   A boolean indicating whether the subscription is currently active.
         #
         #   @return [Boolean]
         required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute created_at
-        #   The timestamp when the webhook subscription was created, in ISO 8601 format
-        #   (e.g., 2020-02-29T12:30:00Z).
+        #   The date and time when the subscription was created, in ISO 8601 format.
         #
         #   @return [Time]
         required :created_at, Time, api_name: :createdAt
 
         # @!attribute event_type
-        #   The type of event to listen for. Accepted values include contact.creation,
-        #   contact.deletion, contact.propertyChange, and similar event types for other CRM
-        #   objects and custom objects.
+        #   The type of event that triggers the subscription. Valid values include various
+        #   object changes such as 'contact.propertyChange', 'deal.creation', and
+        #   'ticket.deletion'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType]
         required :event_type,
@@ -37,30 +34,26 @@ module HubSpotSDK
                  api_name: :eventType
 
         # @!attribute event_type_name
-        #   The name of the event to listen for. This is used with custom objects to specify
-        #   custom event types beyond the standard eventType enum values.
+        #   A descriptive name for the event type.
         #
         #   @return [String, nil]
         optional :event_type_name, String, api_name: :eventTypeName
 
         # @!attribute object_type_id
-        #   The ID of the object type for the subscription. This can be a standard CRM
-        #   object (e.g., 'contact', 'company', 'deal') or a custom object ID for custom
-        #   object subscriptions.
+        #   The identifier for the object type associated with the subscription, represented
+        #   as a string.
         #
         #   @return [String, nil]
         optional :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute property_name
-        #   The internal name of the property to monitor for changes. Only applies when
-        #   eventType is propertyChange.
+        #   The name of the property associated with the event, if applicable.
         #
         #   @return [String, nil]
         optional :property_name, String, api_name: :propertyName
 
         # @!attribute updated_at
-        #   The timestamp when the webhook subscription was last updated, in ISO 8601 format
-        #   (e.g., 2020-02-29T12:30:00Z).
+        #   The date and time when the subscription was last updated, in ISO 8601 format.
         #
         #   @return [Time, nil]
         optional :updated_at, Time, api_name: :updatedAt
@@ -69,25 +62,25 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionResponse} for more details.
         #
-        #   @param id [String] The unique ID of the webhook subscription.
+        #   @param id [String] The unique identifier for the subscription, represented as an integer.
         #
-        #   @param active [Boolean] Whether the subscription is active or paused. If true, the subscription will sen
+        #   @param active [Boolean] A boolean indicating whether the subscription is currently active.
         #
-        #   @param created_at [Time] The timestamp when the webhook subscription was created, in ISO 8601 format (e.g
+        #   @param created_at [Time] The date and time when the subscription was created, in ISO 8601 format.
         #
-        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event to listen for. Accepted values include contact.creation, conta
+        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event that triggers the subscription. Valid values include various o
         #
-        #   @param event_type_name [String] The name of the event to listen for. This is used with custom objects to specify
+        #   @param event_type_name [String] A descriptive name for the event type.
         #
-        #   @param object_type_id [String] The ID of the object type for the subscription. This can be a standard CRM objec
+        #   @param object_type_id [String] The identifier for the object type associated with the subscription, represented
         #
-        #   @param property_name [String] The internal name of the property to monitor for changes. Only applies when even
+        #   @param property_name [String] The name of the property associated with the event, if applicable.
         #
-        #   @param updated_at [Time] The timestamp when the webhook subscription was last updated, in ISO 8601 format
+        #   @param updated_at [Time] The date and time when the subscription was last updated, in ISO 8601 format.
 
-        # The type of event to listen for. Accepted values include contact.creation,
-        # contact.deletion, contact.propertyChange, and similar event types for other CRM
-        # objects and custom objects.
+        # The type of event that triggers the subscription. Valid values include various
+        # object changes such as 'contact.propertyChange', 'deal.creation', and
+        # 'ticket.deletion'.
         #
         # @see HubSpotSDK::Models::Webhooks::SubscriptionResponse#event_type
         module EventType

@@ -1,0 +1,93 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type gdpr_privacy_deletion_subscription_upsert_request =
+        {
+          actions: ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::action],
+          object_type_id: String,
+          portal_id: Integer,
+          subscription_type: HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::subscription_type
+        }
+
+      class GdprPrivacyDeletionSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor actions: ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::action]
+
+        attr_accessor object_type_id: String
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor subscription_type: HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::subscription_type
+
+        def initialize: (
+          actions: ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::action],
+          object_type_id: String,
+          portal_id: Integer,
+          subscription_type: HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::subscription_type
+        ) -> void
+
+        def to_hash: -> {
+          actions: ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::action],
+          object_type_id: String,
+          portal_id: Integer,
+          subscription_type: HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::subscription_type
+        }
+
+        type action =
+          :CREATE
+          | :UPDATE
+          | :DELETE
+          | :MERGE
+          | :RESTORE
+          | :ASSOCIATION_ADDED
+          | :ASSOCIATION_REMOVED
+          | :SNAPSHOT
+          | :APP_INSTALL
+          | :APP_UNINSTALL
+          | :ADDED_TO_LIST
+          | :REMOVED_FROM_LIST
+          | :GDPR_DELETE
+
+        module Action
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CREATE: :CREATE
+          UPDATE: :UPDATE
+          DELETE: :DELETE
+          MERGE: :MERGE
+          RESTORE: :RESTORE
+          ASSOCIATION_ADDED: :ASSOCIATION_ADDED
+          ASSOCIATION_REMOVED: :ASSOCIATION_REMOVED
+          SNAPSHOT: :SNAPSHOT
+          APP_INSTALL: :APP_INSTALL
+          APP_UNINSTALL: :APP_UNINSTALL
+          ADDED_TO_LIST: :ADDED_TO_LIST
+          REMOVED_FROM_LIST: :REMOVED_FROM_LIST
+          GDPR_DELETE: :GDPR_DELETE
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::action]
+        end
+
+        type subscription_type =
+          :OBJECT
+          | :ASSOCIATION
+          | :EVENT
+          | :APP_LIFECYCLE_EVENT
+          | :LIST_MEMBERSHIP
+          | :GDPR_PRIVACY_DELETION
+
+        module SubscriptionType
+          extend HubSpotSDK::Internal::Type::Enum
+
+          OBJECT: :OBJECT
+          ASSOCIATION: :ASSOCIATION
+          EVENT: :EVENT
+          APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
+          LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+          GDPR_PRIVACY_DELETION: :GDPR_PRIVACY_DELETION
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest::subscription_type]
+        end
+      end
+    end
+  end
+end

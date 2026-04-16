@@ -1,0 +1,28 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_get_journal_batch_by_request_params =
+        { install_portal_id: Integer }
+        & HubSpotSDK::Internal::Type::request_parameters
+
+      class WebhookGetJournalBatchByRequestParams < HubSpotSDK::Models::BatchInputString
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        def install_portal_id: -> Integer?
+
+        def install_portal_id=: (Integer _) -> Integer
+
+        def initialize: (
+          ?install_portal_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          install_portal_id: Integer,
+          request_options: HubSpotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end
