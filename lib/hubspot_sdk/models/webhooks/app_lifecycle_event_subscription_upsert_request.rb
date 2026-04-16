@@ -37,6 +37,7 @@ module HubSpotSDK
           EVENT = :EVENT
           APP_LIFECYCLE_EVENT = :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP = :LIST_MEMBERSHIP
+          GDPR_PRIVACY_DELETION = :GDPR_PRIVACY_DELETION
 
           # @!method self.values
           #   @return [Array<Symbol>]

@@ -6,6 +6,7 @@ module HubSpotSDK
         | HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest
         | HubSpotSDK::Webhooks::AppLifecycleEventSubscriptionUpsertRequest
         | HubSpotSDK::Webhooks::ListMembershipSubscriptionUpsertRequest
+        | HubSpotSDK::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest
 
       module SubscriptionUpsertRequest
         extend HubSpotSDK::Internal::Type::Union

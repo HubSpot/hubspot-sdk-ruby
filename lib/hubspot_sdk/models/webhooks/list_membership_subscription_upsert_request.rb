@@ -54,6 +54,7 @@ module HubSpotSDK
           APP_UNINSTALL = :APP_UNINSTALL
           ADDED_TO_LIST = :ADDED_TO_LIST
           REMOVED_FROM_LIST = :REMOVED_FROM_LIST
+          GDPR_DELETE = :GDPR_DELETE
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -68,6 +69,7 @@ module HubSpotSDK
           EVENT = :EVENT
           APP_LIFECYCLE_EVENT = :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP = :LIST_MEMBERSHIP
+          GDPR_PRIVACY_DELETION = :GDPR_PRIVACY_DELETION
 
           # @!method self.values
           #   @return [Array<Symbol>]

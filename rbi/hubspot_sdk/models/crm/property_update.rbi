@@ -84,6 +84,23 @@ module HubSpotSDK
         sig { params(label: String).void }
         attr_writer :label
 
+        sig do
+          returns(
+            T.nilable(
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol
+            )
+          )
+        end
+        attr_reader :number_display_hint
+
+        sig do
+          params(
+            number_display_hint:
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol
+          ).void
+        end
+        attr_writer :number_display_hint
+
         # A list of valid options for the property.
         sig { returns(T.nilable(T::Array[HubSpotSDK::OptionInput])) }
         attr_reader :options
@@ -119,6 +136,8 @@ module HubSpotSDK
             group_name: String,
             hidden: T::Boolean,
             label: String,
+            number_display_hint:
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
             type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
@@ -144,6 +163,7 @@ module HubSpotSDK
           hidden: nil,
           # A human-readable property label that will be shown in HubSpot.
           label: nil,
+          number_display_hint: nil,
           # A list of valid options for the property.
           options: nil,
           show_currency_symbol: nil,
@@ -164,6 +184,8 @@ module HubSpotSDK
               group_name: String,
               hidden: T::Boolean,
               label: String,
+              number_display_hint:
+                HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol,
               options: T::Array[HubSpotSDK::OptionInput],
               show_currency_symbol: T::Boolean,
               type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
@@ -247,6 +269,57 @@ module HubSpotSDK
           sig do
             override.returns(
               T::Array[HubSpotSDK::Crm::PropertyUpdate::FieldType::TaggedSymbol]
+            )
+          end
+          def self.values
+          end
+        end
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint)
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          CURRENCY =
+            T.let(
+              :currency,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+          DURATION =
+            T.let(
+              :duration,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+          FORMATTED =
+            T.let(
+              :formatted,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+          PERCENTAGE =
+            T.let(
+              :percentage,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+          PROBABILITY =
+            T.let(
+              :probability,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+          UNFORMATTED =
+            T.let(
+              :unformatted,
+              HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+              ]
             )
           end
           def self.values

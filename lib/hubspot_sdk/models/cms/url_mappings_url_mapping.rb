@@ -121,6 +121,11 @@ module HubSpotSDK
         #   @return [String]
         required :label, String
 
+        # @!attribute last_used_at
+        #
+        #   @return [Integer]
+        required :last_used_at, Integer, api_name: :lastUsedAt
+
         # @!attribute name
         #   The name of the URL mapping.
         #
@@ -171,7 +176,7 @@ module HubSpotSDK
         #   @return [Integer]
         required :updated_by_id, Integer, api_name: :updatedById
 
-        # @!method initialize(id:, cdn_purge_embargo_time:, content_group_id:, cos_object_type:, created:, created_by_id:, deleted_at:, destination:, internally_created:, is_active:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_regex:, is_trailing_slash_optional:, label:, name:, note:, portal_id:, precedence:, redirect_style:, route_prefix:, updated:, updated_by_id:)
+        # @!method initialize(id:, cdn_purge_embargo_time:, content_group_id:, cos_object_type:, created:, created_by_id:, deleted_at:, destination:, internally_created:, is_active:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_regex:, is_trailing_slash_optional:, label:, last_used_at:, name:, note:, portal_id:, precedence:, redirect_style:, route_prefix:, updated:, updated_by_id:)
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Cms::URLMappingsURLMapping} for more details.
         #
@@ -210,6 +215,8 @@ module HubSpotSDK
         #   @param is_trailing_slash_optional [Boolean] A boolean indicating if the trailing slash in the URL is optional.
         #
         #   @param label [String] A label for the URL mapping.
+        #
+        #   @param last_used_at [Integer]
         #
         #   @param name [String] The name of the URL mapping.
         #

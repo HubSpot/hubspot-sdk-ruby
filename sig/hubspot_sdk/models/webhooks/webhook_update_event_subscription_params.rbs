@@ -1,0 +1,34 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_update_event_subscription_params =
+        { app_id: Integer, subscription_id: Integer }
+        & HubSpotSDK::Internal::Type::request_parameters
+
+      class WebhookUpdateEventSubscriptionParams < HubSpotSDK::Models::Webhooks::SubscriptionPatchRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        def app_id: -> Integer
+
+        def app_id=: (Integer _) -> Integer
+
+        def subscription_id: -> Integer
+
+        def subscription_id=: (Integer _) -> Integer
+
+        def initialize: (
+          app_id: Integer,
+          subscription_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          subscription_id: Integer,
+          request_options: HubSpotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

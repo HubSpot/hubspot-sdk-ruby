@@ -206,22 +206,26 @@ module HubSpotSDK
           params(
             object_type: String,
             app_id: Integer,
-            field_type: HubSpotSDK::Cms::PropertyCreate::FieldType::OrSymbol,
+            field_type: HubSpotSDK::PropertyCreate::FieldType::OrSymbol,
             group_name: String,
             label: String,
             name: String,
-            type: HubSpotSDK::Cms::PropertyCreate::Type::OrSymbol,
+            type: HubSpotSDK::PropertyCreate::Type::OrSymbol,
             calculation_formula: String,
+            currency_property_name: String,
             data_sensitivity:
-              HubSpotSDK::Cms::PropertyCreate::DataSensitivity::OrSymbol,
+              HubSpotSDK::PropertyCreate::DataSensitivity::OrSymbol,
             description: String,
             display_order: Integer,
             external_options: T::Boolean,
             form_field: T::Boolean,
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
+            number_display_hint:
+              HubSpotSDK::PropertyCreate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String,
+            show_currency_symbol: T::Boolean,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Cms::Property)
         end
@@ -243,6 +247,8 @@ module HubSpotSDK
           # Body param
           calculation_formula: nil,
           # Body param
+          currency_property_name: nil,
+          # Body param
           data_sensitivity: nil,
           # Body param
           description: nil,
@@ -257,9 +263,13 @@ module HubSpotSDK
           # Body param
           hidden: nil,
           # Body param
+          number_display_hint: nil,
+          # Body param
           options: nil,
           # Body param
           referenced_object_type: nil,
+          # Body param
+          show_currency_symbol: nil,
           request_options: {}
         )
         end
@@ -604,6 +614,7 @@ module HubSpotSDK
             app_id: Integer,
             object_type: String,
             calculation_formula: String,
+            currency_property_name: String,
             description: String,
             display_order: Integer,
             field_type:
@@ -613,7 +624,10 @@ module HubSpotSDK
             has_unique_value: T::Boolean,
             hidden: T::Boolean,
             label: String,
+            number_display_hint:
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
+            show_currency_symbol: T::Boolean,
             type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Cms::Property)
@@ -627,6 +641,8 @@ module HubSpotSDK
           object_type:,
           # Body param
           calculation_formula: nil,
+          # Body param
+          currency_property_name: nil,
           # Body param
           description: nil,
           # Body param
@@ -644,7 +660,11 @@ module HubSpotSDK
           # Body param
           label: nil,
           # Body param
+          number_display_hint: nil,
+          # Body param
           options: nil,
+          # Body param
+          show_currency_symbol: nil,
           # Body param
           type: nil,
           request_options: {}

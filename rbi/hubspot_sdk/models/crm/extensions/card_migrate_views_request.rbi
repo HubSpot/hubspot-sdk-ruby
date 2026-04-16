@@ -13,6 +13,9 @@ module HubSpotSDK
               )
             end
 
+          sig { returns(T::Boolean) }
+          attr_accessor :allow_duplicate_app_card_ids
+
           sig { returns(Integer) }
           attr_accessor :app_card_id
 
@@ -27,12 +30,14 @@ module HubSpotSDK
 
           sig do
             params(
+              allow_duplicate_app_card_ids: T::Boolean,
               app_card_id: Integer,
               legacy_crm_card_id: Integer,
               helpdesk_app_card_id: Integer
             ).returns(T.attached_class)
           end
           def self.new(
+            allow_duplicate_app_card_ids:,
             app_card_id:,
             legacy_crm_card_id:,
             helpdesk_app_card_id: nil
@@ -42,6 +47,7 @@ module HubSpotSDK
           sig do
             override.returns(
               {
+                allow_duplicate_app_card_ids: T::Boolean,
                 app_card_id: Integer,
                 legacy_crm_card_id: Integer,
                 helpdesk_app_card_id: Integer

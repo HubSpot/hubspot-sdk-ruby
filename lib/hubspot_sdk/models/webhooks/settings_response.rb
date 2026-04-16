@@ -6,16 +6,13 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#get_settings
       class SettingsResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute created_at
-        #   When this subscription was created. Formatted as milliseconds from the
-        #   [Unix epoch](#).
+        #   The date and time when the webhook settings were created, in ISO 8601 format.
         #
         #   @return [Time]
         required :created_at, Time, api_name: :createdAt
 
         # @!attribute target_url
-        #   A publicly available URL for Hubspot to call where event payloads will be
-        #   delivered. See [link-so-some-doc](#) for details about the format of these event
-        #   payloads.
+        #   The URL to which the webhook events will be sent. It is a string.
         #
         #   @return [String]
         required :target_url, String, api_name: :targetUrl
@@ -26,8 +23,8 @@ module HubSpotSDK
         required :throttling, -> { HubSpotSDK::Webhooks::ThrottlingSettings }
 
         # @!attribute updated_at
-        #   When this subscription was last updated. Formatted as milliseconds from the
-        #   [Unix epoch](#).
+        #   The date and time when the webhook settings were last updated, in ISO 8601
+        #   format.
         #
         #   @return [Time, nil]
         optional :updated_at, Time, api_name: :updatedAt
@@ -36,13 +33,13 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SettingsResponse} for more details.
         #
-        #   @param created_at [Time] When this subscription was created. Formatted as milliseconds from the [Unix epo
+        #   @param created_at [Time] The date and time when the webhook settings were created, in ISO 8601 format.
         #
-        #   @param target_url [String] A publicly available URL for Hubspot to call where event payloads will be delive
+        #   @param target_url [String] The URL to which the webhook events will be sent. It is a string.
         #
         #   @param throttling [HubSpotSDK::Models::Webhooks::ThrottlingSettings]
         #
-        #   @param updated_at [Time] When this subscription was last updated. Formatted as milliseconds from the [Uni
+        #   @param updated_at [Time] The date and time when the webhook settings were last updated, in ISO 8601 forma
       end
     end
   end

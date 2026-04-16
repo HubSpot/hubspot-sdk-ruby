@@ -12,15 +12,21 @@ module HubSpotSDK
             )
           end
 
+        # An integer representing the unique identifier of the CRM object for which the
+        # snapshot is being requested.
         sig { returns(Integer) }
         attr_accessor :object_id_
 
+        # A string representing the type identifier of the CRM object.
         sig { returns(String) }
         attr_accessor :object_type_id
 
+        # An integer representing the unique identifier of the HubSpot portal.
         sig { returns(Integer) }
         attr_accessor :portal_id
 
+        # An array of strings, each representing a property of the CRM object to be
+        # included in the snapshot.
         sig { returns(T::Array[String]) }
         attr_accessor :properties
 
@@ -32,7 +38,18 @@ module HubSpotSDK
             properties: T::Array[String]
           ).returns(T.attached_class)
         end
-        def self.new(object_id_:, object_type_id:, portal_id:, properties:)
+        def self.new(
+          # An integer representing the unique identifier of the CRM object for which the
+          # snapshot is being requested.
+          object_id_:,
+          # A string representing the type identifier of the CRM object.
+          object_type_id:,
+          # An integer representing the unique identifier of the HubSpot portal.
+          portal_id:,
+          # An array of strings, each representing a property of the CRM object to be
+          # included in the snapshot.
+          properties:
+        )
         end
 
         sig do

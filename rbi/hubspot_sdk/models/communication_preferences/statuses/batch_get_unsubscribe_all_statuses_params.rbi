@@ -16,9 +16,13 @@ module HubSpotSDK
               )
             end
 
+          # The communication channel to filter the unsubscribe statuses. This parameter is
+          # required and currently supports 'EMAIL' as a valid value.
           sig { returns(HubSpotSDK::BatchInputString::Channel::OrSymbol) }
           attr_accessor :channel
 
+          # The ID of the business unit to filter the results. This is an optional
+          # parameter.
           sig { returns(T.nilable(Integer)) }
           attr_reader :business_unit_id
 
@@ -32,7 +36,15 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(T.attached_class)
           end
-          def self.new(channel:, business_unit_id: nil, request_options: {})
+          def self.new(
+            # The communication channel to filter the unsubscribe statuses. This parameter is
+            # required and currently supports 'EMAIL' as a valid value.
+            channel:,
+            # The ID of the business unit to filter the results. This is an optional
+            # parameter.
+            business_unit_id: nil,
+            request_options: {}
+          )
           end
 
           sig do
@@ -47,6 +59,8 @@ module HubSpotSDK
           def to_hash
           end
 
+          # The communication channel to filter the unsubscribe statuses. This parameter is
+          # required and currently supports 'EMAIL' as a valid value.
           module Channel
             extend HubSpotSDK::Internal::Type::Enum
 

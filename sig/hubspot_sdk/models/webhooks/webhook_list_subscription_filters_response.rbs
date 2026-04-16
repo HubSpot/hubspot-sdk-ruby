@@ -1,0 +1,10 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_list_subscription_filters_response =
+        ::Array[HubSpotSDK::Webhooks::FilterResponse]
+
+      WebhookListSubscriptionFiltersResponse: HubSpotSDK::Internal::Type::Converter
+    end
+  end
+end

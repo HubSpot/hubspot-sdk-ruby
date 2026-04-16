@@ -4,7 +4,7 @@ module HubSpotSDK
       type batch_response_property =
         {
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Crm::Property],
+          results: ::Array[HubSpotSDK::Property],
           started_at: Time,
           status: HubSpotSDK::Models::Crm::BatchResponseProperty::status,
           links: ::Hash[Symbol, String],
@@ -14,7 +14,7 @@ module HubSpotSDK
       class BatchResponseProperty < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubSpotSDK::Crm::Property]
+        attr_accessor results: ::Array[HubSpotSDK::Property]
 
         attr_accessor started_at: Time
 
@@ -30,7 +30,7 @@ module HubSpotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Crm::Property],
+          results: ::Array[HubSpotSDK::Property],
           started_at: Time,
           status: HubSpotSDK::Models::Crm::BatchResponseProperty::status,
           ?links: ::Hash[Symbol, String],
@@ -39,7 +39,7 @@ module HubSpotSDK
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Crm::Property],
+          results: ::Array[HubSpotSDK::Property],
           started_at: Time,
           status: HubSpotSDK::Models::Crm::BatchResponseProperty::status,
           links: ::Hash[Symbol, String],

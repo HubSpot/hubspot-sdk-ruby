@@ -25,8 +25,8 @@ module HubSpotSDK
         # @!attribute properties
         #   Key value pairs representing the properties of the object.
         #
-        #   @return [Hash{Symbol=>String, nil}]
-        required :properties, HubSpotSDK::Internal::Type::HashOf[String, nil?: true]
+        #   @return [Hash{Symbol=>String}]
+        required :properties, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute updated_at
         #   The timestamp when the object was last updated, in ISO 8601 format.
@@ -84,7 +84,7 @@ module HubSpotSDK
         #
         #   @param created_at [Time] The timestamp when the object was created, in ISO 8601 format.
         #
-        #   @param properties [Hash{Symbol=>String, nil}] Key value pairs representing the properties of the object.
+        #   @param properties [Hash{Symbol=>String}] Key value pairs representing the properties of the object.
         #
         #   @param updated_at [Time] The timestamp when the object was last updated, in ISO 8601 format.
         #

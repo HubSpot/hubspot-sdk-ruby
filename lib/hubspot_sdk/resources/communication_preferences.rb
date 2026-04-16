@@ -20,11 +20,11 @@ module HubSpotSDK
       #
       # @overload generate_links(channel:, subscriber_id_string:, business_unit_id: nil, language: nil, subscription_id: nil, request_options: {})
       #
-      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::LinkGenerationRequest::Channel] Query param
+      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::LinkGenerationRequest::Channel] Query param: The communication channel for which the links are generated. Must b
       #
       # @param subscriber_id_string [String] Body param: A string representing the unique identifier of the subscriber. This
       #
-      # @param business_unit_id [Integer] Query param
+      # @param business_unit_id [Integer] Query param: The identifier of the business unit. Defaults to 0 if not specified
       #
       # @param language [String] Body param: The language in which the generated link should be presented, repres
       #
@@ -50,13 +50,20 @@ module HubSpotSDK
         )
       end
 
+      # Some parameter documentations has been truncated, see
+      # {HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams}
+      # for more details.
+      #
       # Retrieve a contact's current email subscription preferences.
       #
       # @overload get_statuses(subscriber_id_string, channel:, business_unit_id: nil, request_options: {})
       #
-      # @param subscriber_id_string [String]
-      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel]
-      # @param business_unit_id [Integer]
+      # @param subscriber_id_string [String] The unique identifier of the subscriber whose communication preferences status i
+      #
+      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel] The communication channel for which the subscription status is being retrieved.
+      #
+      # @param business_unit_id [Integer] The ID of the business unit to filter the subscription status by. This is an opt
+      #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicStatus]
@@ -75,16 +82,24 @@ module HubSpotSDK
         )
       end
 
+      # Some parameter documentations has been truncated, see
+      # {HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams}
+      # for more details.
+      #
       # Check whether a contact has unsubscribed from all email subscriptions. If a
       # contact has not opted out of all communications, the response `results` array
       # will be empty.
       #
       # @overload get_unsubscribe_all_status(subscriber_id_string, channel:, business_unit_id: nil, verbose: nil, request_options: {})
       #
-      # @param subscriber_id_string [String]
-      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::Channel]
-      # @param business_unit_id [Integer]
-      # @param verbose [Boolean]
+      # @param subscriber_id_string [String] The unique identifier of the subscriber to unsubscribe from all communication pr
+      #
+      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceGetUnsubscribeAllStatusParams::Channel] The communication channel from which to unsubscribe the subscriber. This is a re
+      #
+      # @param business_unit_id [Integer] The ID of the business unit to which the subscriber belongs. This is an optional
+      #
+      # @param verbose [Boolean] A boolean indicating whether to include detailed information in the response. De
+      #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicWideStatus]
@@ -105,14 +120,22 @@ module HubSpotSDK
         )
       end
 
+      # Some parameter documentations has been truncated, see
+      # {HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams}
+      # for more details.
+      #
       # Unsubscribe a contact from all email subscriptions.
       #
       # @overload unsubscribe_all(subscriber_id_string, channel:, business_unit_id: nil, verbose: nil, request_options: {})
       #
-      # @param subscriber_id_string [String]
-      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel]
-      # @param business_unit_id [Integer]
-      # @param verbose [Boolean]
+      # @param subscriber_id_string [String] The unique identifier of the subscriber to unsubscribe from all communication pr
+      #
+      # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel] The communication channel to unsubscribe from. Must be 'EMAIL'.
+      #
+      # @param business_unit_id [Integer] The ID of the business unit associated with the request. This is an optional int
+      #
+      # @param verbose [Boolean] A boolean indicating whether to include detailed information in the response. De
+      #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
       # @return [HubSpotSDK::Models::CommunicationPreferences::ActionResponseWithResultsPublicStatus]
@@ -139,7 +162,7 @@ module HubSpotSDK
       #
       # @overload update_status(subscriber_id_string, channel:, status_state:, subscription_id:, legal_basis: nil, legal_basis_explanation: nil, request_options: {})
       #
-      # @param subscriber_id_string [String]
+      # @param subscriber_id_string [String] The unique identifier of the subscriber whose communication preferences status i
       #
       # @param channel [Symbol, HubSpotSDK::Models::CommunicationPreferences::PartialPublicStatusRequest::Channel] The type of communication channel, with 'EMAIL' as the only supported option.
       #

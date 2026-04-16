@@ -12,24 +12,32 @@ module HubSpotSDK
             )
           end
 
+        # An array of strings, each representing an associated object type ID relevant to
+        # the action override.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :associated_object_type_ids
 
         sig { params(associated_object_type_ids: T::Array[String]).void }
         attr_writer :associated_object_type_ids
 
+        # An array of integers representing list IDs that are affected by the action
+        # override. These IDs are in int64 format.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :list_ids
 
         sig { params(list_ids: T::Array[Integer]).void }
         attr_writer :list_ids
 
+        # An array of integers, each representing an object ID for which the action
+        # override is applicable. These IDs are in int64 format.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :object_ids
 
         sig { params(object_ids: T::Array[Integer]).void }
         attr_writer :object_ids
 
+        # An array of strings representing specific properties to be overridden in the
+        # action. Each entry in the array corresponds to a property name.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
@@ -45,9 +53,17 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # An array of strings, each representing an associated object type ID relevant to
+          # the action override.
           associated_object_type_ids: nil,
+          # An array of integers representing list IDs that are affected by the action
+          # override. These IDs are in int64 format.
           list_ids: nil,
+          # An array of integers, each representing an object ID for which the action
+          # override is applicable. These IDs are in int64 format.
           object_ids: nil,
+          # An array of strings representing specific properties to be overridden in the
+          # action. Each entry in the array corresponds to a property name.
           properties: nil
         )
         end

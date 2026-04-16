@@ -18,6 +18,8 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :subscriber_id_string
 
+        # The communication channel for which the subscription status is being retrieved.
+        # This parameter is required and currently supports only 'EMAIL'.
         sig do
           returns(
             HubSpotSDK::CommunicationPreferences::CommunicationPreferenceGetStatusesParams::Channel::OrSymbol
@@ -25,6 +27,8 @@ module HubSpotSDK
         end
         attr_accessor :channel
 
+        # The ID of the business unit to filter the subscription status by. This is an
+        # optional parameter.
         sig { returns(T.nilable(Integer)) }
         attr_reader :business_unit_id
 
@@ -42,7 +46,11 @@ module HubSpotSDK
         end
         def self.new(
           subscriber_id_string:,
+          # The communication channel for which the subscription status is being retrieved.
+          # This parameter is required and currently supports only 'EMAIL'.
           channel:,
+          # The ID of the business unit to filter the subscription status by. This is an
+          # optional parameter.
           business_unit_id: nil,
           request_options: {}
         )
@@ -62,6 +70,8 @@ module HubSpotSDK
         def to_hash
         end
 
+        # The communication channel for which the subscription status is being retrieved.
+        # This parameter is required and currently supports only 'EMAIL'.
         module Channel
           extend HubSpotSDK::Internal::Type::Enum
 

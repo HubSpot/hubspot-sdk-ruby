@@ -17,11 +17,13 @@ module HubSpotSDK
             )
           end
           def get_unsubscribe_all_statuses(
-            # Query param
+            # Query param: The communication channel to filter the unsubscribe statuses. This
+            # parameter is required and currently supports 'EMAIL' as a valid value.
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param
+            # Query param: The ID of the business unit to filter the results. This is an
+            # optional parameter.
             business_unit_id: nil,
             request_options: {}
           )
@@ -39,11 +41,13 @@ module HubSpotSDK
             )
           end
           def read(
-            # Query param
+            # Query param: The communication channel to filter the subscription statuses. Must
+            # be 'EMAIL'.
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param
+            # Query param: An optional integer representing the business unit ID. This
+            # parameter helps to filter the results based on the specific business unit.
             business_unit_id: nil,
             request_options: {}
           )
@@ -62,13 +66,16 @@ module HubSpotSDK
             )
           end
           def unsubscribe_all(
-            # Query param
+            # Query param: The communication channel from which subscribers will be
+            # unsubscribed. This parameter is required and currently supports only 'EMAIL'.
             channel:,
             # Body param: Strings to input.
             inputs:,
-            # Query param
+            # Query param: An optional integer representing the business unit ID for which the
+            # operation is being performed.
             business_unit_id: nil,
-            # Query param
+            # Query param: A boolean indicating whether to include detailed information in the
+            # response. Defaults to false.
             verbose: nil,
             request_options: {}
           )

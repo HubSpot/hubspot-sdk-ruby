@@ -65,6 +65,9 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :object_type_id
 
+        sig { returns(String) }
+        attr_accessor :object_type_id_string
+
         sig do
           returns(
             HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol
@@ -220,6 +223,7 @@ module HubSpotSDK
             meta_type_id: Integer,
             name: String,
             object_type_id: String,
+            object_type_id_string: String,
             permissioning_type:
               HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::OrSymbol,
             pipeline_property_name: String,
@@ -264,6 +268,7 @@ module HubSpotSDK
           meta_type_id:,
           name:,
           object_type_id:,
+          object_type_id_string:,
           permissioning_type:,
           pipeline_property_name:,
           pipeline_stage_property_name:,
@@ -310,6 +315,7 @@ module HubSpotSDK
               meta_type_id: Integer,
               name: String,
               object_type_id: String,
+              object_type_id_string: String,
               permissioning_type:
                 HubSpotSDK::Cms::InboundDBObjectType::PermissioningType::TaggedSymbol,
               pipeline_property_name: String,

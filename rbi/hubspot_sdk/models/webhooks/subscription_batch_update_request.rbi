@@ -12,13 +12,11 @@ module HubSpotSDK
             )
           end
 
-        # The ID of the webhook subscription to update.
+        # The unique identifier for the subscription to be updated. It is an integer.
         sig { returns(Integer) }
         attr_accessor :id
 
-        # Whether to activate or pause the webhook subscription. If true, the subscription
-        # will send webhook notifications. If false, the subscription is paused and will
-        # not send notifications.
+        # A boolean indicating whether the subscription is active.
         sig { returns(T::Boolean) }
         attr_accessor :active
 
@@ -26,11 +24,9 @@ module HubSpotSDK
           params(id: Integer, active: T::Boolean).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the webhook subscription to update.
+          # The unique identifier for the subscription to be updated. It is an integer.
           id:,
-          # Whether to activate or pause the webhook subscription. If true, the subscription
-          # will send webhook notifications. If false, the subscription is paused and will
-          # not send notifications.
+          # A boolean indicating whether the subscription is active.
           active:
         )
         end

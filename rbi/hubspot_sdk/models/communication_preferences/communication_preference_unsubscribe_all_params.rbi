@@ -18,6 +18,7 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :subscriber_id_string
 
+        # The communication channel to unsubscribe from. Must be 'EMAIL'.
         sig do
           returns(
             HubSpotSDK::CommunicationPreferences::CommunicationPreferenceUnsubscribeAllParams::Channel::OrSymbol
@@ -25,12 +26,16 @@ module HubSpotSDK
         end
         attr_accessor :channel
 
+        # The ID of the business unit associated with the request. This is an optional
+        # integer parameter.
         sig { returns(T.nilable(Integer)) }
         attr_reader :business_unit_id
 
         sig { params(business_unit_id: Integer).void }
         attr_writer :business_unit_id
 
+        # A boolean indicating whether to include detailed information in the response.
+        # Defaults to false.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :verbose
 
@@ -49,8 +54,13 @@ module HubSpotSDK
         end
         def self.new(
           subscriber_id_string:,
+          # The communication channel to unsubscribe from. Must be 'EMAIL'.
           channel:,
+          # The ID of the business unit associated with the request. This is an optional
+          # integer parameter.
           business_unit_id: nil,
+          # A boolean indicating whether to include detailed information in the response.
+          # Defaults to false.
           verbose: nil,
           request_options: {}
         )
@@ -71,6 +81,7 @@ module HubSpotSDK
         def to_hash
         end
 
+        # The communication channel to unsubscribe from. Must be 'EMAIL'.
         module Channel
           extend HubSpotSDK::Internal::Type::Enum
 

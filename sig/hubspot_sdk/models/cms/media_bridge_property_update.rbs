@@ -4,6 +4,7 @@ module HubSpotSDK
       type media_bridge_property_update =
         {
           calculation_formula: String,
+          currency_property_name: String,
           description: String,
           display_order: Integer,
           field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
@@ -12,7 +13,9 @@ module HubSpotSDK
           has_unique_value: bool,
           hidden: bool,
           label: String,
+          number_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
+          show_currency_symbol: bool,
           type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         }
 
@@ -20,6 +23,10 @@ module HubSpotSDK
         attr_reader calculation_formula: String?
 
         def calculation_formula=: (String) -> String
+
+        attr_reader currency_property_name: String?
+
+        def currency_property_name=: (String) -> String
 
         attr_reader description: String?
 
@@ -55,11 +62,21 @@ module HubSpotSDK
 
         def label=: (String) -> String
 
+        attr_reader number_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint?
+
+        def number_display_hint=: (
+          HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint
+        ) -> HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint
+
         attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
           ::Array[HubSpotSDK::OptionInput]
         ) -> ::Array[HubSpotSDK::OptionInput]
+
+        attr_reader show_currency_symbol: bool?
+
+        def show_currency_symbol=: (bool) -> bool
 
         attr_reader type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_?
 
@@ -69,6 +86,7 @@ module HubSpotSDK
 
         def initialize: (
           ?calculation_formula: String,
+          ?currency_property_name: String,
           ?description: String,
           ?display_order: Integer,
           ?field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
@@ -77,12 +95,15 @@ module HubSpotSDK
           ?has_unique_value: bool,
           ?hidden: bool,
           ?label: String,
+          ?number_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint,
           ?options: ::Array[HubSpotSDK::OptionInput],
+          ?show_currency_symbol: bool,
           ?type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         ) -> void
 
         def to_hash: -> {
           calculation_formula: String,
+          currency_property_name: String,
           description: String,
           display_order: Integer,
           field_type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type,
@@ -91,7 +112,9 @@ module HubSpotSDK
           has_unique_value: bool,
           hidden: bool,
           label: String,
+          number_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
+          show_currency_symbol: bool,
           type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_
         }
 
@@ -126,6 +149,27 @@ module HubSpotSDK
           TEXTAREA: :textarea
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::field_type]
+        end
+
+        type number_display_hint =
+          :currency
+          | :duration
+          | :formatted
+          | :percentage
+          | :probability
+          | :unformatted
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY: :currency
+          DURATION: :duration
+          FORMATTED: :formatted
+          PERCENTAGE: :percentage
+          PROBABILITY: :probability
+          UNFORMATTED: :unformatted
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint]
         end
 
         type type_ =

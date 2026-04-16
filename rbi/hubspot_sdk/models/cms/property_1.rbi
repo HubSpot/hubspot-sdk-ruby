@@ -66,6 +66,12 @@ module HubSpotSDK
         sig { params(created_user_id: String).void }
         attr_writer :created_user_id
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :currency_property_name
+
+        sig { params(currency_property_name: String).void }
+        attr_writer :currency_property_name
+
         sig do
           returns(
             T.nilable(HubSpotSDK::Cms::Property1::DataSensitivity::TaggedSymbol)
@@ -143,6 +149,23 @@ module HubSpotSDK
         end
         attr_writer :modification_metadata
 
+        sig do
+          returns(
+            T.nilable(
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          )
+        end
+        attr_reader :number_display_hint
+
+        sig do
+          params(
+            number_display_hint:
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::OrSymbol
+          ).void
+        end
+        attr_writer :number_display_hint
+
         sig { returns(T.nilable(String)) }
         attr_reader :referenced_object_type
 
@@ -188,6 +211,7 @@ module HubSpotSDK
             calculation_formula: String,
             created_at: Time,
             created_user_id: String,
+            currency_property_name: String,
             data_sensitivity:
               HubSpotSDK::Cms::Property1::DataSensitivity::OrSymbol,
             date_display_hint:
@@ -200,6 +224,8 @@ module HubSpotSDK
             hubspot_defined: T::Boolean,
             modification_metadata:
               HubSpotSDK::PropertyModificationMetadata::OrHash,
+            number_display_hint:
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::OrSymbol,
             referenced_object_type: String,
             sensitive_data_categories: T::Array[String],
             show_currency_symbol: T::Boolean,
@@ -221,6 +247,7 @@ module HubSpotSDK
           calculation_formula: nil,
           created_at: nil,
           created_user_id: nil,
+          currency_property_name: nil,
           data_sensitivity: nil,
           date_display_hint: nil,
           display_order: nil,
@@ -230,6 +257,7 @@ module HubSpotSDK
           hidden: nil,
           hubspot_defined: nil,
           modification_metadata: nil,
+          number_display_hint: nil,
           referenced_object_type: nil,
           sensitive_data_categories: nil,
           show_currency_symbol: nil,
@@ -254,6 +282,7 @@ module HubSpotSDK
               calculation_formula: String,
               created_at: Time,
               created_user_id: String,
+              currency_property_name: String,
               data_sensitivity:
                 HubSpotSDK::Cms::Property1::DataSensitivity::TaggedSymbol,
               date_display_hint:
@@ -265,6 +294,8 @@ module HubSpotSDK
               hidden: T::Boolean,
               hubspot_defined: T::Boolean,
               modification_metadata: HubSpotSDK::PropertyModificationMetadata,
+              number_display_hint:
+                HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol,
               referenced_object_type: String,
               sensitive_data_categories: T::Array[String],
               show_currency_symbol: T::Boolean,
@@ -346,6 +377,57 @@ module HubSpotSDK
             override.returns(
               T::Array[
                 HubSpotSDK::Cms::Property1::DateDisplayHint::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
+        end
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, HubSpotSDK::Cms::Property1::NumberDisplayHint)
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          CURRENCY =
+            T.let(
+              :currency,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          DURATION =
+            T.let(
+              :duration,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          FORMATTED =
+            T.let(
+              :formatted,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          PERCENTAGE =
+            T.let(
+              :percentage,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          PROBABILITY =
+            T.let(
+              :probability,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+          UNFORMATTED =
+            T.let(
+              :unformatted,
+              HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Cms::Property1::NumberDisplayHint::TaggedSymbol
               ]
             )
           end

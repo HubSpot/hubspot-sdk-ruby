@@ -16,6 +16,7 @@ module HubSpotSDK
           calculation_formula: String,
           created_at: Time,
           created_user_id: String,
+          currency_property_name: String,
           data_sensitivity: HubSpotSDK::Models::Cms::Property1::data_sensitivity,
           date_display_hint: HubSpotSDK::Models::Cms::Property1::date_display_hint,
           display_order: Integer,
@@ -25,6 +26,7 @@ module HubSpotSDK
           hidden: bool,
           hubspot_defined: bool,
           modification_metadata: HubSpotSDK::PropertyModificationMetadata,
+          number_display_hint: HubSpotSDK::Models::Cms::Property1::number_display_hint,
           referenced_object_type: String,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
@@ -71,6 +73,10 @@ module HubSpotSDK
 
         def created_user_id=: (String) -> String
 
+        attr_reader currency_property_name: String?
+
+        def currency_property_name=: (String) -> String
+
         attr_reader data_sensitivity: HubSpotSDK::Models::Cms::Property1::data_sensitivity?
 
         def data_sensitivity=: (
@@ -113,6 +119,12 @@ module HubSpotSDK
           HubSpotSDK::PropertyModificationMetadata
         ) -> HubSpotSDK::PropertyModificationMetadata
 
+        attr_reader number_display_hint: HubSpotSDK::Models::Cms::Property1::number_display_hint?
+
+        def number_display_hint=: (
+          HubSpotSDK::Models::Cms::Property1::number_display_hint
+        ) -> HubSpotSDK::Models::Cms::Property1::number_display_hint
+
         attr_reader referenced_object_type: String?
 
         def referenced_object_type=: (String) -> String
@@ -147,6 +159,7 @@ module HubSpotSDK
           ?calculation_formula: String,
           ?created_at: Time,
           ?created_user_id: String,
+          ?currency_property_name: String,
           ?data_sensitivity: HubSpotSDK::Models::Cms::Property1::data_sensitivity,
           ?date_display_hint: HubSpotSDK::Models::Cms::Property1::date_display_hint,
           ?display_order: Integer,
@@ -156,6 +169,7 @@ module HubSpotSDK
           ?hidden: bool,
           ?hubspot_defined: bool,
           ?modification_metadata: HubSpotSDK::PropertyModificationMetadata,
+          ?number_display_hint: HubSpotSDK::Models::Cms::Property1::number_display_hint,
           ?referenced_object_type: String,
           ?sensitive_data_categories: ::Array[String],
           ?show_currency_symbol: bool,
@@ -177,6 +191,7 @@ module HubSpotSDK
           calculation_formula: String,
           created_at: Time,
           created_user_id: String,
+          currency_property_name: String,
           data_sensitivity: HubSpotSDK::Models::Cms::Property1::data_sensitivity,
           date_display_hint: HubSpotSDK::Models::Cms::Property1::date_display_hint,
           display_order: Integer,
@@ -186,6 +201,7 @@ module HubSpotSDK
           hidden: bool,
           hubspot_defined: bool,
           modification_metadata: HubSpotSDK::PropertyModificationMetadata,
+          number_display_hint: HubSpotSDK::Models::Cms::Property1::number_display_hint,
           referenced_object_type: String,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
@@ -217,6 +233,27 @@ module HubSpotSDK
           TIME_UNTIL: :time_until
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property1::date_display_hint]
+        end
+
+        type number_display_hint =
+          :currency
+          | :duration
+          | :formatted
+          | :percentage
+          | :probability
+          | :unformatted
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY: :currency
+          DURATION: :duration
+          FORMATTED: :formatted
+          PERCENTAGE: :percentage
+          PROBABILITY: :probability
+          UNFORMATTED: :unformatted
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property1::number_display_hint]
         end
       end
     end

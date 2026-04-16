@@ -112,7 +112,7 @@ module HubSpotSDK
             name: String,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Events::Property)
+          ).returns(HubSpotSDK::Property)
         end
         def create_property(
           event_name,
@@ -176,7 +176,7 @@ module HubSpotSDK
             label: String,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Events::Property)
+          ).returns(HubSpotSDK::Property)
         end
         def update_property(
           # Path param

@@ -59,6 +59,13 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :label, String
 
+        # @!attribute number_display_hint
+        #
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::NumberDisplayHint, nil]
+        optional :number_display_hint,
+                 enum: -> { HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint },
+                 api_name: :numberDisplayHint
+
         # @!attribute options
         #   A list of valid options for the property.
         #
@@ -76,7 +83,7 @@ module HubSpotSDK
         #   @return [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::Type, nil]
         optional :type, enum: -> { HubSpotSDK::Crm::PropertyUpdate::Type }
 
-        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, options: nil, show_currency_symbol: nil, type: nil)
+        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Crm::PropertyUpdate} for more details.
         #
@@ -97,6 +104,8 @@ module HubSpotSDK
         #   @param hidden [Boolean] If true, the property won't be visible and can't be used in HubSpot.
         #
         #   @param label [String] A human-readable property label that will be shown in HubSpot.
+        #
+        #   @param number_display_hint [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::NumberDisplayHint]
         #
         #   @param options [Array<HubSpotSDK::Models::OptionInput>] A list of valid options for the property.
         #
@@ -122,6 +131,21 @@ module HubSpotSDK
           SELECT = :select
           TEXT = :text
           TEXTAREA = :textarea
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        # @see HubSpotSDK::Models::Crm::PropertyUpdate#number_display_hint
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY = :currency
+          DURATION = :duration
+          FORMATTED = :formatted
+          PERCENTAGE = :percentage
+          PROBABILITY = :probability
+          UNFORMATTED = :unformatted
 
           # @!method self.values
           #   @return [Array<Symbol>]

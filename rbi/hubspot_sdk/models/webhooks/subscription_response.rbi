@@ -12,24 +12,21 @@ module HubSpotSDK
             )
           end
 
-        # The unique ID of the webhook subscription.
+        # The unique identifier for the subscription, represented as an integer.
         sig { returns(String) }
         attr_accessor :id
 
-        # Whether the subscription is active or paused. If true, the subscription will
-        # send webhook notifications. If false, the subscription is paused and will not
-        # send notifications.
+        # A boolean indicating whether the subscription is currently active.
         sig { returns(T::Boolean) }
         attr_accessor :active
 
-        # The timestamp when the webhook subscription was created, in ISO 8601 format
-        # (e.g., 2020-02-29T12:30:00Z).
+        # The date and time when the subscription was created, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :created_at
 
-        # The type of event to listen for. Accepted values include contact.creation,
-        # contact.deletion, contact.propertyChange, and similar event types for other CRM
-        # objects and custom objects.
+        # The type of event that triggers the subscription. Valid values include various
+        # object changes such as 'contact.propertyChange', 'deal.creation', and
+        # 'ticket.deletion'.
         sig do
           returns(
             HubSpotSDK::Webhooks::SubscriptionResponse::EventType::TaggedSymbol
@@ -37,33 +34,29 @@ module HubSpotSDK
         end
         attr_accessor :event_type
 
-        # The name of the event to listen for. This is used with custom objects to specify
-        # custom event types beyond the standard eventType enum values.
+        # A descriptive name for the event type.
         sig { returns(T.nilable(String)) }
         attr_reader :event_type_name
 
         sig { params(event_type_name: String).void }
         attr_writer :event_type_name
 
-        # The ID of the object type for the subscription. This can be a standard CRM
-        # object (e.g., 'contact', 'company', 'deal') or a custom object ID for custom
-        # object subscriptions.
+        # The identifier for the object type associated with the subscription, represented
+        # as a string.
         sig { returns(T.nilable(String)) }
         attr_reader :object_type_id
 
         sig { params(object_type_id: String).void }
         attr_writer :object_type_id
 
-        # The internal name of the property to monitor for changes. Only applies when
-        # eventType is propertyChange.
+        # The name of the property associated with the event, if applicable.
         sig { returns(T.nilable(String)) }
         attr_reader :property_name
 
         sig { params(property_name: String).void }
         attr_writer :property_name
 
-        # The timestamp when the webhook subscription was last updated, in ISO 8601 format
-        # (e.g., 2020-02-29T12:30:00Z).
+        # The date and time when the subscription was last updated, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :updated_at
 
@@ -84,31 +77,24 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique ID of the webhook subscription.
+          # The unique identifier for the subscription, represented as an integer.
           id:,
-          # Whether the subscription is active or paused. If true, the subscription will
-          # send webhook notifications. If false, the subscription is paused and will not
-          # send notifications.
+          # A boolean indicating whether the subscription is currently active.
           active:,
-          # The timestamp when the webhook subscription was created, in ISO 8601 format
-          # (e.g., 2020-02-29T12:30:00Z).
+          # The date and time when the subscription was created, in ISO 8601 format.
           created_at:,
-          # The type of event to listen for. Accepted values include contact.creation,
-          # contact.deletion, contact.propertyChange, and similar event types for other CRM
-          # objects and custom objects.
+          # The type of event that triggers the subscription. Valid values include various
+          # object changes such as 'contact.propertyChange', 'deal.creation', and
+          # 'ticket.deletion'.
           event_type:,
-          # The name of the event to listen for. This is used with custom objects to specify
-          # custom event types beyond the standard eventType enum values.
+          # A descriptive name for the event type.
           event_type_name: nil,
-          # The ID of the object type for the subscription. This can be a standard CRM
-          # object (e.g., 'contact', 'company', 'deal') or a custom object ID for custom
-          # object subscriptions.
+          # The identifier for the object type associated with the subscription, represented
+          # as a string.
           object_type_id: nil,
-          # The internal name of the property to monitor for changes. Only applies when
-          # eventType is propertyChange.
+          # The name of the property associated with the event, if applicable.
           property_name: nil,
-          # The timestamp when the webhook subscription was last updated, in ISO 8601 format
-          # (e.g., 2020-02-29T12:30:00Z).
+          # The date and time when the subscription was last updated, in ISO 8601 format.
           updated_at: nil
         )
         end
@@ -131,9 +117,9 @@ module HubSpotSDK
         def to_hash
         end
 
-        # The type of event to listen for. Accepted values include contact.creation,
-        # contact.deletion, contact.propertyChange, and similar event types for other CRM
-        # objects and custom objects.
+        # The type of event that triggers the subscription. Valid values include various
+        # object changes such as 'contact.propertyChange', 'deal.creation', and
+        # 'ticket.deletion'.
         module EventType
           extend HubSpotSDK::Internal::Type::Enum
 

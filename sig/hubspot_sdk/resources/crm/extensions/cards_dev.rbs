@@ -45,6 +45,7 @@ module HubSpotSDK
 
           def migrate_views: (
             Integer app_id,
+            allow_duplicate_app_card_ids: bool,
             app_card_id: Integer,
             legacy_crm_card_id: Integer,
             ?helpdesk_app_card_id: Integer,

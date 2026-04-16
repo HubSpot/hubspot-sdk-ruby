@@ -1,0 +1,27 @@
+module HubSpotSDK
+  module Models
+    module Webhooks
+      type webhook_create_batch_event_subscriptions_params =
+        { app_id: Integer } & HubSpotSDK::Internal::Type::request_parameters
+
+      class WebhookCreateBatchEventSubscriptionsParams < HubSpotSDK::Models::Webhooks::BatchInputSubscriptionBatchUpdateRequest
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        def app_id: -> Integer
+
+        def app_id=: (Integer _) -> Integer
+
+        def initialize: (
+          app_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          app_id: Integer,
+          request_options: HubSpotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

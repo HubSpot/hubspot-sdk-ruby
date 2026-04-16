@@ -5,15 +5,19 @@ module HubSpotSDK
     class CommunicationPreferences
       class Statuses
         class Batch
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::CommunicationPreferences::Statuses::BatchGetUnsubscribeAllStatusesParams}
+          # for more details.
+          #
           # Checks whether a set of contacts have opted out of all communications.
           #
           # @overload get_unsubscribe_all_statuses(channel:, inputs:, business_unit_id: nil, request_options: {})
           #
-          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param
+          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param: The communication channel to filter the unsubscribe statuses. This
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param
+          # @param business_unit_id [Integer] Query param: The ID of the business unit to filter the results. This is an optio
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -35,15 +39,19 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::CommunicationPreferences::Statuses::BatchReadParams} for
+          # more details.
+          #
           # Batch retrieve subscription statuses for a set of contacts.
           #
           # @overload read(channel:, inputs:, business_unit_id: nil, request_options: {})
           #
-          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param
+          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param: The communication channel to filter the subscription statuses. Must
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param
+          # @param business_unit_id [Integer] Query param: An optional integer representing the business unit ID. This paramet
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -64,17 +72,21 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::CommunicationPreferences::Statuses::BatchUnsubscribeAllParams}
+          # for more details.
+          #
           # Unsubscribe a set of contacts from all email subscriptions.
           #
           # @overload unsubscribe_all(channel:, inputs:, business_unit_id: nil, verbose: nil, request_options: {})
           #
-          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param
+          # @param channel [Symbol, HubSpotSDK::Models::BatchInputString::Channel] Query param: The communication channel from which subscribers will be unsubscrib
           #
           # @param inputs [Array<String>] Body param: Strings to input.
           #
-          # @param business_unit_id [Integer] Query param
+          # @param business_unit_id [Integer] Query param: An optional integer representing the business unit ID for which the
           #
-          # @param verbose [Boolean] Query param
+          # @param verbose [Boolean] Query param: A boolean indicating whether to include detailed information in the
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

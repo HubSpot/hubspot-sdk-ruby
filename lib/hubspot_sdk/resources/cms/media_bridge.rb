@@ -197,13 +197,13 @@ module HubSpotSDK
 
         # Create a new property for the specified media type
         #
-        # @overload create_property(object_type, app_id:, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, options: nil, referenced_object_type: nil, request_options: {})
+        # @overload create_property(object_type, app_id:, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, request_options: {})
         #
         # @param object_type [String] Path param
         #
         # @param app_id [Integer] Path param
         #
-        # @param field_type [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::FieldType] Body param
+        # @param field_type [Symbol, HubSpotSDK::Models::PropertyCreate::FieldType] Body param
         #
         # @param group_name [String] Body param
         #
@@ -211,11 +211,13 @@ module HubSpotSDK
         #
         # @param name [String] Body param
         #
-        # @param type [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::Type] Body param
+        # @param type [Symbol, HubSpotSDK::Models::PropertyCreate::Type] Body param
         #
         # @param calculation_formula [String] Body param
         #
-        # @param data_sensitivity [Symbol, HubSpotSDK::Models::Cms::PropertyCreate::DataSensitivity] Body param
+        # @param currency_property_name [String] Body param
+        #
+        # @param data_sensitivity [Symbol, HubSpotSDK::Models::PropertyCreate::DataSensitivity] Body param
         #
         # @param description [String] Body param
         #
@@ -229,9 +231,13 @@ module HubSpotSDK
         #
         # @param hidden [Boolean] Body param
         #
+        # @param number_display_hint [Symbol, HubSpotSDK::Models::PropertyCreate::NumberDisplayHint] Body param
+        #
         # @param options [Array<HubSpotSDK::Models::OptionInput>] Body param
         #
         # @param referenced_object_type [String] Body param
+        #
+        # @param show_currency_symbol [Boolean] Body param
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -786,7 +792,7 @@ module HubSpotSDK
 
         # Update an existing property for an object type.
         #
-        # @overload update_property(property_name, app_id:, object_type:, calculation_formula: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, options: nil, type: nil, request_options: {})
+        # @overload update_property(property_name, app_id:, object_type:, calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil, request_options: {})
         #
         # @param property_name [String] Path param
         #
@@ -795,6 +801,8 @@ module HubSpotSDK
         # @param object_type [String] Path param
         #
         # @param calculation_formula [String] Body param
+        #
+        # @param currency_property_name [String] Body param
         #
         # @param description [String] Body param
         #
@@ -812,7 +820,11 @@ module HubSpotSDK
         #
         # @param label [String] Body param
         #
+        # @param number_display_hint [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::NumberDisplayHint] Body param
+        #
         # @param options [Array<HubSpotSDK::Models::OptionInput>] Body param
+        #
+        # @param show_currency_symbol [Boolean] Body param
         #
         # @param type [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type] Body param
         #

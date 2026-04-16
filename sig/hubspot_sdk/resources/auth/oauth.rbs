@@ -20,7 +20,7 @@ module HubSpotSDK
           ?client_secret: String,
           ?token_type_hint: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Models::Auth::token_info_response_base_if
+        ) -> HubSpotSDK::Auth::TokenInfoResponseBaseIf
 
         def revoke_token: (
           ?token: String,

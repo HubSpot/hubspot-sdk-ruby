@@ -155,6 +155,11 @@ module HubSpotSDK
               :REMOVED_FROM_LIST,
               HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest::Action::TaggedSymbol
             )
+          GDPR_DELETE =
+            T.let(
+              :GDPR_DELETE,
+              HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest::Action::TaggedSymbol
+            )
 
           sig do
             override.returns(
@@ -202,6 +207,11 @@ module HubSpotSDK
           LIST_MEMBERSHIP =
             T.let(
               :LIST_MEMBERSHIP,
+              HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
+            )
+          GDPR_PRIVACY_DELETION =
+            T.let(
+              :GDPR_PRIVACY_DELETION,
               HubSpotSDK::Webhooks::AssociationSubscriptionUpsertRequest::SubscriptionType::TaggedSymbol
             )
 
