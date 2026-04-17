@@ -1,0 +1,226 @@
+module HubSpotSDK
+  module Models
+    type property_create =
+      {
+        field_type: HubSpotSDK::Models::PropertyCreate::field_type,
+        group_name: String,
+        label: String,
+        name: String,
+        type: HubSpotSDK::Models::PropertyCreate::type_,
+        calculation_formula: String,
+        currency_property_name: String,
+        data_sensitivity: HubSpotSDK::Models::PropertyCreate::data_sensitivity,
+        description: String,
+        display_order: Integer,
+        external_options: bool,
+        form_field: bool,
+        has_unique_value: bool,
+        hidden: bool,
+        number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
+        options: ::Array[HubSpotSDK::OptionInput],
+        referenced_object_type: String,
+        show_currency_symbol: bool
+      }
+
+    class PropertyCreate < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor field_type: HubSpotSDK::Models::PropertyCreate::field_type
+
+      attr_accessor group_name: String
+
+      attr_accessor label: String
+
+      attr_accessor name: String
+
+      attr_accessor type: HubSpotSDK::Models::PropertyCreate::type_
+
+      attr_reader calculation_formula: String?
+
+      def calculation_formula=: (String) -> String
+
+      attr_reader currency_property_name: String?
+
+      def currency_property_name=: (String) -> String
+
+      attr_reader data_sensitivity: HubSpotSDK::Models::PropertyCreate::data_sensitivity?
+
+      def data_sensitivity=: (
+        HubSpotSDK::Models::PropertyCreate::data_sensitivity
+      ) -> HubSpotSDK::Models::PropertyCreate::data_sensitivity
+
+      attr_reader description: String?
+
+      def description=: (String) -> String
+
+      attr_reader display_order: Integer?
+
+      def display_order=: (Integer) -> Integer
+
+      attr_reader external_options: bool?
+
+      def external_options=: (bool) -> bool
+
+      attr_reader form_field: bool?
+
+      def form_field=: (bool) -> bool
+
+      attr_reader has_unique_value: bool?
+
+      def has_unique_value=: (bool) -> bool
+
+      attr_reader hidden: bool?
+
+      def hidden=: (bool) -> bool
+
+      attr_reader number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint?
+
+      def number_display_hint=: (
+        HubSpotSDK::Models::PropertyCreate::number_display_hint
+      ) -> HubSpotSDK::Models::PropertyCreate::number_display_hint
+
+      attr_reader options: ::Array[HubSpotSDK::OptionInput]?
+
+      def options=: (
+        ::Array[HubSpotSDK::OptionInput]
+      ) -> ::Array[HubSpotSDK::OptionInput]
+
+      attr_reader referenced_object_type: String?
+
+      def referenced_object_type=: (String) -> String
+
+      attr_reader show_currency_symbol: bool?
+
+      def show_currency_symbol=: (bool) -> bool
+
+      def initialize: (
+        field_type: HubSpotSDK::Models::PropertyCreate::field_type,
+        group_name: String,
+        label: String,
+        name: String,
+        type: HubSpotSDK::Models::PropertyCreate::type_,
+        ?calculation_formula: String,
+        ?currency_property_name: String,
+        ?data_sensitivity: HubSpotSDK::Models::PropertyCreate::data_sensitivity,
+        ?description: String,
+        ?display_order: Integer,
+        ?external_options: bool,
+        ?form_field: bool,
+        ?has_unique_value: bool,
+        ?hidden: bool,
+        ?number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
+        ?options: ::Array[HubSpotSDK::OptionInput],
+        ?referenced_object_type: String,
+        ?show_currency_symbol: bool
+      ) -> void
+
+      def to_hash: -> {
+        field_type: HubSpotSDK::Models::PropertyCreate::field_type,
+        group_name: String,
+        label: String,
+        name: String,
+        type: HubSpotSDK::Models::PropertyCreate::type_,
+        calculation_formula: String,
+        currency_property_name: String,
+        data_sensitivity: HubSpotSDK::Models::PropertyCreate::data_sensitivity,
+        description: String,
+        display_order: Integer,
+        external_options: bool,
+        form_field: bool,
+        has_unique_value: bool,
+        hidden: bool,
+        number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
+        options: ::Array[HubSpotSDK::OptionInput],
+        referenced_object_type: String,
+        show_currency_symbol: bool
+      }
+
+      type field_type =
+        :booleancheckbox
+        | :calculation_equation
+        | :checkbox
+        | :date
+        | :file
+        | :html
+        | :number
+        | :phonenumber
+        | :radio
+        | :select
+        | :text
+        | :textarea
+
+      module FieldType
+        extend HubSpotSDK::Internal::Type::Enum
+
+        BOOLEANCHECKBOX: :booleancheckbox
+        CALCULATION_EQUATION: :calculation_equation
+        CHECKBOX: :checkbox
+        DATE: :date
+        FILE: :file
+        HTML: :html
+        NUMBER: :number
+        PHONENUMBER: :phonenumber
+        RADIO: :radio
+        SELECT: :select
+        TEXT: :text
+        TEXTAREA: :textarea
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::field_type]
+      end
+
+      type type_ =
+        :bool
+        | :date
+        | :datetime
+        | :enumeration
+        | :number
+        | :phone_number
+        | :string
+
+      module Type
+        extend HubSpotSDK::Internal::Type::Enum
+
+        BOOL: :bool
+        DATE: :date
+        DATETIME: :datetime
+        ENUMERATION: :enumeration
+        NUMBER: :number
+        PHONE_NUMBER: :phone_number
+        STRING: :string
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::type_]
+      end
+
+      type data_sensitivity = :highly_sensitive | :non_sensitive | :sensitive
+
+      module DataSensitivity
+        extend HubSpotSDK::Internal::Type::Enum
+
+        HIGHLY_SENSITIVE: :highly_sensitive
+        NON_SENSITIVE: :non_sensitive
+        SENSITIVE: :sensitive
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::data_sensitivity]
+      end
+
+      type number_display_hint =
+        :currency
+        | :duration
+        | :formatted
+        | :percentage
+        | :probability
+        | :unformatted
+
+      module NumberDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        CURRENCY: :currency
+        DURATION: :duration
+        FORMATTED: :formatted
+        PERCENTAGE: :percentage
+        PROBABILITY: :probability
+        UNFORMATTED: :unformatted
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::number_display_hint]
+      end
+    end
+  end
+end

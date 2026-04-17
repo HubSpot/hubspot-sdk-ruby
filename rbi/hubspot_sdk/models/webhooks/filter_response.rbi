@@ -12,9 +12,12 @@ module HubSpotSDK
             )
           end
 
+        # The unique identifier for the filter. It is an integer in int64 format.
         sig { returns(Integer) }
         attr_accessor :id
 
+        # A timestamp indicating when the filter was created, represented as an integer in
+        # int64 format.
         sig { returns(Integer) }
         attr_accessor :created_at
 
@@ -35,7 +38,10 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The unique identifier for the filter. It is an integer in int64 format.
           id:,
+          # A timestamp indicating when the filter was created, represented as an integer in
+          # int64 format.
           created_at:,
           # Defines a single condition for searching CRM objects, specifying the property to
           # filter on, the operator to use (such as equals, greater than, or contains), and

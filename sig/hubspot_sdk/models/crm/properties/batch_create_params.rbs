@@ -6,7 +6,7 @@ module HubSpotSDK
           { object_type: String }
           & HubSpotSDK::Internal::Type::request_parameters
 
-        class BatchCreateParams < HubSpotSDK::Models::Crm::BatchInputPropertyCreate
+        class BatchCreateParams < HubSpotSDK::Models::BatchInputPropertyCreate
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 

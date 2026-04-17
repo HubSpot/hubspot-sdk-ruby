@@ -12,8 +12,8 @@ module HubSpotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubSpotSDK::Models::Crm::Property>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Property] }
+        #   @return [Array<HubSpotSDK::Models::Property>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
 
         # @!attribute started_at
         #   The timestamp indicating when the batch operation began processing.
@@ -47,7 +47,7 @@ module HubSpotSDK
         #
         #   @param completed_at [Time] The timestamp indicating when the batch operation was completed.
         #
-        #   @param results [Array<HubSpotSDK::Models::Crm::Property>]
+        #   @param results [Array<HubSpotSDK::Models::Property>]
         #
         #   @param started_at [Time] The timestamp indicating when the batch operation began processing.
         #

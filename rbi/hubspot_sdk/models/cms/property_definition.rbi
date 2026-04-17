@@ -106,6 +106,7 @@ module HubSpotSDK
                 HubSpotSDK::Cms::Substring::OrHash,
                 HubSpotSDK::Cms::Euler::OrHash,
                 HubSpotSDK::Cms::StringLength::OrHash,
+                HubSpotSDK::Cms::IsBlank::OrHash,
                 HubSpotSDK::Cms::AddTime::OrHash,
                 HubSpotSDK::Cms::SubtractTime::OrHash
               )
@@ -282,6 +283,7 @@ module HubSpotSDK
                 HubSpotSDK::Cms::Substring::OrHash,
                 HubSpotSDK::Cms::Euler::OrHash,
                 HubSpotSDK::Cms::StringLength::OrHash,
+                HubSpotSDK::Cms::IsBlank::OrHash,
                 HubSpotSDK::Cms::AddTime::OrHash,
                 HubSpotSDK::Cms::SubtractTime::OrHash
               ),
@@ -422,6 +424,7 @@ module HubSpotSDK
                 HubSpotSDK::Cms::Substring,
                 HubSpotSDK::Cms::Euler,
                 HubSpotSDK::Cms::StringLength,
+                HubSpotSDK::Cms::IsBlank,
                 HubSpotSDK::Cms::AddTime,
                 HubSpotSDK::Cms::SubtractTime
               )

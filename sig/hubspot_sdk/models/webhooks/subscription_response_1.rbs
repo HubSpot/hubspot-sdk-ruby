@@ -118,6 +118,7 @@ module HubSpotSDK
           | :APP_UNINSTALL
           | :ADDED_TO_LIST
           | :REMOVED_FROM_LIST
+          | :GDPR_DELETE
 
         module Action
           extend HubSpotSDK::Internal::Type::Enum
@@ -134,6 +135,7 @@ module HubSpotSDK
           APP_UNINSTALL: :APP_UNINSTALL
           ADDED_TO_LIST: :ADDED_TO_LIST
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
+          GDPR_DELETE: :GDPR_DELETE
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::SubscriptionResponse1::action]
         end
@@ -142,6 +144,7 @@ module HubSpotSDK
           :APP_LIFECYCLE_EVENT
           | :ASSOCIATION
           | :EVENT
+          | :GDPR_PRIVACY_DELETION
           | :LIST_MEMBERSHIP
           | :OBJECT
 
@@ -151,6 +154,7 @@ module HubSpotSDK
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           ASSOCIATION: :ASSOCIATION
           EVENT: :EVENT
+          GDPR_PRIVACY_DELETION: :GDPR_PRIVACY_DELETION
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
           OBJECT: :OBJECT
 

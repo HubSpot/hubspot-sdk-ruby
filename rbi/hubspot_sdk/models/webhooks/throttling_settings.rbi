@@ -12,8 +12,7 @@ module HubSpotSDK
             )
           end
 
-        # The maximum number of HTTP requests HubSpot will attempt to make to your app in
-        # a given time frame determined by `period`.
+        # The maximum number of concurrent requests allowed. It is an integer value.
         sig { returns(Integer) }
         attr_accessor :max_concurrent_requests
 
@@ -21,8 +20,7 @@ module HubSpotSDK
           params(max_concurrent_requests: Integer).returns(T.attached_class)
         end
         def self.new(
-          # The maximum number of HTTP requests HubSpot will attempt to make to your app in
-          # a given time frame determined by `period`.
+          # The maximum number of concurrent requests allowed. It is an integer value.
           max_concurrent_requests:
         )
         end

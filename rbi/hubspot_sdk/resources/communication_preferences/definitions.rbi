@@ -15,7 +15,11 @@ module HubSpotSDK
           )
         end
         def list(
+          # An integer representing the ID of the business unit for which to retrieve
+          # subscription definitions.
           business_unit_id: nil,
+          # A boolean indicating whether to include translations of the communication
+          # preferences definitions in the response.
           include_translations: nil,
           request_options: {}
         )

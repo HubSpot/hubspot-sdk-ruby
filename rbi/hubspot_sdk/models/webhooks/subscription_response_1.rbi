@@ -12,10 +12,14 @@ module HubSpotSDK
             )
           end
 
-        # The unique ID of the webhook subscription.
+        # The unique identifier for the subscription, represented as an integer.
         sig { returns(Integer) }
         attr_accessor :id
 
+        # An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE',
+        # 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED', 'ASSOCIATION_REMOVED',
+        # 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL', 'ADDED_TO_LIST',
+        # 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
         sig do
           returns(
             T::Array[
@@ -25,20 +29,22 @@ module HubSpotSDK
         end
         attr_accessor :actions
 
+        # The unique identifier for the app associated with the subscription, represented
+        # as an integer.
         sig { returns(Integer) }
         attr_accessor :app_id
 
-        # The timestamp when the webhook subscription was created, in ISO 8601 format
-        # (e.g., 2020-02-29T12:30:00Z).
+        # The date and time when the subscription was created, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :created_at
 
-        # The ID of the object type for the subscription. This can be a standard CRM
-        # object (e.g., 'contact', 'company', 'deal') or a custom object ID for custom
-        # object subscriptions.
+        # The identifier for the object type associated with the subscription, represented
+        # as a string.
         sig { returns(String) }
         attr_accessor :object_type_id
 
+        # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
+        # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
         sig do
           returns(
             HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
@@ -46,11 +52,12 @@ module HubSpotSDK
         end
         attr_accessor :subscription_type
 
-        # The timestamp when the webhook subscription was last updated, in ISO 8601 format
-        # (e.g., 2020-02-29T12:30:00Z).
+        # The date and time when the subscription was last updated, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :updated_at
 
+        # An object containing action overrides, where each key is an action and the value
+        # is an ActionOverrideRequest object.
         sig do
           returns(
             T.nilable(
@@ -71,42 +78,54 @@ module HubSpotSDK
         end
         attr_writer :action_overrides
 
+        # An array of strings representing the associated object type IDs for the
+        # subscription.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :associated_object_type_ids
 
         sig { params(associated_object_type_ids: T::Array[String]).void }
         attr_writer :associated_object_type_ids
 
+        # The unique identifier for the user who created the subscription, represented as
+        # an integer.
         sig { returns(T.nilable(Integer)) }
         attr_reader :created_by
 
         sig { params(created_by: Integer).void }
         attr_writer :created_by
 
+        # The date and time when the subscription was deleted, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :deleted_at
 
         sig { params(deleted_at: Time).void }
         attr_writer :deleted_at
 
+        # An array of integers representing the list IDs associated with the subscription.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :list_ids
 
         sig { params(list_ids: T::Array[Integer]).void }
         attr_writer :list_ids
 
+        # An array of integers representing the object IDs associated with the
+        # subscription.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :object_ids
 
         sig { params(object_ids: T::Array[Integer]).void }
         attr_writer :object_ids
 
+        # The unique identifier for the portal associated with the subscription,
+        # represented as an integer.
         sig { returns(T.nilable(Integer)) }
         attr_reader :portal_id
 
         sig { params(portal_id: Integer).void }
         attr_writer :portal_id
 
+        # An array of strings representing the properties associated with the
+        # subscription.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
@@ -141,28 +160,47 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique ID of the webhook subscription.
+          # The unique identifier for the subscription, represented as an integer.
           id:,
+          # An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE',
+          # 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED', 'ASSOCIATION_REMOVED',
+          # 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL', 'ADDED_TO_LIST',
+          # 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
           actions:,
+          # The unique identifier for the app associated with the subscription, represented
+          # as an integer.
           app_id:,
-          # The timestamp when the webhook subscription was created, in ISO 8601 format
-          # (e.g., 2020-02-29T12:30:00Z).
+          # The date and time when the subscription was created, in ISO 8601 format.
           created_at:,
-          # The ID of the object type for the subscription. This can be a standard CRM
-          # object (e.g., 'contact', 'company', 'deal') or a custom object ID for custom
-          # object subscriptions.
+          # The identifier for the object type associated with the subscription, represented
+          # as a string.
           object_type_id:,
+          # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
+          # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
           subscription_type:,
-          # The timestamp when the webhook subscription was last updated, in ISO 8601 format
-          # (e.g., 2020-02-29T12:30:00Z).
+          # The date and time when the subscription was last updated, in ISO 8601 format.
           updated_at:,
+          # An object containing action overrides, where each key is an action and the value
+          # is an ActionOverrideRequest object.
           action_overrides: nil,
+          # An array of strings representing the associated object type IDs for the
+          # subscription.
           associated_object_type_ids: nil,
+          # The unique identifier for the user who created the subscription, represented as
+          # an integer.
           created_by: nil,
+          # The date and time when the subscription was deleted, in ISO 8601 format.
           deleted_at: nil,
+          # An array of integers representing the list IDs associated with the subscription.
           list_ids: nil,
+          # An array of integers representing the object IDs associated with the
+          # subscription.
           object_ids: nil,
+          # The unique identifier for the portal associated with the subscription,
+          # represented as an integer.
           portal_id: nil,
+          # An array of strings representing the properties associated with the
+          # subscription.
           properties: nil
         )
         end
@@ -265,6 +303,11 @@ module HubSpotSDK
               :REMOVED_FROM_LIST,
               HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
             )
+          GDPR_DELETE =
+            T.let(
+              :GDPR_DELETE,
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+            )
 
           sig do
             override.returns(
@@ -277,6 +320,8 @@ module HubSpotSDK
           end
         end
 
+        # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
+        # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
         module SubscriptionType
           extend HubSpotSDK::Internal::Type::Enum
 
@@ -302,6 +347,11 @@ module HubSpotSDK
           EVENT =
             T.let(
               :EVENT,
+              HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+            )
+          GDPR_PRIVACY_DELETION =
+            T.let(
+              :GDPR_PRIVACY_DELETION,
               HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
             )
           LIST_MEMBERSHIP =

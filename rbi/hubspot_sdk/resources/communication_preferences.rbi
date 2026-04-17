@@ -27,12 +27,14 @@ module HubSpotSDK
         ).returns(HubSpotSDK::CommunicationPreferences::LinkGenerationResponse)
       end
       def generate_links(
-        # Query param
+        # Query param: The communication channel for which the links are generated. Must
+        # be 'EMAIL'.
         channel:,
         # Body param: A string representing the unique identifier of the subscriber. This
         # property is required.
         subscriber_id_string:,
-        # Query param
+        # Query param: The identifier of the business unit. Defaults to 0 if not
+        # specified.
         business_unit_id: nil,
         # Body param: The language in which the generated link should be presented,
         # represented as a string.
@@ -57,8 +59,14 @@ module HubSpotSDK
         )
       end
       def get_statuses(
+        # The unique identifier of the subscriber whose communication preferences status
+        # is being retrieved.
         subscriber_id_string,
+        # The communication channel for which the subscription status is being retrieved.
+        # This parameter is required and currently supports only 'EMAIL'.
         channel:,
+        # The ID of the business unit to filter the subscription status by. This is an
+        # optional parameter.
         business_unit_id: nil,
         request_options: {}
       )
@@ -80,9 +88,17 @@ module HubSpotSDK
         )
       end
       def get_unsubscribe_all_status(
+        # The unique identifier of the subscriber to unsubscribe from all communication
+        # preferences.
         subscriber_id_string,
+        # The communication channel from which to unsubscribe the subscriber. This is a
+        # required parameter and must be 'EMAIL'.
         channel:,
+        # The ID of the business unit to which the subscriber belongs. This is an optional
+        # parameter.
         business_unit_id: nil,
+        # A boolean indicating whether to include detailed information in the response.
+        # Defaults to false.
         verbose: nil,
         request_options: {}
       )
@@ -102,9 +118,16 @@ module HubSpotSDK
         )
       end
       def unsubscribe_all(
+        # The unique identifier of the subscriber to unsubscribe from all communication
+        # preferences.
         subscriber_id_string,
+        # The communication channel to unsubscribe from. Must be 'EMAIL'.
         channel:,
+        # The ID of the business unit associated with the request. This is an optional
+        # integer parameter.
         business_unit_id: nil,
+        # A boolean indicating whether to include detailed information in the response.
+        # Defaults to false.
         verbose: nil,
         request_options: {}
       )
@@ -128,6 +151,8 @@ module HubSpotSDK
         )
       end
       def update_status(
+        # The unique identifier of the subscriber whose communication preferences status
+        # is being updated.
         subscriber_id_string,
         # The type of communication channel, with 'EMAIL' as the only supported option.
         channel:,

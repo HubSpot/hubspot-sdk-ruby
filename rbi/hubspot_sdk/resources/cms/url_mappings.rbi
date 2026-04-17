@@ -29,6 +29,7 @@ module HubSpotSDK
             is_regex: T::Boolean,
             is_trailing_slash_optional: T::Boolean,
             label: String,
+            last_used_at: Integer,
             name: String,
             note: String,
             portal_id: Integer,
@@ -82,6 +83,7 @@ module HubSpotSDK
           is_trailing_slash_optional:,
           # A label for the URL mapping.
           label:,
+          last_used_at:,
           # The name of the URL mapping.
           name:,
           # A string containing notes about the URL mapping.

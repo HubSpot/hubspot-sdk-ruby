@@ -97,6 +97,11 @@ module HubSpotSDK
         #   @return [String]
         required :object_type_id, String, api_name: :objectTypeId
 
+        # @!attribute object_type_id_string
+        #
+        #   @return [String]
+        required :object_type_id_string, String, api_name: :objectTypeIdString
+
         # @!attribute permissioning_type
         #
         #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
@@ -215,7 +220,7 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :write_scope_name, String, api_name: :writeScopeName
 
-        # @!method initialize(id:, allows_sensitive_properties:, create_date_property_name:, default_search_property_names:, deleted:, fully_qualified_name:, has_custom_properties:, has_default_properties:, has_external_object_ids:, has_owners:, has_pipelines:, indexed_for_filters_and_reports:, last_modified_property_name:, meta_type:, meta_type_id:, name:, object_type_id:, permissioning_type:, pipeline_property_name:, pipeline_stage_property_name:, required_properties:, restorable:, scope_mappings:, secondary_display_label_property_names:, access_scope_name: nil, created_at: nil, description: nil, integration_app_id: nil, janus_group: nil, owner_portal_id: nil, pipeline_close_date_property_name: nil, pipeline_time_to_close_property_name: nil, plural_form: nil, primary_display_label_property_name: nil, read_scope_name: nil, singular_form: nil, status: nil, visibility: nil, write_scope_name: nil)
+        # @!method initialize(id:, allows_sensitive_properties:, create_date_property_name:, default_search_property_names:, deleted:, fully_qualified_name:, has_custom_properties:, has_default_properties:, has_external_object_ids:, has_owners:, has_pipelines:, indexed_for_filters_and_reports:, last_modified_property_name:, meta_type:, meta_type_id:, name:, object_type_id:, object_type_id_string:, permissioning_type:, pipeline_property_name:, pipeline_stage_property_name:, required_properties:, restorable:, scope_mappings:, secondary_display_label_property_names:, access_scope_name: nil, created_at: nil, description: nil, integration_app_id: nil, janus_group: nil, owner_portal_id: nil, pipeline_close_date_property_name: nil, pipeline_time_to_close_property_name: nil, plural_form: nil, primary_display_label_property_name: nil, read_scope_name: nil, singular_form: nil, status: nil, visibility: nil, write_scope_name: nil)
         #   @param id [Integer]
         #   @param allows_sensitive_properties [Boolean]
         #   @param create_date_property_name [String]
@@ -233,6 +238,7 @@ module HubSpotSDK
         #   @param meta_type_id [Integer]
         #   @param name [String]
         #   @param object_type_id [String]
+        #   @param object_type_id_string [String]
         #   @param permissioning_type [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::PermissioningType]
         #   @param pipeline_property_name [String]
         #   @param pipeline_stage_property_name [String]

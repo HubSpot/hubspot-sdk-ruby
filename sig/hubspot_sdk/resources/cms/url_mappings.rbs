@@ -21,6 +21,7 @@ module HubSpotSDK
           is_regex: bool,
           is_trailing_slash_optional: bool,
           label: String,
+          last_used_at: Integer,
           name: String,
           note: String,
           portal_id: Integer,

@@ -3,11 +3,32 @@
 require_relative "../test_helper"
 
 class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
-  def test_create_crm_snapshot_required_params
+  def test_create_batch_event_subscriptions_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.create_batch_event_subscriptions(0, inputs: [{id: 0, active: true}])
+
+    assert_pattern do
+      response => HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse
+    end
+
+    assert_pattern do
+      response => {
+        completed_at: Time,
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse]),
+        started_at: Time,
+        status: HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
+        requested_at: Time | nil
+      }
+    end
+  end
+
+  def test_create_crm_snapshots_required_params
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.webhooks.create_crm_snapshot(
+      @hubspot.webhooks.create_crm_snapshots(
         snapshot_requests: [{objectId: 0, objectTypeId: "objectTypeId", portalId: 0, properties: ["string"]}]
       )
 
@@ -18,6 +39,30 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     assert_pattern do
       response => {
         snapshot_responses: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse])
+      }
+    end
+  end
+
+  def test_create_event_subscription_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.webhooks.create_event_subscription(0, active: true, event_type: :"company.associationChange")
+
+    assert_pattern do
+      response => HubSpotSDK::Webhooks::SubscriptionResponse
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
+        event_type_name: String | nil,
+        object_type_id: String | nil,
+        property_name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -62,30 +107,6 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_create_subscription_required_params
-    skip("Mock server tests are disabled")
-
-    response =
-      @hubspot.webhooks.create_subscription(0, active: true, event_type: :"company.associationChange")
-
-    assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionResponse
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        active: HubSpotSDK::Internal::Type::Boolean,
-        created_at: Time,
-        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
-        event_type_name: String | nil,
-        object_type_id: String | nil,
-        property_name: String | nil,
-        updated_at: Time | nil
-      }
-    end
-  end
-
   def test_create_subscription_filter_required_params
     skip("Mock server tests are disabled")
 
@@ -106,24 +127,13 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_create_subscriptions_batch_required_params
+  def test_delete_event_subscription_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.create_subscriptions_batch(0, inputs: [{id: 0, active: true}])
+    response = @hubspot.webhooks.delete_event_subscription(0, app_id: 0)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse
-    end
-
-    assert_pattern do
-      response => {
-        completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse]),
-        started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status,
-        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
-        requested_at: Time | nil
-      }
+      response => nil
     end
   end
 
@@ -137,10 +147,10 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_delete_portal_subscriptions
+  def test_delete_journal_subscription_for_portal
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.delete_portal_subscriptions(0)
+    response = @hubspot.webhooks.delete_journal_subscription_for_portal(0)
 
     assert_pattern do
       response => nil
@@ -157,16 +167,6 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_delete_subscription_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.webhooks.delete_subscription(0, app_id: 0)
-
-    assert_pattern do
-      response => nil
-    end
-  end
-
   def test_delete_subscription_filter
     skip("Mock server tests are disabled")
 
@@ -174,16 +174,6 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
 
     assert_pattern do
       response => nil
-    end
-  end
-
-  def test_get_earliest_journal
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.webhooks.get_earliest_journal
-
-    assert_pattern do
-      response => StringIO
     end
   end
 
@@ -208,10 +198,10 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_earliest_local_journal
+  def test_get_earliest_journal_entry
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_earliest_local_journal
+    response = @hubspot.webhooks.get_earliest_journal_entry
 
     assert_pattern do
       response => StringIO
@@ -239,10 +229,43 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_journal_batch_required_params
+  def test_get_earliest_local_journal_entry
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_journal_batch(inputs: ["string"])
+    response = @hubspot.webhooks.get_earliest_local_journal_entry
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_get_event_subscription_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.get_event_subscription(0, app_id: 0)
+
+    assert_pattern do
+      response => HubSpotSDK::Webhooks::SubscriptionResponse
+    end
+
+    assert_pattern do
+      response => {
+        id: String,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
+        event_type_name: String | nil,
+        object_type_id: String | nil,
+        property_name: String | nil,
+        updated_at: Time | nil
+      }
+    end
+  end
+
+  def test_get_journal_batch_by_request_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.get_journal_batch_by_request(inputs: ["string"])
 
     assert_pattern do
       response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
@@ -260,10 +283,10 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_journal_batch_after_offset_required_params
+  def test_get_journal_batch_from_offset_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_journal_batch_after_offset(1, offset: "offset")
+    response = @hubspot.webhooks.get_journal_batch_from_offset(1, offset: "offset")
 
     assert_pattern do
       response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
@@ -302,13 +325,33 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_latest_journal
+  def test_get_journal_subscription
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_latest_journal
+    response = @hubspot.webhooks.get_journal_subscription(0)
 
     assert_pattern do
-      response => StringIO
+      response => HubSpotSDK::Webhooks::SubscriptionResponse1
+    end
+
+    assert_pattern do
+      response => {
+        id: Integer,
+        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Webhooks::SubscriptionResponse1::Action]),
+        app_id: Integer,
+        created_at: Time,
+        object_type_id: String,
+        subscription_type: HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType,
+        updated_at: Time,
+        action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Webhooks::ActionOverrideRequest]) | nil,
+        associated_object_type_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        created_by: Integer | nil,
+        deleted_at: Time | nil,
+        list_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[Integer]) | nil,
+        object_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[Integer]) | nil,
+        portal_id: Integer | nil,
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil
+      }
     end
   end
 
@@ -333,10 +376,10 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_latest_local_journal
+  def test_get_latest_journal_entry
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_latest_local_journal
+    response = @hubspot.webhooks.get_latest_journal_entry
 
     assert_pattern do
       response => StringIO
@@ -364,10 +407,20 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_local_journal_batch_required_params
+  def test_get_latest_local_journal_entry
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_local_journal_batch(inputs: ["string"])
+    response = @hubspot.webhooks.get_latest_local_journal_entry
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_get_local_journal_batch_by_request_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.get_local_journal_batch_by_request(inputs: ["string"])
 
     assert_pattern do
       response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
@@ -385,10 +438,10 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_local_journal_batch_after_offset_required_params
+  def test_get_local_journal_batch_from_offset_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_local_journal_batch_after_offset(1, offset: "offset")
+    response = @hubspot.webhooks.get_local_journal_batch_from_offset(1, offset: "offset")
 
     assert_pattern do
       response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
@@ -427,20 +480,20 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_next_journal_after_offset
+  def test_get_next_journal_entries
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_next_journal_after_offset("offset")
+    response = @hubspot.webhooks.get_next_journal_entries("offset")
 
     assert_pattern do
       response => StringIO
     end
   end
 
-  def test_get_next_local_journal_after_offset
+  def test_get_next_local_journal_entries
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_next_local_journal_after_offset("offset")
+    response = @hubspot.webhooks.get_next_local_journal_entries("offset")
 
     assert_pattern do
       response => StringIO
@@ -466,29 +519,6 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_subscription_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.webhooks.get_subscription(0, app_id: 0)
-
-    assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionResponse
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        active: HubSpotSDK::Internal::Type::Boolean,
-        created_at: Time,
-        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
-        event_type_name: String | nil,
-        object_type_id: String | nil,
-        property_name: String | nil,
-        updated_at: Time | nil
-      }
-    end
-  end
-
   def test_get_subscription_filter
     skip("Mock server tests are disabled")
 
@@ -507,13 +537,19 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_get_subscription_filters
+  def test_list_event_subscriptions
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.get_subscription_filters(0)
+    response = @hubspot.webhooks.list_event_subscriptions(0)
 
     assert_pattern do
-      response => ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::FilterResponse])
+      response => HubSpotSDK::Webhooks::SubscriptionListResponse
+    end
+
+    assert_pattern do
+      response => {
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse])
+      }
     end
   end
 
@@ -533,18 +569,35 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     end
   end
 
-  def test_list_subscriptions
+  def test_list_subscription_filters
     skip("Mock server tests are disabled")
 
-    response = @hubspot.webhooks.list_subscriptions(0)
+    response = @hubspot.webhooks.list_subscription_filters(0)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionListResponse
+      response => ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::FilterResponse])
+    end
+  end
+
+  def test_update_event_subscription_required_params
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.webhooks.update_event_subscription(0, app_id: 0)
+
+    assert_pattern do
+      response => HubSpotSDK::Webhooks::SubscriptionResponse
     end
 
     assert_pattern do
       response => {
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse])
+        id: String,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        created_at: Time,
+        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
+        event_type_name: String | nil,
+        object_type_id: String | nil,
+        property_name: String | nil,
+        updated_at: Time | nil
       }
     end
   end
@@ -564,29 +617,6 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
         created_at: Time,
         target_url: String,
         throttling: HubSpotSDK::Webhooks::ThrottlingSettings,
-        updated_at: Time | nil
-      }
-    end
-  end
-
-  def test_update_subscription_required_params
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.webhooks.update_subscription(0, app_id: 0)
-
-    assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionResponse
-    end
-
-    assert_pattern do
-      response => {
-        id: String,
-        active: HubSpotSDK::Internal::Type::Boolean,
-        created_at: Time,
-        event_type: HubSpotSDK::Webhooks::SubscriptionResponse::EventType,
-        event_type_name: String | nil,
-        object_type_id: String | nil,
-        property_name: String | nil,
         updated_at: Time | nil
       }
     end

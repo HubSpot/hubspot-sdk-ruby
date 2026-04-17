@@ -4,7 +4,7 @@ module HubSpotSDK
   module Models
     module Crm
       module Properties
-        class BatchCreateParams < HubSpotSDK::Models::Crm::BatchInputPropertyCreate
+        class BatchCreateParams < HubSpotSDK::Models::BatchInputPropertyCreate
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 

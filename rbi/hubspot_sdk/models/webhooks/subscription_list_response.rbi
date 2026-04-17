@@ -12,8 +12,8 @@ module HubSpotSDK
             )
           end
 
-        # An array containing all active and paused event subscriptions configured for the
-        # app.
+        # An array of SubscriptionResponse objects, each representing a subscription
+        # associated with the app. This property is required.
         sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse]) }
         attr_accessor :results
 
@@ -24,8 +24,8 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # An array containing all active and paused event subscriptions configured for the
-          # app.
+          # An array of SubscriptionResponse objects, each representing a subscription
+          # associated with the app. This property is required.
           results:
         )
         end

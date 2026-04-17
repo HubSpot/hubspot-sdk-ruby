@@ -12,11 +12,17 @@ module HubSpotSDK
             )
           end
 
+        # The unique identifier for the created filter. It is an integer formatted as
+        # int64.
         sig { returns(Integer) }
         attr_accessor :filter_id
 
         sig { params(filter_id: Integer).returns(T.attached_class) }
-        def self.new(filter_id:)
+        def self.new(
+          # The unique identifier for the created filter. It is an integer formatted as
+          # int64.
+          filter_id:
+        )
         end
 
         sig { override.returns({ filter_id: Integer }) }

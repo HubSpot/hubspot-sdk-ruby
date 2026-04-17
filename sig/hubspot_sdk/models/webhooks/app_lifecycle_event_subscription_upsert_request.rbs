@@ -33,6 +33,7 @@ module HubSpotSDK
           | :EVENT
           | :APP_LIFECYCLE_EVENT
           | :LIST_MEMBERSHIP
+          | :GDPR_PRIVACY_DELETION
 
         module SubscriptionType
           extend HubSpotSDK::Internal::Type::Enum
@@ -42,6 +43,7 @@ module HubSpotSDK
           EVENT: :EVENT
           APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+          GDPR_PRIVACY_DELETION: :GDPR_PRIVACY_DELETION
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest::subscription_type]
         end

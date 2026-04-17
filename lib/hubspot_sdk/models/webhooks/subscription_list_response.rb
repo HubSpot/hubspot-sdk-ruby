@@ -3,11 +3,11 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubSpotSDK::Resources::Webhooks#list_subscriptions
+      # @see HubSpotSDK::Resources::Webhooks#list_event_subscriptions
       class SubscriptionListResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
-        #   An array containing all active and paused event subscriptions configured for the
-        #   app.
+        #   An array of SubscriptionResponse objects, each representing a subscription
+        #   associated with the app. This property is required.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>]
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse] }
@@ -16,7 +16,7 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionListResponse} for more details.
         #
-        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>] An array containing all active and paused event subscriptions configured for the
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>] An array of SubscriptionResponse objects, each representing a subscription assoc
       end
     end
   end

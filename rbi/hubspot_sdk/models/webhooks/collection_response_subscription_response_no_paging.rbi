@@ -12,6 +12,8 @@ module HubSpotSDK
             )
           end
 
+        # An array of SubscriptionResponse objects, each representing a subscription's
+        # details such as actions, app ID, and timestamps.
         sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse1]) }
         attr_accessor :results
 
@@ -21,7 +23,11 @@ module HubSpotSDK
               T::Array[HubSpotSDK::Webhooks::SubscriptionResponse1::OrHash]
           ).returns(T.attached_class)
         end
-        def self.new(results:)
+        def self.new(
+          # An array of SubscriptionResponse objects, each representing a subscription's
+          # details such as actions, app ID, and timestamps.
+          results:
+        )
         end
 
         sig do

@@ -12,6 +12,7 @@ module HubSpotSDK
           group_name: String,
           hidden: bool,
           label: String,
+          number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
           show_currency_symbol: bool,
           type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
@@ -56,6 +57,12 @@ module HubSpotSDK
 
         def label=: (String) -> String
 
+        attr_reader number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint?
+
+        def number_display_hint=: (
+          HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint
+        ) -> HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint
+
         attr_reader options: ::Array[HubSpotSDK::OptionInput]?
 
         def options=: (
@@ -82,6 +89,7 @@ module HubSpotSDK
           ?group_name: String,
           ?hidden: bool,
           ?label: String,
+          ?number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?show_currency_symbol: bool,
           ?type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
@@ -97,6 +105,7 @@ module HubSpotSDK
           group_name: String,
           hidden: bool,
           label: String,
+          number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
           show_currency_symbol: bool,
           type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
@@ -133,6 +142,27 @@ module HubSpotSDK
           TEXTAREA: :textarea
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertyUpdate::field_type]
+        end
+
+        type number_display_hint =
+          :currency
+          | :duration
+          | :formatted
+          | :percentage
+          | :probability
+          | :unformatted
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY: :currency
+          DURATION: :duration
+          FORMATTED: :formatted
+          PERCENTAGE: :percentage
+          PROBABILITY: :probability
+          UNFORMATTED: :unformatted
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint]
         end
 
         type type_ =

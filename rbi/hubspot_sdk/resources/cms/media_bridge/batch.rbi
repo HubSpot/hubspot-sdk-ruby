@@ -10,7 +10,7 @@ module HubSpotSDK
             params(
               object_type: String,
               app_id: Integer,
-              inputs: T::Array[HubSpotSDK::Cms::PropertyCreate::OrHash],
+              inputs: T::Array[HubSpotSDK::PropertyCreate::OrHash],
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Cms::BatchResponseProperty)
           end

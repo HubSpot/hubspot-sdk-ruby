@@ -12,15 +12,21 @@ module HubSpotSDK
             )
           end
 
+        # The date and time when the batch operation was completed, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :completed_at
 
+        # An array of journal fetch responses, each containing details about individual
+        # journal entries.
         sig { returns(T::Array[HubSpotSDK::Webhooks::JournalFetchResponse]) }
         attr_accessor :results
 
+        # The date and time when the batch operation started, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :started_at
 
+        # The current status of the batch operation. Valid values include 'PENDING',
+        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
         sig do
           returns(
             HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status::TaggedSymbol
@@ -28,12 +34,15 @@ module HubSpotSDK
         end
         attr_accessor :status
 
+        # A map of link names to associated URIs, providing additional resources or
+        # documentation related to the batch operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
 
+        # The date and time when the batch operation was requested, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :requested_at
 
@@ -53,11 +62,20 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
+          # The date and time when the batch operation was completed, in ISO 8601 format.
           completed_at:,
+          # An array of journal fetch responses, each containing details about individual
+          # journal entries.
           results:,
+          # The date and time when the batch operation started, in ISO 8601 format.
           started_at:,
+          # The current status of the batch operation. Valid values include 'PENDING',
+          # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
           status:,
+          # A map of link names to associated URIs, providing additional resources or
+          # documentation related to the batch operation.
           links: nil,
+          # The date and time when the batch operation was requested, in ISO 8601 format.
           requested_at: nil
         )
         end
@@ -78,6 +96,8 @@ module HubSpotSDK
         def to_hash
         end
 
+        # The current status of the batch operation. Valid values include 'PENDING',
+        # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
         module Status
           extend HubSpotSDK::Internal::Type::Enum
 
