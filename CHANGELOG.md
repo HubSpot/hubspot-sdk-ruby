@@ -4,9 +4,9 @@
 
 Full Changelog: [v0.1.0-alpha.2...v0.1.0-alpha.3](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.2...v0.1.0-alpha.3)
 
-### Chores
+### Features
 
-* configure new SDK language ([f8f5948](https://github.com/HubSpot/hubspot-sdk-ruby/commit/f8f5948e0d5cf1eb54f0030022f25090a1c91a37))
+* **api:** manual updates
 
 ## 0.1.0-alpha.2 (2026-04-16)
 
