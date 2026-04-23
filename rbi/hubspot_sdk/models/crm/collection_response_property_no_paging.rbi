@@ -12,18 +12,20 @@ module HubSpotSDK
             )
           end
 
-        sig { returns(T::Array[HubSpotSDK::Property]) }
+        sig { returns(T::Array[HubSpotSDK::BaseProperty]) }
         attr_accessor :results
 
         sig do
-          params(results: T::Array[HubSpotSDK::Property::OrHash]).returns(
+          params(results: T::Array[HubSpotSDK::BaseProperty::OrHash]).returns(
             T.attached_class
           )
         end
         def self.new(results:)
         end
 
-        sig { override.returns({ results: T::Array[HubSpotSDK::Property] }) }
+        sig do
+          override.returns({ results: T::Array[HubSpotSDK::BaseProperty] })
+        end
         def to_hash
         end
       end

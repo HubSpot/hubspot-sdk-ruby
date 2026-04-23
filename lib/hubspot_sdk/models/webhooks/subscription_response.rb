@@ -6,7 +6,7 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#create_event_subscription
       class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier for the subscription, represented as an integer.
+        #   The unique identifier for the subscription. It is an integer formatted as int64.
         #
         #   @return [String]
         required :id, String
@@ -25,8 +25,8 @@ module HubSpotSDK
 
         # @!attribute event_type
         #   The type of event that triggers the subscription. Valid values include various
-        #   object changes such as 'contact.propertyChange', 'deal.creation', and
-        #   'ticket.deletion'.
+        #   property changes, creations, deletions, merges, restores, and association
+        #   changes for different HubSpot objects.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType]
         required :event_type,
@@ -34,20 +34,20 @@ module HubSpotSDK
                  api_name: :eventType
 
         # @!attribute event_type_name
-        #   A descriptive name for the event type.
+        #   The name of the event type for the subscription.
         #
         #   @return [String, nil]
         optional :event_type_name, String, api_name: :eventTypeName
 
         # @!attribute object_type_id
-        #   The identifier for the object type associated with the subscription, represented
-        #   as a string.
+        #   The identifier for the object type associated with the subscription. It is a
+        #   string.
         #
         #   @return [String, nil]
         optional :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute property_name
-        #   The name of the property associated with the event, if applicable.
+        #   The name of the property associated with the subscription event, if applicable.
         #
         #   @return [String, nil]
         optional :property_name, String, api_name: :propertyName
@@ -62,25 +62,25 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionResponse} for more details.
         #
-        #   @param id [String] The unique identifier for the subscription, represented as an integer.
+        #   @param id [String] The unique identifier for the subscription. It is an integer formatted as int64.
         #
         #   @param active [Boolean] A boolean indicating whether the subscription is currently active.
         #
         #   @param created_at [Time] The date and time when the subscription was created, in ISO 8601 format.
         #
-        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event that triggers the subscription. Valid values include various o
+        #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse::EventType] The type of event that triggers the subscription. Valid values include various p
         #
-        #   @param event_type_name [String] A descriptive name for the event type.
+        #   @param event_type_name [String] The name of the event type for the subscription.
         #
-        #   @param object_type_id [String] The identifier for the object type associated with the subscription, represented
+        #   @param object_type_id [String] The identifier for the object type associated with the subscription. It is a str
         #
-        #   @param property_name [String] The name of the property associated with the event, if applicable.
+        #   @param property_name [String] The name of the property associated with the subscription event, if applicable.
         #
         #   @param updated_at [Time] The date and time when the subscription was last updated, in ISO 8601 format.
 
         # The type of event that triggers the subscription. Valid values include various
-        # object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'ticket.deletion'.
+        # property changes, creations, deletions, merges, restores, and association
+        # changes for different HubSpot objects.
         #
         # @see HubSpotSDK::Models::Webhooks::SubscriptionResponse#event_type
         module EventType

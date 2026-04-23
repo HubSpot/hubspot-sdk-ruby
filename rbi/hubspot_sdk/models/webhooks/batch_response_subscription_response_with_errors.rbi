@@ -12,16 +12,16 @@ module HubSpotSDK
             )
           end
 
-        # The date and time when the batch operation was completed, in ISO 8601 format.
+        # The date and time when the batch processing was completed, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        # An array of SubscriptionResponse objects, representing the results of the batch
-        # operation.
+        # An array of SubscriptionResponse objects representing the results of each
+        # subscription update processed in the batch.
         sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse]) }
         attr_accessor :results
 
-        # The date and time when the batch operation started, in ISO 8601 format.
+        # The date and time when the batch processing began, in ISO 8601 format.
         sig { returns(Time) }
         attr_accessor :started_at
 
@@ -34,8 +34,8 @@ module HubSpotSDK
         end
         attr_accessor :status
 
-        # An array of StandardError objects, detailing any errors that occurred during the
-        # batch operation.
+        # An array of StandardError objects detailing any errors that occurred during the
+        # batch processing.
         sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
@@ -50,14 +50,14 @@ module HubSpotSDK
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
 
-        # The number of errors encountered during the batch operation.
+        # The total number of errors encountered during the batch operation.
         sig { returns(T.nilable(Integer)) }
         attr_reader :num_errors
 
         sig { params(num_errors: Integer).void }
         attr_writer :num_errors
 
-        # The date and time when the batch operation was requested, in ISO 8601 format.
+        # The date and time when the batch request was initially made, in ISO 8601 format.
         sig { returns(T.nilable(Time)) }
         attr_reader :requested_at
 
@@ -79,25 +79,25 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The date and time when the batch operation was completed, in ISO 8601 format.
+          # The date and time when the batch processing was completed, in ISO 8601 format.
           completed_at:,
-          # An array of SubscriptionResponse objects, representing the results of the batch
-          # operation.
+          # An array of SubscriptionResponse objects representing the results of each
+          # subscription update processed in the batch.
           results:,
-          # The date and time when the batch operation started, in ISO 8601 format.
+          # The date and time when the batch processing began, in ISO 8601 format.
           started_at:,
           # The current status of the batch operation. Valid values include 'PENDING',
           # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
           status:,
-          # An array of StandardError objects, detailing any errors that occurred during the
-          # batch operation.
+          # An array of StandardError objects detailing any errors that occurred during the
+          # batch processing.
           errors: nil,
           # A map of link names to associated URIs, providing additional resources or
           # documentation related to the batch operation.
           links: nil,
-          # The number of errors encountered during the batch operation.
+          # The total number of errors encountered during the batch operation.
           num_errors: nil,
-          # The date and time when the batch operation was requested, in ISO 8601 format.
+          # The date and time when the batch request was initially made, in ISO 8601 format.
           requested_at: nil
         )
         end

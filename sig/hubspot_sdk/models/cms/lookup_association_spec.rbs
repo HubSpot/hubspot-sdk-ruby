@@ -1,0 +1,56 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type lookup_association_spec =
+        {
+          association_spec: HubSpotSDK::AssociationSpec,
+          cardinality: HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality,
+          max_to_object_ids: Integer,
+          to_object_type_id: String
+        }
+
+      class LookupAssociationSpec < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor association_spec: HubSpotSDK::AssociationSpec
+
+        attr_reader cardinality: HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality?
+
+        def cardinality=: (
+          HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality
+        ) -> HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality
+
+        attr_reader max_to_object_ids: Integer?
+
+        def max_to_object_ids=: (Integer) -> Integer
+
+        attr_reader to_object_type_id: String?
+
+        def to_object_type_id=: (String) -> String
+
+        def initialize: (
+          association_spec: HubSpotSDK::AssociationSpec,
+          ?cardinality: HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality,
+          ?max_to_object_ids: Integer,
+          ?to_object_type_id: String
+        ) -> void
+
+        def to_hash: -> {
+          association_spec: HubSpotSDK::AssociationSpec,
+          cardinality: HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality,
+          max_to_object_ids: Integer,
+          to_object_type_id: String
+        }
+
+        type cardinality = :ONE_TO_MANY | :ONE_TO_ONE
+
+        module Cardinality
+          extend HubSpotSDK::Internal::Type::Enum
+
+          ONE_TO_MANY: :ONE_TO_MANY
+          ONE_TO_ONE: :ONE_TO_ONE
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::LookupAssociationSpec::cardinality]
+        end
+      end
+    end
+  end
+end

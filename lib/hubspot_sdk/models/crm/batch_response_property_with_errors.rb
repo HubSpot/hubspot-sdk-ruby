@@ -11,8 +11,8 @@ module HubSpotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubSpotSDK::Models::Property>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
+        #   @return [Array<HubSpotSDK::Models::BaseProperty>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty] }
 
         # @!attribute started_at
         #
@@ -46,7 +46,7 @@ module HubSpotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubSpotSDK::Models::Property>]
+        #   @param results [Array<HubSpotSDK::Models::BaseProperty>]
         #   @param started_at [Time]
         #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponsePropertyWithErrors::Status]
         #   @param errors [Array<HubSpotSDK::Models::StandardError>]

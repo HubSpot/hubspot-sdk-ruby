@@ -21,7 +21,7 @@ module HubSpotSDK
         attr_accessor :display_index
 
         # List of key value pairs with the column name and column value
-        sig { returns(T::Hash[Symbol, T.anything]) }
+        sig { returns(T::Hash[Symbol, T::Hash[Symbol, T.anything]]) }
         attr_accessor :values
 
         # The id of the table row
@@ -51,7 +51,7 @@ module HubSpotSDK
           params(
             child_table_id: Integer,
             display_index: Integer,
-            values: T::Hash[Symbol, T.anything],
+            values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
             id: String,
             name: String,
             path: String
@@ -80,7 +80,7 @@ module HubSpotSDK
             {
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
               id: String,
               name: String,
               path: String

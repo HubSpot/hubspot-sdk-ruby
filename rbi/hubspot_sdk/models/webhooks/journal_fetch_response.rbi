@@ -12,8 +12,8 @@ module HubSpotSDK
             )
           end
 
-        # A UUID string indicating the current offset in the journal data, used for
-        # pagination.
+        # The unique identifier for the current offset of the journal entry, formatted as
+        # a UUID.
         sig { returns(String) }
         attr_accessor :current_offset
 
@@ -21,7 +21,7 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :expires_at
 
-        # A string representing the URL where the fetched journal data can be accessed.
+        # The URL where the journal entry can be accessed. It is a string.
         sig { returns(String) }
         attr_accessor :url
 
@@ -31,12 +31,12 @@ module HubSpotSDK
           )
         end
         def self.new(
-          # A UUID string indicating the current offset in the journal data, used for
-          # pagination.
+          # The unique identifier for the current offset of the journal entry, formatted as
+          # a UUID.
           current_offset:,
           # The date and time when the URL will expire, in ISO 8601 format.
           expires_at:,
-          # A string representing the URL where the fetched journal data can be accessed.
+          # The URL where the journal entry can be accessed. It is a string.
           url:
         )
         end

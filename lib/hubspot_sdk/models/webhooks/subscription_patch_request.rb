@@ -5,9 +5,8 @@ module HubSpotSDK
     module Webhooks
       class SubscriptionPatchRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute active
-        #   Whether to activate or pause the webhook subscription. If true, the subscription
-        #   will send webhook notifications. If false, the subscription is paused and will
-        #   not send notifications.
+        #   A boolean indicating whether the subscription is active. If true, the
+        #   subscription is active; if false, it is inactive.
         #
         #   @return [Boolean, nil]
         optional :active, HubSpotSDK::Internal::Type::Boolean
@@ -16,7 +15,7 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionPatchRequest} for more details.
         #
-        #   @param active [Boolean] Whether to activate or pause the webhook subscription. If true, the subscription
+        #   @param active [Boolean] A boolean indicating whether the subscription is active. If true, the subscripti
       end
     end
   end

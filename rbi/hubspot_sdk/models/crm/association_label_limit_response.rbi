@@ -16,12 +16,13 @@ module HubSpotSDK
         sig { returns(T::Array[String]) }
         attr_accessor :all_labels
 
-        sig { returns(HubSpotSDK::Crm::ObjectTypeDefinition) }
+        sig { returns(HubSpotSDK::Crm::LimitsObjectTypeDefinition) }
         attr_reader :from_object_type
 
         sig do
           params(
-            from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition::OrHash
+            from_object_type:
+              HubSpotSDK::Crm::LimitsObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :from_object_type
@@ -34,12 +35,12 @@ module HubSpotSDK
         sig { returns(Float) }
         attr_accessor :percentage
 
-        sig { returns(HubSpotSDK::Crm::ObjectTypeDefinition) }
+        sig { returns(HubSpotSDK::Crm::LimitsObjectTypeDefinition) }
         attr_reader :to_object_type
 
         sig do
           params(
-            to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition::OrHash
+            to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition::OrHash
           ).void
         end
         attr_writer :to_object_type
@@ -51,10 +52,11 @@ module HubSpotSDK
         sig do
           params(
             all_labels: T::Array[String],
-            from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition::OrHash,
+            from_object_type:
+              HubSpotSDK::Crm::LimitsObjectTypeDefinition::OrHash,
             limit: Integer,
             percentage: Float,
-            to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition::OrHash,
+            to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition::OrHash,
             usage: Integer
           ).returns(T.attached_class)
         end
@@ -76,10 +78,10 @@ module HubSpotSDK
           override.returns(
             {
               all_labels: T::Array[String],
-              from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+              from_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
               limit: Integer,
               percentage: Float,
-              to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+              to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
               usage: Integer
             }
           )

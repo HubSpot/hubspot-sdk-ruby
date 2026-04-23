@@ -108,10 +108,12 @@ module HubSpotSDK
         attr_writer :option_count
 
         # Options to choose for select and multi-select columns
-        sig { returns(T.nilable(T::Array[HubSpotSDK::Cms::Option])) }
+        sig { returns(T.nilable(T::Array[HubSpotSDK::Cms::HubdbOption])) }
         attr_reader :options
 
-        sig { params(options: T::Array[HubSpotSDK::Cms::Option::OrHash]).void }
+        sig do
+          params(options: T::Array[HubSpotSDK::Cms::HubdbOption::OrHash]).void
+        end
         attr_writer :options
 
         # The timestamp when the column was last updated.
@@ -160,7 +162,7 @@ module HubSpotSDK
               T::Hash[Symbol, HubSpotSDK::Cms::ForeignID::OrHash],
             foreign_table_id: Integer,
             option_count: Integer,
-            options: T::Array[HubSpotSDK::Cms::Option::OrHash],
+            options: T::Array[HubSpotSDK::Cms::HubdbOption::OrHash],
             updated_at: Time,
             updated_by: HubSpotSDK::Cms::SimpleUser::OrHash,
             updated_by_user_id: Integer,
@@ -227,7 +229,7 @@ module HubSpotSDK
               foreign_ids_by_name: T::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
               foreign_table_id: Integer,
               option_count: Integer,
-              options: T::Array[HubSpotSDK::Cms::Option],
+              options: T::Array[HubSpotSDK::Cms::HubdbOption],
               updated_at: Time,
               updated_by: HubSpotSDK::Cms::SimpleUser,
               updated_by_user_id: Integer,

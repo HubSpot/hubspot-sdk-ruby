@@ -16,9 +16,8 @@ module HubSpotSDK
               )
             end
 
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
+          # A cursor token for pagination. Use the value from the previous response's
+          # paging.next.after field.
           sig { returns(T.nilable(String)) }
           attr_reader :after
 
@@ -32,18 +31,21 @@ module HubSpotSDK
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
+          # Filter landing pages created after a specific date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_after
 
           sig { params(created_after: Time).void }
           attr_writer :created_after
 
+          # Filter landing pages by their creation timestamp.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_at
 
           sig { params(created_at: Time).void }
           attr_writer :created_at
 
+          # Filter landing pages created before a specific date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_before
 
@@ -57,30 +59,35 @@ module HubSpotSDK
           sig { params(limit: Integer).void }
           attr_writer :limit
 
+          # Specify which properties of the landing pages to include in the response.
           sig { returns(T.nilable(String)) }
           attr_reader :property
 
           sig { params(property: String).void }
           attr_writer :property
 
+          # Specify the order in which results are returned. Accepts an array of strings.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :sort
 
           sig { params(sort: T::Array[String]).void }
           attr_writer :sort
 
+          # Filter landing pages updated after a specific date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_after
 
           sig { params(updated_after: Time).void }
           attr_writer :updated_after
 
+          # Filter landing pages by their last updated timestamp.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_at
 
           sig { params(updated_at: Time).void }
           attr_writer :updated_at
 
+          # Filter landing pages updated before a specific date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_before
 
@@ -104,21 +111,28 @@ module HubSpotSDK
             ).returns(T.attached_class)
           end
           def self.new(
-            # The paging cursor token of the last successfully read resource will be returned
-            # as the `paging.next.after` JSON property of a paged response containing more
-            # results.
+            # A cursor token for pagination. Use the value from the previous response's
+            # paging.next.after field.
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter landing pages created after a specific date and time.
             created_after: nil,
+            # Filter landing pages by their creation timestamp.
             created_at: nil,
+            # Filter landing pages created before a specific date and time.
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify which properties of the landing pages to include in the response.
             property: nil,
+            # Specify the order in which results are returned. Accepts an array of strings.
             sort: nil,
+            # Filter landing pages updated after a specific date and time.
             updated_after: nil,
+            # Filter landing pages by their last updated timestamp.
             updated_at: nil,
+            # Filter landing pages updated before a specific date and time.
             updated_before: nil,
             request_options: {}
           )

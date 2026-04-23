@@ -6,8 +6,8 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#create_crm_snapshots
       class CrmObjectSnapshotBatchResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute snapshot_responses
-        #   An array of CrmObjectSnapshotResponse objects, each containing the details of a
-        #   single CRM object snapshot request. This property is required.
+        #   An array of CrmObjectSnapshotResponse objects, each representing the result of a
+        #   snapshot operation for a specific CRM object. This property is required.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotResponse>]
         required :snapshot_responses,
@@ -18,7 +18,7 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchResponse} for more details.
         #
-        #   @param snapshot_responses [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotResponse>] An array of CrmObjectSnapshotResponse objects, each containing the details of a
+        #   @param snapshot_responses [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotResponse>] An array of CrmObjectSnapshotResponse objects, each representing the result of a
       end
     end
   end

@@ -15,7 +15,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubSpotSDK::AssociationDefinition
+      response => HubSpotSDK::BaseAssociationDefinition
     end
 
     assert_pattern do
@@ -205,7 +205,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubSpotSDK::Cms::Property
+      response => HubSpotSDK::Cms::MediaBridgeProperty
     end
 
     assert_pattern do
@@ -217,11 +217,11 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        data_sensitivity: HubSpotSDK::Cms::MediaBridgeProperty::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::DateDisplayHint,
         deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::MediaBridgeProperty::DisplayMode,
         display_order: Integer,
         enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
         external_options: HubSpotSDK::Internal::Type::Boolean,
@@ -241,21 +241,21 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         label: String,
         mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        number_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::NumberDisplayHint,
         options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
         options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
+        option_sort_strategy: HubSpotSDK::Cms::MediaBridgeProperty::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
         read_only_definition: HubSpotSDK::Internal::Type::Boolean,
         read_only_value: HubSpotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        referenced_object_type: HubSpotSDK::Cms::MediaBridgeProperty::ReferencedObjectType,
         searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        search_text_analysis_mode: HubSpotSDK::Cms::MediaBridgeProperty::SearchTextAnalysisMode,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
-        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
-        type: HubSpotSDK::Cms::Property::Type,
+        text_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::TextDisplayHint,
+        type: HubSpotSDK::Cms::MediaBridgeProperty::Type,
         updated_at: Integer
       }
     end
@@ -287,7 +287,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.create_video_association_definition(0)
 
     assert_pattern do
-      response => HubSpotSDK::AssociationDefinition
+      response => HubSpotSDK::BaseAssociationDefinition
     end
 
     assert_pattern do
@@ -390,7 +390,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.get_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubSpotSDK::Cms::Property
+      response => HubSpotSDK::Cms::MediaBridgeProperty
     end
 
     assert_pattern do
@@ -402,11 +402,11 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        data_sensitivity: HubSpotSDK::Cms::MediaBridgeProperty::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::DateDisplayHint,
         deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::MediaBridgeProperty::DisplayMode,
         display_order: Integer,
         enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
         external_options: HubSpotSDK::Internal::Type::Boolean,
@@ -426,21 +426,21 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         label: String,
         mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        number_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::NumberDisplayHint,
         options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
         options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
+        option_sort_strategy: HubSpotSDK::Cms::MediaBridgeProperty::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
         read_only_definition: HubSpotSDK::Internal::Type::Boolean,
         read_only_value: HubSpotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        referenced_object_type: HubSpotSDK::Cms::MediaBridgeProperty::ReferencedObjectType,
         searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        search_text_analysis_mode: HubSpotSDK::Cms::MediaBridgeProperty::SearchTextAnalysisMode,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
-        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
-        type: HubSpotSDK::Cms::Property::Type,
+        text_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::TextDisplayHint,
+        type: HubSpotSDK::Cms::MediaBridgeProperty::Type,
         updated_at: Integer
       }
     end
@@ -480,7 +480,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         id: String,
         allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
@@ -655,7 +655,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
       @hubspot.cms.media_bridge.update_property("propertyName", app_id: 0, object_type: "objectType")
 
     assert_pattern do
-      response => HubSpotSDK::Cms::Property
+      response => HubSpotSDK::Cms::MediaBridgeProperty
     end
 
     assert_pattern do
@@ -667,11 +667,11 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         created_at: Integer,
         created_user_id: Integer,
         currency_property_name: String,
-        data_sensitivity: HubSpotSDK::Cms::Property::DataSensitivity,
-        date_display_hint: HubSpotSDK::Cms::Property::DateDisplayHint,
+        data_sensitivity: HubSpotSDK::Cms::MediaBridgeProperty::DataSensitivity,
+        date_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::DateDisplayHint,
         deleted: HubSpotSDK::Internal::Type::Boolean,
         description: String,
-        display_mode: HubSpotSDK::Cms::Property::DisplayMode,
+        display_mode: HubSpotSDK::Cms::MediaBridgeProperty::DisplayMode,
         display_order: Integer,
         enforce_multivalue_uniqueness: HubSpotSDK::Internal::Type::Boolean,
         external_options: HubSpotSDK::Internal::Type::Boolean,
@@ -691,21 +691,21 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         label: String,
         mutable_definition_not_deletable: HubSpotSDK::Internal::Type::Boolean,
         name: String,
-        number_display_hint: HubSpotSDK::Cms::Property::NumberDisplayHint,
+        number_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::NumberDisplayHint,
         options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AutomationActionsOption]),
         options_are_mutable: HubSpotSDK::Internal::Type::Boolean,
-        option_sort_strategy: HubSpotSDK::Cms::Property::OptionSortStrategy,
+        option_sort_strategy: HubSpotSDK::Cms::MediaBridgeProperty::OptionSortStrategy,
         owning_app_id: Integer,
         portal_id: Integer,
         read_only_definition: HubSpotSDK::Internal::Type::Boolean,
         read_only_value: HubSpotSDK::Internal::Type::Boolean,
-        referenced_object_type: HubSpotSDK::Cms::Property::ReferencedObjectType,
+        referenced_object_type: HubSpotSDK::Cms::MediaBridgeProperty::ReferencedObjectType,
         searchable_in_global_search: HubSpotSDK::Internal::Type::Boolean,
-        search_text_analysis_mode: HubSpotSDK::Cms::Property::SearchTextAnalysisMode,
+        search_text_analysis_mode: HubSpotSDK::Cms::MediaBridgeProperty::SearchTextAnalysisMode,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean,
-        text_display_hint: HubSpotSDK::Cms::Property::TextDisplayHint,
-        type: HubSpotSDK::Cms::Property::Type,
+        text_display_hint: HubSpotSDK::Cms::MediaBridgeProperty::TextDisplayHint,
+        type: HubSpotSDK::Cms::MediaBridgeProperty::Type,
         updated_at: Integer
       }
     end
@@ -737,7 +737,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.update_schema("objectType", app_id: 0, clear_description: true)
 
     assert_pattern do
-      response => HubSpotSDK::ObjectTypeDefinition
+      response => HubSpotSDK::BaseObjectTypeDefinition
     end
 
     assert_pattern do

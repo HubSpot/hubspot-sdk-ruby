@@ -13,9 +13,7 @@ module HubSpotSDK
           end
 
         sig do
-          returns(
-            HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol
-          )
+          returns(HubSpotSDK::Cms::NumberPropertyVariable::Operator::OrSymbol)
         end
         attr_accessor :operator
 
@@ -46,7 +44,7 @@ module HubSpotSDK
           override.returns(
             {
               operator:
-                HubSpotSDK::Cms::NumberPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::NumberPropertyVariable::Operator::OrSymbol,
               property_name: String,
               value: Float
             }

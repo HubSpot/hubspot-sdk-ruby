@@ -22,7 +22,7 @@ module HubSpotSDK
         attr_writer :filter
 
         # The unique identifier of the subscription to which the filter will be applied.
-        # It is an integer in int64 format.
+        # It is an integer formatted as int64.
         sig { returns(Integer) }
         attr_accessor :subscription_id
 
@@ -38,7 +38,7 @@ module HubSpotSDK
           # the value(s) to compare against.
           filter:,
           # The unique identifier of the subscription to which the filter will be applied.
-          # It is an integer in int64 format.
+          # It is an integer formatted as int64.
           subscription_id:
         )
         end

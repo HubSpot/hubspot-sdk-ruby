@@ -6,7 +6,7 @@ module HubSpotSDK
       class CrmObjectSnapshotBatchRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute snapshot_requests
         #   An array of CrmObjectSnapshotRequest objects, each representing a request to
-        #   capture a snapshot of a specific CRM object. This property is required.
+        #   create a snapshot for a specific CRM object. This property is required.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotRequest>]
         required :snapshot_requests,
@@ -17,7 +17,7 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchRequest} for more details.
         #
-        #   @param snapshot_requests [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotRequest>] An array of CrmObjectSnapshotRequest objects, each representing a request to cap
+        #   @param snapshot_requests [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotRequest>] An array of CrmObjectSnapshotRequest objects, each representing a request to cre
       end
     end
   end

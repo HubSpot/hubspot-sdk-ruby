@@ -42,7 +42,7 @@ module HubSpotSDK
           ?name: String,
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Property
+        ) -> HubSpotSDK::BaseProperty
 
         def delete_property: (
           String property_name,
@@ -67,7 +67,7 @@ module HubSpotSDK
           ?label: String,
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Property
+        ) -> HubSpotSDK::BaseProperty
 
         def initialize: (client: HubSpotSDK::Client) -> void
       end

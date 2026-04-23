@@ -16,8 +16,8 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        # An array of journal fetch responses, each containing details about individual
-        # journal entries.
+        # An array of results from the batch operation, each represented as a
+        # JournalFetchResponse object.
         sig { returns(T::Array[HubSpotSDK::Webhooks::JournalFetchResponse]) }
         attr_accessor :results
 
@@ -34,8 +34,7 @@ module HubSpotSDK
         end
         attr_accessor :status
 
-        # A map of link names to associated URIs, providing additional resources or
-        # documentation related to the batch operation.
+        # A map of link names to associated URIs related to the batch operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
@@ -64,16 +63,15 @@ module HubSpotSDK
         def self.new(
           # The date and time when the batch operation was completed, in ISO 8601 format.
           completed_at:,
-          # An array of journal fetch responses, each containing details about individual
-          # journal entries.
+          # An array of results from the batch operation, each represented as a
+          # JournalFetchResponse object.
           results:,
           # The date and time when the batch operation started, in ISO 8601 format.
           started_at:,
           # The current status of the batch operation. Valid values include 'PENDING',
           # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
           status:,
-          # A map of link names to associated URIs, providing additional resources or
-          # documentation related to the batch operation.
+          # A map of link names to associated URIs related to the batch operation.
           links: nil,
           # The date and time when the batch operation was requested, in ISO 8601 format.
           requested_at: nil

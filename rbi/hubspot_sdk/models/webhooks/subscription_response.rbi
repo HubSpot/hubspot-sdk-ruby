@@ -12,7 +12,7 @@ module HubSpotSDK
             )
           end
 
-        # The unique identifier for the subscription, represented as an integer.
+        # The unique identifier for the subscription. It is an integer formatted as int64.
         sig { returns(String) }
         attr_accessor :id
 
@@ -25,8 +25,8 @@ module HubSpotSDK
         attr_accessor :created_at
 
         # The type of event that triggers the subscription. Valid values include various
-        # object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'ticket.deletion'.
+        # property changes, creations, deletions, merges, restores, and association
+        # changes for different HubSpot objects.
         sig do
           returns(
             HubSpotSDK::Webhooks::SubscriptionResponse::EventType::TaggedSymbol
@@ -34,22 +34,22 @@ module HubSpotSDK
         end
         attr_accessor :event_type
 
-        # A descriptive name for the event type.
+        # The name of the event type for the subscription.
         sig { returns(T.nilable(String)) }
         attr_reader :event_type_name
 
         sig { params(event_type_name: String).void }
         attr_writer :event_type_name
 
-        # The identifier for the object type associated with the subscription, represented
-        # as a string.
+        # The identifier for the object type associated with the subscription. It is a
+        # string.
         sig { returns(T.nilable(String)) }
         attr_reader :object_type_id
 
         sig { params(object_type_id: String).void }
         attr_writer :object_type_id
 
-        # The name of the property associated with the event, if applicable.
+        # The name of the property associated with the subscription event, if applicable.
         sig { returns(T.nilable(String)) }
         attr_reader :property_name
 
@@ -77,22 +77,22 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier for the subscription, represented as an integer.
+          # The unique identifier for the subscription. It is an integer formatted as int64.
           id:,
           # A boolean indicating whether the subscription is currently active.
           active:,
           # The date and time when the subscription was created, in ISO 8601 format.
           created_at:,
           # The type of event that triggers the subscription. Valid values include various
-          # object changes such as 'contact.propertyChange', 'deal.creation', and
-          # 'ticket.deletion'.
+          # property changes, creations, deletions, merges, restores, and association
+          # changes for different HubSpot objects.
           event_type:,
-          # A descriptive name for the event type.
+          # The name of the event type for the subscription.
           event_type_name: nil,
-          # The identifier for the object type associated with the subscription, represented
-          # as a string.
+          # The identifier for the object type associated with the subscription. It is a
+          # string.
           object_type_id: nil,
-          # The name of the property associated with the event, if applicable.
+          # The name of the property associated with the subscription event, if applicable.
           property_name: nil,
           # The date and time when the subscription was last updated, in ISO 8601 format.
           updated_at: nil
@@ -118,8 +118,8 @@ module HubSpotSDK
         end
 
         # The type of event that triggers the subscription. Valid values include various
-        # object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'ticket.deletion'.
+        # property changes, creations, deletions, merges, restores, and association
+        # changes for different HubSpot objects.
         module EventType
           extend HubSpotSDK::Internal::Type::Enum
 

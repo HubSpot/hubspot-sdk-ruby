@@ -6,24 +6,24 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#create_journal_subscription
       class SubscriptionResponse1 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier for the subscription, represented as an integer.
+        #   The unique identifier for the subscription. It is an integer formatted as int64.
         #
         #   @return [Integer]
         required :id, Integer
 
         # @!attribute actions
-        #   An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE',
-        #   'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED', 'ASSOCIATION_REMOVED',
-        #   'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL', 'ADDED_TO_LIST',
-        #   'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
+        #   A list of actions that trigger the subscription. Possible values include
+        #   'CREATE', 'UPDATE', 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED',
+        #   'ASSOCIATION_REMOVED', 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL',
+        #   'ADDED_TO_LIST', 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
         #
         #   @return [Array<Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::Action>]
         required :actions,
                  -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Webhooks::SubscriptionResponse1::Action] }
 
         # @!attribute app_id
-        #   The unique identifier for the app associated with the subscription, represented
-        #   as an integer.
+        #   The unique identifier for the app associated with the subscription. It is an
+        #   integer formatted as int64.
         #
         #   @return [Integer]
         required :app_id, Integer, api_name: :appId
@@ -35,15 +35,16 @@ module HubSpotSDK
         required :created_at, Time, api_name: :createdAt
 
         # @!attribute object_type_id
-        #   The identifier for the object type associated with the subscription, represented
-        #   as a string.
+        #   The identifier for the object type associated with the subscription. It is a
+        #   string.
         #
         #   @return [String]
         required :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute subscription_type
-        #   The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
-        #   'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
+        #   The type of subscription, which can be one of the following: 'OBJECT',
+        #   'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or
+        #   'GDPR_PRIVACY_DELETION'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::SubscriptionType]
         required :subscription_type,
@@ -66,8 +67,7 @@ module HubSpotSDK
                  api_name: :actionOverrides
 
         # @!attribute associated_object_type_ids
-        #   An array of strings representing the associated object type IDs for the
-        #   subscription.
+        #   A list of associated object type IDs. Each ID is a string.
         #
         #   @return [Array<String>, nil]
         optional :associated_object_type_ids,
@@ -75,41 +75,43 @@ module HubSpotSDK
                  api_name: :associatedObjectTypeIds
 
         # @!attribute created_by
-        #   The unique identifier for the user who created the subscription, represented as
-        #   an integer.
+        #   The ID of the user who created the subscription. It is an integer formatted as
+        #   int64.
         #
         #   @return [Integer, nil]
         optional :created_by, Integer, api_name: :createdBy
 
         # @!attribute deleted_at
-        #   The date and time when the subscription was deleted, in ISO 8601 format.
+        #   The date and time when the subscription was deleted, in ISO 8601 format, if
+        #   applicable.
         #
         #   @return [Time, nil]
         optional :deleted_at, Time, api_name: :deletedAt
 
         # @!attribute list_ids
-        #   An array of integers representing the list IDs associated with the subscription.
+        #   A list of list IDs associated with the subscription. Each ID is an integer
+        #   formatted as int64.
         #
         #   @return [Array<Integer>, nil]
         optional :list_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
 
         # @!attribute object_ids
-        #   An array of integers representing the object IDs associated with the
-        #   subscription.
+        #   A list of object IDs associated with the subscription. Each ID is an integer
+        #   formatted as int64.
         #
         #   @return [Array<Integer>, nil]
         optional :object_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
 
         # @!attribute portal_id
-        #   The unique identifier for the portal associated with the subscription,
-        #   represented as an integer.
+        #   The unique identifier for the portal associated with the subscription. It is an
+        #   integer formatted as int64.
         #
         #   @return [Integer, nil]
         optional :portal_id, Integer, api_name: :portalId
 
         # @!attribute properties
-        #   An array of strings representing the properties associated with the
-        #   subscription.
+        #   A list of property names associated with the subscription. Each property is a
+        #   string.
         #
         #   @return [Array<String>, nil]
         optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
@@ -118,35 +120,35 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionResponse1} for more details.
         #
-        #   @param id [Integer] The unique identifier for the subscription, represented as an integer.
+        #   @param id [Integer] The unique identifier for the subscription. It is an integer formatted as int64.
         #
-        #   @param actions [Array<Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::Action>] An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE', '
+        #   @param actions [Array<Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::Action>] A list of actions that trigger the subscription. Possible values include 'CREATE
         #
-        #   @param app_id [Integer] The unique identifier for the app associated with the subscription, represented
+        #   @param app_id [Integer] The unique identifier for the app associated with the subscription. It is an int
         #
         #   @param created_at [Time] The date and time when the subscription was created, in ISO 8601 format.
         #
-        #   @param object_type_id [String] The identifier for the object type associated with the subscription, represented
+        #   @param object_type_id [String] The identifier for the object type associated with the subscription. It is a str
         #
-        #   @param subscription_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::SubscriptionType] The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
+        #   @param subscription_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionResponse1::SubscriptionType] The type of subscription, which can be one of the following: 'OBJECT', 'ASSOCIAT
         #
         #   @param updated_at [Time] The date and time when the subscription was last updated, in ISO 8601 format.
         #
         #   @param action_overrides [Hash{Symbol=>HubSpotSDK::Models::Webhooks::ActionOverrideRequest}] An object containing action overrides, where each key is an action and the value
         #
-        #   @param associated_object_type_ids [Array<String>] An array of strings representing the associated object type IDs for the subscrip
+        #   @param associated_object_type_ids [Array<String>] A list of associated object type IDs. Each ID is a string.
         #
-        #   @param created_by [Integer] The unique identifier for the user who created the subscription, represented as
+        #   @param created_by [Integer] The ID of the user who created the subscription. It is an integer formatted as i
         #
-        #   @param deleted_at [Time] The date and time when the subscription was deleted, in ISO 8601 format.
+        #   @param deleted_at [Time] The date and time when the subscription was deleted, in ISO 8601 format, if appl
         #
-        #   @param list_ids [Array<Integer>] An array of integers representing the list IDs associated with the subscription.
+        #   @param list_ids [Array<Integer>] A list of list IDs associated with the subscription. Each ID is an integer forma
         #
-        #   @param object_ids [Array<Integer>] An array of integers representing the object IDs associated with the subscriptio
+        #   @param object_ids [Array<Integer>] A list of object IDs associated with the subscription. Each ID is an integer for
         #
-        #   @param portal_id [Integer] The unique identifier for the portal associated with the subscription, represent
+        #   @param portal_id [Integer] The unique identifier for the portal associated with the subscription. It is an
         #
-        #   @param properties [Array<String>] An array of strings representing the properties associated with the subscription
+        #   @param properties [Array<String>] A list of property names associated with the subscription. Each property is a st
 
         module Action
           extend HubSpotSDK::Internal::Type::Enum
@@ -169,8 +171,9 @@ module HubSpotSDK
           #   @return [Array<Symbol>]
         end
 
-        # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
-        # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
+        # The type of subscription, which can be one of the following: 'OBJECT',
+        # 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or
+        # 'GDPR_PRIVACY_DELETION'.
         #
         # @see HubSpotSDK::Models::Webhooks::SubscriptionResponse1#subscription_type
         module SubscriptionType

@@ -118,23 +118,6 @@ class HubSpotSDK::Test::Resources::Files::FileAssetsTest < HubSpotSDK::Test::Res
     end
   end
 
-  def test_get_by_path
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.files.file_assets.get_by_path("path")
-
-    assert_pattern do
-      response => HubSpotSDK::Files::FileStat
-    end
-
-    assert_pattern do
-      response => {
-        file: HubSpotSDK::Files::File | nil,
-        folder: HubSpotSDK::Files::Folder | nil
-      }
-    end
-  end
-
   def test_get_import_task_status
     skip("Mock server tests are disabled")
 

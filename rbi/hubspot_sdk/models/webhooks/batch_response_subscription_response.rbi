@@ -16,8 +16,8 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        # An array of SubscriptionResponse objects, each representing the result of an
-        # individual subscription update within the batch operation.
+        # An array containing the results of the batch operation, with each item
+        # representing an individual subscription response.
         sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse]) }
         attr_accessor :results
 
@@ -34,8 +34,8 @@ module HubSpotSDK
         end
         attr_accessor :status
 
-        # A map of link names to associated URIs, providing additional information or
-        # resources related to the batch operation.
+        # A map of link names to associated URIs providing additional information about
+        # the batch operation.
         sig { returns(T.nilable(T::Hash[Symbol, String])) }
         attr_reader :links
 
@@ -64,16 +64,16 @@ module HubSpotSDK
         def self.new(
           # The date and time when the batch operation was completed, in ISO 8601 format.
           completed_at:,
-          # An array of SubscriptionResponse objects, each representing the result of an
-          # individual subscription update within the batch operation.
+          # An array containing the results of the batch operation, with each item
+          # representing an individual subscription response.
           results:,
           # The date and time when the batch operation started, in ISO 8601 format.
           started_at:,
           # The current status of the batch operation. Valid values include 'PENDING',
           # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
           status:,
-          # A map of link names to associated URIs, providing additional information or
-          # resources related to the batch operation.
+          # A map of link names to associated URIs providing additional information about
+          # the batch operation.
           links: nil,
           # The date and time when the batch operation was requested, in ISO 8601 format.
           requested_at: nil

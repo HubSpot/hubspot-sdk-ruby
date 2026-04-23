@@ -12,14 +12,14 @@ module HubSpotSDK
             )
           end
 
-        # The unique identifier for the subscription, represented as an integer.
+        # The unique identifier for the subscription. It is an integer formatted as int64.
         sig { returns(Integer) }
         attr_accessor :id
 
-        # An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE',
-        # 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED', 'ASSOCIATION_REMOVED',
-        # 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL', 'ADDED_TO_LIST',
-        # 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
+        # A list of actions that trigger the subscription. Possible values include
+        # 'CREATE', 'UPDATE', 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED',
+        # 'ASSOCIATION_REMOVED', 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL',
+        # 'ADDED_TO_LIST', 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
         sig do
           returns(
             T::Array[
@@ -29,8 +29,8 @@ module HubSpotSDK
         end
         attr_accessor :actions
 
-        # The unique identifier for the app associated with the subscription, represented
-        # as an integer.
+        # The unique identifier for the app associated with the subscription. It is an
+        # integer formatted as int64.
         sig { returns(Integer) }
         attr_accessor :app_id
 
@@ -38,13 +38,14 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :created_at
 
-        # The identifier for the object type associated with the subscription, represented
-        # as a string.
+        # The identifier for the object type associated with the subscription. It is a
+        # string.
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
-        # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
+        # The type of subscription, which can be one of the following: 'OBJECT',
+        # 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or
+        # 'GDPR_PRIVACY_DELETION'.
         sig do
           returns(
             HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
@@ -78,54 +79,55 @@ module HubSpotSDK
         end
         attr_writer :action_overrides
 
-        # An array of strings representing the associated object type IDs for the
-        # subscription.
+        # A list of associated object type IDs. Each ID is a string.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :associated_object_type_ids
 
         sig { params(associated_object_type_ids: T::Array[String]).void }
         attr_writer :associated_object_type_ids
 
-        # The unique identifier for the user who created the subscription, represented as
-        # an integer.
+        # The ID of the user who created the subscription. It is an integer formatted as
+        # int64.
         sig { returns(T.nilable(Integer)) }
         attr_reader :created_by
 
         sig { params(created_by: Integer).void }
         attr_writer :created_by
 
-        # The date and time when the subscription was deleted, in ISO 8601 format.
+        # The date and time when the subscription was deleted, in ISO 8601 format, if
+        # applicable.
         sig { returns(T.nilable(Time)) }
         attr_reader :deleted_at
 
         sig { params(deleted_at: Time).void }
         attr_writer :deleted_at
 
-        # An array of integers representing the list IDs associated with the subscription.
+        # A list of list IDs associated with the subscription. Each ID is an integer
+        # formatted as int64.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :list_ids
 
         sig { params(list_ids: T::Array[Integer]).void }
         attr_writer :list_ids
 
-        # An array of integers representing the object IDs associated with the
-        # subscription.
+        # A list of object IDs associated with the subscription. Each ID is an integer
+        # formatted as int64.
         sig { returns(T.nilable(T::Array[Integer])) }
         attr_reader :object_ids
 
         sig { params(object_ids: T::Array[Integer]).void }
         attr_writer :object_ids
 
-        # The unique identifier for the portal associated with the subscription,
-        # represented as an integer.
+        # The unique identifier for the portal associated with the subscription. It is an
+        # integer formatted as int64.
         sig { returns(T.nilable(Integer)) }
         attr_reader :portal_id
 
         sig { params(portal_id: Integer).void }
         attr_writer :portal_id
 
-        # An array of strings representing the properties associated with the
-        # subscription.
+        # A list of property names associated with the subscription. Each property is a
+        # string.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
@@ -160,47 +162,49 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier for the subscription, represented as an integer.
+          # The unique identifier for the subscription. It is an integer formatted as int64.
           id:,
-          # An array of actions that trigger the subscription, such as 'CREATE', 'UPDATE',
-          # 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED', 'ASSOCIATION_REMOVED',
-          # 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL', 'ADDED_TO_LIST',
-          # 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
+          # A list of actions that trigger the subscription. Possible values include
+          # 'CREATE', 'UPDATE', 'DELETE', 'MERGE', 'RESTORE', 'ASSOCIATION_ADDED',
+          # 'ASSOCIATION_REMOVED', 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL',
+          # 'ADDED_TO_LIST', 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
           actions:,
-          # The unique identifier for the app associated with the subscription, represented
-          # as an integer.
+          # The unique identifier for the app associated with the subscription. It is an
+          # integer formatted as int64.
           app_id:,
           # The date and time when the subscription was created, in ISO 8601 format.
           created_at:,
-          # The identifier for the object type associated with the subscription, represented
-          # as a string.
+          # The identifier for the object type associated with the subscription. It is a
+          # string.
           object_type_id:,
-          # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
-          # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
+          # The type of subscription, which can be one of the following: 'OBJECT',
+          # 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or
+          # 'GDPR_PRIVACY_DELETION'.
           subscription_type:,
           # The date and time when the subscription was last updated, in ISO 8601 format.
           updated_at:,
           # An object containing action overrides, where each key is an action and the value
           # is an ActionOverrideRequest object.
           action_overrides: nil,
-          # An array of strings representing the associated object type IDs for the
-          # subscription.
+          # A list of associated object type IDs. Each ID is a string.
           associated_object_type_ids: nil,
-          # The unique identifier for the user who created the subscription, represented as
-          # an integer.
+          # The ID of the user who created the subscription. It is an integer formatted as
+          # int64.
           created_by: nil,
-          # The date and time when the subscription was deleted, in ISO 8601 format.
+          # The date and time when the subscription was deleted, in ISO 8601 format, if
+          # applicable.
           deleted_at: nil,
-          # An array of integers representing the list IDs associated with the subscription.
+          # A list of list IDs associated with the subscription. Each ID is an integer
+          # formatted as int64.
           list_ids: nil,
-          # An array of integers representing the object IDs associated with the
-          # subscription.
+          # A list of object IDs associated with the subscription. Each ID is an integer
+          # formatted as int64.
           object_ids: nil,
-          # The unique identifier for the portal associated with the subscription,
-          # represented as an integer.
+          # The unique identifier for the portal associated with the subscription. It is an
+          # integer formatted as int64.
           portal_id: nil,
-          # An array of strings representing the properties associated with the
-          # subscription.
+          # A list of property names associated with the subscription. Each property is a
+          # string.
           properties: nil
         )
         end
@@ -320,8 +324,9 @@ module HubSpotSDK
           end
         end
 
-        # The type of subscription, which can be one of 'OBJECT', 'ASSOCIATION', 'EVENT',
-        # 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or 'GDPR_PRIVACY_DELETION'.
+        # The type of subscription, which can be one of the following: 'OBJECT',
+        # 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT', 'LIST_MEMBERSHIP', or
+        # 'GDPR_PRIVACY_DELETION'.
         module SubscriptionType
           extend HubSpotSDK::Internal::Type::Enum
 

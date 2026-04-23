@@ -14,7 +14,7 @@ module HubSpotSDK
 
         sig do
           returns(
-            HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::OrSymbol
           )
         end
         attr_accessor :operator
@@ -46,7 +46,7 @@ module HubSpotSDK
           override.returns(
             {
               operator:
-                HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::BooleanTargetPropertyVariable::Operator::OrSymbol,
               property_name: String,
               value: T::Boolean
             }

@@ -133,29 +133,6 @@ module HubSpotSDK
           )
         end
 
-        # Retrieve a file by its path.
-        #
-        # @overload get_by_path(path, properties: nil, request_options: {})
-        #
-        # @param path [String]
-        # @param properties [Array<String>]
-        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-        #
-        # @return [HubSpotSDK::Models::Files::FileStat]
-        #
-        # @see HubSpotSDK::Models::Files::FileAssetGetByPathParams
-        def get_by_path(path, params = {})
-          parsed, options = HubSpotSDK::Files::FileAssetGetByPathParams.dump_request(params)
-          query = HubSpotSDK::Internal::Util.encode_query_params(parsed)
-          @client.request(
-            method: :get,
-            path: ["files/2026-03/files/stat/%1$s", path],
-            query: query,
-            model: HubSpotSDK::Files::FileStat,
-            options: options
-          )
-        end
-
         # Check the status of requested import.
         #
         # @overload get_import_task_status(task_id, request_options: {})

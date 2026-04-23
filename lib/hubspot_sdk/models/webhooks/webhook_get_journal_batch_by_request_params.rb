@@ -9,8 +9,7 @@ module HubSpotSDK
         include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute install_portal_id
-        #   The ID of the portal from which to retrieve webhook journal entries. This is an
-        #   integer value.
+        #   The ID of the portal where the webhooks are installed. This is an integer value.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
@@ -20,7 +19,7 @@ module HubSpotSDK
         #   {HubSpotSDK::Models::Webhooks::WebhookGetJournalBatchByRequestParams} for more
         #   details.
         #
-        #   @param install_portal_id [Integer] The ID of the portal from which to retrieve webhook journal entries. This is an
+        #   @param install_portal_id [Integer] The ID of the portal where the webhooks are installed. This is an integer value.
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

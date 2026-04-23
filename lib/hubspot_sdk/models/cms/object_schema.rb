@@ -24,8 +24,8 @@ module HubSpotSDK
 
         # @!attribute associations
         #
-        #   @return [Array<HubSpotSDK::Models::AssociationDefinition>]
-        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition] }
+        #   @return [Array<HubSpotSDK::Models::BaseAssociationDefinition>]
+        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #
@@ -107,7 +107,7 @@ module HubSpotSDK
         #   @param id [String]
         #   @param allows_sensitive_properties [Boolean]
         #   @param archived [Boolean]
-        #   @param associations [Array<HubSpotSDK::Models::AssociationDefinition>]
+        #   @param associations [Array<HubSpotSDK::Models::BaseAssociationDefinition>]
         #   @param fully_qualified_name [String]
         #   @param labels [HubSpotSDK::Models::ObjectTypeDefinitionLabels]
         #   @param name [String]

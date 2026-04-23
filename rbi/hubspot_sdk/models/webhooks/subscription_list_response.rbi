@@ -12,8 +12,8 @@ module HubSpotSDK
             )
           end
 
-        # An array of SubscriptionResponse objects, each representing a subscription
-        # associated with the app. This property is required.
+        # An array of subscription responses, each detailing a specific subscription's
+        # properties and status.
         sig { returns(T::Array[HubSpotSDK::Webhooks::SubscriptionResponse]) }
         attr_accessor :results
 
@@ -24,8 +24,8 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # An array of SubscriptionResponse objects, each representing a subscription
-          # associated with the app. This property is required.
+          # An array of subscription responses, each detailing a specific subscription's
+          # properties and status.
           results:
         )
         end

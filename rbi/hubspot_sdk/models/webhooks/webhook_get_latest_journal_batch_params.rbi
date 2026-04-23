@@ -18,8 +18,8 @@ module HubSpotSDK
         sig { returns(Integer) }
         attr_accessor :count
 
-        # The ID of the portal installation. This parameter is optional and can be used to
-        # filter results by a specific portal.
+        # The ID of the portal installation. This is an integer value used to identify the
+        # specific portal.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -35,8 +35,8 @@ module HubSpotSDK
         end
         def self.new(
           count:,
-          # The ID of the portal installation. This parameter is optional and can be used to
-          # filter results by a specific portal.
+          # The ID of the portal installation. This is an integer value used to identify the
+          # specific portal.
           install_portal_id: nil,
           request_options: {}
         )

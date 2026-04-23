@@ -5,37 +5,44 @@ module HubSpotSDK
     module Webhooks
       class CrmObjectSnapshotResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
-        #   An integer representing the unique identifier for the CRM object.
+        #   An integer representing the unique identifier of the CRM object for which the
+        #   snapshot is taken.
         #
         #   @return [Integer]
         required :object_id_, Integer, api_name: :objectId
 
         # @!attribute object_type_id
-        #   A string representing the type identifier of the CRM object.
+        #   A string indicating the type of the CRM object, such as contact, company, or
+        #   deal.
         #
         #   @return [String]
         required :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute portal_id
-        #   An integer representing the unique identifier for the HubSpot portal.
+        #   An integer representing the unique identifier of the HubSpot portal associated
+        #   with the CRM object.
         #
         #   @return [Integer]
         required :portal_id, Integer, api_name: :portalId
 
         # @!attribute snapshot_status_id
-        #   A UUID string representing the status identifier of the snapshot.
+        #   A UUID string representing the status identifier of the snapshot request,
+        #   indicating the current state of the snapshot process.
         #
         #   @return [String]
         required :snapshot_status_id, String, api_name: :snapshotStatusId
 
         # @!method initialize(object_id_:, object_type_id:, portal_id:, snapshot_status_id:)
-        #   @param object_id_ [Integer] An integer representing the unique identifier for the CRM object.
+        #   Some parameter documentations has been truncated, see
+        #   {HubSpotSDK::Models::Webhooks::CrmObjectSnapshotResponse} for more details.
         #
-        #   @param object_type_id [String] A string representing the type identifier of the CRM object.
+        #   @param object_id_ [Integer] An integer representing the unique identifier of the CRM object for which the sn
         #
-        #   @param portal_id [Integer] An integer representing the unique identifier for the HubSpot portal.
+        #   @param object_type_id [String] A string indicating the type of the CRM object, such as contact, company, or dea
         #
-        #   @param snapshot_status_id [String] A UUID string representing the status identifier of the snapshot.
+        #   @param portal_id [Integer] An integer representing the unique identifier of the HubSpot portal associated w
+        #
+        #   @param snapshot_status_id [String] A UUID string representing the status identifier of the snapshot request, indica
       end
     end
   end

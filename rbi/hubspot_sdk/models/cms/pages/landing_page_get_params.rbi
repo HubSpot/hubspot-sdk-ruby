@@ -26,6 +26,7 @@ module HubSpotSDK
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
+          # A specific property of the landing page to include in the response.
           sig { returns(T.nilable(String)) }
           attr_reader :property
 
@@ -44,6 +45,7 @@ module HubSpotSDK
             object_id_:,
             # Whether to return only results that have been archived.
             archived: nil,
+            # A specific property of the landing page to include in the response.
             property: nil,
             request_options: {}
           )

@@ -22,80 +22,6 @@ module HubSpotSDK
         sig { returns(HubSpotSDK::Resources::Cms::Pages::WebsitePages) }
         attr_reader :website_pages
 
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_landing_page_folders(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_landing_page_folders_by_query(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
-          request_options: {}
-        )
-        end
-
         # Retrieve a previous version of a landing page, specified by page ID and revision
         # ID.
         sig do
@@ -112,80 +38,6 @@ module HubSpotSDK
         )
         end
 
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_landing_pages(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_landing_pages_by_query(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
-          request_options: {}
-        )
-        end
-
         # Retrieve a previous version of a website page by the revision ID.
         sig do
           params(
@@ -195,82 +47,10 @@ module HubSpotSDK
           ).returns(HubSpotSDK::Cms::PageVersion)
         end
         def get_site_page_revision(
+          # The unique identifier of the specific revision to retrieve.
           revision_id,
+          # The unique identifier of the site page.
           object_id_:,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_site_pages(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
-          request_options: {}
-        )
-        end
-
-        sig do
-          params(
-            after: String,
-            archived: T::Boolean,
-            created_after: Time,
-            created_at: Time,
-            created_before: Time,
-            limit: Integer,
-            property: String,
-            sort: T::Array[String],
-            updated_after: Time,
-            updated_at: Time,
-            updated_before: Time,
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(T.anything)
-        end
-        def get_site_pages_by_query(
-          # The paging cursor token of the last successfully read resource will be returned
-          # as the `paging.next.after` JSON property of a paged response containing more
-          # results.
-          after: nil,
-          # Whether to return only results that have been archived.
-          archived: nil,
-          created_after: nil,
-          created_at: nil,
-          created_before: nil,
-          # The maximum number of results to display per page.
-          limit: nil,
-          property: nil,
-          sort: nil,
-          updated_after: nil,
-          updated_at: nil,
-          updated_before: nil,
           request_options: {}
         )
         end

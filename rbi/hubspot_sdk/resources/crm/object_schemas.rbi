@@ -68,7 +68,7 @@ module HubSpotSDK
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::ObjectTypeDefinition)
+          ).returns(HubSpotSDK::BaseObjectTypeDefinition)
         end
         def update(
           object_type,
@@ -133,7 +133,7 @@ module HubSpotSDK
             to_object_type_id: String,
             name: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::AssociationDefinition)
+          ).returns(HubSpotSDK::BaseAssociationDefinition)
         end
         def create_association(
           object_type,
