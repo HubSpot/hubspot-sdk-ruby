@@ -7,7 +7,12 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.cms.hubdb.rows.create("tableIdOrName", child_table_id: 0, display_index: 0, values: {foo: {}})
+      @hubspot.cms.hubdb.rows.create(
+        "tableIdOrName",
+        child_table_id: 0,
+        display_index: 0,
+        values: {foo: {foo: "bar"}}
+      )
 
     assert_pattern do
       response => HubSpotSDK::Cms::HubDBTableRowV3
@@ -94,7 +99,7 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
     response =
       @hubspot.cms.hubdb.rows.create_batch(
         "tableIdOrName",
-        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {foo: "bar"}}}]
       )
 
     assert_pattern do
@@ -227,7 +232,7 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
     response =
       @hubspot.cms.hubdb.rows.replace_batch(
         "tableIdOrName",
-        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {foo: "bar"}}}]
       )
 
     assert_pattern do
@@ -255,7 +260,7 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
         table_id_or_name: "tableIdOrName",
         child_table_id: 0,
         display_index: 0,
-        values: {foo: {}}
+        values: {foo: {foo: "bar"}}
       )
 
     assert_pattern do
@@ -282,7 +287,7 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
     response =
       @hubspot.cms.hubdb.rows.update_batch(
         "tableIdOrName",
-        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {}}}]
+        inputs: [{childTableId: 0, displayIndex: 0, values: {foo: {foo: "bar"}}}]
       )
 
     assert_pattern do
@@ -310,7 +315,7 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
         table_id_or_name: "tableIdOrName",
         child_table_id: 0,
         display_index: 0,
-        values: {foo: {}}
+        values: {foo: {foo: "bar"}}
       )
 
     assert_pattern do

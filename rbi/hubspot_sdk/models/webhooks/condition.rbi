@@ -12,30 +12,32 @@ module HubSpotSDK
             )
           end
 
-        # A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+        # A string indicating the type of filter being applied. Valid value is
+        # 'CRM_OBJECT_PROPERTY'.
         sig { returns(HubSpotSDK::Webhooks::Condition::FilterType::OrSymbol) }
         attr_accessor :filter_type
 
-        # A string indicating the operation to apply for filtering. Valid values include
-        # 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH', 'ENDS_WITH',
-        # 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
+        # A string specifying the operation to be performed in the condition. Valid values
+        # include 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH',
+        # 'ENDS_WITH', 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
         sig { returns(HubSpotSDK::Webhooks::Condition::Operator::OrSymbol) }
         attr_accessor :operator
 
-        # A string specifying the property of the CRM object to be filtered.
+        # A string representing the specific property of the CRM object that the condition
+        # applies to.
         sig { returns(String) }
         attr_accessor :property
 
-        # A string representing the value to compare against the specified property when
-        # filtering.
+        # A string representing the value to be compared against the specified property
+        # when using single-value operators.
         sig { returns(T.nilable(String)) }
         attr_reader :value
 
         sig { params(value: String).void }
         attr_writer :value
 
-        # An array of strings, each representing a value to be used in the filtering
-        # operation.
+        # An array of strings used to specify multiple values for comparison when using
+        # operators that support multiple values, such as 'IN' or 'NOT_IN'.
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :values
 
@@ -52,19 +54,21 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+          # A string indicating the type of filter being applied. Valid value is
+          # 'CRM_OBJECT_PROPERTY'.
           filter_type:,
-          # A string indicating the operation to apply for filtering. Valid values include
-          # 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH', 'ENDS_WITH',
-          # 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
+          # A string specifying the operation to be performed in the condition. Valid values
+          # include 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH',
+          # 'ENDS_WITH', 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
           operator:,
-          # A string specifying the property of the CRM object to be filtered.
+          # A string representing the specific property of the CRM object that the condition
+          # applies to.
           property:,
-          # A string representing the value to compare against the specified property when
-          # filtering.
+          # A string representing the value to be compared against the specified property
+          # when using single-value operators.
           value: nil,
-          # An array of strings, each representing a value to be used in the filtering
-          # operation.
+          # An array of strings used to specify multiple values for comparison when using
+          # operators that support multiple values, such as 'IN' or 'NOT_IN'.
           values: nil
         )
         end
@@ -84,7 +88,8 @@ module HubSpotSDK
         def to_hash
         end
 
-        # A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+        # A string indicating the type of filter being applied. Valid value is
+        # 'CRM_OBJECT_PROPERTY'.
         module FilterType
           extend HubSpotSDK::Internal::Type::Enum
 
@@ -111,9 +116,9 @@ module HubSpotSDK
           end
         end
 
-        # A string indicating the operation to apply for filtering. Valid values include
-        # 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH', 'ENDS_WITH',
-        # 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
+        # A string specifying the operation to be performed in the condition. Valid values
+        # include 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH',
+        # 'ENDS_WITH', 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
         module Operator
           extend HubSpotSDK::Internal::Type::Enum
 

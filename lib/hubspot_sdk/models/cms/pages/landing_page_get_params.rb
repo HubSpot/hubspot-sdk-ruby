@@ -21,6 +21,7 @@ module HubSpotSDK
           optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute property
+          #   A specific property of the landing page to include in the response.
           #
           #   @return [String, nil]
           optional :property, String
@@ -30,7 +31,7 @@ module HubSpotSDK
           #
           #   @param archived [Boolean] Whether to return only results that have been archived.
           #
-          #   @param property [String]
+          #   @param property [String] A specific property of the landing page to include in the response.
           #
           #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

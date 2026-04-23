@@ -19,8 +19,9 @@ module HubSpotSDK
         # @!attribute values
         #   List of key value pairs with the column name and column value
         #
-        #   @return [Hash{Symbol=>Object}]
-        required :values, HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
+        #   @return [Hash{Symbol=>Hash{Symbol=>Object}}]
+        required :values,
+                 HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]]
 
         # @!attribute name
         #   Specifies the value for `hs_name` column, which will be used as title in the
@@ -44,7 +45,7 @@ module HubSpotSDK
         #
         #   @param display_index [Integer] The index position for displaying the row within the table.
         #
-        #   @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+        #   @param values [Hash{Symbol=>Hash{Symbol=>Object}}] List of key value pairs with the column name and column value
         #
         #   @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
         #

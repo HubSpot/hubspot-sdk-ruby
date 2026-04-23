@@ -317,6 +317,11 @@ module HubSpotSDK
             :COMPANY_INSIGHTS,
             HubSpotSDK::PropertyValue::Source::TaggedSymbol
           )
+        CONNECTED_ACCOUNT =
+          T.let(
+            :CONNECTED_ACCOUNT,
+            HubSpotSDK::PropertyValue::Source::TaggedSymbol
+          )
         CONTACTS =
           T.let(:CONTACTS, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         CONTACTS_WEB =

@@ -6,7 +6,7 @@ module HubSpotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubSpotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::HubdbOption],
           type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           foreign_column_id: Integer,
           foreign_table_id: Integer,
@@ -21,7 +21,7 @@ module HubSpotSDK
 
         attr_accessor name: String
 
-        attr_accessor options: ::Array[HubSpotSDK::Cms::Option]
+        attr_accessor options: ::Array[HubSpotSDK::Cms::HubdbOption]
 
         attr_accessor type: HubSpotSDK::Models::Cms::ColumnRequest::type_
 
@@ -45,7 +45,7 @@ module HubSpotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubSpotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::HubdbOption],
           type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           ?foreign_column_id: Integer,
           ?foreign_table_id: Integer,
@@ -57,7 +57,7 @@ module HubSpotSDK
           id: Integer,
           label: String,
           name: String,
-          options: ::Array[HubSpotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::HubdbOption],
           type: HubSpotSDK::Models::Cms::ColumnRequest::type_,
           foreign_column_id: Integer,
           foreign_table_id: Integer,

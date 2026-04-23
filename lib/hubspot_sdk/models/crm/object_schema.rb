@@ -27,8 +27,8 @@ module HubSpotSDK
         # @!attribute associations
         #   Associations defined for a given object type.
         #
-        #   @return [Array<HubSpotSDK::Models::AssociationDefinition>]
-        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition] }
+        #   @return [Array<HubSpotSDK::Models::BaseAssociationDefinition>]
+        required :associations, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #   An assigned unique ID for the object, including portal ID and object name.
@@ -55,8 +55,8 @@ module HubSpotSDK
         # @!attribute properties
         #   Properties defined for this object type.
         #
-        #   @return [Array<HubSpotSDK::Models::Property>]
-        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
+        #   @return [Array<HubSpotSDK::Models::BaseProperty>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty] }
 
         # @!attribute required_properties
         #   The names of properties that should be **required** when creating an object of
@@ -129,7 +129,7 @@ module HubSpotSDK
         #
         #   @param archived [Boolean]
         #
-        #   @param associations [Array<HubSpotSDK::Models::AssociationDefinition>] Associations defined for a given object type.
+        #   @param associations [Array<HubSpotSDK::Models::BaseAssociationDefinition>] Associations defined for a given object type.
         #
         #   @param fully_qualified_name [String] An assigned unique ID for the object, including portal ID and object name.
         #
@@ -139,7 +139,7 @@ module HubSpotSDK
         #
         #   @param object_type_id [String]
         #
-        #   @param properties [Array<HubSpotSDK::Models::Property>] Properties defined for this object type.
+        #   @param properties [Array<HubSpotSDK::Models::BaseProperty>] Properties defined for this object type.
         #
         #   @param required_properties [Array<String>] The names of properties that should be **required** when creating an object of t
         #

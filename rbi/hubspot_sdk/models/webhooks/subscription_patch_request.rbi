@@ -12,9 +12,8 @@ module HubSpotSDK
             )
           end
 
-        # Whether to activate or pause the webhook subscription. If true, the subscription
-        # will send webhook notifications. If false, the subscription is paused and will
-        # not send notifications.
+        # A boolean indicating whether the subscription is active. If true, the
+        # subscription is active; if false, it is inactive.
         sig { returns(T.nilable(T::Boolean)) }
         attr_reader :active
 
@@ -23,9 +22,8 @@ module HubSpotSDK
 
         sig { params(active: T::Boolean).returns(T.attached_class) }
         def self.new(
-          # Whether to activate or pause the webhook subscription. If true, the subscription
-          # will send webhook notifications. If false, the subscription is paused and will
-          # not send notifications.
+          # A boolean indicating whether the subscription is active. If true, the
+          # subscription is active; if false, it is inactive.
           active: nil
         )
         end

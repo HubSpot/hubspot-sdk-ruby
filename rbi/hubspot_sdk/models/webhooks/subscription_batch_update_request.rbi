@@ -12,7 +12,7 @@ module HubSpotSDK
             )
           end
 
-        # The unique identifier for the subscription to be updated. It is an integer.
+        # The unique identifier for the subscription. It is an integer.
         sig { returns(Integer) }
         attr_accessor :id
 
@@ -24,7 +24,7 @@ module HubSpotSDK
           params(id: Integer, active: T::Boolean).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier for the subscription to be updated. It is an integer.
+          # The unique identifier for the subscription. It is an integer.
           id:,
           # A boolean indicating whether the subscription is active.
           active:

@@ -403,6 +403,11 @@ module HubSpotSDK
               :COMPANY_INSIGHTS,
               HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
             )
+          CONNECTED_ACCOUNT =
+            T.let(
+              :CONNECTED_ACCOUNT,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
+            )
           CONTACTS =
             T.let(
               :CONTACTS,

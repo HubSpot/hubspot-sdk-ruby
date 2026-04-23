@@ -6,7 +6,7 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
@@ -30,7 +30,7 @@ module HubSpotSDK
 
         attr_accessor archived: bool
 
-        attr_accessor associations: ::Array[HubSpotSDK::AssociationDefinition]
+        attr_accessor associations: ::Array[HubSpotSDK::BaseAssociationDefinition]
 
         attr_accessor fully_qualified_name: String
 
@@ -76,7 +76,7 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
@@ -97,7 +97,7 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,

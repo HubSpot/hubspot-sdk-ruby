@@ -12,7 +12,7 @@ module HubSpotSDK
             )
           end
 
-        # The maximum number of concurrent requests allowed. It is an integer value.
+        # The maximum number of concurrent requests allowed. This is an integer value.
         sig { returns(Integer) }
         attr_accessor :max_concurrent_requests
 
@@ -20,7 +20,7 @@ module HubSpotSDK
           params(max_concurrent_requests: Integer).returns(T.attached_class)
         end
         def self.new(
-          # The maximum number of concurrent requests allowed. It is an integer value.
+          # The maximum number of concurrent requests allowed. This is an integer value.
           max_concurrent_requests:
         )
         end

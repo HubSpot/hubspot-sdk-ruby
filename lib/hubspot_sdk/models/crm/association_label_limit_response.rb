@@ -12,8 +12,12 @@ module HubSpotSDK
 
         # @!attribute from_object_type
         #
-        #   @return [HubSpotSDK::Models::Crm::ObjectTypeDefinition]
-        required :from_object_type, -> { HubSpotSDK::Crm::ObjectTypeDefinition }, api_name: :fromObjectType
+        #   @return [HubSpotSDK::Models::Crm::LimitsObjectTypeDefinition]
+        required :from_object_type,
+                 -> {
+                   HubSpotSDK::Crm::LimitsObjectTypeDefinition
+                 },
+                 api_name: :fromObjectType
 
         # @!attribute limit
         #   The maximum number of association labels allowed.
@@ -29,8 +33,8 @@ module HubSpotSDK
 
         # @!attribute to_object_type
         #
-        #   @return [HubSpotSDK::Models::Crm::ObjectTypeDefinition]
-        required :to_object_type, -> { HubSpotSDK::Crm::ObjectTypeDefinition }, api_name: :toObjectType
+        #   @return [HubSpotSDK::Models::Crm::LimitsObjectTypeDefinition]
+        required :to_object_type, -> { HubSpotSDK::Crm::LimitsObjectTypeDefinition }, api_name: :toObjectType
 
         # @!attribute usage
         #   The current number of association labels used.
@@ -41,13 +45,13 @@ module HubSpotSDK
         # @!method initialize(all_labels:, from_object_type:, limit:, percentage:, to_object_type:, usage:)
         #   @param all_labels [Array<String>] A list of all association labels.
         #
-        #   @param from_object_type [HubSpotSDK::Models::Crm::ObjectTypeDefinition]
+        #   @param from_object_type [HubSpotSDK::Models::Crm::LimitsObjectTypeDefinition]
         #
         #   @param limit [Integer] The maximum number of association labels allowed.
         #
         #   @param percentage [Float] The percentage of the association label limit that has been used.
         #
-        #   @param to_object_type [HubSpotSDK::Models::Crm::ObjectTypeDefinition]
+        #   @param to_object_type [HubSpotSDK::Models::Crm::LimitsObjectTypeDefinition]
         #
         #   @param usage [Integer] The current number of association labels used.
       end

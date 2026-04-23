@@ -37,12 +37,6 @@ module HubSpotSDK
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Files::File
 
-        def get_by_path: (
-          String path,
-          ?properties: ::Array[String],
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Files::FileStat
-
         def get_import_task_status: (
           String task_id,
           ?request_options: HubSpotSDK::request_opts

@@ -287,7 +287,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Cms::PageData)
           end
           def update(
-            # Path param
+            # Path param: The unique identifier of the landing page to update.
             object_id_,
             # Body param: The unique ID of the page.
             id:,
@@ -437,9 +437,10 @@ module HubSpotSDK
           )
           end
 
-          # Get the list of landing pages. Supports paging and filtering. This method would
-          # be useful for an integration that examined these models and used an external
-          # service to suggest edits.
+          # Retrieve a list of landing pages in your HubSpot account. This endpoint allows
+          # you to filter landing pages based on creation and update timestamps, sort them,
+          # and paginate through results. You can also choose to include archived pages or
+          # specify certain properties to be included in the response.
           sig do
             params(
               after: String,
@@ -457,21 +458,28 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageData])
           end
           def list(
-            # The paging cursor token of the last successfully read resource will be returned
-            # as the `paging.next.after` JSON property of a paged response containing more
-            # results.
+            # A cursor token for pagination. Use the value from the previous response's
+            # paging.next.after field.
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter landing pages created after a specific date and time.
             created_after: nil,
+            # Filter landing pages by their creation timestamp.
             created_at: nil,
+            # Filter landing pages created before a specific date and time.
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify which properties of the landing pages to include in the response.
             property: nil,
+            # Specify the order in which results are returned. Accepts an array of strings.
             sort: nil,
+            # Filter landing pages updated after a specific date and time.
             updated_after: nil,
+            # Filter landing pages by their last updated timestamp.
             updated_at: nil,
+            # Filter landing pages updated before a specific date and time.
             updated_before: nil,
             request_options: {}
           )
@@ -486,6 +494,7 @@ module HubSpotSDK
             ).void
           end
           def delete(
+            # The unique identifier of the landing page to delete.
             object_id_,
             # Whether to return only results that have been archived.
             archived: nil,
@@ -520,9 +529,11 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Cms::PageData)
           end
           def get(
+            # The unique identifier of the landing page to retrieve.
             object_id_,
             # Whether to return only results that have been archived.
             archived: nil,
+            # A specific property of the landing page to include in the response.
             property: nil,
             request_options: {}
           )
@@ -535,7 +546,12 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Cms::PageData)
           end
-          def get_draft(object_id_, request_options: {})
+          def get_draft(
+            # The unique identifier of the landing page whose draft version is to be
+            # retrieved.
+            object_id_,
+            request_options: {}
+          )
           end
 
           # Take any changes from the draft version of the Landing Page and apply them to
@@ -546,7 +562,11 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def push_draft_live(object_id_, request_options: {})
+          def push_draft_live(
+            # The unique identifier of the landing page draft to be published.
+            object_id_,
+            request_options: {}
+          )
           end
 
           # Discards any edits and resets the draft to match the live version.
@@ -556,7 +576,11 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def reset_draft(object_id_, request_options: {})
+          def reset_draft(
+            # The unique identifier of the landing page whose draft is to be reset.
+            object_id_,
+            request_options: {}
+          )
           end
 
           # Schedule a landing page to be published.
@@ -648,6 +672,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Cms::PageData)
           end
           def update_draft(
+            # The unique identifier of the landing page draft to update.
             object_id_,
             # The unique ID of the page.
             id:,

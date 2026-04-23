@@ -5,7 +5,7 @@ module HubSpotSDK
     module Webhooks
       class SubscriptionBatchUpdateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier for the subscription to be updated. It is an integer.
+        #   The unique identifier for the subscription. It is an integer.
         #
         #   @return [Integer]
         required :id, Integer
@@ -17,7 +17,7 @@ module HubSpotSDK
         required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!method initialize(id:, active:)
-        #   @param id [Integer] The unique identifier for the subscription to be updated. It is an integer.
+        #   @param id [Integer] The unique identifier for the subscription. It is an integer.
         #
         #   @param active [Boolean] A boolean indicating whether the subscription is active.
       end

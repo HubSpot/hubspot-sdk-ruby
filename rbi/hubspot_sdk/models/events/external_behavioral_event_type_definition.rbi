@@ -18,7 +18,11 @@ module HubSpotSDK
         sig { returns(T::Boolean) }
         attr_accessor :archived
 
-        sig { returns(T::Array[HubSpotSDK::Events::AssociationDefinition]) }
+        sig do
+          returns(
+            T::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition]
+          )
+        end
         attr_accessor :associations
 
         sig { returns(String) }
@@ -41,7 +45,7 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        sig { returns(T::Array[HubSpotSDK::Property]) }
+        sig { returns(T::Array[HubSpotSDK::BaseProperty]) }
         attr_accessor :properties
 
         sig { returns(T.nilable(HubSpotSDK::Events::ComboEventRuleBranch)) }
@@ -90,6 +94,18 @@ module HubSpotSDK
         attr_writer :description
 
         sig { returns(T.nilable(String)) }
+        attr_reader :detail_template
+
+        sig { params(detail_template: String).void }
+        attr_writer :detail_template
+
+        sig { returns(T.nilable(String)) }
+        attr_reader :header_template
+
+        sig { params(header_template: String).void }
+        attr_writer :header_template
+
+        sig { returns(T.nilable(String)) }
         attr_reader :primary_object
 
         sig { params(primary_object: String).void }
@@ -135,19 +151,23 @@ module HubSpotSDK
             id: String,
             archived: T::Boolean,
             associations:
-              T::Array[HubSpotSDK::Events::AssociationDefinition::OrHash],
+              T::Array[
+                HubSpotSDK::Events::DefinitionsAssociationDefinition::OrHash
+              ],
             fully_qualified_name: String,
             labels:
               HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubSpotSDK::Property::OrHash],
+            properties: T::Array[HubSpotSDK::BaseProperty::OrHash],
             combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch::OrHash,
             created_at: Time,
             created_user_id: Integer,
             custom_matching_id:
               HubSpotSDK::Events::ExternalObjectResolutionMappingResponse::OrHash,
             description: String,
+            detail_template: String,
+            header_template: String,
             primary_object: String,
             primary_object_id: String,
             tracking_type:
@@ -170,6 +190,8 @@ module HubSpotSDK
           created_user_id: nil,
           custom_matching_id: nil,
           description: nil,
+          detail_template: nil,
+          header_template: nil,
           primary_object: nil,
           primary_object_id: nil,
           tracking_type: nil,
@@ -183,18 +205,21 @@ module HubSpotSDK
             {
               id: String,
               archived: T::Boolean,
-              associations: T::Array[HubSpotSDK::Events::AssociationDefinition],
+              associations:
+                T::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition],
               fully_qualified_name: String,
               labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubSpotSDK::Property],
+              properties: T::Array[HubSpotSDK::BaseProperty],
               combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
               created_at: Time,
               created_user_id: Integer,
               custom_matching_id:
                 HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
               description: String,
+              detail_template: String,
+              header_template: String,
               primary_object: String,
               primary_object_id: String,
               tracking_type:

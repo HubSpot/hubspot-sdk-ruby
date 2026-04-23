@@ -14,7 +14,7 @@ module HubSpotSDK
 
         # @!attribute subscription_id
         #   The unique identifier of the subscription to which the filter will be applied.
-        #   It is an integer in int64 format.
+        #   It is an integer formatted as int64.
         #
         #   @return [Integer]
         required :subscription_id, Integer, api_name: :subscriptionId

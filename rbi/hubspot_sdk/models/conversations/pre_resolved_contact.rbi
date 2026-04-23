@@ -747,6 +747,11 @@ module HubSpotSDK
               :hs_enriched_email_bounce_detected,
               HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
             )
+          HS_EXCLUDED_FROM_CROSS_ACCOUNT_DATA_MIRRORING =
+            T.let(
+              :hs_excluded_from_cross_account_data_mirroring,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
           HS_FACEBOOK_AD_CLICKED =
             T.let(
               :hs_facebook_ad_clicked,
@@ -845,6 +850,36 @@ module HubSpotSDK
           HS_FULL_NAME_OR_EMAIL =
             T.let(
               :hs_full_name_or_email,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_1 =
+            T.let(
+              :hs_geohash_1,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_2 =
+            T.let(
+              :hs_geohash_2,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_3 =
+            T.let(
+              :hs_geohash_3,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_4 =
+            T.let(
+              :hs_geohash_4,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_5 =
+            T.let(
+              :hs_geohash_5,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
+          HS_GEOHASH_6 =
+            T.let(
+              :hs_geohash_6,
               HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
             )
           HS_GOOGLE_CLICK_ID =

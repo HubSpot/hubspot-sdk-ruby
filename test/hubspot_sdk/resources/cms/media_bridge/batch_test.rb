@@ -28,7 +28,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubSpotSDK::Tes
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::MediaBridgeProperty]),
         started_at: Time,
         status: HubSpotSDK::Cms::BatchResponseProperty::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
@@ -66,7 +66,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridge::BatchTest < HubSpotSDK::Tes
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::MediaBridgeProperty]),
         started_at: Time,
         status: HubSpotSDK::Cms::BatchResponseProperty::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,

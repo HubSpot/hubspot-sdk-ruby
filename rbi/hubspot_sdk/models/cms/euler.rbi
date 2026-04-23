@@ -9,7 +9,7 @@ module HubSpotSDK
             T.any(HubSpotSDK::Cms::Euler, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(HubSpotSDK::Cms::Euler::Operator::TaggedSymbol) }
+        sig { returns(HubSpotSDK::Cms::Euler::Operator::OrSymbol) }
         attr_accessor :operator
 
         sig { returns(T.nilable(String)) }
@@ -37,7 +37,7 @@ module HubSpotSDK
         sig do
           override.returns(
             {
-              operator: HubSpotSDK::Cms::Euler::Operator::TaggedSymbol,
+              operator: HubSpotSDK::Cms::Euler::Operator::OrSymbol,
               property_name: String,
               value: Float
             }

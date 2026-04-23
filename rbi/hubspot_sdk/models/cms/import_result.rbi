@@ -14,7 +14,7 @@ module HubSpotSDK
         attr_accessor :duplicate_rows
 
         # List of errors during import
-        sig { returns(T::Array[HubSpotSDK::Error]) }
+        sig { returns(T::Array[HubSpotSDK::BaseError]) }
         attr_accessor :errors
 
         # Specifies whether row limit exceeded during import
@@ -28,7 +28,7 @@ module HubSpotSDK
         sig do
           params(
             duplicate_rows: Integer,
-            errors: T::Array[HubSpotSDK::Error::OrHash],
+            errors: T::Array[HubSpotSDK::BaseError::OrHash],
             row_limit_exceeded: T::Boolean,
             rows_imported: Integer
           ).returns(T.attached_class)
@@ -49,7 +49,7 @@ module HubSpotSDK
           override.returns(
             {
               duplicate_rows: Integer,
-              errors: T::Array[HubSpotSDK::Error],
+              errors: T::Array[HubSpotSDK::BaseError],
               row_limit_exceeded: T::Boolean,
               rows_imported: Integer
             }

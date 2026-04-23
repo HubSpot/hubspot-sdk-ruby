@@ -5,53 +5,53 @@ module HubSpotSDK
     module Webhooks
       class BatchResponseJournalFetchResponseWithErrors < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute completed_at
-        #   The date and time when the batch operation was completed, in ISO 8601 format.
+        #   The date and time when the batch process was completed, in ISO 8601 format.
         #
         #   @return [Time]
         required :completed_at, Time, api_name: :completedAt
 
         # @!attribute results
         #   An array of journal fetch responses, each representing a result from the batch
-        #   operation.
+        #   process.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>]
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse] }
 
         # @!attribute started_at
-        #   The date and time when the batch operation started, in ISO 8601 format.
+        #   The date and time when the batch process started, in ISO 8601 format.
         #
         #   @return [Time]
         required :started_at, Time, api_name: :startedAt
 
         # @!attribute status
-        #   The current status of the batch operation. Valid values include 'PENDING',
+        #   The current status of the batch process. Valid values include 'PENDING',
         #   'PROCESSING', 'CANCELED', and 'COMPLETE'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponseWithErrors::Status]
         required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseJournalFetchResponseWithErrors::Status }
 
         # @!attribute errors
-        #   An array of errors that occurred during the batch operation, each represented by
-        #   a StandardError object.
+        #   An array of standard errors that occurred during the batch process, providing
+        #   details about each error.
         #
         #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
         optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
 
         # @!attribute links
-        #   A map of link names to associated URIs, which may provide additional information
-        #   or resources related to the batch operation.
+        #   A map of link names to associated URIs, providing additional context or actions
+        #   related to the batch process.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
-        #   The number of errors that occurred during the batch operation.
+        #   The number of errors that occurred during the batch process.
         #
         #   @return [Integer, nil]
         optional :num_errors, Integer, api_name: :numErrors
 
         # @!attribute requested_at
-        #   The date and time when the batch operation was requested, in ISO 8601 format.
+        #   The date and time when the batch request was made, in ISO 8601 format.
         #
         #   @return [Time, nil]
         optional :requested_at, Time, api_name: :requestedAt
@@ -61,23 +61,23 @@ module HubSpotSDK
         #   {HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponseWithErrors} for
         #   more details.
         #
-        #   @param completed_at [Time] The date and time when the batch operation was completed, in ISO 8601 format.
+        #   @param completed_at [Time] The date and time when the batch process was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>] An array of journal fetch responses, each representing a result from the batch o
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::JournalFetchResponse>] An array of journal fetch responses, each representing a result from the batch p
         #
-        #   @param started_at [Time] The date and time when the batch operation started, in ISO 8601 format.
+        #   @param started_at [Time] The date and time when the batch process started, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponseWithErrors::Status] The current status of the batch operation. Valid values include 'PENDING', 'PROC
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponseWithErrors::Status] The current status of the batch process. Valid values include 'PENDING', 'PROCES
         #
-        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of errors that occurred during the batch operation, each represented by
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] An array of standard errors that occurred during the batch process, providing de
         #
-        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs, which may provide additional information
+        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs, providing additional context or actions
         #
-        #   @param num_errors [Integer] The number of errors that occurred during the batch operation.
+        #   @param num_errors [Integer] The number of errors that occurred during the batch process.
         #
-        #   @param requested_at [Time] The date and time when the batch operation was requested, in ISO 8601 format.
+        #   @param requested_at [Time] The date and time when the batch request was made, in ISO 8601 format.
 
-        # The current status of the batch operation. Valid values include 'PENDING',
+        # The current status of the batch process. Valid values include 'PENDING',
         # 'PROCESSING', 'CANCELED', and 'COMPLETE'.
         #
         # @see HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponseWithErrors#status

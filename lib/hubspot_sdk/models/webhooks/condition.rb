@@ -5,35 +5,37 @@ module HubSpotSDK
     module Webhooks
       class Condition < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute filter_type
-        #   A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+        #   A string indicating the type of filter being applied. Valid value is
+        #   'CRM_OBJECT_PROPERTY'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::Condition::FilterType]
         required :filter_type, enum: -> { HubSpotSDK::Webhooks::Condition::FilterType }, api_name: :filterType
 
         # @!attribute operator
-        #   A string indicating the operation to apply for filtering. Valid values include
-        #   'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH', 'ENDS_WITH',
-        #   'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
+        #   A string specifying the operation to be performed in the condition. Valid values
+        #   include 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH',
+        #   'ENDS_WITH', 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::Condition::Operator]
         required :operator, enum: -> { HubSpotSDK::Webhooks::Condition::Operator }
 
         # @!attribute property
-        #   A string specifying the property of the CRM object to be filtered.
+        #   A string representing the specific property of the CRM object that the condition
+        #   applies to.
         #
         #   @return [String]
         required :property, String
 
         # @!attribute value
-        #   A string representing the value to compare against the specified property when
-        #   filtering.
+        #   A string representing the value to be compared against the specified property
+        #   when using single-value operators.
         #
         #   @return [String, nil]
         optional :value, String
 
         # @!attribute values
-        #   An array of strings, each representing a value to be used in the filtering
-        #   operation.
+        #   An array of strings used to specify multiple values for comparison when using
+        #   operators that support multiple values, such as 'IN' or 'NOT_IN'.
         #
         #   @return [Array<String>, nil]
         optional :values, HubSpotSDK::Internal::Type::ArrayOf[String]
@@ -42,17 +44,18 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::Condition} for more details.
         #
-        #   @param filter_type [Symbol, HubSpotSDK::Models::Webhooks::Condition::FilterType] A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+        #   @param filter_type [Symbol, HubSpotSDK::Models::Webhooks::Condition::FilterType] A string indicating the type of filter being applied. Valid value is 'CRM_OBJECT
         #
-        #   @param operator [Symbol, HubSpotSDK::Models::Webhooks::Condition::Operator] A string indicating the operation to apply for filtering. Valid values include '
+        #   @param operator [Symbol, HubSpotSDK::Models::Webhooks::Condition::Operator] A string specifying the operation to be performed in the condition. Valid values
         #
-        #   @param property [String] A string specifying the property of the CRM object to be filtered.
+        #   @param property [String] A string representing the specific property of the CRM object that the condition
         #
-        #   @param value [String] A string representing the value to compare against the specified property when f
+        #   @param value [String] A string representing the value to be compared against the specified property wh
         #
-        #   @param values [Array<String>] An array of strings, each representing a value to be used in the filtering opera
+        #   @param values [Array<String>] An array of strings used to specify multiple values for comparison when using op
 
-        # A string representing the type of filter. Valid value is 'CRM_OBJECT_PROPERTY'.
+        # A string indicating the type of filter being applied. Valid value is
+        # 'CRM_OBJECT_PROPERTY'.
         #
         # @see HubSpotSDK::Models::Webhooks::Condition#filter_type
         module FilterType
@@ -64,9 +67,9 @@ module HubSpotSDK
           #   @return [Array<Symbol>]
         end
 
-        # A string indicating the operation to apply for filtering. Valid values include
-        # 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH', 'ENDS_WITH',
-        # 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
+        # A string specifying the operation to be performed in the condition. Valid values
+        # include 'EQ', 'N_EQ', 'LT', 'GT', 'LTE', 'GTE', 'CONTAINS', 'STARTS_WITH',
+        # 'ENDS_WITH', 'IN', 'NOT_IN', 'IS_EMPTY', and 'IS_NOT_EMPTY'.
         #
         # @see HubSpotSDK::Models::Webhooks::Condition#operator
         module Operator

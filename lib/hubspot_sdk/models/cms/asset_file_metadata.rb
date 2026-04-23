@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Cms
-      # @see HubSpotSDK::Resources::Cms::SourceCode#create
       class AssetFileMetadata < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The path of the file in the CMS Developer File System.

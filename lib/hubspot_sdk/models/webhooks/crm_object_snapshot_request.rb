@@ -6,26 +6,28 @@ module HubSpotSDK
       class CrmObjectSnapshotRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute object_id_
         #   An integer representing the unique identifier of the CRM object for which the
-        #   snapshot is being requested.
+        #   snapshot is requested.
         #
         #   @return [Integer]
         required :object_id_, Integer, api_name: :objectId
 
         # @!attribute object_type_id
-        #   A string representing the type identifier of the CRM object.
+        #   A string representing the type identifier of the CRM object, specifying what
+        #   kind of object it is within HubSpot.
         #
         #   @return [String]
         required :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute portal_id
-        #   An integer representing the unique identifier of the HubSpot portal.
+        #   An integer representing the unique identifier of the HubSpot account (portal)
+        #   where the CRM object resides.
         #
         #   @return [Integer]
         required :portal_id, Integer, api_name: :portalId
 
         # @!attribute properties
-        #   An array of strings, each representing a property of the CRM object to be
-        #   included in the snapshot.
+        #   An array of strings, each representing a property of the CRM object that should
+        #   be included in the snapshot.
         #
         #   @return [Array<String>]
         required :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
@@ -36,11 +38,11 @@ module HubSpotSDK
         #
         #   @param object_id_ [Integer] An integer representing the unique identifier of the CRM object for which the sn
         #
-        #   @param object_type_id [String] A string representing the type identifier of the CRM object.
+        #   @param object_type_id [String] A string representing the type identifier of the CRM object, specifying what kin
         #
-        #   @param portal_id [Integer] An integer representing the unique identifier of the HubSpot portal.
+        #   @param portal_id [Integer] An integer representing the unique identifier of the HubSpot account (portal) wh
         #
-        #   @param properties [Array<String>] An array of strings, each representing a property of the CRM object to be includ
+        #   @param properties [Array<String>] An array of strings, each representing a property of the CRM object that should
       end
     end
   end

@@ -12,8 +12,8 @@ module HubSpotSDK
         required :completed_at, Time, api_name: :completedAt
 
         # @!attribute results
-        #   An array of SubscriptionResponse objects, each representing the result of an
-        #   individual subscription update within the batch operation.
+        #   An array containing the results of the batch operation, with each item
+        #   representing an individual subscription response.
         #
         #   @return [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>]
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse] }
@@ -32,8 +32,8 @@ module HubSpotSDK
         required :status, enum: -> { HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse::Status }
 
         # @!attribute links
-        #   A map of link names to associated URIs, providing additional information or
-        #   resources related to the batch operation.
+        #   A map of link names to associated URIs providing additional information about
+        #   the batch operation.
         #
         #   @return [Hash{Symbol=>String}, nil]
         optional :links, HubSpotSDK::Internal::Type::HashOf[String]
@@ -51,13 +51,13 @@ module HubSpotSDK
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed, in ISO 8601 format.
         #
-        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>] An array of SubscriptionResponse objects, each representing the result of an ind
+        #   @param results [Array<HubSpotSDK::Models::Webhooks::SubscriptionResponse>] An array containing the results of the batch operation, with each item represent
         #
         #   @param started_at [Time] The date and time when the batch operation started, in ISO 8601 format.
         #
         #   @param status [Symbol, HubSpotSDK::Models::Webhooks::BatchResponseSubscriptionResponse::Status] The current status of the batch operation. Valid values include 'PENDING', 'PROC
         #
-        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs, providing additional information or reso
+        #   @param links [Hash{Symbol=>String}] A map of link names to associated URIs providing additional information about th
         #
         #   @param requested_at [Time] The date and time when the batch operation was requested, in ISO 8601 format.
 

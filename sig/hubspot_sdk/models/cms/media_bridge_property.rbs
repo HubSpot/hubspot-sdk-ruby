@@ -1,0 +1,717 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type media_bridge_property =
+        {
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
+          calculated: bool,
+          can_archive: bool,
+          can_restore: bool,
+          created_at: Integer,
+          created_user_id: Integer,
+          currency_property_name: String,
+          data_sensitivity: HubSpotSDK::Models::Cms::MediaBridgeProperty::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::date_display_hint,
+          deleted: bool,
+          description: String,
+          display_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::display_mode,
+          display_order: Integer,
+          enforce_multivalue_uniqueness: bool,
+          external_options: bool,
+          external_options_reference_type: String,
+          favorited: bool,
+          favorited_order: Integer,
+          field_type: String,
+          form_field: bool,
+          from_user_id: Integer,
+          group_name: String,
+          has_unique_value: bool,
+          hidden: bool,
+          hubspot_defined: bool,
+          is_customized_default: bool,
+          is_multi_valued: bool,
+          is_partial: bool,
+          label: String,
+          mutable_definition_not_deletable: bool,
+          name: String,
+          number_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          options_are_mutable: bool,
+          option_sort_strategy: HubSpotSDK::Models::Cms::MediaBridgeProperty::option_sort_strategy,
+          owning_app_id: Integer,
+          portal_id: Integer,
+          read_only_definition: bool,
+          read_only_value: bool,
+          referenced_object_type: HubSpotSDK::Models::Cms::MediaBridgeProperty::referenced_object_type,
+          searchable_in_global_search: bool,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::search_text_analysis_mode,
+          sensitive_data_categories: ::Array[String],
+          show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::text_display_hint,
+          type: HubSpotSDK::Models::Cms::MediaBridgeProperty::type_,
+          updated_at: Integer
+        }
+
+      class MediaBridgeProperty < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto]
+
+        attr_accessor calculated: bool
+
+        attr_accessor can_archive: bool
+
+        attr_accessor can_restore: bool
+
+        attr_accessor created_at: Integer
+
+        attr_accessor created_user_id: Integer
+
+        attr_accessor currency_property_name: String
+
+        attr_accessor data_sensitivity: HubSpotSDK::Models::Cms::MediaBridgeProperty::data_sensitivity
+
+        attr_accessor date_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::date_display_hint
+
+        attr_accessor deleted: bool
+
+        attr_accessor description: String
+
+        attr_accessor display_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::display_mode
+
+        attr_accessor display_order: Integer
+
+        attr_accessor enforce_multivalue_uniqueness: bool
+
+        attr_accessor external_options: bool
+
+        attr_accessor external_options_reference_type: String
+
+        attr_accessor favorited: bool
+
+        attr_accessor favorited_order: Integer
+
+        attr_accessor field_type: String
+
+        attr_accessor form_field: bool
+
+        attr_accessor from_user_id: Integer
+
+        attr_accessor group_name: String
+
+        attr_accessor has_unique_value: bool
+
+        attr_accessor hidden: bool
+
+        attr_accessor hubspot_defined: bool
+
+        attr_accessor is_customized_default: bool
+
+        attr_accessor is_multi_valued: bool
+
+        attr_accessor is_partial: bool
+
+        attr_accessor label: String
+
+        attr_accessor mutable_definition_not_deletable: bool
+
+        attr_accessor name: String
+
+        attr_accessor number_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::number_display_hint
+
+        attr_accessor options: ::Array[HubSpotSDK::AutomationActionsOption]
+
+        attr_accessor options_are_mutable: bool
+
+        attr_accessor option_sort_strategy: HubSpotSDK::Models::Cms::MediaBridgeProperty::option_sort_strategy
+
+        attr_accessor owning_app_id: Integer
+
+        attr_accessor portal_id: Integer
+
+        attr_accessor read_only_definition: bool
+
+        attr_accessor read_only_value: bool
+
+        attr_accessor referenced_object_type: HubSpotSDK::Models::Cms::MediaBridgeProperty::referenced_object_type
+
+        attr_accessor searchable_in_global_search: bool
+
+        attr_accessor search_text_analysis_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::search_text_analysis_mode
+
+        attr_accessor sensitive_data_categories: ::Array[String]
+
+        attr_accessor show_currency_symbol: bool
+
+        attr_accessor text_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::text_display_hint
+
+        attr_accessor type: HubSpotSDK::Models::Cms::MediaBridgeProperty::type_
+
+        attr_accessor updated_at: Integer
+
+        def initialize: (
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
+          calculated: bool,
+          can_archive: bool,
+          can_restore: bool,
+          created_at: Integer,
+          created_user_id: Integer,
+          currency_property_name: String,
+          data_sensitivity: HubSpotSDK::Models::Cms::MediaBridgeProperty::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::date_display_hint,
+          deleted: bool,
+          description: String,
+          display_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::display_mode,
+          display_order: Integer,
+          enforce_multivalue_uniqueness: bool,
+          external_options: bool,
+          external_options_reference_type: String,
+          favorited: bool,
+          favorited_order: Integer,
+          field_type: String,
+          form_field: bool,
+          from_user_id: Integer,
+          group_name: String,
+          has_unique_value: bool,
+          hidden: bool,
+          hubspot_defined: bool,
+          is_customized_default: bool,
+          is_multi_valued: bool,
+          is_partial: bool,
+          label: String,
+          mutable_definition_not_deletable: bool,
+          name: String,
+          number_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          options_are_mutable: bool,
+          option_sort_strategy: HubSpotSDK::Models::Cms::MediaBridgeProperty::option_sort_strategy,
+          owning_app_id: Integer,
+          portal_id: Integer,
+          read_only_definition: bool,
+          read_only_value: bool,
+          referenced_object_type: HubSpotSDK::Models::Cms::MediaBridgeProperty::referenced_object_type,
+          searchable_in_global_search: bool,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::search_text_analysis_mode,
+          sensitive_data_categories: ::Array[String],
+          show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::text_display_hint,
+          type: HubSpotSDK::Models::Cms::MediaBridgeProperty::type_,
+          updated_at: Integer
+        ) -> void
+
+        def to_hash: -> {
+          allowed_object_types: ::Array[HubSpotSDK::Cms::ObjectTypeIDProto],
+          calculated: bool,
+          can_archive: bool,
+          can_restore: bool,
+          created_at: Integer,
+          created_user_id: Integer,
+          currency_property_name: String,
+          data_sensitivity: HubSpotSDK::Models::Cms::MediaBridgeProperty::data_sensitivity,
+          date_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::date_display_hint,
+          deleted: bool,
+          description: String,
+          display_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::display_mode,
+          display_order: Integer,
+          enforce_multivalue_uniqueness: bool,
+          external_options: bool,
+          external_options_reference_type: String,
+          favorited: bool,
+          favorited_order: Integer,
+          field_type: String,
+          form_field: bool,
+          from_user_id: Integer,
+          group_name: String,
+          has_unique_value: bool,
+          hidden: bool,
+          hubspot_defined: bool,
+          is_customized_default: bool,
+          is_multi_valued: bool,
+          is_partial: bool,
+          label: String,
+          mutable_definition_not_deletable: bool,
+          name: String,
+          number_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::number_display_hint,
+          options: ::Array[HubSpotSDK::AutomationActionsOption],
+          options_are_mutable: bool,
+          option_sort_strategy: HubSpotSDK::Models::Cms::MediaBridgeProperty::option_sort_strategy,
+          owning_app_id: Integer,
+          portal_id: Integer,
+          read_only_definition: bool,
+          read_only_value: bool,
+          referenced_object_type: HubSpotSDK::Models::Cms::MediaBridgeProperty::referenced_object_type,
+          searchable_in_global_search: bool,
+          search_text_analysis_mode: HubSpotSDK::Models::Cms::MediaBridgeProperty::search_text_analysis_mode,
+          sensitive_data_categories: ::Array[String],
+          show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Cms::MediaBridgeProperty::text_display_hint,
+          type: HubSpotSDK::Models::Cms::MediaBridgeProperty::type_,
+          updated_at: Integer
+        }
+
+        type data_sensitivity = :high | :none | :standard
+
+        module DataSensitivity
+          extend HubSpotSDK::Internal::Type::Enum
+
+          HIGH: :high
+          NONE: :none
+          STANDARD: :standard
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::data_sensitivity]
+        end
+
+        type date_display_hint =
+          :absolute | :absolute_with_relative | :time_since | :time_until
+
+        module DateDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          ABSOLUTE: :absolute
+          ABSOLUTE_WITH_RELATIVE: :absolute_with_relative
+          TIME_SINCE: :time_since
+          TIME_UNTIL: :time_until
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::date_display_hint]
+        end
+
+        type display_mode = :all_unique_versions | :current_value
+
+        module DisplayMode
+          extend HubSpotSDK::Internal::Type::Enum
+
+          ALL_UNIQUE_VERSIONS: :all_unique_versions
+          CURRENT_VALUE: :current_value
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::display_mode]
+        end
+
+        type number_display_hint =
+          :currency
+          | :duration
+          | :formatted
+          | :percentage
+          | :probability
+          | :unformatted
+
+        module NumberDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CURRENCY: :currency
+          DURATION: :duration
+          FORMATTED: :formatted
+          PERCENTAGE: :percentage
+          PROBABILITY: :probability
+          UNFORMATTED: :unformatted
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::number_display_hint]
+        end
+
+        type option_sort_strategy = :ALPHABETICAL | :DISPLAY_ORDER
+
+        module OptionSortStrategy
+          extend HubSpotSDK::Internal::Type::Enum
+
+          ALPHABETICAL: :ALPHABETICAL
+          DISPLAY_ORDER: :DISPLAY_ORDER
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::option_sort_strategy]
+        end
+
+        type referenced_object_type =
+          :ABANDONED_CART
+          | :ACCEPTANCE_TEST
+          | :AD
+          | :AD_ACCOUNT
+          | :AD_CAMPAIGN
+          | :AD_GROUP
+          | :AI_FORECAST
+          | :ALL_PAGES
+          | :APPROVAL
+          | :APPROVAL_STEP
+          | :ATTRIBUTION
+          | :AUDIENCE
+          | :AUTOMATION_JOURNEY
+          | :AUTOMATION_PLATFORM_FLOW
+          | :AUTOMATION_PLATFORM_FLOW_ACTION
+          | :BET_ALERT
+          | :BET_DELIVERABLE_SERVICE
+          | :BLOG_LISTING_PAGE
+          | :BLOG_POST
+          | :CALL
+          | :CAMPAIGN
+          | :CAMPAIGN_BUDGET_ITEM
+          | :CAMPAIGN_SPEND_ITEM
+          | :CAMPAIGN_STEP
+          | :CAMPAIGN_TEMPLATE
+          | :CAMPAIGN_TEMPLATE_STEP
+          | :CART
+          | :CASE_STUDY
+          | :CHATFLOW
+          | :CLIP
+          | :CMS_URL
+          | :COMBO_EVENT_CONFIGURATION
+          | :COMMERCE_PAYMENT
+          | :COMMUNICATION
+          | :COMPANY
+          | :CONTACT
+          | :CONTACT_CREATE_ATTRIBUTION
+          | :CONTENT
+          | :CONTENT_AUDIT
+          | :CONTENT_AUDIT_PAGE
+          | :CONVERSATION
+          | :CONVERSATION_INBOX
+          | :CONVERSATION_SESSION
+          | :CRM_OBJECTS_DUMMY_TYPE
+          | :CRM_PIPELINES_DUMMY_TYPE
+          | :CTA
+          | :CTA_VARIANT
+          | :DATA_PRIVACY_CONSENT
+          | :DATA_SYNC_STATE
+          | :DEAL
+          | :DEAL_CREATE_ATTRIBUTION
+          | :DEAL_REGISTRATION
+          | :DEAL_SPLIT
+          | :DISCOUNT
+          | :DISCOUNT_CODE
+          | :DISCOUNT_TEMPLATE
+          | :EMAIL
+          | :ENGAGEMENT
+          | :EXPORT
+          | :EXTERNAL_WEB_URL
+          | :FEE
+          | :FEEDBACK_SUBMISSION
+          | :FEEDBACK_SURVEY
+          | :FILE_MANAGER_FILE
+          | :FILE_MANAGER_FOLDER
+          | :FOLDER
+          | :FORECAST
+          | :FORM
+          | :FORM_SUBMISSION_INBOUNDDB
+          | :GOAL_TARGET
+          | :GOAL_TARGET_GROUP
+          | :GOAL_TEMPLATE
+          | :GSC_PROPERTY
+          | :HUB
+          | :IMPORT
+          | :INVOICE
+          | :KEYWORD
+          | :KNOWLEDGE_ARTICLE
+          | :LANDING_PAGE
+          | :LEAD
+          | :LINE_ITEM
+          | :MARKETING_CALENDAR
+          | :MARKETING_CAMPAIGN_UTM
+          | :MARKETING_EMAIL
+          | :MARKETING_EVENT
+          | :MARKETING_EVENT_ATTENDANCE
+          | :MARKETING_SMS
+          | :MEDIA_BRIDGE
+          | :MEETING_EVENT
+          | :MIC
+          | :NOTE
+          | :OBJECT_LIST
+          | :ORDER
+          | :OWNER
+          | :PARTNER_ACCOUNT
+          | :PARTNER_CLIENT
+          | :PARTNER_CLIENT_REVENUE
+          | :PARTNER_SERVICE
+          | :PAYMENT_LINK
+          | :PAYMENT_SCHEDULE
+          | :PAYMENT_SCHEDULE_INSTALLMENT
+          | :PERMISSIONS_TESTING
+          | :PLAYBOOK
+          | :PLAYBOOK_QUESTION
+          | :PLAYBOOK_SUBMISSION
+          | :PLAYBOOK_SUBMISSION_ANSWER
+          | :PLAYLIST
+          | :PLAYLIST_FOLDER
+          | :PODCAST_EPISODE
+          | :PORTAL
+          | :PORTAL_OBJECT_SYNC_MESSAGE
+          | :POSTAL_MAIL
+          | :PRIVACY_SCANNER_COOKIE
+          | :PRODUCT
+          | :PRODUCT_OR_FOLDER
+          | :PROPERTY_INFO
+          | :PROSPECTING_AGENT_CONTACT_ASSIGNMENT
+          | :PUBLISHING_TASK
+          | :QUARANTINED_SUBMISSION
+          | :QUOTA
+          | :QUOTE
+          | :QUOTE_FIELD
+          | :QUOTE_MODULE
+          | :QUOTE_MODULE_FIELD
+          | :QUOTE_TEMPLATE
+          | :RESTORABLE_CRM_OBJECT
+          | :ROSTER
+          | :ROSTER_MEMBER
+          | :SALES_DOCUMENT
+          | :SALES_TASK
+          | :SALES_WORKLOAD
+          | :SALESFORCE_SYNC_ERROR
+          | :SCHEDULING_PAGE
+          | :SCHEMAS_BACKEND_TEST
+          | :SCORE_CONFIGURATION
+          | :SEQUENCE
+          | :SEQUENCE_ENROLLMENT
+          | :SEQUENCE_STEP
+          | :SEQUENCE_STEP_ENROLLMENT
+          | :SERVICE
+          | :SITE_PAGE
+          | :SNIPPET
+          | :SOCIAL_BROADCAST
+          | :SOCIAL_CHANNEL
+          | :SOCIAL_POST
+          | :SOCIAL_PROFILE
+          | :SOX_PROTECTED_DUMMY_TYPE
+          | :SOX_PROTECTED_TEST_TYPE
+          | :SUBMISSION_TAG
+          | :SUBSCRIPTION
+          | :TASK
+          | :TASK_TEMPLATE
+          | :TAX
+          | :TEMPLATE
+          | :TICKET
+          | :UNKNOWN
+          | :UNSUBSCRIBE
+          | :USER
+          | :VIEW
+          | :VIEW_BLOCK
+          | :WEB_INTERACTIVE
+
+        module ReferencedObjectType
+          extend HubSpotSDK::Internal::Type::Enum
+
+          ABANDONED_CART: :ABANDONED_CART
+          ACCEPTANCE_TEST: :ACCEPTANCE_TEST
+          AD: :AD
+          AD_ACCOUNT: :AD_ACCOUNT
+          AD_CAMPAIGN: :AD_CAMPAIGN
+          AD_GROUP: :AD_GROUP
+          AI_FORECAST: :AI_FORECAST
+          ALL_PAGES: :ALL_PAGES
+          APPROVAL: :APPROVAL
+          APPROVAL_STEP: :APPROVAL_STEP
+          ATTRIBUTION: :ATTRIBUTION
+          AUDIENCE: :AUDIENCE
+          AUTOMATION_JOURNEY: :AUTOMATION_JOURNEY
+          AUTOMATION_PLATFORM_FLOW: :AUTOMATION_PLATFORM_FLOW
+          AUTOMATION_PLATFORM_FLOW_ACTION: :AUTOMATION_PLATFORM_FLOW_ACTION
+          BET_ALERT: :BET_ALERT
+          BET_DELIVERABLE_SERVICE: :BET_DELIVERABLE_SERVICE
+          BLOG_LISTING_PAGE: :BLOG_LISTING_PAGE
+          BLOG_POST: :BLOG_POST
+          CALL: :CALL
+          CAMPAIGN: :CAMPAIGN
+          CAMPAIGN_BUDGET_ITEM: :CAMPAIGN_BUDGET_ITEM
+          CAMPAIGN_SPEND_ITEM: :CAMPAIGN_SPEND_ITEM
+          CAMPAIGN_STEP: :CAMPAIGN_STEP
+          CAMPAIGN_TEMPLATE: :CAMPAIGN_TEMPLATE
+          CAMPAIGN_TEMPLATE_STEP: :CAMPAIGN_TEMPLATE_STEP
+          CART: :CART
+          CASE_STUDY: :CASE_STUDY
+          CHATFLOW: :CHATFLOW
+          CLIP: :CLIP
+          CMS_URL: :CMS_URL
+          COMBO_EVENT_CONFIGURATION: :COMBO_EVENT_CONFIGURATION
+          COMMERCE_PAYMENT: :COMMERCE_PAYMENT
+          COMMUNICATION: :COMMUNICATION
+          COMPANY: :COMPANY
+          CONTACT: :CONTACT
+          CONTACT_CREATE_ATTRIBUTION: :CONTACT_CREATE_ATTRIBUTION
+          CONTENT: :CONTENT
+          CONTENT_AUDIT: :CONTENT_AUDIT
+          CONTENT_AUDIT_PAGE: :CONTENT_AUDIT_PAGE
+          CONVERSATION: :CONVERSATION
+          CONVERSATION_INBOX: :CONVERSATION_INBOX
+          CONVERSATION_SESSION: :CONVERSATION_SESSION
+          CRM_OBJECTS_DUMMY_TYPE: :CRM_OBJECTS_DUMMY_TYPE
+          CRM_PIPELINES_DUMMY_TYPE: :CRM_PIPELINES_DUMMY_TYPE
+          CTA: :CTA
+          CTA_VARIANT: :CTA_VARIANT
+          DATA_PRIVACY_CONSENT: :DATA_PRIVACY_CONSENT
+          DATA_SYNC_STATE: :DATA_SYNC_STATE
+          DEAL: :DEAL
+          DEAL_CREATE_ATTRIBUTION: :DEAL_CREATE_ATTRIBUTION
+          DEAL_REGISTRATION: :DEAL_REGISTRATION
+          DEAL_SPLIT: :DEAL_SPLIT
+          DISCOUNT: :DISCOUNT
+          DISCOUNT_CODE: :DISCOUNT_CODE
+          DISCOUNT_TEMPLATE: :DISCOUNT_TEMPLATE
+          EMAIL: :EMAIL
+          ENGAGEMENT: :ENGAGEMENT
+          EXPORT: :EXPORT
+          EXTERNAL_WEB_URL: :EXTERNAL_WEB_URL
+          FEE: :FEE
+          FEEDBACK_SUBMISSION: :FEEDBACK_SUBMISSION
+          FEEDBACK_SURVEY: :FEEDBACK_SURVEY
+          FILE_MANAGER_FILE: :FILE_MANAGER_FILE
+          FILE_MANAGER_FOLDER: :FILE_MANAGER_FOLDER
+          FOLDER: :FOLDER
+          FORECAST: :FORECAST
+          FORM: :FORM
+          FORM_SUBMISSION_INBOUNDDB: :FORM_SUBMISSION_INBOUNDDB
+          GOAL_TARGET: :GOAL_TARGET
+          GOAL_TARGET_GROUP: :GOAL_TARGET_GROUP
+          GOAL_TEMPLATE: :GOAL_TEMPLATE
+          GSC_PROPERTY: :GSC_PROPERTY
+          HUB: :HUB
+          IMPORT: :IMPORT
+          INVOICE: :INVOICE
+          KEYWORD: :KEYWORD
+          KNOWLEDGE_ARTICLE: :KNOWLEDGE_ARTICLE
+          LANDING_PAGE: :LANDING_PAGE
+          LEAD: :LEAD
+          LINE_ITEM: :LINE_ITEM
+          MARKETING_CALENDAR: :MARKETING_CALENDAR
+          MARKETING_CAMPAIGN_UTM: :MARKETING_CAMPAIGN_UTM
+          MARKETING_EMAIL: :MARKETING_EMAIL
+          MARKETING_EVENT: :MARKETING_EVENT
+          MARKETING_EVENT_ATTENDANCE: :MARKETING_EVENT_ATTENDANCE
+          MARKETING_SMS: :MARKETING_SMS
+          MEDIA_BRIDGE: :MEDIA_BRIDGE
+          MEETING_EVENT: :MEETING_EVENT
+          MIC: :MIC
+          NOTE: :NOTE
+          OBJECT_LIST: :OBJECT_LIST
+          ORDER: :ORDER
+          OWNER: :OWNER
+          PARTNER_ACCOUNT: :PARTNER_ACCOUNT
+          PARTNER_CLIENT: :PARTNER_CLIENT
+          PARTNER_CLIENT_REVENUE: :PARTNER_CLIENT_REVENUE
+          PARTNER_SERVICE: :PARTNER_SERVICE
+          PAYMENT_LINK: :PAYMENT_LINK
+          PAYMENT_SCHEDULE: :PAYMENT_SCHEDULE
+          PAYMENT_SCHEDULE_INSTALLMENT: :PAYMENT_SCHEDULE_INSTALLMENT
+          PERMISSIONS_TESTING: :PERMISSIONS_TESTING
+          PLAYBOOK: :PLAYBOOK
+          PLAYBOOK_QUESTION: :PLAYBOOK_QUESTION
+          PLAYBOOK_SUBMISSION: :PLAYBOOK_SUBMISSION
+          PLAYBOOK_SUBMISSION_ANSWER: :PLAYBOOK_SUBMISSION_ANSWER
+          PLAYLIST: :PLAYLIST
+          PLAYLIST_FOLDER: :PLAYLIST_FOLDER
+          PODCAST_EPISODE: :PODCAST_EPISODE
+          PORTAL: :PORTAL
+          PORTAL_OBJECT_SYNC_MESSAGE: :PORTAL_OBJECT_SYNC_MESSAGE
+          POSTAL_MAIL: :POSTAL_MAIL
+          PRIVACY_SCANNER_COOKIE: :PRIVACY_SCANNER_COOKIE
+          PRODUCT: :PRODUCT
+          PRODUCT_OR_FOLDER: :PRODUCT_OR_FOLDER
+          PROPERTY_INFO: :PROPERTY_INFO
+          PROSPECTING_AGENT_CONTACT_ASSIGNMENT: :PROSPECTING_AGENT_CONTACT_ASSIGNMENT
+          PUBLISHING_TASK: :PUBLISHING_TASK
+          QUARANTINED_SUBMISSION: :QUARANTINED_SUBMISSION
+          QUOTA: :QUOTA
+          QUOTE: :QUOTE
+          QUOTE_FIELD: :QUOTE_FIELD
+          QUOTE_MODULE: :QUOTE_MODULE
+          QUOTE_MODULE_FIELD: :QUOTE_MODULE_FIELD
+          QUOTE_TEMPLATE: :QUOTE_TEMPLATE
+          RESTORABLE_CRM_OBJECT: :RESTORABLE_CRM_OBJECT
+          ROSTER: :ROSTER
+          ROSTER_MEMBER: :ROSTER_MEMBER
+          SALES_DOCUMENT: :SALES_DOCUMENT
+          SALES_TASK: :SALES_TASK
+          SALES_WORKLOAD: :SALES_WORKLOAD
+          SALESFORCE_SYNC_ERROR: :SALESFORCE_SYNC_ERROR
+          SCHEDULING_PAGE: :SCHEDULING_PAGE
+          SCHEMAS_BACKEND_TEST: :SCHEMAS_BACKEND_TEST
+          SCORE_CONFIGURATION: :SCORE_CONFIGURATION
+          SEQUENCE: :SEQUENCE
+          SEQUENCE_ENROLLMENT: :SEQUENCE_ENROLLMENT
+          SEQUENCE_STEP: :SEQUENCE_STEP
+          SEQUENCE_STEP_ENROLLMENT: :SEQUENCE_STEP_ENROLLMENT
+          SERVICE: :SERVICE
+          SITE_PAGE: :SITE_PAGE
+          SNIPPET: :SNIPPET
+          SOCIAL_BROADCAST: :SOCIAL_BROADCAST
+          SOCIAL_CHANNEL: :SOCIAL_CHANNEL
+          SOCIAL_POST: :SOCIAL_POST
+          SOCIAL_PROFILE: :SOCIAL_PROFILE
+          SOX_PROTECTED_DUMMY_TYPE: :SOX_PROTECTED_DUMMY_TYPE
+          SOX_PROTECTED_TEST_TYPE: :SOX_PROTECTED_TEST_TYPE
+          SUBMISSION_TAG: :SUBMISSION_TAG
+          SUBSCRIPTION: :SUBSCRIPTION
+          TASK: :TASK
+          TASK_TEMPLATE: :TASK_TEMPLATE
+          TAX: :TAX
+          TEMPLATE: :TEMPLATE
+          TICKET: :TICKET
+          UNKNOWN: :UNKNOWN
+          UNSUBSCRIBE: :UNSUBSCRIBE
+          USER: :USER
+          VIEW: :VIEW
+          VIEW_BLOCK: :VIEW_BLOCK
+          WEB_INTERACTIVE: :WEB_INTERACTIVE
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::referenced_object_type]
+        end
+
+        type search_text_analysis_mode = :NONE | :NOT_ANALYZED_TEXT
+
+        module SearchTextAnalysisMode
+          extend HubSpotSDK::Internal::Type::Enum
+
+          NONE: :NONE
+          NOT_ANALYZED_TEXT: :NOT_ANALYZED_TEXT
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::search_text_analysis_mode]
+        end
+
+        type text_display_hint =
+          :domain_name
+          | :email
+          | :ip_address
+          | :multi_line
+          | :phone_number
+          | :physical_address
+          | :postal_code
+          | :unformatted_single_line
+
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          DOMAIN_NAME: :domain_name
+          EMAIL: :email
+          IP_ADDRESS: :ip_address
+          MULTI_LINE: :multi_line
+          PHONE_NUMBER: :phone_number
+          PHYSICAL_ADDRESS: :physical_address
+          POSTAL_CODE: :postal_code
+          UNFORMATTED_SINGLE_LINE: :unformatted_single_line
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::text_display_hint]
+        end
+
+        type type_ =
+          :bool
+          | :currency_number
+          | :date
+          | :datetime
+          | :enumeration
+          | :json
+          | :number
+          | :object_coordinates
+          | :phone_number
+          | :string
+
+        module Type
+          extend HubSpotSDK::Internal::Type::Enum
+
+          BOOL: :bool
+          CURRENCY_NUMBER: :currency_number
+          DATE: :date
+          DATETIME: :datetime
+          ENUMERATION: :enumeration
+          JSON: :json
+          NUMBER: :number
+          OBJECT_COORDINATES: :object_coordinates
+          PHONE_NUMBER: :phone_number
+          STRING: :string
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::MediaBridgeProperty::type_]
+        end
+      end
+    end
+  end
+end

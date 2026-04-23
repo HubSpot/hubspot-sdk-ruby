@@ -14,8 +14,7 @@ module HubSpotSDK
         required :count, Integer
 
         # @!attribute install_portal_id
-        #   The ID of the portal installation to filter the webhook journal entries. It is
-        #   an integer value.
+        #   The ID of the portal where the webhooks are installed. This is an integer value.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
@@ -27,7 +26,7 @@ module HubSpotSDK
         #
         #   @param count [Integer]
         #
-        #   @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries. It is a
+        #   @param install_portal_id [Integer] The ID of the portal where the webhooks are installed. This is an integer value.
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

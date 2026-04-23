@@ -25,8 +25,8 @@ module HubSpotSDK
         # @!attribute options
         #   Options to choose for select and multi-select columns
         #
-        #   @return [Array<HubSpotSDK::Models::Cms::Option>]
-        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Option] }
+        #   @return [Array<HubSpotSDK::Models::Cms::HubdbOption>]
+        required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubdbOption] }
 
         # @!attribute type
         #   Type of the column
@@ -69,7 +69,7 @@ module HubSpotSDK
         #
         #   @param name [String] Name of the column
         #
-        #   @param options [Array<HubSpotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
+        #   @param options [Array<HubSpotSDK::Models::Cms::HubdbOption>] Options to choose for select and multi-select columns
         #
         #   @param type [Symbol, HubSpotSDK::Models::Cms::ColumnRequest::Type] Type of the column
         #

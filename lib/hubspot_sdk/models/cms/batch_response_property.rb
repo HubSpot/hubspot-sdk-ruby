@@ -11,8 +11,8 @@ module HubSpotSDK
 
         # @!attribute results
         #
-        #   @return [Array<HubSpotSDK::Models::Cms::Property>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Property] }
+        #   @return [Array<HubSpotSDK::Models::Cms::MediaBridgeProperty>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::MediaBridgeProperty] }
 
         # @!attribute started_at
         #
@@ -36,7 +36,7 @@ module HubSpotSDK
 
         # @!method initialize(completed_at:, results:, started_at:, status:, links: nil, requested_at: nil)
         #   @param completed_at [Time]
-        #   @param results [Array<HubSpotSDK::Models::Cms::Property>]
+        #   @param results [Array<HubSpotSDK::Models::Cms::MediaBridgeProperty>]
         #   @param started_at [Time]
         #   @param status [Symbol, HubSpotSDK::Models::Cms::BatchResponseProperty::Status]
         #   @param links [Hash{Symbol=>String}]

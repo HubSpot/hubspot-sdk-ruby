@@ -1,6 +1,8 @@
 module HubSpotSDK
   module Models
     module Cms
+      type variant = ::Hash[Symbol, top]
+
       Variant: HubSpotSDK::Internal::Type::Converter
     end
   end

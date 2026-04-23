@@ -14,22 +14,22 @@ module HubSpotSDK
                  api_name: :associatedObjectTypeIds
 
         # @!attribute list_ids
-        #   An array of integers representing list IDs that are affected by the action
-        #   override. These IDs are in int64 format.
+        #   An array of integers representing list IDs that are associated with the action
+        #   override. The integers are in int64 format.
         #
         #   @return [Array<Integer>, nil]
         optional :list_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :listIds
 
         # @!attribute object_ids
         #   An array of integers, each representing an object ID for which the action
-        #   override is applicable. These IDs are in int64 format.
+        #   override is applicable. The integers are in int64 format.
         #
         #   @return [Array<Integer>, nil]
         optional :object_ids, HubSpotSDK::Internal::Type::ArrayOf[Integer], api_name: :objectIds
 
         # @!attribute properties
-        #   An array of strings representing specific properties to be overridden in the
-        #   action. Each entry in the array corresponds to a property name.
+        #   An array of strings representing the properties to be overridden in the action.
+        #   Each string corresponds to a property name.
         #
         #   @return [Array<String>, nil]
         optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
@@ -40,11 +40,11 @@ module HubSpotSDK
         #
         #   @param associated_object_type_ids [Array<String>] An array of strings, each representing an associated object type ID relevant to
         #
-        #   @param list_ids [Array<Integer>] An array of integers representing list IDs that are affected by the action overr
+        #   @param list_ids [Array<Integer>] An array of integers representing list IDs that are associated with the action o
         #
         #   @param object_ids [Array<Integer>] An array of integers, each representing an object ID for which the action overri
         #
-        #   @param properties [Array<String>] An array of strings representing specific properties to be overridden in the act
+        #   @param properties [Array<String>] An array of strings representing the properties to be overridden in the action.
       end
     end
   end

@@ -30,7 +30,10 @@ module HubSpotSDK
           )
           end
 
-          # Create a new language variation from an existing site page
+          # Create a new language variation from an existing website page. The variation
+          # will be a copy of the draft state of the source page. To preview the content,
+          # you can
+          # [retrieve the draft of the source website page](/api-reference/latest/cms/pages/website-pages/drafts/get-website-page-draft).
           sig do
             params(
               id: String,

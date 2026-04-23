@@ -32,12 +32,14 @@ module HubSpotSDK
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
+          # Filter folders created after the specified date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_after
 
           sig { params(created_after: Time).void }
           attr_writer :created_after
 
+          # Filter folders by their exact creation date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_at
 
@@ -57,6 +59,7 @@ module HubSpotSDK
           sig { params(limit: Integer).void }
           attr_writer :limit
 
+          # Specify a property to include in the response.
           sig { returns(T.nilable(String)) }
           attr_reader :property
 
@@ -110,11 +113,14 @@ module HubSpotSDK
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter folders created after the specified date and time.
             created_after: nil,
+            # Filter folders by their exact creation date and time.
             created_at: nil,
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify a property to include in the response.
             property: nil,
             sort: nil,
             updated_after: nil,

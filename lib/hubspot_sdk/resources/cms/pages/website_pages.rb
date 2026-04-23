@@ -303,23 +303,23 @@ module HubSpotSDK
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param created_after [Time]
+          # @param created_after [Time] Filter pages created after a specific date and time.
           #
-          # @param created_at [Time]
+          # @param created_at [Time] Filter pages by the exact creation timestamp. Format is date-time.
           #
-          # @param created_before [Time]
+          # @param created_before [Time] Filter pages created before a specific date-time.
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param property [String]
+          # @param property [String] Specify properties to include in the response.
           #
-          # @param sort [Array<String>]
+          # @param sort [Array<String>] Specify the order of results. Accepts an array of field names to sort by.
           #
-          # @param updated_after [Time]
+          # @param updated_after [Time] Filter pages updated after the specified date-time.
           #
-          # @param updated_at [Time]
+          # @param updated_at [Time] Filter pages by their exact update timestamp in ISO 8601 format.
           #
-          # @param updated_before [Time]
+          # @param updated_before [Time] Filter pages updated before a specific date and time. Format should be date-time
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -400,7 +400,7 @@ module HubSpotSDK
           #
           # @overload get(object_id_, archived: nil, property: nil, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the site page to retrieve.
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #

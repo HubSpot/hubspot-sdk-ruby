@@ -4,7 +4,7 @@ module HubSpotSDK
   module Models
     module Cms
       # @type [HubSpotSDK::Internal::Type::Converter]
-      Variant = HubSpotSDK::Internal::Type::Unknown
+      Variant = HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Internal::Type::Unknown]
     end
   end
 end

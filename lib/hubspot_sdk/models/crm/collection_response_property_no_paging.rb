@@ -7,11 +7,11 @@ module HubSpotSDK
       class CollectionResponsePropertyNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #
-        #   @return [Array<HubSpotSDK::Models::Property>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
+        #   @return [Array<HubSpotSDK::Models::BaseProperty>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty] }
 
         # @!method initialize(results:)
-        #   @param results [Array<HubSpotSDK::Models::Property>]
+        #   @param results [Array<HubSpotSDK::Models::BaseProperty>]
       end
     end
   end

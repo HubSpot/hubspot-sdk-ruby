@@ -12,13 +12,13 @@ module HubSpotSDK
             )
           end
 
-        # A boolean indicating whether the subscription is active. This field is required.
+        # A boolean indicating whether the subscription is active.
         sig { returns(T::Boolean) }
         attr_accessor :active
 
         # A string representing the type of event to subscribe to. Valid values include
-        # various object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'conversation.newMessage'.
+        # various property changes, creations, deletions, merges, restorations,
+        # association changes, and event completions.
         sig do
           returns(
             HubSpotSDK::Webhooks::SubscriptionCreateRequest::EventType::OrSymbol
@@ -26,24 +26,23 @@ module HubSpotSDK
         end
         attr_accessor :event_type
 
-        # A string that provides a human-readable name for the event type. This is
-        # optional.
+        # A string providing a human-readable name for the event type.
         sig { returns(T.nilable(String)) }
         attr_reader :event_type_name
 
         sig { params(event_type_name: String).void }
         attr_writer :event_type_name
 
-        # A string representing the identifier of the object type for which the
-        # subscription is being created. This is optional.
+        # A string representing the ID of the object type associated with the
+        # subscription.
         sig { returns(T.nilable(String)) }
         attr_reader :object_type_id
 
         sig { params(object_type_id: String).void }
         attr_writer :object_type_id
 
-        # A string indicating the name of the property that triggers the event. This is
-        # optional and used when subscribing to property change events.
+        # A string indicating the specific property name related to the event type, if
+        # applicable.
         sig { returns(T.nilable(String)) }
         attr_reader :property_name
 
@@ -61,20 +60,19 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A boolean indicating whether the subscription is active. This field is required.
+          # A boolean indicating whether the subscription is active.
           active:,
           # A string representing the type of event to subscribe to. Valid values include
-          # various object changes such as 'contact.propertyChange', 'deal.creation', and
-          # 'conversation.newMessage'.
+          # various property changes, creations, deletions, merges, restorations,
+          # association changes, and event completions.
           event_type:,
-          # A string that provides a human-readable name for the event type. This is
-          # optional.
+          # A string providing a human-readable name for the event type.
           event_type_name: nil,
-          # A string representing the identifier of the object type for which the
-          # subscription is being created. This is optional.
+          # A string representing the ID of the object type associated with the
+          # subscription.
           object_type_id: nil,
-          # A string indicating the name of the property that triggers the event. This is
-          # optional and used when subscribing to property change events.
+          # A string indicating the specific property name related to the event type, if
+          # applicable.
           property_name: nil
         )
         end
@@ -95,8 +93,8 @@ module HubSpotSDK
         end
 
         # A string representing the type of event to subscribe to. Valid values include
-        # various object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'conversation.newMessage'.
+        # various property changes, creations, deletions, merges, restorations,
+        # association changes, and event completions.
         module EventType
           extend HubSpotSDK::Internal::Type::Enum
 

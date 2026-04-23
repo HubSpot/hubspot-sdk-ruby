@@ -12,9 +12,7 @@ module HubSpotSDK
             )
           end
 
-        sig do
-          returns(HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol)
-        end
+        sig { returns(HubSpotSDK::Cms::ConstantBoolean::Operator::OrSymbol) }
         attr_accessor :operator
 
         sig { returns(T.nilable(String)) }
@@ -42,8 +40,7 @@ module HubSpotSDK
         sig do
           override.returns(
             {
-              operator:
-                HubSpotSDK::Cms::ConstantBoolean::Operator::TaggedSymbol,
+              operator: HubSpotSDK::Cms::ConstantBoolean::Operator::OrSymbol,
               property_name: String,
               value: T::Boolean
             }

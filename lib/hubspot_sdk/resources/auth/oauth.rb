@@ -43,7 +43,7 @@ module HubSpotSDK
         # @param token_type_hint [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::Auth::TokenInfoResponseBaseIf]
+        # @return [HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse]
         #
         # @see HubSpotSDK::Models::Auth::OAuthIntrospectTokenParams
         def introspect_token(params = {})

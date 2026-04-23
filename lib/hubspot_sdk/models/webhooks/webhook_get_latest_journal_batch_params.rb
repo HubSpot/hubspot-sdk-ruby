@@ -14,8 +14,8 @@ module HubSpotSDK
         required :count, Integer
 
         # @!attribute install_portal_id
-        #   The ID of the portal installation. This parameter is optional and can be used to
-        #   filter results by a specific portal.
+        #   The ID of the portal installation. This is an integer value used to identify the
+        #   specific portal.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
@@ -27,7 +27,7 @@ module HubSpotSDK
         #
         #   @param count [Integer]
         #
-        #   @param install_portal_id [Integer] The ID of the portal installation. This parameter is optional and can be used to
+        #   @param install_portal_id [Integer] The ID of the portal installation. This is an integer value used to identify the
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

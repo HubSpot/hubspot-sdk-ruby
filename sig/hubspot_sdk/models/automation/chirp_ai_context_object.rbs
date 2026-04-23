@@ -9,6 +9,7 @@ module HubSpotSDK
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
           compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
+          conversation_id: String,
           feature_id: String,
           inference_id: String,
           trajectory_id: String
@@ -31,6 +32,10 @@ module HubSpotSDK
           HubSpotSDK::Automation::ComplianceIDs
         ) -> HubSpotSDK::Automation::ComplianceIDs
 
+        attr_reader conversation_id: String?
+
+        def conversation_id=: (String) -> String
+
         attr_reader feature_id: String?
 
         def feature_id=: (String) -> String
@@ -50,6 +55,7 @@ module HubSpotSDK
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
           ?compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
+          ?conversation_id: String,
           ?feature_id: String,
           ?inference_id: String,
           ?trajectory_id: String
@@ -62,6 +68,7 @@ module HubSpotSDK
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
           compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
+          conversation_id: String,
           feature_id: String,
           inference_id: String,
           trajectory_id: String

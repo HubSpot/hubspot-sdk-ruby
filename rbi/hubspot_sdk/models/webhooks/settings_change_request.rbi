@@ -12,9 +12,7 @@ module HubSpotSDK
             )
           end
 
-        # A publicly available URL for Hubspot to call where event payloads will be
-        # delivered. See [link-so-some-doc](#) for details about the format of these event
-        # payloads.
+        # The URL to which webhook events will be sent. It is a string.
         sig { returns(String) }
         attr_accessor :target_url
 
@@ -35,9 +33,7 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # A publicly available URL for Hubspot to call where event payloads will be
-          # delivered. See [link-so-some-doc](#) for details about the format of these event
-          # payloads.
+          # The URL to which webhook events will be sent. It is a string.
           target_url:,
           throttling:
         )

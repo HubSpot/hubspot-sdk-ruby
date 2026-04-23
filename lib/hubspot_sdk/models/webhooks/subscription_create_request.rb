@@ -5,15 +5,15 @@ module HubSpotSDK
     module Webhooks
       class SubscriptionCreateRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute active
-        #   A boolean indicating whether the subscription is active. This field is required.
+        #   A boolean indicating whether the subscription is active.
         #
         #   @return [Boolean]
         required :active, HubSpotSDK::Internal::Type::Boolean
 
         # @!attribute event_type
         #   A string representing the type of event to subscribe to. Valid values include
-        #   various object changes such as 'contact.propertyChange', 'deal.creation', and
-        #   'conversation.newMessage'.
+        #   various property changes, creations, deletions, merges, restorations,
+        #   association changes, and event completions.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType]
         required :event_type,
@@ -21,22 +21,21 @@ module HubSpotSDK
                  api_name: :eventType
 
         # @!attribute event_type_name
-        #   A string that provides a human-readable name for the event type. This is
-        #   optional.
+        #   A string providing a human-readable name for the event type.
         #
         #   @return [String, nil]
         optional :event_type_name, String, api_name: :eventTypeName
 
         # @!attribute object_type_id
-        #   A string representing the identifier of the object type for which the
-        #   subscription is being created. This is optional.
+        #   A string representing the ID of the object type associated with the
+        #   subscription.
         #
         #   @return [String, nil]
         optional :object_type_id, String, api_name: :objectTypeId
 
         # @!attribute property_name
-        #   A string indicating the name of the property that triggers the event. This is
-        #   optional and used when subscribing to property change events.
+        #   A string indicating the specific property name related to the event type, if
+        #   applicable.
         #
         #   @return [String, nil]
         optional :property_name, String, api_name: :propertyName
@@ -45,19 +44,19 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest} for more details.
         #
-        #   @param active [Boolean] A boolean indicating whether the subscription is active. This field is required.
+        #   @param active [Boolean] A boolean indicating whether the subscription is active.
         #
         #   @param event_type [Symbol, HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest::EventType] A string representing the type of event to subscribe to. Valid values include va
         #
-        #   @param event_type_name [String] A string that provides a human-readable name for the event type. This is optiona
+        #   @param event_type_name [String] A string providing a human-readable name for the event type.
         #
-        #   @param object_type_id [String] A string representing the identifier of the object type for which the subscripti
+        #   @param object_type_id [String] A string representing the ID of the object type associated with the subscription
         #
-        #   @param property_name [String] A string indicating the name of the property that triggers the event. This is op
+        #   @param property_name [String] A string indicating the specific property name related to the event type, if app
 
         # A string representing the type of event to subscribe to. Valid values include
-        # various object changes such as 'contact.propertyChange', 'deal.creation', and
-        # 'conversation.newMessage'.
+        # various property changes, creations, deletions, merges, restorations,
+        # association changes, and event completions.
         #
         # @see HubSpotSDK::Models::Webhooks::SubscriptionCreateRequest#event_type
         module EventType
