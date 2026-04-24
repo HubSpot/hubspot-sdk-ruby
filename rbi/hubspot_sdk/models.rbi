@@ -7,8 +7,6 @@ module HubSpotSDK
 
   ActionResponse = HubSpotSDK::Models::ActionResponse
 
-  AssociationDefinition = HubSpotSDK::Models::AssociationDefinition
-
   AssociationDefinitionEgg = HubSpotSDK::Models::AssociationDefinitionEgg
 
   AssociationSpec = HubSpotSDK::Models::AssociationSpec
@@ -18,6 +16,16 @@ module HubSpotSDK
   Automation = HubSpotSDK::Models::Automation
 
   AutomationActionsOption = HubSpotSDK::Models::AutomationActionsOption
+
+  BaseAssociationDefinition = HubSpotSDK::Models::BaseAssociationDefinition
+
+  BaseError = HubSpotSDK::Models::BaseError
+
+  BaseObjectTypeDefinition = HubSpotSDK::Models::BaseObjectTypeDefinition
+
+  BaseOption = HubSpotSDK::Models::BaseOption
+
+  BaseProperty = HubSpotSDK::Models::BaseProperty
 
   BatchInputPropertyCreate = HubSpotSDK::Models::BatchInputPropertyCreate
 
@@ -42,8 +50,6 @@ module HubSpotSDK
 
   Crm = HubSpotSDK::Models::Crm
 
-  Error = HubSpotSDK::Models::Error
-
   ErrorDetail = HubSpotSDK::Models::ErrorDetail
 
   Events = HubSpotSDK::Models::Events
@@ -58,21 +64,15 @@ module HubSpotSDK
 
   NextPage = HubSpotSDK::Models::NextPage
 
-  ObjectTypeDefinition = HubSpotSDK::Models::ObjectTypeDefinition
-
   ObjectTypeDefinitionLabels = HubSpotSDK::Models::ObjectTypeDefinitionLabels
 
   ObjectTypeDefinitionPatch = HubSpotSDK::Models::ObjectTypeDefinitionPatch
-
-  Option = HubSpotSDK::Models::Option
 
   OptionInput = HubSpotSDK::Models::OptionInput
 
   Paging = HubSpotSDK::Models::Paging
 
   PreviousPage = HubSpotSDK::Models::PreviousPage
-
-  Property = HubSpotSDK::Models::Property
 
   PropertyCreate = HubSpotSDK::Models::PropertyCreate
 

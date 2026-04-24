@@ -463,15 +463,24 @@ module HubSpotSDK
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter pages created after a specific date and time.
             created_after: nil,
+            # Filter pages by the exact creation timestamp. Format is date-time.
             created_at: nil,
+            # Filter pages created before a specific date-time.
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify properties to include in the response.
             property: nil,
+            # Specify the order of results. Accepts an array of field names to sort by.
             sort: nil,
+            # Filter pages updated after the specified date-time.
             updated_after: nil,
+            # Filter pages by their exact update timestamp in ISO 8601 format.
             updated_at: nil,
+            # Filter pages updated before a specific date and time. Format should be
+            # date-time.
             updated_before: nil,
             request_options: {}
           )
@@ -520,6 +529,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Cms::PageData)
           end
           def get(
+            # The unique identifier of the site page to retrieve.
             object_id_,
             # Whether to return only results that have been archived.
             archived: nil,

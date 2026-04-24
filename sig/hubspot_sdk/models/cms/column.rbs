@@ -18,7 +18,7 @@ module HubSpotSDK
           foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           foreign_table_id: Integer,
           option_count: Integer,
-          options: ::Array[HubSpotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::HubdbOption],
           updated_at: Time,
           updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer,
@@ -82,11 +82,11 @@ module HubSpotSDK
 
         def option_count=: (Integer) -> Integer
 
-        attr_reader options: ::Array[HubSpotSDK::Cms::Option]?
+        attr_reader options: ::Array[HubSpotSDK::Cms::HubdbOption]?
 
         def options=: (
-          ::Array[HubSpotSDK::Cms::Option]
-        ) -> ::Array[HubSpotSDK::Cms::Option]
+          ::Array[HubSpotSDK::Cms::HubdbOption]
+        ) -> ::Array[HubSpotSDK::Cms::HubdbOption]
 
         attr_reader updated_at: Time?
 
@@ -122,7 +122,7 @@ module HubSpotSDK
           ?foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           ?foreign_table_id: Integer,
           ?option_count: Integer,
-          ?options: ::Array[HubSpotSDK::Cms::Option],
+          ?options: ::Array[HubSpotSDK::Cms::HubdbOption],
           ?updated_at: Time,
           ?updated_by: HubSpotSDK::Cms::SimpleUser,
           ?updated_by_user_id: Integer,
@@ -145,7 +145,7 @@ module HubSpotSDK
           foreign_ids_by_name: ::Hash[Symbol, HubSpotSDK::Cms::ForeignID],
           foreign_table_id: Integer,
           option_count: Integer,
-          options: ::Array[HubSpotSDK::Cms::Option],
+          options: ::Array[HubSpotSDK::Cms::HubdbOption],
           updated_at: Time,
           updated_by: HubSpotSDK::Cms::SimpleUser,
           updated_by_user_id: Integer,

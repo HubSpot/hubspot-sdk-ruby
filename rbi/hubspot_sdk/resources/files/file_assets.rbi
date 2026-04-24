@@ -95,17 +95,6 @@ module HubSpotSDK
         def get(file_id, properties: nil, request_options: {})
         end
 
-        # Retrieve a file by its path.
-        sig do
-          params(
-            path: String,
-            properties: T::Array[String],
-            request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Files::FileStat)
-        end
-        def get_by_path(path, properties: nil, request_options: {})
-        end
-
         # Check the status of requested import.
         sig do
           params(

@@ -5,17 +5,19 @@ module HubSpotSDK
         {
           id: String,
           archived: bool,
-          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::Property],
+          properties: ::Array[HubSpotSDK::BaseProperty],
           combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,
           custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           description: String,
+          detail_template: String,
+          header_template: String,
           primary_object: String,
           primary_object_id: String,
           tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
@@ -28,7 +30,7 @@ module HubSpotSDK
 
         attr_accessor archived: bool
 
-        attr_accessor associations: ::Array[HubSpotSDK::Events::AssociationDefinition]
+        attr_accessor associations: ::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition]
 
         attr_accessor fully_qualified_name: String
 
@@ -38,7 +40,7 @@ module HubSpotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor properties: ::Array[HubSpotSDK::Property]
+        attr_accessor properties: ::Array[HubSpotSDK::BaseProperty]
 
         attr_reader combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch?
 
@@ -63,6 +65,14 @@ module HubSpotSDK
         attr_reader description: String?
 
         def description=: (String) -> String
+
+        attr_reader detail_template: String?
+
+        def detail_template=: (String) -> String
+
+        attr_reader header_template: String?
+
+        def header_template=: (String) -> String
 
         attr_reader primary_object: String?
 
@@ -89,17 +99,19 @@ module HubSpotSDK
         def initialize: (
           id: String,
           archived: bool,
-          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::Property],
+          properties: ::Array[HubSpotSDK::BaseProperty],
           ?combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           ?created_at: Time,
           ?created_user_id: Integer,
           ?custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           ?description: String,
+          ?detail_template: String,
+          ?header_template: String,
           ?primary_object: String,
           ?primary_object_id: String,
           ?tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,
@@ -110,17 +122,19 @@ module HubSpotSDK
         def to_hash: -> {
           id: String,
           archived: bool,
-          associations: ::Array[HubSpotSDK::Events::AssociationDefinition],
+          associations: ::Array[HubSpotSDK::Events::DefinitionsAssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::Property],
+          properties: ::Array[HubSpotSDK::BaseProperty],
           combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch,
           created_at: Time,
           created_user_id: Integer,
           custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse,
           description: String,
+          detail_template: String,
+          header_template: String,
           primary_object: String,
           primary_object_id: String,
           tracking_type: HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::tracking_type,

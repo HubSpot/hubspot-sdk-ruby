@@ -105,11 +105,14 @@ module HubSpotSDK
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter folders created after the specified date and time.
             created_after: nil,
+            # Filter folders by their exact creation date and time.
             created_at: nil,
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify a property to include in the response.
             property: nil,
             sort: nil,
             updated_after: nil,

@@ -4,41 +4,41 @@ module HubSpotSDK
       type association_label_limit_response =
         {
           all_labels: ::Array[String],
-          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           usage: Integer
         }
 
       class AssociationLabelLimitResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor all_labels: ::Array[String]
 
-        attr_accessor from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition
+        attr_accessor from_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition
 
         attr_accessor limit: Integer
 
         attr_accessor percentage: Float
 
-        attr_accessor to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition
+        attr_accessor to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition
 
         attr_accessor usage: Integer
 
         def initialize: (
           all_labels: ::Array[String],
-          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           usage: Integer
         ) -> void
 
         def to_hash: -> {
           all_labels: ::Array[String],
-          from_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          from_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           limit: Integer,
           percentage: Float,
-          to_object_type: HubSpotSDK::Crm::ObjectTypeDefinition,
+          to_object_type: HubSpotSDK::Crm::LimitsObjectTypeDefinition,
           usage: Integer
         }
       end

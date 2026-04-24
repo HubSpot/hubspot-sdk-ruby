@@ -12,16 +12,16 @@ module HubSpotSDK
             )
           end
 
-        # The unique identifier for the snapshot operation, formatted as a UUID.
+        # The unique identifier for the snapshot operation, represented as a UUID.
         sig { returns(String) }
         attr_accessor :id
 
-        # A Unix timestamp in milliseconds indicating when the snapshot operation was
-        # initiated.
+        # The timestamp indicating when the snapshot operation was initiated, represented
+        # as a Unix timestamp in milliseconds.
         sig { returns(Integer) }
         attr_accessor :initiated_at
 
-        # The current status of the snapshot operation. Valid values include 'PENDING',
+        # The current status of the snapshot. Valid values include 'PENDING',
         # 'IN_PROGRESS', 'COMPLETED', 'FAILED', and 'EXPIRED'.
         sig do
           returns(
@@ -30,17 +30,16 @@ module HubSpotSDK
         end
         attr_accessor :status
 
-        # A Unix timestamp in milliseconds indicating when the snapshot operation was
-        # completed.
+        # The timestamp indicating when the snapshot operation was completed, represented
+        # as a Unix timestamp in milliseconds.
         sig { returns(T.nilable(Integer)) }
         attr_reader :completed_at
 
         sig { params(completed_at: Integer).void }
         attr_writer :completed_at
 
-        # The code representing any error that occurred during the snapshot operation.
-        # Possible values are 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and
-        # 'PERMISSION_DENIED'.
+        # A code representing the error that occurred, if any. Possible values are
+        # 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and 'PERMISSION_DENIED'.
         sig do
           returns(
             T.nilable(
@@ -59,7 +58,7 @@ module HubSpotSDK
         attr_writer :error_code
 
         # A descriptive message providing additional information about the snapshot
-        # operation or any errors encountered.
+        # operation or error.
         sig { returns(T.nilable(String)) }
         attr_reader :message
 
@@ -79,23 +78,22 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The unique identifier for the snapshot operation, formatted as a UUID.
+          # The unique identifier for the snapshot operation, represented as a UUID.
           id:,
-          # A Unix timestamp in milliseconds indicating when the snapshot operation was
-          # initiated.
+          # The timestamp indicating when the snapshot operation was initiated, represented
+          # as a Unix timestamp in milliseconds.
           initiated_at:,
-          # The current status of the snapshot operation. Valid values include 'PENDING',
+          # The current status of the snapshot. Valid values include 'PENDING',
           # 'IN_PROGRESS', 'COMPLETED', 'FAILED', and 'EXPIRED'.
           status:,
-          # A Unix timestamp in milliseconds indicating when the snapshot operation was
-          # completed.
+          # The timestamp indicating when the snapshot operation was completed, represented
+          # as a Unix timestamp in milliseconds.
           completed_at: nil,
-          # The code representing any error that occurred during the snapshot operation.
-          # Possible values are 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and
-          # 'PERMISSION_DENIED'.
+          # A code representing the error that occurred, if any. Possible values are
+          # 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and 'PERMISSION_DENIED'.
           error_code: nil,
           # A descriptive message providing additional information about the snapshot
-          # operation or any errors encountered.
+          # operation or error.
           message: nil
         )
         end
@@ -117,7 +115,7 @@ module HubSpotSDK
         def to_hash
         end
 
-        # The current status of the snapshot operation. Valid values include 'PENDING',
+        # The current status of the snapshot. Valid values include 'PENDING',
         # 'IN_PROGRESS', 'COMPLETED', 'FAILED', and 'EXPIRED'.
         module Status
           extend HubSpotSDK::Internal::Type::Enum
@@ -168,9 +166,8 @@ module HubSpotSDK
           end
         end
 
-        # The code representing any error that occurred during the snapshot operation.
-        # Possible values are 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and
-        # 'PERMISSION_DENIED'.
+        # A code representing the error that occurred, if any. Possible values are
+        # 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and 'PERMISSION_DENIED'.
         module ErrorCode
           extend HubSpotSDK::Internal::Type::Enum
 

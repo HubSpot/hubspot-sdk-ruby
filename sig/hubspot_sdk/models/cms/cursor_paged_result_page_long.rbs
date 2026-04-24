@@ -1,7 +1,0 @@
-module HubSpotSDK
-  module Models
-    module Cms
-      CursorPagedResultPageLong: HubSpotSDK::Internal::Type::Converter
-    end
-  end
-end

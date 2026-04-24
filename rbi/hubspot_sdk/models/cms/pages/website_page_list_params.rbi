@@ -32,18 +32,21 @@ module HubSpotSDK
           sig { params(archived: T::Boolean).void }
           attr_writer :archived
 
+          # Filter pages created after a specific date and time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_after
 
           sig { params(created_after: Time).void }
           attr_writer :created_after
 
+          # Filter pages by the exact creation timestamp. Format is date-time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_at
 
           sig { params(created_at: Time).void }
           attr_writer :created_at
 
+          # Filter pages created before a specific date-time.
           sig { returns(T.nilable(Time)) }
           attr_reader :created_before
 
@@ -57,30 +60,36 @@ module HubSpotSDK
           sig { params(limit: Integer).void }
           attr_writer :limit
 
+          # Specify properties to include in the response.
           sig { returns(T.nilable(String)) }
           attr_reader :property
 
           sig { params(property: String).void }
           attr_writer :property
 
+          # Specify the order of results. Accepts an array of field names to sort by.
           sig { returns(T.nilable(T::Array[String])) }
           attr_reader :sort
 
           sig { params(sort: T::Array[String]).void }
           attr_writer :sort
 
+          # Filter pages updated after the specified date-time.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_after
 
           sig { params(updated_after: Time).void }
           attr_writer :updated_after
 
+          # Filter pages by their exact update timestamp in ISO 8601 format.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_at
 
           sig { params(updated_at: Time).void }
           attr_writer :updated_at
 
+          # Filter pages updated before a specific date and time. Format should be
+          # date-time.
           sig { returns(T.nilable(Time)) }
           attr_reader :updated_before
 
@@ -110,15 +119,24 @@ module HubSpotSDK
             after: nil,
             # Whether to return only results that have been archived.
             archived: nil,
+            # Filter pages created after a specific date and time.
             created_after: nil,
+            # Filter pages by the exact creation timestamp. Format is date-time.
             created_at: nil,
+            # Filter pages created before a specific date-time.
             created_before: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # Specify properties to include in the response.
             property: nil,
+            # Specify the order of results. Accepts an array of field names to sort by.
             sort: nil,
+            # Filter pages updated after the specified date-time.
             updated_after: nil,
+            # Filter pages by their exact update timestamp in ISO 8601 format.
             updated_at: nil,
+            # Filter pages updated before a specific date and time. Format should be
+            # date-time.
             updated_before: nil,
             request_options: {}
           )

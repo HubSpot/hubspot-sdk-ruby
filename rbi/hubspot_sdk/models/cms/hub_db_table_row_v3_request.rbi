@@ -21,7 +21,7 @@ module HubSpotSDK
         attr_accessor :display_index
 
         # List of key value pairs with the column name and column value
-        sig { returns(T::Hash[Symbol, T.anything]) }
+        sig { returns(T::Hash[Symbol, T::Hash[Symbol, T.anything]]) }
         attr_accessor :values
 
         # Specifies the value for `hs_name` column, which will be used as title in the
@@ -44,7 +44,7 @@ module HubSpotSDK
           params(
             child_table_id: Integer,
             display_index: Integer,
-            values: T::Hash[Symbol, T.anything],
+            values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
             name: String,
             path: String
           ).returns(T.attached_class)
@@ -70,7 +70,7 @@ module HubSpotSDK
             {
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
               name: String,
               path: String
             }

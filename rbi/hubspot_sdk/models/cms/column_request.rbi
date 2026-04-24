@@ -22,7 +22,7 @@ module HubSpotSDK
         attr_accessor :name
 
         # Options to choose for select and multi-select columns
-        sig { returns(T::Array[HubSpotSDK::Cms::Option]) }
+        sig { returns(T::Array[HubSpotSDK::Cms::HubdbOption]) }
         attr_accessor :options
 
         # Type of the column
@@ -63,7 +63,7 @@ module HubSpotSDK
             id: Integer,
             label: String,
             name: String,
-            options: T::Array[HubSpotSDK::Cms::Option::OrHash],
+            options: T::Array[HubSpotSDK::Cms::HubdbOption::OrHash],
             type: HubSpotSDK::Cms::ColumnRequest::Type::OrSymbol,
             foreign_column_id: Integer,
             foreign_table_id: Integer,
@@ -100,7 +100,7 @@ module HubSpotSDK
               id: Integer,
               label: String,
               name: String,
-              options: T::Array[HubSpotSDK::Cms::Option],
+              options: T::Array[HubSpotSDK::Cms::HubdbOption],
               type: HubSpotSDK::Cms::ColumnRequest::Type::OrSymbol,
               foreign_column_id: Integer,
               foreign_table_id: Integer,

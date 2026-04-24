@@ -15,8 +15,8 @@ module HubSpotSDK
             )
           end
 
-        # The ID of the portal installation to filter the journal entries. This is an
-        # integer value.
+        # The ID of the portal installation to filter the journal entries. It is an
+        # integer.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -30,8 +30,8 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the portal installation to filter the journal entries. This is an
-          # integer value.
+          # The ID of the portal installation to filter the journal entries. It is an
+          # integer.
           install_portal_id: nil,
           request_options: {}
         )

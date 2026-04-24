@@ -14,7 +14,7 @@ module HubSpotSDK
 
         sig do
           returns(
-            HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::Operator::TaggedSymbol
+            HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::Operator::OrSymbol
           )
         end
         attr_accessor :operator
@@ -46,7 +46,7 @@ module HubSpotSDK
           override.returns(
             {
               operator:
-                HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::Operator::TaggedSymbol,
+                HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::Operator::OrSymbol,
               property_name: String,
               value: String
             }

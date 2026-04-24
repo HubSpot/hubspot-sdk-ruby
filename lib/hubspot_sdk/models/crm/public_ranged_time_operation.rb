@@ -24,8 +24,10 @@ module HubSpotSDK
         # @!attribute operation_type
         #   Specifies the type of operation (TIME_RANGED).
         #
-        #   @return [String]
-        required :operation_type, String, api_name: :operationType
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PublicRangedTimeOperation::OperationType]
+        required :operation_type,
+                 enum: -> { HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType },
+                 api_name: :operationType
 
         # @!attribute operator
         #   Defines the operation to be applied within the time range (IS_BETWEEN,
@@ -74,7 +76,7 @@ module HubSpotSDK
         #
         #   @param lower_bound_time_point [HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime] Defines the lower bound time point for the operation.
         #
-        #   @param operation_type [String] Specifies the type of operation (TIME_RANGED).
+        #   @param operation_type [Symbol, HubSpotSDK::Models::Crm::PublicRangedTimeOperation::OperationType] Specifies the type of operation (TIME_RANGED).
         #
         #   @param operator [String] Defines the operation to be applied within the time range (IS_BETWEEN, IS_NOT_BE
         #
@@ -102,6 +104,18 @@ module HubSpotSDK
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]
+        end
+
+        # Specifies the type of operation (TIME_RANGED).
+        #
+        # @see HubSpotSDK::Models::Crm::PublicRangedTimeOperation#operation_type
+        module OperationType
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TIME_RANGED = :TIME_RANGED
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
         end
 
         # Specifies the type of operation (TIME_RANGED).

@@ -6,36 +6,35 @@ module HubSpotSDK
       # @see HubSpotSDK::Resources::Webhooks#get_journal_status
       class SnapshotStatusResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
-        #   The unique identifier for the snapshot operation, formatted as a UUID.
+        #   The unique identifier for the snapshot operation, represented as a UUID.
         #
         #   @return [String]
         required :id, String
 
         # @!attribute initiated_at
-        #   A Unix timestamp in milliseconds indicating when the snapshot operation was
-        #   initiated.
+        #   The timestamp indicating when the snapshot operation was initiated, represented
+        #   as a Unix timestamp in milliseconds.
         #
         #   @return [Integer]
         required :initiated_at, Integer, api_name: :initiatedAt
 
         # @!attribute status
-        #   The current status of the snapshot operation. Valid values include 'PENDING',
+        #   The current status of the snapshot. Valid values include 'PENDING',
         #   'IN_PROGRESS', 'COMPLETED', 'FAILED', and 'EXPIRED'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::Status]
         required :status, enum: -> { HubSpotSDK::Webhooks::SnapshotStatusResponse::Status }
 
         # @!attribute completed_at
-        #   A Unix timestamp in milliseconds indicating when the snapshot operation was
-        #   completed.
+        #   The timestamp indicating when the snapshot operation was completed, represented
+        #   as a Unix timestamp in milliseconds.
         #
         #   @return [Integer, nil]
         optional :completed_at, Integer, api_name: :completedAt
 
         # @!attribute error_code
-        #   The code representing any error that occurred during the snapshot operation.
-        #   Possible values are 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and
-        #   'PERMISSION_DENIED'.
+        #   A code representing the error that occurred, if any. Possible values are
+        #   'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and 'PERMISSION_DENIED'.
         #
         #   @return [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode, nil]
         optional :error_code,
@@ -44,7 +43,7 @@ module HubSpotSDK
 
         # @!attribute message
         #   A descriptive message providing additional information about the snapshot
-        #   operation or any errors encountered.
+        #   operation or error.
         #
         #   @return [String, nil]
         optional :message, String
@@ -53,19 +52,19 @@ module HubSpotSDK
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Webhooks::SnapshotStatusResponse} for more details.
         #
-        #   @param id [String] The unique identifier for the snapshot operation, formatted as a UUID.
+        #   @param id [String] The unique identifier for the snapshot operation, represented as a UUID.
         #
-        #   @param initiated_at [Integer] A Unix timestamp in milliseconds indicating when the snapshot operation was init
+        #   @param initiated_at [Integer] The timestamp indicating when the snapshot operation was initiated, represented
         #
-        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::Status] The current status of the snapshot operation. Valid values include 'PENDING', 'I
+        #   @param status [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::Status] The current status of the snapshot. Valid values include 'PENDING', 'IN_PROGRESS
         #
-        #   @param completed_at [Integer] A Unix timestamp in milliseconds indicating when the snapshot operation was comp
+        #   @param completed_at [Integer] The timestamp indicating when the snapshot operation was completed, represented
         #
-        #   @param error_code [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode] The code representing any error that occurred during the snapshot operation. Pos
+        #   @param error_code [Symbol, HubSpotSDK::Models::Webhooks::SnapshotStatusResponse::ErrorCode] A code representing the error that occurred, if any. Possible values are 'TIMEOU
         #
         #   @param message [String] A descriptive message providing additional information about the snapshot operat
 
-        # The current status of the snapshot operation. Valid values include 'PENDING',
+        # The current status of the snapshot. Valid values include 'PENDING',
         # 'IN_PROGRESS', 'COMPLETED', 'FAILED', and 'EXPIRED'.
         #
         # @see HubSpotSDK::Models::Webhooks::SnapshotStatusResponse#status
@@ -82,9 +81,8 @@ module HubSpotSDK
           #   @return [Array<Symbol>]
         end
 
-        # The code representing any error that occurred during the snapshot operation.
-        # Possible values are 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and
-        # 'PERMISSION_DENIED'.
+        # A code representing the error that occurred, if any. Possible values are
+        # 'TIMEOUT', 'VALIDATION_ERROR', 'INTERNAL_ERROR', and 'PERMISSION_DENIED'.
         #
         # @see HubSpotSDK::Models::Webhooks::SnapshotStatusResponse#error_code
         module ErrorCode

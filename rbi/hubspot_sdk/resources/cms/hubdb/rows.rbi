@@ -13,7 +13,7 @@ module HubSpotSDK
               table_id_or_name: String,
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
               name: String,
               path: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
@@ -258,7 +258,7 @@ module HubSpotSDK
               table_id_or_name: String,
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
               name: String,
               path: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
@@ -312,7 +312,7 @@ module HubSpotSDK
               table_id_or_name: String,
               child_table_id: Integer,
               display_index: Integer,
-              values: T::Hash[Symbol, T.anything],
+              values: T::Hash[Symbol, T::Hash[Symbol, T.anything]],
               name: String,
               path: String,
               request_options: HubSpotSDK::RequestOptions::OrHash

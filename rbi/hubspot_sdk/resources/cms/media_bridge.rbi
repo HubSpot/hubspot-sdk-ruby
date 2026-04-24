@@ -16,7 +16,7 @@ module HubSpotSDK
             to_object_type_id: String,
             name: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::AssociationDefinition)
+          ).returns(HubSpotSDK::BaseAssociationDefinition)
         end
         def create_association(
           # Path param
@@ -227,7 +227,7 @@ module HubSpotSDK
             referenced_object_type: String,
             show_currency_symbol: T::Boolean,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::Property)
+          ).returns(HubSpotSDK::Cms::MediaBridgeProperty)
         end
         def create_property(
           # Path param
@@ -304,7 +304,7 @@ module HubSpotSDK
           params(
             app_id: Integer,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::AssociationDefinition)
+          ).returns(HubSpotSDK::BaseAssociationDefinition)
         end
         def create_video_association_definition(app_id, request_options: {})
         end
@@ -407,7 +407,7 @@ module HubSpotSDK
             archived: T::Boolean,
             properties: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::Property)
+          ).returns(HubSpotSDK::Cms::MediaBridgeProperty)
         end
         def get_property(
           # Path param
@@ -630,7 +630,7 @@ module HubSpotSDK
             show_currency_symbol: T::Boolean,
             type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::Property)
+          ).returns(HubSpotSDK::Cms::MediaBridgeProperty)
         end
         def update_property(
           # Path param
@@ -712,7 +712,7 @@ module HubSpotSDK
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::ObjectTypeDefinition)
+          ).returns(HubSpotSDK::BaseObjectTypeDefinition)
         end
         def update_schema(
           # Path param

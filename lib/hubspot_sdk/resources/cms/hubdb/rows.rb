@@ -20,7 +20,7 @@ module HubSpotSDK
           #
           # @param display_index [Integer] The index position for displaying the row within the table.
           #
-          # @param values [Hash{Symbol=>Object}] List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>Hash{Symbol=>Object}}] List of key value pairs with the column name and column value
           #
           # @param name [String] Specifies the value for `hs_name` column, which will be used as title in the dyn
           #
@@ -375,7 +375,7 @@ module HubSpotSDK
           #
           # @param display_index [Integer] Body param: The index position for displaying the row within the table.
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>Hash{Symbol=>Object}}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #
@@ -444,7 +444,7 @@ module HubSpotSDK
           #
           # @param display_index [Integer] Body param: The index position for displaying the row within the table.
           #
-          # @param values [Hash{Symbol=>Object}] Body param: List of key value pairs with the column name and column value
+          # @param values [Hash{Symbol=>Hash{Symbol=>Object}}] Body param: List of key value pairs with the column name and column value
           #
           # @param name [String] Body param: Specifies the value for `hs_name` column, which will be used as titl
           #

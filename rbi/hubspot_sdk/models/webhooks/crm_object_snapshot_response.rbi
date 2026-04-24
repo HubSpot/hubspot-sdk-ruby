@@ -12,19 +12,23 @@ module HubSpotSDK
             )
           end
 
-        # An integer representing the unique identifier for the CRM object.
+        # An integer representing the unique identifier of the CRM object for which the
+        # snapshot is taken.
         sig { returns(Integer) }
         attr_accessor :object_id_
 
-        # A string representing the type identifier of the CRM object.
+        # A string indicating the type of the CRM object, such as contact, company, or
+        # deal.
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        # An integer representing the unique identifier for the HubSpot portal.
+        # An integer representing the unique identifier of the HubSpot portal associated
+        # with the CRM object.
         sig { returns(Integer) }
         attr_accessor :portal_id
 
-        # A UUID string representing the status identifier of the snapshot.
+        # A UUID string representing the status identifier of the snapshot request,
+        # indicating the current state of the snapshot process.
         sig { returns(String) }
         attr_accessor :snapshot_status_id
 
@@ -37,13 +41,17 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # An integer representing the unique identifier for the CRM object.
+          # An integer representing the unique identifier of the CRM object for which the
+          # snapshot is taken.
           object_id_:,
-          # A string representing the type identifier of the CRM object.
+          # A string indicating the type of the CRM object, such as contact, company, or
+          # deal.
           object_type_id:,
-          # An integer representing the unique identifier for the HubSpot portal.
+          # An integer representing the unique identifier of the HubSpot portal associated
+          # with the CRM object.
           portal_id:,
-          # A UUID string representing the status identifier of the snapshot.
+          # A UUID string representing the status identifier of the snapshot request,
+          # indicating the current state of the snapshot process.
           snapshot_status_id:
         )
         end

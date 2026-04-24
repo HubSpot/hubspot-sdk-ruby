@@ -15,7 +15,7 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubSpotSDK::Property]) }
+        sig { returns(T::Array[HubSpotSDK::BaseProperty]) }
         attr_accessor :results
 
         sig { returns(Time) }
@@ -55,7 +55,7 @@ module HubSpotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubSpotSDK::Property::OrHash],
+            results: T::Array[HubSpotSDK::BaseProperty::OrHash],
             started_at: Time,
             status:
               HubSpotSDK::Crm::BatchResponsePropertyWithErrors::Status::OrSymbol,
@@ -81,7 +81,7 @@ module HubSpotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubSpotSDK::Property],
+              results: T::Array[HubSpotSDK::BaseProperty],
               started_at: Time,
               status:
                 HubSpotSDK::Crm::BatchResponsePropertyWithErrors::Status::OrSymbol,

@@ -27,7 +27,7 @@ module HubSpotSDK
           ?referenced_object_type: String,
           ?show_currency_symbol: bool,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Property
+        ) -> HubSpotSDK::BaseProperty
 
         def update: (
           String property_name,
@@ -46,7 +46,7 @@ module HubSpotSDK
           ?show_currency_symbol: bool,
           ?type: HubSpotSDK::Models::Crm::PropertyUpdate::type_,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Property
+        ) -> HubSpotSDK::BaseProperty
 
         def list: (
           String object_type,
@@ -71,7 +71,7 @@ module HubSpotSDK
           ?locale: String,
           ?properties: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Property
+        ) -> HubSpotSDK::BaseProperty
 
         def initialize: (client: HubSpotSDK::Client) -> void
       end

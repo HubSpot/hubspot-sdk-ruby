@@ -4,8 +4,8 @@ module HubSpotSDK
       type property_definition =
         {
           object_type_id: String,
-          property: HubSpotSDK::Cms::Property,
-          calculation_expression: HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression,
+          property: HubSpotSDK::Cms::MediaBridgeProperty,
+          calculation_expression: top,
           calculation_formula: String,
           definition_source: HubSpotSDK::Cms::PropertyDefinitionSource,
           extension_data: HubSpotSDK::Cms::ExtensionData,
@@ -13,6 +13,7 @@ module HubSpotSDK
           fulcrum_portal_id: Integer,
           fulcrum_timestamp: Integer,
           janus_group: String,
+          lookup_association_spec: HubSpotSDK::Cms::LookupAssociationSpec,
           permission: HubSpotSDK::Cms::FieldLevelPermission,
           property_definition_source: HubSpotSDK::Cms::DefinitionSource,
           property_requirements: HubSpotSDK::Cms::DefaultRequirements,
@@ -22,13 +23,11 @@ module HubSpotSDK
       class PropertyDefinition < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor object_type_id: String
 
-        attr_accessor property: HubSpotSDK::Cms::Property
+        attr_accessor property: HubSpotSDK::Cms::MediaBridgeProperty
 
-        attr_reader calculation_expression: HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression?
+        attr_reader calculation_expression: top?
 
-        def calculation_expression=: (
-          HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression
-        ) -> HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression
+        def calculation_expression=: (top) -> top
 
         attr_reader calculation_formula: String?
 
@@ -64,6 +63,12 @@ module HubSpotSDK
 
         def janus_group=: (String) -> String
 
+        attr_reader lookup_association_spec: HubSpotSDK::Cms::LookupAssociationSpec?
+
+        def lookup_association_spec=: (
+          HubSpotSDK::Cms::LookupAssociationSpec
+        ) -> HubSpotSDK::Cms::LookupAssociationSpec
+
         attr_reader permission: HubSpotSDK::Cms::FieldLevelPermission?
 
         def permission=: (
@@ -90,8 +95,8 @@ module HubSpotSDK
 
         def initialize: (
           object_type_id: String,
-          property: HubSpotSDK::Cms::Property,
-          ?calculation_expression: HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression,
+          property: HubSpotSDK::Cms::MediaBridgeProperty,
+          ?calculation_expression: top,
           ?calculation_formula: String,
           ?definition_source: HubSpotSDK::Cms::PropertyDefinitionSource,
           ?extension_data: HubSpotSDK::Cms::ExtensionData,
@@ -99,6 +104,7 @@ module HubSpotSDK
           ?fulcrum_portal_id: Integer,
           ?fulcrum_timestamp: Integer,
           ?janus_group: String,
+          ?lookup_association_spec: HubSpotSDK::Cms::LookupAssociationSpec,
           ?permission: HubSpotSDK::Cms::FieldLevelPermission,
           ?property_definition_source: HubSpotSDK::Cms::DefinitionSource,
           ?property_requirements: HubSpotSDK::Cms::DefaultRequirements,
@@ -107,8 +113,8 @@ module HubSpotSDK
 
         def to_hash: -> {
           object_type_id: String,
-          property: HubSpotSDK::Cms::Property,
-          calculation_expression: HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression,
+          property: HubSpotSDK::Cms::MediaBridgeProperty,
+          calculation_expression: top,
           calculation_formula: String,
           definition_source: HubSpotSDK::Cms::PropertyDefinitionSource,
           extension_data: HubSpotSDK::Cms::ExtensionData,
@@ -116,93 +122,12 @@ module HubSpotSDK
           fulcrum_portal_id: Integer,
           fulcrum_timestamp: Integer,
           janus_group: String,
+          lookup_association_spec: HubSpotSDK::Cms::LookupAssociationSpec,
           permission: HubSpotSDK::Cms::FieldLevelPermission,
           property_definition_source: HubSpotSDK::Cms::DefinitionSource,
           property_requirements: HubSpotSDK::Cms::DefaultRequirements,
           rollup_expression: HubSpotSDK::Cms::RollupExpression
         }
-
-        type calculation_expression =
-          HubSpotSDK::Cms::ConstantBoolean
-          | HubSpotSDK::Cms::ConstantNumber
-          | HubSpotSDK::Cms::ConstantString
-          | HubSpotSDK::Cms::BooleanPropertyVariable
-          | HubSpotSDK::Cms::StringPropertyVariable
-          | HubSpotSDK::Cms::NumberPropertyVariable
-          | HubSpotSDK::Cms::TimestampOfPropertyVariable
-          | HubSpotSDK::Cms::BooleanTargetPropertyVariable
-          | HubSpotSDK::Cms::StringTargetPropertyVariable
-          | HubSpotSDK::Cms::NumberTargetPropertyVariable
-          | HubSpotSDK::Cms::TimestampOfTargetPropertyVariable
-          | HubSpotSDK::Cms::AddNumbers
-          | HubSpotSDK::Cms::SubtractNumbers
-          | HubSpotSDK::Cms::MultiplyNumbers
-          | HubSpotSDK::Cms::DivideNumbers
-          | HubSpotSDK::Cms::RoundDownNumbers
-          | HubSpotSDK::Cms::RoundUpNumbers
-          | HubSpotSDK::Cms::RoundNearestNumbers
-          | HubSpotSDK::Cms::UpperCase
-          | HubSpotSDK::Cms::LowerCase
-          | HubSpotSDK::Cms::ConcatStrings
-          | HubSpotSDK::Cms::Contains
-          | HubSpotSDK::Cms::BeginsWith
-          | HubSpotSDK::Cms::NumberToString
-          | HubSpotSDK::Cms::ParseNumber
-          | HubSpotSDK::Cms::FetchExchangeRate
-          | HubSpotSDK::Cms::FetchCurrencyDecimalPlaces
-          | HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency
-          | HubSpotSDK::Cms::DatedExchangeRate
-          | HubSpotSDK::Cms::PipelineProbability
-          | HubSpotSDK::Cms::MaxNumbers
-          | HubSpotSDK::Cms::MinNumbers
-          | HubSpotSDK::Cms::LessThan
-          | HubSpotSDK::Cms::LessThanOrEqual
-          | HubSpotSDK::Cms::MoreThan
-          | HubSpotSDK::Cms::MoreThanOrEqual
-          | HubSpotSDK::Cms::NumberEquals
-          | HubSpotSDK::Cms::StringEquals
-          | HubSpotSDK::Cms::IsPipelineStageClosed
-          | HubSpotSDK::Cms::Not
-          | HubSpotSDK::Cms::Date
-          | HubSpotSDK::Cms::Month
-          | HubSpotSDK::Cms::Year
-          | HubSpotSDK::Cms::Now
-          | HubSpotSDK::Cms::TimeBetween
-          | HubSpotSDK::Cms::TimeBetweenSkipWeekends
-          | HubSpotSDK::Cms::PeriodToMonths
-          | HubSpotSDK::Cms::PeriodToWeeks
-          | HubSpotSDK::Cms::And
-          | HubSpotSDK::Cms::Or
-          | HubSpotSDK::Cms::Xor
-          | HubSpotSDK::Cms::IfString
-          | HubSpotSDK::Cms::IfNumber
-          | HubSpotSDK::Cms::IfBoolean
-          | HubSpotSDK::Cms::IsPresent
-          | HubSpotSDK::Cms::HasEmailReply
-          | HubSpotSDK::Cms::HasPlainTextEmailReply
-          | HubSpotSDK::Cms::ExtractMostRecentEmailReplyHTML
-          | HubSpotSDK::Cms::ExtractMostRecentEmailReplyText
-          | HubSpotSDK::Cms::ExtractMostRecentPlainTextEmailReply
-          | HubSpotSDK::Cms::SetContainsString
-          | HubSpotSDK::Cms::IsEngagementType
-          | HubSpotSDK::Cms::FormatFullName
-          | HubSpotSDK::Cms::FormatPhoneNumber
-          | HubSpotSDK::Cms::FormatSearchablePhoneNumber
-          | HubSpotSDK::Cms::AbsoluteValue
-          | HubSpotSDK::Cms::SquareRoot
-          | HubSpotSDK::Cms::Power
-          | HubSpotSDK::Cms::Substring
-          | HubSpotSDK::Cms::Euler
-          | HubSpotSDK::Cms::StringLength
-          | HubSpotSDK::Cms::IsBlank
-          | HubSpotSDK::Cms::AddTime
-          | HubSpotSDK::Cms::SubtractTime
-
-        module CalculationExpression
-          extend HubSpotSDK::Internal::Type::Union
-
-          def self?.variants: -> ::Array[HubSpotSDK::Models::Cms::PropertyDefinition::calculation_expression]
-        end
       end
     end
   end

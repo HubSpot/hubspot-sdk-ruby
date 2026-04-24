@@ -21,17 +21,19 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
       response => {
         id: String,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::DefinitionsAssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
         combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse | nil,
         description: String | nil,
+        detail_template: String | nil,
+        header_template: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
         tracking_type: HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil,
@@ -54,17 +56,19 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
       response => {
         id: String,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::DefinitionsAssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
         combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse | nil,
         description: String | nil,
+        detail_template: String | nil,
+        header_template: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
         tracking_type: HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil,
@@ -94,17 +98,19 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
       row => {
         id: String,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::DefinitionsAssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
         combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse | nil,
         description: String | nil,
+        detail_template: String | nil,
+        header_template: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
         tracking_type: HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil,
@@ -130,7 +136,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
     response = @hubspot.events.definitions.create_property("eventName", label: "label", type: "type")
 
     assert_pattern do
-      response => HubSpotSDK::Property
+      response => HubSpotSDK::BaseProperty
     end
 
     assert_pattern do
@@ -140,7 +146,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         group_name: String,
         label: String,
         name: String,
-        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option]),
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption]),
         type: String,
         archived: HubSpotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
@@ -149,8 +155,8 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         created_at: Time | nil,
         created_user_id: String | nil,
         currency_property_name: String | nil,
-        data_sensitivity: HubSpotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubSpotSDK::Property::DateDisplayHint | nil,
+        data_sensitivity: HubSpotSDK::BaseProperty::DataSensitivity | nil,
+        date_display_hint: HubSpotSDK::BaseProperty::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubSpotSDK::Internal::Type::Boolean | nil,
         form_field: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -158,7 +164,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         hidden: HubSpotSDK::Internal::Type::Boolean | nil,
         hubspot_defined: HubSpotSDK::Internal::Type::Boolean | nil,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata | nil,
-        number_display_hint: HubSpotSDK::Property::NumberDisplayHint | nil,
+        number_display_hint: HubSpotSDK::BaseProperty::NumberDisplayHint | nil,
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -191,17 +197,19 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
       response => {
         id: String,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::DefinitionsAssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::Events::BehavioralEventTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
         combo_event_rules: HubSpotSDK::Events::ComboEventRuleBranch | nil,
         created_at: Time | nil,
         created_user_id: Integer | nil,
         custom_matching_id: HubSpotSDK::Events::ExternalObjectResolutionMappingResponse | nil,
         description: String | nil,
+        detail_template: String | nil,
+        header_template: String | nil,
         primary_object: String | nil,
         primary_object_id: String | nil,
         tracking_type: HubSpotSDK::Events::ExternalBehavioralEventTypeDefinition::TrackingType | nil,
@@ -228,7 +236,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
     response = @hubspot.events.definitions.update_property("propertyName", event_name: "eventName")
 
     assert_pattern do
-      response => HubSpotSDK::Property
+      response => HubSpotSDK::BaseProperty
     end
 
     assert_pattern do
@@ -238,7 +246,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         group_name: String,
         label: String,
         name: String,
-        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option]),
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption]),
         type: String,
         archived: HubSpotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
@@ -247,8 +255,8 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         created_at: Time | nil,
         created_user_id: String | nil,
         currency_property_name: String | nil,
-        data_sensitivity: HubSpotSDK::Property::DataSensitivity | nil,
-        date_display_hint: HubSpotSDK::Property::DateDisplayHint | nil,
+        data_sensitivity: HubSpotSDK::BaseProperty::DataSensitivity | nil,
+        date_display_hint: HubSpotSDK::BaseProperty::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubSpotSDK::Internal::Type::Boolean | nil,
         form_field: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -256,7 +264,7 @@ class HubSpotSDK::Test::Resources::Events::DefinitionsTest < HubSpotSDK::Test::R
         hidden: HubSpotSDK::Internal::Type::Boolean | nil,
         hubspot_defined: HubSpotSDK::Internal::Type::Boolean | nil,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata | nil,
-        number_display_hint: HubSpotSDK::Property::NumberDisplayHint | nil,
+        number_display_hint: HubSpotSDK::BaseProperty::NumberDisplayHint | nil,
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,

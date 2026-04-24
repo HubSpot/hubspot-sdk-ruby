@@ -1,14 +1,14 @@
 module HubSpotSDK
   module Models
     module Auth
-      type token_info_response_base_if = { active: bool }
+      type token_info_response_base_if =
+        HubSpotSDK::Auth::PublicAccessTokenInfoResponse
+        | HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
 
-      class TokenInfoResponseBaseIf < HubSpotSDK::Internal::Type::BaseModel
-        attr_accessor active: bool
+      module TokenInfoResponseBaseIf
+        extend HubSpotSDK::Internal::Type::Union
 
-        def initialize: (active: bool) -> void
-
-        def to_hash: -> { active: bool }
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Auth::token_info_response_base_if]
       end
     end
   end

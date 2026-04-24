@@ -151,7 +151,7 @@ module HubSpotSDK
           #
           # @overload update(object_id_, id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, page_redirected:, password:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, slug:, state:, subcategory:, template_path:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:, archived: nil, request_options: {})
           #
-          # @param object_id_ [String] Path param
+          # @param object_id_ [String] Path param: The unique identifier of the landing page to update.
           #
           # @param id [String] Body param: The unique ID of the page.
           #
@@ -293,33 +293,34 @@ module HubSpotSDK
           # Some parameter documentations has been truncated, see
           # {HubSpotSDK::Models::Cms::Pages::LandingPageListParams} for more details.
           #
-          # Get the list of landing pages. Supports paging and filtering. This method would
-          # be useful for an integration that examined these models and used an external
-          # service to suggest edits.
+          # Retrieve a list of landing pages in your HubSpot account. This endpoint allows
+          # you to filter landing pages based on creation and update timestamps, sort them,
+          # and paginate through results. You can also choose to include archived pages or
+          # specify certain properties to be included in the response.
           #
           # @overload list(after: nil, archived: nil, created_after: nil, created_at: nil, created_before: nil, limit: nil, property: nil, sort: nil, updated_after: nil, updated_at: nil, updated_before: nil, request_options: {})
           #
-          # @param after [String] The paging cursor token of the last successfully read resource will be returned
+          # @param after [String] A cursor token for pagination. Use the value from the previous response's paging
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param created_after [Time]
+          # @param created_after [Time] Filter landing pages created after a specific date and time.
           #
-          # @param created_at [Time]
+          # @param created_at [Time] Filter landing pages by their creation timestamp.
           #
-          # @param created_before [Time]
+          # @param created_before [Time] Filter landing pages created before a specific date and time.
           #
           # @param limit [Integer] The maximum number of results to display per page.
           #
-          # @param property [String]
+          # @param property [String] Specify which properties of the landing pages to include in the response.
           #
-          # @param sort [Array<String>]
+          # @param sort [Array<String>] Specify the order in which results are returned. Accepts an array of strings.
           #
-          # @param updated_after [Time]
+          # @param updated_after [Time] Filter landing pages updated after a specific date and time.
           #
-          # @param updated_at [Time]
+          # @param updated_at [Time] Filter landing pages by their last updated timestamp.
           #
-          # @param updated_before [Time]
+          # @param updated_before [Time] Filter landing pages updated before a specific date and time.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -350,7 +351,7 @@ module HubSpotSDK
           #
           # @overload delete(object_id_, archived: nil, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page to delete.
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
@@ -400,11 +401,11 @@ module HubSpotSDK
           #
           # @overload get(object_id_, archived: nil, property: nil, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page to retrieve.
           #
           # @param archived [Boolean] Whether to return only results that have been archived.
           #
-          # @param property [String]
+          # @param property [String] A specific property of the landing page to include in the response.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -423,11 +424,15 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Cms::Pages::LandingPageGetDraftParams} for more details.
+          #
           # Retrieve the full draft version of a landing page, specified by page ID.
           #
           # @overload get_draft(object_id_, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page whose draft version is to be retrieved
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Cms::PageData]
@@ -447,7 +452,8 @@ module HubSpotSDK
           #
           # @overload push_draft_live(object_id_, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page draft to be published.
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -466,7 +472,8 @@ module HubSpotSDK
           #
           # @overload reset_draft(object_id_, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page whose draft is to be reset.
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -514,7 +521,7 @@ module HubSpotSDK
           #
           # @overload update_draft(object_id_, id:, ab_status:, ab_test_id:, archived_at:, archived_in_dashboard:, attached_stylesheets:, author_name:, campaign:, category_id:, content_group_id:, content_type_category:, created:, created_by_id:, currently_published:, current_state:, domain:, dynamic_page_data_source_id:, dynamic_page_data_source_type:, dynamic_page_hub_db_table_id:, enable_domain_stylesheets:, enable_layout_stylesheets:, featured_image:, featured_image_alt_text:, folder_id:, footer_html:, head_html:, html_title:, include_default_custom_css:, language:, layout_sections:, link_rel_canonical_url:, mab_experiment_id:, meta_description:, name:, page_expiry_date:, page_expiry_enabled:, page_expiry_redirect_id:, page_expiry_redirect_url:, page_redirected:, password:, public_access_rules:, public_access_rules_enabled:, publish_date:, publish_immediately:, slug:, state:, subcategory:, template_path:, theme_settings_values:, translated_from_id:, translations:, updated:, updated_by_id:, url:, use_featured_image:, widget_containers:, widgets:, request_options: {})
           #
-          # @param object_id_ [String]
+          # @param object_id_ [String] The unique identifier of the landing page draft to update.
           #
           # @param id [String] The unique ID of the page.
           #

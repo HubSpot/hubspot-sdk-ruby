@@ -30,7 +30,11 @@ module HubSpotSDK
         attr_accessor :lower_bound_time_point
 
         # Specifies the type of operation (TIME_RANGED).
-        sig { returns(String) }
+        sig do
+          returns(
+            HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType::OrSymbol
+          )
+        end
         attr_accessor :operation_type
 
         # Defines the operation to be applied within the time range (IS_BETWEEN,
@@ -86,7 +90,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicIndexedTimePoint::OrHash,
                 HubSpotSDK::Crm::PublicPropertyReferencedTime::OrHash
               ),
-            operation_type: String,
+            operation_type:
+              HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType::OrSymbol,
             operator: String,
             type: HubSpotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
             upper_bound_time_point:
@@ -134,7 +139,8 @@ module HubSpotSDK
                   HubSpotSDK::Crm::PublicIndexedTimePoint,
                   HubSpotSDK::Crm::PublicPropertyReferencedTime
                 ),
-              operation_type: String,
+              operation_type:
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType::OrSymbol,
               operator: String,
               type: HubSpotSDK::Crm::PublicRangedTimeOperation::Type::OrSymbol,
               upper_bound_time_point:
@@ -173,6 +179,36 @@ module HubSpotSDK
             )
           end
           def self.variants
+          end
+        end
+
+        # Specifies the type of operation (TIME_RANGED).
+        module OperationType
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(
+                Symbol,
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType
+              )
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          TIME_RANGED =
+            T.let(
+              :TIME_RANGED,
+              HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OperationType::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
           end
         end
 

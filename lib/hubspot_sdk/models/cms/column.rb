@@ -102,8 +102,8 @@ module HubSpotSDK
         # @!attribute options
         #   Options to choose for select and multi-select columns
         #
-        #   @return [Array<HubSpotSDK::Models::Cms::Option>, nil]
-        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::Option] }
+        #   @return [Array<HubSpotSDK::Models::Cms::HubdbOption>, nil]
+        optional :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::HubdbOption] }
 
         # @!attribute updated_at
         #   The timestamp when the column was last updated.
@@ -159,7 +159,7 @@ module HubSpotSDK
         #
         #   @param option_count [Integer] Number of options available
         #
-        #   @param options [Array<HubSpotSDK::Models::Cms::Option>] Options to choose for select and multi-select columns
+        #   @param options [Array<HubSpotSDK::Models::Cms::HubdbOption>] Options to choose for select and multi-select columns
         #
         #   @param updated_at [Time] The timestamp when the column was last updated.
         #

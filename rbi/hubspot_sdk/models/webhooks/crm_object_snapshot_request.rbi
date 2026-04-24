@@ -13,20 +13,22 @@ module HubSpotSDK
           end
 
         # An integer representing the unique identifier of the CRM object for which the
-        # snapshot is being requested.
+        # snapshot is requested.
         sig { returns(Integer) }
         attr_accessor :object_id_
 
-        # A string representing the type identifier of the CRM object.
+        # A string representing the type identifier of the CRM object, specifying what
+        # kind of object it is within HubSpot.
         sig { returns(String) }
         attr_accessor :object_type_id
 
-        # An integer representing the unique identifier of the HubSpot portal.
+        # An integer representing the unique identifier of the HubSpot account (portal)
+        # where the CRM object resides.
         sig { returns(Integer) }
         attr_accessor :portal_id
 
-        # An array of strings, each representing a property of the CRM object to be
-        # included in the snapshot.
+        # An array of strings, each representing a property of the CRM object that should
+        # be included in the snapshot.
         sig { returns(T::Array[String]) }
         attr_accessor :properties
 
@@ -40,14 +42,16 @@ module HubSpotSDK
         end
         def self.new(
           # An integer representing the unique identifier of the CRM object for which the
-          # snapshot is being requested.
+          # snapshot is requested.
           object_id_:,
-          # A string representing the type identifier of the CRM object.
+          # A string representing the type identifier of the CRM object, specifying what
+          # kind of object it is within HubSpot.
           object_type_id:,
-          # An integer representing the unique identifier of the HubSpot portal.
+          # An integer representing the unique identifier of the HubSpot account (portal)
+          # where the CRM object resides.
           portal_id:,
-          # An array of strings, each representing a property of the CRM object to be
-          # included in the snapshot.
+          # An array of strings, each representing a property of the CRM object that should
+          # be included in the snapshot.
           properties:
         )
         end

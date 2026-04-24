@@ -3,26 +3,6 @@
 require_relative "../../test_helper"
 
 class HubSpotSDK::Test::Resources::Cms::PagesTest < HubSpotSDK::Test::ResourceTest
-  def test_get_landing_page_folders
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_landing_page_folders
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
-    end
-  end
-
-  def test_get_landing_page_folders_by_query
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_landing_page_folders_by_query
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
-    end
-  end
-
   def test_get_landing_page_revision_required_params
     skip("Mock server tests are disabled")
 
@@ -42,26 +22,6 @@ class HubSpotSDK::Test::Resources::Cms::PagesTest < HubSpotSDK::Test::ResourceTe
     end
   end
 
-  def test_get_landing_pages
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_landing_pages
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
-    end
-  end
-
-  def test_get_landing_pages_by_query
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_landing_pages_by_query
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
-    end
-  end
-
   def test_get_site_page_revision_required_params
     skip("Mock server tests are disabled")
 
@@ -78,26 +38,6 @@ class HubSpotSDK::Test::Resources::Cms::PagesTest < HubSpotSDK::Test::ResourceTe
         updated_at: Time,
         user: HubSpotSDK::VersionUser
       }
-    end
-  end
-
-  def test_get_site_pages
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_site_pages
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
-    end
-  end
-
-  def test_get_site_pages_by_query
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.pages.get_site_pages_by_query
-
-    assert_pattern do
-      response => HubSpotSDK::Internal::Type::Unknown
     end
   end
 

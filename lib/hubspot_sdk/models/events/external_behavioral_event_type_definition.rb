@@ -17,9 +17,9 @@ module HubSpotSDK
 
         # @!attribute associations
         #
-        #   @return [Array<HubSpotSDK::Models::Events::AssociationDefinition>]
+        #   @return [Array<HubSpotSDK::Models::Events::DefinitionsAssociationDefinition>]
         required :associations,
-                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::AssociationDefinition] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Events::DefinitionsAssociationDefinition] }
 
         # @!attribute fully_qualified_name
         #
@@ -43,8 +43,8 @@ module HubSpotSDK
 
         # @!attribute properties
         #
-        #   @return [Array<HubSpotSDK::Models::Property>]
-        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property] }
+        #   @return [Array<HubSpotSDK::Models::BaseProperty>]
+        required :properties, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty] }
 
         # @!attribute combo_event_rules
         #
@@ -77,6 +77,16 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :description, String
 
+        # @!attribute detail_template
+        #
+        #   @return [String, nil]
+        optional :detail_template, String, api_name: :detailTemplate
+
+        # @!attribute header_template
+        #
+        #   @return [String, nil]
+        optional :header_template, String, api_name: :headerTemplate
+
         # @!attribute primary_object
         #
         #   @return [String, nil]
@@ -104,20 +114,22 @@ module HubSpotSDK
         #   @return [Integer, nil]
         optional :updated_user_id, Integer, api_name: :updatedUserId
 
-        # @!method initialize(id:, archived:, associations:, fully_qualified_name:, labels:, name:, object_type_id:, properties:, combo_event_rules: nil, created_at: nil, created_user_id: nil, custom_matching_id: nil, description: nil, primary_object: nil, primary_object_id: nil, tracking_type: nil, updated_at: nil, updated_user_id: nil)
+        # @!method initialize(id:, archived:, associations:, fully_qualified_name:, labels:, name:, object_type_id:, properties:, combo_event_rules: nil, created_at: nil, created_user_id: nil, custom_matching_id: nil, description: nil, detail_template: nil, header_template: nil, primary_object: nil, primary_object_id: nil, tracking_type: nil, updated_at: nil, updated_user_id: nil)
         #   @param id [String]
         #   @param archived [Boolean]
-        #   @param associations [Array<HubSpotSDK::Models::Events::AssociationDefinition>]
+        #   @param associations [Array<HubSpotSDK::Models::Events::DefinitionsAssociationDefinition>]
         #   @param fully_qualified_name [String]
         #   @param labels [HubSpotSDK::Models::Events::BehavioralEventTypeDefinitionLabels]
         #   @param name [String]
         #   @param object_type_id [String]
-        #   @param properties [Array<HubSpotSDK::Models::Property>]
+        #   @param properties [Array<HubSpotSDK::Models::BaseProperty>]
         #   @param combo_event_rules [HubSpotSDK::Models::Events::ComboEventRuleBranch]
         #   @param created_at [Time]
         #   @param created_user_id [Integer]
         #   @param custom_matching_id [HubSpotSDK::Models::Events::ExternalObjectResolutionMappingResponse]
         #   @param description [String]
+        #   @param detail_template [String]
+        #   @param header_template [String]
         #   @param primary_object [String]
         #   @param primary_object_id [String]
         #   @param tracking_type [Symbol, HubSpotSDK::Models::Events::ExternalBehavioralEventTypeDefinition::TrackingType]

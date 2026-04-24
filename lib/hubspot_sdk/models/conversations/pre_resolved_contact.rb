@@ -162,6 +162,7 @@ module HubSpotSDK
           HS_EMAILCONFIRMATIONSTATUS = :hs_emailconfirmationstatus
           HS_EMPLOYMENT_CHANGE_DETECTED_DATE = :hs_employment_change_detected_date
           HS_ENRICHED_EMAIL_BOUNCE_DETECTED = :hs_enriched_email_bounce_detected
+          HS_EXCLUDED_FROM_CROSS_ACCOUNT_DATA_MIRRORING = :hs_excluded_from_cross_account_data_mirroring
           HS_FACEBOOK_AD_CLICKED = :hs_facebook_ad_clicked
           HS_FACEBOOK_CLICK_ID = :hs_facebook_click_id
           HS_FACEBOOKID = :hs_facebookid
@@ -182,6 +183,12 @@ module HubSpotSDK
           HS_FIRST_OUTREACH_DATE = :hs_first_outreach_date
           HS_FIRST_SUBSCRIPTION_CREATE_DATE = :hs_first_subscription_create_date
           HS_FULL_NAME_OR_EMAIL = :hs_full_name_or_email
+          HS_GEOHASH_1 = :hs_geohash_1
+          HS_GEOHASH_2 = :hs_geohash_2
+          HS_GEOHASH_3 = :hs_geohash_3
+          HS_GEOHASH_4 = :hs_geohash_4
+          HS_GEOHASH_5 = :hs_geohash_5
+          HS_GEOHASH_6 = :hs_geohash_6
           HS_GOOGLE_CLICK_ID = :hs_google_click_id
           HS_GOOGLEPLUSID = :hs_googleplusid
           HS_GPS_COORDINATES = :hs_gps_coordinates

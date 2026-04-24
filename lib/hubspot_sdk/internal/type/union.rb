@@ -6,14 +6,14 @@ module HubSpotSDK
       # @api private
       #
       # @example
-      #   # `unified_collection_response_with_total_base_hub_db_table_row_v3` is a `HubSpotSDK::Cms::UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3`
-      #   case unified_collection_response_with_total_base_hub_db_table_row_v3
-      #   when HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3
-      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3.results)
-      #   when HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
-      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3.total)
+      #   # `token_info_response_base_if` is a `HubSpotSDK::Auth::TokenInfoResponseBaseIf`
+      #   case token_info_response_base_if
+      #   when HubSpotSDK::Auth::PublicAccessTokenInfoResponse
+      #     puts(token_info_response_base_if.token)
+      #   when HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
+      #     puts(token_info_response_base_if.active)
       #   else
-      #     puts(unified_collection_response_with_total_base_hub_db_table_row_v3)
+      #     puts(token_info_response_base_if)
       #   end
       module Union
         include HubSpotSDK::Internal::Type::Converter

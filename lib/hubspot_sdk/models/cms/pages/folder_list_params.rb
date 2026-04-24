@@ -24,11 +24,13 @@ module HubSpotSDK
           optional :archived, HubSpotSDK::Internal::Type::Boolean
 
           # @!attribute created_after
+          #   Filter folders created after the specified date and time.
           #
           #   @return [Time, nil]
           optional :created_after, Time
 
           # @!attribute created_at
+          #   Filter folders by their exact creation date and time.
           #
           #   @return [Time, nil]
           optional :created_at, Time
@@ -45,6 +47,7 @@ module HubSpotSDK
           optional :limit, Integer
 
           # @!attribute property
+          #   Specify a property to include in the response.
           #
           #   @return [String, nil]
           optional :property, String
@@ -77,15 +80,15 @@ module HubSpotSDK
           #
           #   @param archived [Boolean] Whether to return only results that have been archived.
           #
-          #   @param created_after [Time]
+          #   @param created_after [Time] Filter folders created after the specified date and time.
           #
-          #   @param created_at [Time]
+          #   @param created_at [Time] Filter folders by their exact creation date and time.
           #
           #   @param created_before [Time]
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param property [String]
+          #   @param property [String] Specify a property to include in the response.
           #
           #   @param sort [Array<String>]
           #

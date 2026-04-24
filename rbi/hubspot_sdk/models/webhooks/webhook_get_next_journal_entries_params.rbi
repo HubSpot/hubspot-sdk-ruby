@@ -18,7 +18,8 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :offset
 
-        # The ID of the portal where the webhooks are installed. This is an integer value.
+        # The ID of the portal installation to filter the webhook journal entries. This is
+        # an optional parameter.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -34,7 +35,8 @@ module HubSpotSDK
         end
         def self.new(
           offset:,
-          # The ID of the portal where the webhooks are installed. This is an integer value.
+          # The ID of the portal installation to filter the webhook journal entries. This is
+          # an optional parameter.
           install_portal_id: nil,
           request_options: {}
         )

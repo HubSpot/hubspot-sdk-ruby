@@ -47,6 +47,12 @@ module HubSpotSDK
         end
         attr_writer :compliance_ids
 
+        sig { returns(T.nilable(String)) }
+        attr_reader :conversation_id
+
+        sig { params(conversation_id: String).void }
+        attr_writer :conversation_id
+
         # The identifier for the feature associated with the context.
         sig { returns(T.nilable(String)) }
         attr_reader :feature_id
@@ -79,6 +85,7 @@ module HubSpotSDK
                 HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
               ],
             compliance_ids: HubSpotSDK::Automation::ComplianceIDs::OrHash,
+            conversation_id: String,
             feature_id: String,
             inference_id: String,
             trajectory_id: String
@@ -95,6 +102,7 @@ module HubSpotSDK
           otel_context_holder:,
           unstructured_sources:,
           compliance_ids: nil,
+          conversation_id: nil,
           # The identifier for the feature associated with the context.
           feature_id: nil,
           # The identifier for the inference associated with the context.
@@ -116,6 +124,7 @@ module HubSpotSDK
                   HubSpotSDK::Automation::ChirpAIContextObject::UnstructuredSource::OrSymbol
                 ],
               compliance_ids: HubSpotSDK::Automation::ComplianceIDs,
+              conversation_id: String,
               feature_id: String,
               inference_id: String,
               trajectory_id: String

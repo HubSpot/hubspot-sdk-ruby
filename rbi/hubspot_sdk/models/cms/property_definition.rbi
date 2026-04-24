@@ -16,102 +16,18 @@ module HubSpotSDK
         attr_accessor :object_type_id
 
         # A HubSpot property
-        sig { returns(HubSpotSDK::Cms::Property) }
+        sig { returns(HubSpotSDK::Cms::MediaBridgeProperty) }
         attr_reader :property
 
-        sig { params(property: HubSpotSDK::Cms::Property::OrHash).void }
+        sig do
+          params(property: HubSpotSDK::Cms::MediaBridgeProperty::OrHash).void
+        end
         attr_writer :property
 
-        sig do
-          returns(
-            T.nilable(
-              HubSpotSDK::Cms::PropertyDefinition::CalculationExpression::Variants
-            )
-          )
-        end
+        sig { returns(T.nilable(T.anything)) }
         attr_reader :calculation_expression
 
-        sig do
-          params(
-            calculation_expression:
-              T.any(
-                HubSpotSDK::Cms::ConstantBoolean::OrHash,
-                HubSpotSDK::Cms::ConstantNumber::OrHash,
-                HubSpotSDK::Cms::ConstantString::OrHash,
-                HubSpotSDK::Cms::BooleanPropertyVariable::OrHash,
-                HubSpotSDK::Cms::StringPropertyVariable::OrHash,
-                HubSpotSDK::Cms::NumberPropertyVariable::OrHash,
-                HubSpotSDK::Cms::TimestampOfPropertyVariable::OrHash,
-                HubSpotSDK::Cms::BooleanTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::StringTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::NumberTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::AddNumbers::OrHash,
-                HubSpotSDK::Cms::SubtractNumbers::OrHash,
-                HubSpotSDK::Cms::MultiplyNumbers::OrHash,
-                HubSpotSDK::Cms::DivideNumbers::OrHash,
-                HubSpotSDK::Cms::RoundDownNumbers::OrHash,
-                HubSpotSDK::Cms::RoundUpNumbers::OrHash,
-                HubSpotSDK::Cms::RoundNearestNumbers::OrHash,
-                HubSpotSDK::Cms::UpperCase::OrHash,
-                HubSpotSDK::Cms::LowerCase::OrHash,
-                HubSpotSDK::Cms::ConcatStrings::OrHash,
-                HubSpotSDK::Cms::Contains::OrHash,
-                HubSpotSDK::Cms::BeginsWith::OrHash,
-                HubSpotSDK::Cms::NumberToString::OrHash,
-                HubSpotSDK::Cms::ParseNumber::OrHash,
-                HubSpotSDK::Cms::FetchExchangeRate::OrHash,
-                HubSpotSDK::Cms::FetchCurrencyDecimalPlaces::OrHash,
-                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::OrHash,
-                HubSpotSDK::Cms::DatedExchangeRate::OrHash,
-                HubSpotSDK::Cms::PipelineProbability::OrHash,
-                HubSpotSDK::Cms::MaxNumbers::OrHash,
-                HubSpotSDK::Cms::MinNumbers::OrHash,
-                HubSpotSDK::Cms::LessThan::OrHash,
-                HubSpotSDK::Cms::LessThanOrEqual::OrHash,
-                HubSpotSDK::Cms::MoreThan::OrHash,
-                HubSpotSDK::Cms::MoreThanOrEqual::OrHash,
-                HubSpotSDK::Cms::NumberEquals::OrHash,
-                HubSpotSDK::Cms::StringEquals::OrHash,
-                HubSpotSDK::Cms::IsPipelineStageClosed::OrHash,
-                HubSpotSDK::Cms::Not::OrHash,
-                HubSpotSDK::Cms::Date::OrHash,
-                HubSpotSDK::Cms::Month::OrHash,
-                HubSpotSDK::Cms::Year::OrHash,
-                HubSpotSDK::Cms::Now::OrHash,
-                HubSpotSDK::Cms::TimeBetween::OrHash,
-                HubSpotSDK::Cms::TimeBetweenSkipWeekends::OrHash,
-                HubSpotSDK::Cms::PeriodToMonths::OrHash,
-                HubSpotSDK::Cms::PeriodToWeeks::OrHash,
-                HubSpotSDK::Cms::And::OrHash,
-                HubSpotSDK::Cms::Or::OrHash,
-                HubSpotSDK::Cms::Xor::OrHash,
-                HubSpotSDK::Cms::IfString::OrHash,
-                HubSpotSDK::Cms::IfNumber::OrHash,
-                HubSpotSDK::Cms::IfBoolean::OrHash,
-                HubSpotSDK::Cms::IsPresent::OrHash,
-                HubSpotSDK::Cms::HasEmailReply::OrHash,
-                HubSpotSDK::Cms::HasPlainTextEmailReply::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyHTML::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyText::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentPlainTextEmailReply::OrHash,
-                HubSpotSDK::Cms::SetContainsString::OrHash,
-                HubSpotSDK::Cms::IsEngagementType::OrHash,
-                HubSpotSDK::Cms::FormatFullName::OrHash,
-                HubSpotSDK::Cms::FormatPhoneNumber::OrHash,
-                HubSpotSDK::Cms::FormatSearchablePhoneNumber::OrHash,
-                HubSpotSDK::Cms::AbsoluteValue::OrHash,
-                HubSpotSDK::Cms::SquareRoot::OrHash,
-                HubSpotSDK::Cms::Power::OrHash,
-                HubSpotSDK::Cms::Substring::OrHash,
-                HubSpotSDK::Cms::Euler::OrHash,
-                HubSpotSDK::Cms::StringLength::OrHash,
-                HubSpotSDK::Cms::IsBlank::OrHash,
-                HubSpotSDK::Cms::AddTime::OrHash,
-                HubSpotSDK::Cms::SubtractTime::OrHash
-              )
-          ).void
-        end
+        sig { params(calculation_expression: T.anything).void }
         attr_writer :calculation_expression
 
         sig { returns(T.nilable(String)) }
@@ -167,6 +83,17 @@ module HubSpotSDK
         sig { params(janus_group: String).void }
         attr_writer :janus_group
 
+        sig { returns(T.nilable(HubSpotSDK::Cms::LookupAssociationSpec)) }
+        attr_reader :lookup_association_spec
+
+        sig do
+          params(
+            lookup_association_spec:
+              HubSpotSDK::Cms::LookupAssociationSpec::OrHash
+          ).void
+        end
+        attr_writer :lookup_association_spec
+
         sig { returns(T.nilable(HubSpotSDK::Cms::FieldLevelPermission)) }
         attr_reader :permission
 
@@ -209,84 +136,8 @@ module HubSpotSDK
         sig do
           params(
             object_type_id: String,
-            property: HubSpotSDK::Cms::Property::OrHash,
-            calculation_expression:
-              T.any(
-                HubSpotSDK::Cms::ConstantBoolean::OrHash,
-                HubSpotSDK::Cms::ConstantNumber::OrHash,
-                HubSpotSDK::Cms::ConstantString::OrHash,
-                HubSpotSDK::Cms::BooleanPropertyVariable::OrHash,
-                HubSpotSDK::Cms::StringPropertyVariable::OrHash,
-                HubSpotSDK::Cms::NumberPropertyVariable::OrHash,
-                HubSpotSDK::Cms::TimestampOfPropertyVariable::OrHash,
-                HubSpotSDK::Cms::BooleanTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::StringTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::NumberTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::TimestampOfTargetPropertyVariable::OrHash,
-                HubSpotSDK::Cms::AddNumbers::OrHash,
-                HubSpotSDK::Cms::SubtractNumbers::OrHash,
-                HubSpotSDK::Cms::MultiplyNumbers::OrHash,
-                HubSpotSDK::Cms::DivideNumbers::OrHash,
-                HubSpotSDK::Cms::RoundDownNumbers::OrHash,
-                HubSpotSDK::Cms::RoundUpNumbers::OrHash,
-                HubSpotSDK::Cms::RoundNearestNumbers::OrHash,
-                HubSpotSDK::Cms::UpperCase::OrHash,
-                HubSpotSDK::Cms::LowerCase::OrHash,
-                HubSpotSDK::Cms::ConcatStrings::OrHash,
-                HubSpotSDK::Cms::Contains::OrHash,
-                HubSpotSDK::Cms::BeginsWith::OrHash,
-                HubSpotSDK::Cms::NumberToString::OrHash,
-                HubSpotSDK::Cms::ParseNumber::OrHash,
-                HubSpotSDK::Cms::FetchExchangeRate::OrHash,
-                HubSpotSDK::Cms::FetchCurrencyDecimalPlaces::OrHash,
-                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency::OrHash,
-                HubSpotSDK::Cms::DatedExchangeRate::OrHash,
-                HubSpotSDK::Cms::PipelineProbability::OrHash,
-                HubSpotSDK::Cms::MaxNumbers::OrHash,
-                HubSpotSDK::Cms::MinNumbers::OrHash,
-                HubSpotSDK::Cms::LessThan::OrHash,
-                HubSpotSDK::Cms::LessThanOrEqual::OrHash,
-                HubSpotSDK::Cms::MoreThan::OrHash,
-                HubSpotSDK::Cms::MoreThanOrEqual::OrHash,
-                HubSpotSDK::Cms::NumberEquals::OrHash,
-                HubSpotSDK::Cms::StringEquals::OrHash,
-                HubSpotSDK::Cms::IsPipelineStageClosed::OrHash,
-                HubSpotSDK::Cms::Not::OrHash,
-                HubSpotSDK::Cms::Date::OrHash,
-                HubSpotSDK::Cms::Month::OrHash,
-                HubSpotSDK::Cms::Year::OrHash,
-                HubSpotSDK::Cms::Now::OrHash,
-                HubSpotSDK::Cms::TimeBetween::OrHash,
-                HubSpotSDK::Cms::TimeBetweenSkipWeekends::OrHash,
-                HubSpotSDK::Cms::PeriodToMonths::OrHash,
-                HubSpotSDK::Cms::PeriodToWeeks::OrHash,
-                HubSpotSDK::Cms::And::OrHash,
-                HubSpotSDK::Cms::Or::OrHash,
-                HubSpotSDK::Cms::Xor::OrHash,
-                HubSpotSDK::Cms::IfString::OrHash,
-                HubSpotSDK::Cms::IfNumber::OrHash,
-                HubSpotSDK::Cms::IfBoolean::OrHash,
-                HubSpotSDK::Cms::IsPresent::OrHash,
-                HubSpotSDK::Cms::HasEmailReply::OrHash,
-                HubSpotSDK::Cms::HasPlainTextEmailReply::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyHTML::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyText::OrHash,
-                HubSpotSDK::Cms::ExtractMostRecentPlainTextEmailReply::OrHash,
-                HubSpotSDK::Cms::SetContainsString::OrHash,
-                HubSpotSDK::Cms::IsEngagementType::OrHash,
-                HubSpotSDK::Cms::FormatFullName::OrHash,
-                HubSpotSDK::Cms::FormatPhoneNumber::OrHash,
-                HubSpotSDK::Cms::FormatSearchablePhoneNumber::OrHash,
-                HubSpotSDK::Cms::AbsoluteValue::OrHash,
-                HubSpotSDK::Cms::SquareRoot::OrHash,
-                HubSpotSDK::Cms::Power::OrHash,
-                HubSpotSDK::Cms::Substring::OrHash,
-                HubSpotSDK::Cms::Euler::OrHash,
-                HubSpotSDK::Cms::StringLength::OrHash,
-                HubSpotSDK::Cms::IsBlank::OrHash,
-                HubSpotSDK::Cms::AddTime::OrHash,
-                HubSpotSDK::Cms::SubtractTime::OrHash
-              ),
+            property: HubSpotSDK::Cms::MediaBridgeProperty::OrHash,
+            calculation_expression: T.anything,
             calculation_formula: String,
             definition_source:
               HubSpotSDK::Cms::PropertyDefinitionSource::OrHash,
@@ -296,6 +147,8 @@ module HubSpotSDK
             fulcrum_portal_id: Integer,
             fulcrum_timestamp: Integer,
             janus_group: String,
+            lookup_association_spec:
+              HubSpotSDK::Cms::LookupAssociationSpec::OrHash,
             permission: HubSpotSDK::Cms::FieldLevelPermission::OrHash,
             property_definition_source:
               HubSpotSDK::Cms::DefinitionSource::OrHash,
@@ -315,6 +168,7 @@ module HubSpotSDK
           fulcrum_portal_id: nil,
           fulcrum_timestamp: nil,
           janus_group: nil,
+          lookup_association_spec: nil,
           permission: nil,
           property_definition_source: nil,
           property_requirements: nil,
@@ -326,9 +180,8 @@ module HubSpotSDK
           override.returns(
             {
               object_type_id: String,
-              property: HubSpotSDK::Cms::Property,
-              calculation_expression:
-                HubSpotSDK::Cms::PropertyDefinition::CalculationExpression::Variants,
+              property: HubSpotSDK::Cms::MediaBridgeProperty,
+              calculation_expression: T.anything,
               calculation_formula: String,
               definition_source: HubSpotSDK::Cms::PropertyDefinitionSource,
               extension_data: HubSpotSDK::Cms::ExtensionData,
@@ -337,6 +190,7 @@ module HubSpotSDK
               fulcrum_portal_id: Integer,
               fulcrum_timestamp: Integer,
               janus_group: String,
+              lookup_association_spec: HubSpotSDK::Cms::LookupAssociationSpec,
               permission: HubSpotSDK::Cms::FieldLevelPermission,
               property_definition_source: HubSpotSDK::Cms::DefinitionSource,
               property_requirements: HubSpotSDK::Cms::DefaultRequirements,
@@ -345,100 +199,6 @@ module HubSpotSDK
           )
         end
         def to_hash
-        end
-
-        module CalculationExpression
-          extend HubSpotSDK::Internal::Type::Union
-
-          Variants =
-            T.type_alias do
-              T.any(
-                HubSpotSDK::Cms::ConstantBoolean,
-                HubSpotSDK::Cms::ConstantNumber,
-                HubSpotSDK::Cms::ConstantString,
-                HubSpotSDK::Cms::BooleanPropertyVariable,
-                HubSpotSDK::Cms::StringPropertyVariable,
-                HubSpotSDK::Cms::NumberPropertyVariable,
-                HubSpotSDK::Cms::TimestampOfPropertyVariable,
-                HubSpotSDK::Cms::BooleanTargetPropertyVariable,
-                HubSpotSDK::Cms::StringTargetPropertyVariable,
-                HubSpotSDK::Cms::NumberTargetPropertyVariable,
-                HubSpotSDK::Cms::TimestampOfTargetPropertyVariable,
-                HubSpotSDK::Cms::AddNumbers,
-                HubSpotSDK::Cms::SubtractNumbers,
-                HubSpotSDK::Cms::MultiplyNumbers,
-                HubSpotSDK::Cms::DivideNumbers,
-                HubSpotSDK::Cms::RoundDownNumbers,
-                HubSpotSDK::Cms::RoundUpNumbers,
-                HubSpotSDK::Cms::RoundNearestNumbers,
-                HubSpotSDK::Cms::UpperCase,
-                HubSpotSDK::Cms::LowerCase,
-                HubSpotSDK::Cms::ConcatStrings,
-                HubSpotSDK::Cms::Contains,
-                HubSpotSDK::Cms::BeginsWith,
-                HubSpotSDK::Cms::NumberToString,
-                HubSpotSDK::Cms::ParseNumber,
-                HubSpotSDK::Cms::FetchExchangeRate,
-                HubSpotSDK::Cms::FetchCurrencyDecimalPlaces,
-                HubSpotSDK::Cms::FetchSingleCurrencyPortalCurrency,
-                HubSpotSDK::Cms::DatedExchangeRate,
-                HubSpotSDK::Cms::PipelineProbability,
-                HubSpotSDK::Cms::MaxNumbers,
-                HubSpotSDK::Cms::MinNumbers,
-                HubSpotSDK::Cms::LessThan,
-                HubSpotSDK::Cms::LessThanOrEqual,
-                HubSpotSDK::Cms::MoreThan,
-                HubSpotSDK::Cms::MoreThanOrEqual,
-                HubSpotSDK::Cms::NumberEquals,
-                HubSpotSDK::Cms::StringEquals,
-                HubSpotSDK::Cms::IsPipelineStageClosed,
-                HubSpotSDK::Cms::Not,
-                HubSpotSDK::Cms::Date,
-                HubSpotSDK::Cms::Month,
-                HubSpotSDK::Cms::Year,
-                HubSpotSDK::Cms::Now,
-                HubSpotSDK::Cms::TimeBetween,
-                HubSpotSDK::Cms::TimeBetweenSkipWeekends,
-                HubSpotSDK::Cms::PeriodToMonths,
-                HubSpotSDK::Cms::PeriodToWeeks,
-                HubSpotSDK::Cms::And,
-                HubSpotSDK::Cms::Or,
-                HubSpotSDK::Cms::Xor,
-                HubSpotSDK::Cms::IfString,
-                HubSpotSDK::Cms::IfNumber,
-                HubSpotSDK::Cms::IfBoolean,
-                HubSpotSDK::Cms::IsPresent,
-                HubSpotSDK::Cms::HasEmailReply,
-                HubSpotSDK::Cms::HasPlainTextEmailReply,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyHTML,
-                HubSpotSDK::Cms::ExtractMostRecentEmailReplyText,
-                HubSpotSDK::Cms::ExtractMostRecentPlainTextEmailReply,
-                HubSpotSDK::Cms::SetContainsString,
-                HubSpotSDK::Cms::IsEngagementType,
-                HubSpotSDK::Cms::FormatFullName,
-                HubSpotSDK::Cms::FormatPhoneNumber,
-                HubSpotSDK::Cms::FormatSearchablePhoneNumber,
-                HubSpotSDK::Cms::AbsoluteValue,
-                HubSpotSDK::Cms::SquareRoot,
-                HubSpotSDK::Cms::Power,
-                HubSpotSDK::Cms::Substring,
-                HubSpotSDK::Cms::Euler,
-                HubSpotSDK::Cms::StringLength,
-                HubSpotSDK::Cms::IsBlank,
-                HubSpotSDK::Cms::AddTime,
-                HubSpotSDK::Cms::SubtractTime
-              )
-            end
-
-          sig do
-            override.returns(
-              T::Array[
-                HubSpotSDK::Cms::PropertyDefinition::CalculationExpression::Variants
-              ]
-            )
-          end
-          def self.variants
-          end
         end
       end
     end

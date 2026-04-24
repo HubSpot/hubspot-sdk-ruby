@@ -44,6 +44,11 @@ module HubSpotSDK
         #   @return [HubSpotSDK::Models::Automation::ComplianceIDs, nil]
         optional :compliance_ids, -> { HubSpotSDK::Automation::ComplianceIDs }, api_name: :complianceIds
 
+        # @!attribute conversation_id
+        #
+        #   @return [String, nil]
+        optional :conversation_id, String, api_name: :conversationId
+
         # @!attribute feature_id
         #   The identifier for the feature associated with the context.
         #
@@ -62,7 +67,7 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :trajectory_id, String, api_name: :trajectoryId
 
-        # @!method initialize(application_group:, application_id:, metadata:, otel_context_holder:, unstructured_sources:, compliance_ids: nil, feature_id: nil, inference_id: nil, trajectory_id: nil)
+        # @!method initialize(application_group:, application_id:, metadata:, otel_context_holder:, unstructured_sources:, compliance_ids: nil, conversation_id: nil, feature_id: nil, inference_id: nil, trajectory_id: nil)
         #   @param application_group [String] The group to which the application belongs.
         #
         #   @param application_id [String] The identifier for the application associated with the context.
@@ -74,6 +79,8 @@ module HubSpotSDK
         #   @param unstructured_sources [Array<Symbol, HubSpotSDK::Models::Automation::ChirpAIContextObject::UnstructuredSource>]
         #
         #   @param compliance_ids [HubSpotSDK::Models::Automation::ComplianceIDs]
+        #
+        #   @param conversation_id [String]
         #
         #   @param feature_id [String] The identifier for the feature associated with the context.
         #

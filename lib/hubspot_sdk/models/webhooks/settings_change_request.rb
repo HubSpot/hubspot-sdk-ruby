@@ -5,9 +5,7 @@ module HubSpotSDK
     module Webhooks
       class SettingsChangeRequest < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute target_url
-        #   A publicly available URL for Hubspot to call where event payloads will be
-        #   delivered. See [link-so-some-doc](#) for details about the format of these event
-        #   payloads.
+        #   The URL to which webhook events will be sent. It is a string.
         #
         #   @return [String]
         required :target_url, String, api_name: :targetUrl
@@ -18,10 +16,7 @@ module HubSpotSDK
         required :throttling, -> { HubSpotSDK::Webhooks::ThrottlingSettings }
 
         # @!method initialize(target_url:, throttling:)
-        #   Some parameter documentations has been truncated, see
-        #   {HubSpotSDK::Models::Webhooks::SettingsChangeRequest} for more details.
-        #
-        #   @param target_url [String] A publicly available URL for Hubspot to call where event payloads will be delive
+        #   @param target_url [String] The URL to which webhook events will be sent. It is a string.
         #
         #   @param throttling [HubSpotSDK::Models::Webhooks::ThrottlingSettings]
       end
