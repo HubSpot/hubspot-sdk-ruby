@@ -15,7 +15,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
       )
 
     assert_pattern do
-      response => HubSpotSDK::BaseAssociationDefinition
+      response => HubSpotSDK::AssociationDefinition
     end
 
     assert_pattern do
@@ -287,7 +287,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.create_video_association_definition(0)
 
     assert_pattern do
-      response => HubSpotSDK::BaseAssociationDefinition
+      response => HubSpotSDK::AssociationDefinition
     end
 
     assert_pattern do
@@ -480,7 +480,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
         id: String,
         allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
@@ -737,7 +737,7 @@ class HubSpotSDK::Test::Resources::Cms::MediaBridgeTest < HubSpotSDK::Test::Reso
     response = @hubspot.cms.media_bridge.update_schema("objectType", app_id: 0, clear_description: true)
 
     assert_pattern do
-      response => HubSpotSDK::BaseObjectTypeDefinition
+      response => HubSpotSDK::ObjectTypeDefinition
     end
 
     assert_pattern do

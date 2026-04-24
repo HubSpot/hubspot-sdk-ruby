@@ -118,7 +118,7 @@ module HubSpotSDK
             revision_id: String,
             object_id_: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::PageData)
+          ).returns(HubSpotSDK::Cms::PagesPage)
         end
         def restore_landing_page_revision(
           revision_id,
@@ -133,7 +133,7 @@ module HubSpotSDK
             revision_id: Integer,
             object_id_: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::PageData)
+          ).returns(HubSpotSDK::Cms::PagesPage)
         end
         def restore_landing_page_revision_to_draft(
           revision_id,
@@ -149,7 +149,7 @@ module HubSpotSDK
             revision_id: String,
             object_id_: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::PageData)
+          ).returns(HubSpotSDK::Cms::PagesPage)
         end
         def restore_site_page_revision(
           revision_id,
@@ -165,7 +165,7 @@ module HubSpotSDK
             revision_id: Integer,
             object_id_: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Cms::PageData)
+          ).returns(HubSpotSDK::Cms::PagesPage)
         end
         def restore_site_page_revision_to_draft(
           revision_id,

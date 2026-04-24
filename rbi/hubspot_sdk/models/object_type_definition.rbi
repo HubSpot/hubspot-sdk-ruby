@@ -2,13 +2,10 @@
 
 module HubSpotSDK
   module Models
-    class BaseObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(
-            HubSpotSDK::BaseObjectTypeDefinition,
-            HubSpotSDK::Internal::AnyHash
-          )
+          T.any(HubSpotSDK::ObjectTypeDefinition, HubSpotSDK::Internal::AnyHash)
         end
 
       sig { returns(String) }

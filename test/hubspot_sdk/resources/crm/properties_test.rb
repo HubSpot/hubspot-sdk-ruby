@@ -17,7 +17,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
       )
 
     assert_pattern do
-      response => HubSpotSDK::BaseProperty
+      response => HubSpotSDK::Property
     end
 
     assert_pattern do
@@ -27,7 +27,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         group_name: String,
         label: String,
         name: String,
-        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption]),
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option]),
         type: String,
         archived: HubSpotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
@@ -36,8 +36,8 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         created_at: Time | nil,
         created_user_id: String | nil,
         currency_property_name: String | nil,
-        data_sensitivity: HubSpotSDK::BaseProperty::DataSensitivity | nil,
-        date_display_hint: HubSpotSDK::BaseProperty::DateDisplayHint | nil,
+        data_sensitivity: HubSpotSDK::Property::DataSensitivity | nil,
+        date_display_hint: HubSpotSDK::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubSpotSDK::Internal::Type::Boolean | nil,
         form_field: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -45,7 +45,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         hidden: HubSpotSDK::Internal::Type::Boolean | nil,
         hubspot_defined: HubSpotSDK::Internal::Type::Boolean | nil,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata | nil,
-        number_display_hint: HubSpotSDK::BaseProperty::NumberDisplayHint | nil,
+        number_display_hint: HubSpotSDK::Property::NumberDisplayHint | nil,
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -61,7 +61,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
     response = @hubspot.crm.properties.update("propertyName", object_type: "objectType")
 
     assert_pattern do
-      response => HubSpotSDK::BaseProperty
+      response => HubSpotSDK::Property
     end
 
     assert_pattern do
@@ -71,7 +71,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         group_name: String,
         label: String,
         name: String,
-        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption]),
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option]),
         type: String,
         archived: HubSpotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
@@ -80,8 +80,8 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         created_at: Time | nil,
         created_user_id: String | nil,
         currency_property_name: String | nil,
-        data_sensitivity: HubSpotSDK::BaseProperty::DataSensitivity | nil,
-        date_display_hint: HubSpotSDK::BaseProperty::DateDisplayHint | nil,
+        data_sensitivity: HubSpotSDK::Property::DataSensitivity | nil,
+        date_display_hint: HubSpotSDK::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubSpotSDK::Internal::Type::Boolean | nil,
         form_field: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -89,7 +89,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         hidden: HubSpotSDK::Internal::Type::Boolean | nil,
         hubspot_defined: HubSpotSDK::Internal::Type::Boolean | nil,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata | nil,
-        number_display_hint: HubSpotSDK::BaseProperty::NumberDisplayHint | nil,
+        number_display_hint: HubSpotSDK::Property::NumberDisplayHint | nil,
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -110,7 +110,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
 
     assert_pattern do
       response => {
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property])
       }
     end
   end
@@ -131,7 +131,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
     response = @hubspot.crm.properties.get("propertyName", object_type: "objectType")
 
     assert_pattern do
-      response => HubSpotSDK::BaseProperty
+      response => HubSpotSDK::Property
     end
 
     assert_pattern do
@@ -141,7 +141,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         group_name: String,
         label: String,
         name: String,
-        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption]),
+        options: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option]),
         type: String,
         archived: HubSpotSDK::Internal::Type::Boolean | nil,
         archived_at: Time | nil,
@@ -150,8 +150,8 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         created_at: Time | nil,
         created_user_id: String | nil,
         currency_property_name: String | nil,
-        data_sensitivity: HubSpotSDK::BaseProperty::DataSensitivity | nil,
-        date_display_hint: HubSpotSDK::BaseProperty::DateDisplayHint | nil,
+        data_sensitivity: HubSpotSDK::Property::DataSensitivity | nil,
+        date_display_hint: HubSpotSDK::Property::DateDisplayHint | nil,
         display_order: Integer | nil,
         external_options: HubSpotSDK::Internal::Type::Boolean | nil,
         form_field: HubSpotSDK::Internal::Type::Boolean | nil,
@@ -159,7 +159,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         hidden: HubSpotSDK::Internal::Type::Boolean | nil,
         hubspot_defined: HubSpotSDK::Internal::Type::Boolean | nil,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata | nil,
-        number_display_hint: HubSpotSDK::BaseProperty::NumberDisplayHint | nil,
+        number_display_hint: HubSpotSDK::Property::NumberDisplayHint | nil,
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,

@@ -16,7 +16,7 @@ module HubSpotSDK
             to_object_type_id: String,
             name: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::BaseAssociationDefinition)
+          ).returns(HubSpotSDK::AssociationDefinition)
         end
         def create_association(
           # Path param
@@ -304,7 +304,7 @@ module HubSpotSDK
           params(
             app_id: Integer,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::BaseAssociationDefinition)
+          ).returns(HubSpotSDK::AssociationDefinition)
         end
         def create_video_association_definition(app_id, request_options: {})
         end
@@ -712,7 +712,7 @@ module HubSpotSDK
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::BaseObjectTypeDefinition)
+          ).returns(HubSpotSDK::ObjectTypeDefinition)
         end
         def update_schema(
           # Path param

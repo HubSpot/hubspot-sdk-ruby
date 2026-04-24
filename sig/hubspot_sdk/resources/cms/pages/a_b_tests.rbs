@@ -7,13 +7,13 @@ module HubSpotSDK
             content_id: String,
             variation_name: String,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PageData
+          ) -> HubSpotSDK::Cms::PagesPage
 
           def create_site_page_variation: (
             content_id: String,
             variation_name: String,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PageData
+          ) -> HubSpotSDK::Cms::PagesPage
 
           def end_landing_page_test: (
             ab_test_id: String,

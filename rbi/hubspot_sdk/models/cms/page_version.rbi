@@ -12,10 +12,10 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :id
 
-        sig { returns(HubSpotSDK::Cms::PageData) }
+        sig { returns(HubSpotSDK::Cms::PagesPage) }
         attr_reader :object
 
-        sig { params(object: HubSpotSDK::Cms::PageData::OrHash).void }
+        sig { params(object: HubSpotSDK::Cms::PagesPage::OrHash).void }
         attr_writer :object
 
         sig { returns(Time) }
@@ -30,7 +30,7 @@ module HubSpotSDK
         sig do
           params(
             id: String,
-            object: HubSpotSDK::Cms::PageData::OrHash,
+            object: HubSpotSDK::Cms::PagesPage::OrHash,
             updated_at: Time,
             user: HubSpotSDK::VersionUser::OrHash
           ).returns(T.attached_class)
@@ -42,7 +42,7 @@ module HubSpotSDK
           override.returns(
             {
               id: String,
-              object: HubSpotSDK::Cms::PageData,
+              object: HubSpotSDK::Cms::PagesPage,
               updated_at: Time,
               user: HubSpotSDK::VersionUser
             }

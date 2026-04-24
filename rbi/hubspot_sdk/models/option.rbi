@@ -2,10 +2,10 @@
 
 module HubSpotSDK
   module Models
-    class BaseOption < HubSpotSDK::Internal::Type::BaseModel
+    class Option < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubSpotSDK::BaseOption, HubSpotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::Option, HubSpotSDK::Internal::AnyHash)
         end
 
       # Hidden options will not be displayed in HubSpot.

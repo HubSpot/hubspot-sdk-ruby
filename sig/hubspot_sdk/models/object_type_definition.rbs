@@ -1,6 +1,6 @@
 module HubSpotSDK
   module Models
-    type base_object_type_definition =
+    type object_type_definition =
       {
         id: String,
         allows_sensitive_properties: bool,
@@ -19,7 +19,7 @@ module HubSpotSDK
         updated_at: Time
       }
 
-    class BaseObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
+    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       attr_accessor allows_sensitive_properties: bool

@@ -35,7 +35,7 @@ module HubSpotSDK
         # @param show_currency_symbol [Boolean]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseProperty]
+        # @return [HubSpotSDK::Models::Property]
         #
         # @see HubSpotSDK::Models::Crm::PropertyCreateParams
         def create(object_type, params)
@@ -44,7 +44,7 @@ module HubSpotSDK
             method: :post,
             path: ["crm/properties/2026-03/%1$s", object_type],
             body: parsed,
-            model: HubSpotSDK::BaseProperty,
+            model: HubSpotSDK::Property,
             options: options
           )
         end
@@ -89,7 +89,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseProperty]
+        # @return [HubSpotSDK::Models::Property]
         #
         # @see HubSpotSDK::Models::Crm::PropertyUpdateParams
         def update(property_name, params)
@@ -102,7 +102,7 @@ module HubSpotSDK
             method: :patch,
             path: ["crm/properties/2026-03/%1$s/%2$s", object_type, property_name],
             body: parsed,
-            model: HubSpotSDK::BaseProperty,
+            model: HubSpotSDK::Property,
             options: options
           )
         end
@@ -181,7 +181,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseProperty]
+        # @return [HubSpotSDK::Models::Property]
         #
         # @see HubSpotSDK::Models::Crm::PropertyGetParams
         def get(property_name, params)
@@ -195,7 +195,7 @@ module HubSpotSDK
             method: :get,
             path: ["crm/properties/2026-03/%1$s/%2$s", object_type, property_name],
             query: query.transform_keys(data_sensitivity: "dataSensitivity"),
-            model: HubSpotSDK::BaseProperty,
+            model: HubSpotSDK::Property,
             options: options
           )
         end
