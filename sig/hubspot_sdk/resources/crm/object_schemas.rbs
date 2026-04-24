@@ -30,7 +30,7 @@ module HubSpotSDK
           ?searchable_properties: ::Array[String],
           ?secondary_display_properties: ::Array[String],
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::ObjectTypeDefinition
+        ) -> HubSpotSDK::BaseObjectTypeDefinition
 
         def list: (
           ?archived: bool,
@@ -52,7 +52,7 @@ module HubSpotSDK
           to_object_type_id: String,
           ?name: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::AssociationDefinition
+        ) -> HubSpotSDK::BaseAssociationDefinition
 
         def delete_association: (
           String association_identifier,

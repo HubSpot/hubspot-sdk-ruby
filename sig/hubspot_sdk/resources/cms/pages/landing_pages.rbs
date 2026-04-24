@@ -5,7 +5,7 @@ module HubSpotSDK
         class LandingPages
           def create: (
             id: String,
-            ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
+            ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
             ab_test_id: String,
             archived_at: Time,
             archived_in_dashboard: bool,
@@ -14,11 +14,11 @@ module HubSpotSDK
             campaign: String,
             category_id: Integer,
             content_group_id: String,
-            content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
+            content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
             created: Time,
             created_by_id: String,
             currently_published: bool,
-            current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
+            current_state: HubSpotSDK::Models::Cms::PageData::current_state,
             domain: String,
             dynamic_page_data_source_id: String,
             dynamic_page_data_source_type: Integer,
@@ -32,7 +32,7 @@ module HubSpotSDK
             head_html: String,
             html_title: String,
             include_default_custom_css: bool,
-            language: HubSpotSDK::Models::Cms::PagesPage::language,
+            language: HubSpotSDK::Models::Cms::PageData::language,
             layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
@@ -62,12 +62,12 @@ module HubSpotSDK
             widget_containers: ::Hash[Symbol, top],
             widgets: ::Hash[Symbol, top],
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def update: (
             String object_id_,
             id: String,
-            ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
+            ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
             ab_test_id: String,
             archived_at: Time,
             archived_in_dashboard: bool,
@@ -76,11 +76,11 @@ module HubSpotSDK
             campaign: String,
             category_id: Integer,
             content_group_id: String,
-            content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
+            content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
             created: Time,
             created_by_id: String,
             currently_published: bool,
-            current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
+            current_state: HubSpotSDK::Models::Cms::PageData::current_state,
             domain: String,
             dynamic_page_data_source_id: String,
             dynamic_page_data_source_type: Integer,
@@ -94,7 +94,7 @@ module HubSpotSDK
             head_html: String,
             html_title: String,
             include_default_custom_css: bool,
-            language: HubSpotSDK::Models::Cms::PagesPage::language,
+            language: HubSpotSDK::Models::Cms::PageData::language,
             layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
@@ -125,7 +125,7 @@ module HubSpotSDK
             widgets: ::Hash[Symbol, top],
             ?archived: bool,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def list: (
             ?after: String,
@@ -140,7 +140,7 @@ module HubSpotSDK
             ?updated_at: Time,
             ?updated_before: Time,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PagesPage]
+          ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageData]
 
           def delete: (
             String object_id_,
@@ -152,19 +152,19 @@ module HubSpotSDK
             id: String,
             ?clone_name: String,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def get: (
             String object_id_,
             ?archived: bool,
             ?property: String,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def get_draft: (
             String object_id_,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def push_draft_live: (
             String object_id_,
@@ -185,7 +185,7 @@ module HubSpotSDK
           def update_draft: (
             String object_id_,
             id: String,
-            ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
+            ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
             ab_test_id: String,
             archived_at: Time,
             archived_in_dashboard: bool,
@@ -194,11 +194,11 @@ module HubSpotSDK
             campaign: String,
             category_id: Integer,
             content_group_id: String,
-            content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
+            content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
             created: Time,
             created_by_id: String,
             currently_published: bool,
-            current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
+            current_state: HubSpotSDK::Models::Cms::PageData::current_state,
             domain: String,
             dynamic_page_data_source_id: String,
             dynamic_page_data_source_type: Integer,
@@ -212,7 +212,7 @@ module HubSpotSDK
             head_html: String,
             html_title: String,
             include_default_custom_css: bool,
-            language: HubSpotSDK::Models::Cms::PagesPage::language,
+            language: HubSpotSDK::Models::Cms::PageData::language,
             layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
             link_rel_canonical_url: String,
             mab_experiment_id: String,
@@ -242,7 +242,7 @@ module HubSpotSDK
             widget_containers: ::Hash[Symbol, top],
             widgets: ::Hash[Symbol, top],
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PagesPage
+          ) -> HubSpotSDK::Cms::PageData
 
           def initialize: (client: HubSpotSDK::Client) -> void
         end

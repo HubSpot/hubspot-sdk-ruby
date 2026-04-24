@@ -2,11 +2,11 @@
 
 module HubSpotSDK
   module Models
-    class AssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
+    class BaseAssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
           T.any(
-            HubSpotSDK::AssociationDefinition,
+            HubSpotSDK::BaseAssociationDefinition,
             HubSpotSDK::Internal::AnyHash
           )
         end

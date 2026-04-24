@@ -3,13 +3,13 @@ module HubSpotSDK
     module Cms
       type collection_response_with_total_page_forward_paging =
         {
-          results: ::Array[HubSpotSDK::Cms::PagesPage],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           total: Integer,
           paging: HubSpotSDK::ForwardPaging
         }
 
       class CollectionResponseWithTotalPageForwardPaging < HubSpotSDK::Internal::Type::BaseModel
-        attr_accessor results: ::Array[HubSpotSDK::Cms::PagesPage]
+        attr_accessor results: ::Array[HubSpotSDK::Cms::PageData]
 
         attr_accessor total: Integer
 
@@ -18,13 +18,13 @@ module HubSpotSDK
         def paging=: (HubSpotSDK::ForwardPaging) -> HubSpotSDK::ForwardPaging
 
         def initialize: (
-          results: ::Array[HubSpotSDK::Cms::PagesPage],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           total: Integer,
           ?paging: HubSpotSDK::ForwardPaging
         ) -> void
 
         def to_hash: -> {
-          results: ::Array[HubSpotSDK::Cms::PagesPage],
+          results: ::Array[HubSpotSDK::Cms::PageData],
           total: Integer,
           paging: HubSpotSDK::ForwardPaging
         }

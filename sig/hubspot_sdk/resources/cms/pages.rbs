@@ -51,25 +51,25 @@ module HubSpotSDK
           String revision_id,
           object_id_: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_landing_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_site_page_revision: (
           String revision_id,
           object_id_: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
+        ) -> HubSpotSDK::Cms::PageData
 
         def restore_site_page_revision_to_draft: (
           Integer revision_id,
           object_id_: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
+        ) -> HubSpotSDK::Cms::PageData
 
         def initialize: (client: HubSpotSDK::Client) -> void
       end

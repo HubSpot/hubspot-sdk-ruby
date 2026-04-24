@@ -32,7 +32,7 @@ module HubSpotSDK
           #
           # @overload create_landing_pages(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubSpotSDK::Models::Cms::PagesPage>] Pages to input.
+          # @param inputs [Array<HubSpotSDK::Models::Cms::PageData>] Pages to input.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -55,7 +55,7 @@ module HubSpotSDK
           #
           # @overload create_site_pages(inputs:, request_options: {})
           #
-          # @param inputs [Array<HubSpotSDK::Models::Cms::PagesPage>] Pages to input.
+          # @param inputs [Array<HubSpotSDK::Models::Cms::PageData>] Pages to input.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

@@ -2,7 +2,7 @@
 
 module HubSpotSDK
   module Models
-    class ErrorData < HubSpotSDK::Internal::Type::BaseModel
+    class BaseError < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute category
       #   The error category
       #
@@ -50,7 +50,7 @@ module HubSpotSDK
 
       # @!method initialize(category:, correlation_id:, message:, context: nil, errors: nil, links: nil, sub_category: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubSpotSDK::Models::ErrorData} for more details.
+      #   {HubSpotSDK::Models::BaseError} for more details.
       #
       #   @param category [String] The error category
       #

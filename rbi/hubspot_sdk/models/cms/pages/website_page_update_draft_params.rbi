@@ -4,7 +4,7 @@ module HubSpotSDK
   module Models
     module Cms
       module Pages
-        class WebsitePageUpdateDraftParams < HubSpotSDK::Models::Cms::PagesPage
+        class WebsitePageUpdateDraftParams < HubSpotSDK::Models::Cms::PageData
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 

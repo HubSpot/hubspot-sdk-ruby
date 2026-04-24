@@ -2,7 +2,7 @@
 
 module HubSpotSDK
   module Models
-    class ObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
+    class BaseObjectTypeDefinition < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute id
       #
       #   @return [String]

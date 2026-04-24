@@ -9,12 +9,12 @@ module HubSpotSDK
           ) -> HubSpotSDK::Cms::BatchResponseContentFolder
 
           def create_landing_pages: (
-            inputs: ::Array[HubSpotSDK::Cms::PagesPage],
+            inputs: ::Array[HubSpotSDK::Cms::PageData],
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Cms::BatchResponsePage
 
           def create_site_pages: (
-            inputs: ::Array[HubSpotSDK::Cms::PagesPage],
+            inputs: ::Array[HubSpotSDK::Cms::PageData],
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Cms::BatchResponsePage
 

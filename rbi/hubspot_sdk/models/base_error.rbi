@@ -2,10 +2,10 @@
 
 module HubSpotSDK
   module Models
-    class ErrorData < HubSpotSDK::Internal::Type::BaseModel
+    class BaseError < HubSpotSDK::Internal::Type::BaseModel
       OrHash =
         T.type_alias do
-          T.any(HubSpotSDK::ErrorData, HubSpotSDK::Internal::AnyHash)
+          T.any(HubSpotSDK::BaseError, HubSpotSDK::Internal::AnyHash)
         end
 
       # The error category

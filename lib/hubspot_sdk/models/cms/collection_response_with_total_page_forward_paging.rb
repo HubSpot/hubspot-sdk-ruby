@@ -7,8 +7,8 @@ module HubSpotSDK
         # @!attribute results
         #   Collection of pages.
         #
-        #   @return [Array<HubSpotSDK::Models::Cms::PagesPage>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PagesPage] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PageData>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData] }
 
         # @!attribute total
         #   Total number of pages.
@@ -22,7 +22,7 @@ module HubSpotSDK
         optional :paging, -> { HubSpotSDK::ForwardPaging }
 
         # @!method initialize(results:, total:, paging: nil)
-        #   @param results [Array<HubSpotSDK::Models::Cms::PagesPage>] Collection of pages.
+        #   @param results [Array<HubSpotSDK::Models::Cms::PageData>] Collection of pages.
         #
         #   @param total [Integer] Total number of pages.
         #

@@ -6,7 +6,7 @@ module HubSpotSDK
           { object_id_: String, archived: bool }
           & HubSpotSDK::Internal::Type::request_parameters
 
-        class WebsitePageUpdateParams < HubSpotSDK::Models::Cms::PagesPage
+        class WebsitePageUpdateParams < HubSpotSDK::Models::Cms::PageData
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 

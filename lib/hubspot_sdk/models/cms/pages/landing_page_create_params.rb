@@ -5,7 +5,7 @@ module HubSpotSDK
     module Cms
       module Pages
         # @see HubSpotSDK::Resources::Cms::Pages::LandingPages#create
-        class LandingPageCreateParams < HubSpotSDK::Models::Cms::PagesPage
+        class LandingPageCreateParams < HubSpotSDK::Models::Cms::PageData
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 
