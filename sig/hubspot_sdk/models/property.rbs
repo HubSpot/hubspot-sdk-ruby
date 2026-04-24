@@ -1,13 +1,13 @@
 module HubSpotSDK
   module Models
-    type base_property =
+    type property =
       {
         description: String,
         field_type: String,
         group_name: String,
         label: String,
         name: String,
-        options: ::Array[HubSpotSDK::BaseOption],
+        options: ::Array[HubSpotSDK::Option],
         type: String,
         archived: bool,
         archived_at: Time,
@@ -16,8 +16,8 @@ module HubSpotSDK
         created_at: Time,
         created_user_id: String,
         currency_property_name: String,
-        data_sensitivity: HubSpotSDK::Models::BaseProperty::data_sensitivity,
-        date_display_hint: HubSpotSDK::Models::BaseProperty::date_display_hint,
+        data_sensitivity: HubSpotSDK::Models::Property::data_sensitivity,
+        date_display_hint: HubSpotSDK::Models::Property::date_display_hint,
         display_order: Integer,
         external_options: bool,
         form_field: bool,
@@ -25,7 +25,7 @@ module HubSpotSDK
         hidden: bool,
         hubspot_defined: bool,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata,
-        number_display_hint: HubSpotSDK::Models::BaseProperty::number_display_hint,
+        number_display_hint: HubSpotSDK::Models::Property::number_display_hint,
         referenced_object_type: String,
         sensitive_data_categories: ::Array[String],
         show_currency_symbol: bool,
@@ -33,7 +33,7 @@ module HubSpotSDK
         updated_user_id: String
       }
 
-    class BaseProperty < HubSpotSDK::Internal::Type::BaseModel
+    class Property < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor description: String
 
       attr_accessor field_type: String
@@ -44,7 +44,7 @@ module HubSpotSDK
 
       attr_accessor name: String
 
-      attr_accessor options: ::Array[HubSpotSDK::BaseOption]
+      attr_accessor options: ::Array[HubSpotSDK::Option]
 
       attr_accessor type: String
 
@@ -76,17 +76,17 @@ module HubSpotSDK
 
       def currency_property_name=: (String) -> String
 
-      attr_reader data_sensitivity: HubSpotSDK::Models::BaseProperty::data_sensitivity?
+      attr_reader data_sensitivity: HubSpotSDK::Models::Property::data_sensitivity?
 
       def data_sensitivity=: (
-        HubSpotSDK::Models::BaseProperty::data_sensitivity
-      ) -> HubSpotSDK::Models::BaseProperty::data_sensitivity
+        HubSpotSDK::Models::Property::data_sensitivity
+      ) -> HubSpotSDK::Models::Property::data_sensitivity
 
-      attr_reader date_display_hint: HubSpotSDK::Models::BaseProperty::date_display_hint?
+      attr_reader date_display_hint: HubSpotSDK::Models::Property::date_display_hint?
 
       def date_display_hint=: (
-        HubSpotSDK::Models::BaseProperty::date_display_hint
-      ) -> HubSpotSDK::Models::BaseProperty::date_display_hint
+        HubSpotSDK::Models::Property::date_display_hint
+      ) -> HubSpotSDK::Models::Property::date_display_hint
 
       attr_reader display_order: Integer?
 
@@ -118,11 +118,11 @@ module HubSpotSDK
         HubSpotSDK::PropertyModificationMetadata
       ) -> HubSpotSDK::PropertyModificationMetadata
 
-      attr_reader number_display_hint: HubSpotSDK::Models::BaseProperty::number_display_hint?
+      attr_reader number_display_hint: HubSpotSDK::Models::Property::number_display_hint?
 
       def number_display_hint=: (
-        HubSpotSDK::Models::BaseProperty::number_display_hint
-      ) -> HubSpotSDK::Models::BaseProperty::number_display_hint
+        HubSpotSDK::Models::Property::number_display_hint
+      ) -> HubSpotSDK::Models::Property::number_display_hint
 
       attr_reader referenced_object_type: String?
 
@@ -150,7 +150,7 @@ module HubSpotSDK
         group_name: String,
         label: String,
         name: String,
-        options: ::Array[HubSpotSDK::BaseOption],
+        options: ::Array[HubSpotSDK::Option],
         type: String,
         ?archived: bool,
         ?archived_at: Time,
@@ -159,8 +159,8 @@ module HubSpotSDK
         ?created_at: Time,
         ?created_user_id: String,
         ?currency_property_name: String,
-        ?data_sensitivity: HubSpotSDK::Models::BaseProperty::data_sensitivity,
-        ?date_display_hint: HubSpotSDK::Models::BaseProperty::date_display_hint,
+        ?data_sensitivity: HubSpotSDK::Models::Property::data_sensitivity,
+        ?date_display_hint: HubSpotSDK::Models::Property::date_display_hint,
         ?display_order: Integer,
         ?external_options: bool,
         ?form_field: bool,
@@ -168,7 +168,7 @@ module HubSpotSDK
         ?hidden: bool,
         ?hubspot_defined: bool,
         ?modification_metadata: HubSpotSDK::PropertyModificationMetadata,
-        ?number_display_hint: HubSpotSDK::Models::BaseProperty::number_display_hint,
+        ?number_display_hint: HubSpotSDK::Models::Property::number_display_hint,
         ?referenced_object_type: String,
         ?sensitive_data_categories: ::Array[String],
         ?show_currency_symbol: bool,
@@ -182,7 +182,7 @@ module HubSpotSDK
         group_name: String,
         label: String,
         name: String,
-        options: ::Array[HubSpotSDK::BaseOption],
+        options: ::Array[HubSpotSDK::Option],
         type: String,
         archived: bool,
         archived_at: Time,
@@ -191,8 +191,8 @@ module HubSpotSDK
         created_at: Time,
         created_user_id: String,
         currency_property_name: String,
-        data_sensitivity: HubSpotSDK::Models::BaseProperty::data_sensitivity,
-        date_display_hint: HubSpotSDK::Models::BaseProperty::date_display_hint,
+        data_sensitivity: HubSpotSDK::Models::Property::data_sensitivity,
+        date_display_hint: HubSpotSDK::Models::Property::date_display_hint,
         display_order: Integer,
         external_options: bool,
         form_field: bool,
@@ -200,7 +200,7 @@ module HubSpotSDK
         hidden: bool,
         hubspot_defined: bool,
         modification_metadata: HubSpotSDK::PropertyModificationMetadata,
-        number_display_hint: HubSpotSDK::Models::BaseProperty::number_display_hint,
+        number_display_hint: HubSpotSDK::Models::Property::number_display_hint,
         referenced_object_type: String,
         sensitive_data_categories: ::Array[String],
         show_currency_symbol: bool,
@@ -217,7 +217,7 @@ module HubSpotSDK
         NON_SENSITIVE: :non_sensitive
         SENSITIVE: :sensitive
 
-        def self?.values: -> ::Array[HubSpotSDK::Models::BaseProperty::data_sensitivity]
+        def self?.values: -> ::Array[HubSpotSDK::Models::Property::data_sensitivity]
       end
 
       type date_display_hint =
@@ -231,7 +231,7 @@ module HubSpotSDK
         TIME_SINCE: :time_since
         TIME_UNTIL: :time_until
 
-        def self?.values: -> ::Array[HubSpotSDK::Models::BaseProperty::date_display_hint]
+        def self?.values: -> ::Array[HubSpotSDK::Models::Property::date_display_hint]
       end
 
       type number_display_hint =
@@ -252,7 +252,7 @@ module HubSpotSDK
         PROBABILITY: :probability
         UNFORMATTED: :unformatted
 
-        def self?.values: -> ::Array[HubSpotSDK::Models::BaseProperty::number_display_hint]
+        def self?.values: -> ::Array[HubSpotSDK::Models::Property::number_display_hint]
       end
     end
   end

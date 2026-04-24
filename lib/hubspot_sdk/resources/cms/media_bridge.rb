@@ -23,7 +23,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseAssociationDefinition]
+        # @return [HubSpotSDK::Models::AssociationDefinition]
         #
         # @see HubSpotSDK::Models::Cms::MediaBridgeCreateAssociationParams
         def create_association(object_type, params)
@@ -36,7 +36,7 @@ module HubSpotSDK
             method: :post,
             path: ["media-bridge/2026-03/%1$s/schemas/%2$s/associations", app_id, object_type],
             body: parsed,
-            model: HubSpotSDK::BaseAssociationDefinition,
+            model: HubSpotSDK::AssociationDefinition,
             options: options
           )
         end
@@ -298,14 +298,14 @@ module HubSpotSDK
         # @param app_id [Integer]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseAssociationDefinition]
+        # @return [HubSpotSDK::Models::AssociationDefinition]
         #
         # @see HubSpotSDK::Models::Cms::MediaBridgeCreateVideoAssociationDefinitionParams
         def create_video_association_definition(app_id, params = {})
           @client.request(
             method: :post,
             path: ["media-bridge/2026-03/%1$s/settings/video-association-definition", app_id],
-            model: HubSpotSDK::BaseAssociationDefinition,
+            model: HubSpotSDK::AssociationDefinition,
             options: params[:request_options]
           )
         end
@@ -918,7 +918,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseObjectTypeDefinition]
+        # @return [HubSpotSDK::Models::ObjectTypeDefinition]
         #
         # @see HubSpotSDK::Models::Cms::MediaBridgeUpdateSchemaParams
         def update_schema(object_type, params)
@@ -931,7 +931,7 @@ module HubSpotSDK
             method: :patch,
             path: ["media-bridge/2026-03/%1$s/schemas/%2$s", app_id, object_type],
             body: parsed,
-            model: HubSpotSDK::BaseObjectTypeDefinition,
+            model: HubSpotSDK::ObjectTypeDefinition,
             options: options
           )
         end

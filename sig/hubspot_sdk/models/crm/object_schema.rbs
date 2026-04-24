@@ -6,12 +6,12 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
+          associations: ::Array[HubSpotSDK::AssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::BaseProperty],
+          properties: ::Array[HubSpotSDK::Property],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],
@@ -30,7 +30,7 @@ module HubSpotSDK
 
         attr_accessor archived: bool
 
-        attr_accessor associations: ::Array[HubSpotSDK::BaseAssociationDefinition]
+        attr_accessor associations: ::Array[HubSpotSDK::AssociationDefinition]
 
         attr_accessor fully_qualified_name: String
 
@@ -40,7 +40,7 @@ module HubSpotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor properties: ::Array[HubSpotSDK::BaseProperty]
+        attr_accessor properties: ::Array[HubSpotSDK::Property]
 
         attr_accessor required_properties: ::Array[String]
 
@@ -76,12 +76,12 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
+          associations: ::Array[HubSpotSDK::AssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::BaseProperty],
+          properties: ::Array[HubSpotSDK::Property],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],
@@ -97,12 +97,12 @@ module HubSpotSDK
           id: String,
           allows_sensitive_properties: bool,
           archived: bool,
-          associations: ::Array[HubSpotSDK::BaseAssociationDefinition],
+          associations: ::Array[HubSpotSDK::AssociationDefinition],
           fully_qualified_name: String,
           labels: HubSpotSDK::ObjectTypeDefinitionLabels,
           name: String,
           object_type_id: String,
-          properties: ::Array[HubSpotSDK::BaseProperty],
+          properties: ::Array[HubSpotSDK::Property],
           required_properties: ::Array[String],
           searchable_properties: ::Array[String],
           secondary_display_properties: ::Array[String],

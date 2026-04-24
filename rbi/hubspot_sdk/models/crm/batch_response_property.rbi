@@ -16,7 +16,7 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
-        sig { returns(T::Array[HubSpotSDK::BaseProperty]) }
+        sig { returns(T::Array[HubSpotSDK::Property]) }
         attr_accessor :results
 
         # The timestamp indicating when the batch operation began processing.
@@ -48,7 +48,7 @@ module HubSpotSDK
         sig do
           params(
             completed_at: Time,
-            results: T::Array[HubSpotSDK::BaseProperty::OrHash],
+            results: T::Array[HubSpotSDK::Property::OrHash],
             started_at: Time,
             status: HubSpotSDK::Crm::BatchResponseProperty::Status::OrSymbol,
             links: T::Hash[Symbol, String],
@@ -76,7 +76,7 @@ module HubSpotSDK
           override.returns(
             {
               completed_at: Time,
-              results: T::Array[HubSpotSDK::BaseProperty],
+              results: T::Array[HubSpotSDK::Property],
               started_at: Time,
               status:
                 HubSpotSDK::Crm::BatchResponseProperty::Status::TaggedSymbol,

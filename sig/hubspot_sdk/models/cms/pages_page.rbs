@@ -1,10 +1,10 @@
 module HubSpotSDK
   module Models
     module Cms
-      type page_data =
+      type pages_page =
         {
           id: String,
-          ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
+          ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
           ab_test_id: String,
           archived_at: Time,
           archived_in_dashboard: bool,
@@ -13,11 +13,11 @@ module HubSpotSDK
           campaign: String,
           category_id: Integer,
           content_group_id: String,
-          content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
+          content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
           created: Time,
           created_by_id: String,
           currently_published: bool,
-          current_state: HubSpotSDK::Models::Cms::PageData::current_state,
+          current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
           domain: String,
           dynamic_page_data_source_id: String,
           dynamic_page_data_source_type: Integer,
@@ -31,7 +31,7 @@ module HubSpotSDK
           head_html: String,
           html_title: String,
           include_default_custom_css: bool,
-          language: HubSpotSDK::Models::Cms::PageData::language,
+          language: HubSpotSDK::Models::Cms::PagesPage::language,
           layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
           link_rel_canonical_url: String,
           mab_experiment_id: String,
@@ -62,10 +62,10 @@ module HubSpotSDK
           widgets: ::Hash[Symbol, top]
         }
 
-      class PageData < HubSpotSDK::Internal::Type::BaseModel
+      class PagesPage < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
 
-        attr_accessor ab_status: HubSpotSDK::Models::Cms::PageData::ab_status
+        attr_accessor ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status
 
         attr_accessor ab_test_id: String
 
@@ -83,7 +83,7 @@ module HubSpotSDK
 
         attr_accessor content_group_id: String
 
-        attr_accessor content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category
+        attr_accessor content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category
 
         attr_accessor created: Time
 
@@ -91,7 +91,7 @@ module HubSpotSDK
 
         attr_accessor currently_published: bool
 
-        attr_accessor current_state: HubSpotSDK::Models::Cms::PageData::current_state
+        attr_accessor current_state: HubSpotSDK::Models::Cms::PagesPage::current_state
 
         attr_accessor domain: String
 
@@ -119,7 +119,7 @@ module HubSpotSDK
 
         attr_accessor include_default_custom_css: bool
 
-        attr_accessor language: HubSpotSDK::Models::Cms::PageData::language
+        attr_accessor language: HubSpotSDK::Models::Cms::PagesPage::language
 
         attr_accessor layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection]
 
@@ -179,7 +179,7 @@ module HubSpotSDK
 
         def initialize: (
           id: String,
-          ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
+          ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
           ab_test_id: String,
           archived_at: Time,
           archived_in_dashboard: bool,
@@ -188,11 +188,11 @@ module HubSpotSDK
           campaign: String,
           category_id: Integer,
           content_group_id: String,
-          content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
+          content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
           created: Time,
           created_by_id: String,
           currently_published: bool,
-          current_state: HubSpotSDK::Models::Cms::PageData::current_state,
+          current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
           domain: String,
           dynamic_page_data_source_id: String,
           dynamic_page_data_source_type: Integer,
@@ -206,7 +206,7 @@ module HubSpotSDK
           head_html: String,
           html_title: String,
           include_default_custom_css: bool,
-          language: HubSpotSDK::Models::Cms::PageData::language,
+          language: HubSpotSDK::Models::Cms::PagesPage::language,
           layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
           link_rel_canonical_url: String,
           mab_experiment_id: String,
@@ -239,7 +239,7 @@ module HubSpotSDK
 
         def to_hash: -> {
           id: String,
-          ab_status: HubSpotSDK::Models::Cms::PageData::ab_status,
+          ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
           ab_test_id: String,
           archived_at: Time,
           archived_in_dashboard: bool,
@@ -248,11 +248,11 @@ module HubSpotSDK
           campaign: String,
           category_id: Integer,
           content_group_id: String,
-          content_type_category: HubSpotSDK::Models::Cms::PageData::content_type_category,
+          content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
           created: Time,
           created_by_id: String,
           currently_published: bool,
-          current_state: HubSpotSDK::Models::Cms::PageData::current_state,
+          current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
           domain: String,
           dynamic_page_data_source_id: String,
           dynamic_page_data_source_type: Integer,
@@ -266,7 +266,7 @@ module HubSpotSDK
           head_html: String,
           html_title: String,
           include_default_custom_css: bool,
-          language: HubSpotSDK::Models::Cms::PageData::language,
+          language: HubSpotSDK::Models::Cms::PagesPage::language,
           layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
           link_rel_canonical_url: String,
           mab_experiment_id: String,
@@ -319,7 +319,7 @@ module HubSpotSDK
           MASTER: :master
           VARIANT: :variant
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PageData::ab_status]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PagesPage::ab_status]
         end
 
         type content_type_category =
@@ -374,7 +374,7 @@ module HubSpotSDK
           CONTENT_TYPE_CATEGORY_8: :"8"
           CONTENT_TYPE_CATEGORY_9: :"9"
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PageData::content_type_category]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PagesPage::content_type_category]
         end
 
         type current_state =
@@ -447,7 +447,7 @@ module HubSpotSDK
           SCHEDULED_AB: :SCHEDULED_AB
           SCHEDULED_OR_PUBLISHED: :SCHEDULED_OR_PUBLISHED
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PageData::current_state]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PagesPage::current_state]
         end
 
         type language =
@@ -2142,7 +2142,7 @@ module HubSpotSDK
           ZU: :zu
           ZU_ZA: :"zu-za"
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PageData::language]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::PagesPage::language]
         end
       end
     end
