@@ -35,7 +35,7 @@ module HubSpotSDK
             referenced_object_type: String,
             show_currency_symbol: T::Boolean,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Property)
+          ).returns(HubSpotSDK::BaseProperty)
         end
         def create(
           object_type,
@@ -82,7 +82,7 @@ module HubSpotSDK
             show_currency_symbol: T::Boolean,
             type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Property)
+          ).returns(HubSpotSDK::BaseProperty)
         end
         def update(
           # Path param
@@ -167,7 +167,7 @@ module HubSpotSDK
             locale: String,
             properties: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(HubSpotSDK::Property)
+          ).returns(HubSpotSDK::BaseProperty)
         end
         def get(
           # Path param

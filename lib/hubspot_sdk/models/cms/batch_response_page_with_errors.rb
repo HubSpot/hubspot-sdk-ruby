@@ -13,8 +13,8 @@ module HubSpotSDK
         # @!attribute results
         #   Results of batch operation.
         #
-        #   @return [Array<HubSpotSDK::Models::Cms::PagesPage>]
-        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PagesPage] }
+        #   @return [Array<HubSpotSDK::Models::Cms::PageData>]
+        required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::PageData] }
 
         # @!attribute started_at
         #   Time of batch operation start.
@@ -55,7 +55,7 @@ module HubSpotSDK
         # @!method initialize(completed_at:, results:, started_at:, status:, errors: nil, links: nil, num_errors: nil, requested_at: nil)
         #   @param completed_at [Time] Time of batch operation completion.
         #
-        #   @param results [Array<HubSpotSDK::Models::Cms::PagesPage>] Results of batch operation.
+        #   @param results [Array<HubSpotSDK::Models::Cms::PageData>] Results of batch operation.
         #
         #   @param started_at [Time] Time of batch operation start.
         #

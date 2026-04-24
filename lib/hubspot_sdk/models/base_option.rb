@@ -2,7 +2,7 @@
 
 module HubSpotSDK
   module Models
-    class Option < HubSpotSDK::Internal::Type::BaseModel
+    class BaseOption < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute hidden
       #   Hidden options will not be displayed in HubSpot.
       #
@@ -37,7 +37,7 @@ module HubSpotSDK
 
       # @!method initialize(hidden:, label:, value:, description: nil, display_order: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubSpotSDK::Models::Option} for more details.
+      #   {HubSpotSDK::Models::BaseOption} for more details.
       #
       #   A HubSpot property option
       #

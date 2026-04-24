@@ -1,6 +1,6 @@
 module HubSpotSDK
   module Models
-    type association_definition =
+    type base_association_definition =
       {
         id: String,
         from_object_type_id: String,
@@ -10,7 +10,7 @@ module HubSpotSDK
         updated_at: Time
       }
 
-    class AssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
+    class BaseAssociationDefinition < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor id: String
 
       attr_accessor from_object_type_id: String

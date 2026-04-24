@@ -1,6 +1,6 @@
 module HubSpotSDK
   module Models
-    type option =
+    type base_option =
       {
         hidden: bool,
         label: String,
@@ -9,7 +9,7 @@ module HubSpotSDK
         display_order: Integer
       }
 
-    class Option < HubSpotSDK::Internal::Type::BaseModel
+    class BaseOption < HubSpotSDK::Internal::Type::BaseModel
       attr_accessor hidden: bool
 
       attr_accessor label: String

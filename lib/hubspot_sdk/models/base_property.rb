@@ -2,7 +2,7 @@
 
 module HubSpotSDK
   module Models
-    class Property < HubSpotSDK::Internal::Type::BaseModel
+    class BaseProperty < HubSpotSDK::Internal::Type::BaseModel
       # @!attribute description
       #   A description of the property that will be shown as help text in HubSpot.
       #
@@ -38,8 +38,8 @@ module HubSpotSDK
       #   A list of valid options for the property. This field is required for enumerated
       #   properties, but will be empty for other property types.
       #
-      #   @return [Array<HubSpotSDK::Models::Option>]
-      required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Option] }
+      #   @return [Array<HubSpotSDK::Models::BaseOption>]
+      required :options, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseOption] }
 
       # @!attribute type
       #   The property data type.
@@ -95,20 +95,18 @@ module HubSpotSDK
       #   Indicates the sensitivity level of the property, such as "non_sensitive",
       #   "sensitive", or "highly_sensitive".
       #
-      #   @return [Symbol, HubSpotSDK::Models::Property::DataSensitivity, nil]
+      #   @return [Symbol, HubSpotSDK::Models::BaseProperty::DataSensitivity, nil]
       optional :data_sensitivity,
-               enum: -> {
-                 HubSpotSDK::Property::DataSensitivity
-               },
+               enum: -> { HubSpotSDK::BaseProperty::DataSensitivity },
                api_name: :dataSensitivity
 
       # @!attribute date_display_hint
       #   Controls how date properties are displayed in the HubSpot UI, with options such
       #   as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
       #
-      #   @return [Symbol, HubSpotSDK::Models::Property::DateDisplayHint, nil]
+      #   @return [Symbol, HubSpotSDK::Models::BaseProperty::DateDisplayHint, nil]
       optional :date_display_hint,
-               enum: -> { HubSpotSDK::Property::DateDisplayHint },
+               enum: -> { HubSpotSDK::BaseProperty::DateDisplayHint },
                api_name: :dateDisplayHint
 
       # @!attribute display_order
@@ -164,9 +162,9 @@ module HubSpotSDK
       #   be: "unformatted", "formatted", "currency", "percentage", "duration", or
       #   "probability".
       #
-      #   @return [Symbol, HubSpotSDK::Models::Property::NumberDisplayHint, nil]
+      #   @return [Symbol, HubSpotSDK::Models::BaseProperty::NumberDisplayHint, nil]
       optional :number_display_hint,
-               enum: -> { HubSpotSDK::Property::NumberDisplayHint },
+               enum: -> { HubSpotSDK::BaseProperty::NumberDisplayHint },
                api_name: :numberDisplayHint
 
       # @!attribute referenced_object_type
@@ -206,7 +204,7 @@ module HubSpotSDK
 
       # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, currency_property_name: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, number_display_hint: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, updated_at: nil, updated_user_id: nil)
       #   Some parameter documentations has been truncated, see
-      #   {HubSpotSDK::Models::Property} for more details.
+      #   {HubSpotSDK::Models::BaseProperty} for more details.
       #
       #   A HubSpot property
       #
@@ -220,7 +218,7 @@ module HubSpotSDK
       #
       #   @param name [String] The internal property name, which must be used when referencing the property via
       #
-      #   @param options [Array<HubSpotSDK::Models::Option>] A list of valid options for the property. This field is required for enumerated
+      #   @param options [Array<HubSpotSDK::Models::BaseOption>] A list of valid options for the property. This field is required for enumerated
       #
       #   @param type [String] The property data type.
       #
@@ -238,9 +236,9 @@ module HubSpotSDK
       #
       #   @param currency_property_name [String] The name of the related currency property.
       #
-      #   @param data_sensitivity [Symbol, HubSpotSDK::Models::Property::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
+      #   @param data_sensitivity [Symbol, HubSpotSDK::Models::BaseProperty::DataSensitivity] Indicates the sensitivity level of the property, such as "non_sensitive", "sensi
       #
-      #   @param date_display_hint [Symbol, HubSpotSDK::Models::Property::DateDisplayHint] Controls how date properties are displayed in the HubSpot UI, with options such
+      #   @param date_display_hint [Symbol, HubSpotSDK::Models::BaseProperty::DateDisplayHint] Controls how date properties are displayed in the HubSpot UI, with options such
       #
       #   @param display_order [Integer] The order that this property should be displayed in the HubSpot UI relative to o
       #
@@ -256,7 +254,7 @@ module HubSpotSDK
       #
       #   @param modification_metadata [HubSpotSDK::Models::PropertyModificationMetadata]
       #
-      #   @param number_display_hint [Symbol, HubSpotSDK::Models::Property::NumberDisplayHint] Hint for how a number property is displayed and validated in HubSpot's UI. Can b
+      #   @param number_display_hint [Symbol, HubSpotSDK::Models::BaseProperty::NumberDisplayHint] Hint for how a number property is displayed and validated in HubSpot's UI. Can b
       #
       #   @param referenced_object_type [String] If this property is related to other object(s), they'll be listed here.
       #
@@ -271,7 +269,7 @@ module HubSpotSDK
       # Indicates the sensitivity level of the property, such as "non_sensitive",
       # "sensitive", or "highly_sensitive".
       #
-      # @see HubSpotSDK::Models::Property#data_sensitivity
+      # @see HubSpotSDK::Models::BaseProperty#data_sensitivity
       module DataSensitivity
         extend HubSpotSDK::Internal::Type::Enum
 
@@ -286,7 +284,7 @@ module HubSpotSDK
       # Controls how date properties are displayed in the HubSpot UI, with options such
       # as 'absolute', 'absolute_with_relative', 'time_since', and 'time_until'.
       #
-      # @see HubSpotSDK::Models::Property#date_display_hint
+      # @see HubSpotSDK::Models::BaseProperty#date_display_hint
       module DateDisplayHint
         extend HubSpotSDK::Internal::Type::Enum
 
@@ -303,7 +301,7 @@ module HubSpotSDK
       # be: "unformatted", "formatted", "currency", "percentage", "duration", or
       # "probability".
       #
-      # @see HubSpotSDK::Models::Property#number_display_hint
+      # @see HubSpotSDK::Models::BaseProperty#number_display_hint
       module NumberDisplayHint
         extend HubSpotSDK::Internal::Type::Enum
 

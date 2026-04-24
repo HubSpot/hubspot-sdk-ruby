@@ -9,7 +9,7 @@ module HubSpotSDK
           sig do
             params(
               id: String,
-              ab_status: HubSpotSDK::Cms::PagesPage::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -19,11 +19,11 @@ module HubSpotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubSpotSDK::Cms::PagesPage::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubSpotSDK::Cms::PagesPage::CurrentState::OrSymbol,
+              current_state: HubSpotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -37,7 +37,7 @@ module HubSpotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubSpotSDK::Cms::PagesPage::Language::OrSymbol,
+              language: HubSpotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -72,7 +72,7 @@ module HubSpotSDK
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def create(
             # The unique ID of the page.
@@ -220,7 +220,7 @@ module HubSpotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubSpotSDK::Cms::PagesPage::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -230,11 +230,11 @@ module HubSpotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubSpotSDK::Cms::PagesPage::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubSpotSDK::Cms::PagesPage::CurrentState::OrSymbol,
+              current_state: HubSpotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -248,7 +248,7 @@ module HubSpotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubSpotSDK::Cms::PagesPage::Language::OrSymbol,
+              language: HubSpotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -284,7 +284,7 @@ module HubSpotSDK
               widgets: T::Hash[Symbol, T.anything],
               archived: T::Boolean,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def update(
             # Path param: The unique identifier of the landing page to update.
@@ -455,7 +455,7 @@ module HubSpotSDK
               updated_at: Time,
               updated_before: Time,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PagesPage])
+            ).returns(HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageData])
           end
           def list(
             # A cursor token for pagination. Use the value from the previous response's
@@ -508,7 +508,7 @@ module HubSpotSDK
               id: String,
               clone_name: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def clone_(
             # ID of the object to be cloned.
@@ -526,7 +526,7 @@ module HubSpotSDK
               archived: T::Boolean,
               property: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def get(
             # The unique identifier of the landing page to retrieve.
@@ -544,7 +544,7 @@ module HubSpotSDK
             params(
               object_id_: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def get_draft(
             # The unique identifier of the landing page whose draft version is to be
@@ -606,7 +606,7 @@ module HubSpotSDK
             params(
               object_id_: String,
               id: String,
-              ab_status: HubSpotSDK::Cms::PagesPage::AbStatus::OrSymbol,
+              ab_status: HubSpotSDK::Cms::PageData::AbStatus::OrSymbol,
               ab_test_id: String,
               archived_at: Time,
               archived_in_dashboard: T::Boolean,
@@ -616,11 +616,11 @@ module HubSpotSDK
               category_id: Integer,
               content_group_id: String,
               content_type_category:
-                HubSpotSDK::Cms::PagesPage::ContentTypeCategory::OrSymbol,
+                HubSpotSDK::Cms::PageData::ContentTypeCategory::OrSymbol,
               created: Time,
               created_by_id: String,
               currently_published: T::Boolean,
-              current_state: HubSpotSDK::Cms::PagesPage::CurrentState::OrSymbol,
+              current_state: HubSpotSDK::Cms::PageData::CurrentState::OrSymbol,
               domain: String,
               dynamic_page_data_source_id: String,
               dynamic_page_data_source_type: Integer,
@@ -634,7 +634,7 @@ module HubSpotSDK
               head_html: String,
               html_title: String,
               include_default_custom_css: T::Boolean,
-              language: HubSpotSDK::Cms::PagesPage::Language::OrSymbol,
+              language: HubSpotSDK::Cms::PageData::Language::OrSymbol,
               layout_sections:
                 T::Hash[Symbol, HubSpotSDK::Cms::LayoutSection::OrHash],
               link_rel_canonical_url: String,
@@ -669,7 +669,7 @@ module HubSpotSDK
               widget_containers: T::Hash[Symbol, T.anything],
               widgets: T::Hash[Symbol, T.anything],
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PagesPage)
+            ).returns(HubSpotSDK::Cms::PageData)
           end
           def update_draft(
             # The unique identifier of the landing page draft to update.
