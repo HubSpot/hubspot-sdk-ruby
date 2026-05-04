@@ -109,6 +109,19 @@ module HubSpotSDK
     )
       base_url ||= "https://api.hubapi.com"
 
+      headers = {}
+      custom_headers_env = ENV["HUBSPOT_CUSTOM_HEADERS"]
+      unless custom_headers_env.nil?
+        parsed = {}
+        custom_headers_env.split("\n").each do |line|
+          colon = line.index(":")
+          unless colon.nil?
+            parsed[line[0...colon].strip] = line[(colon + 1)..].strip
+          end
+        end
+        headers = parsed.merge(headers)
+      end
+
       @access_token = access_token&.to_s
       @developer_api_key = developer_api_key&.to_s
 
@@ -117,7 +130,8 @@ module HubSpotSDK
         timeout: timeout,
         max_retries: max_retries,
         initial_retry_delay: initial_retry_delay,
-        max_retry_delay: max_retry_delay
+        max_retry_delay: max_retry_delay,
+        headers: headers
       )
 
       @account = HubSpotSDK::Resources::Account.new(client: self)

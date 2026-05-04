@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2026-05-01)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* support setting headers via env ([05dc4f3](https://github.com/HubSpot/hubspot-sdk-ruby/commit/05dc4f3c899eeef2dca1aafe4b8a04a88c2b72ad))
+
 ## 0.1.0-alpha.4 (2026-04-24)
 
 Full Changelog: [v0.1.0-alpha.3...v0.1.0-alpha.4](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.3...v0.1.0-alpha.4)
