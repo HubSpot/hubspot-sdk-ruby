@@ -1,0 +1,53 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type regex_matches =
+        {
+          operator: HubSpotSDK::Models::Cms::RegexMatches::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+      class RegexMatches < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::RegexMatches::operator
+
+        attr_reader inputs: ::Array[top]?
+
+        def inputs=: (::Array[top]) -> ::Array[top]
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: bool?
+
+        def value=: (bool) -> bool
+
+        def initialize: (
+          operator: HubSpotSDK::Models::Cms::RegexMatches::operator,
+          ?inputs: ::Array[top],
+          ?property_name: String,
+          ?value: bool
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubSpotSDK::Models::Cms::RegexMatches::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+        type operator = :REGEX_MATCHES
+
+        module Operator
+          extend HubSpotSDK::Internal::Type::Enum
+
+          REGEX_MATCHES: :REGEX_MATCHES
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::RegexMatches::operator]
+        end
+      end
+    end
+  end
+end

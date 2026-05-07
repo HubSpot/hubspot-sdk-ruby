@@ -31,6 +31,8 @@ module HubSpotSDK
           sig { params(after: String).void }
           attr_writer :after
 
+          # The end date for fetching contact data, in YYYY-MM-DD format.
+          # Optional. Example: 2000-01-27
           sig { returns(T.nilable(String)) }
           attr_reader :end_date
 
@@ -44,6 +46,8 @@ module HubSpotSDK
           sig { params(limit: Integer).void }
           attr_writer :limit
 
+          # The start date for fetching contact data, in YYYY-MM-DD format.
+          # Optional. Example: 2000-01-20
           sig { returns(T.nilable(String)) }
           attr_reader :start_date
 
@@ -68,9 +72,13 @@ module HubSpotSDK
             # as the `paging.next.after` JSON property of a paged response containing more
             # results.
             after: nil,
+            # The end date for fetching contact data, in YYYY-MM-DD format.
+            # Optional. Example: 2000-01-27
             end_date: nil,
             # The maximum number of results to display per page.
             limit: nil,
+            # The start date for fetching contact data, in YYYY-MM-DD format.
+            # Optional. Example: 2000-01-20
             start_date: nil,
             request_options: {}
           )

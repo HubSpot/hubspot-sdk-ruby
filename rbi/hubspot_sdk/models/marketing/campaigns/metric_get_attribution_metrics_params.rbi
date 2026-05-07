@@ -19,12 +19,16 @@ module HubSpotSDK
           sig { returns(String) }
           attr_accessor :campaign_guid
 
+          # The end date for fetching attribution data, in YYYY-MM-DD format. Optional.
+          # Example: 2000-01-27
           sig { returns(T.nilable(String)) }
           attr_reader :end_date
 
           sig { params(end_date: String).void }
           attr_writer :end_date
 
+          # The start date for fetching attribution data, in YYYY-MM-DD format. Optional.
+          # Example: 2000-01-20
           sig { returns(T.nilable(String)) }
           attr_reader :start_date
 
@@ -41,7 +45,11 @@ module HubSpotSDK
           end
           def self.new(
             campaign_guid:,
+            # The end date for fetching attribution data, in YYYY-MM-DD format. Optional.
+            # Example: 2000-01-27
             end_date: nil,
+            # The start date for fetching attribution data, in YYYY-MM-DD format. Optional.
+            # Example: 2000-01-20
             start_date: nil,
             request_options: {}
           )

@@ -232,6 +232,11 @@ module HubSpotSDK
               :CANCELLED_ABUSE,
               HubSpotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
             )
+          CONTACT_VIEW_PERMISSION =
+            T.let(
+              :CONTACT_VIEW_PERMISSION,
+              HubSpotSDK::Marketing::EmailSendStatusView::SendResult::TaggedSymbol
+            )
           CORRUPT_INPUT =
             T.let(
               :CORRUPT_INPUT,

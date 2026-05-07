@@ -1,0 +1,46 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type fetch_portal_home_currency =
+        {
+          operator: HubSpotSDK::Models::Cms::FetchPortalHomeCurrency::operator,
+          property_name: String,
+          value: String
+        }
+
+      class FetchPortalHomeCurrency < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::FetchPortalHomeCurrency::operator
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: String?
+
+        def value=: (String) -> String
+
+        def initialize: (
+          operator: HubSpotSDK::Models::Cms::FetchPortalHomeCurrency::operator,
+          ?property_name: String,
+          ?value: String
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubSpotSDK::Models::Cms::FetchPortalHomeCurrency::operator,
+          property_name: String,
+          value: String
+        }
+
+        type operator = :FETCH_PORTAL_HOME_CURRENCY
+
+        module Operator
+          extend HubSpotSDK::Internal::Type::Enum
+
+          FETCH_PORTAL_HOME_CURRENCY: :FETCH_PORTAL_HOME_CURRENCY
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::FetchPortalHomeCurrency::operator]
+        end
+      end
+    end
+  end
+end

@@ -12,7 +12,7 @@ module HubSpotSDK
               content_id: String,
               variation_name: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PageData)
+            ).returns(HubSpotSDK::Cms::PagesPage)
           end
           def create_landing_page_variation(
             # ID of the object to test.
@@ -30,7 +30,7 @@ module HubSpotSDK
               content_id: String,
               variation_name: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PageData)
+            ).returns(HubSpotSDK::Cms::PagesPage)
           end
           def create_site_page_variation(
             # ID of the object to test.

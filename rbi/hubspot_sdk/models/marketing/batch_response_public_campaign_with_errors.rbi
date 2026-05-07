@@ -16,6 +16,7 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
+        # The list of successfully created or updated campaigns.
         sig { returns(T::Array[HubSpotSDK::Marketing::PublicCampaign]) }
         attr_accessor :results
 
@@ -32,6 +33,8 @@ module HubSpotSDK
         end
         attr_accessor :status
 
+        # The list of errors for individual campaign operations that failed within the
+        # batch. Only included when non-empty.
         sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
@@ -75,12 +78,15 @@ module HubSpotSDK
         def self.new(
           # The date and time when the batch operation was completed.
           completed_at:,
+          # The list of successfully created or updated campaigns.
           results:,
           # The date and time when the batch operation began.
           started_at:,
           # The current status of the batch operation. Accepted values are: CANCELED,
           # COMPLETE, PENDING, PROCESSING.
           status:,
+          # The list of errors for individual campaign operations that failed within the
+          # batch. Only included when non-empty.
           errors: nil,
           # URLs linking to resources or documentation related to the batch operation.
           links: nil,

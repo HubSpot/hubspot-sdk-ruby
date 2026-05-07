@@ -4,7 +4,7 @@ module HubSpotSDK
       type batch_response_page_with_errors =
         {
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PagesPage],
           started_at: Time,
           status: HubSpotSDK::Models::Cms::BatchResponsePageWithErrors::status,
           errors: ::Array[HubSpotSDK::StandardError],
@@ -16,7 +16,7 @@ module HubSpotSDK
       class BatchResponsePageWithErrors < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor completed_at: Time
 
-        attr_accessor results: ::Array[HubSpotSDK::Cms::PageData]
+        attr_accessor results: ::Array[HubSpotSDK::Cms::PagesPage]
 
         attr_accessor started_at: Time
 
@@ -42,7 +42,7 @@ module HubSpotSDK
 
         def initialize: (
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PagesPage],
           started_at: Time,
           status: HubSpotSDK::Models::Cms::BatchResponsePageWithErrors::status,
           ?errors: ::Array[HubSpotSDK::StandardError],
@@ -53,7 +53,7 @@ module HubSpotSDK
 
         def to_hash: -> {
           completed_at: Time,
-          results: ::Array[HubSpotSDK::Cms::PageData],
+          results: ::Array[HubSpotSDK::Cms::PagesPage],
           started_at: Time,
           status: HubSpotSDK::Models::Cms::BatchResponsePageWithErrors::status,
           errors: ::Array[HubSpotSDK::StandardError],

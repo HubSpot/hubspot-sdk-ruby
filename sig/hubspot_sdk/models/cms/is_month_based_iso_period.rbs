@@ -1,0 +1,53 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type is_month_based_iso_period =
+        {
+          operator: HubSpotSDK::Models::Cms::IsMonthBasedISOPeriod::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+      class IsMonthBasedISOPeriod < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::IsMonthBasedISOPeriod::operator
+
+        attr_reader inputs: ::Array[top]?
+
+        def inputs=: (::Array[top]) -> ::Array[top]
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: bool?
+
+        def value=: (bool) -> bool
+
+        def initialize: (
+          operator: HubSpotSDK::Models::Cms::IsMonthBasedISOPeriod::operator,
+          ?inputs: ::Array[top],
+          ?property_name: String,
+          ?value: bool
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubSpotSDK::Models::Cms::IsMonthBasedISOPeriod::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+        type operator = :IS_MONTH_BASED_ISO_PERIOD
+
+        module Operator
+          extend HubSpotSDK::Internal::Type::Enum
+
+          IS_MONTH_BASED_ISO_PERIOD: :IS_MONTH_BASED_ISO_PERIOD
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::IsMonthBasedISOPeriod::operator]
+        end
+      end
+    end
+  end
+end

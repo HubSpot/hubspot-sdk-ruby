@@ -5,6 +5,7 @@ module HubSpotSDK
         {
           application_group: String,
           application_id: String,
+          is_private: bool,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
@@ -19,6 +20,8 @@ module HubSpotSDK
         attr_accessor application_group: String
 
         attr_accessor application_id: String
+
+        attr_accessor is_private: bool
 
         attr_accessor metadata: ::Hash[Symbol, String]
 
@@ -51,6 +54,7 @@ module HubSpotSDK
         def initialize: (
           application_group: String,
           application_id: String,
+          is_private: bool,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],
@@ -64,6 +68,7 @@ module HubSpotSDK
         def to_hash: -> {
           application_group: String,
           application_id: String,
+          is_private: bool,
           metadata: ::Hash[Symbol, String],
           otel_context_holder: ::Hash[Symbol, String],
           unstructured_sources: ::Array[HubSpotSDK::Models::Automation::ChirpAIContextObject::unstructured_source],

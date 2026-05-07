@@ -18,7 +18,7 @@ module HubSpotSDK
         sig { returns(T::Boolean) }
         attr_accessor :archived
 
-        sig { returns(T::Array[HubSpotSDK::BaseAssociationDefinition]) }
+        sig { returns(T::Array[HubSpotSDK::AssociationDefinition]) }
         attr_accessor :associations
 
         sig { returns(String) }
@@ -91,8 +91,7 @@ module HubSpotSDK
             id: String,
             allows_sensitive_properties: T::Boolean,
             archived: T::Boolean,
-            associations:
-              T::Array[HubSpotSDK::BaseAssociationDefinition::OrHash],
+            associations: T::Array[HubSpotSDK::AssociationDefinition::OrHash],
             fully_qualified_name: String,
             labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
@@ -137,7 +136,7 @@ module HubSpotSDK
               id: String,
               allows_sensitive_properties: T::Boolean,
               archived: T::Boolean,
-              associations: T::Array[HubSpotSDK::BaseAssociationDefinition],
+              associations: T::Array[HubSpotSDK::AssociationDefinition],
               fully_qualified_name: String,
               labels: HubSpotSDK::ObjectTypeDefinitionLabels,
               name: String,

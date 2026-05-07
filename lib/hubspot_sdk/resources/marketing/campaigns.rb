@@ -56,7 +56,7 @@ module HubSpotSDK
         #
         # @overload update(campaign_guid, properties:, request_options: {})
         #
-        # @param campaign_guid [String]
+        # @param campaign_guid [String] The UUID of the campaign, required
         #
         # @param properties [Hash{Symbol=>String}] A collection of key-value pairs representing the properties of the campaign. Eac
         #
@@ -89,11 +89,11 @@ module HubSpotSDK
         #
         # @param limit [Integer] The maximum number of results to display per page.
         #
-        # @param name [String]
+        # @param name [String] Filter campaigns by name. Optional.
         #
-        # @param properties [Array<String>]
+        # @param properties [Array<String>] A comma-separated list of properties to include in the response.
         #
-        # @param sort [String]
+        # @param sort [String] The property to sort results by. Optional.
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -113,13 +113,17 @@ module HubSpotSDK
           )
         end
 
+        # Some parameter documentations has been truncated, see
+        # {HubSpotSDK::Models::Marketing::CampaignDeleteParams} for more details.
+        #
         # Delete a specified campaign from the system. This call will return a 204 No
         # Content response regardless of whether the campaignGuid provided corresponds to
         # an existing campaign or not.
         #
         # @overload delete(campaign_guid, request_options: {})
         #
-        # @param campaign_guid [String]
+        # @param campaign_guid [String] The UUID of the campaign, required
+        #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [nil]
@@ -134,6 +138,9 @@ module HubSpotSDK
           )
         end
 
+        # Some parameter documentations has been truncated, see
+        # {HubSpotSDK::Models::Marketing::CampaignGetParams} for more details.
+        #
         # Get a campaign identified by a specific campaignGuid with the given properties.
         # Along with the campaign information, it also returns information about assets.
         # Depending on the query parameters used, this can also be used to return
@@ -142,10 +149,14 @@ module HubSpotSDK
         #
         # @overload get(campaign_guid, end_date: nil, properties: nil, start_date: nil, request_options: {})
         #
-        # @param campaign_guid [String]
-        # @param end_date [String]
-        # @param properties [Array<String>]
-        # @param start_date [String]
+        # @param campaign_guid [String] The UUID of the campaign, required
+        #
+        # @param end_date [String] The end date for fetching asset metrics, in YYYY-MM-DD format.
+        #
+        # @param properties [Array<String>] A comma-separated list of properties to include in the response.
+        #
+        # @param start_date [String] The start date for fetching asset metrics, in YYYY-MM-DD format.
+        #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubSpotSDK::Models::Marketing::PublicCampaignWithAssets]

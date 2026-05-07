@@ -42,7 +42,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def update(
-            # Path param
+            # Path param: The id of the Legacy CRM Card
             card_id,
             # Path param: The appId of the app containing the Legacy CRM Card(s)
             app_id:,
@@ -69,6 +69,7 @@ module HubSpotSDK
             ).void
           end
           def delete(
+            # The id of the Legacy CRM Card
             card_id,
             # The appId of the app containing the Legacy CRM Card(s)
             app_id:,
@@ -99,6 +100,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Crm::Extensions::PublicCardResponse)
           end
           def get_by_id(
+            # The id of the Legacy CRM Card
             card_id,
             # The appId of the app containing the Legacy CRM Card(s)
             app_id:,
@@ -117,6 +119,8 @@ module HubSpotSDK
           def get_sample_response(request_options: {})
           end
 
+          # Swaps a Legacy CRM Card with an App Card in views. Reference the "Migrate a
+          # legacy CRM card to an app card" docs for more information
           sig do
             params(
               app_id: Integer,

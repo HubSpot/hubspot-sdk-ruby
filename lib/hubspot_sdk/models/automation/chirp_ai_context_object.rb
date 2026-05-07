@@ -16,6 +16,11 @@ module HubSpotSDK
         #   @return [String]
         required :application_id, String, api_name: :applicationId
 
+        # @!attribute is_private
+        #
+        #   @return [Boolean]
+        required :is_private, HubSpotSDK::Internal::Type::Boolean, api_name: :isPrivate
+
         # @!attribute metadata
         #   Additional metadata related to the context, represented as key-value pairs.
         #
@@ -67,10 +72,12 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :trajectory_id, String, api_name: :trajectoryId
 
-        # @!method initialize(application_group:, application_id:, metadata:, otel_context_holder:, unstructured_sources:, compliance_ids: nil, conversation_id: nil, feature_id: nil, inference_id: nil, trajectory_id: nil)
+        # @!method initialize(application_group:, application_id:, is_private:, metadata:, otel_context_holder:, unstructured_sources:, compliance_ids: nil, conversation_id: nil, feature_id: nil, inference_id: nil, trajectory_id: nil)
         #   @param application_group [String] The group to which the application belongs.
         #
         #   @param application_id [String] The identifier for the application associated with the context.
+        #
+        #   @param is_private [Boolean]
         #
         #   @param metadata [Hash{Symbol=>String}] Additional metadata related to the context, represented as key-value pairs.
         #

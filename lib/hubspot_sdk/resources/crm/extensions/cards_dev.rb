@@ -43,7 +43,7 @@ module HubSpotSDK
           #
           # @overload update(card_id, app_id:, actions: nil, display_: nil, fetch: nil, title: nil, request_options: {})
           #
-          # @param card_id [String] Path param
+          # @param card_id [String] Path param: The id of the Legacy CRM Card
           #
           # @param app_id [Integer] Path param: The appId of the app containing the Legacy CRM Card(s)
           #
@@ -81,7 +81,7 @@ module HubSpotSDK
           #
           # @overload delete(card_id, app_id:, request_options: {})
           #
-          # @param card_id [String]
+          # @param card_id [String] The id of the Legacy CRM Card
           #
           # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
           #
@@ -128,7 +128,7 @@ module HubSpotSDK
           #
           # @overload get_by_id(card_id, app_id:, request_options: {})
           #
-          # @param card_id [String]
+          # @param card_id [String] The id of the Legacy CRM Card
           #
           # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
           #
@@ -171,6 +171,9 @@ module HubSpotSDK
             )
           end
 
+          # Swaps a Legacy CRM Card with an App Card in views. Reference the "Migrate a
+          # legacy CRM card to an app card" docs for more information
+          #
           # @overload migrate_views(app_id, allow_duplicate_app_card_ids:, app_card_id:, legacy_crm_card_id:, helpdesk_app_card_id: nil, request_options: {})
           #
           # @param app_id [Integer] The appId of the app containing the Legacy CRM Card(s)
