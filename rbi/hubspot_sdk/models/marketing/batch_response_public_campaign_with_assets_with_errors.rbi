@@ -16,6 +16,7 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :completed_at
 
+        # The list of successfully retrieved campaigns with their associated assets.
         sig do
           returns(T::Array[HubSpotSDK::Marketing::PublicCampaignWithAssets])
         end
@@ -34,6 +35,8 @@ module HubSpotSDK
         end
         attr_accessor :status
 
+        # The list of errors for individual campaign reads that failed within the batch
+        # (e.g., campaign not found, permission denied). Only included when non-empty.
         sig { returns(T.nilable(T::Array[HubSpotSDK::StandardError])) }
         attr_reader :errors
 
@@ -78,12 +81,15 @@ module HubSpotSDK
         def self.new(
           # The date and time when the batch operation was completed.
           completed_at:,
+          # The list of successfully retrieved campaigns with their associated assets.
           results:,
           # The date and time when the batch operation started.
           started_at:,
           # The current status of the batch operation, which can be CANCELED, COMPLETE,
           # PENDING, or PROCESSING.
           status:,
+          # The list of errors for individual campaign reads that failed within the batch
+          # (e.g., campaign not found, permission denied). Only included when non-empty.
           errors: nil,
           # A collection of links related to the batch operation.
           links: nil,

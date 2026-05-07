@@ -1,0 +1,46 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type is_portal_multicurrency_enabled =
+        {
+          operator: HubSpotSDK::Models::Cms::IsPortalMulticurrencyEnabled::operator,
+          property_name: String,
+          value: bool
+        }
+
+      class IsPortalMulticurrencyEnabled < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::IsPortalMulticurrencyEnabled::operator
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: bool?
+
+        def value=: (bool) -> bool
+
+        def initialize: (
+          operator: HubSpotSDK::Models::Cms::IsPortalMulticurrencyEnabled::operator,
+          ?property_name: String,
+          ?value: bool
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubSpotSDK::Models::Cms::IsPortalMulticurrencyEnabled::operator,
+          property_name: String,
+          value: bool
+        }
+
+        type operator = :IS_PORTAL_MULTICURRENCY_ENABLED
+
+        module Operator
+          extend HubSpotSDK::Internal::Type::Enum
+
+          IS_PORTAL_MULTICURRENCY_ENABLED: :IS_PORTAL_MULTICURRENCY_ENABLED
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::IsPortalMulticurrencyEnabled::operator]
+        end
+      end
+    end
+  end
+end

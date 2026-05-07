@@ -49,6 +49,7 @@ module HubSpotSDK
           ).returns(HubSpotSDK::Marketing::PublicCampaign)
         end
         def update(
+          # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
           campaign_guid,
           # A collection of key-value pairs representing the properties of the campaign.
           # Each key is a property name, and the corresponding value is the property's
@@ -80,8 +81,13 @@ module HubSpotSDK
           after: nil,
           # The maximum number of results to display per page.
           limit: nil,
+          # Filter campaigns by name. Optional.
           name: nil,
+          # A comma-separated list of properties to include in the response.
+          #  Unrecognized properties are ignored. Optional. Example:
+          #  hs_name, hs_budget,hs_notes
           properties: nil,
+          # The property to sort results by. Optional.
           sort: nil,
           request_options: {}
         )
@@ -96,7 +102,11 @@ module HubSpotSDK
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).void
         end
-        def delete(campaign_guid, request_options: {})
+        def delete(
+          # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+          campaign_guid,
+          request_options: {}
+        )
         end
 
         # Get a campaign identified by a specific campaignGuid with the given properties.
@@ -114,9 +124,16 @@ module HubSpotSDK
           ).returns(HubSpotSDK::Marketing::PublicCampaignWithAssets)
         end
         def get(
+          # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
           campaign_guid,
+          # The end date for fetching asset metrics, in YYYY-MM-DD format. Optional.
+          # Example: 2000-01-27
           end_date: nil,
+          # A comma-separated list of properties to include in the response.
+          #  Unrecognized properties are ignored. Optional. Example: hs_name,hs_budget, hs_notes
           properties: nil,
+          # The start date for fetching asset metrics, in YYYY-MM-DD format.
+          # Optional. Example: 2000-01-20
           start_date: nil,
           request_options: {}
         )

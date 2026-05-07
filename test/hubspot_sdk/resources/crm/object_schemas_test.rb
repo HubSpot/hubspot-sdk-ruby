@@ -27,12 +27,12 @@ class HubSpotSDK::Test::Resources::Crm::ObjectSchemasTest < HubSpotSDK::Test::Re
         id: String,
         allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
         required_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         searchable_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         secondary_display_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
@@ -52,7 +52,7 @@ class HubSpotSDK::Test::Resources::Crm::ObjectSchemasTest < HubSpotSDK::Test::Re
     response = @hubspot.crm.object_schemas.update("objectType", clear_description: true)
 
     assert_pattern do
-      response => HubSpotSDK::BaseObjectTypeDefinition
+      response => HubSpotSDK::ObjectTypeDefinition
     end
 
     assert_pattern do
@@ -113,7 +113,7 @@ class HubSpotSDK::Test::Resources::Crm::ObjectSchemasTest < HubSpotSDK::Test::Re
       )
 
     assert_pattern do
-      response => HubSpotSDK::BaseAssociationDefinition
+      response => HubSpotSDK::AssociationDefinition
     end
 
     assert_pattern do
@@ -153,12 +153,12 @@ class HubSpotSDK::Test::Resources::Crm::ObjectSchemasTest < HubSpotSDK::Test::Re
         id: String,
         allows_sensitive_properties: HubSpotSDK::Internal::Type::Boolean,
         archived: HubSpotSDK::Internal::Type::Boolean,
-        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseAssociationDefinition]),
+        associations: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::AssociationDefinition]),
         fully_qualified_name: String,
         labels: HubSpotSDK::ObjectTypeDefinitionLabels,
         name: String,
         object_type_id: String,
-        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
+        properties: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
         required_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         searchable_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
         secondary_display_properties: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),

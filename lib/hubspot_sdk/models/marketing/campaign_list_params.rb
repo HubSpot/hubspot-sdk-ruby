@@ -23,16 +23,21 @@ module HubSpotSDK
         optional :limit, Integer
 
         # @!attribute name
+        #   Filter campaigns by name. Optional.
         #
         #   @return [String, nil]
         optional :name, String
 
         # @!attribute properties
+        #   A comma-separated list of properties to include in the response.
+        #    Unrecognized properties are ignored. Optional. Example:
+        #    hs_name, hs_budget,hs_notes
         #
         #   @return [Array<String>, nil]
         optional :properties, HubSpotSDK::Internal::Type::ArrayOf[String]
 
         # @!attribute sort
+        #   The property to sort results by. Optional.
         #
         #   @return [String, nil]
         optional :sort, String
@@ -45,11 +50,11 @@ module HubSpotSDK
         #
         #   @param limit [Integer] The maximum number of results to display per page.
         #
-        #   @param name [String]
+        #   @param name [String] Filter campaigns by name. Optional.
         #
-        #   @param properties [Array<String>]
+        #   @param properties [Array<String>] A comma-separated list of properties to include in the response.
         #
-        #   @param sort [String]
+        #   @param sort [String] The property to sort results by. Optional.
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

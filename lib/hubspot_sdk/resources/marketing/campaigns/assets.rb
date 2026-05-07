@@ -5,6 +5,9 @@ module HubSpotSDK
     class Marketing
       class Campaigns
         class Assets
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::AssetUpdateParams} for more details.
+          #
           # Associate a specified asset with a campaign. Using the API, you can create
           # associations for the following asset types: ads, blog posts, calls, case
           # studies, CTAs, CTAs (legacy), external website pages, feedback surveys, forms,
@@ -18,9 +21,12 @@ module HubSpotSDK
           #
           # @overload update(asset_id, campaign_guid:, asset_type:, request_options: {})
           #
-          # @param asset_id [String]
-          # @param campaign_guid [String]
-          # @param asset_type [String]
+          # @param asset_id [String] The id of asset to disassociate, required
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
+          # @param asset_type [String] The type of asset to disassociate, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -59,17 +65,17 @@ module HubSpotSDK
           #
           # @overload list(asset_type, campaign_guid:, after: nil, end_date: nil, limit: nil, start_date: nil, request_options: {})
           #
-          # @param asset_type [String] Path param
+          # @param asset_type [String] Path param: The type of asset to fetch, required
           #
-          # @param campaign_guid [String] Path param
+          # @param campaign_guid [String] Path param: The UUID of the campaign, required
           #
           # @param after [String] Query param: The paging cursor token of the last successfully read resource will
           #
-          # @param end_date [String] Query param
+          # @param end_date [String] Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
           #
           # @param limit [String] Query param: The maximum number of results to display per page.
           #
-          # @param start_date [String] Query param
+          # @param start_date [String] Query param: Start date to fetch asset metrics, formatted as YYYY-MM-DD. This da
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -92,6 +98,9 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::AssetDeleteParams} for more details.
+          #
           # Disassociate a specified asset from a campaign. Using the API, you can remove
           # associations for the following asset types: ads, blog posts, calls, case
           # studies, CTAs, CTAs (legacy), external website pages, feedback surveys, forms,
@@ -105,9 +114,12 @@ module HubSpotSDK
           #
           # @overload delete(asset_id, campaign_guid:, asset_type:, request_options: {})
           #
-          # @param asset_id [String]
-          # @param campaign_guid [String]
-          # @param asset_type [String]
+          # @param asset_id [String] The id of asset to disassociate, required
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
+          # @param asset_type [String] The type of asset to disassociate, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]

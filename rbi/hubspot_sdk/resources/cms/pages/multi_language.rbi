@@ -40,7 +40,7 @@ module HubSpotSDK
               language: String,
               primary_language: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Cms::PageData)
+            ).returns(HubSpotSDK::Cms::PagesPage)
           end
           def create_language_variation(
             # ID of content to clone.

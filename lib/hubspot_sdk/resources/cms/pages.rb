@@ -169,7 +169,7 @@ module HubSpotSDK
         # @param object_id_ [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PagesPage]
         #
         # @see HubSpotSDK::Models::Cms::PageRestoreLandingPageRevisionParams
         def restore_landing_page_revision(revision_id, params)
@@ -181,7 +181,7 @@ module HubSpotSDK
           @client.request(
             method: :post,
             path: ["cms/pages/2026-03/landing-pages/%1$s/revisions/%2$s/restore", object_id_, revision_id],
-            model: HubSpotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PagesPage,
             options: options
           )
         end
@@ -194,7 +194,7 @@ module HubSpotSDK
         # @param object_id_ [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PagesPage]
         #
         # @see HubSpotSDK::Models::Cms::PageRestoreLandingPageRevisionToDraftParams
         def restore_landing_page_revision_to_draft(revision_id, params)
@@ -210,7 +210,7 @@ module HubSpotSDK
               object_id_,
               revision_id
             ],
-            model: HubSpotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PagesPage,
             options: options
           )
         end
@@ -224,7 +224,7 @@ module HubSpotSDK
         # @param object_id_ [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PagesPage]
         #
         # @see HubSpotSDK::Models::Cms::PageRestoreSitePageRevisionParams
         def restore_site_page_revision(revision_id, params)
@@ -236,7 +236,7 @@ module HubSpotSDK
           @client.request(
             method: :post,
             path: ["cms/pages/2026-03/site-pages/%1$s/revisions/%2$s/restore", object_id_, revision_id],
-            model: HubSpotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PagesPage,
             options: options
           )
         end
@@ -250,7 +250,7 @@ module HubSpotSDK
         # @param object_id_ [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::Cms::PageData]
+        # @return [HubSpotSDK::Models::Cms::PagesPage]
         #
         # @see HubSpotSDK::Models::Cms::PageRestoreSitePageRevisionToDraftParams
         def restore_site_page_revision_to_draft(revision_id, params)
@@ -266,7 +266,7 @@ module HubSpotSDK
               object_id_,
               revision_id
             ],
-            model: HubSpotSDK::Cms::PageData,
+            model: HubSpotSDK::Cms::PagesPage,
             options: options
           )
         end

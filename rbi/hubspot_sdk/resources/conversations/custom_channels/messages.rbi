@@ -38,8 +38,6 @@ module HubSpotSDK
               in_reply_to_id: String,
               integration_idempotency_id: String,
               integration_thread_id: String,
-              pre_resolved_contacts:
-                HubSpotSDK::Conversations::PreResolvedContacts::OrHash,
               rich_text: String,
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Conversations::PublicConversationsMessage)
@@ -57,7 +55,6 @@ module HubSpotSDK
             in_reply_to_id: nil,
             integration_idempotency_id: nil,
             integration_thread_id: nil,
-            pre_resolved_contacts: nil,
             rich_text: nil,
             request_options: {}
           )

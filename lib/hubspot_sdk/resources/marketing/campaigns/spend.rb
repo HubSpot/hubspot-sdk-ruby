@@ -5,11 +5,14 @@ module HubSpotSDK
     class Marketing
       class Campaigns
         class Spend
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::SpendCreateParams} for more details.
+          #
           # Create a new campaign spend item
           #
           # @overload create(campaign_guid, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param campaign_guid [String]
+          # @param campaign_guid [String] The UUID of the campaign, required
           #
           # @param amount [Float] The monetary value of the spend item.
           #
@@ -35,13 +38,16 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::SpendUpdateParams} for more details.
+          #
           # Update a specific campaign spend item by ID
           #
           # @overload update(spend_id, campaign_guid:, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param spend_id [Integer] Path param
+          # @param spend_id [Integer] Path param: The ID of the spend item, required. Example: 491
           #
-          # @param campaign_guid [String] Path param
+          # @param campaign_guid [String] Path param: The UUID of the campaign, required
           #
           # @param amount [Float] Body param: The monetary value of the spend item.
           #
@@ -71,12 +77,17 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::SpendDeleteParams} for more details.
+          #
           # Delete a specific campaign spend item by ID
           #
           # @overload delete(spend_id, campaign_guid:, request_options: {})
           #
-          # @param spend_id [Integer]
-          # @param campaign_guid [String]
+          # @param spend_id [Integer] The ID of the spend item, required. Example: 491
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -96,12 +107,17 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::SpendGetParams} for more details.
+          #
           # Read a campaign spend item by its spendId
           #
           # @overload get(spend_id, campaign_guid:, request_options: {})
           #
-          # @param spend_id [Integer]
-          # @param campaign_guid [String]
+          # @param spend_id [Integer] The ID of the spend item, required. Example: 491
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Marketing::PublicSpendItem]

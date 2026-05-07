@@ -5,11 +5,14 @@ module HubSpotSDK
     class Marketing
       class Campaigns
         class Budget
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::BudgetCreateParams} for more details.
+          #
           # Add a new budget item to the campaign
           #
           # @overload create(campaign_guid, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param campaign_guid [String]
+          # @param campaign_guid [String] The UUID of the campaign, required
           #
           # @param amount [Float] The monetary value assigned to the budget item.
           #
@@ -35,13 +38,16 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::BudgetUpdateParams} for more details.
+          #
           # Update a specific budget item by ID
           #
           # @overload update(budget_id, campaign_guid:, amount:, name:, order:, description: nil, request_options: {})
           #
-          # @param budget_id [Integer] Path param
+          # @param budget_id [Integer] Path param: The ID of the budget item, required. Example: 352
           #
-          # @param campaign_guid [String] Path param
+          # @param campaign_guid [String] Path param: The UUID of the campaign, required
           #
           # @param amount [Float] Body param: The monetary value assigned to the budget item.
           #
@@ -71,12 +77,17 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::BudgetDeleteParams} for more details.
+          #
           # Delete a specific budget item by ID
           #
           # @overload delete(budget_id, campaign_guid:, request_options: {})
           #
-          # @param budget_id [Integer]
-          # @param campaign_guid [String]
+          # @param budget_id [Integer] The ID of the budget item, required. Example: 352
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [nil]
@@ -96,12 +107,17 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::BudgetGetParams} for more details.
+          #
           # Get a specific budget item by ID
           #
           # @overload get(budget_id, campaign_guid:, request_options: {})
           #
-          # @param budget_id [Integer]
-          # @param campaign_guid [String]
+          # @param budget_id [Integer] The ID of the budget item, required. Example: 352
+          #
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Marketing::PublicBudgetItem]
@@ -121,6 +137,10 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::BudgetGetTotalsParams} for more
+          # details.
+          #
           # Retrieve detailed information about the budget and spend items for a specified
           # campaign, including the total budget, total spend, and remaining budget. Budget
           # and Spend items may be returned in any order, but the order field specifies
@@ -129,7 +149,8 @@ module HubSpotSDK
           #
           # @overload get_totals(campaign_guid, request_options: {})
           #
-          # @param campaign_guid [String]
+          # @param campaign_guid [String] The UUID of the campaign, required
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
           # @return [HubSpotSDK::Models::Marketing::PublicBudgetTotals]

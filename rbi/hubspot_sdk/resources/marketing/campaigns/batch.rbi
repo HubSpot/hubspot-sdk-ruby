@@ -89,11 +89,19 @@ module HubSpotSDK
             # Body param: An array of PublicCampaignReadInput objects, each containing the ID
             # of a campaign to be read. This property is required.
             inputs:,
-            # Query param
+            # Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
+            # is used to fetch the metrics associated with the assets for a specified period.
+            # If not provided, no asset metrics will be fetched. Example: 2024-01-27
             end_date: nil,
-            # Query param
+            # Query param: A comma-separated list of the properties to be returned in the
+            # response. If any of the specified properties has empty value on the requested
+            # object(s), they will be ignored and not returned in response. If this parameter
+            # is empty, the response will include an empty properties map. Example: hs_name,
+            # hs_campaign_status, hs_notes
             properties: nil,
-            # Query param
+            # Query param: Start date to fetch asset metrics, formatted as YYYY-MM-DD. This
+            # date is used to fetch the metrics associated with the assets for a specified
+            # period. If not provided, no asset metrics will be fetched. Example: 2023-01-20
             start_date: nil,
             request_options: {}
           )

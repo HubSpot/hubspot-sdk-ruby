@@ -11,6 +11,7 @@ module HubSpotSDK
         required :completed_at, Time, api_name: :completedAt
 
         # @!attribute results
+        #   The list of successfully created or updated campaigns.
         #
         #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaign>]
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Marketing::PublicCampaign] }
@@ -29,6 +30,8 @@ module HubSpotSDK
         required :status, enum: -> { HubSpotSDK::Marketing::BatchResponsePublicCampaignWithErrors::Status }
 
         # @!attribute errors
+        #   The list of errors for individual campaign operations that failed within the
+        #   batch. Only included when non-empty.
         #
         #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
         optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
@@ -58,13 +61,13 @@ module HubSpotSDK
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaign>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaign>] The list of successfully created or updated campaigns.
         #
         #   @param started_at [Time] The date and time when the batch operation began.
         #
         #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithErrors::Status] The current status of the batch operation. Accepted values are: CANCELED, COMPLE
         #
-        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] The list of errors for individual campaign operations that failed within the bat
         #
         #   @param links [Hash{Symbol=>String}] URLs linking to resources or documentation related to the batch operation.
         #

@@ -2,14 +2,49 @@ module HubSpotSDK
   module Models
     module Crm
       module Extensions
-        type card_migrate_views_response = { message: String }
+        type card_migrate_views_response =
+          {
+            message: String,
+            ended_at: Integer,
+            remaining_portal_count: Integer,
+            started_at: Integer,
+            total_portal_count: Integer
+          }
 
         class CardMigrateViewsResponse < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor message: String
 
-          def initialize: (message: String) -> void
+          attr_reader ended_at: Integer?
 
-          def to_hash: -> { message: String }
+          def ended_at=: (Integer) -> Integer
+
+          attr_reader remaining_portal_count: Integer?
+
+          def remaining_portal_count=: (Integer) -> Integer
+
+          attr_reader started_at: Integer?
+
+          def started_at=: (Integer) -> Integer
+
+          attr_reader total_portal_count: Integer?
+
+          def total_portal_count=: (Integer) -> Integer
+
+          def initialize: (
+            message: String,
+            ?ended_at: Integer,
+            ?remaining_portal_count: Integer,
+            ?started_at: Integer,
+            ?total_portal_count: Integer
+          ) -> void
+
+          def to_hash: -> {
+            message: String,
+            ended_at: Integer,
+            remaining_portal_count: Integer,
+            started_at: Integer,
+            total_portal_count: Integer
+          }
         end
       end
     end

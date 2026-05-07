@@ -27,7 +27,7 @@ class HubSpotSDK::Test::Resources::Crm::Properties::BatchTest < HubSpotSDK::Test
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
         started_at: Time,
         status: HubSpotSDK::Crm::BatchResponseProperty::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
@@ -64,7 +64,7 @@ class HubSpotSDK::Test::Resources::Crm::Properties::BatchTest < HubSpotSDK::Test
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::BaseProperty]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Property]),
         started_at: Time,
         status: HubSpotSDK::Crm::BatchResponseProperty::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,

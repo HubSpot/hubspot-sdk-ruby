@@ -28,6 +28,9 @@ module HubSpotSDK
           optional :after, String
 
           # @!attribute end_date
+          #   End date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to
+          #   fetch the metrics associated with the assets for a specified period. If not
+          #   provided, no asset metrics will be fetched. Example: 2024-01-27
           #
           #   @return [String, nil]
           optional :end_date, String
@@ -39,6 +42,9 @@ module HubSpotSDK
           optional :limit, String
 
           # @!attribute start_date
+          #   Start date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to
+          #   fetch the metrics associated with the assets for a specified period. If not
+          #   provided, no asset metrics will be fetched. Example: 2023-01-20
           #
           #   @return [String, nil]
           optional :start_date, String
@@ -53,11 +59,11 @@ module HubSpotSDK
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          #   @param end_date [String]
+          #   @param end_date [String] End date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to f
           #
           #   @param limit [String] The maximum number of results to display per page.
           #
-          #   @param start_date [String]
+          #   @param start_date [String] Start date to fetch asset metrics, formatted as YYYY-MM-DD. This date is used to
           #
           #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

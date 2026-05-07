@@ -31,18 +31,23 @@ module HubSpotSDK
         sig { params(limit: Integer).void }
         attr_writer :limit
 
+        # Filter campaigns by name. Optional.
         sig { returns(T.nilable(String)) }
         attr_reader :name
 
         sig { params(name: String).void }
         attr_writer :name
 
+        # A comma-separated list of properties to include in the response.
+        #  Unrecognized properties are ignored. Optional. Example:
+        #  hs_name, hs_budget,hs_notes
         sig { returns(T.nilable(T::Array[String])) }
         attr_reader :properties
 
         sig { params(properties: T::Array[String]).void }
         attr_writer :properties
 
+        # The property to sort results by. Optional.
         sig { returns(T.nilable(String)) }
         attr_reader :sort
 
@@ -66,8 +71,13 @@ module HubSpotSDK
           after: nil,
           # The maximum number of results to display per page.
           limit: nil,
+          # Filter campaigns by name. Optional.
           name: nil,
+          # A comma-separated list of properties to include in the response.
+          #  Unrecognized properties are ignored. Optional. Example:
+          #  hs_name, hs_budget,hs_notes
           properties: nil,
+          # The property to sort results by. Optional.
           sort: nil,
           request_options: {}
         )

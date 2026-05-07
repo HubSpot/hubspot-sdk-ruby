@@ -67,7 +67,7 @@ module HubSpotSDK
         # @param secondary_display_properties [Array<String>]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseObjectTypeDefinition]
+        # @return [HubSpotSDK::Models::ObjectTypeDefinition]
         #
         # @see HubSpotSDK::Models::Crm::ObjectSchemaUpdateParams
         def update(object_type, params)
@@ -76,7 +76,7 @@ module HubSpotSDK
             method: :patch,
             path: ["crm-object-schemas/2026-03/schemas/%1$s", object_type],
             body: parsed,
-            model: HubSpotSDK::BaseObjectTypeDefinition,
+            model: HubSpotSDK::ObjectTypeDefinition,
             options: options
           )
         end
@@ -153,7 +153,7 @@ module HubSpotSDK
         # @param name [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseAssociationDefinition]
+        # @return [HubSpotSDK::Models::AssociationDefinition]
         #
         # @see HubSpotSDK::Models::Crm::ObjectSchemaCreateAssociationParams
         def create_association(object_type, params)
@@ -162,7 +162,7 @@ module HubSpotSDK
             method: :post,
             path: ["crm-object-schemas/2026-03/schemas/%1$s/associations", object_type],
             body: parsed,
-            model: HubSpotSDK::BaseAssociationDefinition,
+            model: HubSpotSDK::AssociationDefinition,
             options: options
           )
         end
