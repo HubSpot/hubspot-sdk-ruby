@@ -17,6 +17,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Marketing::PublicBudgetItem)
           end
           def create(
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
             campaign_guid,
             # The monetary value assigned to the budget item.
             amount:,
@@ -43,9 +44,10 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Marketing::PublicBudgetItem)
           end
           def update(
-            # Path param
+            # Path param: The ID of the budget item, required. Example: 352
             budget_id,
-            # Path param
+            # Path param: The UUID of the campaign, required Example:
+            # 9dbec438-53e2-4b28-8c0f-38f56574a6e8
             campaign_guid:,
             # Body param: The monetary value assigned to the budget item.
             amount:,
@@ -67,7 +69,13 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(budget_id, campaign_guid:, request_options: {})
+          def delete(
+            # The ID of the budget item, required. Example: 352
+            budget_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            request_options: {}
+          )
           end
 
           # Get a specific budget item by ID
@@ -78,7 +86,13 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Marketing::PublicBudgetItem)
           end
-          def get(budget_id, campaign_guid:, request_options: {})
+          def get(
+            # The ID of the budget item, required. Example: 352
+            budget_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            request_options: {}
+          )
           end
 
           # Retrieve detailed information about the budget and spend items for a specified
@@ -92,7 +106,11 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Marketing::PublicBudgetTotals)
           end
-          def get_totals(campaign_guid, request_options: {})
+          def get_totals(
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid,
+            request_options: {}
+          )
           end
 
           # @api private

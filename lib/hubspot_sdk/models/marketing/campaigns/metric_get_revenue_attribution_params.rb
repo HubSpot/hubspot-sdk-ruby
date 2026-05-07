@@ -15,6 +15,10 @@ module HubSpotSDK
           required :campaign_guid, String
 
           # @!attribute attribution_model
+          #   The revenue attribution model used to calculate deal revenue credit. Defaults to
+          #   LINEAR if not specified. Enum values: LINEAR, FIRST_INTERACTION,
+          #   LAST_INTERACTION, FULL_PATH, U_SHAPED, W_SHAPED, TIME_DECAY, J_SHAPED,
+          #   INVERSE_J_SHAPED
           #
           #   @return [String, nil]
           optional :attribution_model, String
@@ -32,9 +36,13 @@ module HubSpotSDK
           optional :start_date, String
 
           # @!method initialize(campaign_guid:, attribution_model: nil, end_date: nil, start_date: nil, request_options: {})
+          #   Some parameter documentations has been truncated, see
+          #   {HubSpotSDK::Models::Marketing::Campaigns::MetricGetRevenueAttributionParams}
+          #   for more details.
+          #
           #   @param campaign_guid [String]
           #
-          #   @param attribution_model [String]
+          #   @param attribution_model [String] The revenue attribution model used to calculate deal revenue credit. Defaults to
           #
           #   @param end_date [String] End date to fetch attribution data, YYYY-MM-DD
           #

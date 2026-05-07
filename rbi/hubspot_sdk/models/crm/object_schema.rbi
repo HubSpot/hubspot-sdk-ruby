@@ -21,7 +21,7 @@ module HubSpotSDK
         attr_accessor :archived
 
         # Associations defined for a given object type.
-        sig { returns(T::Array[HubSpotSDK::BaseAssociationDefinition]) }
+        sig { returns(T::Array[HubSpotSDK::AssociationDefinition]) }
         attr_accessor :associations
 
         # An assigned unique ID for the object, including portal ID and object name.
@@ -44,7 +44,7 @@ module HubSpotSDK
         attr_accessor :object_type_id
 
         # Properties defined for this object type.
-        sig { returns(T::Array[HubSpotSDK::BaseProperty]) }
+        sig { returns(T::Array[HubSpotSDK::Property]) }
         attr_accessor :properties
 
         # The names of properties that should be **required** when creating an object of
@@ -107,13 +107,12 @@ module HubSpotSDK
             id: String,
             allows_sensitive_properties: T::Boolean,
             archived: T::Boolean,
-            associations:
-              T::Array[HubSpotSDK::BaseAssociationDefinition::OrHash],
+            associations: T::Array[HubSpotSDK::AssociationDefinition::OrHash],
             fully_qualified_name: String,
             labels: HubSpotSDK::ObjectTypeDefinitionLabels::OrHash,
             name: String,
             object_type_id: String,
-            properties: T::Array[HubSpotSDK::BaseProperty::OrHash],
+            properties: T::Array[HubSpotSDK::Property::OrHash],
             required_properties: T::Array[String],
             searchable_properties: T::Array[String],
             secondary_display_properties: T::Array[String],
@@ -169,12 +168,12 @@ module HubSpotSDK
               id: String,
               allows_sensitive_properties: T::Boolean,
               archived: T::Boolean,
-              associations: T::Array[HubSpotSDK::BaseAssociationDefinition],
+              associations: T::Array[HubSpotSDK::AssociationDefinition],
               fully_qualified_name: String,
               labels: HubSpotSDK::ObjectTypeDefinitionLabels,
               name: String,
               object_type_id: String,
-              properties: T::Array[HubSpotSDK::BaseProperty],
+              properties: T::Array[HubSpotSDK::Property],
               required_properties: T::Array[String],
               searchable_properties: T::Array[String],
               secondary_display_properties: T::Array[String],

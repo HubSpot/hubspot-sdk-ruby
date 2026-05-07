@@ -28,6 +28,8 @@ module HubSpotSDK
           optional :after, String
 
           # @!attribute end_date
+          #   The end date for fetching contact data, in YYYY-MM-DD format.
+          #   Optional. Example: 2000-01-27
           #
           #   @return [String, nil]
           optional :end_date, String
@@ -39,6 +41,8 @@ module HubSpotSDK
           optional :limit, Integer
 
           # @!attribute start_date
+          #   The start date for fetching contact data, in YYYY-MM-DD format.
+          #   Optional. Example: 2000-01-20
           #
           #   @return [String, nil]
           optional :start_date, String
@@ -54,11 +58,11 @@ module HubSpotSDK
           #
           #   @param after [String] The paging cursor token of the last successfully read resource will be returned
           #
-          #   @param end_date [String]
+          #   @param end_date [String] The end date for fetching contact data, in YYYY-MM-DD format.
           #
           #   @param limit [Integer] The maximum number of results to display per page.
           #
-          #   @param start_date [String]
+          #   @param start_date [String] The start date for fetching contact data, in YYYY-MM-DD format.
           #
           #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
         end

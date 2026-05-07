@@ -19,6 +19,10 @@ module HubSpotSDK
           sig { returns(String) }
           attr_accessor :campaign_guid
 
+          # The revenue attribution model used to calculate deal revenue credit. Defaults to
+          # LINEAR if not specified. Enum values: LINEAR, FIRST_INTERACTION,
+          # LAST_INTERACTION, FULL_PATH, U_SHAPED, W_SHAPED, TIME_DECAY, J_SHAPED,
+          # INVERSE_J_SHAPED
           sig { returns(T.nilable(String)) }
           attr_reader :attribution_model
 
@@ -50,6 +54,10 @@ module HubSpotSDK
           end
           def self.new(
             campaign_guid:,
+            # The revenue attribution model used to calculate deal revenue credit. Defaults to
+            # LINEAR if not specified. Enum values: LINEAR, FIRST_INTERACTION,
+            # LAST_INTERACTION, FULL_PATH, U_SHAPED, W_SHAPED, TIME_DECAY, J_SHAPED,
+            # INVERSE_J_SHAPED
             attribution_model: nil,
             # End date to fetch attribution data, YYYY-MM-DD
             end_date: nil,

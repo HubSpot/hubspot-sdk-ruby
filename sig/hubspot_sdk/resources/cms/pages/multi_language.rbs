@@ -16,7 +16,7 @@ module HubSpotSDK
             ?language: String,
             ?primary_language: String,
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Cms::PageData
+          ) -> HubSpotSDK::Cms::PagesPage
 
           def detach_from_lang_group: (
             id: String,

@@ -16,7 +16,7 @@ module HubSpotSDK
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubSpotSDK::Models::Cms::PageData]
+          # @return [HubSpotSDK::Models::Cms::PagesPage]
           #
           # @see HubSpotSDK::Models::Cms::Pages::ABTestCreateLandingPageVariationParams
           def create_landing_page_variation(params)
@@ -26,7 +26,7 @@ module HubSpotSDK
               path: "cms/pages/2026-03/landing-pages/ab-test/create-variation",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubSpotSDK::Cms::PageData,
+              model: HubSpotSDK::Cms::PagesPage,
               options: options
             )
           end
@@ -42,7 +42,7 @@ module HubSpotSDK
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubSpotSDK::Models::Cms::PageData]
+          # @return [HubSpotSDK::Models::Cms::PagesPage]
           #
           # @see HubSpotSDK::Models::Cms::Pages::ABTestCreateSitePageVariationParams
           def create_site_page_variation(params)
@@ -52,7 +52,7 @@ module HubSpotSDK
               path: "cms/pages/2026-03/site-pages/ab-test/create-variation",
               headers: {"content-type" => "*/*"},
               body: parsed,
-              model: HubSpotSDK::Cms::PageData,
+              model: HubSpotSDK::Cms::PagesPage,
               options: options
             )
           end

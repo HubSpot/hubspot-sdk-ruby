@@ -156,7 +156,11 @@ class HubSpotSDK::Test::Resources::Crm::Extensions::CardsDevTest < HubSpotSDK::T
 
     assert_pattern do
       response => {
-        message: String
+        message: String,
+        ended_at: Integer | nil,
+        remaining_portal_count: Integer | nil,
+        started_at: Integer | nil,
+        total_portal_count: Integer | nil
       }
     end
   end

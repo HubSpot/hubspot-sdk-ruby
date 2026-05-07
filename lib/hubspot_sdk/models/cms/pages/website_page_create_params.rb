@@ -5,7 +5,7 @@ module HubSpotSDK
     module Cms
       module Pages
         # @see HubSpotSDK::Resources::Cms::Pages::WebsitePages#create
-        class WebsitePageCreateParams < HubSpotSDK::Models::Cms::PageData
+        class WebsitePageCreateParams < HubSpotSDK::Models::Cms::PagesPage
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 

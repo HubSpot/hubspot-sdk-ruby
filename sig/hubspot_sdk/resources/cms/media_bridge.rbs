@@ -11,7 +11,7 @@ module HubSpotSDK
           to_object_type_id: String,
           ?name: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::BaseAssociationDefinition
+        ) -> HubSpotSDK::AssociationDefinition
 
         def create_attention_span_event: (
           media_type: HubSpotSDK::Models::Cms::AttentionSpanEventRequest::media_type,
@@ -122,7 +122,7 @@ module HubSpotSDK
         def create_video_association_definition: (
           Integer app_id,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::BaseAssociationDefinition
+        ) -> HubSpotSDK::AssociationDefinition
 
         def delete_association: (
           String association_id,
@@ -288,7 +288,7 @@ module HubSpotSDK
           ?searchable_properties: ::Array[String],
           ?secondary_display_properties: ::Array[String],
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::BaseObjectTypeDefinition
+        ) -> HubSpotSDK::ObjectTypeDefinition
 
         def update_settings: (
           Integer app_id,

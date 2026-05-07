@@ -146,7 +146,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseProperty]
+        # @return [HubSpotSDK::Models::Property]
         #
         # @see HubSpotSDK::Models::Events::DefinitionCreatePropertyParams
         def create_property(event_name, params)
@@ -155,7 +155,7 @@ module HubSpotSDK
             method: :post,
             path: ["events/2026-03/event-definitions/%1$s/property", event_name],
             body: parsed,
-            model: HubSpotSDK::BaseProperty,
+            model: HubSpotSDK::Property,
             options: options
           )
         end
@@ -244,7 +244,7 @@ module HubSpotSDK
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [HubSpotSDK::Models::BaseProperty]
+        # @return [HubSpotSDK::Models::Property]
         #
         # @see HubSpotSDK::Models::Events::DefinitionUpdatePropertyParams
         def update_property(property_name, params)
@@ -257,7 +257,7 @@ module HubSpotSDK
             method: :patch,
             path: ["events/2026-03/event-definitions/%1$s/property/%2$s", event_name, property_name],
             body: parsed,
-            model: HubSpotSDK::BaseProperty,
+            model: HubSpotSDK::Property,
             options: options
           )
         end

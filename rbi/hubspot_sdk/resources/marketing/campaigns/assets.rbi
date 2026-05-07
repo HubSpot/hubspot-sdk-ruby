@@ -23,7 +23,15 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def update(asset_id, campaign_guid:, asset_type:, request_options: {})
+          def update(
+            # The id of asset to disassociate, required Example: 154543
+            asset_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            # The type of asset to disassociate, required Example: OBJECT_LIST
+            asset_type:,
+            request_options: {}
+          )
           end
 
           # This endpoint lists all assets of the campaign by asset type. The assetType
@@ -44,19 +52,24 @@ module HubSpotSDK
             )
           end
           def list(
-            # Path param
+            # Path param: The type of asset to fetch, required Example: MARKETING_EVENT
             asset_type,
-            # Path param
+            # Path param: The UUID of the campaign, required Example:
+            # 9dbec438-53e2-4b28-8c0f-38f56574a6e8
             campaign_guid:,
             # Query param: The paging cursor token of the last successfully read resource will
             # be returned as the `paging.next.after` JSON property of a paged response
             # containing more results.
             after: nil,
-            # Query param
+            # Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
+            # is used to fetch the metrics associated with the assets for a specified period.
+            # If not provided, no asset metrics will be fetched. Example: 2024-01-27
             end_date: nil,
             # Query param: The maximum number of results to display per page.
             limit: nil,
-            # Query param
+            # Query param: Start date to fetch asset metrics, formatted as YYYY-MM-DD. This
+            # date is used to fetch the metrics associated with the assets for a specified
+            # period. If not provided, no asset metrics will be fetched. Example: 2023-01-20
             start_date: nil,
             request_options: {}
           )
@@ -80,7 +93,15 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(asset_id, campaign_guid:, asset_type:, request_options: {})
+          def delete(
+            # The id of asset to disassociate, required Example: 154543
+            asset_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            # The type of asset to disassociate, required Example: OBJECT_LIST
+            asset_type:,
+            request_options: {}
+          )
           end
 
           # @api private

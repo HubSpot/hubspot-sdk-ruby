@@ -102,11 +102,11 @@ module HubSpotSDK
           #
           # @param inputs [Array<HubSpotSDK::Models::Marketing::PublicCampaignReadInput>] Body param: An array of PublicCampaignReadInput objects, each containing the ID
           #
-          # @param end_date [String] Query param
+          # @param end_date [String] Query param: End date to fetch asset metrics, formatted as YYYY-MM-DD. This date
           #
-          # @param properties [Array<String>] Query param
+          # @param properties [Array<String>] Query param: A comma-separated list of the properties to be returned in the resp
           #
-          # @param start_date [String] Query param
+          # @param start_date [String] Query param: Start date to fetch asset metrics, formatted as YYYY-MM-DD. This da
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

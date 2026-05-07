@@ -5,6 +5,10 @@ module HubSpotSDK
     class Marketing
       class Campaigns
         class Metrics
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::MetricGetAttributionMetricsParams}
+          # for more details.
+          #
           # This endpoint retrieves key attribution metrics for a specified campaign, such
           # as sessions, new contacts, and influenced contacts.
           #
@@ -12,9 +16,9 @@ module HubSpotSDK
           #
           # @param campaign_guid [String] The unique identifier of the campaign
           #
-          # @param end_date [String]
+          # @param end_date [String] The end date for fetching attribution data, in YYYY-MM-DD format.
           #
-          # @param start_date [String]
+          # @param start_date [String] The start date for fetching attribution data, in YYYY-MM-DD format.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
@@ -34,13 +38,17 @@ module HubSpotSDK
             )
           end
 
+          # Some parameter documentations has been truncated, see
+          # {HubSpotSDK::Models::Marketing::Campaigns::MetricGetRevenueAttributionParams}
+          # for more details.
+          #
           # Fetch revenue attribution report data for a specified campaign
           #
           # @overload get_revenue_attribution(campaign_guid, attribution_model: nil, end_date: nil, start_date: nil, request_options: {})
           #
           # @param campaign_guid [String] The unique identifier of the campaign
           #
-          # @param attribution_model [String]
+          # @param attribution_model [String] The revenue attribution model used to calculate deal revenue credit. Defaults to
           #
           # @param end_date [String] End date to fetch attribution data, YYYY-MM-DD
           #
@@ -82,11 +90,11 @@ module HubSpotSDK
           #
           # @param after [String] Query param: The paging cursor token of the last successfully read resource will
           #
-          # @param end_date [String] Query param
+          # @param end_date [String] Query param: The end date for fetching contact data, in YYYY-MM-DD format.
           #
           # @param limit [Integer] Query param: The maximum number of results to display per page.
           #
-          # @param start_date [String] Query param
+          # @param start_date [String] Query param: The start date for fetching contact data, in YYYY-MM-DD format.
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

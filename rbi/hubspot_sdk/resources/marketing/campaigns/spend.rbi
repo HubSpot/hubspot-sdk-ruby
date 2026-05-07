@@ -17,6 +17,7 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
           def create(
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
             campaign_guid,
             # The monetary value of the spend item.
             amount:,
@@ -43,9 +44,10 @@ module HubSpotSDK
             ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
           def update(
-            # Path param
+            # Path param: The ID of the spend item, required. Example: 491
             spend_id,
-            # Path param
+            # Path param: The UUID of the campaign, required Example:
+            # 9dbec438-53e2-4b28-8c0f-38f56574a6e8
             campaign_guid:,
             # Body param: The monetary value of the spend item.
             amount:,
@@ -67,7 +69,13 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).void
           end
-          def delete(spend_id, campaign_guid:, request_options: {})
+          def delete(
+            # The ID of the spend item, required. Example: 491
+            spend_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            request_options: {}
+          )
           end
 
           # Read a campaign spend item by its spendId
@@ -78,7 +86,13 @@ module HubSpotSDK
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(HubSpotSDK::Marketing::PublicSpendItem)
           end
-          def get(spend_id, campaign_guid:, request_options: {})
+          def get(
+            # The ID of the spend item, required. Example: 491
+            spend_id,
+            # The UUID of the campaign, required Example: 9dbec438-53e2-4b28-8c0f-38f56574a6e8
+            campaign_guid:,
+            request_options: {}
+          )
           end
 
           # @api private

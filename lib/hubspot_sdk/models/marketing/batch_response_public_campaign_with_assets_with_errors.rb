@@ -11,6 +11,7 @@ module HubSpotSDK
         required :completed_at, Time, api_name: :completedAt
 
         # @!attribute results
+        #   The list of successfully retrieved campaigns with their associated assets.
         #
         #   @return [Array<HubSpotSDK::Models::Marketing::PublicCampaignWithAssets>]
         required :results,
@@ -31,6 +32,8 @@ module HubSpotSDK
                  enum: -> { HubSpotSDK::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status }
 
         # @!attribute errors
+        #   The list of errors for individual campaign reads that failed within the batch
+        #   (e.g., campaign not found, permission denied). Only included when non-empty.
         #
         #   @return [Array<HubSpotSDK::Models::StandardError>, nil]
         optional :errors, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError] }
@@ -60,13 +63,13 @@ module HubSpotSDK
         #
         #   @param completed_at [Time] The date and time when the batch operation was completed.
         #
-        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaignWithAssets>]
+        #   @param results [Array<HubSpotSDK::Models::Marketing::PublicCampaignWithAssets>] The list of successfully retrieved campaigns with their associated assets.
         #
         #   @param started_at [Time] The date and time when the batch operation started.
         #
         #   @param status [Symbol, HubSpotSDK::Models::Marketing::BatchResponsePublicCampaignWithAssetsWithErrors::Status] The current status of the batch operation, which can be CANCELED, COMPLETE, PEND
         #
-        #   @param errors [Array<HubSpotSDK::Models::StandardError>]
+        #   @param errors [Array<HubSpotSDK::Models::StandardError>] The list of errors for individual campaign reads that failed within the batch (e
         #
         #   @param links [Hash{Symbol=>String}] A collection of links related to the batch operation.
         #

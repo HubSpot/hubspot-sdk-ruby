@@ -20,6 +20,9 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :application_id
 
+        sig { returns(T::Boolean) }
+        attr_accessor :is_private
+
         # Additional metadata related to the context, represented as key-value pairs.
         sig { returns(T::Hash[Symbol, String]) }
         attr_accessor :metadata
@@ -78,6 +81,7 @@ module HubSpotSDK
           params(
             application_group: String,
             application_id: String,
+            is_private: T::Boolean,
             metadata: T::Hash[Symbol, String],
             otel_context_holder: T::Hash[Symbol, String],
             unstructured_sources:
@@ -96,6 +100,7 @@ module HubSpotSDK
           application_group:,
           # The identifier for the application associated with the context.
           application_id:,
+          is_private:,
           # Additional metadata related to the context, represented as key-value pairs.
           metadata:,
           # Holds OpenTelemetry context information as key-value pairs.
@@ -117,6 +122,7 @@ module HubSpotSDK
             {
               application_group: String,
               application_id: String,
+              is_private: T::Boolean,
               metadata: T::Hash[Symbol, String],
               otel_context_holder: T::Hash[Symbol, String],
               unstructured_sources:

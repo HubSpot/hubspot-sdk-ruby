@@ -1,0 +1,53 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type is_valid_iso_period =
+        {
+          operator: HubSpotSDK::Models::Cms::IsValidISOPeriod::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+      class IsValidISOPeriod < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor operator: HubSpotSDK::Models::Cms::IsValidISOPeriod::operator
+
+        attr_reader inputs: ::Array[top]?
+
+        def inputs=: (::Array[top]) -> ::Array[top]
+
+        attr_reader property_name: String?
+
+        def property_name=: (String) -> String
+
+        attr_reader value: bool?
+
+        def value=: (bool) -> bool
+
+        def initialize: (
+          operator: HubSpotSDK::Models::Cms::IsValidISOPeriod::operator,
+          ?inputs: ::Array[top],
+          ?property_name: String,
+          ?value: bool
+        ) -> void
+
+        def to_hash: -> {
+          operator: HubSpotSDK::Models::Cms::IsValidISOPeriod::operator,
+          inputs: ::Array[top],
+          property_name: String,
+          value: bool
+        }
+
+        type operator = :IS_VALID_ISO_PERIOD
+
+        module Operator
+          extend HubSpotSDK::Internal::Type::Enum
+
+          IS_VALID_ISO_PERIOD: :IS_VALID_ISO_PERIOD
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::IsValidISOPeriod::operator]
+        end
+      end
+    end
+  end
+end
