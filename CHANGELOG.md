@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2026-05-14)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Bug Fixes
+
+* **client:** elide content type header on requests without body ([fad3cd1](https://github.com/HubSpot/hubspot-sdk-ruby/commit/fad3cd197ff5b1d3fa2c0afcf891d82dbf5594ad))
+
 ## 0.1.0-alpha.6 (2026-05-07)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
