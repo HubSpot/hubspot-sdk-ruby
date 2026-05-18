@@ -238,6 +238,7 @@ module HubSpotSDK
               blog_author: HubSpotSDK::Cms::Blogs::BlogAuthor::OrHash,
               language: String,
               primary_language: String,
+              use_published: T::Boolean,
               request_options: HubSpotSDK::RequestOptions::OrHash
             ).returns(StringIO)
           end
@@ -249,6 +250,7 @@ module HubSpotSDK
             language: nil,
             # Primary language in multi-language group.
             primary_language: nil,
+            use_published: nil,
             request_options: {}
           )
           end

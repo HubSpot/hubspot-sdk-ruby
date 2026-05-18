@@ -7,7 +7,8 @@ module HubSpotSDK
             id: String,
             name: String,
             language: String,
-            primary_language: String
+            primary_language: String,
+            use_published: bool
           }
 
         class TagCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
@@ -23,18 +24,24 @@ module HubSpotSDK
 
           def primary_language=: (String) -> String
 
+          attr_reader use_published: bool?
+
+          def use_published=: (bool) -> bool
+
           def initialize: (
             id: String,
             name: String,
             ?language: String,
-            ?primary_language: String
+            ?primary_language: String,
+            ?use_published: bool
           ) -> void
 
           def to_hash: -> {
             id: String,
             name: String,
             language: String,
-            primary_language: String
+            primary_language: String,
+            use_published: bool
           }
         end
       end

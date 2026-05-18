@@ -1,0 +1,32 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      module Pages
+        module LandingPages
+          type draft_update_params =
+            { object_id_: String }
+            & HubSpotSDK::Internal::Type::request_parameters
+
+          class DraftUpdateParams < HubSpotSDK::Models::Cms::PagesPage
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
+
+            def object_id_: -> String
+
+            def object_id_=: (String _) -> String
+
+            def initialize: (
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              object_id_: String,
+              request_options: HubSpotSDK::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

@@ -24,7 +24,13 @@ module HubSpotSDK
         module Type
           extend HubSpotSDK::Internal::Type::Enum
 
+          ARRAY = :ARRAY
           BOOLEAN = :BOOLEAN
+          DOUBLE = :DOUBLE
+          INTEGER = :INTEGER
+          LONG = :LONG
+          OBJECT = :OBJECT
+          STRING = :STRING
 
           # @!method self.values
           #   @return [Array<Symbol>]

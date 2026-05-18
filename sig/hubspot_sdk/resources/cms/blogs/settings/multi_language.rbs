@@ -17,6 +17,7 @@ module HubSpotSDK
               ?language: String,
               ?primary_language: String,
               ?slug: String,
+              ?use_published: bool,
               ?request_options: HubSpotSDK::request_opts
             ) -> HubSpotSDK::Cms::Blogs::Blog
 

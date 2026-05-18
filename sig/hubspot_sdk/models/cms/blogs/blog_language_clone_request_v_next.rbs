@@ -9,7 +9,8 @@ module HubSpotSDK
             id: String,
             language: String,
             primary_language: String,
-            slug: String
+            slug: String,
+            use_published: bool
           }
 
         class BlogLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
@@ -27,18 +28,24 @@ module HubSpotSDK
 
           def slug=: (String) -> String
 
+          attr_reader use_published: bool?
+
+          def use_published=: (bool) -> bool
+
           def initialize: (
             id: String,
             ?language: String,
             ?primary_language: String,
-            ?slug: String
+            ?slug: String,
+            ?use_published: bool
           ) -> void
 
           def to_hash: -> {
             id: String,
             language: String,
             primary_language: String,
-            slug: String
+            slug: String,
+            use_published: bool
           }
         end
       end

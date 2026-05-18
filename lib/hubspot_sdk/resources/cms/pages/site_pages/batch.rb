@@ -1,0 +1,125 @@
+# frozen_string_literal: true
+
+module HubSpotSDK
+  module Resources
+    class Cms
+      class Pages
+        class SitePages
+          class Batch
+            # Create a batch of website pages as specified in the request body.
+            #
+            # @overload create_site_pages(inputs:, request_options: {})
+            #
+            # @param inputs [Array<HubSpotSDK::Models::Cms::PagesPage>] Pages to input.
+            #
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
+            #
+            # @see HubSpotSDK::Models::Cms::Pages::SitePages::BatchCreateSitePagesParams
+            def create_site_pages(params)
+              parsed, options = HubSpotSDK::Cms::Pages::SitePages::BatchCreateSitePagesParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: "cms/pages/2026-03/site-pages/batch/create",
+                headers: {"content-type" => "*/*"},
+                body: parsed,
+                model: HubSpotSDK::Cms::BatchResponsePage,
+                options: options
+              )
+            end
+
+            # Delete a batch of website pages as specified in the request body. Note that this
+            # is not the same as the dashboard `archive` function. To perform a dashboard
+            # `archive` send an normal update with the `archivedInDashboard` field set to
+            # `true`.
+            #
+            # @overload delete_site_pages(inputs:, request_options: {})
+            #
+            # @param inputs [Array<String>] Strings to input.
+            #
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [nil]
+            #
+            # @see HubSpotSDK::Models::Cms::Pages::SitePages::BatchDeleteSitePagesParams
+            def delete_site_pages(params)
+              parsed, options = HubSpotSDK::Cms::Pages::SitePages::BatchDeleteSitePagesParams.dump_request(params)
+              @client.request(
+                method: :post,
+                path: "cms/pages/2026-03/site-pages/batch/archive",
+                headers: {"content-type" => "*/*"},
+                body: parsed,
+                model: NilClass,
+                options: options
+              )
+            end
+
+            # Retrieve a batch of website pages as specified in the request body.
+            #
+            # @overload get_site_pages(inputs:, archived: nil, request_options: {})
+            #
+            # @param inputs [Array<String>] Body param: Strings to input.
+            #
+            # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+            #
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
+            #
+            # @see HubSpotSDK::Models::Cms::Pages::SitePages::BatchGetSitePagesParams
+            def get_site_pages(params)
+              query_params = [:archived]
+              parsed, options = HubSpotSDK::Cms::Pages::SitePages::BatchGetSitePagesParams.dump_request(params)
+              query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              @client.request(
+                method: :post,
+                path: "cms/pages/2026-03/site-pages/batch/read",
+                query: query,
+                headers: {"content-type" => "*/*"},
+                body: parsed.except(*query_params),
+                model: HubSpotSDK::Cms::BatchResponsePage,
+                options: options
+              )
+            end
+
+            # Update a batch of website pages as specified in the request body.
+            #
+            # @overload update_site_pages(inputs:, archived: nil, request_options: {})
+            #
+            # @param inputs [Array<Object>] Body param: JSON nodes to input.
+            #
+            # @param archived [Boolean] Query param: Whether to return only results that have been archived.
+            #
+            # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+            #
+            # @return [HubSpotSDK::Models::Cms::BatchResponsePage]
+            #
+            # @see HubSpotSDK::Models::Cms::Pages::SitePages::BatchUpdateSitePagesParams
+            def update_site_pages(params)
+              query_params = [:archived]
+              parsed, options = HubSpotSDK::Cms::Pages::SitePages::BatchUpdateSitePagesParams.dump_request(params)
+              query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
+              @client.request(
+                method: :post,
+                path: "cms/pages/2026-03/site-pages/batch/update",
+                query: query,
+                headers: {"content-type" => "*/*"},
+                body: parsed.except(*query_params),
+                model: HubSpotSDK::Cms::BatchResponsePage,
+                options: options
+              )
+            end
+
+            # @api private
+            #
+            # @param client [HubSpotSDK::Client]
+            def initialize(client:)
+              @client = client
+            end
+          end
+        end
+      end
+    end
+  end
+end

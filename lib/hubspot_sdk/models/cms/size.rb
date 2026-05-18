@@ -22,23 +22,23 @@ module HubSpotSDK
         module Units
           extend HubSpotSDK::Internal::Type::Enum
 
-          PERCENT = :%
-          CH = :ch
-          CM = :cm
-          EM = :em
-          EX = :ex
-          IN = :in
-          LH = :lh
-          MM = :mm
-          PC = :pc
-          PT = :pt
-          PX = :px
+          CH = :CH
+          CM = :CM
+          EM = :EM
+          EX = :EX
+          IN = :IN
+          LH = :LH
+          MM = :MM
+          PC = :PC
+          PERCENTAGE = :PERCENTAGE
+          PT = :PT
+          PX = :PX
           Q = :Q
-          REM = :rem
-          VH = :vh
-          VMAX = :vmax
-          VMIN = :vmin
-          VW = :vw
+          REM = :REM
+          VH = :VH
+          VMAX = :VMAX
+          VMIN = :VMIN
+          VW = :VW
 
           # @!method self.values
           #   @return [Array<Symbol>]

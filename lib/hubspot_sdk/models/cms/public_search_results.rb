@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Cms
-      # @see HubSpotSDK::Resources::Cms::SiteSearch#search
       class PublicSearchResults < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute limit
         #   The number of results returned in a single response.

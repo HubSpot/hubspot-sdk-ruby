@@ -27,7 +27,7 @@ module HubSpotSDK
         # "CANCELLED", or "COMPLETE".
         sig do
           returns(
-            HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol
+            HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol
           )
         end
         attr_accessor :status
@@ -80,7 +80,7 @@ module HubSpotSDK
               results: T::Array[HubSpotSDK::Crm::LabelsBetweenObjectPair],
               started_at: Time,
               status:
-                HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::OrSymbol,
+                HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status::TaggedSymbol,
               links: T::Hash[Symbol, String],
               requested_at: Time
             }

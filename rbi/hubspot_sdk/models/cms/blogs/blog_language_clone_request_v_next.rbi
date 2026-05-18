@@ -40,12 +40,19 @@ module HubSpotSDK
           sig { params(slug: String).void }
           attr_writer :slug
 
+          sig { returns(T.nilable(T::Boolean)) }
+          attr_reader :use_published
+
+          sig { params(use_published: T::Boolean).void }
+          attr_writer :use_published
+
           sig do
             params(
               id: String,
               language: String,
               primary_language: String,
-              slug: String
+              slug: String,
+              use_published: T::Boolean
             ).returns(T.attached_class)
           end
           def self.new(
@@ -56,7 +63,8 @@ module HubSpotSDK
             # Language of primary blog to clone.
             primary_language: nil,
             # Path to this blog.
-            slug: nil
+            slug: nil,
+            use_published: nil
           )
           end
 
@@ -66,7 +74,8 @@ module HubSpotSDK
                 id: String,
                 language: String,
                 primary_language: String,
-                slug: String
+                slug: String,
+                use_published: T::Boolean
               }
             )
           end

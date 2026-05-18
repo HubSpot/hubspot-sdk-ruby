@@ -77,6 +77,11 @@ module HubSpotSDK
         end
 
         module Pages
+          module LandingPages
+          end
+
+          module SitePages
+          end
         end
       end
 
@@ -304,6 +309,9 @@ module HubSpotSDK
       module Invoices
       end
 
+      module LandingPages
+      end
+
       module Leads
       end
 
@@ -461,6 +469,11 @@ module HubSpotSDK
       end
 
       module Pages
+        module LandingPages
+        end
+
+        module SitePages
+        end
       end
 
       module PartnerClients
@@ -500,6 +513,9 @@ module HubSpotSDK
           module ExchangeRates
           end
         end
+      end
+
+      module SitePages
       end
 
       module Statuses

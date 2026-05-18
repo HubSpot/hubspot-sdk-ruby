@@ -246,8 +246,8 @@ module HubSpotSDK
         sig do
           params(
             list_id: String,
-            end_date: String,
-            start_date: String,
+            end_date: Time,
+            start_date: Time,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Crm::ListSizeAndEditHistoryResponse)
         end

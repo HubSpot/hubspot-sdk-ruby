@@ -4,6 +4,14 @@ module HubSpotSDK
       class Associations
         attr_reader batch: HubSpotSDK::Resources::Crm::Associations::Batch
 
+        def create: (
+          String to_object_id,
+          from_object_type: String,
+          from_object_id: String,
+          to_object_type: String,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation
+
         def list: (
           String to_object_type,
           object_type: String,
@@ -37,7 +45,7 @@ module HubSpotSDK
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
-        def update_association_labels: (
+        def update_labels: (
           String to_object_id,
           object_type: String,
           object_id_: String,

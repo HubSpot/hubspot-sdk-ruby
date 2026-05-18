@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Crm
-      # @see HubSpotSDK::Resources::Crm::Associations#request_high_usage_report
       class ReportCreationResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute enqueue_time
         #

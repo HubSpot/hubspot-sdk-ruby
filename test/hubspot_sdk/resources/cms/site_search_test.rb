@@ -20,25 +20,4 @@ class HubSpotSDK::Test::Resources::Cms::SiteSearchTest < HubSpotSDK::Test::Resou
       }
     end
   end
-
-  def test_search
-    skip("Mock server tests are disabled")
-
-    response = @hubspot.cms.site_search.search
-
-    assert_pattern do
-      response => HubSpotSDK::Cms::PublicSearchResults
-    end
-
-    assert_pattern do
-      response => {
-        limit: Integer,
-        offset: Integer,
-        page: Integer,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Cms::ContentSearchResult]),
-        total: Integer,
-        search_term: String | nil
-      }
-    end
-  end
 end

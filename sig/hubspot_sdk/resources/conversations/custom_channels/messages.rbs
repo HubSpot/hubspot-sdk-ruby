@@ -16,6 +16,7 @@ module HubSpotSDK
             ?in_reply_to_id: String,
             ?integration_idempotency_id: String,
             ?integration_thread_id: String,
+            ?pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
             ?rich_text: String,
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Conversations::PublicConversationsMessage

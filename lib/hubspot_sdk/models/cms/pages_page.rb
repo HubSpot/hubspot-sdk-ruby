@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Cms
-      # @see HubSpotSDK::Resources::Cms::Pages#restore_landing_page_revision
       class PagesPage < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique ID of the page.

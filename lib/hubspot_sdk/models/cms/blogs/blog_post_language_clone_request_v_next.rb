@@ -17,10 +17,17 @@ module HubSpotSDK
           #   @return [String, nil]
           optional :language, String
 
-          # @!method initialize(id:, language: nil)
+          # @!attribute use_published
+          #
+          #   @return [Boolean, nil]
+          optional :use_published, HubSpotSDK::Internal::Type::Boolean, api_name: :usePublished
+
+          # @!method initialize(id:, language: nil, use_published: nil)
           #   @param id [String] ID of blog post to clone.
           #
           #   @param language [String] Target language of new variant.
+          #
+          #   @param use_published [Boolean]
         end
       end
 

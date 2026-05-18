@@ -21,10 +21,10 @@ module HubSpotSDK
         sig { params(email_ids: T::Array[Integer]).void }
         attr_writer :email_ids
 
-        sig { returns(T.nilable(String)) }
+        sig { returns(T.nilable(Time)) }
         attr_reader :end_timestamp
 
-        sig { params(end_timestamp: String).void }
+        sig { params(end_timestamp: Time).void }
         attr_writer :end_timestamp
 
         sig do
@@ -44,19 +44,19 @@ module HubSpotSDK
         end
         attr_writer :interval
 
-        sig { returns(T.nilable(String)) }
+        sig { returns(T.nilable(Time)) }
         attr_reader :start_timestamp
 
-        sig { params(start_timestamp: String).void }
+        sig { params(start_timestamp: Time).void }
         attr_writer :start_timestamp
 
         sig do
           params(
             email_ids: T::Array[Integer],
-            end_timestamp: String,
+            end_timestamp: Time,
             interval:
               HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
-            start_timestamp: String,
+            start_timestamp: Time,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
@@ -73,10 +73,10 @@ module HubSpotSDK
           override.returns(
             {
               email_ids: T::Array[Integer],
-              end_timestamp: String,
+              end_timestamp: Time,
               interval:
                 HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
-              start_timestamp: String,
+              start_timestamp: Time,
               request_options: HubSpotSDK::RequestOptions
             }
           )

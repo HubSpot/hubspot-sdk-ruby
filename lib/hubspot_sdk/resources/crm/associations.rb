@@ -7,6 +7,47 @@ module HubSpotSDK
         # @return [HubSpotSDK::Resources::Crm::Associations::Batch]
         attr_reader :batch
 
+        # Create the default (most generic) association type between two object types
+        #
+        # @overload create(to_object_id, from_object_type:, from_object_id:, to_object_type:, request_options: {})
+        #
+        # @param to_object_id [String]
+        # @param from_object_type [String]
+        # @param from_object_id [String]
+        # @param to_object_type [String]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
+        #
+        # @see HubSpotSDK::Models::Crm::AssociationCreateParams
+        def create(to_object_id, params)
+          parsed, options = HubSpotSDK::Crm::AssociationCreateParams.dump_request(params)
+          from_object_type =
+            parsed.delete(:from_object_type) do
+              raise ArgumentError.new("missing required path argument #{_1}")
+            end
+          from_object_id =
+            parsed.delete(:from_object_id) do
+              raise ArgumentError.new("missing required path argument #{_1}")
+            end
+          to_object_type =
+            parsed.delete(:to_object_type) do
+              raise ArgumentError.new("missing required path argument #{_1}")
+            end
+          @client.request(
+            method: :put,
+            path: [
+              "crm/objects/2026-03/%1$s/%2$s/associations/default/%3$s/%4$s",
+              from_object_type,
+              from_object_id,
+              to_object_type,
+              to_object_id
+            ],
+            model: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation,
+            options: options
+          )
+        end
+
         # Some parameter documentations has been truncated, see
         # {HubSpotSDK::Models::Crm::AssociationListParams} for more details.
         #
@@ -56,6 +97,8 @@ module HubSpotSDK
           )
         end
 
+        # deletes all associations between two records.
+        #
         # @overload delete(to_object_id, object_type:, object_id_:, to_object_type:, request_options: {})
         #
         # @param to_object_id [String]
@@ -147,7 +190,9 @@ module HubSpotSDK
           )
         end
 
-        # @overload update_association_labels(to_object_id, object_type:, object_id_:, to_object_type:, body:, request_options: {})
+        # Set association labels between two records.
+        #
+        # @overload update_labels(to_object_id, object_type:, object_id_:, to_object_type:, body:, request_options: {})
         #
         # @param to_object_id [String] Path param
         #
@@ -163,9 +208,9 @@ module HubSpotSDK
         #
         # @return [HubSpotSDK::Models::Crm::LabelsBetweenObjectPair]
         #
-        # @see HubSpotSDK::Models::Crm::AssociationUpdateAssociationLabelsParams
-        def update_association_labels(to_object_id, params)
-          parsed, options = HubSpotSDK::Crm::AssociationUpdateAssociationLabelsParams.dump_request(params)
+        # @see HubSpotSDK::Models::Crm::AssociationUpdateLabelsParams
+        def update_labels(to_object_id, params)
+          parsed, options = HubSpotSDK::Crm::AssociationUpdateLabelsParams.dump_request(params)
           object_type =
             parsed.delete(:object_type) do
               raise ArgumentError.new("missing required path argument #{_1}")

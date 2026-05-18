@@ -15,6 +15,7 @@ module HubSpotSDK
             def create_lang_variation: (
               id: String,
               ?language: String,
+              ?use_published: bool,
               ?request_options: HubSpotSDK::request_opts
             ) -> StringIO
 

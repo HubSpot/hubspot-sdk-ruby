@@ -3,39 +3,30 @@ module HubSpotSDK
     module Crm
       module Associations
         type batch_create_params =
-          {
-            from_object_type: String,
-            from_object_id: String,
-            to_object_type: String,
-            to_object_id: String
-          }
+          { from_object_type: String, to_object_type: String }
           & HubSpotSDK::Internal::Type::request_parameters
 
-        class BatchCreateParams < HubSpotSDK::Internal::Type::BaseModel
+        class BatchCreateParams < HubSpotSDK::Models::Crm::BatchInputPublicAssociationMultiPost
           extend HubSpotSDK::Internal::Type::RequestParameters::Converter
           include HubSpotSDK::Internal::Type::RequestParameters
 
-          attr_accessor from_object_type: String
+          def from_object_type: -> String
 
-          attr_accessor from_object_id: String
+          def from_object_type=: (String _) -> String
 
-          attr_accessor to_object_type: String
+          def to_object_type: -> String
 
-          attr_accessor to_object_id: String
+          def to_object_type=: (String _) -> String
 
           def initialize: (
             from_object_type: String,
-            from_object_id: String,
             to_object_type: String,
-            to_object_id: String,
             ?request_options: HubSpotSDK::request_opts
           ) -> void
 
           def to_hash: -> {
             from_object_type: String,
-            from_object_id: String,
             to_object_type: String,
-            to_object_id: String,
             request_options: HubSpotSDK::RequestOptions
           }
         end

@@ -19,15 +19,15 @@ module HubSpotSDK
           value: Float
         }
 
-        type units = :deg | :grad | :rad | :turn
+        type units = :DEGREES | :GRADIANS | :RADIANS | :TURNS
 
         module Units
           extend HubSpotSDK::Internal::Type::Enum
 
-          DEG: :deg
-          GRAD: :grad
-          RAD: :rad
-          TURN: :turn
+          DEGREES: :DEGREES
+          GRADIANS: :GRADIANS
+          RADIANS: :RADIANS
+          TURNS: :TURNS
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Angle::units]
         end

@@ -5,19 +5,6 @@ module HubSpotSDK
         class Contracts
           attr_reader batch: HubSpotSDK::Resources::Crm::Objects::Contracts::Batch
 
-          def create: (
-            associations: ::Array[HubSpotSDK::Crm::PublicAssociationsForObject],
-            properties: ::Hash[Symbol, String],
-            ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Crm::SimplePublicObject
-
-          def update: (
-            String contract_id,
-            properties: ::Hash[Symbol, String],
-            ?id_property: String,
-            ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Crm::SimplePublicObject
-
           def list: (
             ?after: String,
             ?archived: bool,
@@ -28,11 +15,6 @@ module HubSpotSDK
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Crm::SimplePublicObjectWithAssociations]
 
-          def delete: (
-            String contract_id,
-            ?request_options: HubSpotSDK::request_opts
-          ) -> nil
-
           def get: (
             String contract_id,
             ?archived: bool,
@@ -42,16 +24,6 @@ module HubSpotSDK
             ?properties_with_history: ::Array[String],
             ?request_options: HubSpotSDK::request_opts
           ) -> HubSpotSDK::Crm::SimplePublicObjectWithAssociations
-
-          def search: (
-            after: String,
-            filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
-            limit: Integer,
-            properties: ::Array[String],
-            sorts: ::Array[String],
-            ?query: String,
-            ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
 
           def initialize: (client: HubSpotSDK::Client) -> void
         end

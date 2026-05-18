@@ -30,11 +30,18 @@ module HubSpotSDK
         sig { params(primary_language: String).void }
         attr_writer :primary_language
 
+        sig { returns(T.nilable(T::Boolean)) }
+        attr_reader :use_published
+
+        sig { params(use_published: T::Boolean).void }
+        attr_writer :use_published
+
         sig do
           params(
             id: String,
             language: String,
-            primary_language: String
+            primary_language: String,
+            use_published: T::Boolean
           ).returns(T.attached_class)
         end
         def self.new(
@@ -43,13 +50,19 @@ module HubSpotSDK
           # Target language of new variant.
           language: nil,
           # Language of primary content to clone.
-          primary_language: nil
+          primary_language: nil,
+          use_published: nil
         )
         end
 
         sig do
           override.returns(
-            { id: String, language: String, primary_language: String }
+            {
+              id: String,
+              language: String,
+              primary_language: String,
+              use_published: T::Boolean
+            }
           )
         end
         def to_hash

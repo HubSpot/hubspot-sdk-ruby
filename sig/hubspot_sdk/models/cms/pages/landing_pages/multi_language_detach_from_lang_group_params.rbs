@@ -1,0 +1,21 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      module Pages
+        module LandingPages
+          type multi_language_detach_from_lang_group_params =
+            {  } & HubSpotSDK::Internal::Type::request_parameters
+
+          class MultiLanguageDetachFromLangGroupParams < HubSpotSDK::Models::Cms::DetachFromLangGroupRequestVNext
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
+
+            def initialize: (?request_options: HubSpotSDK::request_opts) -> void
+
+            def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
+          end
+        end
+      end
+    end
+  end
+end
