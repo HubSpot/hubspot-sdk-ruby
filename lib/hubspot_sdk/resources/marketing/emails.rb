@@ -301,9 +301,9 @@ module HubSpotSDK
         # @overload get(email_ids: nil, end_timestamp: nil, property: nil, start_timestamp: nil, request_options: {})
         #
         # @param email_ids [Array<Integer>]
-        # @param end_timestamp [String]
+        # @param end_timestamp [Time]
         # @param property [String]
-        # @param start_timestamp [String]
+        # @param start_timestamp [Time]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubSpotSDK::Models::Marketing::AggregateEmailStatistics]
@@ -394,9 +394,9 @@ module HubSpotSDK
         # @overload get_histogram(email_ids: nil, end_timestamp: nil, interval: nil, start_timestamp: nil, request_options: {})
         #
         # @param email_ids [Array<Integer>]
-        # @param end_timestamp [String]
+        # @param end_timestamp [Time]
         # @param interval [Symbol, HubSpotSDK::Models::Marketing::EmailGetHistogramParams::Interval]
-        # @param start_timestamp [String]
+        # @param start_timestamp [Time]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubSpotSDK::Models::Marketing::CollectionResponseWithTotalEmailStatisticInterval]

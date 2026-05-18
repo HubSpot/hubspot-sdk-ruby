@@ -29,7 +29,12 @@ module HubSpotSDK
           #   @return [String, nil]
           optional :primary_language, String, api_name: :primaryLanguage
 
-          # @!method initialize(id:, name:, language: nil, primary_language: nil)
+          # @!attribute use_published
+          #
+          #   @return [Boolean, nil]
+          optional :use_published, HubSpotSDK::Internal::Type::Boolean, api_name: :usePublished
+
+          # @!method initialize(id:, name:, language: nil, primary_language: nil, use_published: nil)
           #   @param id [String] ID of the object to be cloned.
           #
           #   @param name [String] Name of newly cloned blog tag.
@@ -37,6 +42,8 @@ module HubSpotSDK
           #   @param language [String] Target language of new variant.
           #
           #   @param primary_language [String] Language of primary blog tag to clone.
+          #
+          #   @param use_published [Boolean]
         end
       end
     end

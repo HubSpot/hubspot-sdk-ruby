@@ -15,7 +15,7 @@ module HubSpotSDK
         sig { returns(T::Array[HubSpotSDK::Crm::SimplePublicObject]) }
         attr_accessor :results
 
-        # The total number of objects in the collection.
+        # The number of available results
         sig { returns(Integer) }
         attr_accessor :total
 
@@ -36,7 +36,7 @@ module HubSpotSDK
         end
         def self.new(
           results:,
-          # The total number of objects in the collection.
+          # The number of available results
           total:,
           paging: nil
         )

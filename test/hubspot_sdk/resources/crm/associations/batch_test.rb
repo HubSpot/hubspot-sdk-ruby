@@ -8,25 +8,28 @@ class HubSpotSDK::Test::Resources::Crm::Associations::BatchTest < HubSpotSDK::Te
 
     response =
       @hubspot.crm.associations.batch.create(
-        "toObjectId",
+        "toObjectType",
         from_object_type: "fromObjectType",
-        from_object_id: "fromObjectId",
-        to_object_type: "toObjectType"
+        inputs: [
+          {
+            from: {id: "id"},
+            to: {id: "id"},
+            types: [{associationCategory: :HUBSPOT_DEFINED, associationTypeId: 0}]
+          }
+        ]
       )
 
     assert_pattern do
-      response => HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation
+      response => HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicDefaultAssociation]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::LabelsBetweenObjectPair]),
         started_at: Time,
-        status: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation::Status,
-        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        status: HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
-        num_errors: Integer | nil,
         requested_at: Time | nil
       }
     end

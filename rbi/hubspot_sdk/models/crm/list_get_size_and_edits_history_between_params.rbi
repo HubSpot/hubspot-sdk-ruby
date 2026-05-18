@@ -18,23 +18,23 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :list_id
 
-        sig { returns(T.nilable(String)) }
+        sig { returns(T.nilable(Time)) }
         attr_reader :end_date
 
-        sig { params(end_date: String).void }
+        sig { params(end_date: Time).void }
         attr_writer :end_date
 
-        sig { returns(T.nilable(String)) }
+        sig { returns(T.nilable(Time)) }
         attr_reader :start_date
 
-        sig { params(start_date: String).void }
+        sig { params(start_date: Time).void }
         attr_writer :start_date
 
         sig do
           params(
             list_id: String,
-            end_date: String,
-            start_date: String,
+            end_date: Time,
+            start_date: Time,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(T.attached_class)
         end
@@ -50,8 +50,8 @@ module HubSpotSDK
           override.returns(
             {
               list_id: String,
-              end_date: String,
-              start_date: String,
+              end_date: Time,
+              start_date: Time,
               request_options: HubSpotSDK::RequestOptions
             }
           )

@@ -8,70 +8,6 @@ module HubSpotSDK
           # @return [HubSpotSDK::Resources::Crm::Objects::Contracts::Batch]
           attr_reader :batch
 
-          # Create a contract with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard contracts is
-          # provided.
-          #
-          # @overload create(associations:, properties:, request_options: {})
-          #
-          # @param associations [Array<HubSpotSDK::Models::Crm::PublicAssociationsForObject>]
-          #
-          # @param properties [Hash{Symbol=>String}] Key-value pairs for setting properties for the new object.
-          #
-          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
-          #
-          # @see HubSpotSDK::Models::Crm::Objects::ContractCreateParams
-          def create(params)
-            parsed, options = HubSpotSDK::Crm::Objects::ContractCreateParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/contracts",
-              body: parsed,
-              model: HubSpotSDK::Crm::SimplePublicObject,
-              options: options
-            )
-          end
-
-          # Some parameter documentations has been truncated, see
-          # {HubSpotSDK::Models::Crm::Objects::ContractUpdateParams} for more details.
-          #
-          # Perform a partial update of an Object identified by `{contractId}`or optionally
-          # a unique property value as specified by the `idProperty` query param.
-          # `{contractId}` refers to the internal object ID by default, and the `idProperty`
-          # query param refers to a property whose values are unique for the object.
-          # Provided property values will be overwritten. Read-only and non-existent
-          # properties will result in an error. Properties values can be cleared by passing
-          # an empty string.
-          #
-          # @overload update(contract_id, properties:, id_property: nil, request_options: {})
-          #
-          # @param contract_id [String] Path param
-          #
-          # @param properties [Hash{Symbol=>String}] Body param: Key value pairs representing the properties of the object.
-          #
-          # @param id_property [String] Query param: The name of a property whose values are unique for this object type
-          #
-          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [HubSpotSDK::Models::Crm::SimplePublicObject]
-          #
-          # @see HubSpotSDK::Models::Crm::Objects::ContractUpdateParams
-          def update(contract_id, params)
-            query_params = [:id_property]
-            parsed, options = HubSpotSDK::Crm::Objects::ContractUpdateParams.dump_request(params)
-            query = HubSpotSDK::Internal::Util.encode_query_params(parsed.slice(*query_params))
-            @client.request(
-              method: :patch,
-              path: ["crm/objects/2026-03/contracts/%1$s", contract_id],
-              query: query.transform_keys(id_property: "idProperty"),
-              body: parsed.except(*query_params),
-              model: HubSpotSDK::Crm::SimplePublicObject,
-              options: options
-            )
-          end
-
           # Some parameter documentations has been truncated, see
           # {HubSpotSDK::Models::Crm::Objects::ContractListParams} for more details.
           #
@@ -107,25 +43,6 @@ module HubSpotSDK
               page: HubSpotSDK::Internal::Page,
               model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
               options: options
-            )
-          end
-
-          # Move an Object identified by `{contractId}` to the recycling bin.
-          #
-          # @overload delete(contract_id, request_options: {})
-          #
-          # @param contract_id [String]
-          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [nil]
-          #
-          # @see HubSpotSDK::Models::Crm::Objects::ContractDeleteParams
-          def delete(contract_id, params = {})
-            @client.request(
-              method: :delete,
-              path: ["crm/objects/2026-03/contracts/%1$s", contract_id],
-              model: NilClass,
-              options: params[:request_options]
             )
           end
 
@@ -167,40 +84,6 @@ module HubSpotSDK
                 properties_with_history: "propertiesWithHistory"
               ),
               model: HubSpotSDK::Crm::SimplePublicObjectWithAssociations,
-              options: options
-            )
-          end
-
-          # Execute a search query to find contracts based on defined filters, properties,
-          # and sorting options. This allows for retrieving specific contract records that
-          # match the search criteria.
-          #
-          # @overload search(after:, filter_groups:, limit:, properties:, sorts:, query: nil, request_options: {})
-          #
-          # @param after [String] A paging cursor token for retrieving subsequent pages.
-          #
-          # @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>] Up to 6 groups of filters defining additional query criteria.
-          #
-          # @param limit [Integer] The maximum results to return, up to 200 objects.
-          #
-          # @param properties [Array<String>] A list of property names to include in the response.
-          #
-          # @param sorts [Array<String>] Specifies sorting order based on object properties.
-          #
-          # @param query [String] The search query string, up to 3000 characters.
-          #
-          # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
-          #
-          # @return [HubSpotSDK::Models::Crm::CollectionResponseWithTotalSimplePublicObject]
-          #
-          # @see HubSpotSDK::Models::Crm::Objects::ContractSearchParams
-          def search(params)
-            parsed, options = HubSpotSDK::Crm::Objects::ContractSearchParams.dump_request(params)
-            @client.request(
-              method: :post,
-              path: "crm/objects/2026-03/contracts/search",
-              body: parsed,
-              model: HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject,
               options: options
             )
           end

@@ -39,23 +39,24 @@ module HubSpotSDK
             T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Size::Units) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          PERCENT = T.let(:"%", HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          CH = T.let(:ch, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          CM = T.let(:cm, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          EM = T.let(:em, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          EX = T.let(:ex, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          IN = T.let(:in, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          LH = T.let(:lh, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          MM = T.let(:mm, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          PC = T.let(:pc, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          PT = T.let(:pt, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          PX = T.let(:px, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          CH = T.let(:CH, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          CM = T.let(:CM, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          EM = T.let(:EM, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          EX = T.let(:EX, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          IN = T.let(:IN, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          LH = T.let(:LH, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          MM = T.let(:MM, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          PC = T.let(:PC, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          PERCENTAGE =
+            T.let(:PERCENTAGE, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          PT = T.let(:PT, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          PX = T.let(:PX, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
           Q = T.let(:Q, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          REM = T.let(:rem, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          VH = T.let(:vh, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          VMAX = T.let(:vmax, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          VMIN = T.let(:vmin, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
-          VW = T.let(:vw, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          REM = T.let(:REM, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          VH = T.let(:VH, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          VMAX = T.let(:VMAX, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          VMIN = T.let(:VMIN, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
+          VW = T.let(:VW, HubSpotSDK::Cms::Size::Units::TaggedSymbol)
 
           sig do
             override.returns(

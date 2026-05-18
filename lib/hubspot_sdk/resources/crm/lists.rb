@@ -384,8 +384,8 @@ module HubSpotSDK
         # @overload get_size_and_edits_history_between(list_id, end_date: nil, start_date: nil, request_options: {})
         #
         # @param list_id [String]
-        # @param end_date [String]
-        # @param start_date [String]
+        # @param end_date [Time]
+        # @param start_date [Time]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubSpotSDK::Models::Crm::ListSizeAndEditHistoryResponse]

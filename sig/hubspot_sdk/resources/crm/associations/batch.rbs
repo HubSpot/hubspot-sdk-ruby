@@ -4,12 +4,11 @@ module HubSpotSDK
       class Associations
         class Batch
           def create: (
-            String to_object_id,
+            String to_object_type,
             from_object_type: String,
-            from_object_id: String,
-            to_object_type: String,
+            inputs: ::Array[HubSpotSDK::Crm::PublicAssociationMultiPost],
             ?request_options: HubSpotSDK::request_opts
-          ) -> HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation
+          ) -> HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair
 
           def delete: (
             String to_object_type,

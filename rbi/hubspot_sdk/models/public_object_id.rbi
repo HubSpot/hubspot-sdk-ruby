@@ -8,14 +8,14 @@ module HubSpotSDK
           T.any(HubSpotSDK::PublicObjectID, HubSpotSDK::Internal::AnyHash)
         end
 
-      # ID of the object
+      # The unique identifier for the public object.
       sig { returns(String) }
       attr_accessor :id
 
       # Contains the Id of a Public Object
       sig { params(id: String).returns(T.attached_class) }
       def self.new(
-        # ID of the object
+        # The unique identifier for the public object.
         id:
       )
       end

@@ -1,0 +1,39 @@
+module HubSpotSDK
+  module Resources
+    class Cms
+      class Pages
+        class LandingPages
+          class Revisions
+            def get_landing_page_revision: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::PageVersion
+
+            def list_landing_page_revisions: (
+              String object_id_,
+              ?after: String,
+              ?before: String,
+              ?limit: Integer,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion]
+
+            def restore_landing_page_revision: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::PagesPage
+
+            def restore_landing_page_revision_to_draft: (
+              Integer revision_id,
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::PagesPage
+
+            def initialize: (client: HubSpotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

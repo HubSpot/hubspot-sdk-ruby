@@ -12,8 +12,8 @@ module HubSpotSDK
             )
           end
 
-        # The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
-        # INTEGRATOR_DEFINED.
+        # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        # or WORK
         sig do
           returns(
             HubSpotSDK::Crm::AssociationSpecWithLabel::Category::TaggedSymbol
@@ -21,11 +21,13 @@ module HubSpotSDK
         end
         attr_accessor :category
 
-        # The unique identifier for the type of association.
+        # An integer value used to uniquely identify a specific association type within
+        # its Association Category.
         sig { returns(Integer) }
         attr_accessor :type_id
 
-        # A label describing the association between two objects.
+        # An optional descriptor that provides additional context about the relationship
+        # between associated records, such as "Mentor" and "Mentee".
         sig { returns(T.nilable(String)) }
         attr_reader :label
 
@@ -43,12 +45,14 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
-          # INTEGRATOR_DEFINED.
+          # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+          # or WORK
           category:,
-          # The unique identifier for the type of association.
+          # An integer value used to uniquely identify a specific association type within
+          # its Association Category.
           type_id:,
-          # A label describing the association between two objects.
+          # An optional descriptor that provides additional context about the relationship
+          # between associated records, such as "Mentor" and "Mentee".
           label: nil
         )
         end
@@ -66,8 +70,8 @@ module HubSpotSDK
         def to_hash
         end
 
-        # The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
-        # INTEGRATOR_DEFINED.
+        # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        # or WORK
         module Category
           extend HubSpotSDK::Internal::Type::Enum
 

@@ -5,41 +5,32 @@ module HubSpotSDK
     class Crm
       class Associations
         class Batch
-          # @overload create(to_object_id, from_object_type:, from_object_id:, to_object_type:, request_options: {})
+          # Batch create associations for objects
           #
-          # @param to_object_id [String]
-          # @param from_object_type [String]
-          # @param from_object_id [String]
-          # @param to_object_type [String]
+          # @overload create(to_object_type, from_object_type:, inputs:, request_options: {})
+          #
+          # @param to_object_type [String] Path param
+          #
+          # @param from_object_type [String] Path param
+          #
+          # @param inputs [Array<HubSpotSDK::Models::Crm::PublicAssociationMultiPost>] Body param
+          #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #
-          # @return [HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation]
+          # @return [HubSpotSDK::Models::Crm::BatchResponseLabelsBetweenObjectPair]
           #
           # @see HubSpotSDK::Models::Crm::Associations::BatchCreateParams
-          def create(to_object_id, params)
+          def create(to_object_type, params)
             parsed, options = HubSpotSDK::Crm::Associations::BatchCreateParams.dump_request(params)
             from_object_type =
               parsed.delete(:from_object_type) do
                 raise ArgumentError.new("missing required path argument #{_1}")
               end
-            from_object_id =
-              parsed.delete(:from_object_id) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
-            to_object_type =
-              parsed.delete(:to_object_type) do
-                raise ArgumentError.new("missing required path argument #{_1}")
-              end
             @client.request(
-              method: :put,
-              path: [
-                "crm/objects/2026-03/%1$s/%2$s/associations/default/%3$s/%4$s",
-                from_object_type,
-                from_object_id,
-                to_object_type,
-                to_object_id
-              ],
-              model: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation,
+              method: :post,
+              path: ["crm/associations/2026-03/%1$s/%2$s/batch/create", from_object_type, to_object_type],
+              body: parsed,
+              model: HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair,
               options: options
             )
           end

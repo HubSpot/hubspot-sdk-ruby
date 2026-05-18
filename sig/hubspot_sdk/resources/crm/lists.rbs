@@ -109,8 +109,8 @@ module HubSpotSDK
 
         def get_size_and_edits_history_between: (
           String list_id,
-          ?end_date: String,
-          ?start_date: String,
+          ?end_date: Time,
+          ?start_date: Time,
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Crm::ListSizeAndEditHistoryResponse
 

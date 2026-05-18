@@ -15,18 +15,18 @@ module HubSpotSDK
 
         # @!attribute end_date
         #
-        #   @return [String, nil]
-        optional :end_date, String
+        #   @return [Time, nil]
+        optional :end_date, Time
 
         # @!attribute start_date
         #
-        #   @return [String, nil]
-        optional :start_date, String
+        #   @return [Time, nil]
+        optional :start_date, Time
 
         # @!method initialize(list_id:, end_date: nil, start_date: nil, request_options: {})
         #   @param list_id [String]
-        #   @param end_date [String]
-        #   @param start_date [String]
+        #   @param end_date [Time]
+        #   @param start_date [Time]
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end
     end

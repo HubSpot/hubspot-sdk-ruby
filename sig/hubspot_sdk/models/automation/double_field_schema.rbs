@@ -31,12 +31,19 @@ module HubSpotSDK
           minimum: Float
         }
 
-        type type_ = :DOUBLE
+        type type_ =
+          :ARRAY | :BOOLEAN | :DOUBLE | :INTEGER | :LONG | :OBJECT | :STRING
 
         module Type
           extend HubSpotSDK::Internal::Type::Enum
 
+          ARRAY: :ARRAY
+          BOOLEAN: :BOOLEAN
           DOUBLE: :DOUBLE
+          INTEGER: :INTEGER
+          LONG: :LONG
+          OBJECT: :OBJECT
+          STRING: :STRING
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Automation::DoubleFieldSchema::type_]
         end

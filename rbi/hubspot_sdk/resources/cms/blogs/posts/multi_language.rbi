@@ -37,6 +37,7 @@ module HubSpotSDK
               params(
                 id: String,
                 language: String,
+                use_published: T::Boolean,
                 request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(StringIO)
             end
@@ -45,6 +46,7 @@ module HubSpotSDK
               id:,
               # Target language of new variant.
               language: nil,
+              use_published: nil,
               request_options: {}
             )
             end

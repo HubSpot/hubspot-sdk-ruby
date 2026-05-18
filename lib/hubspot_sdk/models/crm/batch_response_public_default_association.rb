@@ -22,8 +22,8 @@ module HubSpotSDK
         required :started_at, Time, api_name: :startedAt
 
         # @!attribute status
-        #   The status of the batch processing request: "PENDING", "PROCESSING",
-        #   "CANCELLED", or "COMPLETE".
+        #   The status of the batch processing request. Can be: "PENDING", "PROCESSING",
+        #   "CANCELED", or "COMPLETE".
         #
         #   @return [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status]
         required :status, enum: -> { HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation::Status }
@@ -40,7 +40,7 @@ module HubSpotSDK
         optional :links, HubSpotSDK::Internal::Type::HashOf[String]
 
         # @!attribute num_errors
-        #   The number of errors encountered during the batch processing.
+        #   The total number of errors that occurred during the operation.
         #
         #   @return [Integer, nil]
         optional :num_errors, Integer, api_name: :numErrors
@@ -64,18 +64,18 @@ module HubSpotSDK
         #
         #   @param started_at [Time] The timestamp when the batch process began execution, in ISO 8601 format.
         #
-        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status] The status of the batch processing request: "PENDING", "PROCESSING", "CANCELLED"
+        #   @param status [Symbol, HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation::Status] The status of the batch processing request. Can be: "PENDING", "PROCESSING", "CA
         #
         #   @param errors [Array<HubSpotSDK::Models::StandardError>]
         #
         #   @param links [Hash{Symbol=>String}] An object containing relevant links related to the batch request.
         #
-        #   @param num_errors [Integer] The number of errors encountered during the batch processing.
+        #   @param num_errors [Integer] The total number of errors that occurred during the operation.
         #
         #   @param requested_at [Time] The timestamp when the batch process was initiated, in ISO 8601 format.
 
-        # The status of the batch processing request: "PENDING", "PROCESSING",
-        # "CANCELLED", or "COMPLETE".
+        # The status of the batch processing request. Can be: "PENDING", "PROCESSING",
+        # "CANCELED", or "COMPLETE".
         #
         # @see HubSpotSDK::Models::Crm::BatchResponsePublicDefaultAssociation#status
         module Status

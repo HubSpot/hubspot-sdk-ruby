@@ -15,8 +15,8 @@ module HubSpotSDK
 
         # @!attribute end_timestamp
         #
-        #   @return [String, nil]
-        optional :end_timestamp, String
+        #   @return [Time, nil]
+        optional :end_timestamp, Time
 
         # @!attribute interval
         #
@@ -25,14 +25,14 @@ module HubSpotSDK
 
         # @!attribute start_timestamp
         #
-        #   @return [String, nil]
-        optional :start_timestamp, String
+        #   @return [Time, nil]
+        optional :start_timestamp, Time
 
         # @!method initialize(email_ids: nil, end_timestamp: nil, interval: nil, start_timestamp: nil, request_options: {})
         #   @param email_ids [Array<Integer>]
-        #   @param end_timestamp [String]
+        #   @param end_timestamp [Time]
         #   @param interval [Symbol, HubSpotSDK::Models::Marketing::EmailGetHistogramParams::Interval]
-        #   @param start_timestamp [String]
+        #   @param start_timestamp [Time]
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
 
         module Interval

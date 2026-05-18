@@ -2,74 +2,9 @@ module HubSpotSDK
   module Resources
     class Cms
       class Pages
-        attr_reader a_b_tests: HubSpotSDK::Resources::Cms::Pages::ABTests
-
-        attr_reader batch: HubSpotSDK::Resources::Cms::Pages::Batch
-
-        attr_reader folders: HubSpotSDK::Resources::Cms::Pages::Folders
-
         attr_reader landing_pages: HubSpotSDK::Resources::Cms::Pages::LandingPages
 
-        attr_reader multi_language: HubSpotSDK::Resources::Cms::Pages::MultiLanguage
-
-        attr_reader website_pages: HubSpotSDK::Resources::Cms::Pages::WebsitePages
-
-        def get_landing_page_revision: (
-          String revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PageVersion
-
-        def get_site_page_revision: (
-          String revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PageVersion
-
-        def list_landing_page_revisions: (
-          String object_id_,
-          ?after: String,
-          ?before: String,
-          ?limit: Integer,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion]
-
-        def list_site_page_revisions: (
-          String object_id_,
-          ?after: String,
-          ?before: String,
-          ?limit: Integer,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::PageVersion]
-
-        def reset_site_page_draft: (
-          String object_id_,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> nil
-
-        def restore_landing_page_revision: (
-          String revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
-
-        def restore_landing_page_revision_to_draft: (
-          Integer revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
-
-        def restore_site_page_revision: (
-          String revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
-
-        def restore_site_page_revision_to_draft: (
-          Integer revision_id,
-          object_id_: String,
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PagesPage
+        attr_reader site_pages: HubSpotSDK::Resources::Cms::Pages::SitePages
 
         def initialize: (client: HubSpotSDK::Client) -> void
       end

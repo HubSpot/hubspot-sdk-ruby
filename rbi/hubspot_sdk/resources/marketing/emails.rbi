@@ -275,9 +275,9 @@ module HubSpotSDK
         sig do
           params(
             email_ids: T::Array[Integer],
-            end_timestamp: String,
+            end_timestamp: Time,
             property: String,
-            start_timestamp: String,
+            start_timestamp: Time,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Marketing::AggregateEmailStatistics)
         end
@@ -334,10 +334,10 @@ module HubSpotSDK
         sig do
           params(
             email_ids: T::Array[Integer],
-            end_timestamp: String,
+            end_timestamp: Time,
             interval:
               HubSpotSDK::Marketing::EmailGetHistogramParams::Interval::OrSymbol,
-            start_timestamp: String,
+            start_timestamp: Time,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(
             HubSpotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval

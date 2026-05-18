@@ -69,9 +69,39 @@ module HubSpotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          ARRAY =
+            T.let(
+              :ARRAY,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
+          BOOLEAN =
+            T.let(
+              :BOOLEAN,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
+          DOUBLE =
+            T.let(
+              :DOUBLE,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
+          INTEGER =
+            T.let(
+              :INTEGER,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
           LONG =
             T.let(
               :LONG,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
+          OBJECT =
+            T.let(
+              :OBJECT,
+              HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
+            )
+          STRING =
+            T.let(
+              :STRING,
               HubSpotSDK::Automation::LongFieldSchema::Type::TaggedSymbol
             )
 

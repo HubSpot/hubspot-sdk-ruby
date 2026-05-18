@@ -2,7 +2,12 @@ module HubSpotSDK
   module Models
     module Cms
       type content_language_clone_request_v_next =
-        { id: String, language: String, primary_language: String }
+        {
+          id: String,
+          language: String,
+          primary_language: String,
+          use_published: bool
+        }
 
       class ContentLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: String
@@ -15,16 +20,22 @@ module HubSpotSDK
 
         def primary_language=: (String) -> String
 
+        attr_reader use_published: bool?
+
+        def use_published=: (bool) -> bool
+
         def initialize: (
           id: String,
           ?language: String,
-          ?primary_language: String
+          ?primary_language: String,
+          ?use_published: bool
         ) -> void
 
         def to_hash: -> {
           id: String,
           language: String,
-          primary_language: String
+          primary_language: String,
+          use_published: bool
         }
       end
     end

@@ -19,44 +19,44 @@ module HubSpotSDK
         }
 
         type units =
-          :%
-          | :ch
-          | :cm
-          | :em
-          | :ex
-          | :in
-          | :lh
-          | :mm
-          | :pc
-          | :pt
-          | :px
+          :CH
+          | :CM
+          | :EM
+          | :EX
+          | :IN
+          | :LH
+          | :MM
+          | :PC
+          | :PERCENTAGE
+          | :PT
+          | :PX
           | :Q
-          | :rem
-          | :vh
-          | :vmax
-          | :vmin
-          | :vw
+          | :REM
+          | :VH
+          | :VMAX
+          | :VMIN
+          | :VW
 
         module Units
           extend HubSpotSDK::Internal::Type::Enum
 
-          PERCENT: :%
-          CH: :ch
-          CM: :cm
-          EM: :em
-          EX: :ex
-          IN: :in
-          LH: :lh
-          MM: :mm
-          PC: :pc
-          PT: :pt
-          PX: :px
+          CH: :CH
+          CM: :CM
+          EM: :EM
+          EX: :EX
+          IN: :IN
+          LH: :LH
+          MM: :MM
+          PC: :PC
+          PERCENTAGE: :PERCENTAGE
+          PT: :PT
+          PX: :PX
           Q: :Q
-          REM: :rem
-          VH: :vh
-          VMAX: :vmax
-          VMIN: :vmin
-          VW: :vw
+          REM: :REM
+          VH: :VH
+          VMAX: :VMAX
+          VMIN: :VMIN
+          VW: :VW
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Size::units]
         end

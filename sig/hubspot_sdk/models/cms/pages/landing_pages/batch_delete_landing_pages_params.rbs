@@ -1,0 +1,21 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      module Pages
+        module LandingPages
+          type batch_delete_landing_pages_params =
+            {  } & HubSpotSDK::Internal::Type::request_parameters
+
+          class BatchDeleteLandingPagesParams < HubSpotSDK::Models::BatchInputString
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
+
+            def initialize: (?request_options: HubSpotSDK::request_opts) -> void
+
+            def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
+          end
+        end
+      end
+    end
+  end
+end

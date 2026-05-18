@@ -1,0 +1,90 @@
+module HubSpotSDK
+  module Resources
+    class Cms
+      class Pages
+        class LandingPages
+          class Draft
+            def update: (
+              String object_id_,
+              id: String,
+              ab_status: HubSpotSDK::Models::Cms::PagesPage::ab_status,
+              ab_test_id: String,
+              archived_at: Time,
+              archived_in_dashboard: bool,
+              attached_stylesheets: ::Array[::Hash[Symbol, top]],
+              author_name: String,
+              campaign: String,
+              category_id: Integer,
+              content_group_id: String,
+              content_type_category: HubSpotSDK::Models::Cms::PagesPage::content_type_category,
+              created: Time,
+              created_by_id: String,
+              currently_published: bool,
+              current_state: HubSpotSDK::Models::Cms::PagesPage::current_state,
+              domain: String,
+              dynamic_page_data_source_id: String,
+              dynamic_page_data_source_type: Integer,
+              dynamic_page_hub_db_table_id: String,
+              enable_domain_stylesheets: bool,
+              enable_layout_stylesheets: bool,
+              featured_image: String,
+              featured_image_alt_text: String,
+              folder_id: String,
+              footer_html: String,
+              head_html: String,
+              html_title: String,
+              include_default_custom_css: bool,
+              language: HubSpotSDK::Models::Cms::PagesPage::language,
+              layout_sections: ::Hash[Symbol, HubSpotSDK::Cms::LayoutSection],
+              link_rel_canonical_url: String,
+              mab_experiment_id: String,
+              meta_description: String,
+              name: String,
+              page_expiry_date: Integer,
+              page_expiry_enabled: bool,
+              page_expiry_redirect_id: Integer,
+              page_expiry_redirect_url: String,
+              page_redirected: bool,
+              password: String,
+              public_access_rules: ::Array[top],
+              public_access_rules_enabled: bool,
+              publish_date: Time,
+              publish_immediately: bool,
+              slug: String,
+              state: String,
+              subcategory: String,
+              template_path: String,
+              theme_settings_values: ::Hash[Symbol, top],
+              translated_from_id: String,
+              translations: ::Hash[Symbol, HubSpotSDK::Cms::ContentLanguageVariation],
+              updated: Time,
+              updated_by_id: String,
+              url: String,
+              use_featured_image: bool,
+              widget_containers: ::Hash[Symbol, top],
+              widgets: ::Hash[Symbol, top],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::PagesPage
+
+            def get: (
+              String object_id_,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::PagesPage
+
+            def push_live: (
+              String object_id_,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> nil
+
+            def reset: (
+              String object_id_,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> nil
+
+            def initialize: (client: HubSpotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

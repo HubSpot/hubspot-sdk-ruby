@@ -245,7 +245,7 @@ module HubSpotSDK
 
           # Create a new language variation from an existing Blog Author.
           #
-          # @overload create_language_variation(id:, blog_author:, language: nil, primary_language: nil, request_options: {})
+          # @overload create_language_variation(id:, blog_author:, language: nil, primary_language: nil, use_published: nil, request_options: {})
           #
           # @param id [String] ID of the object to be cloned.
           #
@@ -254,6 +254,8 @@ module HubSpotSDK
           # @param language [String] Language of newly cloned object.
           #
           # @param primary_language [String] Primary language in multi-language group.
+          #
+          # @param use_published [Boolean]
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

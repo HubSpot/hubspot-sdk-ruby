@@ -27,10 +27,10 @@ module HubSpotSDK
         module Units
           extend HubSpotSDK::Internal::Type::Enum
 
-          DEG = :deg
-          GRAD = :grad
-          RAD = :rad
-          TURN = :turn
+          DEGREES = :DEGREES
+          GRADIANS = :GRADIANS
+          RADIANS = :RADIANS
+          TURNS = :TURNS
 
           # @!method self.values
           #   @return [Array<Symbol>]

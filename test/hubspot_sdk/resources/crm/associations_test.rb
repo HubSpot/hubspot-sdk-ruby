@@ -3,6 +3,35 @@
 require_relative "../../test_helper"
 
 class HubSpotSDK::Test::Resources::Crm::AssociationsTest < HubSpotSDK::Test::ResourceTest
+  def test_create_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.crm.associations.create(
+        "toObjectId",
+        from_object_type: "fromObjectType",
+        from_object_id: "fromObjectId",
+        to_object_type: "toObjectType"
+      )
+
+    assert_pattern do
+      response => HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation
+    end
+
+    assert_pattern do
+      response => {
+        completed_at: Time,
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::PublicDefaultAssociation]),
+        started_at: Time,
+        status: HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation::Status,
+        errors: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::StandardError]) | nil,
+        links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
+        num_errors: Integer | nil,
+        requested_at: Time | nil
+      }
+    end
+  end
+
   def test_list_required_params
     skip("Mock server tests are disabled")
 
@@ -88,11 +117,11 @@ class HubSpotSDK::Test::Resources::Crm::AssociationsTest < HubSpotSDK::Test::Res
     end
   end
 
-  def test_update_association_labels_required_params
+  def test_update_labels_required_params
     skip("Mock server tests are disabled")
 
     response =
-      @hubspot.crm.associations.update_association_labels(
+      @hubspot.crm.associations.update_labels(
         "toObjectId",
         object_type: "objectType",
         object_id_: "objectId",

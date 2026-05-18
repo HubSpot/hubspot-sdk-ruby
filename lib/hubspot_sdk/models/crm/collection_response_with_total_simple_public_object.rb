@@ -10,7 +10,7 @@ module HubSpotSDK
         required :results, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::SimplePublicObject] }
 
         # @!attribute total
-        #   The total number of objects in the collection.
+        #   The number of available results
         #
         #   @return [Integer]
         required :total, Integer
@@ -26,7 +26,7 @@ module HubSpotSDK
         #
         #   @param results [Array<HubSpotSDK::Models::Crm::SimplePublicObject>]
         #
-        #   @param total [Integer] The total number of objects in the collection.
+        #   @param total [Integer] The number of available results
         #
         #   @param paging [HubSpotSDK::Models::Paging]
       end

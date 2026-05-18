@@ -35,12 +35,19 @@ module HubSpotSDK
           sig { params(primary_language: String).void }
           attr_writer :primary_language
 
+          sig { returns(T.nilable(T::Boolean)) }
+          attr_reader :use_published
+
+          sig { params(use_published: T::Boolean).void }
+          attr_writer :use_published
+
           sig do
             params(
               id: String,
               name: String,
               language: String,
-              primary_language: String
+              primary_language: String,
+              use_published: T::Boolean
             ).returns(T.attached_class)
           end
           def self.new(
@@ -51,7 +58,8 @@ module HubSpotSDK
             # Target language of new variant.
             language: nil,
             # Language of primary blog tag to clone.
-            primary_language: nil
+            primary_language: nil,
+            use_published: nil
           )
           end
 
@@ -61,7 +69,8 @@ module HubSpotSDK
                 id: String,
                 name: String,
                 language: String,
-                primary_language: String
+                primary_language: String,
+                use_published: T::Boolean
               }
             )
           end
