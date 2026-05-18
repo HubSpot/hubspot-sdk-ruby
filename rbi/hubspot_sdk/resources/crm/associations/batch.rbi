@@ -5,20 +5,23 @@ module HubSpotSDK
     class Crm
       class Associations
         class Batch
+          # Batch create associations for objects
           sig do
             params(
-              to_object_id: String,
-              from_object_type: String,
-              from_object_id: String,
               to_object_type: String,
+              from_object_type: String,
+              inputs:
+                T::Array[HubSpotSDK::Crm::PublicAssociationMultiPost::OrHash],
               request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation)
+            ).returns(HubSpotSDK::Crm::BatchResponseLabelsBetweenObjectPair)
           end
           def create(
-            to_object_id,
+            # Path param
+            to_object_type,
+            # Path param
             from_object_type:,
-            from_object_id:,
-            to_object_type:,
+            # Body param
+            inputs:,
             request_options: {}
           )
           end

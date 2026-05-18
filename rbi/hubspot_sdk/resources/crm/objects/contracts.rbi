@@ -8,51 +8,6 @@ module HubSpotSDK
           sig { returns(HubSpotSDK::Resources::Crm::Objects::Contracts::Batch) }
           attr_reader :batch
 
-          # Create a contract with the given properties and return a copy of the object,
-          # including the ID. Documentation and examples for creating standard contracts is
-          # provided.
-          sig do
-            params(
-              associations:
-                T::Array[HubSpotSDK::Crm::PublicAssociationsForObject::OrHash],
-              properties: T::Hash[Symbol, String],
-              request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Crm::SimplePublicObject)
-          end
-          def create(
-            associations:,
-            # Key-value pairs for setting properties for the new object.
-            properties:,
-            request_options: {}
-          )
-          end
-
-          # Perform a partial update of an Object identified by `{contractId}`or optionally
-          # a unique property value as specified by the `idProperty` query param.
-          # `{contractId}` refers to the internal object ID by default, and the `idProperty`
-          # query param refers to a property whose values are unique for the object.
-          # Provided property values will be overwritten. Read-only and non-existent
-          # properties will result in an error. Properties values can be cleared by passing
-          # an empty string.
-          sig do
-            params(
-              contract_id: String,
-              properties: T::Hash[Symbol, String],
-              id_property: String,
-              request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(HubSpotSDK::Crm::SimplePublicObject)
-          end
-          def update(
-            # Path param
-            contract_id,
-            # Body param: Key value pairs representing the properties of the object.
-            properties:,
-            # Query param: The name of a property whose values are unique for this object type
-            id_property: nil,
-            request_options: {}
-          )
-          end
-
           # Read a page of contracts. Control what is returned via the `properties` query
           # param.
           sig do
@@ -95,16 +50,6 @@ module HubSpotSDK
           )
           end
 
-          # Move an Object identified by `{contractId}` to the recycling bin.
-          sig do
-            params(
-              contract_id: String,
-              request_options: HubSpotSDK::RequestOptions::OrHash
-            ).void
-          end
-          def delete(contract_id, request_options: {})
-          end
-
           # Read an Object identified by `{contractId}`. `{contractId}` refers to the
           # internal object ID by default, or optionally any unique property value as
           # specified by the `idProperty` query param. Control what is returned via the
@@ -137,39 +82,6 @@ module HubSpotSDK
             # of previous values. If any of the specified properties are not present on the
             # requested object(s), they will be ignored.
             properties_with_history: nil,
-            request_options: {}
-          )
-          end
-
-          # Execute a search query to find contracts based on defined filters, properties,
-          # and sorting options. This allows for retrieving specific contract records that
-          # match the search criteria.
-          sig do
-            params(
-              after: String,
-              filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup::OrHash],
-              limit: Integer,
-              properties: T::Array[String],
-              sorts: T::Array[String],
-              query: String,
-              request_options: HubSpotSDK::RequestOptions::OrHash
-            ).returns(
-              HubSpotSDK::Crm::CollectionResponseWithTotalSimplePublicObject
-            )
-          end
-          def search(
-            # A paging cursor token for retrieving subsequent pages.
-            after:,
-            # Up to 6 groups of filters defining additional query criteria.
-            filter_groups:,
-            # The maximum results to return, up to 200 objects.
-            limit:,
-            # A list of property names to include in the response.
-            properties:,
-            # Specifies sorting order based on object properties.
-            sorts:,
-            # The search query string, up to 3000 characters.
-            query: nil,
             request_options: {}
           )
           end

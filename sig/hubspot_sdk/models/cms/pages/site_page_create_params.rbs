@@ -1,0 +1,19 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      module Pages
+        type site_page_create_params =
+          {  } & HubSpotSDK::Internal::Type::request_parameters
+
+        class SitePageCreateParams < HubSpotSDK::Models::Cms::PagesPage
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
+
+          def initialize: (?request_options: HubSpotSDK::request_opts) -> void
+
+          def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
+        end
+      end
+    end
+  end
+end

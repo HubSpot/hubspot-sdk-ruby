@@ -1,0 +1,43 @@
+module HubSpotSDK
+  module Models
+    module Crm
+      type association_create_params =
+        {
+          from_object_type: String,
+          from_object_id: String,
+          to_object_type: String,
+          to_object_id: String
+        }
+        & HubSpotSDK::Internal::Type::request_parameters
+
+      class AssociationCreateParams < HubSpotSDK::Internal::Type::BaseModel
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        attr_accessor from_object_type: String
+
+        attr_accessor from_object_id: String
+
+        attr_accessor to_object_type: String
+
+        attr_accessor to_object_id: String
+
+        def initialize: (
+          from_object_type: String,
+          from_object_id: String,
+          to_object_type: String,
+          to_object_id: String,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> void
+
+        def to_hash: -> {
+          from_object_type: String,
+          from_object_id: String,
+          to_object_type: String,
+          to_object_id: String,
+          request_options: HubSpotSDK::RequestOptions
+        }
+      end
+    end
+  end
+end

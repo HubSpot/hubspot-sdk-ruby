@@ -38,6 +38,7 @@ module HubSpotSDK
                 language: String,
                 primary_language: String,
                 slug: String,
+                use_published: T::Boolean,
                 request_options: HubSpotSDK::RequestOptions::OrHash
               ).returns(HubSpotSDK::Cms::Blogs::Blog)
             end
@@ -50,6 +51,7 @@ module HubSpotSDK
               primary_language: nil,
               # Path to this blog.
               slug: nil,
+              use_published: nil,
               request_options: {}
             )
             end

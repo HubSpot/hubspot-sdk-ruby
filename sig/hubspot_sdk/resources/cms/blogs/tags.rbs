@@ -65,6 +65,7 @@ module HubSpotSDK
             name: String,
             ?language: String,
             ?primary_language: String,
+            ?use_published: bool,
             ?request_options: HubSpotSDK::request_opts
           ) -> StringIO
 

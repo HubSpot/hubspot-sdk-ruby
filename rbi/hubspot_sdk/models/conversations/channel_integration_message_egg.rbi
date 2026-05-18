@@ -83,6 +83,19 @@ module HubSpotSDK
         sig { params(integration_thread_id: String).void }
         attr_writer :integration_thread_id
 
+        sig do
+          returns(T.nilable(HubSpotSDK::Conversations::PreResolvedContacts))
+        end
+        attr_reader :pre_resolved_contacts
+
+        sig do
+          params(
+            pre_resolved_contacts:
+              HubSpotSDK::Conversations::PreResolvedContacts::OrHash
+          ).void
+        end
+        attr_writer :pre_resolved_contacts
+
         sig { returns(T.nilable(String)) }
         attr_reader :rich_text
 
@@ -120,6 +133,8 @@ module HubSpotSDK
             in_reply_to_id: String,
             integration_idempotency_id: String,
             integration_thread_id: String,
+            pre_resolved_contacts:
+              HubSpotSDK::Conversations::PreResolvedContacts::OrHash,
             rich_text: String
           ).returns(T.attached_class)
         end
@@ -135,6 +150,7 @@ module HubSpotSDK
           in_reply_to_id: nil,
           integration_idempotency_id: nil,
           integration_thread_id: nil,
+          pre_resolved_contacts: nil,
           rich_text: nil
         )
         end
@@ -171,6 +187,8 @@ module HubSpotSDK
               in_reply_to_id: String,
               integration_idempotency_id: String,
               integration_thread_id: String,
+              pre_resolved_contacts:
+                HubSpotSDK::Conversations::PreResolvedContacts,
               rich_text: String
             }
           )

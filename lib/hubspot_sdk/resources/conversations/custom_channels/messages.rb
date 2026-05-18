@@ -7,7 +7,7 @@ module HubSpotSDK
         class Messages
           # Publish a message over your custom channel
           #
-          # @overload create(channel_id, attachments:, channel_account_id:, message_direction:, recipients:, senders:, text:, timestamp:, associate_with_contact_id: nil, in_reply_to_id: nil, integration_idempotency_id: nil, integration_thread_id: nil, rich_text: nil, request_options: {})
+          # @overload create(channel_id, attachments:, channel_account_id:, message_direction:, recipients:, senders:, text:, timestamp:, associate_with_contact_id: nil, in_reply_to_id: nil, integration_idempotency_id: nil, integration_thread_id: nil, pre_resolved_contacts: nil, rich_text: nil, request_options: {})
           #
           # @param channel_id [Integer]
           # @param attachments [Array<HubSpotSDK::Models::Conversations::FileAttachment, HubSpotSDK::Models::Conversations::LocationAttachment, HubSpotSDK::Models::Conversations::ContactAttachment, HubSpotSDK::Models::Conversations::UnsupportedContentAttachment, HubSpotSDK::Models::Conversations::MessageHeaderAttachment, HubSpotSDK::Models::Conversations::QuickRepliesAttachment, HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment>]
@@ -21,6 +21,7 @@ module HubSpotSDK
           # @param in_reply_to_id [String]
           # @param integration_idempotency_id [String]
           # @param integration_thread_id [String]
+          # @param pre_resolved_contacts [HubSpotSDK::Models::Conversations::PreResolvedContacts]
           # @param rich_text [String]
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

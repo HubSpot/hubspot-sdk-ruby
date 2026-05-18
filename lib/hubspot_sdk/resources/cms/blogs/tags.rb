@@ -203,7 +203,7 @@ module HubSpotSDK
 
           # Create a new language variation from an existing Blog Tag
           #
-          # @overload create_lang_variation(id:, name:, language: nil, primary_language: nil, request_options: {})
+          # @overload create_lang_variation(id:, name:, language: nil, primary_language: nil, use_published: nil, request_options: {})
           #
           # @param id [String] ID of the object to be cloned.
           #
@@ -212,6 +212,8 @@ module HubSpotSDK
           # @param language [String] Target language of new variant.
           #
           # @param primary_language [String] Language of primary blog tag to clone.
+          #
+          # @param use_published [Boolean]
           #
           # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
           #

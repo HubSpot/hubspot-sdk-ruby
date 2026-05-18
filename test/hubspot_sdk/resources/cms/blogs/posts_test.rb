@@ -54,7 +54,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
                 styles: {
                   backgroundColor: {a: 0, b: 0, g: 0, r: 0},
                   backgroundGradient: {
-                    angle: {units: :deg, value: 0},
+                    angle: {units: :DEGREES, value: 0},
                     colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                     sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
                   },
@@ -74,7 +74,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
             styles: {
               backgroundColor: {a: 0, b: 0, g: 0, r: 0},
               backgroundGradient: {
-                angle: {units: :deg, value: 0},
+                angle: {units: :DEGREES, value: 0},
                 colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                 sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
               },
@@ -198,7 +198,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
                 styles: {
                   backgroundColor: {a: 0, b: 0, g: 0, r: 0},
                   backgroundGradient: {
-                    angle: {units: :deg, value: 0},
+                    angle: {units: :DEGREES, value: 0},
                     colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                     sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
                   },
@@ -218,7 +218,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
             styles: {
               backgroundColor: {a: 0, b: 0, g: 0, r: 0},
               backgroundGradient: {
-                angle: {units: :deg, value: 0},
+                angle: {units: :DEGREES, value: 0},
                 colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                 sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
               },
@@ -472,7 +472,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
                 styles: {
                   backgroundColor: {a: 0, b: 0, g: 0, r: 0},
                   backgroundGradient: {
-                    angle: {units: :deg, value: 0},
+                    angle: {units: :DEGREES, value: 0},
                     colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                     sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
                   },
@@ -492,7 +492,7 @@ class HubSpotSDK::Test::Resources::Cms::Blogs::PostsTest < HubSpotSDK::Test::Res
             styles: {
               backgroundColor: {a: 0, b: 0, g: 0, r: 0},
               backgroundGradient: {
-                angle: {units: :deg, value: 0},
+                angle: {units: :DEGREES, value: 0},
                 colors: [{color: {a: 0, b: 0, g: 0, r: 0}}],
                 sideOrCorner: {horizontalSide: :CENTER, verticalSide: :BOTTOM}
               },

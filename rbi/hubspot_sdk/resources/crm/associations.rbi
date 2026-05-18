@@ -7,6 +7,25 @@ module HubSpotSDK
         sig { returns(HubSpotSDK::Resources::Crm::Associations::Batch) }
         attr_reader :batch
 
+        # Create the default (most generic) association type between two object types
+        sig do
+          params(
+            to_object_id: String,
+            from_object_type: String,
+            from_object_id: String,
+            to_object_type: String,
+            request_options: HubSpotSDK::RequestOptions::OrHash
+          ).returns(HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation)
+        end
+        def create(
+          to_object_id,
+          from_object_type:,
+          from_object_id:,
+          to_object_type:,
+          request_options: {}
+        )
+        end
+
         # Retrieve all associations between a specific record and an object type. Limit
         # 500 per call.
         sig do
@@ -40,6 +59,7 @@ module HubSpotSDK
         )
         end
 
+        # deletes all associations between two records.
         sig do
           params(
             to_object_id: String,
@@ -101,6 +121,7 @@ module HubSpotSDK
         )
         end
 
+        # Set association labels between two records.
         sig do
           params(
             to_object_id: String,
@@ -111,7 +132,7 @@ module HubSpotSDK
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Crm::LabelsBetweenObjectPair)
         end
-        def update_association_labels(
+        def update_labels(
           # Path param
           to_object_id,
           # Path param

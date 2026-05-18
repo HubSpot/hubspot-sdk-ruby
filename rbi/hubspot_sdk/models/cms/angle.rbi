@@ -47,10 +47,11 @@ module HubSpotSDK
             T.type_alias { T.all(Symbol, HubSpotSDK::Cms::Angle::Units) }
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          DEG = T.let(:deg, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
-          GRAD = T.let(:grad, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
-          RAD = T.let(:rad, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
-          TURN = T.let(:turn, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          DEGREES = T.let(:DEGREES, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          GRADIANS =
+            T.let(:GRADIANS, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          RADIANS = T.let(:RADIANS, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
+          TURNS = T.let(:TURNS, HubSpotSDK::Cms::Angle::Units::TaggedSymbol)
 
           sig do
             override.returns(

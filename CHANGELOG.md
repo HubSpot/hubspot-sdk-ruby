@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2026-05-18)
+
+Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
+
+### Features
+
+* **api:** manual updates ([3b9e234](https://github.com/HubSpot/hubspot-sdk-ruby/commit/3b9e234ea1ac5e61e7943c1a3f318e16a5f1dd8c))
+
 ## 0.1.0-alpha.7 (2026-05-14)
 
 Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)

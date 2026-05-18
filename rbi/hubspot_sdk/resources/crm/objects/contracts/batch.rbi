@@ -6,47 +6,6 @@ module HubSpotSDK
       class Objects
         class Contracts
           class Batch
-            # Create multiple contracts in a single request by providing the necessary
-            # properties and associations for each contract. This endpoint returns a batch
-            # response containing the details of each created contract.
-            sig do
-              params(
-                inputs:
-                  T::Array[
-                    HubSpotSDK::Crm::SimplePublicObjectBatchInputForCreate::OrHash
-                  ],
-                request_options: HubSpotSDK::RequestOptions::OrHash
-              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
-            end
-            def create(inputs:, request_options: {})
-            end
-
-            # Update multiple contracts by their internal IDs or unique property values. This
-            # endpoint allows you to modify the properties of several contracts in a single
-            # request, streamlining the update process for batch operations.
-            sig do
-              params(
-                inputs:
-                  T::Array[
-                    HubSpotSDK::Crm::SimplePublicObjectBatchInput::OrHash
-                  ],
-                request_options: HubSpotSDK::RequestOptions::OrHash
-              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicObject)
-            end
-            def update(inputs:, request_options: {})
-            end
-
-            # Archive a batch of contracts by their IDs. This operation moves the specified
-            # contracts to the archive, making them inactive but still retrievable if needed.
-            sig do
-              params(
-                inputs: T::Array[HubSpotSDK::Crm::SimplePublicObjectID::OrHash],
-                request_options: HubSpotSDK::RequestOptions::OrHash
-              ).void
-            end
-            def delete(inputs:, request_options: {})
-            end
-
             # Retrieve records by record ID or include the `idProperty` parameter to retrieve
             # records by a custom unique value property.
             sig do
@@ -74,21 +33,6 @@ module HubSpotSDK
               id_property: nil,
               request_options: {}
             )
-            end
-
-            # Create or update records identified by a unique property value as specified by
-            # the `idProperty` query param. `idProperty` query param refers to a property
-            # whose values are unique for the object.
-            sig do
-              params(
-                inputs:
-                  T::Array[
-                    HubSpotSDK::Crm::SimplePublicObjectBatchInputUpsert::OrHash
-                  ],
-                request_options: HubSpotSDK::RequestOptions::OrHash
-              ).returns(HubSpotSDK::Crm::BatchResponseSimplePublicUpsertObject)
-            end
-            def upsert(inputs:, request_options: {})
             end
 
             # @api private

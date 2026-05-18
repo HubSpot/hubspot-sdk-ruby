@@ -1,0 +1,107 @@
+module HubSpotSDK
+  module Resources
+    class Cms
+      class Pages
+        class LandingPages
+          class Folders
+            def create: (
+              id: String,
+              category: Integer,
+              created: Time,
+              deleted_at: Time,
+              name: String,
+              parent_folder_id: Integer,
+              updated: Time,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::ContentFolder
+
+            def update: (
+              String object_id_,
+              id: String,
+              category: Integer,
+              created: Time,
+              deleted_at: Time,
+              name: String,
+              parent_folder_id: Integer,
+              updated: Time,
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::ContentFolder
+
+            def list: (
+              ?after: String,
+              ?archived: bool,
+              ?created_after: Time,
+              ?created_at: Time,
+              ?created_before: Time,
+              ?limit: Integer,
+              ?property: String,
+              ?sort: ::Array[String],
+              ?updated_after: Time,
+              ?updated_at: Time,
+              ?updated_before: Time,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolder]
+
+            def delete: (
+              String object_id_,
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> nil
+
+            def batch_get: (
+              inputs: ::Array[String],
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponseContentFolder
+
+            def create_folders: (
+              inputs: ::Array[HubSpotSDK::Cms::ContentFolder],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponseContentFolder
+
+            def delete_folders: (
+              inputs: ::Array[String],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> nil
+
+            def get: (
+              String object_id_,
+              ?archived: bool,
+              ?property: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::ContentFolder
+
+            def get_revision: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::ContentFolderVersion
+
+            def list_revisions: (
+              String object_id_,
+              ?after: String,
+              ?before: String,
+              ?limit: Integer,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Internal::Page[HubSpotSDK::Cms::ContentFolderVersion]
+
+            def restore_revision: (
+              String revision_id,
+              object_id_: String,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::ContentFolder
+
+            def update_folders: (
+              inputs: ::Array[top],
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponseContentFolder
+
+            def initialize: (client: HubSpotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

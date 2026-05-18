@@ -12,7 +12,7 @@ module HubSpotSDK
                  api_name: :associationTypes
 
         # @!attribute to_object_id
-        #   The unique identifier for the target object in the association.
+        #   Target unique ID of the object.
         #
         #   @return [String]
         required :to_object_id, String, api_name: :toObjectId
@@ -23,7 +23,7 @@ module HubSpotSDK
         #
         #   @param association_types [Array<HubSpotSDK::Models::Crm::AssociationSpecWithLabel>]
         #
-        #   @param to_object_id [String] The unique identifier for the target object in the association.
+        #   @param to_object_id [String] Target unique ID of the object.
       end
     end
   end

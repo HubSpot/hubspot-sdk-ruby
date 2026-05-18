@@ -98,9 +98,9 @@ module HubSpotSDK
 
         def get: (
           ?email_ids: ::Array[Integer],
-          ?end_timestamp: String,
+          ?end_timestamp: Time,
           ?property: String,
-          ?start_timestamp: String,
+          ?start_timestamp: Time,
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Marketing::AggregateEmailStatistics
 
@@ -122,9 +122,9 @@ module HubSpotSDK
 
         def get_histogram: (
           ?email_ids: ::Array[Integer],
-          ?end_timestamp: String,
+          ?end_timestamp: Time,
           ?interval: HubSpotSDK::Models::Marketing::EmailGetHistogramParams::interval,
-          ?start_timestamp: String,
+          ?start_timestamp: Time,
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Marketing::CollectionResponseWithTotalEmailStatisticInterval
 

@@ -1,0 +1,31 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      module Pages
+        module SitePages
+          type batch_get_site_pages_params =
+            { archived: bool } & HubSpotSDK::Internal::Type::request_parameters
+
+          class BatchGetSitePagesParams < HubSpotSDK::Models::BatchInputString
+            extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+            include HubSpotSDK::Internal::Type::RequestParameters
+
+            def archived: -> bool?
+
+            def archived=: (bool _) -> bool
+
+            def initialize: (
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> void
+
+            def to_hash: -> {
+              archived: bool,
+              request_options: HubSpotSDK::RequestOptions
+            }
+          end
+        end
+      end
+    end
+  end
+end

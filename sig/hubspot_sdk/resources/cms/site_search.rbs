@@ -8,29 +8,6 @@ module HubSpotSDK
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Cms::IndexedData
 
-        def search: (
-          ?analytics: bool,
-          ?autocomplete: bool,
-          ?boost_limit: Float,
-          ?boost_recent: String,
-          ?domain: ::Array[String],
-          ?group_id: ::Array[Integer],
-          ?hubdb_query: String,
-          ?language: HubSpotSDK::Models::Cms::SiteSearchSearchParams::language,
-          ?length: HubSpotSDK::Models::Cms::SiteSearchSearchParams::length,
-          ?limit: Integer,
-          ?match_prefix: bool,
-          ?offset: Integer,
-          ?path_prefix: ::Array[String],
-          ?popularity_boost: Float,
-          ?property: ::Array[String],
-          ?q: String,
-          ?table_id: Integer,
-          ?type: ::Array[String],
-          ?types: ::Array[HubSpotSDK::Models::Cms::SiteSearchSearchParams::type_],
-          ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::Cms::PublicSearchResults
-
         def initialize: (client: HubSpotSDK::Client) -> void
       end
     end

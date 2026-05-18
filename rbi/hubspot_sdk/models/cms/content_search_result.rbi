@@ -26,9 +26,7 @@ module HubSpotSDK
 
         # The type of document. Can be `SITE_PAGE`, `LANDING_PAGE`, `BLOG_POST`,
         # `LISTING_PAGE`, or `KNOWLEDGE_ARTICLE`.
-        sig do
-          returns(HubSpotSDK::Cms::ContentSearchResult::Type::TaggedSymbol)
-        end
+        sig { returns(HubSpotSDK::Cms::ContentSearchResult::Type::OrSymbol) }
         attr_accessor :type
 
         # The url of the document.
@@ -92,9 +90,7 @@ module HubSpotSDK
         # The document's language.
         sig do
           returns(
-            T.nilable(
-              HubSpotSDK::Cms::ContentSearchResult::Language::TaggedSymbol
-            )
+            T.nilable(HubSpotSDK::Cms::ContentSearchResult::Language::OrSymbol)
           )
         end
         attr_reader :language
@@ -221,7 +217,7 @@ module HubSpotSDK
               id: Integer,
               domain: String,
               score: Float,
-              type: HubSpotSDK::Cms::ContentSearchResult::Type::TaggedSymbol,
+              type: HubSpotSDK::Cms::ContentSearchResult::Type::OrSymbol,
               url: String,
               author_full_name: String,
               category: String,
@@ -232,7 +228,7 @@ module HubSpotSDK
               in_beta: T::Boolean,
               is_private: T::Boolean,
               language:
-                HubSpotSDK::Cms::ContentSearchResult::Language::TaggedSymbol,
+                HubSpotSDK::Cms::ContentSearchResult::Language::OrSymbol,
               published_date: Integer,
               row_id: Integer,
               subcategory: String,

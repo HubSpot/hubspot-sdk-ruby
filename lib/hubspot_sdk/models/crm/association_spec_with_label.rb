@@ -5,20 +5,22 @@ module HubSpotSDK
     module Crm
       class AssociationSpecWithLabel < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute category
-        #   The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
-        #   INTEGRATOR_DEFINED.
+        #   Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        #   or WORK
         #
         #   @return [Symbol, HubSpotSDK::Models::Crm::AssociationSpecWithLabel::Category]
         required :category, enum: -> { HubSpotSDK::Crm::AssociationSpecWithLabel::Category }
 
         # @!attribute type_id
-        #   The unique identifier for the type of association.
+        #   An integer value used to uniquely identify a specific association type within
+        #   its Association Category.
         #
         #   @return [Integer]
         required :type_id, Integer, api_name: :typeId
 
         # @!attribute label
-        #   A label describing the association between two objects.
+        #   An optional descriptor that provides additional context about the relationship
+        #   between associated records, such as "Mentor" and "Mentee".
         #
         #   @return [String, nil]
         optional :label, String
@@ -30,14 +32,14 @@ module HubSpotSDK
         #   Defines the type, direction, and details of the relationship between two CRM
         #   objects.
         #
-        #   @param category [Symbol, HubSpotSDK::Models::Crm::AssociationSpecWithLabel::Category] The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or INTEG
+        #   @param category [Symbol, HubSpotSDK::Models::Crm::AssociationSpecWithLabel::Category] Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED o
         #
-        #   @param type_id [Integer] The unique identifier for the type of association.
+        #   @param type_id [Integer] An integer value used to uniquely identify a specific association type within it
         #
-        #   @param label [String] A label describing the association between two objects.
+        #   @param label [String] An optional descriptor that provides additional context about the relationship b
 
-        # The category of the association, such as HUBSPOT_DEFINED, USER_DEFINED, or
-        # INTEGRATOR_DEFINED.
+        # Association category. Can be HUBSPOT_DEFINED, USER_DEFINED, INTEGRATOR_DEFINED
+        # or WORK
         #
         # @see HubSpotSDK::Models::Crm::AssociationSpecWithLabel#category
         module Category

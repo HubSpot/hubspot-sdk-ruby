@@ -14,6 +14,7 @@ module HubSpotSDK
           in_reply_to_id: String,
           integration_idempotency_id: String,
           integration_thread_id: String,
+          pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }
 
@@ -48,6 +49,12 @@ module HubSpotSDK
 
         def integration_thread_id=: (String) -> String
 
+        attr_reader pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts?
+
+        def pre_resolved_contacts=: (
+          HubSpotSDK::Conversations::PreResolvedContacts
+        ) -> HubSpotSDK::Conversations::PreResolvedContacts
+
         attr_reader rich_text: String?
 
         def rich_text=: (String) -> String
@@ -64,6 +71,7 @@ module HubSpotSDK
           ?in_reply_to_id: String,
           ?integration_idempotency_id: String,
           ?integration_thread_id: String,
+          ?pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           ?rich_text: String
         ) -> void
 
@@ -79,6 +87,7 @@ module HubSpotSDK
           in_reply_to_id: String,
           integration_idempotency_id: String,
           integration_thread_id: String,
+          pre_resolved_contacts: HubSpotSDK::Conversations::PreResolvedContacts,
           rich_text: String
         }
 

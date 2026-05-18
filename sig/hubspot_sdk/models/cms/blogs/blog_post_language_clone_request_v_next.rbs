@@ -5,7 +5,7 @@ module HubSpotSDK
 
       module Blogs
         type blog_post_language_clone_request_v_next =
-          { id: String, language: String }
+          { id: String, language: String, use_published: bool }
 
         class BlogPostLanguageCloneRequestVNext < HubSpotSDK::Internal::Type::BaseModel
           attr_accessor id: String
@@ -14,9 +14,17 @@ module HubSpotSDK
 
           def language=: (String) -> String
 
-          def initialize: (id: String, ?language: String) -> void
+          attr_reader use_published: bool?
 
-          def to_hash: -> { id: String, language: String }
+          def use_published=: (bool) -> bool
+
+          def initialize: (
+            id: String,
+            ?language: String,
+            ?use_published: bool
+          ) -> void
+
+          def to_hash: -> { id: String, language: String, use_published: bool }
         end
       end
     end

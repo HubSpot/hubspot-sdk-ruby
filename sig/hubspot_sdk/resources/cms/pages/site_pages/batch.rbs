@@ -1,0 +1,35 @@
+module HubSpotSDK
+  module Resources
+    class Cms
+      class Pages
+        class SitePages
+          class Batch
+            def create_site_pages: (
+              inputs: ::Array[HubSpotSDK::Cms::PagesPage],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponsePage
+
+            def delete_site_pages: (
+              inputs: ::Array[String],
+              ?request_options: HubSpotSDK::request_opts
+            ) -> nil
+
+            def get_site_pages: (
+              inputs: ::Array[String],
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponsePage
+
+            def update_site_pages: (
+              inputs: ::Array[top],
+              ?archived: bool,
+              ?request_options: HubSpotSDK::request_opts
+            ) -> HubSpotSDK::Cms::BatchResponsePage
+
+            def initialize: (client: HubSpotSDK::Client) -> void
+          end
+        end
+      end
+    end
+  end
+end

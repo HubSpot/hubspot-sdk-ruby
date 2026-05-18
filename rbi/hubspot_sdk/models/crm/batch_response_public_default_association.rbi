@@ -23,8 +23,8 @@ module HubSpotSDK
         sig { returns(Time) }
         attr_accessor :started_at
 
-        # The status of the batch processing request: "PENDING", "PROCESSING",
-        # "CANCELLED", or "COMPLETE".
+        # The status of the batch processing request. Can be: "PENDING", "PROCESSING",
+        # "CANCELED", or "COMPLETE".
         sig do
           returns(
             HubSpotSDK::Crm::BatchResponsePublicDefaultAssociation::Status::TaggedSymbol
@@ -45,7 +45,7 @@ module HubSpotSDK
         sig { params(links: T::Hash[Symbol, String]).void }
         attr_writer :links
 
-        # The number of errors encountered during the batch processing.
+        # The total number of errors that occurred during the operation.
         sig { returns(T.nilable(Integer)) }
         attr_reader :num_errors
 
@@ -80,13 +80,13 @@ module HubSpotSDK
           results:,
           # The timestamp when the batch process began execution, in ISO 8601 format.
           started_at:,
-          # The status of the batch processing request: "PENDING", "PROCESSING",
-          # "CANCELLED", or "COMPLETE".
+          # The status of the batch processing request. Can be: "PENDING", "PROCESSING",
+          # "CANCELED", or "COMPLETE".
           status:,
           errors: nil,
           # An object containing relevant links related to the batch request.
           links: nil,
-          # The number of errors encountered during the batch processing.
+          # The total number of errors that occurred during the operation.
           num_errors: nil,
           # The timestamp when the batch process was initiated, in ISO 8601 format.
           requested_at: nil
@@ -111,8 +111,8 @@ module HubSpotSDK
         def to_hash
         end
 
-        # The status of the batch processing request: "PENDING", "PROCESSING",
-        # "CANCELLED", or "COMPLETE".
+        # The status of the batch processing request. Can be: "PENDING", "PROCESSING",
+        # "CANCELED", or "COMPLETE".
         module Status
           extend HubSpotSDK::Internal::Type::Enum
 
