@@ -4,7 +4,7 @@ module HubSpotSDK
       type public_crm_search_request =
         {
           filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
-          filters: ::Array[HubSpotSDK::Crm::Filter],
+          filters: ::Array[HubSpotSDK::Crm::CrmFilter],
           sorts: ::Array[String],
           query: String
         }
@@ -12,7 +12,7 @@ module HubSpotSDK
       class PublicCrmSearchRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup]
 
-        attr_accessor filters: ::Array[HubSpotSDK::Crm::Filter]
+        attr_accessor filters: ::Array[HubSpotSDK::Crm::CrmFilter]
 
         attr_accessor sorts: ::Array[String]
 
@@ -22,14 +22,14 @@ module HubSpotSDK
 
         def initialize: (
           filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
-          filters: ::Array[HubSpotSDK::Crm::Filter],
+          filters: ::Array[HubSpotSDK::Crm::CrmFilter],
           sorts: ::Array[String],
           ?query: String
         ) -> void
 
         def to_hash: -> {
           filter_groups: ::Array[HubSpotSDK::Crm::FilterGroup],
-          filters: ::Array[HubSpotSDK::Crm::Filter],
+          filters: ::Array[HubSpotSDK::Crm::CrmFilter],
           sorts: ::Array[String],
           query: String
         }

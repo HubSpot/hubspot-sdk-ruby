@@ -298,6 +298,7 @@ module HubSpotSDK
           | :hs_social_twitter_clicks
           | :hs_source_object_id
           | :hs_source_portal_id
+          | :hs_sourced_contact_origin
           | :hs_state_code
           | :hs_sub_role
           | :hs_testpurge
@@ -691,6 +692,7 @@ module HubSpotSDK
           HS_SOCIAL_TWITTER_CLICKS: :hs_social_twitter_clicks
           HS_SOURCE_OBJECT_ID: :hs_source_object_id
           HS_SOURCE_PORTAL_ID: :hs_source_portal_id
+          HS_SOURCED_CONTACT_ORIGIN: :hs_sourced_contact_origin
           HS_STATE_CODE: :hs_state_code
           HS_SUB_ROLE: :hs_sub_role
           HS_TESTPURGE: :hs_testpurge

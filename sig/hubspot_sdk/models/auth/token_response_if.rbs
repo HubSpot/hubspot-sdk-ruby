@@ -1,0 +1,15 @@
+module HubSpotSDK
+  module Models
+    module Auth
+      type token_response_if =
+        HubSpotSDK::Auth::AccessTokenResponse
+        | HubSpotSDK::Auth::ClientCredentialsTokenResponse
+
+      module TokenResponseIf
+        extend HubSpotSDK::Internal::Type::Union
+
+        def self?.variants: -> ::Array[HubSpotSDK::Models::Auth::token_response_if]
+      end
+    end
+  end
+end

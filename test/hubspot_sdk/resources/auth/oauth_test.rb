@@ -9,7 +9,14 @@ class HubSpotSDK::Test::Resources::Auth::OAuthTest < HubSpotSDK::Test::ResourceT
     response = @hubspot.auth.oauth.create_token
 
     assert_pattern do
-      response => StringIO
+      response => HubSpotSDK::Auth::TokenResponseIf
+    end
+
+    assert_pattern do
+      case response
+      in HubSpotSDK::Auth::AccessTokenResponse
+      in HubSpotSDK::Auth::ClientCredentialsTokenResponse
+      end
     end
   end
 

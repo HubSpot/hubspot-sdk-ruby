@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubSpotSDK::Resources::Webhooks#create_journal_subscription
       class SubscriptionResponse1 < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the subscription. It is an integer formatted as int64.
@@ -61,9 +60,9 @@ module HubSpotSDK
         #   An object containing action overrides, where each key is an action and the value
         #   is an ActionOverrideRequest object.
         #
-        #   @return [Hash{Symbol=>HubSpotSDK::Models::Webhooks::ActionOverrideRequest}, nil]
+        #   @return [Hash{Symbol=>HubSpotSDK::Models::ActionOverrideRequest}, nil]
         optional :action_overrides,
-                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Webhooks::ActionOverrideRequest] },
+                 -> { HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::ActionOverrideRequest] },
                  api_name: :actionOverrides
 
         # @!attribute associated_object_type_ids
@@ -134,7 +133,7 @@ module HubSpotSDK
         #
         #   @param updated_at [Time] The date and time when the subscription was last updated, in ISO 8601 format.
         #
-        #   @param action_overrides [Hash{Symbol=>HubSpotSDK::Models::Webhooks::ActionOverrideRequest}] An object containing action overrides, where each key is an action and the value
+        #   @param action_overrides [Hash{Symbol=>HubSpotSDK::Models::ActionOverrideRequest}] An object containing action overrides, where each key is an action and the value
         #
         #   @param associated_object_type_ids [Array<String>] A list of associated object type IDs. Each ID is a string.
         #

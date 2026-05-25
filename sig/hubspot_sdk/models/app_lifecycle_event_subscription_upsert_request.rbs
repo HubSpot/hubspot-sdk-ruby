@@ -1,0 +1,40 @@
+module HubSpotSDK
+  module Models
+    type app_lifecycle_event_subscription_upsert_request =
+      {
+        event_type_id: String,
+        properties: ::Array[String],
+        subscription_type: HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+      }
+
+    class AppLifecycleEventSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor event_type_id: String
+
+      attr_accessor properties: ::Array[String]
+
+      attr_accessor subscription_type: HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+
+      def initialize: (
+        event_type_id: String,
+        properties: ::Array[String],
+        subscription_type: HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+      ) -> void
+
+      def to_hash: -> {
+        event_type_id: String,
+        properties: ::Array[String],
+        subscription_type: HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest::subscription_type
+      }
+
+      type subscription_type = :APP_LIFECYCLE_EVENT
+
+      module SubscriptionType
+        extend HubSpotSDK::Internal::Type::Enum
+
+        APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest::subscription_type]
+      end
+    end
+  end
+end

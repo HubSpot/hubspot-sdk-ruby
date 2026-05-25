@@ -1,0 +1,26 @@
+module HubSpotSDK
+  module Models
+    type filter_response =
+      { id: Integer, created_at: Integer, filter: HubSpotSDK::Filter }
+
+    class FilterResponse < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor id: Integer
+
+      attr_accessor created_at: Integer
+
+      attr_accessor filter: HubSpotSDK::Filter
+
+      def initialize: (
+        id: Integer,
+        created_at: Integer,
+        filter: HubSpotSDK::Filter
+      ) -> void
+
+      def to_hash: -> {
+        id: Integer,
+        created_at: Integer,
+        filter: HubSpotSDK::Filter
+      }
+    end
+  end
+end

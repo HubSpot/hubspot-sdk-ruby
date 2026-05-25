@@ -9,18 +9,20 @@ module HubSpotSDK
             T.any(HubSpotSDK::Crm::FilterGroup, HubSpotSDK::Internal::AnyHash)
           end
 
-        sig { returns(T::Array[HubSpotSDK::Crm::Filter]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::CrmFilter]) }
         attr_accessor :filters
 
         sig do
-          params(filters: T::Array[HubSpotSDK::Crm::Filter::OrHash]).returns(
+          params(filters: T::Array[HubSpotSDK::Crm::CrmFilter::OrHash]).returns(
             T.attached_class
           )
         end
         def self.new(filters:)
         end
 
-        sig { override.returns({ filters: T::Array[HubSpotSDK::Crm::Filter] }) }
+        sig do
+          override.returns({ filters: T::Array[HubSpotSDK::Crm::CrmFilter] })
+        end
         def to_hash
         end
       end

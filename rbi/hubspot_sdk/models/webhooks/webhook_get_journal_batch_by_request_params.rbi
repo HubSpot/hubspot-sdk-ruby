@@ -15,7 +15,8 @@ module HubSpotSDK
             )
           end
 
-        # The ID of the portal where the webhooks are installed. This is an integer value.
+        # An integer representing the ID of the portal installation for which the webhooks
+        # journal data should be retrieved.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -29,7 +30,8 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the portal where the webhooks are installed. This is an integer value.
+          # An integer representing the ID of the portal installation for which the webhooks
+          # journal data should be retrieved.
           install_portal_id: nil,
           request_options: {}
         )

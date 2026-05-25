@@ -1,0 +1,32 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      class Subscriptions
+        class Filters
+          def create: (
+            filter: HubSpotSDK::Filter,
+            subscription_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::FilterCreateResponse
+
+          def list: (
+            Integer subscription_id,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::Models::WebhooksJournal::Subscriptions::filter_list_response
+
+          def delete: (
+            Integer filter_id,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> nil
+
+          def get: (
+            Integer filter_id,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::FilterResponse
+
+          def initialize: (client: HubSpotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

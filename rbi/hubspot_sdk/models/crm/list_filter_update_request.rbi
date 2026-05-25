@@ -22,7 +22,6 @@ module HubSpotSDK
               HubSpotSDK::Crm::PublicNotAnyFilterBranch,
               HubSpotSDK::Crm::PublicRestrictedFilterBranch,
               HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-              HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
               HubSpotSDK::Crm::PublicAssociationFilterBranch
             )
           )
@@ -39,7 +38,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               )
           ).returns(T.attached_class)
@@ -61,7 +59,6 @@ module HubSpotSDK
                   HubSpotSDK::Crm::PublicNotAnyFilterBranch,
                   HubSpotSDK::Crm::PublicRestrictedFilterBranch,
                   HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                  HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
                   HubSpotSDK::Crm::PublicAssociationFilterBranch
                 )
             }
@@ -83,7 +80,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             end

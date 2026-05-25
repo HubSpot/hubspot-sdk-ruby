@@ -3,7 +3,7 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      class WebhookCreateCrmSnapshotsParams < HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchRequest
+      class WebhookCreateCrmSnapshotsParams < HubSpotSDK::Models::CrmObjectSnapshotBatchRequest
         extend HubSpotSDK::Internal::Type::RequestParameters::Converter
         include HubSpotSDK::Internal::Type::RequestParameters
 

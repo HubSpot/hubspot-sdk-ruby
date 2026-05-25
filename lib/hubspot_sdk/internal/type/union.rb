@@ -6,14 +6,16 @@ module HubSpotSDK
       # @api private
       #
       # @example
-      #   # `token_info_response_base_if` is a `HubSpotSDK::Auth::TokenInfoResponseBaseIf`
-      #   case token_info_response_base_if
-      #   when HubSpotSDK::Auth::PublicAccessTokenInfoResponse
-      #     puts(token_info_response_base_if.token)
-      #   when HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
-      #     puts(token_info_response_base_if.active)
+      #   # `subscription_upsert_request` is a `HubSpotSDK::SubscriptionUpsertRequest`
+      #   case subscription_upsert_request
+      #   when HubSpotSDK::ObjectSubscriptionUpsertRequest
+      #     puts(subscription_upsert_request.actions)
+      #   when HubSpotSDK::AssociationSubscriptionUpsertRequest
+      #     puts(subscription_upsert_request.associated_object_type_ids)
+      #   when HubSpotSDK::AppLifecycleEventSubscriptionUpsertRequest
+      #     puts(subscription_upsert_request.event_type_id)
       #   else
-      #     puts(token_info_response_base_if)
+      #     puts(subscription_upsert_request)
       #   end
       module Union
         include HubSpotSDK::Internal::Type::Converter

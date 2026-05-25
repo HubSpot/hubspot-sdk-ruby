@@ -292,6 +292,8 @@ module HubSpotSDK
         BILLING =
           T.let(:BILLING, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         BOT = T.let(:BOT, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
+        BREEZE_AGENT =
+          T.let(:BREEZE_AGENT, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         CALCULATED =
           T.let(:CALCULATED, HubSpotSDK::PropertyValue::Source::TaggedSymbol)
         CENTRAL_EXCHANGE_RATES =
@@ -369,6 +371,11 @@ module HubSpotSDK
         DELETE_OBJECTS =
           T.let(
             :DELETE_OBJECTS,
+            HubSpotSDK::PropertyValue::Source::TaggedSymbol
+          )
+        DI_WRITE_TO_CRM =
+          T.let(
+            :DI_WRITE_TO_CRM,
             HubSpotSDK::PropertyValue::Source::TaggedSymbol
           )
         EMAIL = T.let(:EMAIL, HubSpotSDK::PropertyValue::Source::TaggedSymbol)

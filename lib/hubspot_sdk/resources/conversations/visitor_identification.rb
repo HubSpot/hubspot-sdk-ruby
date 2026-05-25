@@ -14,9 +14,11 @@ module HubSpotSDK
         # the chat widget, so that it treats the visitor as a known contact. This allows
         # support agents to recognize and assist the visitor more effectively.
         #
-        # @overload generate_token(email:, first_name: nil, last_name: nil, request_options: {})
+        # @overload generate_token(email:, hs_customer_agent_context:, first_name: nil, last_name: nil, request_options: {})
         #
         # @param email [String] The email of the visitor that you wish to identify
+        #
+        # @param hs_customer_agent_context [Hash{Symbol=>String}]
         #
         # @param first_name [String] The first name of the visitor that you wish to identify. This value will only be
         #

@@ -4,7 +4,7 @@ module HubSpotSDK
       type webhook_create_crm_snapshots_params =
         {  } & HubSpotSDK::Internal::Type::request_parameters
 
-      class WebhookCreateCrmSnapshotsParams < HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchRequest
+      class WebhookCreateCrmSnapshotsParams < HubSpotSDK::Models::CrmObjectSnapshotBatchRequest
         extend HubSpotSDK::Internal::Type::RequestParameters::Converter
         include HubSpotSDK::Internal::Type::RequestParameters
 

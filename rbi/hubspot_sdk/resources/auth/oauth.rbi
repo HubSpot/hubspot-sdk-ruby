@@ -17,7 +17,7 @@ module HubSpotSDK
             refresh_token: String,
             scope: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
-          ).returns(StringIO)
+          ).returns(HubSpotSDK::Auth::TokenResponseIf::Variants)
         end
         def create_token(
           client_id: nil,

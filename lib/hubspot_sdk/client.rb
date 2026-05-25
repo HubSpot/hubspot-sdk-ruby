@@ -66,6 +66,9 @@ module HubSpotSDK
     # @return [HubSpotSDK::Resources::Webhooks]
     attr_reader :webhooks
 
+    # @return [HubSpotSDK::Resources::WebhooksJournal]
+    attr_reader :webhooks_journal
+
     # @api private
     #
     # @return [Hash{String=>String}]
@@ -149,6 +152,7 @@ module HubSpotSDK
       @scheduler = HubSpotSDK::Resources::Scheduler.new(client: self)
       @settings = HubSpotSDK::Resources::Settings.new(client: self)
       @webhooks = HubSpotSDK::Resources::Webhooks.new(client: self)
+      @webhooks_journal = HubSpotSDK::Resources::WebhooksJournal.new(client: self)
     end
   end
 end

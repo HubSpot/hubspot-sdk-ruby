@@ -5,13 +5,21 @@ module HubSpotSDK
 
   Account = HubSpotSDK::Models::Account
 
+  ActionOverrideRequest = HubSpotSDK::Models::ActionOverrideRequest
+
   ActionResponse = HubSpotSDK::Models::ActionResponse
+
+  AppLifecycleEventSubscriptionUpsertRequest =
+    HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest
 
   AssociationDefinition = HubSpotSDK::Models::AssociationDefinition
 
   AssociationDefinitionEgg = HubSpotSDK::Models::AssociationDefinitionEgg
 
   AssociationSpec = HubSpotSDK::Models::AssociationSpec
+
+  AssociationSubscriptionUpsertRequest =
+    HubSpotSDK::Models::AssociationSubscriptionUpsertRequest
 
   Auth = HubSpotSDK::Models::Auth
 
@@ -29,6 +37,12 @@ module HubSpotSDK
 
   BatchReadInputPropertyName = HubSpotSDK::Models::BatchReadInputPropertyName
 
+  BatchResponseJournalFetchResponse =
+    HubSpotSDK::Models::BatchResponseJournalFetchResponse
+
+  BatchResponseJournalFetchResponseWithErrors =
+    HubSpotSDK::Models::BatchResponseJournalFetchResponseWithErrors
+
   BusinessUnits = HubSpotSDK::Models::BusinessUnits
 
   Cms = HubSpotSDK::Models::Cms
@@ -38,9 +52,21 @@ module HubSpotSDK
 
   CommunicationPreferences = HubSpotSDK::Models::CommunicationPreferences
 
+  Condition = HubSpotSDK::Models::Condition
+
   Conversations = HubSpotSDK::Models::Conversations
 
   Crm = HubSpotSDK::Models::Crm
+
+  CrmObjectSnapshotBatchRequest =
+    HubSpotSDK::Models::CrmObjectSnapshotBatchRequest
+
+  CrmObjectSnapshotBatchResponse =
+    HubSpotSDK::Models::CrmObjectSnapshotBatchResponse
+
+  CrmObjectSnapshotRequest = HubSpotSDK::Models::CrmObjectSnapshotRequest
+
+  CrmObjectSnapshotResponse = HubSpotSDK::Models::CrmObjectSnapshotResponse
 
   ErrorData = HubSpotSDK::Models::ErrorData
 
@@ -50,13 +76,32 @@ module HubSpotSDK
 
   Files = HubSpotSDK::Models::Files
 
+  Filter = HubSpotSDK::Models::Filter
+
+  FilterCreateRequest = HubSpotSDK::Models::FilterCreateRequest
+
+  FilterCreateResponse = HubSpotSDK::Models::FilterCreateResponse
+
+  FilterResponse = HubSpotSDK::Models::FilterResponse
+
   ForwardPaging = HubSpotSDK::Models::ForwardPaging
+
+  GdprPrivacyDeletionSubscriptionUpsertRequest =
+    HubSpotSDK::Models::GdprPrivacyDeletionSubscriptionUpsertRequest
+
+  JournalFetchResponse = HubSpotSDK::Models::JournalFetchResponse
+
+  ListMembershipSubscriptionUpsertRequest =
+    HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest
 
   Marketing = HubSpotSDK::Models::Marketing
 
   Meta = HubSpotSDK::Models::Meta
 
   NextPage = HubSpotSDK::Models::NextPage
+
+  ObjectSubscriptionUpsertRequest =
+    HubSpotSDK::Models::ObjectSubscriptionUpsertRequest
 
   ObjectTypeDefinition = HubSpotSDK::Models::ObjectTypeDefinition
 
@@ -95,11 +140,17 @@ module HubSpotSDK
 
   Settings = HubSpotSDK::Models::Settings
 
+  SnapshotStatusResponse = HubSpotSDK::Models::SnapshotStatusResponse
+
   StandardError = HubSpotSDK::Models::StandardError
+
+  SubscriptionUpsertRequest = HubSpotSDK::Models::SubscriptionUpsertRequest
 
   TaskLocator = HubSpotSDK::Models::TaskLocator
 
   VersionUser = HubSpotSDK::Models::VersionUser
 
   Webhooks = HubSpotSDK::Models::Webhooks
+
+  WebhooksJournal = HubSpotSDK::Models::WebhooksJournal
 end

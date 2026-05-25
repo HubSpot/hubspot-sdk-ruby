@@ -363,6 +363,11 @@ module HubSpotSDK
               :BOT,
               HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
             )
+          BREEZE_AGENT =
+            T.let(
+              :BREEZE_AGENT,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
+            )
           CALCULATED =
             T.let(
               :CALCULATED,
@@ -481,6 +486,11 @@ module HubSpotSDK
           DELETE_OBJECTS =
             T.let(
               :DELETE_OBJECTS,
+              HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
+            )
+          DI_WRITE_TO_CRM =
+            T.let(
+              :DI_WRITE_TO_CRM,
               HubSpotSDK::Scheduler::ExternalCalendarMeetingEventResponseProperties::HsEngagementSource::TaggedSymbol
             )
           EMAIL =

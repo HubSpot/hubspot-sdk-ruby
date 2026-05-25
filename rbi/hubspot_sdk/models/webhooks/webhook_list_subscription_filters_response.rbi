@@ -5,9 +5,7 @@ module HubSpotSDK
     module Webhooks
       WebhookListSubscriptionFiltersResponse =
         T.let(
-          HubSpotSDK::Internal::Type::ArrayOf[
-            HubSpotSDK::Webhooks::FilterResponse
-          ],
+          HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::FilterResponse],
           HubSpotSDK::Internal::Type::Converter
         )
     end

@@ -22,19 +22,12 @@ module HubSpotSDK
           type: HubSpotSDK::Models::Automation::ArrayFieldSchema::type_
         }
 
-        type type_ =
-          :ARRAY | :BOOLEAN | :DOUBLE | :INTEGER | :LONG | :OBJECT | :STRING
+        type type_ = :ARRAY
 
         module Type
           extend HubSpotSDK::Internal::Type::Enum
 
           ARRAY: :ARRAY
-          BOOLEAN: :BOOLEAN
-          DOUBLE: :DOUBLE
-          INTEGER: :INTEGER
-          LONG: :LONG
-          OBJECT: :OBJECT
-          STRING: :STRING
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Automation::ArrayFieldSchema::type_]
         end

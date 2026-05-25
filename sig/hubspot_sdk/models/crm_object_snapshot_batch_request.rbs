@@ -1,0 +1,18 @@
+module HubSpotSDK
+  module Models
+    type crm_object_snapshot_batch_request =
+      { snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest] }
+
+    class CrmObjectSnapshotBatchRequest < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest]
+
+      def initialize: (
+        snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest]
+      ) -> void
+
+      def to_hash: -> {
+        snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest]
+      }
+    end
+  end
+end

@@ -8,9 +8,9 @@ module HubSpotSDK
       ) -> HubSpotSDK::Webhooks::BatchResponseSubscriptionResponse
 
       def create_crm_snapshots: (
-        snapshot_requests: ::Array[HubSpotSDK::Webhooks::CrmObjectSnapshotRequest],
+        snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest],
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::CrmObjectSnapshotBatchResponse
+      ) -> HubSpotSDK::CrmObjectSnapshotBatchResponse
 
       def create_event_subscription: (
         Integer app_id,
@@ -23,15 +23,15 @@ module HubSpotSDK
       ) -> HubSpotSDK::Webhooks::SubscriptionResponse
 
       def create_journal_subscription: (
-        subscription_upsert_request: HubSpotSDK::Models::Webhooks::subscription_upsert_request,
+        subscription_upsert_request: HubSpotSDK::Models::subscription_upsert_request,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::SubscriptionResponse1
+      ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
 
       def create_subscription_filter: (
-        filter: HubSpotSDK::Webhooks::Filter,
+        filter: HubSpotSDK::Filter,
         subscription_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::FilterCreateResponse
+      ) -> HubSpotSDK::FilterCreateResponse
 
       def delete_event_subscription: (
         Integer subscription_id,
@@ -63,7 +63,7 @@ module HubSpotSDK
         Integer count,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_earliest_journal_entry: (
         ?install_portal_id: Integer,
@@ -74,7 +74,7 @@ module HubSpotSDK
         Integer count,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_earliest_local_journal_entry: (
         ?install_portal_id: Integer,
@@ -91,30 +91,30 @@ module HubSpotSDK
         inputs: ::Array[String],
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_journal_batch_from_offset: (
         Integer count,
         offset: String,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_journal_status: (
         String status_id,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::SnapshotStatusResponse
+      ) -> HubSpotSDK::SnapshotStatusResponse
 
       def get_journal_subscription: (
         Integer subscription_id,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::SubscriptionResponse1
+      ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
 
       def get_latest_journal_batch: (
         Integer count,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_latest_journal_entry: (
         ?install_portal_id: Integer,
@@ -125,7 +125,7 @@ module HubSpotSDK
         Integer count,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_latest_local_journal_entry: (
         ?install_portal_id: Integer,
@@ -136,19 +136,19 @@ module HubSpotSDK
         inputs: ::Array[String],
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_local_journal_batch_from_offset: (
         Integer count,
         offset: String,
         ?install_portal_id: Integer,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      ) -> HubSpotSDK::BatchResponseJournalFetchResponse
 
       def get_local_journal_status: (
         String status_id,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::SnapshotStatusResponse
+      ) -> HubSpotSDK::SnapshotStatusResponse
 
       def get_next_journal_entries: (
         String offset,
@@ -170,7 +170,7 @@ module HubSpotSDK
       def get_subscription_filter: (
         Integer filter_id,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::FilterResponse
+      ) -> HubSpotSDK::FilterResponse
 
       def list_event_subscriptions: (
         Integer app_id,
@@ -179,7 +179,7 @@ module HubSpotSDK
 
       def list_journal_subscriptions: (
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
+      ) -> HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
 
       def list_subscription_filters: (
         Integer subscription_id,
