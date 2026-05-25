@@ -118,9 +118,9 @@ module HubSpotSDK
         module Format
           extend HubSpotSDK::Internal::Type::Enum
 
+          CSV = :CSV
           XLS = :XLS
           XLSX = :XLSX
-          CSV = :CSV
 
           # @!method self.values
           #   @return [Array<Symbol>]
@@ -130,23 +130,51 @@ module HubSpotSDK
         module Language
           extend HubSpotSDK::Internal::Type::Enum
 
-          EN = :EN
-          DE = :DE
-          ES = :ES
-          FR = :FR
-          JA = :JA
-          NL = :NL
-          PT_BR = :PT_BR
-          IT = :IT
-          PL = :PL
-          SV = :SV
-          FI = :FI
-          ZH_TW = :ZH_TW
+          AF_ZA = :AF_ZA
+          AR_EG = :AR_EG
+          BG = :BG
+          BN = :BN
+          CA_ES = :CA_ES
+          CS = :CS
           DA_DK = :DA_DK
-          NO = :NO
+          DE = :DE
+          EL_GR = :EL_GR
+          EN = :EN
+          EN_GB = :EN_GB
+          ES = :ES
+          ES_MX = :ES_MX
+          ET_EE = :ET_EE
+          FI = :FI
+          FR = :FR
+          FR_CA = :FR_CA
+          HE_IL = :HE_IL
+          HI_IN = :HI_IN
+          HR = :HR
+          HU = :HU
+          ID = :ID
+          IT = :IT
+          JA = :JA
           KO_KR = :KO_KR
+          LT_LT = :LT_LT
+          MS = :MS
+          NL = :NL
+          NO = :NO
+          PL = :PL
+          PT_BR = :PT_BR
+          PT_PT = :PT_PT
+          RO = :RO
+          RU = :RU
+          SK_SK = :SK_SK
+          SL = :SL
+          SV = :SV
           TH = :TH
+          TL = :TL
+          TR = :TR
+          UK = :UK
+          VI_VN = :VI_VN
           ZH_CN = :ZH_CN
+          ZH_HK = :ZH_HK
+          ZH_TW = :ZH_TW
 
           # @!method self.values
           #   @return [Array<Symbol>]

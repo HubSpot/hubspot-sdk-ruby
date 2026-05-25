@@ -1,0 +1,55 @@
+# typed: strong
+
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      module JournalLocal
+        class BatchGetParams < HubSpotSDK::Models::BatchInputString
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
+
+          OrHash =
+            T.type_alias do
+              T.any(
+                HubSpotSDK::WebhooksJournal::JournalLocal::BatchGetParams,
+                HubSpotSDK::Internal::AnyHash
+              )
+            end
+
+          # The ID of the portal where the webhooks are installed. This parameter is
+          # optional and is used to specify the target portal for the operation.
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :install_portal_id
+
+          sig { params(install_portal_id: Integer).void }
+          attr_writer :install_portal_id
+
+          sig do
+            params(
+              install_portal_id: Integer,
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            # The ID of the portal where the webhooks are installed. This parameter is
+            # optional and is used to specify the target portal for the operation.
+            install_portal_id: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            override.returns(
+              {
+                install_portal_id: Integer,
+                request_options: HubSpotSDK::RequestOptions
+              }
+            )
+          end
+          def to_hash
+          end
+        end
+      end
+    end
+  end
+end

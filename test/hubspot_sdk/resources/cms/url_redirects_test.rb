@@ -125,6 +125,41 @@ class HubSpotSDK::Test::Resources::Cms::URLRedirectsTest < HubSpotSDK::Test::Res
     end
   end
 
+  def test_create_url_mapping_required_params
+    skip("Mock server tests are disabled")
+
+    response =
+      @hubspot.cms.url_redirects.create_url_mapping(
+        id: "id",
+        created: "2019-12-27T18:11:19.117Z",
+        destination: "destination",
+        is_match_full_url: true,
+        is_match_query_string: true,
+        is_only_after_not_found: true,
+        is_pattern: true,
+        is_protocol_agnostic: true,
+        is_trailing_slash_optional: true,
+        precedence: 0,
+        redirect_style: 0,
+        route_prefix: "routePrefix",
+        updated: "2019-12-27T18:11:19.117Z"
+      )
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_delete_url_mapping
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.url_redirects.delete_url_mapping(0)
+
+    assert_pattern do
+      response => nil
+    end
+  end
+
   def test_get
     skip("Mock server tests are disabled")
 
@@ -150,6 +185,26 @@ class HubSpotSDK::Test::Resources::Cms::URLRedirectsTest < HubSpotSDK::Test::Res
         route_prefix: String,
         updated: Time
       }
+    end
+  end
+
+  def test_get_url_mapping
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.url_redirects.get_url_mapping(0)
+
+    assert_pattern do
+      response => StringIO
+    end
+  end
+
+  def test_list_url_mappings
+    skip("Mock server tests are disabled")
+
+    response = @hubspot.cms.url_redirects.list_url_mappings
+
+    assert_pattern do
+      response => StringIO
     end
   end
 end

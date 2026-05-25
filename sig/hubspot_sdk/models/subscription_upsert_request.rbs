@@ -1,0 +1,16 @@
+module HubSpotSDK
+  module Models
+    type subscription_upsert_request =
+      HubSpotSDK::ObjectSubscriptionUpsertRequest
+      | HubSpotSDK::AssociationSubscriptionUpsertRequest
+      | HubSpotSDK::AppLifecycleEventSubscriptionUpsertRequest
+      | HubSpotSDK::ListMembershipSubscriptionUpsertRequest
+      | HubSpotSDK::GdprPrivacyDeletionSubscriptionUpsertRequest
+
+    module SubscriptionUpsertRequest
+      extend HubSpotSDK::Internal::Type::Union
+
+      def self?.variants: -> ::Array[HubSpotSDK::Models::subscription_upsert_request]
+    end
+  end
+end

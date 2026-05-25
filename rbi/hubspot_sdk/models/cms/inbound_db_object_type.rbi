@@ -184,6 +184,27 @@ module HubSpotSDK
         sig do
           returns(
             T.nilable(
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              ]
+            )
+          )
+        end
+        attr_reader :visibilities
+
+        sig do
+          params(
+            visibilities:
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
+              ]
+          ).void
+        end
+        attr_writer :visibilities
+
+        sig do
+          returns(
+            T.nilable(
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           )
@@ -245,6 +266,10 @@ module HubSpotSDK
             read_scope_name: String,
             singular_form: String,
             status: HubSpotSDK::Cms::InboundDBObjectType::Status::OrSymbol,
+            visibilities:
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
+              ],
             visibility:
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol,
             write_scope_name: String
@@ -289,6 +314,7 @@ module HubSpotSDK
           read_scope_name: nil,
           singular_form: nil,
           status: nil,
+          visibilities: nil,
           visibility: nil,
           write_scope_name: nil
         )
@@ -338,6 +364,10 @@ module HubSpotSDK
               singular_form: String,
               status:
                 HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol,
+              visibilities:
+                T::Array[
+                  HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+                ],
               visibility:
                 HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol,
               write_scope_name: String
@@ -512,9 +542,9 @@ module HubSpotSDK
               :"Customer-facing",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
-          CUSTOMER_FACING_PUBLIC_API =
+          INTERNAL_ONLY =
             T.let(
-              :"Customer-facing public API",
+              :"Internal only",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           CUSTOMER_FACING_UI =
@@ -522,9 +552,9 @@ module HubSpotSDK
               :"Customer-facing UI",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
-          INTERNAL_ONLY =
+          CUSTOMER_FACING_PUBLIC_API =
             T.let(
-              :"Internal only",
+              :"Customer-facing public API",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
 

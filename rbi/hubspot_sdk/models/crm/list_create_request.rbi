@@ -44,7 +44,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             )
@@ -62,7 +61,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               )
           ).void
@@ -112,7 +110,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
@@ -157,7 +154,6 @@ module HubSpotSDK
                   HubSpotSDK::Crm::PublicNotAnyFilterBranch,
                   HubSpotSDK::Crm::PublicRestrictedFilterBranch,
                   HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                  HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
                   HubSpotSDK::Crm::PublicAssociationFilterBranch
                 ),
               list_folder_id: Integer,
@@ -182,7 +178,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch
               )
             end

@@ -175,6 +175,71 @@ module HubSpotSDK
           )
         end
 
+        # Some parameter documentations has been truncated, see
+        # {HubSpotSDK::Models::Cms::URLRedirectCreateURLMappingParams} for more details.
+        #
+        # @overload create_url_mapping(id:, created:, destination:, is_match_full_url:, is_match_query_string:, is_only_after_not_found:, is_pattern:, is_protocol_agnostic:, is_trailing_slash_optional:, precedence:, redirect_style:, route_prefix:, updated:, request_options: {})
+        #
+        # @param id [String] The unique ID of this URL redirect.
+        #
+        # @param created [Time] The date and time when the URL mapping was initially created.
+        #
+        # @param destination [String] The destination URL, where the target URL should be redirected if it matches the
+        #
+        # @param is_match_full_url [Boolean] Whether the `routePrefix` should match on the entire URL, including the domain.
+        #
+        # @param is_match_query_string [Boolean] Whether the `routePrefix` should match on the entire URL path, including the que
+        #
+        # @param is_only_after_not_found [Boolean] Whether the URL redirect mapping should apply only if a live page on the URL isn
+        #
+        # @param is_pattern [Boolean] Whether the `routePrefix` should match based on pattern.
+        #
+        # @param is_protocol_agnostic [Boolean] Whether the `routePrefix` should match both HTTP and HTTPS protocols.
+        #
+        # @param is_trailing_slash_optional [Boolean] Whether a trailing slash will be ignored.
+        #
+        # @param precedence [Integer] Used to prioritize URL redirection. If a given URL matches more than one redirec
+        #
+        # @param redirect_style [Integer] The type of redirect to create. Options include: 301 (permanent), 302 (temporary
+        #
+        # @param route_prefix [String] The target incoming URL, path, or pattern to match for redirection.
+        #
+        # @param updated [Time] The date and time when the URL mapping was last modified.
+        #
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [StringIO]
+        #
+        # @see HubSpotSDK::Models::Cms::URLRedirectCreateURLMappingParams
+        def create_url_mapping(params)
+          parsed, options = HubSpotSDK::Cms::URLRedirectCreateURLMappingParams.dump_request(params)
+          @client.request(
+            method: :post,
+            path: "cms/url-redirects/2026-03/url-mappings",
+            headers: {"content-type" => "*/*", "accept" => "*/*"},
+            body: parsed,
+            model: StringIO,
+            options: options
+          )
+        end
+
+        # @overload delete_url_mapping(id, request_options: {})
+        #
+        # @param id [Integer]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [nil]
+        #
+        # @see HubSpotSDK::Models::Cms::URLRedirectDeleteURLMappingParams
+        def delete_url_mapping(id, params = {})
+          @client.request(
+            method: :delete,
+            path: ["cms/url-redirects/2026-03/url-mappings/%1$s", id],
+            model: NilClass,
+            options: params[:request_options]
+          )
+        end
+
         # Returns the details for a single existing URL redirect by ID.
         #
         # @overload get(url_redirect_id, request_options: {})
@@ -190,6 +255,41 @@ module HubSpotSDK
             method: :get,
             path: ["cms/url-redirects/2026-03/%1$s", url_redirect_id],
             model: HubSpotSDK::Cms::URLMapping,
+            options: params[:request_options]
+          )
+        end
+
+        # @overload get_url_mapping(id, request_options: {})
+        #
+        # @param id [Integer]
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [StringIO]
+        #
+        # @see HubSpotSDK::Models::Cms::URLRedirectGetURLMappingParams
+        def get_url_mapping(id, params = {})
+          @client.request(
+            method: :get,
+            path: ["cms/url-redirects/2026-03/url-mappings/%1$s", id],
+            headers: {"accept" => "*/*"},
+            model: StringIO,
+            options: params[:request_options]
+          )
+        end
+
+        # @overload list_url_mappings(request_options: {})
+        #
+        # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
+        #
+        # @return [StringIO]
+        #
+        # @see HubSpotSDK::Models::Cms::URLRedirectListURLMappingsParams
+        def list_url_mappings(params = {})
+          @client.request(
+            method: :get,
+            path: "cms/url-redirects/2026-03/url-mappings",
+            headers: {"accept" => "*/*"},
+            model: StringIO,
             options: params[:request_options]
           )
         end

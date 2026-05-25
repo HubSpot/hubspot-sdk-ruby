@@ -10,7 +10,7 @@ module HubSpotSDK
 
         # @!attribute install_portal_id
         #   The ID of the portal where the webhooks are installed. This parameter is
-        #   optional and is used to specify the target portal.
+        #   optional and is used to specify the target portal for the operation.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer

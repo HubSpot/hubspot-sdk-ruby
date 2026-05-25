@@ -23,7 +23,7 @@ module HubSpotSDK
         sig do
           returns(
             T::Array[
-              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+              HubSpotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
             ]
           )
         end
@@ -48,7 +48,7 @@ module HubSpotSDK
         # 'GDPR_PRIVACY_DELETION'.
         sig do
           returns(
-            HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol
+            HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol
           )
         end
         attr_accessor :subscription_type
@@ -60,21 +60,14 @@ module HubSpotSDK
         # An object containing action overrides, where each key is an action and the value
         # is an ActionOverrideRequest object.
         sig do
-          returns(
-            T.nilable(
-              T::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
-            )
-          )
+          returns(T.nilable(T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]))
         end
         attr_reader :action_overrides
 
         sig do
           params(
             action_overrides:
-              T::Hash[
-                Symbol,
-                HubSpotSDK::Webhooks::ActionOverrideRequest::OrHash
-              ]
+              T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest::OrHash]
           ).void
         end
         attr_writer :action_overrides
@@ -148,10 +141,7 @@ module HubSpotSDK
               HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
             updated_at: Time,
             action_overrides:
-              T::Hash[
-                Symbol,
-                HubSpotSDK::Webhooks::ActionOverrideRequest::OrHash
-              ],
+              T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest::OrHash],
             associated_object_type_ids: T::Array[String],
             created_by: Integer,
             deleted_at: Time,
@@ -215,16 +205,16 @@ module HubSpotSDK
               id: Integer,
               actions:
                 T::Array[
-                  HubSpotSDK::Webhooks::SubscriptionResponse1::Action::TaggedSymbol
+                  HubSpotSDK::Webhooks::SubscriptionResponse1::Action::OrSymbol
                 ],
               app_id: Integer,
               created_at: Time,
               object_type_id: String,
               subscription_type:
-                HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::TaggedSymbol,
+                HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType::OrSymbol,
               updated_at: Time,
               action_overrides:
-                T::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
+                T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
               associated_object_type_ids: T::Array[String],
               created_by: Integer,
               deleted_at: Time,

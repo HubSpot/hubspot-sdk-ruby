@@ -9,8 +9,8 @@ module HubSpotSDK
         include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute install_portal_id
-        #   The ID of the portal installation to filter the journal entries. It is an
-        #   integer value.
+        #   The unique identifier of the portal installation for which to retrieve the
+        #   latest journal entries. This parameter is optional and should be an integer.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
@@ -20,7 +20,7 @@ module HubSpotSDK
         #   {HubSpotSDK::Models::Webhooks::WebhookGetLatestJournalEntryParams} for more
         #   details.
         #
-        #   @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries. It is an intege
+        #   @param install_portal_id [Integer] The unique identifier of the portal installation for which to retrieve the lates
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

@@ -1,0 +1,45 @@
+# frozen_string_literal: true
+
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      module JournalLocal
+        # @see HubSpotSDK::Resources::WebhooksJournal::JournalLocal::Batch#get_from_offset
+        class BatchGetFromOffsetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
+
+          # @!attribute offset
+          #
+          #   @return [String]
+          required :offset, String
+
+          # @!attribute count
+          #
+          #   @return [Integer]
+          required :count, Integer
+
+          # @!attribute install_portal_id
+          #   The ID of the portal where the webhooks are installed. This is an optional
+          #   parameter.
+          #
+          #   @return [Integer, nil]
+          optional :install_portal_id, Integer
+
+          # @!method initialize(offset:, count:, install_portal_id: nil, request_options: {})
+          #   Some parameter documentations has been truncated, see
+          #   {HubSpotSDK::Models::WebhooksJournal::JournalLocal::BatchGetFromOffsetParams}
+          #   for more details.
+          #
+          #   @param offset [String]
+          #
+          #   @param count [Integer]
+          #
+          #   @param install_portal_id [Integer] The ID of the portal where the webhooks are installed. This is an optional param
+          #
+          #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
+        end
+      end
+    end
+  end
+end

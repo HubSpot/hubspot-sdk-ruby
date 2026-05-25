@@ -18,7 +18,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             list_folder_id: Integer,
@@ -412,7 +411,6 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicNotAnyFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicRestrictedFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch::OrHash,
-                HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch::OrHash,
                 HubSpotSDK::Crm::PublicAssociationFilterBranch::OrHash
               ),
             enroll_objects_in_workflows: T::Boolean,

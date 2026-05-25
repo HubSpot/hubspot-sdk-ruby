@@ -134,6 +134,11 @@ module HubSpotSDK
               :authorization_code,
               HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
             )
+          CLIENT_CREDENTIALS =
+            T.let(
+              :client_credentials,
+              HubSpotSDK::Auth::OAuthCreateTokenParams::GrantType::TaggedSymbol
+            )
           REFRESH_TOKEN =
             T.let(
               :refresh_token,

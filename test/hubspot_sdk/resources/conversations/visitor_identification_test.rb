@@ -6,7 +6,11 @@ class HubSpotSDK::Test::Resources::Conversations::VisitorIdentificationTest < Hu
   def test_generate_token_required_params
     skip("Mock server tests are disabled")
 
-    response = @hubspot.conversations.visitor_identification.generate_token(email: "email")
+    response =
+      @hubspot.conversations.visitor_identification.generate_token(
+        email: "email",
+        hs_customer_agent_context: {foo: "string"}
+      )
 
     assert_pattern do
       response => HubSpotSDK::Conversations::IdentificationTokenResponse

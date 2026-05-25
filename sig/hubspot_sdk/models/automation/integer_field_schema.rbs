@@ -31,19 +31,12 @@ module HubSpotSDK
           minimum: Integer
         }
 
-        type type_ =
-          :ARRAY | :BOOLEAN | :DOUBLE | :INTEGER | :LONG | :OBJECT | :STRING
+        type type_ = :INTEGER
 
         module Type
           extend HubSpotSDK::Internal::Type::Enum
 
-          ARRAY: :ARRAY
-          BOOLEAN: :BOOLEAN
-          DOUBLE: :DOUBLE
           INTEGER: :INTEGER
-          LONG: :LONG
-          OBJECT: :OBJECT
-          STRING: :STRING
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Automation::IntegerFieldSchema::type_]
         end

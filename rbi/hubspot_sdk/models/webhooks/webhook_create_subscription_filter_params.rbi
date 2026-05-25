@@ -3,7 +3,7 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      class WebhookCreateSubscriptionFilterParams < HubSpotSDK::Models::Webhooks::FilterCreateRequest
+      class WebhookCreateSubscriptionFilterParams < HubSpotSDK::Models::FilterCreateRequest
         extend HubSpotSDK::Internal::Type::RequestParameters::Converter
         include HubSpotSDK::Internal::Type::RequestParameters
 

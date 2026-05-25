@@ -1,0 +1,85 @@
+module HubSpotSDK
+  module Models
+    type list_membership_subscription_upsert_request =
+      {
+        actions: ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::action],
+        list_ids: ::Array[Integer],
+        object_ids: ::Array[Integer],
+        portal_id: Integer,
+        subscription_type: HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::subscription_type
+      }
+
+    class ListMembershipSubscriptionUpsertRequest < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor actions: ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::action]
+
+      attr_accessor list_ids: ::Array[Integer]
+
+      attr_accessor object_ids: ::Array[Integer]
+
+      attr_accessor portal_id: Integer
+
+      attr_accessor subscription_type: HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::subscription_type
+
+      def initialize: (
+        actions: ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::action],
+        list_ids: ::Array[Integer],
+        object_ids: ::Array[Integer],
+        portal_id: Integer,
+        subscription_type: HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::subscription_type
+      ) -> void
+
+      def to_hash: -> {
+        actions: ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::action],
+        list_ids: ::Array[Integer],
+        object_ids: ::Array[Integer],
+        portal_id: Integer,
+        subscription_type: HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::subscription_type
+      }
+
+      type action =
+        :CREATE
+        | :UPDATE
+        | :DELETE
+        | :MERGE
+        | :RESTORE
+        | :ASSOCIATION_ADDED
+        | :ASSOCIATION_REMOVED
+        | :SNAPSHOT
+        | :APP_INSTALL
+        | :APP_UNINSTALL
+        | :ADDED_TO_LIST
+        | :REMOVED_FROM_LIST
+        | :GDPR_DELETE
+
+      module Action
+        extend HubSpotSDK::Internal::Type::Enum
+
+        CREATE: :CREATE
+        UPDATE: :UPDATE
+        DELETE: :DELETE
+        MERGE: :MERGE
+        RESTORE: :RESTORE
+        ASSOCIATION_ADDED: :ASSOCIATION_ADDED
+        ASSOCIATION_REMOVED: :ASSOCIATION_REMOVED
+        SNAPSHOT: :SNAPSHOT
+        APP_INSTALL: :APP_INSTALL
+        APP_UNINSTALL: :APP_UNINSTALL
+        ADDED_TO_LIST: :ADDED_TO_LIST
+        REMOVED_FROM_LIST: :REMOVED_FROM_LIST
+        GDPR_DELETE: :GDPR_DELETE
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::action]
+      end
+
+      type subscription_type = :LIST_MEMBERSHIP
+
+      module SubscriptionType
+        extend HubSpotSDK::Internal::Type::Enum
+
+        LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest::subscription_type]
+      end
+    end
+  end
+end

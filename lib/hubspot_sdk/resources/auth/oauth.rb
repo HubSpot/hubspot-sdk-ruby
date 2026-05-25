@@ -18,7 +18,7 @@ module HubSpotSDK
         # @param scope [String]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [StringIO]
+        # @return [HubSpotSDK::Models::Auth::AccessTokenResponse, HubSpotSDK::Models::Auth::ClientCredentialsTokenResponse]
         #
         # @see HubSpotSDK::Models::Auth::OAuthCreateTokenParams
         def create_token(params = {})
@@ -26,9 +26,9 @@ module HubSpotSDK
           @client.request(
             method: :post,
             path: "oauth/2026-03/token",
-            headers: {"content-type" => "application/x-www-form-urlencoded", "accept" => "*/*"},
+            headers: {"content-type" => "application/x-www-form-urlencoded"},
             body: parsed,
-            model: StringIO,
+            model: HubSpotSDK::Auth::TokenResponseIf,
             options: options
           )
         end

@@ -1,0 +1,36 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      class Journal
+        class Batch
+          def get: (
+            inputs: ::Array[String],
+            ?install_portal_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::BatchResponseJournalFetchResponse
+
+          def get_earliest: (
+            Integer count,
+            ?install_portal_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::BatchResponseJournalFetchResponse
+
+          def get_from_offset: (
+            Integer count,
+            offset: String,
+            ?install_portal_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::BatchResponseJournalFetchResponse
+
+          def get_latest: (
+            Integer count,
+            ?install_portal_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> HubSpotSDK::BatchResponseJournalFetchResponse
+
+          def initialize: (client: HubSpotSDK::Client) -> void
+        end
+      end
+    end
+  end
+end

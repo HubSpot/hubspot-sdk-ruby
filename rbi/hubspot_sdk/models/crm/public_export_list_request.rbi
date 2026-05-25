@@ -200,6 +200,11 @@ module HubSpotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
+          CSV =
+            T.let(
+              :CSV,
+              HubSpotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
+            )
           XLS =
             T.let(
               :XLS,
@@ -208,11 +213,6 @@ module HubSpotSDK
           XLSX =
             T.let(
               :XLSX,
-              HubSpotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
-            )
-          CSV =
-            T.let(
-              :CSV,
               HubSpotSDK::Crm::PublicExportListRequest::Format::TaggedSymbol
             )
 
@@ -236,64 +236,34 @@ module HubSpotSDK
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
 
-          EN =
+          AF_ZA =
             T.let(
-              :EN,
+              :AF_ZA,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          DE =
+          AR_EG =
             T.let(
-              :DE,
+              :AR_EG,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          ES =
+          BG =
             T.let(
-              :ES,
+              :BG,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          FR =
+          BN =
             T.let(
-              :FR,
+              :BN,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          JA =
+          CA_ES =
             T.let(
-              :JA,
+              :CA_ES,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          NL =
+          CS =
             T.let(
-              :NL,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          PT_BR =
-            T.let(
-              :PT_BR,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          IT =
-            T.let(
-              :IT,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          PL =
-            T.let(
-              :PL,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          SV =
-            T.let(
-              :SV,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          FI =
-            T.let(
-              :FI,
-              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
-            )
-          ZH_TW =
-            T.let(
-              :ZH_TW,
+              :CS,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           DA_DK =
@@ -301,9 +271,89 @@ module HubSpotSDK
               :DA_DK,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
-          NO =
+          DE =
             T.let(
-              :NO,
+              :DE,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          EL_GR =
+            T.let(
+              :EL_GR,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          EN =
+            T.let(
+              :EN,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          EN_GB =
+            T.let(
+              :EN_GB,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ES =
+            T.let(
+              :ES,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ES_MX =
+            T.let(
+              :ES_MX,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ET_EE =
+            T.let(
+              :ET_EE,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          FI =
+            T.let(
+              :FI,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          FR =
+            T.let(
+              :FR,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          FR_CA =
+            T.let(
+              :FR_CA,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          HE_IL =
+            T.let(
+              :HE_IL,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          HI_IN =
+            T.let(
+              :HI_IN,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          HR =
+            T.let(
+              :HR,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          HU =
+            T.let(
+              :HU,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ID =
+            T.let(
+              :ID,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          IT =
+            T.let(
+              :IT,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          JA =
+            T.let(
+              :JA,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
           KO_KR =
@@ -311,14 +361,104 @@ module HubSpotSDK
               :KO_KR,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
+          LT_LT =
+            T.let(
+              :LT_LT,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          MS =
+            T.let(
+              :MS,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          NL =
+            T.let(
+              :NL,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          NO =
+            T.let(
+              :NO,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          PL =
+            T.let(
+              :PL,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          PT_BR =
+            T.let(
+              :PT_BR,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          PT_PT =
+            T.let(
+              :PT_PT,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          RO =
+            T.let(
+              :RO,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          RU =
+            T.let(
+              :RU,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          SK_SK =
+            T.let(
+              :SK_SK,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          SL =
+            T.let(
+              :SL,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          SV =
+            T.let(
+              :SV,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
           TH =
             T.let(
               :TH,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
+          TL =
+            T.let(
+              :TL,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          TR =
+            T.let(
+              :TR,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          UK =
+            T.let(
+              :UK,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          VI_VN =
+            T.let(
+              :VI_VN,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
           ZH_CN =
             T.let(
               :ZH_CN,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ZH_HK =
+            T.let(
+              :ZH_HK,
+              HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
+            )
+          ZH_TW =
+            T.let(
+              :ZH_TW,
               HubSpotSDK::Crm::PublicExportListRequest::Language::TaggedSymbol
             )
 

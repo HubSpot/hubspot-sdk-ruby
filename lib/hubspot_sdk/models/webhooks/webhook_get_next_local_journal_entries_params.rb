@@ -14,15 +14,20 @@ module HubSpotSDK
         required :offset, String
 
         # @!attribute install_portal_id
-        #   The ID of the portal where the webhook is installed. This is an integer value.
+        #   The ID of the portal installation to filter the webhook journal entries. This is
+        #   an integer value.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
 
         # @!method initialize(offset:, install_portal_id: nil, request_options: {})
+        #   Some parameter documentations has been truncated, see
+        #   {HubSpotSDK::Models::Webhooks::WebhookGetNextLocalJournalEntriesParams} for more
+        #   details.
+        #
         #   @param offset [String]
         #
-        #   @param install_portal_id [Integer] The ID of the portal where the webhook is installed. This is an integer value.
+        #   @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries. This is
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

@@ -10,7 +10,7 @@ module HubSpotSDK
           object_type_id: String,
           subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
+          action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,
@@ -35,11 +35,11 @@ module HubSpotSDK
 
         attr_accessor updated_at: Time
 
-        attr_reader action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]?
+        attr_reader action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]?
 
         def action_overrides=: (
-          ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
-        ) -> ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest]
+          ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]
+        ) -> ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]
 
         attr_reader associated_object_type_ids: ::Array[String]?
 
@@ -77,7 +77,7 @@ module HubSpotSDK
           object_type_id: String,
           subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          ?action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
+          ?action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           ?associated_object_type_ids: ::Array[String],
           ?created_by: Integer,
           ?deleted_at: Time,
@@ -95,7 +95,7 @@ module HubSpotSDK
           object_type_id: String,
           subscription_type: HubSpotSDK::Models::Webhooks::SubscriptionResponse1::subscription_type,
           updated_at: Time,
-          action_overrides: ::Hash[Symbol, HubSpotSDK::Webhooks::ActionOverrideRequest],
+          action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
           created_by: Integer,
           deleted_at: Time,

@@ -1,0 +1,34 @@
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      module JournalLocal
+        type batch_get_earliest_params =
+          { count: Integer, install_portal_id: Integer }
+          & HubSpotSDK::Internal::Type::request_parameters
+
+        class BatchGetEarliestParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
+
+          attr_accessor count: Integer
+
+          attr_reader install_portal_id: Integer?
+
+          def install_portal_id=: (Integer) -> Integer
+
+          def initialize: (
+            count: Integer,
+            ?install_portal_id: Integer,
+            ?request_options: HubSpotSDK::request_opts
+          ) -> void
+
+          def to_hash: -> {
+            count: Integer,
+            install_portal_id: Integer,
+            request_options: HubSpotSDK::RequestOptions
+          }
+        end
+      end
+    end
+  end
+end

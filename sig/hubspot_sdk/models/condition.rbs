@@ -1,0 +1,89 @@
+module HubSpotSDK
+  module Models
+    type condition =
+      {
+        filter_type: HubSpotSDK::Models::Condition::filter_type,
+        operator: HubSpotSDK::Models::Condition::operator,
+        property: String,
+        value: String,
+        values: ::Array[String]
+      }
+
+    class Condition < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor filter_type: HubSpotSDK::Models::Condition::filter_type
+
+      attr_accessor operator: HubSpotSDK::Models::Condition::operator
+
+      attr_accessor property: String
+
+      attr_reader value: String?
+
+      def value=: (String) -> String
+
+      attr_reader values: ::Array[String]?
+
+      def values=: (::Array[String]) -> ::Array[String]
+
+      def initialize: (
+        filter_type: HubSpotSDK::Models::Condition::filter_type,
+        operator: HubSpotSDK::Models::Condition::operator,
+        property: String,
+        ?value: String,
+        ?values: ::Array[String]
+      ) -> void
+
+      def to_hash: -> {
+        filter_type: HubSpotSDK::Models::Condition::filter_type,
+        operator: HubSpotSDK::Models::Condition::operator,
+        property: String,
+        value: String,
+        values: ::Array[String]
+      }
+
+      type filter_type = :CRM_OBJECT_PROPERTY
+
+      module FilterType
+        extend HubSpotSDK::Internal::Type::Enum
+
+        CRM_OBJECT_PROPERTY: :CRM_OBJECT_PROPERTY
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::Condition::filter_type]
+      end
+
+      type operator =
+        :CONTAINS
+        | :ENDS_WITH
+        | :EQ
+        | :GT
+        | :GTE
+        | :IN
+        | :IS_EMPTY
+        | :IS_NOT_EMPTY
+        | :LT
+        | :LTE
+        | :N_EQ
+        | :NOT_IN
+        | :STARTS_WITH
+
+      module Operator
+        extend HubSpotSDK::Internal::Type::Enum
+
+        CONTAINS: :CONTAINS
+        ENDS_WITH: :ENDS_WITH
+        EQ: :EQ
+        GT: :GT
+        GTE: :GTE
+        IN: :IN
+        IS_EMPTY: :IS_EMPTY
+        IS_NOT_EMPTY: :IS_NOT_EMPTY
+        LT: :LT
+        LTE: :LTE
+        N_EQ: :N_EQ
+        NOT_IN: :NOT_IN
+        STARTS_WITH: :STARTS_WITH
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::Condition::operator]
+      end
+    end
+  end
+end

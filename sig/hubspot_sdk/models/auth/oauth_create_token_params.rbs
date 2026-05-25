@@ -76,12 +76,14 @@ module HubSpotSDK
           request_options: HubSpotSDK::RequestOptions
         }
 
-        type grant_type = :authorization_code | :refresh_token
+        type grant_type =
+          :authorization_code | :client_credentials | :refresh_token
 
         module GrantType
           extend HubSpotSDK::Internal::Type::Enum
 
           AUTHORIZATION_CODE: :authorization_code
+          CLIENT_CREDENTIALS: :client_credentials
           REFRESH_TOKEN: :refresh_token
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Auth::OAuthCreateTokenParams::grant_type]

@@ -33,12 +33,12 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
       )
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::CrmObjectSnapshotBatchResponse
+      response => HubSpotSDK::CrmObjectSnapshotBatchResponse
     end
 
     assert_pattern do
       response => {
-        snapshot_responses: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::CrmObjectSnapshotResponse])
+        snapshot_responses: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::CrmObjectSnapshotResponse])
       }
     end
   end
@@ -83,19 +83,19 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
       )
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionResponse1
+      response => HubSpotSDK::WebhooksJournal::SubscriptionResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
-        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Webhooks::SubscriptionResponse1::Action]),
+        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action]),
         app_id: Integer,
         created_at: Time,
         object_type_id: String,
-        subscription_type: HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType,
+        subscription_type: HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType,
         updated_at: Time,
-        action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Webhooks::ActionOverrideRequest]) | nil,
+        action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::ActionOverrideRequest]) | nil,
         associated_object_type_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         created_by: Integer | nil,
         deleted_at: Time | nil,
@@ -117,7 +117,7 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
       )
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::FilterCreateResponse
+      response => HubSpotSDK::FilterCreateResponse
     end
 
     assert_pattern do
@@ -183,15 +183,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_earliest_journal_batch(1)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -214,15 +214,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_earliest_local_journal_batch(1)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -268,15 +268,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_journal_batch_by_request(inputs: ["string"])
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -289,15 +289,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_journal_batch_from_offset(1, offset: "offset")
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -310,16 +310,16 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_journal_status("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::SnapshotStatusResponse
+      response => HubSpotSDK::SnapshotStatusResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         initiated_at: Integer,
-        status: HubSpotSDK::Webhooks::SnapshotStatusResponse::Status,
+        status: HubSpotSDK::SnapshotStatusResponse::Status,
         completed_at: Integer | nil,
-        error_code: HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode | nil,
+        error_code: HubSpotSDK::SnapshotStatusResponse::ErrorCode | nil,
         message: String | nil
       }
     end
@@ -331,19 +331,19 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_journal_subscription(0)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::SubscriptionResponse1
+      response => HubSpotSDK::WebhooksJournal::SubscriptionResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
-        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Webhooks::SubscriptionResponse1::Action]),
+        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action]),
         app_id: Integer,
         created_at: Time,
         object_type_id: String,
-        subscription_type: HubSpotSDK::Webhooks::SubscriptionResponse1::SubscriptionType,
+        subscription_type: HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType,
         updated_at: Time,
-        action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::Webhooks::ActionOverrideRequest]) | nil,
+        action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::ActionOverrideRequest]) | nil,
         associated_object_type_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         created_by: Integer | nil,
         deleted_at: Time | nil,
@@ -361,15 +361,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_latest_journal_batch(1)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -392,15 +392,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_latest_local_journal_batch(1)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -423,15 +423,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_local_journal_batch_by_request(inputs: ["string"])
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -444,15 +444,15 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_local_journal_batch_from_offset(1, offset: "offset")
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse
+      response => HubSpotSDK::BatchResponseJournalFetchResponse
     end
 
     assert_pattern do
       response => {
         completed_at: Time,
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::JournalFetchResponse]),
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::JournalFetchResponse]),
         started_at: Time,
-        status: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse::Status,
+        status: HubSpotSDK::BatchResponseJournalFetchResponse::Status,
         links: ^(HubSpotSDK::Internal::Type::HashOf[String]) | nil,
         requested_at: Time | nil
       }
@@ -465,16 +465,16 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_local_journal_status("182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::SnapshotStatusResponse
+      response => HubSpotSDK::SnapshotStatusResponse
     end
 
     assert_pattern do
       response => {
         id: String,
         initiated_at: Integer,
-        status: HubSpotSDK::Webhooks::SnapshotStatusResponse::Status,
+        status: HubSpotSDK::SnapshotStatusResponse::Status,
         completed_at: Integer | nil,
-        error_code: HubSpotSDK::Webhooks::SnapshotStatusResponse::ErrorCode | nil,
+        error_code: HubSpotSDK::SnapshotStatusResponse::ErrorCode | nil,
         message: String | nil
       }
     end
@@ -525,14 +525,14 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.get_subscription_filter(0)
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::FilterResponse
+      response => HubSpotSDK::FilterResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
         created_at: Integer,
-        filter: HubSpotSDK::Webhooks::Filter
+        filter: HubSpotSDK::Filter
       }
     end
   end
@@ -559,12 +559,12 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.list_journal_subscriptions
 
     assert_pattern do
-      response => HubSpotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging
+      response => HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::SubscriptionResponse1])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::WebhooksJournal::SubscriptionResponse])
       }
     end
   end
@@ -575,7 +575,7 @@ class HubSpotSDK::Test::Resources::WebhooksTest < HubSpotSDK::Test::ResourceTest
     response = @hubspot.webhooks.list_subscription_filters(0)
 
     assert_pattern do
-      response => ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::FilterResponse])
+      response => ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::FilterResponse])
     end
   end
 

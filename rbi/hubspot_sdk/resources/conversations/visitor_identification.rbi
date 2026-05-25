@@ -12,6 +12,7 @@ module HubSpotSDK
         sig do
           params(
             email: String,
+            hs_customer_agent_context: T::Hash[Symbol, String],
             first_name: String,
             last_name: String,
             request_options: HubSpotSDK::RequestOptions::OrHash
@@ -20,6 +21,7 @@ module HubSpotSDK
         def generate_token(
           # The email of the visitor that you wish to identify
           email:,
+          hs_customer_agent_context:,
           # The first name of the visitor that you wish to identify. This value will only be
           # set in HubSpot for new contacts and existing contacts where first name is
           # unknown. Optional.

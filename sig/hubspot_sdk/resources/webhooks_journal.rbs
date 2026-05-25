@@ -1,0 +1,15 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      attr_reader journal: HubSpotSDK::Resources::WebhooksJournal::Journal
+
+      attr_reader journal_local: HubSpotSDK::Resources::WebhooksJournal::JournalLocal
+
+      attr_reader snapshots: HubSpotSDK::Resources::WebhooksJournal::Snapshots
+
+      attr_reader subscriptions: HubSpotSDK::Resources::WebhooksJournal::Subscriptions
+
+      def initialize: (client: HubSpotSDK::Client) -> void
+    end
+  end
+end

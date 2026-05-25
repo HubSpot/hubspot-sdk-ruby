@@ -1,0 +1,67 @@
+# typed: strong
+
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      module JournalLocal
+        class BatchGetFromOffsetParams < HubSpotSDK::Internal::Type::BaseModel
+          extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+          include HubSpotSDK::Internal::Type::RequestParameters
+
+          OrHash =
+            T.type_alias do
+              T.any(
+                HubSpotSDK::WebhooksJournal::JournalLocal::BatchGetFromOffsetParams,
+                HubSpotSDK::Internal::AnyHash
+              )
+            end
+
+          sig { returns(String) }
+          attr_accessor :offset
+
+          sig { returns(Integer) }
+          attr_accessor :count
+
+          # The ID of the portal where the webhooks are installed. This is an optional
+          # parameter.
+          sig { returns(T.nilable(Integer)) }
+          attr_reader :install_portal_id
+
+          sig { params(install_portal_id: Integer).void }
+          attr_writer :install_portal_id
+
+          sig do
+            params(
+              offset: String,
+              count: Integer,
+              install_portal_id: Integer,
+              request_options: HubSpotSDK::RequestOptions::OrHash
+            ).returns(T.attached_class)
+          end
+          def self.new(
+            offset:,
+            count:,
+            # The ID of the portal where the webhooks are installed. This is an optional
+            # parameter.
+            install_portal_id: nil,
+            request_options: {}
+          )
+          end
+
+          sig do
+            override.returns(
+              {
+                offset: String,
+                count: Integer,
+                install_portal_id: Integer,
+                request_options: HubSpotSDK::RequestOptions
+              }
+            )
+          end
+          def to_hash
+          end
+        end
+      end
+    end
+  end
+end

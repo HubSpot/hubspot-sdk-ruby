@@ -63,6 +63,7 @@ module HubSpotSDK
           extend HubSpotSDK::Internal::Type::Enum
 
           AUTHORIZATION_CODE = :authorization_code
+          CLIENT_CREDENTIALS = :client_credentials
           REFRESH_TOKEN = :refresh_token
 
           # @!method self.values
