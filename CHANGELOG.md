@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.9 (2026-05-26)
+
+Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
+
+### Features
+
+* **api:** manual updates ([3d34c49](https://github.com/HubSpot/hubspot-sdk-ruby/commit/3d34c492a5eefe1d09bcdfb45219f977dae37002))
+* **api:** manual updates ([93c23e2](https://github.com/HubSpot/hubspot-sdk-ruby/commit/93c23e2002b62e385dd2a5cbe3ce2e2357349abe))
+* **api:** manual updates ([80a2464](https://github.com/HubSpot/hubspot-sdk-ruby/commit/80a246495532c57b7165d0a6a5b70b5535e6aaf9))
+
+
+### Chores
+
+* configure new SDK language ([281974e](https://github.com/HubSpot/hubspot-sdk-ruby/commit/281974e80dd42eb3af684bcfcd56f644bc553ae6))
+
 ## 0.1.0-alpha.8 (2026-05-18)
 
 Full Changelog: [v0.1.0-alpha.7...v0.1.0-alpha.8](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.7...v0.1.0-alpha.8)
