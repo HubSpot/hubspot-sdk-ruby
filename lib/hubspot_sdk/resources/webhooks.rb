@@ -108,7 +108,7 @@ module HubSpotSDK
       # @param subscription_upsert_request [HubSpotSDK::Models::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest, HubSpotSDK::Models::GdprPrivacyDeletionSubscriptionUpsertRequest]
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookCreateJournalSubscriptionParams
       def create_journal_subscription(params)
@@ -117,7 +117,7 @@ module HubSpotSDK
           method: :post,
           path: "webhooks-journal/subscriptions/2026-03",
           body: parsed[:subscription_upsert_request],
-          model: HubSpotSDK::WebhooksJournal::SubscriptionResponse,
+          model: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse,
           options: options
         )
       end
@@ -532,14 +532,14 @@ module HubSpotSDK
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetJournalSubscriptionParams
       def get_journal_subscription(subscription_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/subscriptions/2026-03/%1$s", subscription_id],
-          model: HubSpotSDK::WebhooksJournal::SubscriptionResponse,
+          model: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse,
           options: params[:request_options]
         )
       end
@@ -899,14 +899,14 @@ module HubSpotSDK
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookListJournalSubscriptionsParams
       def list_journal_subscriptions(params = {})
         @client.request(
           method: :get,
           path: "webhooks-journal/subscriptions/2026-03",
-          model: HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging,
+          model: HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging,
           options: params[:request_options]
         )
       end

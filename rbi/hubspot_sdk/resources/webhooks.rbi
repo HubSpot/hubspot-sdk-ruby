@@ -94,7 +94,7 @@ module HubSpotSDK
               HubSpotSDK::GdprPrivacyDeletionSubscriptionUpsertRequest::OrHash
             ),
           request_options: HubSpotSDK::RequestOptions::OrHash
-        ).returns(HubSpotSDK::WebhooksJournal::SubscriptionResponse)
+        ).returns(HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse)
       end
       def create_journal_subscription(
         subscription_upsert_request:,
@@ -373,7 +373,7 @@ module HubSpotSDK
         params(
           subscription_id: Integer,
           request_options: HubSpotSDK::RequestOptions::OrHash
-        ).returns(HubSpotSDK::WebhooksJournal::SubscriptionResponse)
+        ).returns(HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse)
       end
       def get_journal_subscription(
         # The unique identifier of the subscription to retrieve.
@@ -616,7 +616,7 @@ module HubSpotSDK
       # account.
       sig do
         params(request_options: HubSpotSDK::RequestOptions::OrHash).returns(
-          HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
+          HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging
         )
       end
       def list_journal_subscriptions(request_options: {})

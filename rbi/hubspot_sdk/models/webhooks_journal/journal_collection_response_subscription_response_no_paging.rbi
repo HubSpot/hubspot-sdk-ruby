@@ -3,11 +3,11 @@
 module HubSpotSDK
   module Models
     module WebhooksJournal
-      class CollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
+      class JournalCollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging,
+              HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging,
               HubSpotSDK::Internal::AnyHash
             )
           end
@@ -15,7 +15,9 @@ module HubSpotSDK
         # An array of subscription responses, where each item contains details about a
         # specific subscription. Each item follows the SubscriptionResponse schema.
         sig do
-          returns(T::Array[HubSpotSDK::WebhooksJournal::SubscriptionResponse])
+          returns(
+            T::Array[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse]
+          )
         end
         attr_accessor :results
 
@@ -23,7 +25,7 @@ module HubSpotSDK
           params(
             results:
               T::Array[
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::OrHash
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::OrHash
               ]
           ).returns(T.attached_class)
         end
@@ -38,7 +40,9 @@ module HubSpotSDK
           override.returns(
             {
               results:
-                T::Array[HubSpotSDK::WebhooksJournal::SubscriptionResponse]
+                T::Array[
+                  HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
+                ]
             }
           )
         end

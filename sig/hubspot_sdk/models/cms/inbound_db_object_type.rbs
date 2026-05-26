@@ -41,8 +41,8 @@ module HubSpotSDK
           read_scope_name: String,
           singular_form: String,
           status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
-          visibilities: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility],
           visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           write_scope_name: String
         }
 
@@ -151,17 +151,17 @@ module HubSpotSDK
           HubSpotSDK::Models::Cms::InboundDBObjectType::status
         ) -> HubSpotSDK::Models::Cms::InboundDBObjectType::status
 
-        attr_reader visibilities: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]?
-
-        def visibilities=: (
-          ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
-        ) -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
-
         attr_reader visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility?
 
         def visibility=: (
           HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
         ) -> HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
+
+        attr_reader visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]?
+
+        def visibility_values=: (
+          ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
+        ) -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
 
         attr_reader write_scope_name: String?
 
@@ -206,8 +206,8 @@ module HubSpotSDK
           ?read_scope_name: String,
           ?singular_form: String,
           ?status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
-          ?visibilities: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility],
           ?visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          ?visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           ?write_scope_name: String
         ) -> void
 
@@ -250,8 +250,8 @@ module HubSpotSDK
           read_scope_name: String,
           singular_form: String,
           status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
-          visibilities: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility],
           visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           write_scope_name: String
         }
 
@@ -315,11 +315,28 @@ module HubSpotSDK
 
         type visibility =
           :"Customer-facing"
+          | :"Customer-facing public API"
+          | :"Customer-facing UI"
+          | :"Internal only"
+
+        module Visibility
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CUSTOMER_FACING: :"Customer-facing"
+          CUSTOMER_FACING_PUBLIC_API: :"Customer-facing public API"
+          CUSTOMER_FACING_UI: :"Customer-facing UI"
+          INTERNAL_ONLY: :"Internal only"
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
+        end
+
+        type visibility_value =
+          :"Customer-facing"
           | :"Internal only"
           | :"Customer-facing UI"
           | :"Customer-facing public API"
 
-        module Visibility
+        module VisibilityValue
           extend HubSpotSDK::Internal::Type::Enum
 
           CUSTOMER_FACING: :"Customer-facing"
@@ -327,7 +344,7 @@ module HubSpotSDK
           CUSTOMER_FACING_UI: :"Customer-facing UI"
           CUSTOMER_FACING_PUBLIC_API: :"Customer-facing public API"
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
         end
       end
     end

@@ -184,27 +184,6 @@ module HubSpotSDK
         sig do
           returns(
             T.nilable(
-              T::Array[
-                HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
-              ]
-            )
-          )
-        end
-        attr_reader :visibilities
-
-        sig do
-          params(
-            visibilities:
-              T::Array[
-                HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
-              ]
-          ).void
-        end
-        attr_writer :visibilities
-
-        sig do
-          returns(
-            T.nilable(
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           )
@@ -218,6 +197,27 @@ module HubSpotSDK
           ).void
         end
         attr_writer :visibility
+
+        sig do
+          returns(
+            T.nilable(
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+              ]
+            )
+          )
+        end
+        attr_reader :visibility_values
+
+        sig do
+          params(
+            visibility_values:
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::OrSymbol
+              ]
+          ).void
+        end
+        attr_writer :visibility_values
 
         sig { returns(T.nilable(String)) }
         attr_reader :write_scope_name
@@ -266,12 +266,12 @@ module HubSpotSDK
             read_scope_name: String,
             singular_form: String,
             status: HubSpotSDK::Cms::InboundDBObjectType::Status::OrSymbol,
-            visibilities:
-              T::Array[
-                HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol
-              ],
             visibility:
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::OrSymbol,
+            visibility_values:
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::OrSymbol
+              ],
             write_scope_name: String
           ).returns(T.attached_class)
         end
@@ -314,8 +314,8 @@ module HubSpotSDK
           read_scope_name: nil,
           singular_form: nil,
           status: nil,
-          visibilities: nil,
           visibility: nil,
+          visibility_values: nil,
           write_scope_name: nil
         )
         end
@@ -364,12 +364,12 @@ module HubSpotSDK
               singular_form: String,
               status:
                 HubSpotSDK::Cms::InboundDBObjectType::Status::TaggedSymbol,
-              visibilities:
-                T::Array[
-                  HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
-                ],
               visibility:
                 HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol,
+              visibility_values:
+                T::Array[
+                  HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+                ],
               write_scope_name: String
             }
           )
@@ -542,9 +542,9 @@ module HubSpotSDK
               :"Customer-facing",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
-          INTERNAL_ONLY =
+          CUSTOMER_FACING_PUBLIC_API =
             T.let(
-              :"Internal only",
+              :"Customer-facing public API",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
           CUSTOMER_FACING_UI =
@@ -552,9 +552,9 @@ module HubSpotSDK
               :"Customer-facing UI",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
-          CUSTOMER_FACING_PUBLIC_API =
+          INTERNAL_ONLY =
             T.let(
-              :"Customer-facing public API",
+              :"Internal only",
               HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
             )
 
@@ -562,6 +562,50 @@ module HubSpotSDK
             override.returns(
               T::Array[
                 HubSpotSDK::Cms::InboundDBObjectType::Visibility::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
+        end
+
+        module VisibilityValue
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(
+                Symbol,
+                HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue
+              )
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          CUSTOMER_FACING =
+            T.let(
+              :"Customer-facing",
+              HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+            )
+          INTERNAL_ONLY =
+            T.let(
+              :"Internal only",
+              HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+            )
+          CUSTOMER_FACING_UI =
+            T.let(
+              :"Customer-facing UI",
+              HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+            )
+          CUSTOMER_FACING_PUBLIC_API =
+            T.let(
+              :"Customer-facing public API",
+              HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue::TaggedSymbol
               ]
             )
           end
