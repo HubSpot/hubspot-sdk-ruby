@@ -3,11 +3,11 @@
 module HubSpotSDK
   module Models
     module WebhooksJournal
-      class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
+      class JournalSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         OrHash =
           T.type_alias do
             T.any(
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse,
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse,
               HubSpotSDK::Internal::AnyHash
             )
           end
@@ -23,7 +23,7 @@ module HubSpotSDK
         sig do
           returns(
             T::Array[
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             ]
           )
         end
@@ -48,7 +48,7 @@ module HubSpotSDK
         # 'LIST_MEMBERSHIP', and 'GDPR_PRIVACY_DELETION'.
         sig do
           returns(
-            HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+            HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
           )
         end
         attr_accessor :subscription_type
@@ -132,13 +132,13 @@ module HubSpotSDK
             id: Integer,
             actions:
               T::Array[
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::OrSymbol
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::OrSymbol
               ],
             app_id: Integer,
             created_at: Time,
             object_type_id: String,
             subscription_type:
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::OrSymbol,
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::OrSymbol,
             updated_at: Time,
             action_overrides:
               T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest::OrHash],
@@ -205,13 +205,13 @@ module HubSpotSDK
               id: Integer,
               actions:
                 T::Array[
-                  HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+                  HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
                 ],
               app_id: Integer,
               created_at: Time,
               object_type_id: String,
               subscription_type:
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol,
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol,
               updated_at: Time,
               action_overrides:
                 T::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
@@ -235,7 +235,7 @@ module HubSpotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -243,73 +243,73 @@ module HubSpotSDK
           CREATE =
             T.let(
               :CREATE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           UPDATE =
             T.let(
               :UPDATE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           DELETE =
             T.let(
               :DELETE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           MERGE =
             T.let(
               :MERGE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           RESTORE =
             T.let(
               :RESTORE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           ASSOCIATION_ADDED =
             T.let(
               :ASSOCIATION_ADDED,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           ASSOCIATION_REMOVED =
             T.let(
               :ASSOCIATION_REMOVED,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           SNAPSHOT =
             T.let(
               :SNAPSHOT,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           APP_INSTALL =
             T.let(
               :APP_INSTALL,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           APP_UNINSTALL =
             T.let(
               :APP_UNINSTALL,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           ADDED_TO_LIST =
             T.let(
               :ADDED_TO_LIST,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           REMOVED_FROM_LIST =
             T.let(
               :REMOVED_FROM_LIST,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
           GDPR_DELETE =
             T.let(
               :GDPR_DELETE,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action::TaggedSymbol
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action::TaggedSymbol
               ]
             )
           end
@@ -327,7 +327,7 @@ module HubSpotSDK
             T.type_alias do
               T.all(
                 Symbol,
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType
               )
             end
           OrSymbol = T.type_alias { T.any(Symbol, String) }
@@ -335,38 +335,38 @@ module HubSpotSDK
           APP_LIFECYCLE_EVENT =
             T.let(
               :APP_LIFECYCLE_EVENT,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
           ASSOCIATION =
             T.let(
               :ASSOCIATION,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
           EVENT =
             T.let(
               :EVENT,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
           GDPR_PRIVACY_DELETION =
             T.let(
               :GDPR_PRIVACY_DELETION,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
           LIST_MEMBERSHIP =
             T.let(
               :LIST_MEMBERSHIP,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
           OBJECT =
             T.let(
               :OBJECT,
-              HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+              HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
             )
 
           sig do
             override.returns(
               T::Array[
-                HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType::TaggedSymbol
+                HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType::TaggedSymbol
               ]
             )
           end

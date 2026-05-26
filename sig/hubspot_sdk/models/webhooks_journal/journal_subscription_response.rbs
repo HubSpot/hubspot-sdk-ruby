@@ -1,14 +1,14 @@
 module HubSpotSDK
   module Models
     module WebhooksJournal
-      type subscription_response =
+      type journal_subscription_response =
         {
           id: Integer,
-          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::action],
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::subscription_type,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
           updated_at: Time,
           action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
@@ -20,10 +20,10 @@ module HubSpotSDK
           properties: ::Array[String]
         }
 
-      class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
+      class JournalSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor id: Integer
 
-        attr_accessor actions: ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::action]
+        attr_accessor actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action]
 
         attr_accessor app_id: Integer
 
@@ -31,7 +31,7 @@ module HubSpotSDK
 
         attr_accessor object_type_id: String
 
-        attr_accessor subscription_type: HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::subscription_type
+        attr_accessor subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type
 
         attr_accessor updated_at: Time
 
@@ -71,11 +71,11 @@ module HubSpotSDK
 
         def initialize: (
           id: Integer,
-          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::action],
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::subscription_type,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
           updated_at: Time,
           ?action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           ?associated_object_type_ids: ::Array[String],
@@ -89,11 +89,11 @@ module HubSpotSDK
 
         def to_hash: -> {
           id: Integer,
-          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::action],
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
           app_id: Integer,
           created_at: Time,
           object_type_id: String,
-          subscription_type: HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::subscription_type,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
           updated_at: Time,
           action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
           associated_object_type_ids: ::Array[String],
@@ -137,7 +137,7 @@ module HubSpotSDK
           REMOVED_FROM_LIST: :REMOVED_FROM_LIST
           GDPR_DELETE: :GDPR_DELETE
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::action]
+          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action]
         end
 
         type subscription_type =
@@ -158,7 +158,7 @@ module HubSpotSDK
           LIST_MEMBERSHIP: :LIST_MEMBERSHIP
           OBJECT: :OBJECT
 
-          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::subscription_type]
+          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type]
         end
       end
     end

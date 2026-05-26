@@ -25,7 +25,7 @@ module HubSpotSDK
       def create_journal_subscription: (
         subscription_upsert_request: HubSpotSDK::Models::subscription_upsert_request,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
+      ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
 
       def create_subscription_filter: (
         filter: HubSpotSDK::Filter,
@@ -108,7 +108,7 @@ module HubSpotSDK
       def get_journal_subscription: (
         Integer subscription_id,
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
+      ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
 
       def get_latest_journal_batch: (
         Integer count,
@@ -179,7 +179,7 @@ module HubSpotSDK
 
       def list_journal_subscriptions: (
         ?request_options: HubSpotSDK::request_opts
-      ) -> HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
+      ) -> HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging
 
       def list_subscription_filters: (
         Integer subscription_id,

@@ -3,7 +3,7 @@
 module HubSpotSDK
   module Models
     module WebhooksJournal
-      class SubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
+      class JournalSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute id
         #   The unique identifier for the subscription, represented as an integer.
         #
@@ -16,9 +16,9 @@ module HubSpotSDK
         #   'ASSOCIATION_REMOVED', 'SNAPSHOT', 'APP_INSTALL', 'APP_UNINSTALL',
         #   'ADDED_TO_LIST', 'REMOVED_FROM_LIST', and 'GDPR_DELETE'.
         #
-        #   @return [Array<Symbol, HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::Action>]
+        #   @return [Array<Symbol, HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::Action>]
         required :actions,
-                 -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action] }
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action] }
 
         # @!attribute app_id
         #   The unique identifier for the app associated with the subscription, represented
@@ -45,9 +45,9 @@ module HubSpotSDK
         #   values include 'OBJECT', 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT',
         #   'LIST_MEMBERSHIP', and 'GDPR_PRIVACY_DELETION'.
         #
-        #   @return [Symbol, HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::SubscriptionType]
+        #   @return [Symbol, HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType]
         required :subscription_type,
-                 enum: -> { HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType },
+                 enum: -> { HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType },
                  api_name: :subscriptionType
 
         # @!attribute updated_at
@@ -117,11 +117,12 @@ module HubSpotSDK
 
         # @!method initialize(id:, actions:, app_id:, created_at:, object_type_id:, subscription_type:, updated_at:, action_overrides: nil, associated_object_type_ids: nil, created_by: nil, deleted_at: nil, list_ids: nil, object_ids: nil, portal_id: nil, properties: nil)
         #   Some parameter documentations has been truncated, see
-        #   {HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse} for more details.
+        #   {HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse} for more
+        #   details.
         #
         #   @param id [Integer] The unique identifier for the subscription, represented as an integer.
         #
-        #   @param actions [Array<Symbol, HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::Action>] An array of actions associated with the subscription. Valid actions include 'CRE
+        #   @param actions [Array<Symbol, HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::Action>] An array of actions associated with the subscription. Valid actions include 'CRE
         #
         #   @param app_id [Integer] The unique identifier for the app associated with the subscription, represented
         #
@@ -129,7 +130,7 @@ module HubSpotSDK
         #
         #   @param object_type_id [String] The identifier for the type of object associated with the subscription, represen
         #
-        #   @param subscription_type [Symbol, HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse::SubscriptionType] The type of subscription, indicating the nature of events it pertains to. Valid
+        #   @param subscription_type [Symbol, HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType] The type of subscription, indicating the nature of events it pertains to. Valid
         #
         #   @param updated_at [Time] The date and time when the subscription was last updated, in ISO 8601 format.
         #
@@ -174,7 +175,7 @@ module HubSpotSDK
         # values include 'OBJECT', 'ASSOCIATION', 'EVENT', 'APP_LIFECYCLE_EVENT',
         # 'LIST_MEMBERSHIP', and 'GDPR_PRIVACY_DELETION'.
         #
-        # @see HubSpotSDK::Models::WebhooksJournal::SubscriptionResponse#subscription_type
+        # @see HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse#subscription_type
         module SubscriptionType
           extend HubSpotSDK::Internal::Type::Enum
 

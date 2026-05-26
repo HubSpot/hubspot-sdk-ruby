@@ -19,17 +19,17 @@ class HubSpotSDK::Test::Resources::WebhooksJournal::SubscriptionsTest < HubSpotS
       )
 
     assert_pattern do
-      response => HubSpotSDK::WebhooksJournal::SubscriptionResponse
+      response => HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
-        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action]),
+        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action]),
         app_id: Integer,
         created_at: Time,
         object_type_id: String,
-        subscription_type: HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType,
+        subscription_type: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType,
         updated_at: Time,
         action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::ActionOverrideRequest]) | nil,
         associated_object_type_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
@@ -49,12 +49,12 @@ class HubSpotSDK::Test::Resources::WebhooksJournal::SubscriptionsTest < HubSpotS
     response = @hubspot.webhooks_journal.subscriptions.list
 
     assert_pattern do
-      response => HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
+      response => HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging
     end
 
     assert_pattern do
       response => {
-        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::WebhooksJournal::SubscriptionResponse])
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse])
       }
     end
   end
@@ -85,17 +85,17 @@ class HubSpotSDK::Test::Resources::WebhooksJournal::SubscriptionsTest < HubSpotS
     response = @hubspot.webhooks_journal.subscriptions.get(0)
 
     assert_pattern do
-      response => HubSpotSDK::WebhooksJournal::SubscriptionResponse
+      response => HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
     end
 
     assert_pattern do
       response => {
         id: Integer,
-        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::SubscriptionResponse::Action]),
+        actions: ^(HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::Action]),
         app_id: Integer,
         created_at: Time,
         object_type_id: String,
-        subscription_type: HubSpotSDK::WebhooksJournal::SubscriptionResponse::SubscriptionType,
+        subscription_type: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse::SubscriptionType,
         updated_at: Time,
         action_overrides: ^(HubSpotSDK::Internal::Type::HashOf[HubSpotSDK::ActionOverrideRequest]) | nil,
         associated_object_type_ids: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,

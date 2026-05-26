@@ -1,0 +1,22 @@
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      type journal_collection_response_subscription_response_no_paging =
+        {
+          results: ::Array[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse]
+        }
+
+      class JournalCollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor results: ::Array[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse]
+
+        def initialize: (
+          results: ::Array[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse]
+        ) -> void
+
+        def to_hash: -> {
+          results: ::Array[HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse]
+        }
+      end
+    end
+  end
+end

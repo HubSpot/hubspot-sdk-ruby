@@ -7,11 +7,11 @@ module HubSpotSDK
         def create: (
           subscription_upsert_request: HubSpotSDK::Models::subscription_upsert_request,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
+        ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
 
         def list: (
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::WebhooksJournal::CollectionResponseSubscriptionResponseNoPaging
+        ) -> HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging
 
         def delete: (
           Integer subscription_id,
@@ -26,7 +26,7 @@ module HubSpotSDK
         def get: (
           Integer subscription_id,
           ?request_options: HubSpotSDK::request_opts
-        ) -> HubSpotSDK::WebhooksJournal::SubscriptionResponse
+        ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
 
         def initialize: (client: HubSpotSDK::Client) -> void
       end
