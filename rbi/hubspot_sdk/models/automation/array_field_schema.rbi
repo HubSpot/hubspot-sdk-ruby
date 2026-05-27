@@ -60,36 +60,6 @@ module HubSpotSDK
               :ARRAY,
               HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
             )
-          BOOLEAN =
-            T.let(
-              :BOOLEAN,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
-          DOUBLE =
-            T.let(
-              :DOUBLE,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
-          INTEGER =
-            T.let(
-              :INTEGER,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
-          LONG =
-            T.let(
-              :LONG,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
-          OBJECT =
-            T.let(
-              :OBJECT,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
-          STRING =
-            T.let(
-              :STRING,
-              HubSpotSDK::Automation::ArrayFieldSchema::Type::TaggedSymbol
-            )
 
           sig do
             override.returns(

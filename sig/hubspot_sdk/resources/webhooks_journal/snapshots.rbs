@@ -1,0 +1,14 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      class Snapshots
+        def create: (
+          snapshot_requests: ::Array[HubSpotSDK::CrmObjectSnapshotRequest],
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::CrmObjectSnapshotBatchResponse
+
+        def initialize: (client: HubSpotSDK::Client) -> void
+      end
+    end
+  end
+end

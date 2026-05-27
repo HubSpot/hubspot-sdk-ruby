@@ -1,0 +1,41 @@
+# typed: strong
+
+module HubSpotSDK
+  module Models
+    class CrmObjectSnapshotBatchRequest < HubSpotSDK::Internal::Type::BaseModel
+      OrHash =
+        T.type_alias do
+          T.any(
+            HubSpotSDK::CrmObjectSnapshotBatchRequest,
+            HubSpotSDK::Internal::AnyHash
+          )
+        end
+
+      # An array of CrmObjectSnapshotRequest objects, each representing a request to
+      # create a snapshot for a specific CRM object. This property is required.
+      sig { returns(T::Array[HubSpotSDK::CrmObjectSnapshotRequest]) }
+      attr_accessor :snapshot_requests
+
+      sig do
+        params(
+          snapshot_requests:
+            T::Array[HubSpotSDK::CrmObjectSnapshotRequest::OrHash]
+        ).returns(T.attached_class)
+      end
+      def self.new(
+        # An array of CrmObjectSnapshotRequest objects, each representing a request to
+        # create a snapshot for a specific CRM object. This property is required.
+        snapshot_requests:
+      )
+      end
+
+      sig do
+        override.returns(
+          { snapshot_requests: T::Array[HubSpotSDK::CrmObjectSnapshotRequest] }
+        )
+      end
+      def to_hash
+      end
+    end
+  end
+end

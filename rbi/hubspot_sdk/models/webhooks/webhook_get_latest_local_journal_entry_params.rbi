@@ -15,8 +15,8 @@ module HubSpotSDK
             )
           end
 
-        # The ID of the portal for which to retrieve the latest journal entries. This
-        # parameter is optional and should be an integer.
+        # The ID of the portal for which to retrieve the latest journal entries. This is
+        # an integer value.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -30,8 +30,8 @@ module HubSpotSDK
           ).returns(T.attached_class)
         end
         def self.new(
-          # The ID of the portal for which to retrieve the latest journal entries. This
-          # parameter is optional and should be an integer.
+          # The ID of the portal for which to retrieve the latest journal entries. This is
+          # an integer value.
           install_portal_id: nil,
           request_options: {}
         )

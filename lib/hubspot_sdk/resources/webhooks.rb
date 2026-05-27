@@ -35,19 +35,18 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookCreateCrmSnapshotsParams} for more
       # details.
       #
-      # Create a batch of CRM object snapshots for the specified portal. This endpoint
-      # allows you to capture the state of CRM objects at a specific point in time,
-      # which can be useful for auditing or historical analysis. The request requires a
-      # list of CRM object snapshot requests, each specifying the portal ID, object ID,
-      # object type ID, and properties to include in the snapshot.
+      # Create a batch of CRM object snapshots in HubSpot. This endpoint is used to
+      # capture the current state of specified CRM objects for later reference or
+      # analysis. It requires a JSON payload containing the details of the CRM objects
+      # to snapshot. This operation is exempt from daily and ten-secondly rate limits.
       #
       # @overload create_crm_snapshots(snapshot_requests:, request_options: {})
       #
-      # @param snapshot_requests [Array<HubSpotSDK::Models::Webhooks::CrmObjectSnapshotRequest>] An array of CrmObjectSnapshotRequest objects, each representing a request to cre
+      # @param snapshot_requests [Array<HubSpotSDK::Models::CrmObjectSnapshotRequest>] An array of CrmObjectSnapshotRequest objects, each representing a request to cre
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::CrmObjectSnapshotBatchResponse]
+      # @return [HubSpotSDK::Models::CrmObjectSnapshotBatchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookCreateCrmSnapshotsParams
       def create_crm_snapshots(params)
@@ -56,7 +55,7 @@ module HubSpotSDK
           method: :post,
           path: "webhooks-journal/snapshots/2026-03/crm",
           body: parsed,
-          model: HubSpotSDK::Webhooks::CrmObjectSnapshotBatchResponse,
+          model: HubSpotSDK::CrmObjectSnapshotBatchResponse,
           options: options
         )
       end
@@ -97,18 +96,19 @@ module HubSpotSDK
         )
       end
 
-      # Create a new webhook subscription for the specified portal in the HubSpot
-      # account. This endpoint allows you to define the subscription details, including
-      # the types of events you want to subscribe to. The request body must include the
-      # necessary subscription information as defined by the SubscriptionUpsertRequest
-      # schema.
+      # Create a new subscription in the Webhooks Journal for the specified version.
+      # This endpoint allows you to define the subscription details by providing the
+      # necessary information in the request body. It supports various types of
+      # subscriptions, including object, association, event, app lifecycle event, list
+      # membership, and GDPR privacy deletion. Ensure that all required fields are
+      # included in the request to successfully create a subscription.
       #
       # @overload create_journal_subscription(subscription_upsert_request:, request_options: {})
       #
-      # @param subscription_upsert_request [HubSpotSDK::Models::Webhooks::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::ListMembershipSubscriptionUpsertRequest, HubSpotSDK::Models::Webhooks::GdprPrivacyDeletionSubscriptionUpsertRequest]
+      # @param subscription_upsert_request [HubSpotSDK::Models::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest, HubSpotSDK::Models::GdprPrivacyDeletionSubscriptionUpsertRequest]
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::SubscriptionResponse1]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookCreateJournalSubscriptionParams
       def create_journal_subscription(params)
@@ -117,7 +117,7 @@ module HubSpotSDK
           method: :post,
           path: "webhooks-journal/subscriptions/2026-03",
           body: parsed[:subscription_upsert_request],
-          model: HubSpotSDK::Webhooks::SubscriptionResponse1,
+          model: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse,
           options: options
         )
       end
@@ -126,20 +126,20 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookCreateSubscriptionFilterParams} for more
       # details.
       #
-      # Create a new filter for a webhook subscription in your HubSpot account. This
-      # endpoint allows you to define specific conditions that a webhook event must meet
-      # to trigger the subscription. It is useful for managing and customizing the
-      # behavior of webhook subscriptions based on specific criteria.
+      # Create a new filter for a specific webhook subscription in the HubSpot account.
+      # This endpoint allows you to define conditions that determine when a webhook
+      # should be triggered. The filter is associated with a subscription identified by
+      # its ID, and the request must include the filter details.
       #
       # @overload create_subscription_filter(filter:, subscription_id:, request_options: {})
       #
-      # @param filter [HubSpotSDK::Models::Webhooks::Filter] Defines a single condition for searching CRM objects, specifying the property to
+      # @param filter [HubSpotSDK::Models::Filter] Defines a single condition for searching CRM objects, specifying the property to
       #
       # @param subscription_id [Integer] The unique identifier of the subscription to which the filter will be applied. I
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::FilterCreateResponse]
+      # @return [HubSpotSDK::Models::FilterCreateResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookCreateSubscriptionFilterParams
       def create_subscription_filter(params)
@@ -148,7 +148,7 @@ module HubSpotSDK
           method: :post,
           path: "webhooks-journal/subscriptions/2026-03/filters",
           body: parsed,
-          model: HubSpotSDK::Webhooks::FilterCreateResponse,
+          model: HubSpotSDK::FilterCreateResponse,
           options: options
         )
       end
@@ -180,13 +180,17 @@ module HubSpotSDK
         )
       end
 
+      # Some parameter documentations has been truncated, see
+      # {HubSpotSDK::Models::Webhooks::WebhookDeleteJournalSubscriptionParams} for more
+      # details.
+      #
       # Delete a specific webhook journal subscription using its unique identifier. This
       # operation is useful for managing and cleaning up subscriptions that are no
-      # longer needed or relevant.
+      # longer needed in your HubSpot account.
       #
       # @overload delete_journal_subscription(subscription_id, request_options: {})
       #
-      # @param subscription_id [Integer] The unique identifier of the subscription to delete.
+      # @param subscription_id [Integer] The unique identifier of the subscription to delete. It must be provided as an i
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -207,12 +211,13 @@ module HubSpotSDK
       # for more details.
       #
       # Delete a webhook journal subscription for a specific portal. This operation
-      # removes the subscription associated with the given portalId, and no content is
-      # returned upon successful deletion.
+      # removes the subscription associated with the given portalId, ensuring that no
+      # further webhook events are sent for this portal. Use this endpoint to manage and
+      # clean up subscriptions that are no longer needed.
       #
       # @overload delete_journal_subscription_for_portal(portal_id, request_options: {})
       #
-      # @param portal_id [Integer] The unique identifier of the portal whose webhook journal subscription is to be
+      # @param portal_id [Integer] The unique identifier of the portal for which the webhook journal subscription i
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -249,10 +254,9 @@ module HubSpotSDK
         )
       end
 
-      # Delete a specific filter associated with a webhook journal subscription. This
-      # operation is useful for managing and cleaning up filters that are no longer
-      # needed in your subscription setup. The endpoint requires the unique identifier
-      # of the filter to be deleted.
+      # Remove a specific filter from the webhooks journal subscriptions. This operation
+      # is useful for managing and cleaning up filters that are no longer needed. Once
+      # deleted, the filter cannot be recovered.
       #
       # @overload delete_subscription_filter(filter_id, request_options: {})
       #
@@ -276,19 +280,20 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetEarliestJournalBatchParams} for more
       # details.
       #
-      # Retrieve the earliest batch of webhook journal entries up to the specified
-      # count. This endpoint is useful for fetching historical webhook data in batches,
-      # allowing you to process or analyze the earliest entries first.
+      # Retrieve the earliest batch of webhook journal entries for a specified count.
+      # This endpoint is useful for accessing historical webhook data in batches,
+      # allowing you to process or analyze older entries. The number of entries
+      # retrieved is determined by the count parameter.
       #
       # @overload get_earliest_journal_batch(count, install_portal_id: nil, request_options: {})
       #
-      # @param count [Integer] The maximum number of journal entries to retrieve in the batch. This must be an
+      # @param count [Integer] The number of earliest journal entries to retrieve. This must be an integer with
       #
-      # @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries by. This
+      # @param install_portal_id [Integer] The ID of the portal installation. This is an integer value that specifies which
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetEarliestJournalBatchParams
       def get_earliest_journal_batch(count, params = {})
@@ -298,7 +303,7 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal/2026-03/batch/earliest/%1$s", count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -307,13 +312,13 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetEarliestJournalEntryParams} for more
       # details.
       #
-      # Retrieve the earliest entry from the webhooks journal for the specified version.
-      # This endpoint is useful for accessing the oldest records available in the
-      # journal, which can be helpful for auditing or historical data analysis.
+      # Retrieve the earliest entry from the webhooks journal for the specified portal.
+      # This endpoint is useful for accessing the first recorded webhook event in the
+      # journal, which can be helpful for auditing or debugging purposes.
       #
       # @overload get_earliest_journal_entry(install_portal_id: nil, request_options: {})
       #
-      # @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries. It is an intege
+      # @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries by. This is an i
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -337,19 +342,20 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetEarliestLocalJournalBatchParams} for
       # more details.
       #
-      # Retrieve the earliest batch of webhook journal entries based on the specified
-      # count. This endpoint is useful for fetching a specific number of the earliest
-      # entries in the webhook journal for analysis or processing.
+      # Retrieve the earliest batch of webhook journal entries. This endpoint is useful
+      # for accessing the oldest available data in the webhook journal, allowing users
+      # to process or analyze historical webhook events. The number of entries to fetch
+      # is specified by the 'count' path parameter.
       #
       # @overload get_earliest_local_journal_batch(count, install_portal_id: nil, request_options: {})
       #
-      # @param count [Integer] The number of earliest entries to retrieve from the webhook journal. Must be an
+      # @param count [Integer] The number of earliest webhook journal entries to retrieve. This is a required i
       #
-      # @param install_portal_id [Integer] The ID of the portal where the webhooks are installed. This is an integer value.
+      # @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries. This is
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetEarliestLocalJournalBatchParams
       def get_earliest_local_journal_batch(count, params = {})
@@ -359,7 +365,7 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal-local/2026-03/batch/earliest/%1$s", count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -368,13 +374,13 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetEarliestLocalJournalEntryParams} for
       # more details.
       #
-      # Retrieve the earliest entry from the webhooks journal for the specified portal.
-      # This endpoint is useful for accessing the oldest records in the journal, which
-      # can be helpful for auditing or tracking purposes.
+      # Retrieve the earliest webhook journal entries for the specified portal. This
+      # endpoint can be used to access the oldest records available in the webhook
+      # journal, which may be useful for auditing or historical analysis.
       #
       # @overload get_earliest_local_journal_entry(install_portal_id: nil, request_options: {})
       #
-      # @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries by. This paramet
+      # @param install_portal_id [Integer] The ID of the portal for which to retrieve the earliest webhook journal entries.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -425,20 +431,21 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetJournalBatchByRequestParams} for more
       # details.
       #
-      # Perform a batch read operation on the webhooks journal for the specified date.
-      # This endpoint allows you to retrieve multiple entries from the webhooks journal
-      # in a single request, which can be useful for processing large amounts of data
-      # efficiently.
+      # Execute a batch read operation on the webhooks journal for the specified date,
+      # 2026-03. This endpoint allows you to retrieve multiple entries from the webhooks
+      # journal in a single request, which can be useful for processing large amounts of
+      # data efficiently. Ensure that the request body is provided in the required
+      # format.
       #
       # @overload get_journal_batch_by_request(inputs:, install_portal_id: nil, request_options: {})
       #
       # @param inputs [Array<String>] Body param: Strings to input.
       #
-      # @param install_portal_id [Integer] Query param: The ID of the portal where the webhooks are installed. This is an i
+      # @param install_portal_id [Integer] Query param: An integer representing the ID of the portal installation for which
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetJournalBatchByRequestParams
       def get_journal_batch_by_request(params)
@@ -450,7 +457,7 @@ module HubSpotSDK
           path: "webhooks-journal/journal/2026-03/batch/read",
           query: query.transform_keys(install_portal_id: "installPortalId"),
           body: parsed.except(*query_params),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -460,20 +467,20 @@ module HubSpotSDK
       # details.
       #
       # Retrieve a batch of webhook journal entries starting from a specified offset.
-      # This endpoint allows you to fetch a specified number of entries, making it
-      # useful for paginating through large sets of webhook journal data.
+      # This endpoint allows you to fetch a defined number of entries, which can be
+      # useful for processing large datasets in manageable chunks.
       #
       # @overload get_journal_batch_from_offset(count, offset:, install_portal_id: nil, request_options: {})
       #
-      # @param count [Integer] Path param: The number of journal entries to fetch in the batch. This is an inte
+      # @param count [Integer] Path param: The number of journal entries to retrieve. This must be an integer w
       #
-      # @param offset [String] Path param: The starting point for fetching the next batch of journal entries. T
+      # @param offset [String] Path param: The starting point for fetching the journal entries. This is a strin
       #
-      # @param install_portal_id [Integer] Query param: The ID of the portal installation. This is an integer value used to
+      # @param install_portal_id [Integer] Query param: The ID of the portal installation. This is an integer value.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetJournalBatchFromOffsetParams
       def get_journal_batch_from_offset(count, params)
@@ -487,14 +494,15 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal/2026-03/batch/%1$s/next/%2$s", offset, count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
 
-      # Retrieve the status of a specific webhook journal entry using its status ID.
-      # This endpoint is useful for checking the current state of a webhook process,
-      # such as whether it is pending, in progress, completed, failed, or expired.
+      # Retrieve the status of a specific webhook journal entry using its unique status
+      # ID. This endpoint provides detailed information about the status, including
+      # whether it is pending, in progress, completed, failed, or expired. It is useful
+      # for monitoring and managing the state of webhook journal entries.
       #
       # @overload get_journal_status(status_id, request_options: {})
       #
@@ -502,36 +510,36 @@ module HubSpotSDK
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::SnapshotStatusResponse]
+      # @return [HubSpotSDK::Models::SnapshotStatusResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetJournalStatusParams
       def get_journal_status(status_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/journal/2026-03/status/%1$s", status_id],
-          model: HubSpotSDK::Webhooks::SnapshotStatusResponse,
+          model: HubSpotSDK::SnapshotStatusResponse,
           options: params[:request_options]
         )
       end
 
       # Retrieve details of a specific webhook subscription using its unique identifier.
       # This endpoint is useful for obtaining information about a particular
-      # subscription's configuration and status within the HubSpot account.
+      # subscription, such as its actions, object type, and associated properties.
       #
       # @overload get_journal_subscription(subscription_id, request_options: {})
       #
-      # @param subscription_id [Integer] The unique identifier of the subscription to retrieve. It must be an integer.
+      # @param subscription_id [Integer] The unique identifier of the subscription to retrieve.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::SubscriptionResponse1]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetJournalSubscriptionParams
       def get_journal_subscription(subscription_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/subscriptions/2026-03/%1$s", subscription_id],
-          model: HubSpotSDK::Webhooks::SubscriptionResponse1,
+          model: HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse,
           options: params[:request_options]
         )
       end
@@ -540,19 +548,20 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetLatestJournalBatchParams} for more
       # details.
       #
-      # Retrieve the latest batch of webhook journal entries. This endpoint allows you
-      # to specify the number of entries to fetch, providing a way to access recent
-      # webhook activity within your HubSpot account.
+      # Retrieve the latest batch of webhook journal entries up to the specified count.
+      # This endpoint is useful for fetching recent webhook data for analysis or
+      # processing. The count parameter determines the maximum number of entries to
+      # return.
       #
       # @overload get_latest_journal_batch(count, install_portal_id: nil, request_options: {})
       #
-      # @param count [Integer] The number of journal entries to retrieve. This is a required integer parameter
+      # @param count [Integer] The maximum number of journal entries to retrieve. This is a required integer pa
       #
-      # @param install_portal_id [Integer] The ID of the portal installation. This is an integer value used to identify the
+      # @param install_portal_id [Integer] The ID of the portal installation. This is an integer value used to specify the
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetLatestJournalBatchParams
       def get_latest_journal_batch(count, params = {})
@@ -562,7 +571,7 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal/2026-03/batch/latest/%1$s", count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -572,13 +581,12 @@ module HubSpotSDK
       # details.
       #
       # Retrieve the latest entries from the webhooks journal for the specified portal.
-      # This endpoint is useful for accessing the most recent webhook events processed
-      # by your HubSpot account. It allows you to filter the results by the portal ID to
-      # ensure you are retrieving data relevant to a specific installation.
+      # This endpoint is useful for accessing the most recent webhook events and their
+      # statuses, allowing you to monitor and debug webhook activity effectively.
       #
       # @overload get_latest_journal_entry(install_portal_id: nil, request_options: {})
       #
-      # @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries. It is an intege
+      # @param install_portal_id [Integer] The unique identifier of the portal installation for which to retrieve the lates
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -602,19 +610,19 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetLatestLocalJournalBatchParams} for more
       # details.
       #
-      # Retrieve the latest batch of webhook journal entries. This endpoint is useful
-      # for accessing the most recent data entries processed by the webhook journal. It
-      # requires specifying the number of entries to retrieve.
+      # Retrieve the latest batch of webhook journal entries. This endpoint allows you
+      # to specify the number of entries to fetch, providing a way to access the most
+      # recent webhook events processed by your HubSpot account.
       #
       # @overload get_latest_local_journal_batch(count, install_portal_id: nil, request_options: {})
       #
       # @param count [Integer] The number of journal entries to retrieve. Must be an integer with a minimum val
       #
-      # @param install_portal_id [Integer] The ID of the portal installation. This parameter is optional and used to filter
+      # @param install_portal_id [Integer] The ID of the portal where the webhook journal is installed. This parameter is o
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetLatestLocalJournalBatchParams
       def get_latest_local_journal_batch(count, params = {})
@@ -624,7 +632,7 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal-local/2026-03/batch/latest/%1$s", count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -635,11 +643,12 @@ module HubSpotSDK
       #
       # Retrieve the latest entries from the webhooks journal for the specified portal.
       # This endpoint is useful for accessing the most recent webhook events that have
-      # been logged, allowing you to process or analyze them as needed.
+      # been logged, allowing for real-time monitoring or debugging of webhook
+      # activities.
       #
       # @overload get_latest_local_journal_entry(install_portal_id: nil, request_options: {})
       #
-      # @param install_portal_id [Integer] The ID of the portal for which to retrieve the latest journal entries. This para
+      # @param install_portal_id [Integer] The ID of the portal for which to retrieve the latest journal entries. This is a
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -663,11 +672,10 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetLocalJournalBatchByRequestParams} for
       # more details.
       #
-      # Perform a batch read operation on the webhooks journal. This endpoint allows you
-      # to read multiple entries from the journal in a single request. It requires a
-      # JSON request body specifying the inputs to be read. The response includes the
-      # results of the batch read operation, and may return multiple statuses if there
-      # are errors.
+      # Execute a batch read operation on the webhooks journal. This endpoint allows you
+      # to retrieve a batch of webhook journal entries by providing the necessary input
+      # data. It is useful for processing multiple records in a single request,
+      # streamlining data retrieval tasks.
       #
       # @overload get_local_journal_batch_by_request(inputs:, install_portal_id: nil, request_options: {})
       #
@@ -677,7 +685,7 @@ module HubSpotSDK
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetLocalJournalBatchByRequestParams
       def get_local_journal_batch_by_request(params)
@@ -689,7 +697,7 @@ module HubSpotSDK
           path: "webhooks-journal/journal-local/2026-03/batch/read",
           query: query.transform_keys(install_portal_id: "installPortalId"),
           body: parsed.except(*query_params),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
@@ -699,20 +707,20 @@ module HubSpotSDK
       # more details.
       #
       # Retrieve a batch of webhook journal entries starting from a specified offset.
-      # This endpoint allows you to fetch a defined number of entries, facilitating the
-      # processing of webhook data in manageable chunks.
+      # This endpoint is useful for paginating through large sets of webhook data. The
+      # number of entries returned is determined by the 'count' parameter.
       #
       # @overload get_local_journal_batch_from_offset(count, offset:, install_portal_id: nil, request_options: {})
       #
-      # @param count [Integer] Path param: The number of journal entries to retrieve. This is an integer value
+      # @param count [Integer] Path param: The number of journal entries to retrieve in this batch. Must be an
       #
-      # @param offset [String] Path param: The starting point for fetching the batch of journal entries. This i
+      # @param offset [String] Path param: The starting point for the batch retrieval, specified as a string.
       #
-      # @param install_portal_id [Integer] Query param: The ID of the portal installation. This is an integer value used to
+      # @param install_portal_id [Integer] Query param: The ID of the portal where the webhooks are installed. This is an o
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::BatchResponseJournalFetchResponse]
+      # @return [HubSpotSDK::Models::BatchResponseJournalFetchResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetLocalJournalBatchFromOffsetParams
       def get_local_journal_batch_from_offset(count, params)
@@ -726,29 +734,30 @@ module HubSpotSDK
           method: :get,
           path: ["webhooks-journal/journal-local/2026-03/batch/%1$s/next/%2$s", offset, count],
           query: query.transform_keys(install_portal_id: "installPortalId"),
-          model: HubSpotSDK::Webhooks::BatchResponseJournalFetchResponse,
+          model: HubSpotSDK::BatchResponseJournalFetchResponse,
           options: options
         )
       end
 
       # Retrieve the status of a specific webhook journal entry using its unique status
-      # ID. This endpoint is useful for monitoring the progress or completion of webhook
-      # processing tasks.
+      # ID. This endpoint is useful for monitoring the progress or outcome of webhook
+      # journal entries, allowing you to check if an entry is pending, in progress,
+      # completed, failed, or expired.
       #
       # @overload get_local_journal_status(status_id, request_options: {})
       #
-      # @param status_id [String] The unique identifier (UUID) of the status to retrieve.
+      # @param status_id [String] The unique identifier of the status to retrieve. It should be in UUID format.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::SnapshotStatusResponse]
+      # @return [HubSpotSDK::Models::SnapshotStatusResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetLocalJournalStatusParams
       def get_local_journal_status(status_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/journal-local/2026-03/status/%1$s", status_id],
-          model: HubSpotSDK::Webhooks::SnapshotStatusResponse,
+          model: HubSpotSDK::SnapshotStatusResponse,
           options: params[:request_options]
         )
       end
@@ -757,15 +766,15 @@ module HubSpotSDK
       # {HubSpotSDK::Models::Webhooks::WebhookGetNextJournalEntriesParams} for more
       # details.
       #
-      # Retrieve the next batch of webhook journal entries starting from a specified
-      # offset. This endpoint is useful for paginating through large sets of webhook
-      # data, allowing you to continue fetching entries from where you last left off.
+      # Retrieve the next set of entries from the webhooks journal starting from a
+      # specified offset. This endpoint is useful for paginating through journal entries
+      # to process or analyze webhook events sequentially.
       #
       # @overload get_next_journal_entries(offset, install_portal_id: nil, request_options: {})
       #
-      # @param offset [String] The offset from which to start retrieving the next batch of webhook journal entr
+      # @param offset [String] The offset string indicating the starting point for retrieving the next set of j
       #
-      # @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries. This is
+      # @param install_portal_id [Integer] The ID of the portal where the webhooks are installed. This is an integer value.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -790,14 +799,14 @@ module HubSpotSDK
       # details.
       #
       # Retrieve the next set of webhook journal entries starting from a specified
-      # offset. This endpoint is useful for paginating through webhook journal data in a
-      # sequential manner, allowing you to fetch entries beyond a given point.
+      # offset. This endpoint is useful for paginating through large sets of webhook
+      # data, allowing you to continue from where a previous request left off.
       #
       # @overload get_next_local_journal_entries(offset, install_portal_id: nil, request_options: {})
       #
-      # @param offset [String] The starting point for retrieving the next set of journal entries. This is a str
+      # @param offset [String] The starting point for retrieving the next set of webhook journal entries. This
       #
-      # @param install_portal_id [Integer] The ID of the portal where the webhook is installed. This is an integer value.
+      # @param install_portal_id [Integer] The ID of the portal installation to filter the webhook journal entries. This is
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
@@ -838,24 +847,25 @@ module HubSpotSDK
         )
       end
 
-      # Retrieve details of a specific filter associated with a webhook subscription in
-      # the HubSpot account. This endpoint is useful for accessing the configuration and
-      # conditions of a filter by its unique identifier.
+      # Retrieve a specific filter associated with a webhook journal subscription. This
+      # endpoint allows you to access the details of the filter identified by the
+      # filterId, which is useful for managing and understanding the conditions applied
+      # to webhook events.
       #
       # @overload get_subscription_filter(filter_id, request_options: {})
       #
-      # @param filter_id [Integer] The unique identifier of the filter to retrieve.
+      # @param filter_id [Integer] The unique identifier of the filter to retrieve. It is an integer value.
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::FilterResponse]
+      # @return [HubSpotSDK::Models::FilterResponse]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookGetSubscriptionFilterParams
       def get_subscription_filter(filter_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/subscriptions/2026-03/filters/%1$s", filter_id],
-          model: HubSpotSDK::Webhooks::FilterResponse,
+          model: HubSpotSDK::FilterResponse,
           options: params[:request_options]
         )
       end
@@ -880,46 +890,49 @@ module HubSpotSDK
         )
       end
 
-      # Retrieve a list of webhook journal subscriptions for the specified API version.
-      # This endpoint provides details about each subscription, including actions,
-      # object types, and associated properties. It is useful for managing and reviewing
-      # current webhook subscriptions.
+      # Retrieve a list of webhook journal subscriptions for the specified version. This
+      # endpoint allows you to view all active subscriptions without pagination. It is
+      # useful for monitoring and managing webhook subscriptions in your HubSpot
+      # account.
       #
       # @overload list_journal_subscriptions(request_options: {})
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [HubSpotSDK::Models::Webhooks::CollectionResponseSubscriptionResponseNoPaging]
+      # @return [HubSpotSDK::Models::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookListJournalSubscriptionsParams
       def list_journal_subscriptions(params = {})
         @client.request(
           method: :get,
           path: "webhooks-journal/subscriptions/2026-03",
-          model: HubSpotSDK::Webhooks::CollectionResponseSubscriptionResponseNoPaging,
+          model: HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging,
           options: params[:request_options]
         )
       end
 
-      # Retrieve the filters associated with a specific webhook subscription in the
-      # HubSpot account. This endpoint is useful for obtaining detailed information
-      # about the filters applied to a given subscription, identified by its
-      # subscription ID.
+      # Some parameter documentations has been truncated, see
+      # {HubSpotSDK::Models::Webhooks::WebhookListSubscriptionFiltersParams} for more
+      # details.
+      #
+      # Retrieve the filters associated with a specific webhook subscription. This
+      # endpoint allows you to view the filters applied to a subscription, which can
+      # help in managing and understanding the conditions set for webhook events.
       #
       # @overload list_subscription_filters(subscription_id, request_options: {})
       #
-      # @param subscription_id [Integer] The unique identifier of the subscription for which to retrieve filters.
+      # @param subscription_id [Integer] The unique identifier of the subscription for which to retrieve filters. This is
       #
       # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<HubSpotSDK::Models::Webhooks::FilterResponse>]
+      # @return [Array<HubSpotSDK::Models::FilterResponse>]
       #
       # @see HubSpotSDK::Models::Webhooks::WebhookListSubscriptionFiltersParams
       def list_subscription_filters(subscription_id, params = {})
         @client.request(
           method: :get,
           path: ["webhooks-journal/subscriptions/2026-03/filters/subscription/%1$s", subscription_id],
-          model: HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Webhooks::FilterResponse],
+          model: HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::FilterResponse],
           options: params[:request_options]
         )
       end

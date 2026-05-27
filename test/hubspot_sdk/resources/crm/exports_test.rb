@@ -13,10 +13,10 @@ class HubSpotSDK::Test::Resources::Crm::ExportsTest < HubSpotSDK::Test::Resource
           exportInternalValuesOptions: [:NAMES],
           exportName: "exportName",
           exportType: :VIEW,
-          format: :XLS,
+          format: :CSV,
           includeLabeledAssociations: true,
           includePrimaryDisplayPropertyForAssociatedObjects: true,
-          language: :EN,
+          language: :AF_ZA,
           objectProperties: ["string"],
           objectType: "objectType",
           overrideAssociatedObjectsPerDefinitionPerRowLimit: true

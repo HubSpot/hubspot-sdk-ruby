@@ -5,7 +5,7 @@ module HubSpotSDK
     module Webhooks
       # @type [HubSpotSDK::Internal::Type::Converter]
       WebhookListSubscriptionFiltersResponse =
-        HubSpotSDK::Internal::Type::ArrayOf[-> { HubSpotSDK::Webhooks::FilterResponse }]
+        HubSpotSDK::Internal::Type::ArrayOf[-> { HubSpotSDK::FilterResponse }]
     end
   end
 end

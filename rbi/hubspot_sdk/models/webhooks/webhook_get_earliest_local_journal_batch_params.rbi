@@ -18,7 +18,8 @@ module HubSpotSDK
         sig { returns(Integer) }
         attr_accessor :count
 
-        # The ID of the portal where the webhooks are installed. This is an integer value.
+        # The ID of the portal installation to filter the webhook journal entries. This is
+        # an optional integer parameter.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -34,7 +35,8 @@ module HubSpotSDK
         end
         def self.new(
           count:,
-          # The ID of the portal where the webhooks are installed. This is an integer value.
+          # The ID of the portal installation to filter the webhook journal entries. This is
+          # an optional integer parameter.
           install_portal_id: nil,
           request_options: {}
         )

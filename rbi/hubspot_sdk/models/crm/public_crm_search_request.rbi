@@ -15,7 +15,7 @@ module HubSpotSDK
         sig { returns(T::Array[HubSpotSDK::Crm::FilterGroup]) }
         attr_accessor :filter_groups
 
-        sig { returns(T::Array[HubSpotSDK::Crm::Filter]) }
+        sig { returns(T::Array[HubSpotSDK::Crm::CrmFilter]) }
         attr_accessor :filters
 
         # Defines the order in which the CRM records should be returned.
@@ -32,7 +32,7 @@ module HubSpotSDK
         sig do
           params(
             filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup::OrHash],
-            filters: T::Array[HubSpotSDK::Crm::Filter::OrHash],
+            filters: T::Array[HubSpotSDK::Crm::CrmFilter::OrHash],
             sorts: T::Array[String],
             query: String
           ).returns(T.attached_class)
@@ -51,7 +51,7 @@ module HubSpotSDK
           override.returns(
             {
               filter_groups: T::Array[HubSpotSDK::Crm::FilterGroup],
-              filters: T::Array[HubSpotSDK::Crm::Filter],
+              filters: T::Array[HubSpotSDK::Crm::CrmFilter],
               sorts: T::Array[String],
               query: String
             }

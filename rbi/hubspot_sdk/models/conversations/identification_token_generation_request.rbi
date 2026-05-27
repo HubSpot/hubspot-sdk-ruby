@@ -16,6 +16,9 @@ module HubSpotSDK
         sig { returns(String) }
         attr_accessor :email
 
+        sig { returns(T::Hash[Symbol, String]) }
+        attr_accessor :hs_customer_agent_context
+
         # The first name of the visitor that you wish to identify. This value will only be
         # set in HubSpot for new contacts and existing contacts where first name is
         # unknown. Optional.
@@ -35,13 +38,17 @@ module HubSpotSDK
         attr_writer :last_name
 
         sig do
-          params(email: String, first_name: String, last_name: String).returns(
-            T.attached_class
-          )
+          params(
+            email: String,
+            hs_customer_agent_context: T::Hash[Symbol, String],
+            first_name: String,
+            last_name: String
+          ).returns(T.attached_class)
         end
         def self.new(
           # The email of the visitor that you wish to identify
           email:,
+          hs_customer_agent_context:,
           # The first name of the visitor that you wish to identify. This value will only be
           # set in HubSpot for new contacts and existing contacts where first name is
           # unknown. Optional.
@@ -55,7 +62,12 @@ module HubSpotSDK
 
         sig do
           override.returns(
-            { email: String, first_name: String, last_name: String }
+            {
+              email: String,
+              hs_customer_agent_context: T::Hash[Symbol, String],
+              first_name: String,
+              last_name: String
+            }
           )
         end
         def to_hash

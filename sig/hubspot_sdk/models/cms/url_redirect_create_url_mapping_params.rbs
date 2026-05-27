@@ -1,0 +1,17 @@
+module HubSpotSDK
+  module Models
+    module Cms
+      type url_redirect_create_url_mapping_params =
+        {  } & HubSpotSDK::Internal::Type::request_parameters
+
+      class URLRedirectCreateURLMappingParams < HubSpotSDK::Models::Cms::URLMapping
+        extend HubSpotSDK::Internal::Type::RequestParameters::Converter
+        include HubSpotSDK::Internal::Type::RequestParameters
+
+        def initialize: (?request_options: HubSpotSDK::request_opts) -> void
+
+        def to_hash: -> { request_options: HubSpotSDK::RequestOptions }
+      end
+    end
+  end
+end

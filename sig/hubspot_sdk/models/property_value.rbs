@@ -142,6 +142,7 @@ module HubSpotSDK
         | :BIDEN
         | :BILLING
         | :BOT
+        | :BREEZE_AGENT
         | :CALCULATED
         | :CENTRAL_EXCHANGE_RATES
         | :CHATSPOT
@@ -166,6 +167,7 @@ module HubSpotSDK
         | :DEALS
         | :DEFAULT
         | :DELETE_OBJECTS
+        | :DI_WRITE_TO_CRM
         | :EMAIL
         | :EMAIL_INBOX_IMPORT
         | :EMAIL_INTEGRATION
@@ -262,6 +264,7 @@ module HubSpotSDK
         BIDEN: :BIDEN
         BILLING: :BILLING
         BOT: :BOT
+        BREEZE_AGENT: :BREEZE_AGENT
         CALCULATED: :CALCULATED
         CENTRAL_EXCHANGE_RATES: :CENTRAL_EXCHANGE_RATES
         CHATSPOT: :CHATSPOT
@@ -286,6 +289,7 @@ module HubSpotSDK
         DEALS: :DEALS
         DEFAULT: :DEFAULT
         DELETE_OBJECTS: :DELETE_OBJECTS
+        DI_WRITE_TO_CRM: :DI_WRITE_TO_CRM
         EMAIL: :EMAIL
         EMAIL_INBOX_IMPORT: :EMAIL_INBOX_IMPORT
         EMAIL_INTEGRATION: :EMAIL_INTEGRATION

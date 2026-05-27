@@ -9,8 +9,8 @@ module HubSpotSDK
         include HubSpotSDK::Internal::Type::RequestParameters
 
         # @!attribute install_portal_id
-        #   The ID of the portal installation to filter the journal entries. It is an
-        #   integer.
+        #   The ID of the portal installation to filter the journal entries by. This is an
+        #   integer value.
         #
         #   @return [Integer, nil]
         optional :install_portal_id, Integer
@@ -20,7 +20,7 @@ module HubSpotSDK
         #   {HubSpotSDK::Models::Webhooks::WebhookGetEarliestJournalEntryParams} for more
         #   details.
         #
-        #   @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries. It is an intege
+        #   @param install_portal_id [Integer] The ID of the portal installation to filter the journal entries by. This is an i
         #
         #   @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}]
       end

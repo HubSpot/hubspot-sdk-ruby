@@ -42,6 +42,7 @@ module HubSpotSDK
           singular_form: String,
           status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
           visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           write_scope_name: String
         }
 
@@ -156,6 +157,12 @@ module HubSpotSDK
           HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
         ) -> HubSpotSDK::Models::Cms::InboundDBObjectType::visibility
 
+        attr_reader visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]?
+
+        def visibility_values=: (
+          ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
+        ) -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
+
         attr_reader write_scope_name: String?
 
         def write_scope_name=: (String) -> String
@@ -200,6 +207,7 @@ module HubSpotSDK
           ?singular_form: String,
           ?status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
           ?visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          ?visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           ?write_scope_name: String
         ) -> void
 
@@ -243,6 +251,7 @@ module HubSpotSDK
           singular_form: String,
           status: HubSpotSDK::Models::Cms::InboundDBObjectType::status,
           visibility: HubSpotSDK::Models::Cms::InboundDBObjectType::visibility,
+          visibility_values: ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value],
           write_scope_name: String
         }
 
@@ -319,6 +328,23 @@ module HubSpotSDK
           INTERNAL_ONLY: :"Internal only"
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility]
+        end
+
+        type visibility_value =
+          :"Customer-facing"
+          | :"Internal only"
+          | :"Customer-facing UI"
+          | :"Customer-facing public API"
+
+        module VisibilityValue
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CUSTOMER_FACING: :"Customer-facing"
+          INTERNAL_ONLY: :"Internal only"
+          CUSTOMER_FACING_UI: :"Customer-facing UI"
+          CUSTOMER_FACING_PUBLIC_API: :"Customer-facing public API"
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::InboundDBObjectType::visibility_value]
         end
       end
     end

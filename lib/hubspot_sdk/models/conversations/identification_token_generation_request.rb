@@ -10,6 +10,13 @@ module HubSpotSDK
         #   @return [String]
         required :email, String
 
+        # @!attribute hs_customer_agent_context
+        #
+        #   @return [Hash{Symbol=>String}]
+        required :hs_customer_agent_context,
+                 HubSpotSDK::Internal::Type::HashOf[String],
+                 api_name: :hsCustomerAgentContext
+
         # @!attribute first_name
         #   The first name of the visitor that you wish to identify. This value will only be
         #   set in HubSpot for new contacts and existing contacts where first name is
@@ -26,12 +33,14 @@ module HubSpotSDK
         #   @return [String, nil]
         optional :last_name, String, api_name: :lastName
 
-        # @!method initialize(email:, first_name: nil, last_name: nil)
+        # @!method initialize(email:, hs_customer_agent_context:, first_name: nil, last_name: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Conversations::IdentificationTokenGenerationRequest} for
         #   more details.
         #
         #   @param email [String] The email of the visitor that you wish to identify
+        #
+        #   @param hs_customer_agent_context [Hash{Symbol=>String}]
         #
         #   @param first_name [String] The first name of the visitor that you wish to identify. This value will only be
         #

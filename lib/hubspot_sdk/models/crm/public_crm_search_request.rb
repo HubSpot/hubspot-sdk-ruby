@@ -13,8 +13,8 @@ module HubSpotSDK
 
         # @!attribute filters
         #
-        #   @return [Array<HubSpotSDK::Models::Crm::Filter>]
-        required :filters, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::Filter] }
+        #   @return [Array<HubSpotSDK::Models::Crm::CrmFilter>]
+        required :filters, -> { HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Crm::CrmFilter] }
 
         # @!attribute sorts
         #   Defines the order in which the CRM records should be returned.
@@ -31,7 +31,7 @@ module HubSpotSDK
         # @!method initialize(filter_groups:, filters:, sorts:, query: nil)
         #   @param filter_groups [Array<HubSpotSDK::Models::Crm::FilterGroup>]
         #
-        #   @param filters [Array<HubSpotSDK::Models::Crm::Filter>]
+        #   @param filters [Array<HubSpotSDK::Models::Crm::CrmFilter>]
         #
         #   @param sorts [Array<String>] Defines the order in which the CRM records should be returned.
         #

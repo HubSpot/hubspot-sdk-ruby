@@ -309,6 +309,12 @@ module HubSpotSDK
       module Invoices
       end
 
+      module Journal
+      end
+
+      module JournalLocal
+      end
+
       module LandingPages
       end
 
@@ -543,6 +549,17 @@ module HubSpotSDK
       end
 
       module Users
+      end
+
+      module WebhooksJournal
+        module Journal
+        end
+
+        module JournalLocal
+        end
+
+        module Subscriptions
+        end
       end
     end
   end

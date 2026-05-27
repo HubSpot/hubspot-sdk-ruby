@@ -1,0 +1,13 @@
+module HubSpotSDK
+  module Models
+    type filter = { conditions: ::Array[HubSpotSDK::Condition] }
+
+    class Filter < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor conditions: ::Array[HubSpotSDK::Condition]
+
+      def initialize: (conditions: ::Array[HubSpotSDK::Condition]) -> void
+
+      def to_hash: -> { conditions: ::Array[HubSpotSDK::Condition] }
+    end
+  end
+end

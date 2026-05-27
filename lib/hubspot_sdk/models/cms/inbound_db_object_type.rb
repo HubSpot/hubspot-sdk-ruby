@@ -215,12 +215,18 @@ module HubSpotSDK
         #   @return [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Visibility, nil]
         optional :visibility, enum: -> { HubSpotSDK::Cms::InboundDBObjectType::Visibility }
 
+        # @!attribute visibility_values
+        #
+        #   @return [Array<Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::VisibilityValue>, nil]
+        optional :visibility_values,
+                 -> { HubSpotSDK::Internal::Type::ArrayOf[enum: HubSpotSDK::Cms::InboundDBObjectType::VisibilityValue] }
+
         # @!attribute write_scope_name
         #
         #   @return [String, nil]
         optional :write_scope_name, String, api_name: :writeScopeName
 
-        # @!method initialize(id:, allows_sensitive_properties:, create_date_property_name:, default_search_property_names:, deleted:, fully_qualified_name:, has_custom_properties:, has_default_properties:, has_external_object_ids:, has_owners:, has_pipelines:, indexed_for_filters_and_reports:, last_modified_property_name:, meta_type:, meta_type_id:, name:, object_type_id:, object_type_id_string:, permissioning_type:, pipeline_property_name:, pipeline_stage_property_name:, required_properties:, restorable:, scope_mappings:, secondary_display_label_property_names:, access_scope_name: nil, created_at: nil, description: nil, integration_app_id: nil, janus_group: nil, owner_portal_id: nil, pipeline_close_date_property_name: nil, pipeline_time_to_close_property_name: nil, plural_form: nil, primary_display_label_property_name: nil, read_scope_name: nil, singular_form: nil, status: nil, visibility: nil, write_scope_name: nil)
+        # @!method initialize(id:, allows_sensitive_properties:, create_date_property_name:, default_search_property_names:, deleted:, fully_qualified_name:, has_custom_properties:, has_default_properties:, has_external_object_ids:, has_owners:, has_pipelines:, indexed_for_filters_and_reports:, last_modified_property_name:, meta_type:, meta_type_id:, name:, object_type_id:, object_type_id_string:, permissioning_type:, pipeline_property_name:, pipeline_stage_property_name:, required_properties:, restorable:, scope_mappings:, secondary_display_label_property_names:, access_scope_name: nil, created_at: nil, description: nil, integration_app_id: nil, janus_group: nil, owner_portal_id: nil, pipeline_close_date_property_name: nil, pipeline_time_to_close_property_name: nil, plural_form: nil, primary_display_label_property_name: nil, read_scope_name: nil, singular_form: nil, status: nil, visibility: nil, visibility_values: nil, write_scope_name: nil)
         #   @param id [Integer]
         #   @param allows_sensitive_properties [Boolean]
         #   @param create_date_property_name [String]
@@ -260,6 +266,7 @@ module HubSpotSDK
         #   @param singular_form [String]
         #   @param status [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Status]
         #   @param visibility [Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::Visibility]
+        #   @param visibility_values [Array<Symbol, HubSpotSDK::Models::Cms::InboundDBObjectType::VisibilityValue>]
         #   @param write_scope_name [String]
 
         # @see HubSpotSDK::Models::Cms::InboundDBObjectType#meta_type
@@ -314,6 +321,18 @@ module HubSpotSDK
           CUSTOMER_FACING_PUBLIC_API = :"Customer-facing public API"
           CUSTOMER_FACING_UI = :"Customer-facing UI"
           INTERNAL_ONLY = :"Internal only"
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        module VisibilityValue
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CUSTOMER_FACING = :"Customer-facing"
+          INTERNAL_ONLY = :"Internal only"
+          CUSTOMER_FACING_UI = :"Customer-facing UI"
+          CUSTOMER_FACING_PUBLIC_API = :"Customer-facing public API"
 
           # @!method self.values
           #   @return [Array<Symbol>]

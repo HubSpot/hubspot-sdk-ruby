@@ -125,7 +125,6 @@ module HubSpotSDK
           | HubSpotSDK::Crm::PublicNotAnyFilterBranch
           | HubSpotSDK::Crm::PublicRestrictedFilterBranch
           | HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch
-          | HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch
           | HubSpotSDK::Crm::PublicAssociationFilterBranch
 
         module FilterBranch

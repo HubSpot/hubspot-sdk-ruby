@@ -3,7 +3,6 @@
 module HubSpotSDK
   module Models
     module Webhooks
-      # @see HubSpotSDK::Resources::Webhooks#list_journal_subscriptions
       class CollectionResponseSubscriptionResponseNoPaging < HubSpotSDK::Internal::Type::BaseModel
         # @!attribute results
         #   An array of SubscriptionResponse objects, each representing a subscription's

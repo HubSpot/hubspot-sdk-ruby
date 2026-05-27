@@ -1,0 +1,166 @@
+module HubSpotSDK
+  module Models
+    module WebhooksJournal
+      type journal_subscription_response =
+        {
+          id: Integer,
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
+          app_id: Integer,
+          created_at: Time,
+          object_type_id: String,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
+          updated_at: Time,
+          action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
+          associated_object_type_ids: ::Array[String],
+          created_by: Integer,
+          deleted_at: Time,
+          list_ids: ::Array[Integer],
+          object_ids: ::Array[Integer],
+          portal_id: Integer,
+          properties: ::Array[String]
+        }
+
+      class JournalSubscriptionResponse < HubSpotSDK::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action]
+
+        attr_accessor app_id: Integer
+
+        attr_accessor created_at: Time
+
+        attr_accessor object_type_id: String
+
+        attr_accessor subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type
+
+        attr_accessor updated_at: Time
+
+        attr_reader action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]?
+
+        def action_overrides=: (
+          ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]
+        ) -> ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest]
+
+        attr_reader associated_object_type_ids: ::Array[String]?
+
+        def associated_object_type_ids=: (::Array[String]) -> ::Array[String]
+
+        attr_reader created_by: Integer?
+
+        def created_by=: (Integer) -> Integer
+
+        attr_reader deleted_at: Time?
+
+        def deleted_at=: (Time) -> Time
+
+        attr_reader list_ids: ::Array[Integer]?
+
+        def list_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader object_ids: ::Array[Integer]?
+
+        def object_ids=: (::Array[Integer]) -> ::Array[Integer]
+
+        attr_reader portal_id: Integer?
+
+        def portal_id=: (Integer) -> Integer
+
+        attr_reader properties: ::Array[String]?
+
+        def properties=: (::Array[String]) -> ::Array[String]
+
+        def initialize: (
+          id: Integer,
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
+          app_id: Integer,
+          created_at: Time,
+          object_type_id: String,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
+          updated_at: Time,
+          ?action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
+          ?associated_object_type_ids: ::Array[String],
+          ?created_by: Integer,
+          ?deleted_at: Time,
+          ?list_ids: ::Array[Integer],
+          ?object_ids: ::Array[Integer],
+          ?portal_id: Integer,
+          ?properties: ::Array[String]
+        ) -> void
+
+        def to_hash: -> {
+          id: Integer,
+          actions: ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action],
+          app_id: Integer,
+          created_at: Time,
+          object_type_id: String,
+          subscription_type: HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type,
+          updated_at: Time,
+          action_overrides: ::Hash[Symbol, HubSpotSDK::ActionOverrideRequest],
+          associated_object_type_ids: ::Array[String],
+          created_by: Integer,
+          deleted_at: Time,
+          list_ids: ::Array[Integer],
+          object_ids: ::Array[Integer],
+          portal_id: Integer,
+          properties: ::Array[String]
+        }
+
+        type action =
+          :CREATE
+          | :UPDATE
+          | :DELETE
+          | :MERGE
+          | :RESTORE
+          | :ASSOCIATION_ADDED
+          | :ASSOCIATION_REMOVED
+          | :SNAPSHOT
+          | :APP_INSTALL
+          | :APP_UNINSTALL
+          | :ADDED_TO_LIST
+          | :REMOVED_FROM_LIST
+          | :GDPR_DELETE
+
+        module Action
+          extend HubSpotSDK::Internal::Type::Enum
+
+          CREATE: :CREATE
+          UPDATE: :UPDATE
+          DELETE: :DELETE
+          MERGE: :MERGE
+          RESTORE: :RESTORE
+          ASSOCIATION_ADDED: :ASSOCIATION_ADDED
+          ASSOCIATION_REMOVED: :ASSOCIATION_REMOVED
+          SNAPSHOT: :SNAPSHOT
+          APP_INSTALL: :APP_INSTALL
+          APP_UNINSTALL: :APP_UNINSTALL
+          ADDED_TO_LIST: :ADDED_TO_LIST
+          REMOVED_FROM_LIST: :REMOVED_FROM_LIST
+          GDPR_DELETE: :GDPR_DELETE
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::action]
+        end
+
+        type subscription_type =
+          :APP_LIFECYCLE_EVENT
+          | :ASSOCIATION
+          | :EVENT
+          | :GDPR_PRIVACY_DELETION
+          | :LIST_MEMBERSHIP
+          | :OBJECT
+
+        module SubscriptionType
+          extend HubSpotSDK::Internal::Type::Enum
+
+          APP_LIFECYCLE_EVENT: :APP_LIFECYCLE_EVENT
+          ASSOCIATION: :ASSOCIATION
+          EVENT: :EVENT
+          GDPR_PRIVACY_DELETION: :GDPR_PRIVACY_DELETION
+          LIST_MEMBERSHIP: :LIST_MEMBERSHIP
+          OBJECT: :OBJECT
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::WebhooksJournal::JournalSubscriptionResponse::subscription_type]
+        end
+      end
+    end
+  end
+end

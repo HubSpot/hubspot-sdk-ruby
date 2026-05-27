@@ -59,7 +59,6 @@ module HubSpotSDK
           | HubSpotSDK::Crm::PublicNotAnyFilterBranch
           | HubSpotSDK::Crm::PublicRestrictedFilterBranch
           | HubSpotSDK::Crm::PublicUnifiedEventsFilterBranch
-          | HubSpotSDK::Crm::PublicPropertyAssociationFilterBranch
           | HubSpotSDK::Crm::PublicAssociationFilterBranch
 
         module FilterBranch
@@ -89,7 +88,6 @@ module HubSpotSDK
           | HubSpotSDK::Crm::PublicIntegrationEventFilter
           | HubSpotSDK::Crm::PublicEmailSubscriptionFilter
           | HubSpotSDK::Crm::PublicCommunicationSubscriptionFilter
-          | HubSpotSDK::Crm::PublicCampaignInfluencedFilter
           | HubSpotSDK::Crm::PublicSurveyMonkeyFilter
           | HubSpotSDK::Crm::PublicSurveyMonkeyValueFilter
           | HubSpotSDK::Crm::PublicWebinarFilter
@@ -98,9 +96,7 @@ module HubSpotSDK
           | HubSpotSDK::Crm::PublicAdsSearchFilter
           | HubSpotSDK::Crm::PublicAdsTimeFilter
           | HubSpotSDK::Crm::PublicInListFilter
-          | HubSpotSDK::Crm::PublicNumAssociationsFilter
           | HubSpotSDK::Crm::PublicUnifiedEventsFilter
-          | HubSpotSDK::Crm::PublicPropertyAssociationInListFilter
           | HubSpotSDK::Crm::PublicConstantFilter
 
         module Filter

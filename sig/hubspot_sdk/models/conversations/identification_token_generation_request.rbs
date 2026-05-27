@@ -2,10 +2,17 @@ module HubSpotSDK
   module Models
     module Conversations
       type identification_token_generation_request =
-        { email: String, first_name: String, last_name: String }
+        {
+          email: String,
+          hs_customer_agent_context: ::Hash[Symbol, String],
+          first_name: String,
+          last_name: String
+        }
 
       class IdentificationTokenGenerationRequest < HubSpotSDK::Internal::Type::BaseModel
         attr_accessor email: String
+
+        attr_accessor hs_customer_agent_context: ::Hash[Symbol, String]
 
         attr_reader first_name: String?
 
@@ -17,11 +24,17 @@ module HubSpotSDK
 
         def initialize: (
           email: String,
+          hs_customer_agent_context: ::Hash[Symbol, String],
           ?first_name: String,
           ?last_name: String
         ) -> void
 
-        def to_hash: -> { email: String, first_name: String, last_name: String }
+        def to_hash: -> {
+          email: String,
+          hs_customer_agent_context: ::Hash[Symbol, String],
+          first_name: String,
+          last_name: String
+        }
       end
     end
   end

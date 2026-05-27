@@ -1,0 +1,19 @@
+module HubSpotSDK
+  module Models
+    type filter_create_request =
+      { filter: HubSpotSDK::Filter, subscription_id: Integer }
+
+    class FilterCreateRequest < HubSpotSDK::Internal::Type::BaseModel
+      attr_accessor filter: HubSpotSDK::Filter
+
+      attr_accessor subscription_id: Integer
+
+      def initialize: (
+        filter: HubSpotSDK::Filter,
+        subscription_id: Integer
+      ) -> void
+
+      def to_hash: -> { filter: HubSpotSDK::Filter, subscription_id: Integer }
+    end
+  end
+end

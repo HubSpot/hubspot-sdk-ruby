@@ -1437,6 +1437,11 @@ module HubSpotSDK
               :hs_source_portal_id,
               HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
             )
+          HS_SOURCED_CONTACT_ORIGIN =
+            T.let(
+              :hs_sourced_contact_origin,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
           HS_STATE_CODE =
             T.let(
               :hs_state_code,

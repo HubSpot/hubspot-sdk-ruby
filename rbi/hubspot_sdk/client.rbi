@@ -61,6 +61,9 @@ module HubSpotSDK
     sig { returns(HubSpotSDK::Resources::Webhooks) }
     attr_reader :webhooks
 
+    sig { returns(HubSpotSDK::Resources::WebhooksJournal) }
+    attr_reader :webhooks_journal
+
     # @api private
     sig { override.returns(T::Hash[String, String]) }
     private def auth_headers

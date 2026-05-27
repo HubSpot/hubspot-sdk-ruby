@@ -1,0 +1,35 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      class Subscriptions
+        attr_reader filters: HubSpotSDK::Resources::WebhooksJournal::Subscriptions::Filters
+
+        def create: (
+          subscription_upsert_request: HubSpotSDK::Models::subscription_upsert_request,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
+
+        def list: (
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::WebhooksJournal::JournalCollectionResponseSubscriptionResponseNoPaging
+
+        def delete: (
+          Integer subscription_id,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> nil
+
+        def delete_for_portal: (
+          Integer portal_id,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> nil
+
+        def get: (
+          Integer subscription_id,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::WebhooksJournal::JournalSubscriptionResponse
+
+        def initialize: (client: HubSpotSDK::Client) -> void
+      end
+    end
+  end
+end

@@ -12,7 +12,7 @@ module HubSpotSDK
           ?refresh_token: String,
           ?scope: String,
           ?request_options: HubSpotSDK::request_opts
-        ) -> StringIO
+        ) -> HubSpotSDK::Models::Auth::token_response_if
 
         def introspect_token: (
           ?token: String,

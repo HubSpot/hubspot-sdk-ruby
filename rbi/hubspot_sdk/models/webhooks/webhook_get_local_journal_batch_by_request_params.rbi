@@ -16,7 +16,7 @@ module HubSpotSDK
           end
 
         # The ID of the portal where the webhooks are installed. This parameter is
-        # optional and is used to specify the target portal.
+        # optional and is used to specify the target portal for the operation.
         sig { returns(T.nilable(Integer)) }
         attr_reader :install_portal_id
 
@@ -31,7 +31,7 @@ module HubSpotSDK
         end
         def self.new(
           # The ID of the portal where the webhooks are installed. This parameter is
-          # optional and is used to specify the target portal.
+          # optional and is used to specify the target portal for the operation.
           install_portal_id: nil,
           request_options: {}
         )

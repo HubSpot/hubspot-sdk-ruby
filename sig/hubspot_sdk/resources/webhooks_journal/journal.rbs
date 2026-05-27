@@ -1,0 +1,27 @@
+module HubSpotSDK
+  module Resources
+    class WebhooksJournal
+      class Journal
+        attr_reader batch: HubSpotSDK::Resources::WebhooksJournal::Journal::Batch
+
+        def get_earliest: (
+          ?install_portal_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> StringIO
+
+        def get_next_from_offset: (
+          String offset,
+          ?install_portal_id: Integer,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> StringIO
+
+        def get_status: (
+          String status_id,
+          ?request_options: HubSpotSDK::request_opts
+        ) -> HubSpotSDK::SnapshotStatusResponse
+
+        def initialize: (client: HubSpotSDK::Client) -> void
+      end
+    end
+  end
+end
