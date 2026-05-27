@@ -17,7 +17,7 @@ To use this gem, install via Bundler by adding the following to your application
 <!-- x-release-please-start-version -->
 
 ```ruby
-gem "hubspot-sdk", "~> 0.1.0.pre.alpha.8"
+gem "hubspot-sdk", "~> 0.1.0.pre.alpha.9"
 ```
 
 <!-- x-release-please-end -->
