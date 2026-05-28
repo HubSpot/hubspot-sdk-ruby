@@ -610,6 +610,16 @@ module HubSpotSDK
               :ba,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          BAL =
+            T.let(
+              :bal,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          BAL_PK =
+            T.let(
+              :"bal-pk",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           BAS =
             T.let(
               :bas,
@@ -683,6 +693,16 @@ module HubSpotSDK
           BI =
             T.let(
               :bi,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          BLO =
+            T.let(
+              :blo,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          BLO_BJ =
+            T.let(
+              :"blo-bj",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           BM =
@@ -873,6 +893,16 @@ module HubSpotSDK
           CS_CZ =
             T.let(
               :"cs-cz",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          CSW =
+            T.let(
+              :csw,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          CSW_CA =
+            T.let(
+              :"csw-ca",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           CU =
@@ -1200,6 +1230,11 @@ module HubSpotSDK
               :"en-cy",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          EN_CZ =
+            T.let(
+              :"en-cz",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           EN_DE =
             T.let(
               :"en-de",
@@ -1295,6 +1330,11 @@ module HubSpotSDK
               :"en-gm",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          EN_GS =
+            T.let(
+              :"en-gs",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           EN_GU =
             T.let(
               :"en-gu",
@@ -1308,6 +1348,11 @@ module HubSpotSDK
           EN_HK =
             T.let(
               :"en-hk",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          EN_HU =
+            T.let(
+              :"en-hu",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           EN_ID =
@@ -1338,6 +1383,11 @@ module HubSpotSDK
           EN_IO =
             T.let(
               :"en-io",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          EN_IT =
+            T.let(
+              :"en-it",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           EN_JE =
@@ -1465,6 +1515,11 @@ module HubSpotSDK
               :"en-nl",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          EN_NO =
+            T.let(
+              :"en-no",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           EN_NR =
             T.let(
               :"en-nr",
@@ -1495,6 +1550,11 @@ module HubSpotSDK
               :"en-pk",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          EN_PL =
+            T.let(
+              :"en-pl",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           EN_PN =
             T.let(
               :"en-pn",
@@ -1513,6 +1573,11 @@ module HubSpotSDK
           EN_PW =
             T.let(
               :"en-pw",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          EN_RO =
+            T.let(
+              :"en-ro",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           EN_RW =
@@ -1553,6 +1618,11 @@ module HubSpotSDK
           EN_SI =
             T.let(
               :"en-si",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          EN_SK =
+            T.let(
+              :"en-sk",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           EN_SL =
@@ -2260,6 +2330,16 @@ module HubSpotSDK
               :"ga-ie",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          GAA =
+            T.let(
+              :gaa,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          GAA_GH =
+            T.let(
+              :"gaa-gh",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           GD =
             T.let(
               :gd,
@@ -2425,6 +2505,11 @@ module HubSpotSDK
               :ht,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          HT_HT =
+            T.let(
+              :"ht-ht",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           HU =
             T.let(
               :hu,
@@ -2473,6 +2558,11 @@ module HubSpotSDK
           IE =
             T.let(
               :ie,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          IE_EE =
+            T.let(
+              :"ie-ee",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           IG =
@@ -2750,6 +2840,11 @@ module HubSpotSDK
               :ko,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          KO_CN =
+            T.let(
+              :"ko-cn",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           KO_KP =
             T.let(
               :"ko-kp",
@@ -2840,6 +2935,16 @@ module HubSpotSDK
               :"kw-gb",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          KXV =
+            T.let(
+              :kxv,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          KXV_IN =
+            T.let(
+              :"kxv-in",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           KY =
             T.let(
               :ky,
@@ -2890,6 +2995,16 @@ module HubSpotSDK
               :li,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          LIJ =
+            T.let(
+              :lij,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          LIJ_IT =
+            T.let(
+              :"lij-it",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           LKT =
             T.let(
               :lkt,
@@ -2898,6 +3013,16 @@ module HubSpotSDK
           LKT_US =
             T.let(
               :"lkt-us",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          LMO =
+            T.let(
+              :lmo,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          LMO_IT =
+            T.let(
+              :"lmo-it",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           LN =
@@ -3380,9 +3505,29 @@ module HubSpotSDK
               :"no-no",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          NQO =
+            T.let(
+              :nqo,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          NQO_GN =
+            T.let(
+              :"nqo-gn",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           NR =
             T.let(
               :nr,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          NSO =
+            T.let(
+              :nso,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          NSO_ZA =
+            T.let(
+              :"nso-za",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           NUS =
@@ -4030,6 +4175,16 @@ module HubSpotSDK
               :st,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          ST_LS =
+            T.let(
+              :"st-ls",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          ST_ZA =
+            T.let(
+              :"st-za",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           SU =
             T.let(
               :su,
@@ -4088,6 +4243,31 @@ module HubSpotSDK
           SY =
             T.let(
               :sy,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          SYR =
+            T.let(
+              :syr,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          SYR_IQ =
+            T.let(
+              :"syr-iq",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          SYR_SY =
+            T.let(
+              :"syr-sy",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          SZL =
+            T.let(
+              :szl,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          SZL_PL =
+            T.let(
+              :"szl-pl",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           TA =
@@ -4193,6 +4373,16 @@ module HubSpotSDK
           TN =
             T.let(
               :tn,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          TN_BW =
+            T.let(
+              :"tn-bw",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          TN_ZA =
+            T.let(
+              :"tn-za",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           TO =
@@ -4340,6 +4530,16 @@ module HubSpotSDK
               :ve,
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          VEC =
+            T.let(
+              :vec,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          VEC_IT =
+            T.let(
+              :"vec-it",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           VI =
             T.let(
               :vi,
@@ -4348,6 +4548,16 @@ module HubSpotSDK
           VI_VN =
             T.let(
               :"vi-vn",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          VMW =
+            T.let(
+              :vmw,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          VMW_MZ =
+            T.let(
+              :"vmw-mz",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           VO =
@@ -4405,6 +4615,16 @@ module HubSpotSDK
               :"xh-za",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          XNR =
+            T.let(
+              :xnr,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          XNR_IN =
+            T.let(
+              :"xnr-in",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           XOG =
             T.let(
               :xog,
@@ -4433,6 +4653,11 @@ module HubSpotSDK
           YI_001 =
             T.let(
               :"yi-001",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          YI_UA =
+            T.let(
+              :"yi-ua",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           YO =
@@ -4485,9 +4710,19 @@ module HubSpotSDK
               :"yue-hk",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
+          YUE_MO =
+            T.let(
+              :"yue-mo",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
           ZA =
             T.let(
               :za,
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          ZA_CN =
+            T.let(
+              :"za-cn",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           ZGH =
@@ -4528,6 +4763,11 @@ module HubSpotSDK
           ZH_MO =
             T.let(
               :"zh-mo",
+              HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
+            )
+          ZH_MY =
+            T.let(
+              :"zh-my",
               HubSpotSDK::Marketing::EmailCreateRequest::Language::TaggedSymbol
             )
           ZH_SG =

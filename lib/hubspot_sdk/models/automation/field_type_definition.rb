@@ -125,19 +125,21 @@ module HubSpotSDK
         module Schema
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Automation::IntegerFieldSchema }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Automation::LongFieldSchema }
+          variant :INTEGER, -> { HubSpotSDK::Automation::IntegerFieldSchema }
 
-          variant -> { HubSpotSDK::Automation::DoubleFieldSchema }
+          variant :LONG, -> { HubSpotSDK::Automation::LongFieldSchema }
 
-          variant -> { HubSpotSDK::Automation::StringFieldSchema }
+          variant :DOUBLE, -> { HubSpotSDK::Automation::DoubleFieldSchema }
 
-          variant -> { HubSpotSDK::Automation::BooleanFieldSchema }
+          variant :STRING, -> { HubSpotSDK::Automation::StringFieldSchema }
 
-          variant -> { HubSpotSDK::Automation::ArrayFieldSchema }
+          variant :BOOLEAN, -> { HubSpotSDK::Automation::BooleanFieldSchema }
 
-          variant -> { HubSpotSDK::Automation::ObjectFieldSchema }
+          variant :ARRAY, -> { HubSpotSDK::Automation::ArrayFieldSchema }
+
+          variant :OBJECT, -> { HubSpotSDK::Automation::ObjectFieldSchema }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Automation::IntegerFieldSchema, HubSpotSDK::Models::Automation::LongFieldSchema, HubSpotSDK::Models::Automation::DoubleFieldSchema, HubSpotSDK::Models::Automation::StringFieldSchema, HubSpotSDK::Models::Automation::BooleanFieldSchema, HubSpotSDK::Models::Automation::ArrayFieldSchema, HubSpotSDK::Models::Automation::ObjectFieldSchema)]

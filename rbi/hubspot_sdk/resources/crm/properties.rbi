@@ -34,6 +34,8 @@ module HubSpotSDK
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String,
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Property)
         end
@@ -57,6 +59,7 @@ module HubSpotSDK
           options: nil,
           referenced_object_type: nil,
           show_currency_symbol: nil,
+          text_display_hint: nil,
           request_options: {}
         )
         end
@@ -80,6 +83,8 @@ module HubSpotSDK
               HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::OrSymbol,
             type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Property)
@@ -116,6 +121,8 @@ module HubSpotSDK
           options: nil,
           # Body param
           show_currency_symbol: nil,
+          # Body param
+          text_display_hint: nil,
           # Body param: The data type of the property.
           type: nil,
           request_options: {}

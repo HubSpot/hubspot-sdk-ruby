@@ -17,6 +17,23 @@ module HubSpotSDK
       #   else
       #     puts(subscription_upsert_request)
       #   end
+      #
+      # @example
+      #   case subscription_upsert_request
+      #   in {subscription_type: :OBJECT, actions: actions, object_ids: object_ids, object_type_id: object_type_id}
+      #     puts(actions)
+      #   in {
+      #     subscription_type: :ASSOCIATION,
+      #     actions: actions,
+      #     associated_object_type_ids: associated_object_type_ids,
+      #     object_ids: object_ids
+      #   }
+      #     puts(associated_object_type_ids)
+      #   in {subscription_type: :APP_LIFECYCLE_EVENT, event_type_id: event_type_id, properties: properties}
+      #     puts(event_type_id)
+      #   else
+      #     puts(subscription_upsert_request)
+      #   end
       module Union
         include HubSpotSDK::Internal::Type::Converter
         include HubSpotSDK::Internal::Util::SorbetRuntimeSupport

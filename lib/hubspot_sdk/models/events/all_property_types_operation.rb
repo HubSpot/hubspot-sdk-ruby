@@ -72,9 +72,11 @@ module HubSpotSDK
         module CoalescingRefineBy
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Events::NumOccurrencesRefineBy }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Events::SetOccurrencesRefineBy }
+          variant :NumOccurrencesRefineBy, -> { HubSpotSDK::Events::NumOccurrencesRefineBy }
+
+          variant :SetOccurrencesRefineBy, -> { HubSpotSDK::Events::SetOccurrencesRefineBy }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Events::NumOccurrencesRefineBy, HubSpotSDK::Models::Events::SetOccurrencesRefineBy)]
@@ -107,15 +109,19 @@ module HubSpotSDK
         module PruningRefineBy
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Events::RelativeComparativeTimestampRefineBy }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Events::RelativeRangedTimestampRefineBy }
+          variant :RelativeComparativeTimestampRefineBy,
+                  -> { HubSpotSDK::Events::RelativeComparativeTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy }
+          variant :RelativeRangedTimestampRefineBy, -> { HubSpotSDK::Events::RelativeRangedTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy }
+          variant :AbsoluteComparativeTimestampRefineBy,
+                  -> { HubSpotSDK::Events::AbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Events::AllHistoryRefineBy }
+          variant :AbsoluteRangedTimestampRefineBy, -> { HubSpotSDK::Events::AbsoluteRangedTimestampRefineBy }
+
+          variant :AllHistoryRefineBy, -> { HubSpotSDK::Events::AllHistoryRefineBy }
 
           variant -> { HubSpotSDK::Events::TimePointOperation }
 

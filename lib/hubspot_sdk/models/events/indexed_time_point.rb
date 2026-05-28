@@ -52,21 +52,23 @@ module HubSpotSDK
         module IndexReference
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Events::NowReference }
+          discriminator :referenceType
 
-          variant -> { HubSpotSDK::Events::TodayReference }
+          variant :NOW, -> { HubSpotSDK::Events::NowReference }
 
-          variant -> { HubSpotSDK::Events::WeekReference }
+          variant :TODAY, -> { HubSpotSDK::Events::TodayReference }
 
-          variant -> { HubSpotSDK::Events::MonthReference }
+          variant :WEEK, -> { HubSpotSDK::Events::WeekReference }
 
-          variant -> { HubSpotSDK::Events::QuarterReference }
+          variant :MONTH, -> { HubSpotSDK::Events::MonthReference }
 
-          variant -> { HubSpotSDK::Events::FiscalQuarter }
+          variant :QUARTER, -> { HubSpotSDK::Events::QuarterReference }
 
-          variant -> { HubSpotSDK::Events::YearReference }
+          variant :FISCAL_QUARTER, -> { HubSpotSDK::Events::FiscalQuarter }
 
-          variant -> { HubSpotSDK::Events::FiscalYear }
+          variant :YEAR, -> { HubSpotSDK::Events::YearReference }
+
+          variant :FISCAL_YEAR, -> { HubSpotSDK::Events::FiscalYear }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Events::NowReference, HubSpotSDK::Models::Events::TodayReference, HubSpotSDK::Models::Events::WeekReference, HubSpotSDK::Models::Events::MonthReference, HubSpotSDK::Models::Events::QuarterReference, HubSpotSDK::Models::Events::FiscalQuarter, HubSpotSDK::Models::Events::YearReference, HubSpotSDK::Models::Events::FiscalYear)]

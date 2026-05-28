@@ -6,9 +6,11 @@ module HubSpotSDK
       module PublicExportRequest
         extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubSpotSDK::Crm::PublicExportViewRequest }
+        discriminator :exportType
 
-        variant -> { HubSpotSDK::Crm::PublicExportListRequest }
+        variant :VIEW, -> { HubSpotSDK::Crm::PublicExportViewRequest }
+
+        variant :LIST, -> { HubSpotSDK::Crm::PublicExportListRequest }
 
         # @!method self.variants
         #   @return [Array(HubSpotSDK::Models::Crm::PublicExportViewRequest, HubSpotSDK::Models::Crm::PublicExportListRequest)]

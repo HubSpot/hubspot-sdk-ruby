@@ -19,7 +19,8 @@ module HubSpotSDK
         number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
         options: ::Array[HubSpotSDK::OptionInput],
         referenced_object_type: String,
-        show_currency_symbol: bool
+        show_currency_symbol: bool,
+        text_display_hint: HubSpotSDK::Models::PropertyCreate::text_display_hint
       }
 
     class PropertyCreate < HubSpotSDK::Internal::Type::BaseModel
@@ -91,6 +92,12 @@ module HubSpotSDK
 
       def show_currency_symbol=: (bool) -> bool
 
+      attr_reader text_display_hint: HubSpotSDK::Models::PropertyCreate::text_display_hint?
+
+      def text_display_hint=: (
+        HubSpotSDK::Models::PropertyCreate::text_display_hint
+      ) -> HubSpotSDK::Models::PropertyCreate::text_display_hint
+
       def initialize: (
         field_type: HubSpotSDK::Models::PropertyCreate::field_type,
         group_name: String,
@@ -109,7 +116,8 @@ module HubSpotSDK
         ?number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
         ?options: ::Array[HubSpotSDK::OptionInput],
         ?referenced_object_type: String,
-        ?show_currency_symbol: bool
+        ?show_currency_symbol: bool,
+        ?text_display_hint: HubSpotSDK::Models::PropertyCreate::text_display_hint
       ) -> void
 
       def to_hash: -> {
@@ -130,7 +138,8 @@ module HubSpotSDK
         number_display_hint: HubSpotSDK::Models::PropertyCreate::number_display_hint,
         options: ::Array[HubSpotSDK::OptionInput],
         referenced_object_type: String,
-        show_currency_symbol: bool
+        show_currency_symbol: bool,
+        text_display_hint: HubSpotSDK::Models::PropertyCreate::text_display_hint
       }
 
       type field_type =
@@ -220,6 +229,31 @@ module HubSpotSDK
         UNFORMATTED: :unformatted
 
         def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::number_display_hint]
+      end
+
+      type text_display_hint =
+        :domain_name
+        | :email
+        | :ip_address
+        | :multi_line
+        | :phone_number
+        | :physical_address
+        | :postal_code
+        | :unformatted_single_line
+
+      module TextDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        DOMAIN_NAME: :domain_name
+        EMAIL: :email
+        IP_ADDRESS: :ip_address
+        MULTI_LINE: :multi_line
+        PHONE_NUMBER: :phone_number
+        PHYSICAL_ADDRESS: :physical_address
+        POSTAL_CODE: :postal_code
+        UNFORMATTED_SINGLE_LINE: :unformatted_single_line
+
+        def self?.values: -> ::Array[HubSpotSDK::Models::PropertyCreate::text_display_hint]
       end
     end
   end

@@ -96,11 +96,13 @@ module HubSpotSDK
         module LowerBoundTimePoint
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicDatePoint }
+          discriminator :timeType
 
-          variant -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
+          variant :DATE, -> { HubSpotSDK::Crm::PublicDatePoint }
 
-          variant -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
+          variant :INDEXED, -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
+
+          variant :PROPERTY_REFERENCED, -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]
@@ -136,11 +138,13 @@ module HubSpotSDK
         module UpperBoundTimePoint
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicDatePoint }
+          discriminator :timeType
 
-          variant -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
+          variant :DATE, -> { HubSpotSDK::Crm::PublicDatePoint }
 
-          variant -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
+          variant :INDEXED, -> { HubSpotSDK::Crm::PublicIndexedTimePoint }
+
+          variant :PROPERTY_REFERENCED, -> { HubSpotSDK::Crm::PublicPropertyReferencedTime }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicDatePoint, HubSpotSDK::Models::Crm::PublicIndexedTimePoint, HubSpotSDK::Models::Crm::PublicPropertyReferencedTime)]

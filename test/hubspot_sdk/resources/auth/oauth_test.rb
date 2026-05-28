@@ -18,6 +18,32 @@ class HubSpotSDK::Test::Resources::Auth::OAuthTest < HubSpotSDK::Test::ResourceT
       in HubSpotSDK::Auth::ClientCredentialsTokenResponse
       end
     end
+
+    assert_pattern do
+      case response
+      in {
+        token_use: :access_token,
+        access_token: String,
+        expires_in: Integer,
+        refresh_token: String,
+        token_type: String,
+        hub_id: Integer | nil,
+        id_token: String | nil,
+        scopes: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        user_id: Integer | nil
+      }
+      in {
+        token_use: :client_credentials,
+        access_token: String,
+        expires_in: Integer,
+        token_type: String,
+        hub_id: Integer | nil,
+        id_token: String | nil,
+        scopes: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
+        user_id: Integer | nil
+      }
+      end
+    end
   end
 
   def test_introspect_token
@@ -33,6 +59,40 @@ class HubSpotSDK::Test::Resources::Auth::OAuthTest < HubSpotSDK::Test::ResourceT
       case response
       in HubSpotSDK::Auth::PublicAccessTokenInfoResponse
       in HubSpotSDK::Auth::PublicRefreshTokenInfoResponse
+      end
+    end
+
+    assert_pattern do
+      case response
+      in {
+        token_use: :access_token,
+        token: String,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        app_id: Integer,
+        client_id: String,
+        expires_in: Integer,
+        hub_id: Integer,
+        is_private_distribution: HubSpotSDK::Internal::Type::Boolean,
+        scopes: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        signed_access_token: HubSpotSDK::Auth::SignedAccessToken,
+        token_type: String,
+        user_id: Integer,
+        hub_domain: String | nil,
+        user: String | nil
+      }
+      in {
+        token_use: :refresh_token,
+        token: String,
+        active: HubSpotSDK::Internal::Type::Boolean,
+        app_id: Integer,
+        client_id: String,
+        hub_id: Integer,
+        scopes: ^(HubSpotSDK::Internal::Type::ArrayOf[String]),
+        token_type: String,
+        user_id: Integer,
+        hub_domain: String | nil,
+        user: String | nil
+      }
       end
     end
   end

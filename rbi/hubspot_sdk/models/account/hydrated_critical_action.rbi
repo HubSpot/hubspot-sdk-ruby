@@ -808,6 +808,11 @@ module HubSpotSDK
               :TEAM_USER_DELETED,
               HubSpotSDK::Account::HydratedCriticalAction::Type::TaggedSymbol
             )
+          TEMPLATE_DELETED =
+            T.let(
+              :TEMPLATE_DELETED,
+              HubSpotSDK::Account::HydratedCriticalAction::Type::TaggedSymbol
+            )
           TEMPLATE_MODIFIED =
             T.let(
               :TEMPLATE_MODIFIED,

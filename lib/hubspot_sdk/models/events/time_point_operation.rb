@@ -132,11 +132,13 @@ module HubSpotSDK
         module TimePoint
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Events::DatePoint }
+          discriminator :timeType
 
-          variant -> { HubSpotSDK::Events::IndexedTimePoint }
+          variant :DATE, -> { HubSpotSDK::Events::DatePoint }
 
-          variant -> { HubSpotSDK::Events::PropertyReferencedTime }
+          variant :INDEXED, -> { HubSpotSDK::Events::IndexedTimePoint }
+
+          variant :PROPERTY_REFERENCED, -> { HubSpotSDK::Events::PropertyReferencedTime }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Events::DatePoint, HubSpotSDK::Models::Events::IndexedTimePoint, HubSpotSDK::Models::Events::PropertyReferencedTime)]

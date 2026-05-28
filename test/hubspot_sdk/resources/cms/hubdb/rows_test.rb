@@ -47,6 +47,23 @@ class HubSpotSDK::Test::Resources::Cms::Hubdb::RowsTest < HubSpotSDK::Test::Reso
       in HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3
       end
     end
+
+    assert_pattern do
+      case response
+      in {
+        type: :RANDOM_ACCESS,
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown]),
+        total: Integer,
+        paging: HubSpotSDK::Cms::BoundedPaging | nil
+      }
+      in {
+        type: :STREAMING,
+        results: ^(HubSpotSDK::Internal::Type::ArrayOf[HubSpotSDK::Internal::Type::Unknown]),
+        total: Integer,
+        paging: HubSpotSDK::Paging | nil
+      }
+      end
+    end
   end
 
   def test_clone_batch_required_params

@@ -7,9 +7,11 @@ module HubSpotSDK
       module TokenResponseIf
         extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubSpotSDK::Auth::AccessTokenResponse }
+        discriminator :token_use
 
-        variant -> { HubSpotSDK::Auth::ClientCredentialsTokenResponse }
+        variant :access_token, -> { HubSpotSDK::Auth::AccessTokenResponse }
+
+        variant :client_credentials, -> { HubSpotSDK::Auth::ClientCredentialsTokenResponse }
 
         # @!method self.variants
         #   @return [Array(HubSpotSDK::Models::Auth::AccessTokenResponse, HubSpotSDK::Models::Auth::ClientCredentialsTokenResponse)]

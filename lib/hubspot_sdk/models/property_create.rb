@@ -97,7 +97,14 @@ module HubSpotSDK
       #   @return [Boolean, nil]
       optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
-      # @!method initialize(field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil)
+      # @!attribute text_display_hint
+      #
+      #   @return [Symbol, HubSpotSDK::Models::PropertyCreate::TextDisplayHint, nil]
+      optional :text_display_hint,
+               enum: -> { HubSpotSDK::PropertyCreate::TextDisplayHint },
+               api_name: :textDisplayHint
+
+      # @!method initialize(field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, text_display_hint: nil)
       #   @param field_type [Symbol, HubSpotSDK::Models::PropertyCreate::FieldType]
       #   @param group_name [String]
       #   @param label [String]
@@ -116,6 +123,7 @@ module HubSpotSDK
       #   @param options [Array<HubSpotSDK::Models::OptionInput>]
       #   @param referenced_object_type [String]
       #   @param show_currency_symbol [Boolean]
+      #   @param text_display_hint [Symbol, HubSpotSDK::Models::PropertyCreate::TextDisplayHint]
 
       # @see HubSpotSDK::Models::PropertyCreate#field_type
       module FieldType
@@ -176,6 +184,23 @@ module HubSpotSDK
         PERCENTAGE = :percentage
         PROBABILITY = :probability
         UNFORMATTED = :unformatted
+
+        # @!method self.values
+        #   @return [Array<Symbol>]
+      end
+
+      # @see HubSpotSDK::Models::PropertyCreate#text_display_hint
+      module TextDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        DOMAIN_NAME = :domain_name
+        EMAIL = :email
+        IP_ADDRESS = :ip_address
+        MULTI_LINE = :multi_line
+        PHONE_NUMBER = :phone_number
+        PHYSICAL_ADDRESS = :physical_address
+        POSTAL_CODE = :postal_code
+        UNFORMATTED_SINGLE_LINE = :unformatted_single_line
 
         # @!method self.values
         #   @return [Array<Symbol>]

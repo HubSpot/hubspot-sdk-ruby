@@ -38,9 +38,11 @@ module HubSpotSDK
           module Secondary
             extend HubSpotSDK::Internal::Type::Union
 
-            variant -> { HubSpotSDK::Crm::Extensions::ActionHookActionBody }
+            discriminator :type
 
-            variant -> { HubSpotSDK::Crm::Extensions::IFrameActionBody }
+            variant :ACTION_HOOK, -> { HubSpotSDK::Crm::Extensions::ActionHookActionBody }
+
+            variant :IFRAME, -> { HubSpotSDK::Crm::Extensions::IFrameActionBody }
 
             # @!method self.variants
             #   @return [Array(HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody)]
@@ -53,9 +55,11 @@ module HubSpotSDK
           module Primary
             extend HubSpotSDK::Internal::Type::Union
 
-            variant -> { HubSpotSDK::Crm::Extensions::ActionHookActionBody }
+            discriminator :type
 
-            variant -> { HubSpotSDK::Crm::Extensions::IFrameActionBody }
+            variant :ACTION_HOOK, -> { HubSpotSDK::Crm::Extensions::ActionHookActionBody }
+
+            variant :IFRAME, -> { HubSpotSDK::Crm::Extensions::IFrameActionBody }
 
             # @!method self.variants
             #   @return [Array(HubSpotSDK::Models::Crm::Extensions::ActionHookActionBody, HubSpotSDK::Models::Crm::Extensions::IFrameActionBody)]

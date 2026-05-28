@@ -15,6 +15,7 @@ module HubSpotSDK
           number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
           show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint,
           type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
         }
 
@@ -73,6 +74,12 @@ module HubSpotSDK
 
         def show_currency_symbol=: (bool) -> bool
 
+        attr_reader text_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint?
+
+        def text_display_hint=: (
+          HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint
+        ) -> HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint
+
         attr_reader type: HubSpotSDK::Models::Crm::PropertyUpdate::type_?
 
         def type=: (
@@ -92,6 +99,7 @@ module HubSpotSDK
           ?number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?show_currency_symbol: bool,
+          ?text_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint,
           ?type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
         ) -> void
 
@@ -108,6 +116,7 @@ module HubSpotSDK
           number_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint,
           options: ::Array[HubSpotSDK::OptionInput],
           show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint,
           type: HubSpotSDK::Models::Crm::PropertyUpdate::type_
         }
 
@@ -163,6 +172,31 @@ module HubSpotSDK
           UNFORMATTED: :unformatted
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertyUpdate::number_display_hint]
+        end
+
+        type text_display_hint =
+          :domain_name
+          | :email
+          | :ip_address
+          | :multi_line
+          | :phone_number
+          | :physical_address
+          | :postal_code
+          | :unformatted_single_line
+
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          DOMAIN_NAME: :domain_name
+          EMAIL: :email
+          IP_ADDRESS: :ip_address
+          MULTI_LINE: :multi_line
+          PHONE_NUMBER: :phone_number
+          PHYSICAL_ADDRESS: :physical_address
+          POSTAL_CODE: :postal_code
+          UNFORMATTED_SINGLE_LINE: :unformatted_single_line
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Crm::PropertyUpdate::text_display_hint]
         end
 
         type type_ =

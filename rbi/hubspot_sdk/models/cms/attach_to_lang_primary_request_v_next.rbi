@@ -371,6 +371,16 @@ module HubSpotSDK
               :ba,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          BAL =
+            T.let(
+              :bal,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          BAL_PK =
+            T.let(
+              :"bal-pk",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           BAS =
             T.let(
               :bas,
@@ -444,6 +454,16 @@ module HubSpotSDK
           BI =
             T.let(
               :bi,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          BLO =
+            T.let(
+              :blo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          BLO_BJ =
+            T.let(
+              :"blo-bj",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           BM =
@@ -634,6 +654,16 @@ module HubSpotSDK
           CS_CZ =
             T.let(
               :"cs-cz",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          CSW =
+            T.let(
+              :csw,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          CSW_CA =
+            T.let(
+              :"csw-ca",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           CU =
@@ -961,6 +991,11 @@ module HubSpotSDK
               :"en-cy",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          EN_CZ =
+            T.let(
+              :"en-cz",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           EN_DE =
             T.let(
               :"en-de",
@@ -1056,6 +1091,11 @@ module HubSpotSDK
               :"en-gm",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          EN_GS =
+            T.let(
+              :"en-gs",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           EN_GU =
             T.let(
               :"en-gu",
@@ -1069,6 +1109,11 @@ module HubSpotSDK
           EN_HK =
             T.let(
               :"en-hk",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          EN_HU =
+            T.let(
+              :"en-hu",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           EN_ID =
@@ -1099,6 +1144,11 @@ module HubSpotSDK
           EN_IO =
             T.let(
               :"en-io",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          EN_IT =
+            T.let(
+              :"en-it",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           EN_JE =
@@ -1226,6 +1276,11 @@ module HubSpotSDK
               :"en-nl",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          EN_NO =
+            T.let(
+              :"en-no",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           EN_NR =
             T.let(
               :"en-nr",
@@ -1256,6 +1311,11 @@ module HubSpotSDK
               :"en-pk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          EN_PL =
+            T.let(
+              :"en-pl",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           EN_PN =
             T.let(
               :"en-pn",
@@ -1274,6 +1334,11 @@ module HubSpotSDK
           EN_PW =
             T.let(
               :"en-pw",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          EN_RO =
+            T.let(
+              :"en-ro",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           EN_RW =
@@ -1314,6 +1379,11 @@ module HubSpotSDK
           EN_SI =
             T.let(
               :"en-si",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          EN_SK =
+            T.let(
+              :"en-sk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           EN_SL =
@@ -2021,6 +2091,16 @@ module HubSpotSDK
               :"ga-ie",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          GAA =
+            T.let(
+              :gaa,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          GAA_GH =
+            T.let(
+              :"gaa-gh",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           GD =
             T.let(
               :gd,
@@ -2186,6 +2266,11 @@ module HubSpotSDK
               :ht,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          HT_HT =
+            T.let(
+              :"ht-ht",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           HU =
             T.let(
               :hu,
@@ -2234,6 +2319,11 @@ module HubSpotSDK
           IE =
             T.let(
               :ie,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          IE_EE =
+            T.let(
+              :"ie-ee",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           IG =
@@ -2511,6 +2601,11 @@ module HubSpotSDK
               :ko,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          KO_CN =
+            T.let(
+              :"ko-cn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           KO_KP =
             T.let(
               :"ko-kp",
@@ -2601,6 +2696,16 @@ module HubSpotSDK
               :"kw-gb",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          KXV =
+            T.let(
+              :kxv,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          KXV_IN =
+            T.let(
+              :"kxv-in",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           KY =
             T.let(
               :ky,
@@ -2651,6 +2756,16 @@ module HubSpotSDK
               :li,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          LIJ =
+            T.let(
+              :lij,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          LIJ_IT =
+            T.let(
+              :"lij-it",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           LKT =
             T.let(
               :lkt,
@@ -2659,6 +2774,16 @@ module HubSpotSDK
           LKT_US =
             T.let(
               :"lkt-us",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          LMO =
+            T.let(
+              :lmo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          LMO_IT =
+            T.let(
+              :"lmo-it",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           LN =
@@ -3141,9 +3266,29 @@ module HubSpotSDK
               :"no-no",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          NQO =
+            T.let(
+              :nqo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          NQO_GN =
+            T.let(
+              :"nqo-gn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           NR =
             T.let(
               :nr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          NSO =
+            T.let(
+              :nso,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          NSO_ZA =
+            T.let(
+              :"nso-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           NUS =
@@ -3791,6 +3936,16 @@ module HubSpotSDK
               :st,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          ST_LS =
+            T.let(
+              :"st-ls",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          ST_ZA =
+            T.let(
+              :"st-za",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           SU =
             T.let(
               :su,
@@ -3849,6 +4004,31 @@ module HubSpotSDK
           SY =
             T.let(
               :sy,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          SYR =
+            T.let(
+              :syr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          SYR_IQ =
+            T.let(
+              :"syr-iq",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          SYR_SY =
+            T.let(
+              :"syr-sy",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          SZL =
+            T.let(
+              :szl,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          SZL_PL =
+            T.let(
+              :"szl-pl",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           TA =
@@ -3954,6 +4134,16 @@ module HubSpotSDK
           TN =
             T.let(
               :tn,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          TN_BW =
+            T.let(
+              :"tn-bw",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          TN_ZA =
+            T.let(
+              :"tn-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           TO =
@@ -4101,6 +4291,16 @@ module HubSpotSDK
               :ve,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          VEC =
+            T.let(
+              :vec,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          VEC_IT =
+            T.let(
+              :"vec-it",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           VI =
             T.let(
               :vi,
@@ -4109,6 +4309,16 @@ module HubSpotSDK
           VI_VN =
             T.let(
               :"vi-vn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          VMW =
+            T.let(
+              :vmw,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          VMW_MZ =
+            T.let(
+              :"vmw-mz",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           VO =
@@ -4166,6 +4376,16 @@ module HubSpotSDK
               :"xh-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          XNR =
+            T.let(
+              :xnr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          XNR_IN =
+            T.let(
+              :"xnr-in",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           XOG =
             T.let(
               :xog,
@@ -4194,6 +4414,11 @@ module HubSpotSDK
           YI_001 =
             T.let(
               :"yi-001",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          YI_UA =
+            T.let(
+              :"yi-ua",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           YO =
@@ -4246,9 +4471,19 @@ module HubSpotSDK
               :"yue-hk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
+          YUE_MO =
+            T.let(
+              :"yue-mo",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
           ZA =
             T.let(
               :za,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          ZA_CN =
+            T.let(
+              :"za-cn",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           ZGH =
@@ -4289,6 +4524,11 @@ module HubSpotSDK
           ZH_MO =
             T.let(
               :"zh-mo",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
+            )
+          ZH_MY =
+            T.let(
+              :"zh-my",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::Language::TaggedSymbol
             )
           ZH_SG =
@@ -4611,6 +4851,16 @@ module HubSpotSDK
               :ba,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          BAL =
+            T.let(
+              :bal,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          BAL_PK =
+            T.let(
+              :"bal-pk",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           BAS =
             T.let(
               :bas,
@@ -4684,6 +4934,16 @@ module HubSpotSDK
           BI =
             T.let(
               :bi,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          BLO =
+            T.let(
+              :blo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          BLO_BJ =
+            T.let(
+              :"blo-bj",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           BM =
@@ -4874,6 +5134,16 @@ module HubSpotSDK
           CS_CZ =
             T.let(
               :"cs-cz",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          CSW =
+            T.let(
+              :csw,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          CSW_CA =
+            T.let(
+              :"csw-ca",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           CU =
@@ -5201,6 +5471,11 @@ module HubSpotSDK
               :"en-cy",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          EN_CZ =
+            T.let(
+              :"en-cz",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           EN_DE =
             T.let(
               :"en-de",
@@ -5296,6 +5571,11 @@ module HubSpotSDK
               :"en-gm",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          EN_GS =
+            T.let(
+              :"en-gs",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           EN_GU =
             T.let(
               :"en-gu",
@@ -5309,6 +5589,11 @@ module HubSpotSDK
           EN_HK =
             T.let(
               :"en-hk",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          EN_HU =
+            T.let(
+              :"en-hu",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           EN_ID =
@@ -5339,6 +5624,11 @@ module HubSpotSDK
           EN_IO =
             T.let(
               :"en-io",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          EN_IT =
+            T.let(
+              :"en-it",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           EN_JE =
@@ -5466,6 +5756,11 @@ module HubSpotSDK
               :"en-nl",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          EN_NO =
+            T.let(
+              :"en-no",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           EN_NR =
             T.let(
               :"en-nr",
@@ -5496,6 +5791,11 @@ module HubSpotSDK
               :"en-pk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          EN_PL =
+            T.let(
+              :"en-pl",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           EN_PN =
             T.let(
               :"en-pn",
@@ -5514,6 +5814,11 @@ module HubSpotSDK
           EN_PW =
             T.let(
               :"en-pw",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          EN_RO =
+            T.let(
+              :"en-ro",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           EN_RW =
@@ -5554,6 +5859,11 @@ module HubSpotSDK
           EN_SI =
             T.let(
               :"en-si",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          EN_SK =
+            T.let(
+              :"en-sk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           EN_SL =
@@ -6261,6 +6571,16 @@ module HubSpotSDK
               :"ga-ie",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          GAA =
+            T.let(
+              :gaa,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          GAA_GH =
+            T.let(
+              :"gaa-gh",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           GD =
             T.let(
               :gd,
@@ -6426,6 +6746,11 @@ module HubSpotSDK
               :ht,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          HT_HT =
+            T.let(
+              :"ht-ht",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           HU =
             T.let(
               :hu,
@@ -6474,6 +6799,11 @@ module HubSpotSDK
           IE =
             T.let(
               :ie,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          IE_EE =
+            T.let(
+              :"ie-ee",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           IG =
@@ -6751,6 +7081,11 @@ module HubSpotSDK
               :ko,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          KO_CN =
+            T.let(
+              :"ko-cn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           KO_KP =
             T.let(
               :"ko-kp",
@@ -6841,6 +7176,16 @@ module HubSpotSDK
               :"kw-gb",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          KXV =
+            T.let(
+              :kxv,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          KXV_IN =
+            T.let(
+              :"kxv-in",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           KY =
             T.let(
               :ky,
@@ -6891,6 +7236,16 @@ module HubSpotSDK
               :li,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          LIJ =
+            T.let(
+              :lij,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          LIJ_IT =
+            T.let(
+              :"lij-it",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           LKT =
             T.let(
               :lkt,
@@ -6899,6 +7254,16 @@ module HubSpotSDK
           LKT_US =
             T.let(
               :"lkt-us",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          LMO =
+            T.let(
+              :lmo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          LMO_IT =
+            T.let(
+              :"lmo-it",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           LN =
@@ -7381,9 +7746,29 @@ module HubSpotSDK
               :"no-no",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          NQO =
+            T.let(
+              :nqo,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          NQO_GN =
+            T.let(
+              :"nqo-gn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           NR =
             T.let(
               :nr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          NSO =
+            T.let(
+              :nso,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          NSO_ZA =
+            T.let(
+              :"nso-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           NUS =
@@ -8031,6 +8416,16 @@ module HubSpotSDK
               :st,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          ST_LS =
+            T.let(
+              :"st-ls",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          ST_ZA =
+            T.let(
+              :"st-za",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           SU =
             T.let(
               :su,
@@ -8089,6 +8484,31 @@ module HubSpotSDK
           SY =
             T.let(
               :sy,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          SYR =
+            T.let(
+              :syr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          SYR_IQ =
+            T.let(
+              :"syr-iq",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          SYR_SY =
+            T.let(
+              :"syr-sy",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          SZL =
+            T.let(
+              :szl,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          SZL_PL =
+            T.let(
+              :"szl-pl",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           TA =
@@ -8194,6 +8614,16 @@ module HubSpotSDK
           TN =
             T.let(
               :tn,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          TN_BW =
+            T.let(
+              :"tn-bw",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          TN_ZA =
+            T.let(
+              :"tn-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           TO =
@@ -8341,6 +8771,16 @@ module HubSpotSDK
               :ve,
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          VEC =
+            T.let(
+              :vec,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          VEC_IT =
+            T.let(
+              :"vec-it",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           VI =
             T.let(
               :vi,
@@ -8349,6 +8789,16 @@ module HubSpotSDK
           VI_VN =
             T.let(
               :"vi-vn",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          VMW =
+            T.let(
+              :vmw,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          VMW_MZ =
+            T.let(
+              :"vmw-mz",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           VO =
@@ -8406,6 +8856,16 @@ module HubSpotSDK
               :"xh-za",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          XNR =
+            T.let(
+              :xnr,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          XNR_IN =
+            T.let(
+              :"xnr-in",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           XOG =
             T.let(
               :xog,
@@ -8434,6 +8894,11 @@ module HubSpotSDK
           YI_001 =
             T.let(
               :"yi-001",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          YI_UA =
+            T.let(
+              :"yi-ua",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           YO =
@@ -8486,9 +8951,19 @@ module HubSpotSDK
               :"yue-hk",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
+          YUE_MO =
+            T.let(
+              :"yue-mo",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
           ZA =
             T.let(
               :za,
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          ZA_CN =
+            T.let(
+              :"za-cn",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           ZGH =
@@ -8529,6 +9004,11 @@ module HubSpotSDK
           ZH_MO =
             T.let(
               :"zh-mo",
+              HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
+            )
+          ZH_MY =
+            T.let(
+              :"zh-my",
               HubSpotSDK::Cms::AttachToLangPrimaryRequestVNext::PrimaryLanguage::TaggedSymbol
             )
           ZH_SG =

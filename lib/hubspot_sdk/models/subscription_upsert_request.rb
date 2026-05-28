@@ -5,15 +5,17 @@ module HubSpotSDK
     module SubscriptionUpsertRequest
       extend HubSpotSDK::Internal::Type::Union
 
-      variant -> { HubSpotSDK::ObjectSubscriptionUpsertRequest }
+      discriminator :subscriptionType
 
-      variant -> { HubSpotSDK::AssociationSubscriptionUpsertRequest }
+      variant :OBJECT, -> { HubSpotSDK::ObjectSubscriptionUpsertRequest }
 
-      variant -> { HubSpotSDK::AppLifecycleEventSubscriptionUpsertRequest }
+      variant :ASSOCIATION, -> { HubSpotSDK::AssociationSubscriptionUpsertRequest }
 
-      variant -> { HubSpotSDK::ListMembershipSubscriptionUpsertRequest }
+      variant :APP_LIFECYCLE_EVENT, -> { HubSpotSDK::AppLifecycleEventSubscriptionUpsertRequest }
 
-      variant -> { HubSpotSDK::GdprPrivacyDeletionSubscriptionUpsertRequest }
+      variant :LIST_MEMBERSHIP, -> { HubSpotSDK::ListMembershipSubscriptionUpsertRequest }
+
+      variant :GDPR_PRIVACY_DELETION, -> { HubSpotSDK::GdprPrivacyDeletionSubscriptionUpsertRequest }
 
       # @!method self.variants
       #   @return [Array(HubSpotSDK::Models::ObjectSubscriptionUpsertRequest, HubSpotSDK::Models::AssociationSubscriptionUpsertRequest, HubSpotSDK::Models::AppLifecycleEventSubscriptionUpsertRequest, HubSpotSDK::Models::ListMembershipSubscriptionUpsertRequest, HubSpotSDK::Models::GdprPrivacyDeletionSubscriptionUpsertRequest)]
