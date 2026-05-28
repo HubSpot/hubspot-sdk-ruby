@@ -61,21 +61,23 @@ module HubSpotSDK
         module IndexReference
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicNowReference }
+          discriminator :referenceType
 
-          variant -> { HubSpotSDK::Crm::PublicTodayReference }
+          variant :NOW, -> { HubSpotSDK::Crm::PublicNowReference }
 
-          variant -> { HubSpotSDK::Crm::PublicWeekReference }
+          variant :TODAY, -> { HubSpotSDK::Crm::PublicTodayReference }
 
-          variant -> { HubSpotSDK::Crm::PublicFiscalQuarterReference }
+          variant :WEEK, -> { HubSpotSDK::Crm::PublicWeekReference }
 
-          variant -> { HubSpotSDK::Crm::PublicFiscalYearReference }
+          variant :FISCAL_QUARTER, -> { HubSpotSDK::Crm::PublicFiscalQuarterReference }
 
-          variant -> { HubSpotSDK::Crm::PublicYearReference }
+          variant :FISCAL_YEAR, -> { HubSpotSDK::Crm::PublicFiscalYearReference }
 
-          variant -> { HubSpotSDK::Crm::PublicQuarterReference }
+          variant :YEAR, -> { HubSpotSDK::Crm::PublicYearReference }
 
-          variant -> { HubSpotSDK::Crm::PublicMonthReference }
+          variant :QUARTER, -> { HubSpotSDK::Crm::PublicQuarterReference }
+
+          variant :MONTH, -> { HubSpotSDK::Crm::PublicMonthReference }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicNowReference, HubSpotSDK::Models::Crm::PublicTodayReference, HubSpotSDK::Models::Crm::PublicWeekReference, HubSpotSDK::Models::Crm::PublicFiscalQuarterReference, HubSpotSDK::Models::Crm::PublicFiscalYearReference, HubSpotSDK::Models::Crm::PublicYearReference, HubSpotSDK::Models::Crm::PublicQuarterReference, HubSpotSDK::Models::Crm::PublicMonthReference)]

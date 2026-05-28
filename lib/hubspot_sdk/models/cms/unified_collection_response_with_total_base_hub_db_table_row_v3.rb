@@ -6,9 +6,11 @@ module HubSpotSDK
       module UnifiedCollectionResponseWithTotalBaseHubDBTableRowV3
         extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3 }
+        discriminator :type
 
-        variant -> { HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3 }
+        variant :RANDOM_ACCESS, -> { HubSpotSDK::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3 }
+
+        variant :STREAMING, -> { HubSpotSDK::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3 }
 
         # @!method self.variants
         #   @return [Array(HubSpotSDK::Models::Cms::RandomAccessCollectionResponseWithTotalHubDBTableRowV3, HubSpotSDK::Models::Cms::StreamingCollectionResponseWithTotalHubDBTableRowV3)]

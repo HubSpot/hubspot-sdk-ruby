@@ -202,6 +202,7 @@ module HubSpotSDK
           HS_IP_TIMEZONE = :hs_ip_timezone
           HS_IS_CONTACT = :hs_is_contact
           HS_IS_ENRICHED = :hs_is_enriched
+          HS_IS_MASS_MARKETING_ACTIVATION_DISALLOWED = :hs_is_mass_marketing_activation_disallowed
           HS_IS_MERGE_REVERTIBLE = :hs_is_merge_revertible
           HS_IS_UNWORKED = :hs_is_unworked
           HS_JOB_CHANGE_DETECTED_DATE = :hs_job_change_detected_date

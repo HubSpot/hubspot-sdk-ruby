@@ -30,6 +30,7 @@ module HubSpotSDK
           referenced_object_type: String,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Cms::Property1::text_display_hint,
           updated_at: Time,
           updated_user_id: String
         }
@@ -137,6 +138,12 @@ module HubSpotSDK
 
         def show_currency_symbol=: (bool) -> bool
 
+        attr_reader text_display_hint: HubSpotSDK::Models::Cms::Property1::text_display_hint?
+
+        def text_display_hint=: (
+          HubSpotSDK::Models::Cms::Property1::text_display_hint
+        ) -> HubSpotSDK::Models::Cms::Property1::text_display_hint
+
         attr_reader updated_at: Time?
 
         def updated_at=: (Time) -> Time
@@ -173,6 +180,7 @@ module HubSpotSDK
           ?referenced_object_type: String,
           ?sensitive_data_categories: ::Array[String],
           ?show_currency_symbol: bool,
+          ?text_display_hint: HubSpotSDK::Models::Cms::Property1::text_display_hint,
           ?updated_at: Time,
           ?updated_user_id: String
         ) -> void
@@ -205,6 +213,7 @@ module HubSpotSDK
           referenced_object_type: String,
           sensitive_data_categories: ::Array[String],
           show_currency_symbol: bool,
+          text_display_hint: HubSpotSDK::Models::Cms::Property1::text_display_hint,
           updated_at: Time,
           updated_user_id: String
         }
@@ -254,6 +263,31 @@ module HubSpotSDK
           UNFORMATTED: :unformatted
 
           def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property1::number_display_hint]
+        end
+
+        type text_display_hint =
+          :domain_name
+          | :email
+          | :ip_address
+          | :multi_line
+          | :phone_number
+          | :physical_address
+          | :postal_code
+          | :unformatted_single_line
+
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          DOMAIN_NAME: :domain_name
+          EMAIL: :email
+          IP_ADDRESS: :ip_address
+          MULTI_LINE: :multi_line
+          PHONE_NUMBER: :phone_number
+          PHYSICAL_ADDRESS: :physical_address
+          POSTAL_CODE: :postal_code
+          UNFORMATTED_SINGLE_LINE: :unformatted_single_line
+
+          def self?.values: -> ::Array[HubSpotSDK::Models::Cms::Property1::text_display_hint]
         end
       end
     end

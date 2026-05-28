@@ -215,6 +215,21 @@ module HubSpotSDK
       sig { params(show_currency_symbol: T::Boolean).void }
       attr_writer :show_currency_symbol
 
+      # Hint for how the text is displayed and validated in HubSpot's UI. Can be:
+      # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
+      # "ip_address", "physical_address", or "postal_code".
+      sig do
+        returns(T.nilable(HubSpotSDK::Property::TextDisplayHint::TaggedSymbol))
+      end
+      attr_reader :text_display_hint
+
+      sig do
+        params(
+          text_display_hint: HubSpotSDK::Property::TextDisplayHint::OrSymbol
+        ).void
+      end
+      attr_writer :text_display_hint
+
       # When the object type was last updated.
       sig { returns(T.nilable(Time)) }
       attr_reader :updated_at
@@ -262,6 +277,7 @@ module HubSpotSDK
           referenced_object_type: String,
           sensitive_data_categories: T::Array[String],
           show_currency_symbol: T::Boolean,
+          text_display_hint: HubSpotSDK::Property::TextDisplayHint::OrSymbol,
           updated_at: Time,
           updated_user_id: String
         ).returns(T.attached_class)
@@ -335,6 +351,10 @@ module HubSpotSDK
         # Whether the property will display the currency symbol set in the account
         # settings.
         show_currency_symbol: nil,
+        # Hint for how the text is displayed and validated in HubSpot's UI. Can be:
+        # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
+        # "ip_address", "physical_address", or "postal_code".
+        text_display_hint: nil,
         # When the object type was last updated.
         updated_at: nil,
         # The internal user ID of the user who updated the property in HubSpot. This field
@@ -376,6 +396,8 @@ module HubSpotSDK
             referenced_object_type: String,
             sensitive_data_categories: T::Array[String],
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::Property::TextDisplayHint::TaggedSymbol,
             updated_at: Time,
             updated_user_id: String
           }
@@ -497,6 +519,63 @@ module HubSpotSDK
         sig do
           override.returns(
             T::Array[HubSpotSDK::Property::NumberDisplayHint::TaggedSymbol]
+          )
+        end
+        def self.values
+        end
+      end
+
+      # Hint for how the text is displayed and validated in HubSpot's UI. Can be:
+      # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
+      # "ip_address", "physical_address", or "postal_code".
+      module TextDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        TaggedSymbol =
+          T.type_alias { T.all(Symbol, HubSpotSDK::Property::TextDisplayHint) }
+        OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+        DOMAIN_NAME =
+          T.let(
+            :domain_name,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        EMAIL =
+          T.let(:email, HubSpotSDK::Property::TextDisplayHint::TaggedSymbol)
+        IP_ADDRESS =
+          T.let(
+            :ip_address,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        MULTI_LINE =
+          T.let(
+            :multi_line,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        PHONE_NUMBER =
+          T.let(
+            :phone_number,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        PHYSICAL_ADDRESS =
+          T.let(
+            :physical_address,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        POSTAL_CODE =
+          T.let(
+            :postal_code,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+        UNFORMATTED_SINGLE_LINE =
+          T.let(
+            :unformatted_single_line,
+            HubSpotSDK::Property::TextDisplayHint::TaggedSymbol
+          )
+
+        sig do
+          override.returns(
+            T::Array[HubSpotSDK::Property::TextDisplayHint::TaggedSymbol]
           )
         end
         def self.values

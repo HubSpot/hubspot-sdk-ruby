@@ -12,7 +12,7 @@ module HubSpotSDK
 
         # Create and return a copy of a new property for the specified object type.
         #
-        # @overload create(object_type, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, request_options: {})
+        # @overload create(object_type, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, text_display_hint: nil, request_options: {})
         #
         # @param object_type [String]
         # @param field_type [Symbol, HubSpotSDK::Models::PropertyCreate::FieldType]
@@ -33,6 +33,7 @@ module HubSpotSDK
         # @param options [Array<HubSpotSDK::Models::OptionInput>]
         # @param referenced_object_type [String]
         # @param show_currency_symbol [Boolean]
+        # @param text_display_hint [Symbol, HubSpotSDK::Models::PropertyCreate::TextDisplayHint]
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
         # @return [HubSpotSDK::Models::Property]
@@ -55,7 +56,7 @@ module HubSpotSDK
         # Perform a partial update of a property identified by { propertyName }. Provided
         # fields will be overwritten.
         #
-        # @overload update(property_name, object_type:, calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil, request_options: {})
+        # @overload update(property_name, object_type:, calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, text_display_hint: nil, type: nil, request_options: {})
         #
         # @param property_name [String] Path param
         #
@@ -84,6 +85,8 @@ module HubSpotSDK
         # @param options [Array<HubSpotSDK::Models::OptionInput>] Body param: A list of valid options for the property.
         #
         # @param show_currency_symbol [Boolean] Body param
+        #
+        # @param text_display_hint [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::TextDisplayHint] Body param
         #
         # @param type [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::Type] Body param: The data type of the property.
         #

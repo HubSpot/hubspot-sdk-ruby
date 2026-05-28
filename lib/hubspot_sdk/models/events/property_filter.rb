@@ -60,47 +60,49 @@ module HubSpotSDK
         module Operation
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Events::BoolPropertyOperation }
+          discriminator :propertyType
 
-          variant -> { HubSpotSDK::Events::NumberPropertyOperation }
+          variant :bool, -> { HubSpotSDK::Events::BoolPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::StringPropertyOperation }
+          variant :number, -> { HubSpotSDK::Events::NumberPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::DateTimePropertyOperation }
+          variant :string, -> { HubSpotSDK::Events::StringPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::RangedDatePropertyOperation }
+          variant :datetime, -> { HubSpotSDK::Events::DateTimePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::ComparativeDatePropertyOperation }
+          variant :"datetime-ranged", -> { HubSpotSDK::Events::RangedDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::ComparativeBoolPropertyOperation }
+          variant :"datetime-comparative", -> { HubSpotSDK::Events::ComparativeDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::ComparativeNumberPropertyOperation }
+          variant :"bool-comparative", -> { HubSpotSDK::Events::ComparativeBoolPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::ComparativeStringPropertyOperation }
+          variant :"number-comparative", -> { HubSpotSDK::Events::ComparativeNumberPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::ComparativePropertyUpdatedOperation }
+          variant :"string-comparative", -> { HubSpotSDK::Events::ComparativeStringPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::RollingDateRangePropertyOperation }
+          variant :"property-updated-comparative", -> { HubSpotSDK::Events::ComparativePropertyUpdatedOperation }
 
-          variant -> { HubSpotSDK::Events::RollingPropertyUpdatedOperation }
+          variant :"datetime-rolling", -> { HubSpotSDK::Events::RollingDateRangePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::EnumerationPropertyOperation }
+          variant :"rolling-property-updated", -> { HubSpotSDK::Events::RollingPropertyUpdatedOperation }
 
-          variant -> { HubSpotSDK::Events::AllPropertyTypesOperation }
+          variant :enumeration, -> { HubSpotSDK::Events::EnumerationPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::RangedNumberPropertyOperation }
+          variant :alltypes, -> { HubSpotSDK::Events::AllPropertyTypesOperation }
 
-          variant -> { HubSpotSDK::Events::MultiStringPropertyOperation }
+          variant :"number-ranged", -> { HubSpotSDK::Events::RangedNumberPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::DatePropertyOperation }
+          variant :multistring, -> { HubSpotSDK::Events::MultiStringPropertyOperation }
 
-          variant -> { HubSpotSDK::Events::CalendarDatePropertyOperation }
+          variant :date, -> { HubSpotSDK::Events::DatePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::TimePointOperation }
+          variant :"calendar-date", -> { HubSpotSDK::Events::CalendarDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Events::RangedTimeOperation }
+          variant :timepoint, -> { HubSpotSDK::Events::TimePointOperation }
 
-          variant -> { HubSpotSDK::Events::RegexPropertyOperation }
+          variant :rangedtime, -> { HubSpotSDK::Events::RangedTimeOperation }
+
+          variant :regex, -> { HubSpotSDK::Events::RegexPropertyOperation }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Events::BoolPropertyOperation, HubSpotSDK::Models::Events::NumberPropertyOperation, HubSpotSDK::Models::Events::StringPropertyOperation, HubSpotSDK::Models::Events::DateTimePropertyOperation, HubSpotSDK::Models::Events::RangedDatePropertyOperation, HubSpotSDK::Models::Events::ComparativeDatePropertyOperation, HubSpotSDK::Models::Events::ComparativeBoolPropertyOperation, HubSpotSDK::Models::Events::ComparativeNumberPropertyOperation, HubSpotSDK::Models::Events::ComparativeStringPropertyOperation, HubSpotSDK::Models::Events::ComparativePropertyUpdatedOperation, HubSpotSDK::Models::Events::RollingDateRangePropertyOperation, HubSpotSDK::Models::Events::RollingPropertyUpdatedOperation, HubSpotSDK::Models::Events::EnumerationPropertyOperation, HubSpotSDK::Models::Events::AllPropertyTypesOperation, HubSpotSDK::Models::Events::RangedNumberPropertyOperation, HubSpotSDK::Models::Events::MultiStringPropertyOperation, HubSpotSDK::Models::Events::DatePropertyOperation, HubSpotSDK::Models::Events::CalendarDatePropertyOperation, HubSpotSDK::Models::Events::TimePointOperation, HubSpotSDK::Models::Events::RangedTimeOperation, HubSpotSDK::Models::Events::RegexPropertyOperation)]

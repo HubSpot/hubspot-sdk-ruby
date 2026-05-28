@@ -133,21 +133,23 @@ module HubSpotSDK
         module Attachment
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Conversations::PublicFile }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Conversations::PublicLocation }
+          variant :FILE, -> { HubSpotSDK::Conversations::PublicFile }
 
-          variant -> { HubSpotSDK::Conversations::PublicContact }
+          variant :LOCATION, -> { HubSpotSDK::Conversations::PublicLocation }
 
-          variant -> { HubSpotSDK::Conversations::PublicUnsupportedContent }
+          variant :CONTACT, -> { HubSpotSDK::Conversations::PublicContact }
 
-          variant -> { HubSpotSDK::Conversations::PublicMessageHeader }
+          variant :UNSUPPORTED_CONTENT, -> { HubSpotSDK::Conversations::PublicUnsupportedContent }
 
-          variant -> { HubSpotSDK::Conversations::PublicQuickReplies }
+          variant :MESSAGE_HEADER, -> { HubSpotSDK::Conversations::PublicMessageHeader }
 
-          variant -> { HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata }
+          variant :QUICK_REPLIES, -> { HubSpotSDK::Conversations::PublicQuickReplies }
 
-          variant -> { HubSpotSDK::Conversations::PublicSocialMetadataAttachment }
+          variant :WHATSAPP_TEMPLATE_METADATA, -> { HubSpotSDK::Conversations::PublicWhatsAppTemplateMetadata }
+
+          variant :SOCIAL_MEDIA_METADATA, -> { HubSpotSDK::Conversations::PublicSocialMetadataAttachment }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Conversations::PublicFile, HubSpotSDK::Models::Conversations::PublicLocation, HubSpotSDK::Models::Conversations::PublicContact, HubSpotSDK::Models::Conversations::PublicUnsupportedContent, HubSpotSDK::Models::Conversations::PublicMessageHeader, HubSpotSDK::Models::Conversations::PublicQuickReplies, HubSpotSDK::Models::Conversations::PublicWhatsAppTemplateMetadata, HubSpotSDK::Models::Conversations::PublicSocialMetadataAttachment)]

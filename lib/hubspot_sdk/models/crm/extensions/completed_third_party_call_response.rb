@@ -21,9 +21,11 @@ module HubSpotSDK
           module CallerIDMatch
             extend HubSpotSDK::Internal::Type::Union
 
-            variant -> { HubSpotSDK::Crm::Extensions::ContactCallerID }
+            discriminator :callerIdType
 
-            variant -> { HubSpotSDK::Crm::Extensions::CompanyCallerID }
+            variant :CONTACT, -> { HubSpotSDK::Crm::Extensions::ContactCallerID }
+
+            variant :COMPANY, -> { HubSpotSDK::Crm::Extensions::CompanyCallerID }
 
             # @!method self.variants
             #   @return [Array(HubSpotSDK::Models::Crm::Extensions::ContactCallerID, HubSpotSDK::Models::Crm::Extensions::CompanyCallerID)]

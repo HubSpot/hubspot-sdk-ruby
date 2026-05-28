@@ -73,12 +73,19 @@ module HubSpotSDK
         #   @return [Boolean, nil]
         optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
+        # @!attribute text_display_hint
+        #
+        #   @return [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::TextDisplayHint, nil]
+        optional :text_display_hint,
+                 enum: -> { HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint },
+                 api_name: :textDisplayHint
+
         # @!attribute type
         #
         #   @return [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type, nil]
         optional :type, enum: -> { HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type }
 
-        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil)
+        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, text_display_hint: nil, type: nil)
         #   @param calculation_formula [String]
         #   @param currency_property_name [String]
         #   @param description [String]
@@ -92,6 +99,7 @@ module HubSpotSDK
         #   @param number_display_hint [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::NumberDisplayHint]
         #   @param options [Array<HubSpotSDK::Models::OptionInput>]
         #   @param show_currency_symbol [Boolean]
+        #   @param text_display_hint [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::TextDisplayHint]
         #   @param type [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type]
 
         # @see HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate#field_type
@@ -125,6 +133,23 @@ module HubSpotSDK
           PERCENTAGE = :percentage
           PROBABILITY = :probability
           UNFORMATTED = :unformatted
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        # @see HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate#text_display_hint
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          DOMAIN_NAME = :domain_name
+          EMAIL = :email
+          IP_ADDRESS = :ip_address
+          MULTI_LINE = :multi_line
+          PHONE_NUMBER = :phone_number
+          PHYSICAL_ADDRESS = :physical_address
+          POSTAL_CODE = :postal_code
+          UNFORMATTED_SINGLE_LINE = :unformatted_single_line
 
           # @!method self.values
           #   @return [Array<Symbol>]

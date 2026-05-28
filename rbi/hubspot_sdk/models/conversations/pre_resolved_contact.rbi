@@ -947,6 +947,11 @@ module HubSpotSDK
               :hs_is_enriched,
               HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
             )
+          HS_IS_MASS_MARKETING_ACTIVATION_DISALLOWED =
+            T.let(
+              :hs_is_mass_marketing_activation_disallowed,
+              HubSpotSDK::Conversations::PreResolvedContact::ContactPropertiesLeadingToMatch::TaggedSymbol
+            )
           HS_IS_MERGE_REVERTIBLE =
             T.let(
               :hs_is_merge_revertible,

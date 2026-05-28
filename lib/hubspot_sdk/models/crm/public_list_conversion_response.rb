@@ -43,9 +43,11 @@ module HubSpotSDK
         module RequestedConversionTime
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicListConversionDate }
+          discriminator :conversionType
 
-          variant -> { HubSpotSDK::Crm::PublicListConversionInactivity }
+          variant :CONVERSION_DATE, -> { HubSpotSDK::Crm::PublicListConversionDate }
+
+          variant :INACTIVITY, -> { HubSpotSDK::Crm::PublicListConversionInactivity }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicListConversionDate, HubSpotSDK::Models::Crm::PublicListConversionInactivity)]
