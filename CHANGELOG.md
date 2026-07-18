@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.1.0-alpha.10 (2026-07-18)
+
+Full Changelog: [v0.1.0-alpha.9...v0.1.0-alpha.10](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.9...v0.1.0-alpha.10)
+
+### Features
+
+* **api:** api update ([1fb62c9](https://github.com/HubSpot/hubspot-sdk-ruby/commit/1fb62c9d5b6b70459d9ead6a34288939b5dd4ae7))
+* **stlc:** configurable CI runner and private-production-repo support in workflow templates ([5dfe88c](https://github.com/HubSpot/hubspot-sdk-ruby/commit/5dfe88c6d38b99bd8010aa4eb3ae868ef6640d29))
+
+
+### Bug Fixes
+
+* **client:** send content-type header for requests with an omitted optional body ([ad027f4](https://github.com/HubSpot/hubspot-sdk-ruby/commit/ad027f4cbb75ab2db48f0c3ad7257131924452e0))
+
+
+### Chores
+
+* **internal:** bound formatter parallelism to CPU count ([dc2c17b](https://github.com/HubSpot/hubspot-sdk-ruby/commit/dc2c17b422ec3b719926e1cb26bb1a2d9c014db9))
+
 ## 0.1.0-alpha.9 (2026-05-26)
 
 Full Changelog: [v0.1.0-alpha.8...v0.1.0-alpha.9](https://github.com/HubSpot/hubspot-sdk-ruby/compare/v0.1.0-alpha.8...v0.1.0-alpha.9)
