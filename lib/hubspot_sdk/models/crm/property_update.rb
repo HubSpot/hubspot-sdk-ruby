@@ -77,13 +77,20 @@ module HubSpotSDK
         #   @return [Boolean, nil]
         optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
+        # @!attribute text_display_hint
+        #
+        #   @return [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::TextDisplayHint, nil]
+        optional :text_display_hint,
+                 enum: -> { HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint },
+                 api_name: :textDisplayHint
+
         # @!attribute type
         #   The data type of the property.
         #
         #   @return [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::Type, nil]
         optional :type, enum: -> { HubSpotSDK::Crm::PropertyUpdate::Type }
 
-        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil)
+        # @!method initialize(calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, text_display_hint: nil, type: nil)
         #   Some parameter documentations has been truncated, see
         #   {HubSpotSDK::Models::Crm::PropertyUpdate} for more details.
         #
@@ -110,6 +117,8 @@ module HubSpotSDK
         #   @param options [Array<HubSpotSDK::Models::OptionInput>] A list of valid options for the property.
         #
         #   @param show_currency_symbol [Boolean]
+        #
+        #   @param text_display_hint [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::TextDisplayHint]
         #
         #   @param type [Symbol, HubSpotSDK::Models::Crm::PropertyUpdate::Type] The data type of the property.
 
@@ -146,6 +155,23 @@ module HubSpotSDK
           PERCENTAGE = :percentage
           PROBABILITY = :probability
           UNFORMATTED = :unformatted
+
+          # @!method self.values
+          #   @return [Array<Symbol>]
+        end
+
+        # @see HubSpotSDK::Models::Crm::PropertyUpdate#text_display_hint
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          DOMAIN_NAME = :domain_name
+          EMAIL = :email
+          IP_ADDRESS = :ip_address
+          MULTI_LINE = :multi_line
+          PHONE_NUMBER = :phone_number
+          PHYSICAL_ADDRESS = :physical_address
+          POSTAL_CODE = :postal_code
+          UNFORMATTED_SINGLE_LINE = :unformatted_single_line
 
           # @!method self.values
           #   @return [Array<Symbol>]

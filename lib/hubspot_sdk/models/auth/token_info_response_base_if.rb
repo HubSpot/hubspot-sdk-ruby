@@ -7,9 +7,11 @@ module HubSpotSDK
       module TokenInfoResponseBaseIf
         extend HubSpotSDK::Internal::Type::Union
 
-        variant -> { HubSpotSDK::Auth::PublicAccessTokenInfoResponse }
+        discriminator :token_use
 
-        variant -> { HubSpotSDK::Auth::PublicRefreshTokenInfoResponse }
+        variant :access_token, -> { HubSpotSDK::Auth::PublicAccessTokenInfoResponse }
+
+        variant :refresh_token, -> { HubSpotSDK::Auth::PublicRefreshTokenInfoResponse }
 
         # @!method self.variants
         #   @return [Array(HubSpotSDK::Models::Auth::PublicAccessTokenInfoResponse, HubSpotSDK::Models::Auth::PublicRefreshTokenInfoResponse)]

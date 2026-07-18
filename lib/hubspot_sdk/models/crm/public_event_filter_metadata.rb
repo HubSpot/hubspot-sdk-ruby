@@ -27,39 +27,41 @@ module HubSpotSDK
         module Operation
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicBoolPropertyOperation }
+          discriminator :operationType
 
-          variant -> { HubSpotSDK::Crm::PublicNumberPropertyOperation }
+          variant :BOOL, -> { HubSpotSDK::Crm::PublicBoolPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicStringPropertyOperation }
+          variant :NUMBER, -> { HubSpotSDK::Crm::PublicNumberPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicDateTimePropertyOperation }
+          variant :STRING, -> { HubSpotSDK::Crm::PublicStringPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRangedDatePropertyOperation }
+          variant :DATETIME, -> { HubSpotSDK::Crm::PublicDateTimePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation }
+          variant :RANGED_DATE, -> { HubSpotSDK::Crm::PublicRangedDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicComparativeDatePropertyOperation }
+          variant :COMPARATIVE_PROPERTY_UPDATED, -> { HubSpotSDK::Crm::PublicComparativePropertyUpdatedOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation }
+          variant :COMPARATIVE_DATE, -> { HubSpotSDK::Crm::PublicComparativeDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation }
+          variant :ROLLING_DATE_RANGE, -> { HubSpotSDK::Crm::PublicRollingDateRangePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicEnumerationPropertyOperation }
+          variant :ROLLING_PROPERTY_UPDATED, -> { HubSpotSDK::Crm::PublicRollingPropertyUpdatedOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicAllPropertyTypesOperation }
+          variant :ENUMERATION, -> { HubSpotSDK::Crm::PublicEnumerationPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRangedNumberPropertyOperation }
+          variant :ALL_PROPERTY, -> { HubSpotSDK::Crm::PublicAllPropertyTypesOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicMultiStringPropertyOperation }
+          variant :NUMBER_RANGED, -> { HubSpotSDK::Crm::PublicRangedNumberPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicDatePropertyOperation }
+          variant :MULTISTRING, -> { HubSpotSDK::Crm::PublicMultiStringPropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicCalendarDatePropertyOperation }
+          variant :DATE, -> { HubSpotSDK::Crm::PublicDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
+          variant :CALENDAR_DATE, -> { HubSpotSDK::Crm::PublicCalendarDatePropertyOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
+          variant :TIME_POINT, -> { HubSpotSDK::Crm::PublicTimePointOperation }
+
+          variant :TIME_RANGED, -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Crm::PublicBoolPropertyOperation, HubSpotSDK::Models::Crm::PublicNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDateTimePropertyOperation, HubSpotSDK::Models::Crm::PublicRangedDatePropertyOperation, HubSpotSDK::Models::Crm::PublicComparativePropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicComparativeDatePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingDateRangePropertyOperation, HubSpotSDK::Models::Crm::PublicRollingPropertyUpdatedOperation, HubSpotSDK::Models::Crm::PublicEnumerationPropertyOperation, HubSpotSDK::Models::Crm::PublicAllPropertyTypesOperation, HubSpotSDK::Models::Crm::PublicRangedNumberPropertyOperation, HubSpotSDK::Models::Crm::PublicMultiStringPropertyOperation, HubSpotSDK::Models::Crm::PublicDatePropertyOperation, HubSpotSDK::Models::Crm::PublicCalendarDatePropertyOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]

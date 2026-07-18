@@ -94,19 +94,21 @@ module HubSpotSDK
         module Attachment
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Conversations::FileAttachment }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Conversations::LocationAttachment }
+          variant :FILE, -> { HubSpotSDK::Conversations::FileAttachment }
 
-          variant -> { HubSpotSDK::Conversations::ContactAttachment }
+          variant :LOCATION, -> { HubSpotSDK::Conversations::LocationAttachment }
 
-          variant -> { HubSpotSDK::Conversations::UnsupportedContentAttachment }
+          variant :CONTACT, -> { HubSpotSDK::Conversations::ContactAttachment }
 
-          variant -> { HubSpotSDK::Conversations::MessageHeaderAttachment }
+          variant :UNSUPPORTED_CONTENT, -> { HubSpotSDK::Conversations::UnsupportedContentAttachment }
 
-          variant -> { HubSpotSDK::Conversations::QuickRepliesAttachment }
+          variant :MESSAGE_HEADER, -> { HubSpotSDK::Conversations::MessageHeaderAttachment }
 
-          variant -> { HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment }
+          variant :QUICK_REPLIES, -> { HubSpotSDK::Conversations::QuickRepliesAttachment }
+
+          variant :SOCIAL_MEDIA_METADATA, -> { HubSpotSDK::Conversations::SocialMetadataIntegrationAttachment }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Conversations::FileAttachment, HubSpotSDK::Models::Conversations::LocationAttachment, HubSpotSDK::Models::Conversations::ContactAttachment, HubSpotSDK::Models::Conversations::UnsupportedContentAttachment, HubSpotSDK::Models::Conversations::MessageHeaderAttachment, HubSpotSDK::Models::Conversations::QuickRepliesAttachment, HubSpotSDK::Models::Conversations::SocialMetadataIntegrationAttachment)]

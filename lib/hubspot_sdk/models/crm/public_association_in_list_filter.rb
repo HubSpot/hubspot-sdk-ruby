@@ -20,7 +20,7 @@ module HubSpotSDK
         # @!attribute coalescing_refine_by
         #   Specifies the criteria for refining the association filter.
         #
-        #   @return [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation]
+        #   @return [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation]
         required :coalescing_refine_by,
                  union: -> { HubSpotSDK::Crm::PublicAssociationInListFilter::CoalescingRefineBy },
                  api_name: :coalescingRefineBy
@@ -66,7 +66,7 @@ module HubSpotSDK
         #
         #   @param association_type_id [Integer] The ID representing the type of association being filtered.
         #
-        #   @param coalescing_refine_by [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation] Specifies the criteria for refining the association filter.
+        #   @param coalescing_refine_by [HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation] Specifies the criteria for refining the association filter.
         #
         #   @param filter_type [Symbol, HubSpotSDK::Models::Crm::PublicAssociationInListFilter::FilterType] Indicates the type of filter being applied, which is 'ASSOCIATION' by default.
         #
@@ -84,26 +84,28 @@ module HubSpotSDK
         module CoalescingRefineBy
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy }
+          discriminator :type
 
-          variant -> { HubSpotSDK::Crm::PublicSetOccurrencesRefineBy }
+          variant :NUM_OCCURRENCES, -> { HubSpotSDK::Crm::PublicNumOccurrencesRefineBy }
 
-          variant -> { HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
+          variant :SET_OCCURRENCES, -> { HubSpotSDK::Crm::PublicSetOccurrencesRefineBy }
 
-          variant -> { HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
+          variant :RELATIVE_COMPARATIVE, -> { HubSpotSDK::Crm::PublicRelativeComparativeTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
+          variant :RELATIVE_RANGED, -> { HubSpotSDK::Crm::PublicRelativeRangedTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
+          variant :ABSOLUTE_COMPARATIVE, -> { HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy }
 
-          variant -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy }
+          variant :ABSOLUTE_RANGED, -> { HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy }
+
+          variant :ALL_HISTORY, -> { HubSpotSDK::Crm::PublicAllHistoryRefineBy }
+
+          variant :TIME_RANGED, -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
 
           variant -> { HubSpotSDK::Crm::PublicTimePointOperation }
 
-          variant -> { HubSpotSDK::Crm::PublicRangedTimeOperation }
-
           # @!method self.variants
-          #   @return [Array(HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicTimePointOperation, HubSpotSDK::Models::Crm::PublicRangedTimeOperation)]
+          #   @return [Array(HubSpotSDK::Models::Crm::PublicNumOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicSetOccurrencesRefineBy, HubSpotSDK::Models::Crm::PublicRelativeComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicRelativeRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteComparativeTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAbsoluteRangedTimestampRefineBy, HubSpotSDK::Models::Crm::PublicAllHistoryRefineBy, HubSpotSDK::Models::Crm::PublicRangedTimeOperation, HubSpotSDK::Models::Crm::PublicTimePointOperation)]
         end
 
         # Indicates the type of filter being applied, which is 'ASSOCIATION' by default.

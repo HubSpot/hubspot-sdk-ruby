@@ -120,6 +120,21 @@ module HubSpotSDK
       attr_writer :show_currency_symbol
 
       sig do
+        returns(
+          T.nilable(HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol)
+        )
+      end
+      attr_reader :text_display_hint
+
+      sig do
+        params(
+          text_display_hint:
+            HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol
+        ).void
+      end
+      attr_writer :text_display_hint
+
+      sig do
         params(
           field_type: HubSpotSDK::PropertyCreate::FieldType::OrSymbol,
           group_name: String,
@@ -140,7 +155,9 @@ module HubSpotSDK
             HubSpotSDK::PropertyCreate::NumberDisplayHint::OrSymbol,
           options: T::Array[HubSpotSDK::OptionInput::OrHash],
           referenced_object_type: String,
-          show_currency_symbol: T::Boolean
+          show_currency_symbol: T::Boolean,
+          text_display_hint:
+            HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol
         ).returns(T.attached_class)
       end
       def self.new(
@@ -161,7 +178,8 @@ module HubSpotSDK
         number_display_hint: nil,
         options: nil,
         referenced_object_type: nil,
-        show_currency_symbol: nil
+        show_currency_symbol: nil,
+        text_display_hint: nil
       )
       end
 
@@ -187,7 +205,9 @@ module HubSpotSDK
               HubSpotSDK::PropertyCreate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput],
             referenced_object_type: String,
-            show_currency_symbol: T::Boolean
+            show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol
           }
         )
       end
@@ -346,6 +366,65 @@ module HubSpotSDK
             T::Array[
               HubSpotSDK::PropertyCreate::NumberDisplayHint::TaggedSymbol
             ]
+          )
+        end
+        def self.values
+        end
+      end
+
+      module TextDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        TaggedSymbol =
+          T.type_alias do
+            T.all(Symbol, HubSpotSDK::PropertyCreate::TextDisplayHint)
+          end
+        OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+        DOMAIN_NAME =
+          T.let(
+            :domain_name,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        EMAIL =
+          T.let(
+            :email,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        IP_ADDRESS =
+          T.let(
+            :ip_address,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        MULTI_LINE =
+          T.let(
+            :multi_line,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        PHONE_NUMBER =
+          T.let(
+            :phone_number,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        PHYSICAL_ADDRESS =
+          T.let(
+            :physical_address,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        POSTAL_CODE =
+          T.let(
+            :postal_code,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+        UNFORMATTED_SINGLE_LINE =
+          T.let(
+            :unformatted_single_line,
+            HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol
+          )
+
+        sig do
+          override.returns(
+            T::Array[HubSpotSDK::PropertyCreate::TextDisplayHint::TaggedSymbol]
           )
         end
         def self.values

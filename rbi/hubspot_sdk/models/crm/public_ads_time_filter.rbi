@@ -29,8 +29,8 @@ module HubSpotSDK
               HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
               HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
               HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-              HubSpotSDK::Crm::PublicTimePointOperation,
-              HubSpotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicRangedTimeOperation,
+              HubSpotSDK::Crm::PublicTimePointOperation
             )
           )
         end
@@ -49,8 +49,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
                 HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
                 HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash
               )
           ).returns(T.attached_class)
         end
@@ -76,8 +76,8 @@ module HubSpotSDK
                   HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
                   HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
                   HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubSpotSDK::Crm::PublicTimePointOperation,
-                  HubSpotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicRangedTimeOperation,
+                  HubSpotSDK::Crm::PublicTimePointOperation
                 )
             }
           )
@@ -126,8 +126,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
                 HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
                 HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-                HubSpotSDK::Crm::PublicTimePointOperation,
-                HubSpotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicRangedTimeOperation,
+                HubSpotSDK::Crm::PublicTimePointOperation
               )
             end
 

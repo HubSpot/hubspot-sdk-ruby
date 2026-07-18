@@ -394,6 +394,13 @@ module HubSpotSDK
               )
             BA =
               T.let(:ba, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            BAL =
+              T.let(:bal, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            BAL_PK =
+              T.let(
+                :"bal-pk",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             BAS =
               T.let(:bas, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             BAS_CM =
@@ -445,6 +452,13 @@ module HubSpotSDK
               )
             BI =
               T.let(:bi, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            BLO =
+              T.let(:blo, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            BLO_BJ =
+              T.let(
+                :"blo-bj",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             BM =
               T.let(:bm, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             BM_ML =
@@ -582,6 +596,13 @@ module HubSpotSDK
             CS_CZ =
               T.let(
                 :"cs-cz",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            CSW =
+              T.let(:csw, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            CSW_CA =
+              T.let(
+                :"csw-ca",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             CU =
@@ -858,6 +879,11 @@ module HubSpotSDK
                 :"en-cy",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            EN_CZ =
+              T.let(
+                :"en-cz",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             EN_DE =
               T.let(
                 :"en-de",
@@ -953,6 +979,11 @@ module HubSpotSDK
                 :"en-gm",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            EN_GS =
+              T.let(
+                :"en-gs",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             EN_GU =
               T.let(
                 :"en-gu",
@@ -966,6 +997,11 @@ module HubSpotSDK
             EN_HK =
               T.let(
                 :"en-hk",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            EN_HU =
+              T.let(
+                :"en-hu",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             EN_ID =
@@ -996,6 +1032,11 @@ module HubSpotSDK
             EN_IO =
               T.let(
                 :"en-io",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            EN_IT =
+              T.let(
+                :"en-it",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             EN_JE =
@@ -1123,6 +1164,11 @@ module HubSpotSDK
                 :"en-nl",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            EN_NO =
+              T.let(
+                :"en-no",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             EN_NR =
               T.let(
                 :"en-nr",
@@ -1153,6 +1199,11 @@ module HubSpotSDK
                 :"en-pk",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            EN_PL =
+              T.let(
+                :"en-pl",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             EN_PN =
               T.let(
                 :"en-pn",
@@ -1171,6 +1222,11 @@ module HubSpotSDK
             EN_PW =
               T.let(
                 :"en-pw",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            EN_RO =
+              T.let(
+                :"en-ro",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             EN_RW =
@@ -1211,6 +1267,11 @@ module HubSpotSDK
             EN_SI =
               T.let(
                 :"en-si",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            EN_SK =
+              T.let(
+                :"en-sk",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             EN_SL =
@@ -1870,6 +1931,13 @@ module HubSpotSDK
                 :"ga-ie",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            GAA =
+              T.let(:gaa, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            GAA_GH =
+              T.let(
+                :"gaa-gh",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             GD =
               T.let(:gd, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             GD_GB =
@@ -1987,6 +2055,11 @@ module HubSpotSDK
               )
             HT =
               T.let(:ht, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            HT_HT =
+              T.let(
+                :"ht-ht",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             HU =
               T.let(:hu, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             HU_HU =
@@ -2019,6 +2092,11 @@ module HubSpotSDK
               )
             IE =
               T.let(:ie, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            IE_EE =
+              T.let(
+                :"ie-ee",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             IG =
               T.let(:ig, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             IG_NG =
@@ -2204,6 +2282,11 @@ module HubSpotSDK
               )
             KO =
               T.let(:ko, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            KO_CN =
+              T.let(
+                :"ko-cn",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             KO_KP =
               T.let(
                 :"ko-kp",
@@ -2267,6 +2350,13 @@ module HubSpotSDK
                 :"kw-gb",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            KXV =
+              T.let(:kxv, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            KXV_IN =
+              T.let(
+                :"kxv-in",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             KY =
               T.let(:ky, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             KY_KG =
@@ -2299,11 +2389,25 @@ module HubSpotSDK
               )
             LI =
               T.let(:li, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            LIJ =
+              T.let(:lij, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            LIJ_IT =
+              T.let(
+                :"lij-it",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             LKT =
               T.let(:lkt, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             LKT_US =
               T.let(
                 :"lkt-us",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            LMO =
+              T.let(:lmo, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            LMO_IT =
+              T.let(
+                :"lmo-it",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             LN =
@@ -2666,8 +2770,22 @@ module HubSpotSDK
                 :"no-no",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            NQO =
+              T.let(:nqo, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            NQO_GN =
+              T.let(
+                :"nqo-gn",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             NR =
               T.let(:nr, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            NSO =
+              T.let(:nso, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            NSO_ZA =
+              T.let(
+                :"nso-za",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             NUS =
               T.let(:nus, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             NUS_SS =
@@ -3163,6 +3281,16 @@ module HubSpotSDK
               T.let(:ss, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             ST =
               T.let(:st, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            ST_LS =
+              T.let(
+                :"st-ls",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            ST_ZA =
+              T.let(
+                :"st-za",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             SU =
               T.let(:su, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             SU_ID =
@@ -3211,6 +3339,25 @@ module HubSpotSDK
               )
             SY =
               T.let(:sy, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            SYR =
+              T.let(:syr, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            SYR_IQ =
+              T.let(
+                :"syr-iq",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            SYR_SY =
+              T.let(
+                :"syr-sy",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            SZL =
+              T.let(:szl, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            SZL_PL =
+              T.let(
+                :"szl-pl",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             TA =
               T.let(:ta, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             TA_IN =
@@ -3289,6 +3436,16 @@ module HubSpotSDK
               T.let(:tl, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             TN =
               T.let(:tn, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            TN_BW =
+              T.let(
+                :"tn-bw",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            TN_ZA =
+              T.let(
+                :"tn-za",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             TO =
               T.let(:to, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             TO_TO =
@@ -3389,11 +3546,25 @@ module HubSpotSDK
               )
             VE =
               T.let(:ve, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            VEC =
+              T.let(:vec, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            VEC_IT =
+              T.let(
+                :"vec-it",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             VI =
               T.let(:vi, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             VI_VN =
               T.let(
                 :"vi-vn",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            VMW =
+              T.let(:vmw, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            VMW_MZ =
+              T.let(
+                :"vmw-mz",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             VO =
@@ -3433,6 +3604,13 @@ module HubSpotSDK
                 :"xh-za",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            XNR =
+              T.let(:xnr, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            XNR_IN =
+              T.let(
+                :"xnr-in",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             XOG =
               T.let(:xog, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             XOG_UG =
@@ -3452,6 +3630,11 @@ module HubSpotSDK
             YI_001 =
               T.let(
                 :"yi-001",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            YI_UA =
+              T.let(
+                :"yi-ua",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             YO =
@@ -3495,8 +3678,18 @@ module HubSpotSDK
                 :"yue-hk",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
+            YUE_MO =
+              T.let(
+                :"yue-mo",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             ZA =
               T.let(:za, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
+            ZA_CN =
+              T.let(
+                :"za-cn",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
             ZGH =
               T.let(:zgh, HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol)
             ZGH_MA =
@@ -3529,6 +3722,11 @@ module HubSpotSDK
             ZH_MO =
               T.let(
                 :"zh-mo",
+                HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
+              )
+            ZH_MY =
+              T.let(
+                :"zh-my",
                 HubSpotSDK::Cms::Blogs::Blog::Language::TaggedSymbol
               )
             ZH_SG =

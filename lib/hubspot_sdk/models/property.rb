@@ -191,6 +191,16 @@ module HubSpotSDK
       #   @return [Boolean, nil]
       optional :show_currency_symbol, HubSpotSDK::Internal::Type::Boolean, api_name: :showCurrencySymbol
 
+      # @!attribute text_display_hint
+      #   Hint for how the text is displayed and validated in HubSpot's UI. Can be:
+      #   "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
+      #   "ip_address", "physical_address", or "postal_code".
+      #
+      #   @return [Symbol, HubSpotSDK::Models::Property::TextDisplayHint, nil]
+      optional :text_display_hint,
+               enum: -> { HubSpotSDK::Property::TextDisplayHint },
+               api_name: :textDisplayHint
+
       # @!attribute updated_at
       #   When the object type was last updated.
       #
@@ -204,7 +214,7 @@ module HubSpotSDK
       #   @return [String, nil]
       optional :updated_user_id, String, api_name: :updatedUserId
 
-      # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, currency_property_name: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, number_display_hint: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, updated_at: nil, updated_user_id: nil)
+      # @!method initialize(description:, field_type:, group_name:, label:, name:, options:, type:, archived: nil, archived_at: nil, calculated: nil, calculation_formula: nil, created_at: nil, created_user_id: nil, currency_property_name: nil, data_sensitivity: nil, date_display_hint: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, hubspot_defined: nil, modification_metadata: nil, number_display_hint: nil, referenced_object_type: nil, sensitive_data_categories: nil, show_currency_symbol: nil, text_display_hint: nil, updated_at: nil, updated_user_id: nil)
       #   Some parameter documentations has been truncated, see
       #   {HubSpotSDK::Models::Property} for more details.
       #
@@ -264,6 +274,8 @@ module HubSpotSDK
       #
       #   @param show_currency_symbol [Boolean] Whether the property will display the currency symbol set in the account setting
       #
+      #   @param text_display_hint [Symbol, HubSpotSDK::Models::Property::TextDisplayHint] Hint for how the text is displayed and validated in HubSpot's UI. Can be: "unfor
+      #
       #   @param updated_at [Time] When the object type was last updated.
       #
       #   @param updated_user_id [String] The internal user ID of the user who updated the property in HubSpot. This field
@@ -313,6 +325,27 @@ module HubSpotSDK
         PERCENTAGE = :percentage
         PROBABILITY = :probability
         UNFORMATTED = :unformatted
+
+        # @!method self.values
+        #   @return [Array<Symbol>]
+      end
+
+      # Hint for how the text is displayed and validated in HubSpot's UI. Can be:
+      # "unformatted_single_line", "multi_line", "email", "phone_number", "domain_name",
+      # "ip_address", "physical_address", or "postal_code".
+      #
+      # @see HubSpotSDK::Models::Property#text_display_hint
+      module TextDisplayHint
+        extend HubSpotSDK::Internal::Type::Enum
+
+        DOMAIN_NAME = :domain_name
+        EMAIL = :email
+        IP_ADDRESS = :ip_address
+        MULTI_LINE = :multi_line
+        PHONE_NUMBER = :phone_number
+        PHYSICAL_ADDRESS = :physical_address
+        POSTAL_CODE = :postal_code
+        UNFORMATTED_SINGLE_LINE = :unformatted_single_line
 
         # @!method self.values
         #   @return [Array<Symbol>]

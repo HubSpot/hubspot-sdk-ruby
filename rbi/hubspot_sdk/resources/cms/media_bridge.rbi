@@ -226,6 +226,8 @@ module HubSpotSDK
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             referenced_object_type: String,
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::PropertyCreate::TextDisplayHint::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Cms::MediaBridgeProperty)
         end
@@ -270,6 +272,8 @@ module HubSpotSDK
           referenced_object_type: nil,
           # Body param
           show_currency_symbol: nil,
+          # Body param
+          text_display_hint: nil,
           request_options: {}
         )
         end
@@ -628,6 +632,8 @@ module HubSpotSDK
               HubSpotSDK::Cms::MediaBridgePropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::OrSymbol,
             type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol,
             request_options: HubSpotSDK::RequestOptions::OrHash
           ).returns(HubSpotSDK::Cms::MediaBridgeProperty)
@@ -665,6 +671,8 @@ module HubSpotSDK
           options: nil,
           # Body param
           show_currency_symbol: nil,
+          # Body param
+          text_display_hint: nil,
           # Body param
           type: nil,
           request_options: {}

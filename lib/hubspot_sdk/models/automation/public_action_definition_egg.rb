@@ -110,9 +110,11 @@ module HubSpotSDK
         module InputFieldDependency
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Automation::PublicSingleFieldDependency }
+          discriminator :dependencyType
 
-          variant -> { HubSpotSDK::Automation::PublicConditionalSingleFieldDependency }
+          variant :SINGLE_FIELD, -> { HubSpotSDK::Automation::PublicSingleFieldDependency }
+
+          variant :CONDITIONAL_SINGLE_FIELD, -> { HubSpotSDK::Automation::PublicConditionalSingleFieldDependency }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Automation::PublicSingleFieldDependency, HubSpotSDK::Models::Automation::PublicConditionalSingleFieldDependency)]

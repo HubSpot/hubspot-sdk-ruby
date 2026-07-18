@@ -106,8 +106,8 @@ module HubSpotSDK
           | HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy
           | HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy
           | HubSpotSDK::Crm::PublicAllHistoryRefineBy
-          | HubSpotSDK::Crm::PublicTimePointOperation
           | HubSpotSDK::Crm::PublicRangedTimeOperation
+          | HubSpotSDK::Crm::PublicTimePointOperation
 
         module PruningRefineBy
           extend HubSpotSDK::Internal::Type::Union

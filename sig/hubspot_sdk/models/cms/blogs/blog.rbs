@@ -151,6 +151,8 @@ module HubSpotSDK
             | :az
             | :"az-az"
             | :ba
+            | :bal
+            | :"bal-pk"
             | :bas
             | :"bas-cm"
             | :be
@@ -166,6 +168,8 @@ module HubSpotSDK
             | :bho
             | :"bho-in"
             | :bi
+            | :blo
+            | :"blo-bj"
             | :bm
             | :"bm-ml"
             | :bn
@@ -204,6 +208,8 @@ module HubSpotSDK
             | :cr
             | :cs
             | :"cs-cz"
+            | :csw
+            | :"csw-ca"
             | :cu
             | :"cu-ru"
             | :cv
@@ -269,6 +275,7 @@ module HubSpotSDK
             | :"en-cn"
             | :"en-cx"
             | :"en-cy"
+            | :"en-cz"
             | :"en-de"
             | :"en-dg"
             | :"en-dk"
@@ -288,15 +295,18 @@ module HubSpotSDK
             | :"en-gh"
             | :"en-gi"
             | :"en-gm"
+            | :"en-gs"
             | :"en-gu"
             | :"en-gy"
             | :"en-hk"
+            | :"en-hu"
             | :"en-id"
             | :"en-ie"
             | :"en-il"
             | :"en-im"
             | :"en-in"
             | :"en-io"
+            | :"en-it"
             | :"en-je"
             | :"en-jm"
             | :"en-ke"
@@ -322,16 +332,19 @@ module HubSpotSDK
             | :"en-nf"
             | :"en-ng"
             | :"en-nl"
+            | :"en-no"
             | :"en-nr"
             | :"en-nu"
             | :"en-nz"
             | :"en-pg"
             | :"en-ph"
             | :"en-pk"
+            | :"en-pl"
             | :"en-pn"
             | :"en-pr"
             | :"en-pt"
             | :"en-pw"
+            | :"en-ro"
             | :"en-rw"
             | :"en-sb"
             | :"en-sc"
@@ -340,6 +353,7 @@ module HubSpotSDK
             | :"en-sg"
             | :"en-sh"
             | :"en-si"
+            | :"en-sk"
             | :"en-sl"
             | :"en-ss"
             | :"en-sx"
@@ -481,6 +495,8 @@ module HubSpotSDK
             | :ga
             | :"ga-gb"
             | :"ga-ie"
+            | :gaa
+            | :"gaa-gh"
             | :gd
             | :"gd-gb"
             | :gl
@@ -514,6 +530,7 @@ module HubSpotSDK
             | :hsb
             | :"hsb-de"
             | :ht
+            | :"ht-ht"
             | :hu
             | :"hu-hu"
             | :hy
@@ -524,6 +541,7 @@ module HubSpotSDK
             | :id
             | :"id-id"
             | :ie
+            | :"ie-ee"
             | :ig
             | :"ig-ng"
             | :ii
@@ -579,6 +597,7 @@ module HubSpotSDK
             | :kn
             | :"kn-in"
             | :ko
+            | :"ko-cn"
             | :"ko-kp"
             | :"ko-kr"
             | :kok
@@ -597,6 +616,8 @@ module HubSpotSDK
             | :kv
             | :kw
             | :"kw-gb"
+            | :kxv
+            | :"kxv-in"
             | :ky
             | :"ky-kg"
             | :la
@@ -607,8 +628,12 @@ module HubSpotSDK
             | :lg
             | :"lg-ug"
             | :li
+            | :lij
+            | :"lij-it"
             | :lkt
             | :"lkt-us"
+            | :lmo
+            | :"lmo-it"
             | :ln
             | :"ln-ao"
             | :"ln-cd"
@@ -705,7 +730,11 @@ module HubSpotSDK
             | :"nnh-cm"
             | :no
             | :"no-no"
+            | :nqo
+            | :"nqo-gn"
             | :nr
+            | :nso
+            | :"nso-za"
             | :nus
             | :"nus-ss"
             | :nv
@@ -835,6 +864,8 @@ module HubSpotSDK
             | :"sr-xk"
             | :ss
             | :st
+            | :"st-ls"
+            | :"st-za"
             | :su
             | :"su-id"
             | :sv
@@ -847,6 +878,11 @@ module HubSpotSDK
             | :"sw-tz"
             | :"sw-ug"
             | :sy
+            | :syr
+            | :"syr-iq"
+            | :"syr-sy"
+            | :szl
+            | :"szl-pl"
             | :ta
             | :"ta-in"
             | :"ta-lk"
@@ -868,6 +904,8 @@ module HubSpotSDK
             | :"tk-tm"
             | :tl
             | :tn
+            | :"tn-bw"
+            | :"tn-za"
             | :to
             | :"to-to"
             | :tok
@@ -897,8 +935,12 @@ module HubSpotSDK
             | :vai
             | :"vai-lr"
             | :ve
+            | :vec
+            | :"vec-it"
             | :vi
             | :"vi-vn"
+            | :vmw
+            | :"vmw-mz"
             | :vo
             | :"vo-001"
             | :vun
@@ -910,12 +952,15 @@ module HubSpotSDK
             | :"wo-sn"
             | :xh
             | :"xh-za"
+            | :xnr
+            | :"xnr-in"
             | :xog
             | :"xog-ug"
             | :yav
             | :"yav-cm"
             | :yi
             | :"yi-001"
+            | :"yi-ua"
             | :yo
             | :"yo-bj"
             | :"yo-ng"
@@ -926,7 +971,9 @@ module HubSpotSDK
             | :yue
             | :"yue-cn"
             | :"yue-hk"
+            | :"yue-mo"
             | :za
+            | :"za-cn"
             | :zgh
             | :"zgh-ma"
             | :zh
@@ -935,6 +982,7 @@ module HubSpotSDK
             | :"zh-hant"
             | :"zh-hk"
             | :"zh-mo"
+            | :"zh-my"
             | :"zh-sg"
             | :"zh-tw"
             | :zu
@@ -998,6 +1046,8 @@ module HubSpotSDK
             AZ: :az
             AZ_AZ: :"az-az"
             BA: :ba
+            BAL: :bal
+            BAL_PK: :"bal-pk"
             BAS: :bas
             BAS_CM: :"bas-cm"
             BE: :be
@@ -1013,6 +1063,8 @@ module HubSpotSDK
             BHO: :bho
             BHO_IN: :"bho-in"
             BI: :bi
+            BLO: :blo
+            BLO_BJ: :"blo-bj"
             BM: :bm
             BM_ML: :"bm-ml"
             BN: :bn
@@ -1051,6 +1103,8 @@ module HubSpotSDK
             CR: :cr
             CS: :cs
             CS_CZ: :"cs-cz"
+            CSW: :csw
+            CSW_CA: :"csw-ca"
             CU: :cu
             CU_RU: :"cu-ru"
             CV: :cv
@@ -1116,6 +1170,7 @@ module HubSpotSDK
             EN_CN: :"en-cn"
             EN_CX: :"en-cx"
             EN_CY: :"en-cy"
+            EN_CZ: :"en-cz"
             EN_DE: :"en-de"
             EN_DG: :"en-dg"
             EN_DK: :"en-dk"
@@ -1135,15 +1190,18 @@ module HubSpotSDK
             EN_GH: :"en-gh"
             EN_GI: :"en-gi"
             EN_GM: :"en-gm"
+            EN_GS: :"en-gs"
             EN_GU: :"en-gu"
             EN_GY: :"en-gy"
             EN_HK: :"en-hk"
+            EN_HU: :"en-hu"
             EN_ID: :"en-id"
             EN_IE: :"en-ie"
             EN_IL: :"en-il"
             EN_IM: :"en-im"
             EN_IN: :"en-in"
             EN_IO: :"en-io"
+            EN_IT: :"en-it"
             EN_JE: :"en-je"
             EN_JM: :"en-jm"
             EN_KE: :"en-ke"
@@ -1169,16 +1227,19 @@ module HubSpotSDK
             EN_NF: :"en-nf"
             EN_NG: :"en-ng"
             EN_NL: :"en-nl"
+            EN_NO: :"en-no"
             EN_NR: :"en-nr"
             EN_NU: :"en-nu"
             EN_NZ: :"en-nz"
             EN_PG: :"en-pg"
             EN_PH: :"en-ph"
             EN_PK: :"en-pk"
+            EN_PL: :"en-pl"
             EN_PN: :"en-pn"
             EN_PR: :"en-pr"
             EN_PT: :"en-pt"
             EN_PW: :"en-pw"
+            EN_RO: :"en-ro"
             EN_RW: :"en-rw"
             EN_SB: :"en-sb"
             EN_SC: :"en-sc"
@@ -1187,6 +1248,7 @@ module HubSpotSDK
             EN_SG: :"en-sg"
             EN_SH: :"en-sh"
             EN_SI: :"en-si"
+            EN_SK: :"en-sk"
             EN_SL: :"en-sl"
             EN_SS: :"en-ss"
             EN_SX: :"en-sx"
@@ -1328,6 +1390,8 @@ module HubSpotSDK
             GA: :ga
             GA_GB: :"ga-gb"
             GA_IE: :"ga-ie"
+            GAA: :gaa
+            GAA_GH: :"gaa-gh"
             GD: :gd
             GD_GB: :"gd-gb"
             GL: :gl
@@ -1361,6 +1425,7 @@ module HubSpotSDK
             HSB: :hsb
             HSB_DE: :"hsb-de"
             HT: :ht
+            HT_HT: :"ht-ht"
             HU: :hu
             HU_HU: :"hu-hu"
             HY: :hy
@@ -1371,6 +1436,7 @@ module HubSpotSDK
             ID: :id
             ID_ID: :"id-id"
             IE: :ie
+            IE_EE: :"ie-ee"
             IG: :ig
             IG_NG: :"ig-ng"
             II: :ii
@@ -1426,6 +1492,7 @@ module HubSpotSDK
             KN: :kn
             KN_IN: :"kn-in"
             KO: :ko
+            KO_CN: :"ko-cn"
             KO_KP: :"ko-kp"
             KO_KR: :"ko-kr"
             KOK: :kok
@@ -1444,6 +1511,8 @@ module HubSpotSDK
             KV: :kv
             KW: :kw
             KW_GB: :"kw-gb"
+            KXV: :kxv
+            KXV_IN: :"kxv-in"
             KY: :ky
             KY_KG: :"ky-kg"
             LA: :la
@@ -1454,8 +1523,12 @@ module HubSpotSDK
             LG: :lg
             LG_UG: :"lg-ug"
             LI: :li
+            LIJ: :lij
+            LIJ_IT: :"lij-it"
             LKT: :lkt
             LKT_US: :"lkt-us"
+            LMO: :lmo
+            LMO_IT: :"lmo-it"
             LN: :ln
             LN_AO: :"ln-ao"
             LN_CD: :"ln-cd"
@@ -1552,7 +1625,11 @@ module HubSpotSDK
             NNH_CM: :"nnh-cm"
             NO: :no
             NO_NO: :"no-no"
+            NQO: :nqo
+            NQO_GN: :"nqo-gn"
             NR: :nr
+            NSO: :nso
+            NSO_ZA: :"nso-za"
             NUS: :nus
             NUS_SS: :"nus-ss"
             NV: :nv
@@ -1682,6 +1759,8 @@ module HubSpotSDK
             SR_XK: :"sr-xk"
             SS: :ss
             ST: :st
+            ST_LS: :"st-ls"
+            ST_ZA: :"st-za"
             SU: :su
             SU_ID: :"su-id"
             SV: :sv
@@ -1694,6 +1773,11 @@ module HubSpotSDK
             SW_TZ: :"sw-tz"
             SW_UG: :"sw-ug"
             SY: :sy
+            SYR: :syr
+            SYR_IQ: :"syr-iq"
+            SYR_SY: :"syr-sy"
+            SZL: :szl
+            SZL_PL: :"szl-pl"
             TA: :ta
             TA_IN: :"ta-in"
             TA_LK: :"ta-lk"
@@ -1715,6 +1799,8 @@ module HubSpotSDK
             TK_TM: :"tk-tm"
             TL: :tl
             TN: :tn
+            TN_BW: :"tn-bw"
+            TN_ZA: :"tn-za"
             TO: :to
             TO_TO: :"to-to"
             TOK: :tok
@@ -1744,8 +1830,12 @@ module HubSpotSDK
             VAI: :vai
             VAI_LR: :"vai-lr"
             VE: :ve
+            VEC: :vec
+            VEC_IT: :"vec-it"
             VI: :vi
             VI_VN: :"vi-vn"
+            VMW: :vmw
+            VMW_MZ: :"vmw-mz"
             VO: :vo
             VO_001: :"vo-001"
             VUN: :vun
@@ -1757,12 +1847,15 @@ module HubSpotSDK
             WO_SN: :"wo-sn"
             XH: :xh
             XH_ZA: :"xh-za"
+            XNR: :xnr
+            XNR_IN: :"xnr-in"
             XOG: :xog
             XOG_UG: :"xog-ug"
             YAV: :yav
             YAV_CM: :"yav-cm"
             YI: :yi
             YI_001: :"yi-001"
+            YI_UA: :"yi-ua"
             YO: :yo
             YO_BJ: :"yo-bj"
             YO_NG: :"yo-ng"
@@ -1773,7 +1866,9 @@ module HubSpotSDK
             YUE: :yue
             YUE_CN: :"yue-cn"
             YUE_HK: :"yue-hk"
+            YUE_MO: :"yue-mo"
             ZA: :za
+            ZA_CN: :"za-cn"
             ZGH: :zgh
             ZGH_MA: :"zgh-ma"
             ZH: :zh
@@ -1782,6 +1877,7 @@ module HubSpotSDK
             ZH_HANT: :"zh-hant"
             ZH_HK: :"zh-hk"
             ZH_MO: :"zh-mo"
+            ZH_MY: :"zh-my"
             ZH_SG: :"zh-sg"
             ZH_TW: :"zh-tw"
             ZU: :zu

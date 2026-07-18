@@ -32,8 +32,8 @@ module HubSpotSDK
               HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
               HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
               HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-              HubSpotSDK::Crm::PublicTimePointOperation,
-              HubSpotSDK::Crm::PublicRangedTimeOperation
+              HubSpotSDK::Crm::PublicRangedTimeOperation,
+              HubSpotSDK::Crm::PublicTimePointOperation
             )
           )
         end
@@ -83,8 +83,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy::OrHash,
                 HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy::OrHash,
                 HubSpotSDK::Crm::PublicAllHistoryRefineBy::OrHash,
-                HubSpotSDK::Crm::PublicTimePointOperation::OrHash,
-                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash
+                HubSpotSDK::Crm::PublicRangedTimeOperation::OrHash,
+                HubSpotSDK::Crm::PublicTimePointOperation::OrHash
               ),
             filter_type:
               HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
@@ -130,8 +130,8 @@ module HubSpotSDK
                   HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
                   HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
                   HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-                  HubSpotSDK::Crm::PublicTimePointOperation,
-                  HubSpotSDK::Crm::PublicRangedTimeOperation
+                  HubSpotSDK::Crm::PublicRangedTimeOperation,
+                  HubSpotSDK::Crm::PublicTimePointOperation
                 ),
               filter_type:
                 HubSpotSDK::Crm::PublicAssociationInListFilter::FilterType::OrSymbol,
@@ -159,8 +159,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PublicAbsoluteComparativeTimestampRefineBy,
                 HubSpotSDK::Crm::PublicAbsoluteRangedTimestampRefineBy,
                 HubSpotSDK::Crm::PublicAllHistoryRefineBy,
-                HubSpotSDK::Crm::PublicTimePointOperation,
-                HubSpotSDK::Crm::PublicRangedTimeOperation
+                HubSpotSDK::Crm::PublicRangedTimeOperation,
+                HubSpotSDK::Crm::PublicTimePointOperation
               )
             end
 

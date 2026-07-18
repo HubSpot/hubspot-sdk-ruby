@@ -114,6 +114,23 @@ module HubSpotSDK
         sig { params(show_currency_symbol: T::Boolean).void }
         attr_writer :show_currency_symbol
 
+        sig do
+          returns(
+            T.nilable(
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::OrSymbol
+            )
+          )
+        end
+        attr_reader :text_display_hint
+
+        sig do
+          params(
+            text_display_hint:
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::OrSymbol
+          ).void
+        end
+        attr_writer :text_display_hint
+
         # The data type of the property.
         sig do
           returns(T.nilable(HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol))
@@ -140,6 +157,8 @@ module HubSpotSDK
               HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::OrSymbol,
             type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
           ).returns(T.attached_class)
         end
@@ -167,6 +186,7 @@ module HubSpotSDK
           # A list of valid options for the property.
           options: nil,
           show_currency_symbol: nil,
+          text_display_hint: nil,
           # The data type of the property.
           type: nil
         )
@@ -188,6 +208,8 @@ module HubSpotSDK
                 HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::OrSymbol,
               options: T::Array[HubSpotSDK::OptionInput],
               show_currency_symbol: T::Boolean,
+              text_display_hint:
+                HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::OrSymbol,
               type: HubSpotSDK::Crm::PropertyUpdate::Type::OrSymbol
             }
           )
@@ -319,6 +341,67 @@ module HubSpotSDK
             override.returns(
               T::Array[
                 HubSpotSDK::Crm::PropertyUpdate::NumberDisplayHint::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
+        end
+
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(Symbol, HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint)
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          DOMAIN_NAME =
+            T.let(
+              :domain_name,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          EMAIL =
+            T.let(
+              :email,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          IP_ADDRESS =
+            T.let(
+              :ip_address,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          MULTI_LINE =
+            T.let(
+              :multi_line,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          PHONE_NUMBER =
+            T.let(
+              :phone_number,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          PHYSICAL_ADDRESS =
+            T.let(
+              :physical_address,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          POSTAL_CODE =
+            T.let(
+              :postal_code,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          UNFORMATTED_SINGLE_LINE =
+            T.let(
+              :unformatted_single_line,
+              HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Crm::PropertyUpdate::TextDisplayHint::TaggedSymbol
               ]
             )
           end

@@ -49,6 +49,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
+        text_display_hint: HubSpotSDK::Property::TextDisplayHint | nil,
         updated_at: Time | nil,
         updated_user_id: String | nil
       }
@@ -93,6 +94,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
+        text_display_hint: HubSpotSDK::Property::TextDisplayHint | nil,
         updated_at: Time | nil,
         updated_user_id: String | nil
       }
@@ -163,6 +165,7 @@ class HubSpotSDK::Test::Resources::Crm::PropertiesTest < HubSpotSDK::Test::Resou
         referenced_object_type: String | nil,
         sensitive_data_categories: ^(HubSpotSDK::Internal::Type::ArrayOf[String]) | nil,
         show_currency_symbol: HubSpotSDK::Internal::Type::Boolean | nil,
+        text_display_hint: HubSpotSDK::Property::TextDisplayHint | nil,
         updated_at: Time | nil,
         updated_user_id: String | nil
       }

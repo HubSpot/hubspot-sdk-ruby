@@ -115,6 +115,23 @@ module HubSpotSDK
         sig do
           returns(
             T.nilable(
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::OrSymbol
+            )
+          )
+        end
+        attr_reader :text_display_hint
+
+        sig do
+          params(
+            text_display_hint:
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::OrSymbol
+          ).void
+        end
+        attr_writer :text_display_hint
+
+        sig do
+          returns(
+            T.nilable(
               HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
             )
           )
@@ -145,6 +162,8 @@ module HubSpotSDK
               HubSpotSDK::Cms::MediaBridgePropertyUpdate::NumberDisplayHint::OrSymbol,
             options: T::Array[HubSpotSDK::OptionInput::OrHash],
             show_currency_symbol: T::Boolean,
+            text_display_hint:
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::OrSymbol,
             type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
           ).returns(T.attached_class)
         end
@@ -162,6 +181,7 @@ module HubSpotSDK
           number_display_hint: nil,
           options: nil,
           show_currency_symbol: nil,
+          text_display_hint: nil,
           type: nil
         )
         end
@@ -184,6 +204,8 @@ module HubSpotSDK
                 HubSpotSDK::Cms::MediaBridgePropertyUpdate::NumberDisplayHint::OrSymbol,
               options: T::Array[HubSpotSDK::OptionInput],
               show_currency_symbol: T::Boolean,
+              text_display_hint:
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::OrSymbol,
               type: HubSpotSDK::Cms::MediaBridgePropertyUpdate::Type::OrSymbol
             }
           )
@@ -322,6 +344,70 @@ module HubSpotSDK
             override.returns(
               T::Array[
                 HubSpotSDK::Cms::MediaBridgePropertyUpdate::NumberDisplayHint::TaggedSymbol
+              ]
+            )
+          end
+          def self.values
+          end
+        end
+
+        module TextDisplayHint
+          extend HubSpotSDK::Internal::Type::Enum
+
+          TaggedSymbol =
+            T.type_alias do
+              T.all(
+                Symbol,
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint
+              )
+            end
+          OrSymbol = T.type_alias { T.any(Symbol, String) }
+
+          DOMAIN_NAME =
+            T.let(
+              :domain_name,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          EMAIL =
+            T.let(
+              :email,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          IP_ADDRESS =
+            T.let(
+              :ip_address,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          MULTI_LINE =
+            T.let(
+              :multi_line,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          PHONE_NUMBER =
+            T.let(
+              :phone_number,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          PHYSICAL_ADDRESS =
+            T.let(
+              :physical_address,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          POSTAL_CODE =
+            T.let(
+              :postal_code,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+          UNFORMATTED_SINGLE_LINE =
+            T.let(
+              :unformatted_single_line,
+              HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
+            )
+
+          sig do
+            override.returns(
+              T::Array[
+                HubSpotSDK::Cms::MediaBridgePropertyUpdate::TextDisplayHint::TaggedSymbol
               ]
             )
           end

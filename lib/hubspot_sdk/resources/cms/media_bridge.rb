@@ -197,7 +197,7 @@ module HubSpotSDK
 
         # Create a new property for the specified media type
         #
-        # @overload create_property(object_type, app_id:, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, request_options: {})
+        # @overload create_property(object_type, app_id:, field_type:, group_name:, label:, name:, type:, calculation_formula: nil, currency_property_name: nil, data_sensitivity: nil, description: nil, display_order: nil, external_options: nil, form_field: nil, has_unique_value: nil, hidden: nil, number_display_hint: nil, options: nil, referenced_object_type: nil, show_currency_symbol: nil, text_display_hint: nil, request_options: {})
         #
         # @param object_type [String] Path param
         #
@@ -238,6 +238,8 @@ module HubSpotSDK
         # @param referenced_object_type [String] Body param
         #
         # @param show_currency_symbol [Boolean] Body param
+        #
+        # @param text_display_hint [Symbol, HubSpotSDK::Models::PropertyCreate::TextDisplayHint] Body param
         #
         # @param request_options [HubSpotSDK::RequestOptions, Hash{Symbol=>Object}, nil]
         #
@@ -792,7 +794,7 @@ module HubSpotSDK
 
         # Update an existing property for an object type.
         #
-        # @overload update_property(property_name, app_id:, object_type:, calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, type: nil, request_options: {})
+        # @overload update_property(property_name, app_id:, object_type:, calculation_formula: nil, currency_property_name: nil, description: nil, display_order: nil, field_type: nil, form_field: nil, group_name: nil, has_unique_value: nil, hidden: nil, label: nil, number_display_hint: nil, options: nil, show_currency_symbol: nil, text_display_hint: nil, type: nil, request_options: {})
         #
         # @param property_name [String] Path param
         #
@@ -825,6 +827,8 @@ module HubSpotSDK
         # @param options [Array<HubSpotSDK::Models::OptionInput>] Body param
         #
         # @param show_currency_symbol [Boolean] Body param
+        #
+        # @param text_display_hint [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::TextDisplayHint] Body param
         #
         # @param type [Symbol, HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::Type] Body param
         #

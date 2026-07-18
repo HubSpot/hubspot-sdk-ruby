@@ -51,15 +51,17 @@ module HubSpotSDK
         module RequestContext
           extend HubSpotSDK::Internal::Type::Union
 
-          variant -> { HubSpotSDK::Automation::WorkflowsRequestContext }
+          discriminator :source
 
-          variant -> { HubSpotSDK::Automation::AgentRequestContext }
+          variant :WORKFLOWS, -> { HubSpotSDK::Automation::WorkflowsRequestContext }
 
-          variant -> { HubSpotSDK::Automation::CopilotRequestContext }
+          variant :AGENTS, -> { HubSpotSDK::Automation::AgentRequestContext }
 
-          variant -> { HubSpotSDK::Automation::StandaloneRequestContext }
+          variant :COPILOT, -> { HubSpotSDK::Automation::CopilotRequestContext }
 
-          variant -> { HubSpotSDK::Automation::TestRequestContext }
+          variant :STANDALONE, -> { HubSpotSDK::Automation::StandaloneRequestContext }
+
+          variant :TEST, -> { HubSpotSDK::Automation::TestRequestContext }
 
           # @!method self.variants
           #   @return [Array(HubSpotSDK::Models::Automation::WorkflowsRequestContext, HubSpotSDK::Models::Automation::AgentRequestContext, HubSpotSDK::Models::Automation::CopilotRequestContext, HubSpotSDK::Models::Automation::StandaloneRequestContext, HubSpotSDK::Models::Automation::TestRequestContext)]

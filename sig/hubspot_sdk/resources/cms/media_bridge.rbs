@@ -107,6 +107,7 @@ module HubSpotSDK
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?referenced_object_type: String,
           ?show_currency_symbol: bool,
+          ?text_display_hint: HubSpotSDK::Models::PropertyCreate::text_display_hint,
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Cms::MediaBridgeProperty
 
@@ -262,6 +263,7 @@ module HubSpotSDK
           ?number_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::number_display_hint,
           ?options: ::Array[HubSpotSDK::OptionInput],
           ?show_currency_symbol: bool,
+          ?text_display_hint: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::text_display_hint,
           ?type: HubSpotSDK::Models::Cms::MediaBridgePropertyUpdate::type_,
           ?request_options: HubSpotSDK::request_opts
         ) -> HubSpotSDK::Cms::MediaBridgeProperty
